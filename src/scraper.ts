@@ -14,7 +14,7 @@ export class Csfd {
 
   public async userRatings(
     user: string | number,
-    config: {
+    config?: {
       includesOnly?: CSFDFilmTypes[];
       excludes?: CSFDFilmTypes[];
     }
@@ -24,7 +24,7 @@ export class Csfd {
     const items = parse(response);
     const movies = items.querySelectorAll('.ui-table-list tbody tr');
 
-    if (config.includesOnly?.length && config.excludes?.length) {
+    if (config?.includesOnly?.length && config?.excludes?.length) {
       console.warn(
         `node-csfd-api:
         You can not use both parameters 'includesOnly' and 'excludes'.
@@ -37,12 +37,12 @@ export class Csfd {
       const type = getType(el);
 
       // Filtering includesOnly
-      if (config.includesOnly?.length) {
+      if (config?.includesOnly?.length) {
         if (config.includesOnly.some((include) => type === include)) {
           this.buildUserRatings(el);
         }
         // Filter exludes
-      } else if (config.excludes?.length) {
+      } else if (config?.excludes?.length) {
         if (!config.excludes.some((exclude) => type === exclude)) {
           this.buildUserRatings(el);
         }
