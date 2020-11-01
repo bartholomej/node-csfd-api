@@ -28,6 +28,6 @@ export const getDate = (el: HTMLElement): string => {
 };
 
 export const getUrl = (el: HTMLElement): string => {
-  console.log(el.querySelector('td a.film'));
+  // console.log(el.querySelector('td a.film'));
   return 'https://www.csfd.cz'; // TODO
 };

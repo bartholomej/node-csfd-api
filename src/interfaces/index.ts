@@ -1,10 +1,10 @@
-export interface CSFDResult {
+export interface CSFDUserRatings {
   title: string;
   year: number;
   url: string;
   type?: CSFDFilmTypes;
   rating: number;
-  date?: string; // TODO
+  date?: string; // TODO datetime
   quality: number;
 }
 
