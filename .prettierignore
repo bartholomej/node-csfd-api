@@ -1,0 +1,7 @@
+package.json
+package-lock.json
+yarn.lock
+prettier.config.js
+.eslintrc.js
+dist
+.vscode/*
