@@ -3,10 +3,25 @@ export interface CSFDUserRatings {
   year: number;
   url: string;
   type?: CSFDFilmTypes;
-  rating: number;
+  rating: CSFDStars;
   date?: string; // TODO datetime
-  quality: number;
+  /**
+   * Overall aggregated rating. (On the web usually represented by colors).
+   *
+   * 0: unknown (gray color)
+   *
+   * 1: 70% – 100 % (red color)
+   *
+   * 2: 30% - 69% (blue color)
+   *
+   * 3: 0% - 29% (black color)
+   */
+  overallRating: CSFDFilmOverallRating;
 }
+
+export type CSFDFilmOverallRating = 0 | 1 | 2 | 3;
+
+export type CSFDStars = 0 | 1 | 2 | 3 | 4 | 5;
 
 export type CSFDFilmTypes =
   | 'film'
@@ -16,7 +31,6 @@ export type CSFDFilmTypes =
   | 'divadelní záznam'
   | 'koncert'
   | 'série'
-  | 'epizoda'
   | 'studentský film'
   | 'amatérský film'
   | 'hudební videoklip'

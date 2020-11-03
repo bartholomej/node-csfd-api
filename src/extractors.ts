@@ -1,9 +1,10 @@
 import { HTMLElement } from 'node-html-parser';
-import { CSFDFilmTypes } from './interfaces';
+import { CSFDFilmOverallRating, CSFDFilmTypes, CSFDStars } from './interfaces';
 
-export const getRating = (el: HTMLElement): number => {
+export const getRating = (el: HTMLElement): CSFDStars => {
   const ratingText = el.querySelector('td .rating').attributes.alt;
-  return ratingText ? ratingText.length : 0;
+  const rating = ratingText ? ratingText.length : 0;
+  return rating as CSFDStars;
 };
 
 export const getType = (el: HTMLElement): CSFDFilmTypes => {
@@ -19,8 +20,8 @@ export const getYear = (el: HTMLElement): number => {
   return +el.querySelector('td .film-year').innerText.slice(1, -1);
 };
 
-export const getQuality = (el: HTMLElement): number => {
-  return +el.querySelector('td a.film').classNames[1].slice(1, 2);
+export const getOverallRating = (el: HTMLElement): CSFDFilmOverallRating => {
+  return +el.querySelector('td a.film').classNames[1].slice(1, 2) as CSFDFilmOverallRating;
 };
 
 export const getDate = (el: HTMLElement): string => {

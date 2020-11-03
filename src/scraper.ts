@@ -1,7 +1,15 @@
 import fetch from 'cross-fetch';
 import { HTMLElement, parse } from 'node-html-parser';
-import { getDate, getQuality, getRating, getTitle, getType, getUrl, getYear } from './extractors';
-import { CSFDFilmTypes, CSFDUserRatings } from './interfaces';
+import {
+  getDate,
+  getOverallRating,
+  getRating,
+  getTitle,
+  getType,
+  getUrl,
+  getYear
+} from './extractors';
+import { CSFDFilmOverallRating, CSFDFilmTypes, CSFDStars, CSFDUserRatings } from './interfaces';
 import { userRatingsUrl } from './vars';
 
 export class Csfd {
@@ -59,10 +67,10 @@ export class Csfd {
       title: getTitle(el),
       year: getYear(el),
       type: getType(el),
-      rating: getRating(el),
       url: getUrl(el),
+      overallRating: getOverallRating(el) as CSFDFilmOverallRating,
       date: getDate(el),
-      quality: getQuality(el)
+      rating: getRating(el) as CSFDStars
     });
   }
 }
