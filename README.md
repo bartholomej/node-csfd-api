@@ -38,12 +38,21 @@ csfd.userRatings('912-bart').then((ratings) => console.log(ratings));
 ```javascript
 [
   {
-    title: 'Watchmen - This Extraordinary Being (E06)',
-    year: 2019,
-    type: 'epizoda',
+    title: 'David Attenborough: Život na naší planetě',
+    year: 2020,
+    type: 'film',
     rating: 5,
-    url: 'https://www.csfd.cz',
-    date: '25.11.2019',
+    url: 'https://www.csfd.cz/film/812944-david-attenborough-zivot-na-nasi-planete/',
+    date: '01.11.2020',
+    quality: 1
+  },
+  {
+    title: 'Coronation',
+    year: 2020,
+    type: 'film',
+    rating: 4,
+    url: 'https://www.csfd.cz/film/912552-coronation/',
+    date: '28.10.2020',
     quality: 1
   }
 ];
