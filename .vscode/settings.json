@@ -6,6 +6,10 @@
     "source.organizeImports": true,
     "source.fixAll.eslint": true
   },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": false
+  },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
   "typescript.tsdk": "node_modules/typescript/lib"

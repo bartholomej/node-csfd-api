@@ -5,3 +5,4 @@ prettier.config.js
 .eslintrc.js
 dist
 .vscode/*
+tests/mocks/*.html
