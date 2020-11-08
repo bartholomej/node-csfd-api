@@ -1,5 +1,5 @@
-import { CSFDUserRatings } from '../src/interfaces/user-ratings';
-import { UserRatingsScraper } from '../src/services/user-ratings';
+import { CSFDUserRatings } from '../src/interfaces/user-ratings.interface';
+import { UserRatingsScraper } from '../src/services/user-ratings.service';
 
 // Live API tests
 const USER = 912;

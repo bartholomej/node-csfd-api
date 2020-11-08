@@ -1,8 +1,8 @@
-import { CSFDMovie } from 'interfaces/movie';
+import { CSFDMovie } from 'interfaces/movie.interface';
 import { CSFDFilmTypes } from './interfaces/global';
-import { CSFDUserRatings } from './interfaces/user-ratings';
-import { MovieScraper } from './services/movie';
-import { UserRatingsScraper } from './services/user-ratings';
+import { CSFDUserRatings } from './interfaces/user-ratings.interface';
+import { MovieScraper } from './services/movie.service';
+import { UserRatingsScraper } from './services/user-ratings.service';
 
 export class Csfd {
   constructor(private userRatingsService: UserRatingsScraper, private movieService: MovieScraper) {}

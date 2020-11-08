@@ -2,7 +2,7 @@ import { CSFDScreening } from './global';
 
 export interface CSFDMovie extends CSFDScreening {
   poster?: string;
-  otherTitles?: OtherTitles[];
+  otherTitles?: CSFDOtherTitles[];
   origins?: string[];
   descriptions?: string[];
   directors?: CSFDCreators[];
@@ -14,7 +14,7 @@ export interface CSFDMovie extends CSFDScreening {
   genres: string[]; // TODO listo of genres(?)
 }
 
-export interface OtherTitles {
+export interface CSFDOtherTitles {
   country: string;
   title: string;
 }

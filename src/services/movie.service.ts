@@ -1,25 +1,26 @@
 import { CSFDFilmTypes } from 'interfaces/global';
-import { CSFDMovie } from 'interfaces/movie';
+import { CSFDMovie } from 'interfaces/movie.interface';
 import { HTMLElement, parse } from 'node-html-parser';
-import { fetchUserMovie } from '../fetchers';
+import { fetchMovie } from '../fetchers';
 import {
   getDescriptions,
   getDirectors,
   getGenres,
   getGroup,
   getOrigins,
+  getOtherTitles,
   getPoster,
   getTitle,
   getType,
   getYear
-} from '../scrapers/movie';
+} from '../helpers/movie.helper';
 import { movieUrl } from '../vars';
 
 export class MovieScraper {
   private film: CSFDMovie;
 
   public async movie(movie: string | number): Promise<CSFDMovie> {
-    const response = await fetchUserMovie(movie);
+    const response = await fetchMovie(movie);
 
     const movieHtml = parse(response);
     const movieNode = movieHtml.querySelector('#pg-web-film');
@@ -37,6 +38,7 @@ export class MovieScraper {
       url: movieUrl(movie),
       origins: getOrigins(el),
       overallRating: 3, // TODO
+      otherTitles: getOtherTitles(el),
       poster: getPoster(el),
       directors: getDirectors(el),
       actors: getGroup(el, 'Hrají'),

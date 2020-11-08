@@ -3,7 +3,7 @@ import { join } from 'path';
 import originalPackage from '../package.json';
 
 // Modify package.json and copy into dist folder
-let pkg: Record<string, any> = originalPackage;
+const pkg: Record<string, any> = originalPackage;
 
 pkg.module = './index.js';
 pkg.main = './index.js';

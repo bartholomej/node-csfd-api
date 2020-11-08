@@ -1,4 +1,4 @@
-import { CSFDCreatoreGroups, CSFDCreators, OtherTitles } from 'interfaces/movie';
+import { CSFDCreatoreGroups, CSFDCreators, CSFDOtherTitles } from 'interfaces/movie.interface';
 import { HTMLElement } from 'node-html-parser';
 
 export const getTitle = (el: HTMLElement): string => {
@@ -20,7 +20,7 @@ export const getYear = (el: HTMLElement): string | number => {
   return el.querySelector('.origin span').innerText;
 };
 
-export const getOtherTitles = (el: HTMLElement): OtherTitles[] => {
+export const getOtherTitles = (el: HTMLElement): CSFDOtherTitles[] => {
   const namesNode = el.querySelectorAll('ul.names li');
   return namesNode.map((el) => {
     const country = el.querySelector('img').attributes.alt;

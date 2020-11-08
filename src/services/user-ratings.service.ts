@@ -1,7 +1,5 @@
 import { HTMLElement, parse } from 'node-html-parser';
 import { fetchUserRatings } from '../fetchers';
-import { CSFDFilmOverallRating, CSFDFilmTypes, CSFDStars } from '../interfaces/global';
-import { CSFDUserRatings } from '../interfaces/user-ratings';
 import {
   getDate,
   getOverallRating,
@@ -10,7 +8,9 @@ import {
   getType,
   getUrl,
   getYear
-} from '../scrapers/user-ratings';
+} from '../helpers/user-ratings.helper';
+import { CSFDFilmOverallRating, CSFDFilmTypes, CSFDStars } from '../interfaces/global';
+import { CSFDUserRatings } from '../interfaces/user-ratings.interface';
 
 export class UserRatingsScraper {
   private films: CSFDUserRatings[] = [];

@@ -1,6 +1,5 @@
 import { readFileSync } from 'fs';
 import { HTMLElement, parse } from 'node-html-parser';
-import { CSFDFilmOverallRating, CSFDFilmTypes, CSFDStars } from '../src/interfaces/global';
 import {
   getDate,
   getOverallRating,
@@ -9,7 +8,8 @@ import {
   getType,
   getUrl,
   getYear
-} from '../src/scrapers/user-ratings';
+} from '../src/helpers/user-ratings.helper';
+import { CSFDFilmOverallRating, CSFDFilmTypes, CSFDStars } from '../src/interfaces/global';
 
 const response = readFileSync(`${__dirname}/mocks/userRatings.html`, 'utf8');
 const items = parse(response);
