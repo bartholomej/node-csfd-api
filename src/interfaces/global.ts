@@ -1,4 +1,5 @@
 export interface CSFDScreening {
+  id: number;
   title: string;
   year: number | string;
   url: string;
@@ -6,18 +7,18 @@ export interface CSFDScreening {
   /**
    * Overall aggregated rating. (On the web usually represented by colors).
    *
-   * 0: unknown (gray color)
+   * 'unknown': unknown (gray color)
    *
-   * 1: 70% – 100 % (red color)
+   * 'good': 70% – 100 % (red color)
    *
-   * 2: 30% - 69% (blue color)
+   * 'average': 30% - 69% (blue color)
    *
-   * 3: 0% - 29% (black color)
+   * 'bad': 0% - 29% (black color)
    */
-  overallRating: CSFDFilmOverallRating;
+  colorRating: CSFDColorRating;
 }
 
-export type CSFDFilmOverallRating = 0 | 1 | 2 | 3;
+export type CSFDColorRating = 'bad' | 'average' | 'good' | 'unknown';
 
 export type CSFDStars = 0 | 1 | 2 | 3 | 4 | 5;
 

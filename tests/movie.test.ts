@@ -5,6 +5,7 @@ import {
   getDirectors,
   getGenres,
   getGroup,
+  getId,
   getOrigins,
   getOtherTitles,
   getPoster,
@@ -18,24 +19,19 @@ const response = readFileSync(`${__dirname}/mocks/movie1.html`, 'utf8');
 const movieNode = parse(response);
 const moviePage: HTMLElement = movieNode.querySelector('#pg-web-film');
 
+describe('Get ID', () => {
+  test('Movie ID', () => {
+    const movie = getId(moviePage);
+    expect(movie).toEqual<number>(535121);
+  });
+});
+
 describe('Get Movie', () => {
   test('Movie title', () => {
     const movie = getTitle(moviePage);
     expect(movie).toEqual<string>('Na špatné straně');
   });
 });
-
-// poster?: string;
-// otherTitles?: OtherTitles[];
-// origins?: string[];
-// descriptions?: string[];
-// directors?: CSFDCreators[];
-// actors?: CSFDCreators[];
-// basedOn?: CSFDCreators[];
-// writers?: CSFDCreators[];
-// music?: CSFDCreators[];
-// producers?: CSFDCreators[];
-// genres: string[]; // TODO listo of genres(?)
 
 describe('Get Movie', () => {
   test('Movie title', () => {

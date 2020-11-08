@@ -5,6 +5,12 @@ import {
   CSFDOtherTitles
 } from 'interfaces/movie.interface';
 import { HTMLElement } from 'node-html-parser';
+import { parseIdFromUrl } from './global.helper';
+
+export const getId = (el: HTMLElement): number => {
+  const url = el.querySelector('.navigation a').attributes.href;
+  return parseIdFromUrl(url);
+};
 
 export const getTitle = (el: HTMLElement): string => {
   return el.querySelector('h1').innerText.split(`(`)[0].trim();

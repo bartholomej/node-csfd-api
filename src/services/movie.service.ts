@@ -7,6 +7,7 @@ import {
   getDirectors,
   getGenres,
   getGroup,
+  getId,
   getOrigins,
   getOtherTitles,
   getPoster,
@@ -30,6 +31,7 @@ export class MovieScraper {
 
   private buildUserRatings(el: HTMLElement, movie: string | number) {
     this.film = {
+      id: getId(el),
       title: getTitle(el),
       year: getYear(el),
       descriptions: getDescriptions(el),
@@ -37,7 +39,7 @@ export class MovieScraper {
       type: getType(el) as CSFDFilmTypes,
       url: movieUrl(movie),
       origins: getOrigins(el),
-      overallRating: 3, // TODO
+      colorRating: 'unknown', // TODO
       otherTitles: getOtherTitles(el),
       poster: getPoster(el),
       directors: getDirectors(el),

@@ -1,16 +1,16 @@
 import { CSFDScreening } from './global';
 
 export interface CSFDMovie extends CSFDScreening {
-  poster?: string;
-  otherTitles?: CSFDOtherTitles[];
-  origins?: string[];
-  descriptions?: string[];
-  directors?: CSFDCreators[];
-  actors?: CSFDCreators[];
-  basedOn?: CSFDCreators[];
-  writers?: CSFDCreators[];
-  music?: CSFDCreators[];
-  producers?: CSFDCreators[];
+  poster: string;
+  otherTitles: CSFDOtherTitles[];
+  origins: string[];
+  descriptions: string[];
+  directors: CSFDCreators[];
+  actors: CSFDCreators[];
+  basedOn: CSFDCreators[];
+  writers: CSFDCreators[];
+  music: CSFDCreators[];
+  producers: CSFDCreators[];
   genres: CSFDGenres[] | string[];
 }
 

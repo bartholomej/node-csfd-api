@@ -1,15 +1,16 @@
 import { readFileSync } from 'fs';
 import { HTMLElement, parse } from 'node-html-parser';
 import {
+  getColorRating,
   getDate,
-  getOverallRating,
+  getId,
   getRating,
   getTitle,
   getType,
   getUrl,
   getYear
 } from '../src/helpers/user-ratings.helper';
-import { CSFDFilmOverallRating, CSFDFilmTypes, CSFDStars } from '../src/interfaces/global';
+import { CSFDColorRating, CSFDFilmTypes, CSFDStars } from '../src/interfaces/global';
 
 const response = readFileSync(`${__dirname}/mocks/userRatings.html`, 'utf8');
 const items = parse(response);
@@ -27,6 +28,17 @@ describe('Get Ratings', () => {
   test('Zero Rating', () => {
     const movie = getRating(movies[35]);
     expect(movie).toEqual<CSFDStars>(0);
+  });
+});
+
+describe('Get ID', () => {
+  test('First ID', () => {
+    const movie = getId(movies[0]);
+    expect(movie).toEqual<number>(824918);
+  });
+  test('Last ID', () => {
+    const movie = getId(movies[movies.length - 1]);
+    expect(movie).toEqual<number>(58782);
   });
 });
 
@@ -79,22 +91,22 @@ describe('Get year', () => {
   });
 });
 
-describe('Get overall rating', () => {
+describe('Get color rating', () => {
   test('Black', () => {
-    const movie = getOverallRating(movies[35]);
-    expect(movie).toEqual<CSFDFilmOverallRating>(3);
+    const movie = getColorRating(movies[35]);
+    expect(movie).toEqual<CSFDColorRating>('bad');
   });
   test('Gray', () => {
-    const movie = getOverallRating(movies[49]);
-    expect(movie).toEqual<CSFDFilmOverallRating>(0);
+    const movie = getColorRating(movies[49]);
+    expect(movie).toEqual<CSFDColorRating>('unknown');
   });
   test('Blue', () => {
-    const movie = getOverallRating(movies[4]);
-    expect(movie).toEqual<CSFDFilmOverallRating>(2);
+    const movie = getColorRating(movies[4]);
+    expect(movie).toEqual<CSFDColorRating>('average');
   });
   test('Red', () => {
-    const movie = getOverallRating(movies[0]);
-    expect(movie).toEqual<CSFDFilmOverallRating>(1);
+    const movie = getColorRating(movies[0]);
+    expect(movie).toEqual<CSFDColorRating>('good');
   });
 });
 

@@ -1,15 +1,16 @@
 import { HTMLElement, parse } from 'node-html-parser';
 import { fetchUserRatings } from '../fetchers';
 import {
+  getColorRating,
   getDate,
-  getOverallRating,
+  getId,
   getRating,
   getTitle,
   getType,
   getUrl,
   getYear
 } from '../helpers/user-ratings.helper';
-import { CSFDFilmOverallRating, CSFDFilmTypes, CSFDStars } from '../interfaces/global';
+import { CSFDColorRating, CSFDFilmTypes, CSFDStars } from '../interfaces/global';
 import { CSFDUserRatings } from '../interfaces/user-ratings.interface';
 
 export class UserRatingsScraper {
@@ -61,11 +62,12 @@ export class UserRatingsScraper {
 
   private buildUserRatings(el: HTMLElement) {
     this.films.push({
+      id: getId(el),
       title: getTitle(el),
       year: getYear(el),
       type: getType(el),
       url: getUrl(el),
-      overallRating: getOverallRating(el) as CSFDFilmOverallRating,
+      colorRating: getColorRating(el) as CSFDColorRating,
       date: getDate(el),
       rating: getRating(el) as CSFDStars
     });

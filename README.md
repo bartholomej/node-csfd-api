@@ -50,7 +50,7 @@ csfd.movie('535121').then((movie) => console.log(movie));
   type: 'film',
   url: 'https://www.csfd.cz/film/535121',
   origins: [ 'USA', 'Kanada' ],
-  overallRating: 3,
+  colorRating: 'good',
   otherTitles: [
     { country: 'USA', title: 'Dragged Across Concrete' },
     { country: 'Kanada', title: 'Dragged Across Concrete' },
@@ -117,7 +117,7 @@ csfd.userRatings('912-bart').then((ratings) => console.log(ratings));
     rating: 5,
     url: 'https://www.csfd.cz/film/812944-david-attenborough-zivot-na-nasi-planete/',
     date: '01.11.2020',
-    overallRating: 1
+    colorRating: 'good'
   },
   {
     title: 'Coronation',
@@ -126,7 +126,7 @@ csfd.userRatings('912-bart').then((ratings) => console.log(ratings));
     rating: 4,
     url: 'https://www.csfd.cz/film/912552-coronation/',
     date: '28.10.2020',
-    overallRating: 1
+    colorRating: 'good'
   }
 ];
 ```

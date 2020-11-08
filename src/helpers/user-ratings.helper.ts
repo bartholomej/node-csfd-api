@@ -1,5 +1,11 @@
 import { HTMLElement } from 'node-html-parser';
-import { CSFDFilmOverallRating, CSFDFilmTypes, CSFDStars } from '../interfaces/global';
+import { CSFDColorRating, CSFDFilmTypes, CSFDStars } from '../interfaces/global';
+import { parseIdFromUrl } from './global.helper';
+
+export const getId = (el: HTMLElement): number => {
+  const url = el.querySelector('td a.film').rawAttributes.href;
+  return parseIdFromUrl(url);
+};
 
 export const getRating = (el: HTMLElement): CSFDStars => {
   const ratingText = el.querySelector('td .rating').attributes.alt;
@@ -20,8 +26,8 @@ export const getYear = (el: HTMLElement): number => {
   return +el.querySelector('td .film-year').innerText.slice(1, -1);
 };
 
-export const getOverallRating = (el: HTMLElement): CSFDFilmOverallRating => {
-  return +el.querySelector('td a.film').classNames[1].slice(1, 2) as CSFDFilmOverallRating;
+export const getColorRating = (el: HTMLElement): CSFDColorRating => {
+  return parseColor(+el.querySelector('td a.film').classNames[1].slice(1, 2));
 };
 
 export const getDate = (el: HTMLElement): string => {
@@ -31,4 +37,19 @@ export const getDate = (el: HTMLElement): string => {
 export const getUrl = (el: HTMLElement): string => {
   const url = el.querySelector('td a.film').rawAttributes.href;
   return `https://www.csfd.cz${url}`;
+};
+
+export const parseColor = (quality: number): CSFDColorRating => {
+  switch (quality) {
+    case 0:
+      return 'unknown';
+    case 1:
+      return 'good';
+    case 2:
+      return 'average';
+    case 3:
+      return 'bad';
+    default:
+      return 'unknown';
+  }
 };
