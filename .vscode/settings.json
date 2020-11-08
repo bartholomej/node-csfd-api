@@ -1,12 +1,4 @@
 {
-  "eslint.validate": [
-    "javascript",
-    {
-      "language": "typescript",
-      "autoFix": true
-    }
-  ],
-  "eslint.autoFixOnSave": true,
   "workbench.colorCustomizations": {
     "statusBar.background": "#000"
   },

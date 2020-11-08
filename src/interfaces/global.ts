@@ -1,6 +1,6 @@
 export interface CSFDScreening {
   title: string;
-  year: number;
+  year: number | string;
   url: string;
   type: CSFDFilmTypes;
   /**
