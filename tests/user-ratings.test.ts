@@ -4,10 +4,10 @@ import {
   getColorRating,
   getDate,
   getId,
-  getRating,
   getTitle,
   getType,
   getUrl,
+  getUserRating,
   getYear
 } from '../src/helpers/user-ratings.helper';
 import { CSFDColorRating, CSFDFilmTypes, CSFDStars } from '../src/interfaces/global';
@@ -18,15 +18,15 @@ const movies: HTMLElement[] = items.querySelectorAll('.ui-table-list tbody tr');
 
 describe('Get Ratings', () => {
   test('First rating', () => {
-    const movie = getRating(movies[0]);
+    const movie = getUserRating(movies[0]);
     expect(movie).toEqual<CSFDStars>(4);
   });
   test('Last rating', () => {
-    const movie = getRating(movies[movies.length - 1]);
+    const movie = getUserRating(movies[movies.length - 1]);
     expect(movie).toEqual<CSFDStars>(3);
   });
   test('Zero Rating', () => {
-    const movie = getRating(movies[35]);
+    const movie = getUserRating(movies[35]);
     expect(movie).toEqual<CSFDStars>(0);
   });
 });

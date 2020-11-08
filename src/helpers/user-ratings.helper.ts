@@ -7,7 +7,7 @@ export const getId = (el: HTMLElement): number => {
   return parseIdFromUrl(url);
 };
 
-export const getRating = (el: HTMLElement): CSFDStars => {
+export const getUserRating = (el: HTMLElement): CSFDStars => {
   const ratingText = el.querySelector('td .rating').attributes.alt;
   const rating = ratingText ? ratingText.length : 0;
   return rating as CSFDStars;

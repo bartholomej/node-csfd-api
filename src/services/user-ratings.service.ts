@@ -4,10 +4,10 @@ import {
   getColorRating,
   getDate,
   getId,
-  getRating,
   getTitle,
   getType,
   getUrl,
+  getUserRating,
   getYear
 } from '../helpers/user-ratings.helper';
 import { CSFDColorRating, CSFDFilmTypes, CSFDStars } from '../interfaces/global';
@@ -68,8 +68,8 @@ export class UserRatingsScraper {
       type: getType(el),
       url: getUrl(el),
       colorRating: getColorRating(el) as CSFDColorRating,
-      date: getDate(el),
-      rating: getRating(el) as CSFDStars
+      userDate: getDate(el),
+      userRating: getUserRating(el) as CSFDStars
     });
   }
 }
