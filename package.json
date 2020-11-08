@@ -44,13 +44,13 @@
     "typescript": "^4.0.5"
   },
   "repository": {
-    "url": "git+https://github.com/bartholomej/csfd-ratings.git",
+    "url": "git+https://github.com/bartholomej/node-csfd-api.git",
     "type": "git"
   },
   "bugs": {
-    "url": "https://github.com/bartholomej/csfd-ratings/issues"
+    "url": "https://github.com/bartholomej/node-csfd-api/issues"
   },
-  "homepage": "https://github.com/bartholomej/csfd-ratings#readme",
+  "homepage": "https://github.com/bartholomej/node-csfd-api#readme",
   "husky": {
     "hooks": {
       "pre-commit": "pretty-quick --staged && yarn run lint"
@@ -58,9 +58,13 @@
   },
   "keywords": [
     "csfd",
+    "čsfd",
     "ratings",
     "movies",
     "films",
+    "nodejs",
+    "node",
+    "typescript",
     "scraper",
     "parser",
     "api"
