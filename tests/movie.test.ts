@@ -106,6 +106,7 @@ describe('Get people', () => {
     const movie = getDirectors(moviePage);
     expect(movie).toEqual<CSFDCreators[]>([
       {
+        id: 87470,
         name: 'S. Craig Zahler',
         url: 'https://www.csfd.cz/tvurce/87470-s-craig-zahler/'
       }
@@ -115,6 +116,7 @@ describe('Get people', () => {
     const movie = getGroup(moviePage, 'Scénář');
     expect(movie.slice(0, 1)).toEqual<CSFDCreators[]>([
       {
+        id: 87470,
         name: 'S. Craig Zahler',
         url: 'https://www.csfd.cz/tvurce/87470-s-craig-zahler/'
       }
@@ -123,13 +125,14 @@ describe('Get people', () => {
   test('Music composers', () => {
     const movie = getGroup(moviePage, 'Hudba');
     expect(movie.slice(0, 1)).toEqual<CSFDCreators[]>([
-      { name: 'Jeff Herriott', url: 'https://www.csfd.cz/tvurce/203209-jeff-herriott/' }
+      { id: 203209, name: 'Jeff Herriott', url: 'https://www.csfd.cz/tvurce/203209-jeff-herriott/' }
     ]);
   });
   test('Actors', () => {
     const movie = getGroup(moviePage, 'Hrají');
     expect(movie.slice(0, 1)).toEqual<CSFDCreators[]>([
       {
+        id: 1,
         name: 'Mel Gibson',
         url: 'https://www.csfd.cz/tvurce/1-mel-gibson/'
       }

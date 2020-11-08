@@ -65,6 +65,7 @@ export const parsePeople = (el: HTMLElement): CSFDCreators[] => {
   const people = el.querySelectorAll('a');
   return people.map((person) => {
     return {
+      id: parseIdFromUrl(person.attributes.href),
       name: person.innerText.trim(),
       url: `https://www.csfd.cz${person.attributes.href}`
     };

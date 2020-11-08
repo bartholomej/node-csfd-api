@@ -61,12 +61,14 @@ csfd.movie('535121').then((movie) => console.log(movie));
   poster: '//img.csfd.cz/files/images/film/posters/163/579/163579352_bf8737.jpg?h180',
   directors: [
     {
+      id: 87470,
       name: 'S. Craig Zahler',
       url: 'https://www.csfd.cz/tvurce/87470-s-craig-zahler/'
     }
   ],
   actors: [
     {
+      id: 1,
       name: 'Mel Gibson',
       url: 'https://www.csfd.cz/tvurce/1-mel-gibson/'
     },
@@ -75,12 +77,14 @@ csfd.movie('535121').then((movie) => console.log(movie));
   basedOn: [],
   writers: [
     {
+      id: 87470,
       name: 'S. Craig Zahler',
       url: 'https://www.csfd.cz/tvurce/87470-s-craig-zahler/'
     }
   ],
   music: [
     {
+      id: 203209,
       name: 'Jeff Herriott',
       url: 'https://www.csfd.cz/tvurce/203209-jeff-herriott/'
     },
@@ -88,6 +92,7 @@ csfd.movie('535121').then((movie) => console.log(movie));
   ],
   producers: [
     {
+      id: 320006
       name: 'Sefton Fincham',
       url: 'https://www.csfd.cz/tvurce/320006-sefton-fincham/'
     },

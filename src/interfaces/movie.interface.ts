@@ -20,6 +20,14 @@ export interface CSFDOtherTitles {
 }
 
 export interface CSFDCreators {
+  /**
+   * CSFD person ID.
+   *
+   * You can always assemble url from ID like this:
+   *
+   * `https://www.csfd.cz/tvurce/${id}`
+   */
+  id: number;
   name: string;
   url: string;
 }
