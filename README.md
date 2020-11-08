@@ -26,6 +26,76 @@ npm install node-csfd-api
 
 ## Usage
 
+### Movie
+
+Get info about [this movie](https://www.csfd.cz/film/535121-na-spatne-strane/komentare/)
+
+```javascript
+import { csfd } from 'node-csfd-api';
+
+csfd.movie('535121').then((movie) => console.log(movie));
+```
+
+#### Results
+
+```javascript
+{
+  title: 'Na špatné straně',
+  year: '2018',
+  descriptions: [
+    'Otupělý policejní veterán Ridgeman (Mel Gibson)...',
+    'Brett je policajt tesne ...'
+  ],
+  genres: [ 'Krimi', 'Drama', 'Thriller' ],
+  type: 'film',
+  url: 'https://www.csfd.cz/film/535121',
+  origins: [ 'USA', 'Kanada' ],
+  overallRating: 3,
+  otherTitles: [
+    { country: 'USA', title: 'Dragged Across Concrete' },
+    { country: 'Kanada', title: 'Dragged Across Concrete' },
+    { country: 'Slovensko', title: 'Na zlej strane' },
+    { country: 'Austrálie', title: 'Dragged Across Concrete' },
+    { country: 'Velká Británie', title: 'Dragged Across Concrete' }
+  ],
+  poster: '//img.csfd.cz/files/images/film/posters/163/579/163579352_bf8737.jpg?h180',
+  directors: [
+    {
+      name: 'S. Craig Zahler',
+      url: 'https://www.csfd.cz/tvurce/87470-s-craig-zahler/'
+    }
+  ],
+  actors: [
+    {
+      name: 'Mel Gibson',
+      url: 'https://www.csfd.cz/tvurce/1-mel-gibson/'
+    },
+    ...
+  ],
+  basedOn: [],
+  writers: [
+    {
+      name: 'S. Craig Zahler',
+      url: 'https://www.csfd.cz/tvurce/87470-s-craig-zahler/'
+    }
+  ],
+  music: [
+    {
+      name: 'Jeff Herriott',
+      url: 'https://www.csfd.cz/tvurce/203209-jeff-herriott/'
+    },
+    ...
+  ],
+  producers: [
+    {
+      name: 'Sefton Fincham',
+      url: 'https://www.csfd.cz/tvurce/320006-sefton-fincham/'
+    },
+    ...
+  ]
+}
+```
+
 ### User Ratings
 
 Get all of [my ratings](https://www.csfd.cz/uzivatel/912-bart/hodnoceni/)
