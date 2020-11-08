@@ -4,10 +4,6 @@
     "lib": ["dom"],
     "types": ["node", "jest"],
     "baseUrl": "./src",
-    "paths": {
-      "@interfaces/*": ["interfaces/*"],
-      "@services/*": ["services/*"]
-    },
     "esModuleInterop": true,
     "module": "commonjs",
     "strictNullChecks": false,

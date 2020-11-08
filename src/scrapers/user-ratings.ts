@@ -1,5 +1,5 @@
 import { HTMLElement } from 'node-html-parser';
-import { CSFDFilmOverallRating, CSFDFilmTypes, CSFDStars } from './interfaces';
+import { CSFDFilmOverallRating, CSFDFilmTypes, CSFDStars } from '../interfaces/global';
 
 export const getRating = (el: HTMLElement): CSFDStars => {
   const ratingText = el.querySelector('td .rating').attributes.alt;

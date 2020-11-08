@@ -1,10 +1,8 @@
-export interface CSFDUserRatings {
+export interface CSFDScreening {
   title: string;
   year: number;
   url: string;
-  type?: CSFDFilmTypes;
-  rating: CSFDStars;
-  date?: string; // TODO datetime
+  type: CSFDFilmTypes;
   /**
    * Overall aggregated rating. (On the web usually represented by colors).
    *

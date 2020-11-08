@@ -1,6 +1,4 @@
-import { Csfd } from './src';
-
-const csfd = new Csfd();
+import { csfd } from './src';
 
 // Exclude seasons and episodes
 csfd
@@ -12,4 +10,4 @@ csfd
 // Only TV series
 // csfd
 //   .userRatings('912-bart', { includesOnly: ['TV seriál'] })
-// .then((ratings) => ratings.map((x) => console.log(x.type)));
+//   .then((ratings) => ratings.map((x) => console.log(x.type)));

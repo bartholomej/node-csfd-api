@@ -1,5 +1,7 @@
-import fetch from 'cross-fetch';
 import { HTMLElement, parse } from 'node-html-parser';
+import { fetchUserRatings } from '../fetchers';
+import { CSFDFilmOverallRating, CSFDFilmTypes, CSFDStars } from '../interfaces/global';
+import { CSFDUserRatings } from '../interfaces/user-ratings';
 import {
   getDate,
   getOverallRating,
@@ -8,17 +10,10 @@ import {
   getType,
   getUrl,
   getYear
-} from './extractors';
-import { CSFDFilmOverallRating, CSFDFilmTypes, CSFDStars, CSFDUserRatings } from './interfaces';
-import { userRatingsUrl } from './vars';
+} from '../scrapers/user-ratings';
 
-export class Csfd {
+export class UserRatingsScraper {
   private films: CSFDUserRatings[] = [];
-  private async fetchUserRatings(user: string | number): Promise<string> {
-    const url = userRatingsUrl(user);
-    const response = await fetch(url);
-    return await response.text();
-  }
 
   public async userRatings(
     user: string | number,
@@ -27,7 +22,7 @@ export class Csfd {
       excludes?: CSFDFilmTypes[];
     }
   ): Promise<CSFDUserRatings[]> {
-    const response = await this.fetchUserRatings(user);
+    const response = await fetchUserRatings(user);
 
     const items = parse(response);
     const movies = items.querySelectorAll('.ui-table-list tbody tr');
@@ -55,7 +50,7 @@ export class Csfd {
           this.buildUserRatings(el);
         }
       } else {
-        // without filtering
+        // Without filtering
         this.buildUserRatings(el);
       }
     }
