@@ -1,3 +1,8 @@
+[![npm version](https://badge.fury.io/js/node-csfd-api.svg)](https://badge.fury.io/js/node-csfd-api)
+[![Package License](https://img.shields.io/npm/l/node-csfd-api.svg)](https://www.npmjs.com/node-csfd-api)
+[![Build & Publish](https://github.com/bartholomej/node-csfd-api/workflows/Build%20&%20Publish/badge.svg)](https://github.com/bartholomej/node-csfd-api/actions)
+[![codecov](https://codecov.io/gh/bartholomej/node-csfd-api/branch/master/graph/badge.svg?token=YQH9UoVrGP)](https://codecov.io/gh/bartholomej/node-csfd-api)
+
 # CSFD API
 
 > Tiny NPM library for scraping CSFD `[work in progress]`
@@ -26,9 +31,7 @@ npm install node-csfd-api
 Get all of [my ratings](https://www.csfd.cz/uzivatel/912-bart/hodnoceni/)
 
 ```javascript
-import { Csfd } from 'node-csfd-api';
-
-const csfd = new Csfd();
+import { csfd } from 'node-csfd-api';
 
 csfd.userRatings('912-bart').then((ratings) => console.log(ratings));
 ```

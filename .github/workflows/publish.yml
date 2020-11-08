@@ -33,8 +33,11 @@ jobs:
       - name: Build app
         run: yarn build
 
-      # - name: Run tests
-      #   run: yarn test
+      - name: Run tests
+        run: yarn test --coverage true
+
+      - name: Upload code coverage
+        run: bash <(curl -s https://codecov.io/bash)
 
       - name: Publish NPM
         run: npm publish --folder dist --access public
