@@ -1,13 +1,18 @@
-import { CSFDCreatoreGroups, CSFDCreators, CSFDOtherTitles } from 'interfaces/movie.interface';
+import {
+  CSFDCreatoreGroups,
+  CSFDCreators,
+  CSFDGenres,
+  CSFDOtherTitles
+} from 'interfaces/movie.interface';
 import { HTMLElement } from 'node-html-parser';
 
 export const getTitle = (el: HTMLElement): string => {
   return el.querySelector('h1').innerText.split(`(`)[0].trim();
 };
 
-export const getGenres = (el: HTMLElement): string[] => {
+export const getGenres = (el: HTMLElement): CSFDGenres[] => {
   const genresRaw = el.querySelector('.genre').text;
-  return genresRaw.split(' / ');
+  return genresRaw.split(' / ') as CSFDGenres[];
 };
 
 export const getOrigins = (el: HTMLElement): string[] => {

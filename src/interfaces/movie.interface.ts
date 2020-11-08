@@ -11,7 +11,7 @@ export interface CSFDMovie extends CSFDScreening {
   writers?: CSFDCreators[];
   music?: CSFDCreators[];
   producers?: CSFDCreators[];
-  genres: string[]; // TODO listo of genres(?)
+  genres: CSFDGenres[] | string[];
 }
 
 export interface CSFDOtherTitles {
@@ -23,6 +23,50 @@ export interface CSFDCreators {
   name: string;
   url: string;
 }
+
+export type CSFDGenres =
+  | 'Akční'
+  | 'Animovaný'
+  | 'Dobrodružný'
+  | 'Dokumentární'
+  | 'Drama'
+  | 'Experimentální'
+  | 'Fantasy'
+  | 'Film-Noir'
+  | 'Historický'
+  | 'Horor'
+  | 'Hudební'
+  | 'IMAX'
+  | 'Katastrofický'
+  | 'Komedie'
+  | 'Krátkometrážní'
+  | 'Krimi'
+  | 'Loutkový'
+  | 'Muzikál'
+  | 'Mysteriózní'
+  | 'Naučný'
+  | 'Podobenství'
+  | 'Poetický'
+  | 'Pohádka'
+  | 'Povídkový'
+  | 'Psychologický'
+  | 'Publicistický'
+  | 'Reality-TV'
+  | 'Road movie'
+  | 'Rodinný'
+  | 'Romantický'
+  | 'Sci-Fi'
+  | 'Soutěžní'
+  | 'Sportovní'
+  | 'Stand-up'
+  | 'Talk-show'
+  | 'Taneční'
+  | 'Telenovela'
+  | 'Thriller'
+  | 'Válečný'
+  | 'Western'
+  | 'Zábavný'
+  | 'Životopisný';
 
 export type CSFDCreatoreGroups =
   | 'Režie'
