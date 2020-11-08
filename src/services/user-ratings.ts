@@ -27,13 +27,15 @@ export class UserRatingsScraper {
     const items = parse(response);
     const movies = items.querySelectorAll('.ui-table-list tbody tr');
 
-    if (config?.includesOnly?.length && config?.excludes?.length) {
-      console.warn(
-        `node-csfd-api:
+    if (config) {
+      if (config.includesOnly?.length && config.excludes?.length) {
+        console.warn(
+          `node-csfd-api:
         You can not use both parameters 'includesOnly' and 'excludes'.
         Parameter 'includesOnly' will be used now:`,
-        config.includesOnly
-      );
+          config.includesOnly
+        );
+      }
     }
 
     for (const el of movies) {

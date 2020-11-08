@@ -192,7 +192,7 @@ export default {
   // Whether to use watchman for file crawling
   // watchman: true,
 
-  roots: ['<rootDir>/src'],
+  roots: ['<rootDir>/tests'],
   transform: {
     '^.+\\.tsx?$': 'ts-jest'
   },

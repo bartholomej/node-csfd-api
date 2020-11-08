@@ -29,6 +29,6 @@ export const getDate = (el: HTMLElement): string => {
 };
 
 export const getUrl = (el: HTMLElement): string => {
-  const url = el.querySelector('td a.film')?.rawAttributes.href;
+  const url = el.querySelector('td a.film').rawAttributes.href;
   return `https://www.csfd.cz${url}`;
 };
