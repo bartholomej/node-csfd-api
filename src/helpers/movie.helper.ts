@@ -1,6 +1,6 @@
 import {
-  CSFDCreatoreGroups,
-  CSFDCreators,
+  CSFDCreator,
+  CSFDCreatorGroups,
   CSFDGenres,
   CSFDOtherTitles
 } from 'interfaces/movie.interface';
@@ -55,13 +55,13 @@ export const getDescriptions = (el: HTMLElement): string[] => {
   return el.querySelectorAll('#plots ul li').map((desc) => desc.text.trim());
 };
 
-export const getDirectors = (el: HTMLElement): CSFDCreators[] => {
+export const getDirectors = (el: HTMLElement): CSFDCreator[] => {
   const creators = el.querySelectorAll('.creators span');
   const directorsSpan = creators.filter((creator) => creator.attributes.itemprop === 'director')[0];
   return (directorsSpan && parsePeople(directorsSpan)) || [];
 };
 
-export const parsePeople = (el: HTMLElement): CSFDCreators[] => {
+export const parsePeople = (el: HTMLElement): CSFDCreator[] => {
   const people = el.querySelectorAll('a');
   return people.map((person) => {
     return {
@@ -72,7 +72,7 @@ export const parsePeople = (el: HTMLElement): CSFDCreators[] => {
   });
 };
 
-export const getGroup = (el: HTMLElement, group: CSFDCreatoreGroups): CSFDCreators[] => {
+export const getGroup = (el: HTMLElement, group: CSFDCreatorGroups): CSFDCreator[] => {
   const creators = el.querySelectorAll('.creators h4');
   const element = creators.filter((elem) => elem.text.trim().includes(group))[0];
   if (element?.parentNode) {

@@ -5,13 +5,21 @@ export interface CSFDMovie extends CSFDScreening {
   otherTitles: CSFDOtherTitles[];
   origins: string[];
   descriptions: string[];
-  directors: CSFDCreators[];
-  actors: CSFDCreators[];
-  basedOn: CSFDCreators[];
-  writers: CSFDCreators[];
-  music: CSFDCreators[];
-  producers: CSFDCreators[];
   genres: CSFDGenres[] | string[];
+  creators: CSFDCreators;
+}
+
+export interface CSFDCreators {
+  directors: CSFDCreator[];
+  writers: CSFDCreator[];
+  cinematography: CSFDCreator[];
+  music: CSFDCreator[];
+  actors: CSFDCreator[];
+  basedOn: CSFDCreator[];
+  producers: CSFDCreator[];
+  filmEditing: CSFDCreator[];
+  costumeDesign: CSFDCreator[];
+  productionDesign: CSFDCreator[];
 }
 
 export interface CSFDOtherTitles {
@@ -19,7 +27,7 @@ export interface CSFDOtherTitles {
   title: string;
 }
 
-export interface CSFDCreators {
+export interface CSFDCreator {
   /**
    * CSFD person ID.
    *
@@ -76,7 +84,7 @@ export type CSFDGenres =
   | 'Zábavný'
   | 'Životopisný';
 
-export type CSFDCreatoreGroups =
+export type CSFDCreatorGroups =
   | 'Režie'
   | 'Scénář'
   | 'Kamera'

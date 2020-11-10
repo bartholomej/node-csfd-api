@@ -12,7 +12,7 @@ import {
   getType,
   getYear
 } from '../src/helpers/movie.helper';
-import { CSFDCreators, CSFDOtherTitles } from '../src/interfaces/movie.interface';
+import { CSFDCreator, CSFDOtherTitles } from '../src/interfaces/movie.interface';
 import { movieMock } from './mocks/movie1.html';
 
 const movieNode = parse(movieMock);
@@ -103,7 +103,7 @@ describe('Get year', () => {
 describe('Get people', () => {
   test('directors', () => {
     const movie = getDirectors(moviePage);
-    expect(movie).toEqual<CSFDCreators[]>([
+    expect(movie).toEqual<CSFDCreator[]>([
       {
         id: 87470,
         name: 'S. Craig Zahler',
@@ -113,7 +113,7 @@ describe('Get people', () => {
   });
   test('Screenwriters', () => {
     const movie = getGroup(moviePage, 'Scénář');
-    expect(movie.slice(0, 1)).toEqual<CSFDCreators[]>([
+    expect(movie.slice(0, 1)).toEqual<CSFDCreator[]>([
       {
         id: 87470,
         name: 'S. Craig Zahler',
@@ -123,13 +123,13 @@ describe('Get people', () => {
   });
   test('Music composers', () => {
     const movie = getGroup(moviePage, 'Hudba');
-    expect(movie.slice(0, 1)).toEqual<CSFDCreators[]>([
+    expect(movie.slice(0, 1)).toEqual<CSFDCreator[]>([
       { id: 203209, name: 'Jeff Herriott', url: 'https://www.csfd.cz/tvurce/203209-jeff-herriott/' }
     ]);
   });
   test('Actors', () => {
     const movie = getGroup(moviePage, 'Hrají');
-    expect(movie.slice(0, 1)).toEqual<CSFDCreators[]>([
+    expect(movie.slice(0, 1)).toEqual<CSFDCreator[]>([
       {
         id: 1,
         name: 'Mel Gibson',
@@ -139,6 +139,6 @@ describe('Get people', () => {
   });
   test('Based on', () => {
     const movie = getGroup(moviePage, 'Předloha');
-    expect(movie.slice(0, 1)).toEqual<CSFDCreators[]>([]);
+    expect(movie.slice(0, 1)).toEqual<CSFDCreator[]>([]);
   });
 });
