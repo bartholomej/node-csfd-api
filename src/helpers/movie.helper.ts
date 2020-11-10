@@ -1,3 +1,4 @@
+import { CSFDColorRating } from 'interfaces/global';
 import {
   CSFDCreator,
   CSFDCreatorGroups,
@@ -25,6 +26,31 @@ export const getOrigins = (el: HTMLElement): string[] => {
   const originsRaw = el.querySelector('.origin').text;
   const origins = originsRaw.split(',')[0];
   return origins.split(' / ');
+};
+
+export const getColorRating = (bodyClasses: string[]): CSFDColorRating => {
+  const colorRatingClass = bodyClasses.find((cls) => cls.includes('th'));
+  switch (colorRatingClass) {
+    case 'th-0':
+      return 'unknown';
+    case 'th-1':
+      return 'good';
+    case 'th-2':
+      return 'average';
+    case 'th-3':
+      return 'bad';
+    default:
+      return 'unknown';
+  }
+};
+
+export const getRating = (el: HTMLElement): number => {
+  const ratingRaw = el.querySelector('#rating .average').text;
+  if (ratingRaw !== '') {
+    return +ratingRaw.replace(/%/g, '');
+  } else {
+    return null;
+  }
 };
 
 export const getYear = (el: HTMLElement): string | number => {

@@ -3,6 +3,7 @@ import { CSFDMovie } from 'interfaces/movie.interface';
 import { HTMLElement, parse } from 'node-html-parser';
 import { fetchMovie } from '../fetchers';
 import {
+  getColorRating,
   getDescriptions,
   getDirectors,
   getGenres,
@@ -11,6 +12,7 @@ import {
   getOrigins,
   getOtherTitles,
   getPoster,
+  getRating,
   getTitle,
   getType,
   getYear
@@ -25,11 +27,12 @@ export class MovieScraper {
 
     const movieHtml = parse(response);
     const movieNode = movieHtml.querySelector('#pg-web-film');
-    this.buildMovie(movieNode, movie);
+    const bodyClasses = movieHtml.querySelector('body').classNames;
+    this.buildMovie(movieNode, movie, bodyClasses);
     return this.film;
   }
 
-  private buildMovie(el: HTMLElement, movie: string | number) {
+  private buildMovie(el: HTMLElement, movie: string | number, bodyClasses: string[]) {
     this.film = {
       id: getId(el),
       title: getTitle(el),
@@ -39,7 +42,8 @@ export class MovieScraper {
       type: getType(el) as CSFDFilmTypes,
       url: movieUrl(movie),
       origins: getOrigins(el),
-      colorRating: 'unknown', // TODO
+      colorRating: getColorRating(bodyClasses),
+      rating: getRating(el),
       otherTitles: getOtherTitles(el),
       poster: getPoster(el),
       creators: {

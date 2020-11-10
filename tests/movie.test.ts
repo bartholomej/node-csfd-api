@@ -1,5 +1,6 @@
 import { HTMLElement, parse } from 'node-html-parser';
 import {
+  getColorRating,
   getDescriptions,
   getDirectors,
   getGenres,
@@ -8,15 +9,18 @@ import {
   getOrigins,
   getOtherTitles,
   getPoster,
+  getRating,
   getTitle,
   getType,
   getYear
 } from '../src/helpers/movie.helper';
+import { CSFDColorRating } from '../src/interfaces/global';
 import { CSFDCreator, CSFDOtherTitles } from '../src/interfaces/movie.interface';
 import { movieMock } from './mocks/movie1.html';
 
 const movieNode = parse(movieMock);
 const moviePage: HTMLElement = movieNode.querySelector('#pg-web-film');
+const bodyClasses = movieNode.querySelector('body').classNames;
 
 describe('Get ID', () => {
   test('Movie ID', () => {
@@ -97,6 +101,17 @@ describe('Get year', () => {
   test('Year', () => {
     const movie = getYear(moviePage);
     expect(movie).toEqual<string | number>('2018');
+  });
+});
+
+describe('Get ratings', () => {
+  test('Rating', () => {
+    const movie = getRating(moviePage);
+    expect(movie).toEqual<number>(73);
+  });
+  test('Color Rating', () => {
+    const movie = getColorRating(bodyClasses);
+    expect(movie).toEqual<CSFDColorRating>('good');
   });
 });
 
