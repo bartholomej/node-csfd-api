@@ -51,6 +51,7 @@ csfd.movie('535121').then((movie) => console.log(movie));
   url: 'https://www.csfd.cz/film/535121',
   origins: [ 'USA', 'Kanada' ],
   colorRating: 'good',
+  rating: 73,
   otherTitles: [
     { country: 'USA', title: 'Dragged Across Concrete' },
     { country: 'Kanada', title: 'Dragged Across Concrete' },
@@ -92,7 +93,7 @@ csfd.movie('535121').then((movie) => console.log(movie));
   ],
   producers: [
     {
-      id: 320006
+      id: 320006,
       name: 'Sefton Fincham',
       url: 'https://www.csfd.cz/tvurce/320006-sefton-fincham/'
     },
@@ -120,18 +121,18 @@ csfd.userRatings('912-bart').then((ratings) => console.log(ratings));
     year: 2020,
     type: 'film',
     url: 'https://www.csfd.cz/film/812944-david-attenborough-zivot-na-nasi-planete/',
-    colorRating: 'good'
+    colorRating: 'good',
     userDate: '01.11.2020',
-    userRating: 5,
+    userRating: 5
   },
   {
     title: 'Coronation',
     year: 2020,
     type: 'film',
     url: 'https://www.csfd.cz/film/912552-coronation/',
-    colorRating: 'good'
+    colorRating: 'good',
     userDate: '28.10.2020',
-    userRating: 4,
+    userRating: 4
   }
 ];
 ```
