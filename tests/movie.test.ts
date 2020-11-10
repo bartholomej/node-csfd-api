@@ -1,4 +1,3 @@
-import { readFileSync } from 'fs';
 import { HTMLElement, parse } from 'node-html-parser';
 import {
   getDescriptions,
@@ -14,9 +13,9 @@ import {
   getYear
 } from '../src/helpers/movie.helper';
 import { CSFDCreators, CSFDOtherTitles } from '../src/interfaces/movie.interface';
+import { movieMock } from './mocks/movie1.html';
 
-const response = readFileSync(`${__dirname}/mocks/movie1.html`, 'utf8');
-const movieNode = parse(response);
+const movieNode = parse(movieMock);
 const moviePage: HTMLElement = movieNode.querySelector('#pg-web-film');
 
 describe('Get ID', () => {

@@ -1,4 +1,3 @@
-import { readFileSync } from 'fs';
 import { HTMLElement, parse } from 'node-html-parser';
 import {
   getColorRating,
@@ -11,9 +10,9 @@ import {
   getYear
 } from '../src/helpers/user-ratings.helper';
 import { CSFDColorRating, CSFDFilmTypes, CSFDStars } from '../src/interfaces/global';
+import { userRatingsMock } from './mocks/userRatings.html';
 
-const response = readFileSync(`${__dirname}/mocks/userRatings.html`, 'utf8');
-const items = parse(response);
+const items = parse(userRatingsMock);
 const movies: HTMLElement[] = items.querySelectorAll('.ui-table-list tbody tr');
 
 describe('Get Ratings', () => {
