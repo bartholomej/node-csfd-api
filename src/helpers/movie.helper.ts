@@ -112,3 +112,8 @@ export const getType = (el: HTMLElement): string => {
   const type = el.querySelector('.film-type');
   return type?.innerText?.replace(/[{()}]/g, '') || 'film';
 };
+
+export const getTags = (el: HTMLElement): string[] => {
+  const tagsRaw = el.querySelectorAll('.tags .content a');
+  return tagsRaw.map((elem) => elem.text.trim());
+};

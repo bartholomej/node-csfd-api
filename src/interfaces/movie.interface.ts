@@ -8,6 +8,7 @@ export interface CSFDMovie extends CSFDScreening {
   descriptions: string[];
   genres: CSFDGenres[] | string[];
   creators: CSFDCreators;
+  tags: string[];
 }
 
 export interface CSFDCreators {

@@ -10,6 +10,7 @@ import {
   getOtherTitles,
   getPoster,
   getRating,
+  getTags,
   getTitle,
   getType,
   getYear
@@ -49,6 +50,23 @@ describe('Get Poster', () => {
     expect(movie).toEqual<string>(
       '//img.csfd.cz/files/images/film/posters/163/579/163579352_bf8737.jpg?h180'
     );
+  });
+});
+
+describe('Get additional info', () => {
+  test('Get tags', () => {
+    const item = getTags(moviePage);
+    expect(item).toEqual<string[]>([
+      'policie',
+      'zbraně',
+      'město',
+      'zloděj',
+      'rukojmí',
+      'sledování',
+      'podsvětí',
+      'přepadení',
+      'banka'
+    ]);
   });
 });
 
