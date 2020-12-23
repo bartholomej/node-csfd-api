@@ -74,7 +74,14 @@ export const getOtherTitles = (el: HTMLElement): CSFDOtherTitles[] => {
 };
 
 export const getPoster = (el: HTMLElement): string => {
-  return el.querySelector('.film-posters img').attributes.src;
+  const poster = el.querySelector('.film-posters img');
+  // Resolve empty image
+  if (poster.classNames?.includes('empty-image')) {
+    return null;
+  } else {
+    // Full sized image (not thumb)
+    return poster.attributes.src.split('?')[0];
+  }
 };
 
 export const getDescriptions = (el: HTMLElement): string[] => {
