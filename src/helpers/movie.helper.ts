@@ -79,12 +79,11 @@ export const getPoster = (el: HTMLElement): string => {
 
 export const getDescriptions = (el: HTMLElement): string[] => {
   // TODO more plots
-  return [
-    el
-      .querySelector('.body--plots .plot-preview p')
-      .text.trim()
-      .replace(/(\r\n|\n|\r|\t)/gm, '')
-  ];
+  const plot = el
+    .querySelector('.body--plots .plot-preview p')
+    ?.text.trim()
+    .replace(/(\r\n|\n|\r|\t)/gm, '');
+  return plot ? [plot] : [];
 };
 
 export const getDirectors = (el: HTMLElement): CSFDCreator[] => {
