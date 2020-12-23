@@ -1,53 +1,57 @@
+import { Colors } from 'interfaces/user-ratings.interface';
 import { HTMLElement } from 'node-html-parser';
 import { CSFDColorRating, CSFDFilmTypes, CSFDStars } from '../interfaces/global';
 import { parseIdFromUrl } from './global.helper';
 
 export const getId = (el: HTMLElement): number => {
-  const url = el.querySelector('td a.film').rawAttributes.href;
+  const url = el.querySelector('td.name .film-title-name').attributes.href;
   return parseIdFromUrl(url);
 };
 
 export const getUserRating = (el: HTMLElement): CSFDStars => {
-  const ratingText = el.querySelector('td .rating').attributes.alt;
-  const rating = ratingText ? ratingText.length : 0;
+  const ratingText = el.querySelector('td.star-rating-only .stars').classNames.pop();
+
+  const rating = ratingText.includes('stars-') ? +ratingText.split('-').pop() : 0;
   return rating as CSFDStars;
 };
 
 export const getType = (el: HTMLElement): CSFDFilmTypes => {
-  const typeText = el.querySelector('td .film-type');
-  return (typeText ? typeText.innerText.slice(1, -1) : 'film') as CSFDFilmTypes;
+  const typeText = el.querySelectorAll('td.name .film-title-info .info');
+
+  return (typeText.length > 1 ? typeText[1].text.slice(1, -1) : 'film') as CSFDFilmTypes;
 };
 
 export const getTitle = (el: HTMLElement): string => {
-  return el.querySelector('td .film').text;
+  return el.querySelector('td.name .film-title-name').text;
 };
 
 export const getYear = (el: HTMLElement): number => {
-  return +el.querySelector('td .film-year').innerText.slice(1, -1);
+  return +el.querySelectorAll('td.name .film-title-info .info')[0].text.slice(1, -1);
 };
 
 export const getColorRating = (el: HTMLElement): CSFDColorRating => {
-  return parseColor(+el.querySelector('td a.film').classNames[1].slice(1, 2));
+  const color = parseColor(el.querySelector('td.name .icon').classNames.pop() as Colors);
+  return color;
 };
 
 export const getDate = (el: HTMLElement): string => {
-  return el.querySelectorAll('td')[2].rawText;
+  return el.querySelector('td.date-only').text.trim();
 };
 
 export const getUrl = (el: HTMLElement): string => {
-  const url = el.querySelector('td a.film').rawAttributes.href;
+  const url = el.querySelector('td.name .film-title-name').attributes.href;
   return `https://www.csfd.cz${url}`;
 };
 
-export const parseColor = (quality: number): CSFDColorRating => {
+export const parseColor = (quality: Colors): CSFDColorRating => {
   switch (quality) {
-    case 0:
+    case 'lightgrey':
       return 'unknown';
-    case 1:
+    case 'red':
       return 'good';
-    case 2:
+    case 'blue':
       return 'average';
-    case 3:
+    case 'black':
       return 'bad';
     default:
       return 'unknown';
