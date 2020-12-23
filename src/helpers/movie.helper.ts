@@ -45,8 +45,9 @@ export const getColorRating = (bodyClasses: string[]): CSFDColorRating => {
 
 export const getRating = (el: HTMLElement): number => {
   const ratingRaw = el.querySelector('.rating-average').text;
-  if (ratingRaw !== '') {
-    return +ratingRaw.replace(/%/g, '');
+  const rating = +ratingRaw?.replace(/%/g, '').trim();
+  if (Number.isInteger(rating)) {
+    return rating;
   } else {
     return null;
   }
