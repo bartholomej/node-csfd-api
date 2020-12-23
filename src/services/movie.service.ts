@@ -27,13 +27,20 @@ export class MovieScraper {
     const response = await fetchMovie(movie);
 
     const movieHtml = parse(response);
-    const movieNode = movieHtml.querySelector('#pg-web-film');
-    const bodyClasses = movieHtml.querySelector('body').classNames;
-    this.buildMovie(movieNode, movie, bodyClasses);
+
+    const pageClasses = movieHtml.querySelector('.page-content').classNames;
+    const asideNode = movieHtml.querySelector('.box-rating-container');
+    const movieNode = movieHtml.querySelector('.main-movie-profile');
+    this.buildMovie(movie, movieNode, asideNode, pageClasses);
     return this.film;
   }
 
-  private buildMovie(el: HTMLElement, movie: string | number, bodyClasses: string[]) {
+  private buildMovie(
+    movie: string | number,
+    el: HTMLElement,
+    elAside: HTMLElement,
+    pageClasses: string[]
+  ) {
     this.film = {
       id: getId(el),
       title: getTitle(el),
@@ -43,7 +50,7 @@ export class MovieScraper {
       type: getType(el) as CSFDFilmTypes,
       url: movieUrl(movie),
       origins: getOrigins(el),
-      colorRating: getColorRating(bodyClasses),
+      colorRating: getColorRating(pageClasses),
       rating: getRating(el),
       otherTitles: getOtherTitles(el),
       poster: getPoster(el),
@@ -54,12 +61,12 @@ export class MovieScraper {
         music: getGroup(el, 'Hudba'),
         actors: getGroup(el, 'Hrají'),
         basedOn: getGroup(el, 'Předloha'),
-        producers: getGroup(el, 'Producenti'),
+        producers: getGroup(el, 'Produkce'),
         filmEditing: getGroup(el, 'Střih'),
         costumeDesign: getGroup(el, 'Kostýmy'),
         productionDesign: getGroup(el, 'Scénografie')
       },
-      tags: getTags(el)
+      tags: getTags(elAside)
     };
   }
 }
