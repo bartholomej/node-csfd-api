@@ -10,7 +10,6 @@ import {
   getOtherTitles,
   getPoster,
   getRating,
-  getTags,
   getTitle,
   getType,
   getYear
@@ -20,8 +19,8 @@ import { CSFDCreator, CSFDOtherTitles } from '../src/interfaces/movie.interface'
 import { movieMock } from './mocks/movie1.html';
 
 const movieNode = parse(movieMock);
-const moviePage: HTMLElement = movieNode.querySelector('#pg-web-film');
-const bodyClasses = movieNode.querySelector('body').classNames;
+const moviePage: HTMLElement = movieNode.querySelector('.main-movie-profile');
+const bodyClasses = movieNode.querySelector('.page-content').classNames;
 
 describe('Get ID', () => {
   test('Movie ID', () => {
@@ -48,27 +47,28 @@ describe('Get Poster', () => {
   test('Movie poster', () => {
     const movie = getPoster(moviePage);
     expect(movie).toEqual<string>(
-      '//img.csfd.cz/files/images/film/posters/163/579/163579352_bf8737.jpg?h180'
+      '//image.pmgstatic.com/files/images/film/posters/163/579/163579352_bf8737.jpg'
     );
   });
 });
 
-describe('Get additional info', () => {
-  test('Get tags', () => {
-    const item = getTags(moviePage);
-    expect(item).toEqual<string[]>([
-      'policie',
-      'zbraně',
-      'město',
-      'zloděj',
-      'rukojmí',
-      'sledování',
-      'podsvětí',
-      'přepadení',
-      'banka'
-    ]);
-  });
-});
+// TODO
+// describe('Get additional info', () => {
+//   test('Get tags', () => {
+//     const item = getTags(moviePage);
+//     expect(item).toEqual<string[]>([
+//       'policie',
+//       'zbraně',
+//       'město',
+//       'zloděj',
+//       'rukojmí',
+//       'sledování',
+//       'podsvětí',
+//       'přepadení',
+//       'banka'
+//     ]);
+//   });
+// });
 
 describe('Get otherTitles', () => {
   test('otherTitles', () => {
@@ -94,9 +94,7 @@ describe('Get descriptions', () => {
   test('descriptions', () => {
     const movie = getDescriptions(moviePage);
     expect(movie).toEqual<string[]>([
-      'Otupělý policejní veterán Ridgeman (Mel Gibson) a jeho náladový mladší kolega Anthony (Vince Vaughn) jsou suspendováni ze služby poté, co do médií unikne videozáznam jejich svérázných metod. Bez prostředků a velkých šancí se oba zatrpklí vojáci vydají do kriminálního podsvětí, aby učinili spravedlnosti zadost. Mezitím je v jiné části města propuštěn z vězení mladý zločinec Henry Jones a zjišťuje, že jeho matce a postiženému bratrovi hrozí vystěhování. Ve snaze najít způsob, jak jim pomoci, se obrátí na kamaráda z dětství jménem Biscuit, který ho představí nelítostnému kriminálnímu bossovi, jehož ambiciózní plány jej postaví do přímého konfliktu s oběma policejními odpadlíky.(HBO Europe)',
-      'Dva až příliš horliví policisté jsou za překročení rámce svých povinností suspendováni ze služby. To jim ovšem nebrání, aby ve svém boji s podsvětím pokračovali na vlastní pěst a učinili spravedlnosti zadost. Krimi thriller s notnou dávkou násilí překračuje hranice žánru a poukazuje na problematiku přehnané politické korektnosti, která je v současném světě dovedena až ad absurdum.(Febiofest)',
-      'Brett je policajt tesne pred dôchodkom. So svojím mladším kolegom to pri jednom záťahu proti zločincom trochu preženú s násilím a nanešťastie sú pritom nakrútení. Výsledkom je šesťtýždňová nútená suspenzácia, ktorá ich pripraví o dosť peňazí. Nahnevaní na systém, ale stále rozhodnutí pokračovať v boji s podsvetím, sa rozhodnú zarobiť si peniaze inak. Plán je jednoduchý – okradnúť partiu zlodejov krátko po tom, ako vylúpi banku. Žiaľ, to čo vyzerá spočiatku jednoducho, sa v realite veľmi rýchlo skomplikuje a vidina ľahkého zárobku sa mení na jednu z najťažších výziev ich života. Po westerne a variácii na grindhouse si režisér tentoraz berie na paškál subžáner tzv. heist filmu, pričom si ho opäť pretvára na svoj obraz. Klasické žánrové formulky získavajú pod jeho taktovkou nové svieže podoby a až tarantinovsko absurdné a krvavé vyústenia.(Art Film Fest)'
+      'Otupělý policejní veterán Ridgeman (Mel Gibson) a jeho náladový mladší kolega Anthony (Vince Vaughn) jsou suspendováni ze služby poté, co do médií unikne videozáznam jejich svérázných metod. Bez prostředků a velkých šancí se oba zatrpklí vojáci vydají do kriminálního podsvětí, aby učinili spravedlnosti zadost. Mezitím je v jiné části města propuštěn z vězení mladý zločinec Henry Jones a zjišťuje, že jeho matce a postiženému bratrovi hrozí vystěhování. Ve snaze najít způsob, jak jim pomoci, se obrátí na kamaráda z dětství jménem Biscuit, který ho představí nelítostnému kriminálnímu bossovi, jehož ambiciózní plány jej postaví do přímého konfliktu s oběma policejními odpadlíky.(HBO Europe)'
     ]);
   });
 });
@@ -125,7 +123,7 @@ describe('Get year', () => {
 describe('Get ratings', () => {
   test('Rating', () => {
     const movie = getRating(moviePage);
-    expect(movie).toEqual<number>(73);
+    expect(movie).toEqual<number>(72);
   });
   test('Color Rating', () => {
     const movie = getColorRating(bodyClasses);
