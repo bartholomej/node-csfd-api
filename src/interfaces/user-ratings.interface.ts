@@ -5,4 +5,4 @@ export interface CSFDUserRatings extends CSFDScreening {
   userDate: string; // TODO datetime
 }
 
-export type Colors = 'lightgrey' | 'blue' | 'red' | 'black';
+export type Colors = 'lightgrey' | 'blue' | 'red' | 'grey';

@@ -51,7 +51,7 @@ export const parseColor = (quality: Colors): CSFDColorRating => {
       return 'good';
     case 'blue':
       return 'average';
-    case 'black':
+    case 'grey':
       return 'bad';
     default:
       return 'unknown';
