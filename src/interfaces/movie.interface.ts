@@ -92,7 +92,7 @@ export type CSFDCreatorGroups =
   | 'Kamera'
   | 'Hudba'
   | 'Hrají'
-  | 'Producenti'
+  | 'Produkce'
   | 'Střih'
   | 'Předloha'
   | 'Scénografie'

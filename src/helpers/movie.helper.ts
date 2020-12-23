@@ -9,7 +9,7 @@ import { HTMLElement } from 'node-html-parser';
 import { parseIdFromUrl } from './global.helper';
 
 export const getId = (el: HTMLElement): number => {
-  const url = el.querySelector('.navigation a').attributes.href;
+  const url = el.querySelector('.tabs .tab-nav-list a').attributes.href;
   return parseIdFromUrl(url);
 };
 
@@ -18,7 +18,7 @@ export const getTitle = (el: HTMLElement): string => {
 };
 
 export const getGenres = (el: HTMLElement): CSFDGenres[] => {
-  const genresRaw = el.querySelector('.genre').text;
+  const genresRaw = el.querySelector('.genres').text;
   return genresRaw.split(' / ') as CSFDGenres[];
 };
 
@@ -29,15 +29,14 @@ export const getOrigins = (el: HTMLElement): string[] => {
 };
 
 export const getColorRating = (bodyClasses: string[]): CSFDColorRating => {
-  const colorRatingClass = bodyClasses.find((cls) => cls.includes('th'));
-  switch (colorRatingClass) {
-    case 'th-0':
+  switch (bodyClasses[1]) {
+    case 'page-lightgrey':
       return 'unknown';
-    case 'th-1':
+    case 'page-red':
       return 'good';
-    case 'th-2':
+    case 'page-blue':
       return 'average';
-    case 'th-3':
+    case 'page-grey':
       return 'bad';
     default:
       return 'unknown';
@@ -45,7 +44,7 @@ export const getColorRating = (bodyClasses: string[]): CSFDColorRating => {
 };
 
 export const getRating = (el: HTMLElement): number => {
-  const ratingRaw = el.querySelector('#rating .average').text;
+  const ratingRaw = el.querySelector('.rating-average').text;
   if (ratingRaw !== '') {
     return +ratingRaw.replace(/%/g, '');
   } else {
@@ -58,10 +57,10 @@ export const getYear = (el: HTMLElement): string | number => {
 };
 
 export const getOtherTitles = (el: HTMLElement): CSFDOtherTitles[] => {
-  const namesNode = el.querySelectorAll('ul.names li');
+  const namesNode = el.querySelectorAll('.film-names li');
   return namesNode.map((el) => {
-    const country = el.querySelector('img').attributes.alt;
-    const title = el.querySelector('h3').text;
+    const country = el.querySelector('img.flag').attributes.alt;
+    const title = el.text.trim().split('\n')[0];
     if (country && title) {
       return {
         country,
@@ -74,11 +73,17 @@ export const getOtherTitles = (el: HTMLElement): CSFDOtherTitles[] => {
 };
 
 export const getPoster = (el: HTMLElement): string => {
-  return el.querySelector('#poster img').attributes.src;
+  return el.querySelector('.film-posters img').attributes.src;
 };
 
 export const getDescriptions = (el: HTMLElement): string[] => {
-  return el.querySelectorAll('#plots ul li').map((desc) => desc.text.trim());
+  // TODO more plots
+  return [
+    el
+      .querySelector('.body--plots .plot-preview p')
+      .text.trim()
+      .replace(/(\r\n|\n|\r|\t)/gm, '')
+  ];
 };
 
 export const getDirectors = (el: HTMLElement): CSFDCreator[] => {
@@ -89,13 +94,18 @@ export const getDirectors = (el: HTMLElement): CSFDCreator[] => {
 
 export const parsePeople = (el: HTMLElement): CSFDCreator[] => {
   const people = el.querySelectorAll('a');
-  return people.map((person) => {
-    return {
-      id: parseIdFromUrl(person.attributes.href),
-      name: person.innerText.trim(),
-      url: `https://www.csfd.cz${person.attributes.href}`
-    };
-  });
+  return (
+    people
+      // Filter out "more" links
+      .filter((x) => x.classNames.length === 0)
+      .map((person) => {
+        return {
+          id: parseIdFromUrl(person.attributes.href),
+          name: person.innerText.trim(),
+          url: `https://www.csfd.cz${person.attributes.href}`
+        };
+      })
+  );
 };
 
 export const getGroup = (el: HTMLElement, group: CSFDCreatorGroups): CSFDCreator[] => {
@@ -113,7 +123,13 @@ export const getType = (el: HTMLElement): string => {
   return type?.innerText?.replace(/[{()}]/g, '') || 'film';
 };
 
+export const getBoxContent = (el: HTMLElement, box: string): HTMLElement => {
+  const headers = el.querySelectorAll('section.box .box-header h3');
+  return headers.find((header) => header.text.trim().includes(box));
+};
+
 export const getTags = (el: HTMLElement): string[] => {
+  // const tagsRaw = getBoxContent(el, 'Tagy');
   const tagsRaw = el.querySelectorAll('.tags .content a');
   return tagsRaw.map((elem) => elem.text.trim());
 };
