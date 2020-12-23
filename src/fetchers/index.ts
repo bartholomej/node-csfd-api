@@ -7,8 +7,8 @@ export const fetchUserRatings = async (user: string | number): Promise<string> =
   return await response.text();
 };
 
-export const fetchMovie = async (movie: string | number): Promise<string> => {
-  const url = movieUrl(movie);
+export const fetchMovie = async (movieId: number): Promise<string> => {
+  const url = movieUrl(+movieId);
   const response = await fetch(url);
   return await response.text();
 };
