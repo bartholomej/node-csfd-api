@@ -57,6 +57,19 @@ export const getYear = (el: HTMLElement): string | number => {
   return el.querySelector('.origin span').innerText;
 };
 
+export const getDuration = (el: HTMLElement): number => {
+  const origin = el.querySelector('.origin').innerText;
+  const timeString = origin.split(',').pop().trim();
+  const timeRaw = timeString.split('(')[0].trim();
+  const hoursMinsRaw = timeRaw.split('min')[0];
+  const hoursMins = hoursMinsRaw.split('h');
+
+  // Resolve hours + minutes format
+  const duration = hoursMins.length > 1 ? +hoursMins[0] * 60 + +hoursMins[1] : +hoursMins[0];
+
+  return duration;
+};
+
 export const getOtherTitles = (el: HTMLElement): CSFDOtherTitles[] => {
   const namesNode = el.querySelectorAll('.film-names li');
   return namesNode.map((el) => {
