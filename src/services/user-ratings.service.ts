@@ -26,7 +26,7 @@ export class UserRatingsScraper {
     const response = await fetchUserRatings(user);
 
     const items = parse(response);
-    const movies = items.querySelectorAll('.ui-table-list tbody tr');
+    const movies = items.querySelectorAll('.box-user-rating .table-container tbody tr');
 
     if (config) {
       if (config.includesOnly?.length && config.excludes?.length) {
