@@ -17,8 +17,8 @@ export class Csfd {
     return this.userRatingsService.userRatings(user, config);
   }
 
-  public async movie(movie: string | number): Promise<CSFDMovie> {
-    return this.movieService.movie(movie);
+  public async movie(movie: number): Promise<CSFDMovie> {
+    return this.movieService.movie(+movie);
   }
 }
 
