@@ -1,5 +1,3 @@
-import { CSFDFilmTypes } from 'interfaces/global';
-import { CSFDMovie } from 'interfaces/movie.interface';
 import { HTMLElement, parse } from 'node-html-parser';
 import { fetchMovie } from '../fetchers';
 import {
@@ -18,6 +16,8 @@ import {
   getType,
   getYear
 } from '../helpers/movie.helper';
+import { CSFDFilmTypes } from '../interfaces/global';
+import { CSFDMovie } from '../interfaces/movie.interface';
 import { movieUrl } from '../vars';
 
 export class MovieScraper {
