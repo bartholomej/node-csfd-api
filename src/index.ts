@@ -1,5 +1,5 @@
-import { CSFDMovie } from 'interfaces/movie.interface';
 import { CSFDFilmTypes } from './interfaces/global';
+import { CSFDMovie } from './interfaces/movie.interface';
 import { CSFDUserRatings } from './interfaces/user-ratings.interface';
 import { MovieScraper } from './services/movie.service';
 import { UserRatingsScraper } from './services/user-ratings.service';

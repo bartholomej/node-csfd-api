@@ -1,6 +1,6 @@
-import { Colors } from 'interfaces/user-ratings.interface';
 import { HTMLElement } from 'node-html-parser';
 import { CSFDColorRating, CSFDFilmTypes, CSFDStars } from '../interfaces/global';
+import { Colors } from '../interfaces/user-ratings.interface';
 import { parseIdFromUrl } from './global.helper';
 
 export const getId = (el: HTMLElement): number => {
