@@ -3,6 +3,7 @@ import {
   getColorRating,
   getDescriptions,
   getDirectors,
+  getDuration,
   getGenres,
   getGroup,
   getId,
@@ -49,6 +50,13 @@ describe('Get Poster', () => {
     expect(movie).toEqual<string>(
       '//image.pmgstatic.com/files/images/film/posters/163/579/163579352_bf8737.jpg'
     );
+  });
+});
+
+describe('Get Duration', () => {
+  test('Duration', () => {
+    const movie = getDuration(moviePage);
+    expect(movie).toEqual<number>(159);
   });
 });
 
