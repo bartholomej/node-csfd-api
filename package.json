@@ -1,6 +1,6 @@
 {
   "name": "node-csfd-api",
-  "version": "1.0.0-beta.1",
+  "version": "1.0.0-beta.2",
   "description": "Simple NPM library for scraping CSFD",
   "main": "index.js",
   "author": "BART! <bart@bartweb.cz>",
