@@ -5,10 +5,11 @@
 
 # CSFD API
 
-> Tiny NPM library for scraping CSFD `[work in progress]`
+> Tiny NPM library for scraping CSFD
 >
 > - Browser + Node.js (SSR)
 > - TypeScript
+> - ✅ Ready for CSFD 2021! [See instructions](#CSFD-2021-beta)
 
 ## Install
 
@@ -141,6 +142,14 @@ csfd.userRatings('912-bart').then((ratings) => console.log(ratings));
 
 Work in progress...
 
+## CSFD 2021 (beta)
+
+✅ We are ready for brand new [CSFD 2021](https://new.csfd.cz)!
+
+- Branch ([new-csfd](https://github.com/bartholomej/node-csfd-api/tree/new-csfd))
+
+- `yarn add node-csfd-api@beta`
+
 ## Development
 
 ### Developing and debugging library
@@ -177,7 +186,7 @@ That's why, with CSFD Api, what happens on your device stays on your device till
 
 ## License
 
-Copyright &copy; 2020 [Lukas Bartak](http://bartweb.cz)
+Copyright &copy; 2021 [Lukas Bartak](http://bartweb.cz)
 
 Proudly powered by nature 🗻, wind 💨, tea 🍵 and beer 🍺 ;)
 
