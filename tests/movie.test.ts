@@ -58,6 +58,10 @@ describe('Get Poster', () => {
       '//image.pmgstatic.com/files/images/film/posters/163/579/163579352_bf8737.jpg'
     );
   });
+  test('Movie Blank poster', () => {
+    const movie = getPoster(moviePageBlank);
+    expect(movie).toEqual<string>(null);
+  });
 });
 
 describe('Get Duration', () => {
