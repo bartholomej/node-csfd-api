@@ -54,20 +54,23 @@ export const getRating = (el: HTMLElement): number => {
 };
 
 export const getYear = (el: HTMLElement): string | number => {
-  return el.querySelector('.origin span').innerText;
+  return el.querySelector('.origin span').innerText.replace(/[{()}]/g, '');
 };
 
 export const getDuration = (el: HTMLElement): number => {
   const origin = el.querySelector('.origin').innerText;
-  const timeString = origin.split(',').pop().trim();
-  const timeRaw = timeString.split('(')[0].trim();
-  const hoursMinsRaw = timeRaw.split('min')[0];
-  const hoursMins = hoursMinsRaw.split('h');
-
-  // Resolve hours + minutes format
-  const duration = hoursMins.length > 1 ? +hoursMins[0] * 60 + +hoursMins[1] : +hoursMins[0];
-
-  return duration;
+  const timeString = origin.split(',');
+  if (timeString.length > 2) {
+    const timeString2 = timeString.pop().trim();
+    const timeRaw = timeString2.split('(')[0].trim();
+    const hoursMinsRaw = timeRaw.split('min')[0];
+    const hoursMins = hoursMinsRaw.split('h');
+    // Resolve hours + minutes format
+    const duration = hoursMins.length > 1 ? +hoursMins[0] * 60 + +hoursMins[1] : +hoursMins[0];
+    return duration;
+  } else {
+    return null;
+  }
 };
 
 export const getOtherTitles = (el: HTMLElement): CSFDOtherTitles[] => {
@@ -139,7 +142,7 @@ export const getGroup = (el: HTMLElement, group: CSFDCreatorGroups): CSFDCreator
 };
 
 export const getType = (el: HTMLElement): string => {
-  const type = el.querySelector('.film-type');
+  const type = el.querySelector('.film-header-name .type');
   return type?.innerText?.replace(/[{()}]/g, '') || 'film';
 };
 
