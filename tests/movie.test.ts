@@ -18,10 +18,20 @@ import {
 import { CSFDColorRating } from '../src/interfaces/global';
 import { CSFDCreator, CSFDOtherTitles } from '../src/interfaces/movie.interface';
 import { movieMock } from './mocks/movie1.html';
+import { movieMockBlank } from './mocks/movie2.html';
+import { seriesMock } from './mocks/series1.html';
 
 const movieNode = parse(movieMock);
 const moviePage: HTMLElement = movieNode.querySelector('.main-movie-profile');
 const bodyClasses = movieNode.querySelector('.page-content').classNames;
+
+const movieNodeBlank = parse(movieMockBlank);
+const moviePageBlank: HTMLElement = movieNodeBlank.querySelector('.main-movie-profile');
+const bodyClassesBlank = movieNodeBlank.querySelector('.page-content').classNames;
+
+const seriesNode = parse(seriesMock);
+const seriesPage: HTMLElement = seriesNode.querySelector('.main-movie-profile');
+// const bodyClassesSeries = seriesNode.querySelector('.page-content').classNames;
 
 describe('Get ID', () => {
   test('Movie ID', () => {
@@ -30,17 +40,14 @@ describe('Get ID', () => {
   });
 });
 
-describe('Get Movie', () => {
+describe('Get Movie Title', () => {
   test('Movie title', () => {
     const movie = getTitle(moviePage);
     expect(movie).toEqual<string>('Na špatné straně');
   });
-});
-
-describe('Get Movie', () => {
-  test('Movie title', () => {
-    const movie = getTitle(moviePage);
-    expect(movie).toEqual<string>('Na špatné straně');
+  test('Series title', () => {
+    const movie = getTitle(seriesPage);
+    expect(movie).toEqual<string>('Království');
   });
 });
 
@@ -57,6 +64,14 @@ describe('Get Duration', () => {
   test('Duration', () => {
     const movie = getDuration(moviePage);
     expect(movie).toEqual<number>(159);
+  });
+  test('Duration Blank', () => {
+    const movie = getDuration(moviePageBlank);
+    expect(movie).toEqual<number>(null);
+  });
+  test('Duration Series', () => {
+    const movie = getDuration(seriesPage);
+    expect(movie).toEqual<number>(560);
   });
 });
 
@@ -89,12 +104,20 @@ describe('Get otherTitles', () => {
       { country: 'Velká Británie', title: 'Dragged Across Concrete' }
     ]);
   });
+  test('otherTitles Blank', () => {
+    const movie = getOtherTitles(moviePageBlank);
+    expect(movie).toEqual<CSFDOtherTitles[]>([]);
+  });
 });
 
 describe('Get origins', () => {
-  test('origins', () => {
+  test('Origins', () => {
     const movie = getOrigins(moviePage);
     expect(movie).toEqual<string[]>(['USA', 'Kanada']);
+  });
+  test('Origins Series', () => {
+    const movie = getOrigins(seriesPage);
+    expect(movie).toEqual<string[]>(['Dánsko', 'Francie', 'Německo', 'Švédsko']);
   });
 });
 
@@ -105,12 +128,20 @@ describe('Get descriptions', () => {
       'Otupělý policejní veterán Ridgeman (Mel Gibson) a jeho náladový mladší kolega Anthony (Vince Vaughn) jsou suspendováni ze služby poté, co do médií unikne videozáznam jejich svérázných metod. Bez prostředků a velkých šancí se oba zatrpklí vojáci vydají do kriminálního podsvětí, aby učinili spravedlnosti zadost. Mezitím je v jiné části města propuštěn z vězení mladý zločinec Henry Jones a zjišťuje, že jeho matce a postiženému bratrovi hrozí vystěhování. Ve snaze najít způsob, jak jim pomoci, se obrátí na kamaráda z dětství jménem Biscuit, který ho představí nelítostnému kriminálnímu bossovi, jehož ambiciózní plány jej postaví do přímého konfliktu s oběma policejními odpadlíky.(HBO Europe)'
     ]);
   });
+  test('Description blank', () => {
+    const movie = getDescriptions(moviePageBlank);
+    expect(movie).toEqual<string[]>([]);
+  });
 });
 
 describe('Get genres', () => {
   test('Genres', () => {
     const movie = getGenres(moviePage);
     expect(movie).toEqual<string[]>(['Krimi', 'Drama', 'Thriller']);
+  });
+  test('Genres Series', () => {
+    const movie = getGenres(seriesPage);
+    expect(movie).toEqual<string[]>(['Drama', 'Horor', 'Mysteriózní', 'Komedie']);
   });
 });
 
@@ -119,12 +150,20 @@ describe('Get type', () => {
     const movie = getType(moviePage);
     expect(movie).toEqual<string>('film');
   });
+  test('Type Series', () => {
+    const movie = getType(seriesPage);
+    expect(movie).toEqual<string>('TV seriál');
+  });
 });
 
 describe('Get year', () => {
   test('Year', () => {
     const movie = getYear(moviePage);
     expect(movie).toEqual<string | number>('2018');
+  });
+  test('Year Series', () => {
+    const movie = getYear(seriesPage);
+    expect(movie).toEqual<string | number>('1994–1997');
   });
 });
 
@@ -136,6 +175,10 @@ describe('Get ratings', () => {
   test('Color Rating', () => {
     const movie = getColorRating(bodyClasses);
     expect(movie).toEqual<CSFDColorRating>('good');
+  });
+  test('Blank Rating', () => {
+    const movie = getColorRating(bodyClassesBlank);
+    expect(movie).toEqual<CSFDColorRating>('unknown');
   });
 });
 
