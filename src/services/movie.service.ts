@@ -11,7 +11,6 @@ import {
   getOtherTitles,
   getPoster,
   getRating,
-  getTags,
   getTitle,
   getType,
   getYear
@@ -66,8 +65,7 @@ export class MovieScraper {
         filmEditing: getGroup(el, 'Střih'),
         costumeDesign: getGroup(el, 'Kostýmy'),
         productionDesign: getGroup(el, 'Scénografie')
-      },
-      tags: getTags(elAside)
+      }
     };
   }
 }

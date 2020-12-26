@@ -146,13 +146,14 @@ export const getType = (el: HTMLElement): string => {
   return type?.innerText?.replace(/[{()}]/g, '') || 'film';
 };
 
-export const getBoxContent = (el: HTMLElement, box: string): HTMLElement => {
-  const headers = el.querySelectorAll('section.box .box-header h3');
-  return headers.find((header) => header.text.trim().includes(box));
-};
+// TODO tags
+// export const getBoxContent = (el: HTMLElement, box: string): HTMLElement => {
+//   const headers = el.querySelectorAll('section.box .box-header h3');
+//   return headers.find((header) => header.text.trim().includes(box));
+// };
 
-export const getTags = (el: HTMLElement): string[] => {
-  // const tagsRaw = getBoxContent(el, 'Tagy');
-  const tagsRaw = el.querySelectorAll('.tags .content a');
-  return tagsRaw.map((elem) => elem.text.trim());
-};
+// export const getTags = (el: HTMLElement): string[] => {
+//   // const tagsRaw = getBoxContent(el, 'Tagy');
+//   const tagsRaw = el.querySelectorAll('.tags .content a');
+//   return tagsRaw.map((elem) => elem.text.trim());
+// };
