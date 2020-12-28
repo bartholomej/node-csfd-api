@@ -2,7 +2,9 @@
 import { csfd } from './src';
 
 // Parse movie
-csfd.movie(535121).then((movie) => console.log(movie));
+// csfd.movie(10135).then((movie) => console.log(movie));
+
+csfd.search('matrix').then((search) => console.log(search));
 
 /**
  * USER RATINGS

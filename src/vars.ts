@@ -5,3 +5,6 @@ export const userRatingsUrl = (user: string | number, page?: number): string =>
 
 export const movieUrl = (movie: number): string =>
   `https://new.csfd.cz/film/${encodeURIComponent(movie)}`;
+
+export const searchUrl = (text: string): string =>
+  `https://new.csfd.cz/hledat/?q=${encodeURIComponent(text)}`;
