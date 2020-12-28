@@ -13,10 +13,11 @@ import {
   getRating,
   getTitle,
   getType,
+  getVods,
   getYear
 } from '../src/helpers/movie.helper';
 import { CSFDColorRating } from '../src/interfaces/global';
-import { CSFDCreator, CSFDOtherTitles } from '../src/interfaces/movie.interface';
+import { CSFDCreator, CSFDOtherTitles, CSFDVod } from '../src/interfaces/movie.interface';
 import { movieMock } from './mocks/movie1.html';
 import { movieMockBlank } from './mocks/movie2.html';
 import { seriesMock } from './mocks/series1.html';
@@ -24,13 +25,16 @@ import { seriesMock } from './mocks/series1.html';
 const movieNode = parse(movieMock);
 const moviePage: HTMLElement = movieNode.querySelector('.main-movie-profile');
 const bodyClasses = movieNode.querySelector('.page-content').classNames;
+const buttonsNode = movieNode.querySelectorAll('.box-buttons')[0];
 
 const movieNodeBlank = parse(movieMockBlank);
 const moviePageBlank: HTMLElement = movieNodeBlank.querySelector('.main-movie-profile');
 const bodyClassesBlank = movieNodeBlank.querySelector('.page-content').classNames;
+const buttonsNodeBlank = movieNodeBlank.querySelectorAll('.box-buttons')[0];
 
 const seriesNode = parse(seriesMock);
 const seriesPage: HTMLElement = seriesNode.querySelector('.main-movie-profile');
+const seriesButtonsNode = seriesPage.querySelectorAll('.box-buttons')[0];
 // const bodyClassesSeries = seriesNode.querySelector('.page-content').classNames;
 
 describe('Get ID', () => {
@@ -76,6 +80,33 @@ describe('Get Duration', () => {
   test('Duration Series', () => {
     const movie = getDuration(seriesPage);
     expect(movie).toEqual<number>(560);
+  });
+});
+
+describe('Get VOD', () => {
+  test('Get vods movie', () => {
+    const movie = getVods(buttonsNode);
+    expect(movie).toEqual<CSFDVod[]>([
+      { title: 'HBOGO', url: 'https://hbogo.sk/filmy/na-spatne-strane' },
+      {
+        title: 'DVD',
+        url:
+          'https://filmy.heureka.cz/na-spatne-strane-dvd/#utm_source=csfd.cz&utm_medium=cooperation&utm_campaign=csfd_movies_feed'
+      },
+      {
+        title: 'Blu-ray',
+        url:
+          'https://filmy.heureka.cz/na-spatne-strane-bd/#utm_source=csfd.cz&utm_medium=cooperation&utm_campaign=csfd_movies_feed'
+      }
+    ]);
+  });
+  test('Get vods series', () => {
+    const movie = getVods(seriesButtonsNode);
+    expect(movie).toEqual<CSFDVod[]>([]);
+  });
+  test('Get vods blank', () => {
+    const movie = getVods(buttonsNodeBlank);
+    expect(movie).toEqual<CSFDVod[]>([]);
   });
 });
 

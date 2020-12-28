@@ -4,7 +4,8 @@ import {
   CSFDCreator,
   CSFDCreatorGroups,
   CSFDGenres,
-  CSFDOtherTitles
+  CSFDOtherTitles,
+  CSFDVod
 } from '../interfaces/movie.interface';
 import { parseIdFromUrl } from './global.helper';
 
@@ -144,6 +145,22 @@ export const getGroup = (el: HTMLElement, group: CSFDCreatorGroups): CSFDCreator
 export const getType = (el: HTMLElement): string => {
   const type = el.querySelector('.film-header-name .type');
   return type?.innerText?.replace(/[{()}]/g, '') || 'film';
+};
+
+export const getVods = (el: HTMLElement): CSFDVod[] => {
+  let vods: CSFDVod[] = [];
+  if (el) {
+    const buttons = el.querySelectorAll('.button');
+    // Filter out social buttons
+    const buttonsVod = buttons.filter((x) => !x.classNames.includes('button-social'));
+    vods = buttonsVod.map((btn) => {
+      return {
+        title: btn.text.trim(),
+        url: btn.attributes.href
+      };
+    });
+  }
+  return vods.length ? vods : [];
 };
 
 // TODO tags

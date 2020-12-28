@@ -9,7 +9,25 @@ export interface CSFDMovie extends CSFDScreening {
   descriptions: string[];
   genres: CSFDGenres[] | string[];
   creators: CSFDCreators;
+  vod: CSFDVod[];
   // tags: string[];
+}
+
+export interface CSFDVod {
+  title:
+    | 'Netflix'
+    | 'hbogo'
+    | 'Primve Video'
+    | 'Apple TV+'
+    | 'ivysilani'
+    | 'Aerovod'
+    | 'o2tv'
+    | 'Voyo'
+    | 'FILMY ČESKY A ZADARMO'
+    | 'VAPET'
+    | 'VOREL FILM'
+    | string;
+  url: string;
 }
 
 export interface CSFDCreators {
