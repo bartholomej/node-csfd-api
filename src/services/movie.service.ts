@@ -13,6 +13,7 @@ import {
   getRating,
   getTitle,
   getType,
+  getVods,
   getYear
 } from '../helpers/movie.helper';
 import { CSFDFilmTypes } from '../interfaces/global';
@@ -28,16 +29,17 @@ export class MovieScraper {
     const movieHtml = parse(response);
 
     const pageClasses = movieHtml.querySelector('.page-content').classNames;
-    const asideNode = movieHtml.querySelector('.box-rating-container');
+    // const asideNode = movieHtml.querySelector('.box-rating-container');
     const movieNode = movieHtml.querySelector('.main-movie-profile');
-    this.buildMovie(+movieId, movieNode, asideNode, pageClasses);
+    const buttonsNode = movieHtml.querySelectorAll('.box-buttons')[0];
+    this.buildMovie(+movieId, movieNode, buttonsNode, pageClasses);
     return this.film;
   }
 
   private buildMovie(
     movieId: number,
     el: HTMLElement,
-    elAside: HTMLElement,
+    elButtons: HTMLElement,
     pageClasses: string[]
   ) {
     this.film = {
@@ -65,7 +67,8 @@ export class MovieScraper {
         filmEditing: getGroup(el, 'Střih'),
         costumeDesign: getGroup(el, 'Kostýmy'),
         productionDesign: getGroup(el, 'Scénografie')
-      }
+      },
+      vod: getVods(elButtons)
     };
   }
 }
