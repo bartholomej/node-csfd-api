@@ -7,7 +7,7 @@ import {
   CSFDOtherTitles,
   CSFDVod
 } from '../interfaces/movie.interface';
-import { parseIdFromUrl } from './global.helper';
+import { getColor, parseIdFromUrl } from './global.helper';
 
 export const getId = (el: HTMLElement): number => {
   const url = el.querySelector('.tabs .tab-nav-list a').attributes.href;
@@ -30,18 +30,7 @@ export const getOrigins = (el: HTMLElement): string[] => {
 };
 
 export const getColorRating = (bodyClasses: string[]): CSFDColorRating => {
-  switch (bodyClasses[1]) {
-    case 'page-lightgrey':
-      return 'unknown';
-    case 'page-red':
-      return 'good';
-    case 'page-blue':
-      return 'average';
-    case 'page-grey':
-      return 'bad';
-    default:
-      return 'unknown';
-  }
+  return getColor(bodyClasses[1]);
 };
 
 export const getRating = (el: HTMLElement): number => {
