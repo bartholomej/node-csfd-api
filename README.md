@@ -34,7 +34,7 @@ Get info about [this movie](https://www.csfd.cz/film/535121-na-spatne-strane/kom
 ```javascript
 import { csfd } from 'node-csfd-api';
 
-csfd.movie('535121').then((movie) => console.log(movie));
+csfd.movie(535121).then((movie) => console.log(movie));
 ```
 
 #### Results
