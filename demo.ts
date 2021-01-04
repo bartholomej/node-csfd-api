@@ -1,14 +1,15 @@
 import { csfd } from './src';
 
 // Parse movie
-csfd.movie(535121).then((movie) => console.log(movie));
+// csfd.movie(535121).then((movie) => console.log(movie));
 
-// // Exclude seasons and episodes
-// csfd
-//   .userRatings('912-bart', {
-//     excludes: ['epizoda', 'TV pořad', 'série']
-//   })
-//   .then((ratings) => ratings.map((x) => console.log(x)));
+// Exclude seasons and episodes
+csfd
+  .userRatings('1331', {
+    excludes: ['epizoda', 'TV pořad', 'série'],
+    allPages: false
+  })
+  .then((ratings) => ratings.map((x) => console.log(x)));
 
 // // Only TV series
 // csfd

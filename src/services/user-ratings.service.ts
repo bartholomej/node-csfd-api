@@ -10,24 +10,43 @@ import {
   getUserRating,
   getYear
 } from '../helpers/user-ratings.helper';
-import { CSFDColorRating, CSFDFilmTypes, CSFDStars } from '../interfaces/global';
-import { CSFDUserRatings } from '../interfaces/user-ratings.interface';
+import { CSFDColorRating, CSFDStars } from '../interfaces/global';
+import { CSFDUserRatingConfig, CSFDUserRatings } from '../interfaces/user-ratings.interface';
 
 export class UserRatingsScraper {
   private films: CSFDUserRatings[] = [];
 
   public async userRatings(
     user: string | number,
-    config?: {
-      includesOnly?: CSFDFilmTypes[];
-      excludes?: CSFDFilmTypes[];
-    }
+    config?: CSFDUserRatingConfig
   ): Promise<CSFDUserRatings[]> {
+    let allMovies: CSFDUserRatings[] = [];
     const response = await fetchUserRatings(user);
-
     const items = parse(response);
     const movies = items.querySelectorAll('.box-user-rating .table-container tbody tr');
 
+    // Get number of pages
+    const pagesNode = items.querySelector('.pagination');
+    const pages = +pagesNode?.childNodes[pagesNode.childNodes.length - 4].rawText || 1;
+
+    allMovies = this.getPage(config, movies);
+
+    if (config?.allPages) {
+      console.log('Fetching all pages', pages);
+      for (let i = 1; i <= pages; i++) {
+        console.log('Fetching page', i, 'out of', pages, '...');
+        const response = await fetchUserRatings(user, i);
+        const items = parse(response);
+        const movies = items.querySelectorAll('.box-user-rating .table-container tbody tr');
+        allMovies = [...allMovies, ...this.getPage(config, movies)];
+      }
+      return allMovies;
+    }
+
+    return allMovies;
+  }
+
+  private getPage(config: CSFDUserRatingConfig, movies: HTMLElement[]) {
     if (config) {
       if (config.includesOnly?.length && config.excludes?.length) {
         console.warn(
