@@ -8,7 +8,7 @@
 > Tiny NPM library for scraping CSFD
 >
 > - Browser + Node.js (SSR)
-> - TypeScript
+> - TypeScript 100%
 > - ✅ Ready for CSFD 2021! [See instructions](#CSFD-2021-beta)
 
 ## Install
@@ -138,9 +138,14 @@ csfd.userRatings('912-bart').then((ratings) => console.log(ratings));
 ];
 ```
 
-### More
+#### Options
 
-Work in progress...
+| Option           | Type                                                                                                                                       | Default | Description                                               |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | ------- | --------------------------------------------------------- |
+| **includesOnly** | [CSFDFilmTypes[]](https://github.com/bartholomej/node-csfd-api/blob/8fa5f9cbc7e7f2b62b0bd2c2b5a24c9a63444f6a/src/interfaces/global.ts#L25) | null    | Including only film types. eg. `['TV Seriál', 'koncert']` |
+| **exclude**      | [CSFDFilmTypes[]](https://github.com/bartholomej/node-csfd-api/blob/8fa5f9cbc7e7f2b62b0bd2c2b5a24c9a63444f6a/src/interfaces/global.ts#L25) | null    | Excluding film types eg. `['epizoda', 'série']`           |
+
+_Note: You can not use both parameters 'includesOnly' and 'excludes'. Parameter 'includesOnly' has a priority._
 
 ## CSFD 2021 (beta)
 
@@ -149,6 +154,11 @@ Work in progress...
 - Branch ([new-csfd](https://github.com/bartholomej/node-csfd-api/tree/new-csfd))
 
 - `yarn add node-csfd-api@beta`
+
+## Roadmap
+
+- [ ] Search: movies, tv series, users, creators...
+- [ ] Profiles of creators...
 
 ## Development
 
@@ -160,7 +170,7 @@ yarn start
 
 ### Run demo locally
 
-You can find and modify it in `./demo.ts` file
+You can find and modify it in [`./demo.ts`](https://raw.githubusercontent.com/bartholomej/node-csfd-api/search/demo.ts) file
 
 ```bash
 yarn demo
