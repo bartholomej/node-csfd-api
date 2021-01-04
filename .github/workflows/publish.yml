@@ -46,8 +46,14 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
 
       - name: Publish NPM BETA
-        if: startsWith(github.ref, 'refs/tags/v1')
+        if: startsWith(github.ref, 'refs/tags/v1.0')
         run: npm publish --folder dist --access public --tag beta
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+
+      - name: Publish NPM ALPHA
+        if: startsWith(github.ref, 'refs/tags/v1.1')
+        run: npm publish --folder dist --access public --tag alpha
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
 
