@@ -3,13 +3,13 @@
 [![Build & Publish](https://github.com/bartholomej/node-csfd-api/workflows/Build%20&%20Publish/badge.svg)](https://github.com/bartholomej/node-csfd-api/actions)
 [![codecov](https://codecov.io/gh/bartholomej/node-csfd-api/branch/master/graph/badge.svg?token=YQH9UoVrGP)](https://codecov.io/gh/bartholomej/node-csfd-api)
 
-# CSFD API
+# CSFD API 2021
 
 > Tiny NPM library for scraping CSFD
 >
 > - Browser + Node.js (SSR)
 > - TypeScript 100%
-> - ✅ Ready for CSFD 2021! [See instructions](#CSFD-2021-beta)
+> - ✅ Ready for CSFD 2021!
 
 ## Install
 
