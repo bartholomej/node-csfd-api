@@ -1,11 +1,11 @@
-import { CSFDColorRating } from 'interfaces/global';
+import { HTMLElement } from 'node-html-parser';
+import { CSFDColorRating } from '../interfaces/global';
 import {
   CSFDCreator,
   CSFDCreatorGroups,
   CSFDGenres,
   CSFDOtherTitles
-} from 'interfaces/movie.interface';
-import { HTMLElement } from 'node-html-parser';
+} from '../interfaces/movie.interface';
 import { parseIdFromUrl } from './global.helper';
 
 export const getId = (el: HTMLElement): number => {
