@@ -12,8 +12,8 @@ const headers = {
   'User-Agent': USER_AGENTS[Math.floor(Math.random() * USER_AGENTS.length)]
 };
 
-export const fetchUserRatings = async (user: string | number): Promise<string> => {
-  const url = userRatingsUrl(user);
+export const fetchUserRatings = async (user: string | number, page?: number): Promise<string> => {
+  const url = userRatingsUrl(user, page);
   const response = await fetch(url, { headers });
   return await response.text();
 };
