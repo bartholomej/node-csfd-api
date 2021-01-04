@@ -1,6 +1,5 @@
-import { CSFDFilmTypes } from './interfaces/global';
 import { CSFDMovie } from './interfaces/movie.interface';
-import { CSFDUserRatings } from './interfaces/user-ratings.interface';
+import { CSFDUserRatingConfig, CSFDUserRatings } from './interfaces/user-ratings.interface';
 import { MovieScraper } from './services/movie.service';
 import { UserRatingsScraper } from './services/user-ratings.service';
 
@@ -9,10 +8,7 @@ export class Csfd {
 
   public async userRatings(
     user: string | number,
-    config?: {
-      includesOnly?: CSFDFilmTypes[];
-      excludes?: CSFDFilmTypes[];
-    }
+    config?: CSFDUserRatingConfig
   ): Promise<CSFDUserRatings[]> {
     return this.userRatingsService.userRatings(user, config);
   }

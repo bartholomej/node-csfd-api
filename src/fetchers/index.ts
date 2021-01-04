@@ -1,8 +1,8 @@
 import fetch from 'cross-fetch';
 import { movieUrl, userRatingsUrl } from '../vars';
 
-export const fetchUserRatings = async (user: string | number): Promise<string> => {
-  const url = userRatingsUrl(user);
+export const fetchUserRatings = async (user: string | number, page?: number): Promise<string> => {
+  const url = userRatingsUrl(user, page);
   const response = await fetch(url);
   return await response.text();
 };
