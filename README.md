@@ -151,8 +151,6 @@ _Note: You can not use both parameters 'includesOnly' and 'excludes'. Parameter 
 
 ✅ We are ready for brand new [CSFD 2021](https://new.csfd.cz)!
 
-- Branch ([new-csfd](https://github.com/bartholomej/node-csfd-api/tree/new-csfd))
-
 - `yarn add node-csfd-api@beta`
 
 ## Roadmap
@@ -175,6 +173,21 @@ You can find and modify it in [`./demo.ts`](https://raw.githubusercontent.com/ba
 ```bash
 yarn demo
 ```
+
+## Development (notes for me)
+
+### Publish Stable
+
+```shell
+yarn release:patch
+# yarn release:minor
+# yarn release:major
+```
+
+### Publish next channel
+
+1. Bump version `-beta.0` in `package.json`
+2. `yarn publish:next`
 
 ## Contribution
 

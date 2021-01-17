@@ -13,6 +13,7 @@
     "demo": "ts-node demo",
     "lint": "eslint ./src/**/**/* --fix",
     "test": "jest",
+    "publish:next": "yarn && yarn build && yarn test --coverage true && npm publish --folder dist --tag beta",    
     "postversion": "git push && git push --follow-tags",
     "release:beta": "npm version prerelease -m \"chore(update): prelease %s 💥 \"",
     "release:patch": "git checkout master && npm version patch -m \"chore(update): patch release %s 🐛 \"",
