@@ -14,12 +14,28 @@ const headers = {
 
 export const fetchUserRatings = async (user: string | number): Promise<string> => {
   const url = userRatingsUrl(user);
-  const response = await fetch(url, { headers });
-  return await response.text();
+  try {
+    const response = await fetch(url, { headers });
+    if (response.status >= 400 && response.status < 600) {
+      throw new Error(`node-csfd-api: Bad response ${response.status} for url: ${url}`);
+    }
+    return await response.text();
+  } catch (e) {
+    console.error(e);
+    return 'Error';
+  }
 };
 
 export const fetchMovie = async (movieId: number): Promise<string> => {
   const url = movieUrl(+movieId);
-  const response = await fetch(url, { headers });
-  return await response.text();
+  try {
+    const response = await fetch(url, { headers });
+    if (response.status >= 400 && response.status < 600) {
+      throw new Error(`node-csfd-api: Bad response ${response.status} for url: ${url}`);
+    }
+    return await response.text();
+  } catch (e) {
+    console.error(e);
+    return 'Error';
+  }
 };
