@@ -30,7 +30,7 @@ describe('User page 404', () => {
 describe('Movie page 404', () => {
   test('Fetch error URL', async () => {
     try {
-      const html = await fetchUserRatings(badId);
+      const html = await fetchMovie(badId);
       expect(html).toBe('Error');
     } catch (e) {
       expect(e).toThrow(Error);
