@@ -5,11 +5,16 @@
 
 # CSFD API 2021
 
-> Tiny NPM library for scraping CSFD
+> Tiny NPM library for scraping csfd.cz
 >
 > - Browser + Node.js (SSR)
 > - TypeScript 100%
 > - ✅ Ready for CSFD 2021!
+
+Scraper:
+
+> - [Movies and TV Series](#Movie)
+> - [User Ratings](#User-Ratings)
 
 ## Install
 
@@ -147,16 +152,14 @@ csfd.userRatings('912-bart').then((ratings) => console.log(ratings));
 
 _Note: You can not use both parameters 'includesOnly' and 'excludes'. Parameter 'includesOnly' has a priority._
 
-## CSFD 2021 (beta)
-
-✅ We are ready for brand new [CSFD 2021](https://new.csfd.cz)!
-
-- `yarn add node-csfd-api@beta`
-
 ## Roadmap
 
-- [ ] Search: movies, tv series, users, creators...
-- [ ] Profiles of creators...
+- [ ] Search
+  - [ ] Movies
+  - [ ] TV Series
+  - [ ] Users
+  - [ ] Creators
+- [ ] Creators...
 
 ## Development
 
@@ -187,7 +190,7 @@ yarn release:patch
 ### Publish next channel
 
 1. Bump version `-beta.0` in `package.json`
-2. `yarn publish:next`
+2. `yarn release:beta`
 
 ## Contribution
 
