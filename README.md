@@ -154,12 +154,17 @@ _Note: You can not use both parameters 'includesOnly' and 'excludes'. Parameter 
 
 ## Roadmap
 
-- [ ] Search
+### Scraping more pages
+
+- [ ] Search ([branch](https://github.com/bartholomej/node-csfd-api/tree/search))
   - [ ] Movies
   - [ ] TV Series
   - [ ] Users
   - [ ] Creators
-- [ ] Creators...
+- [ ] Creators
+- [ ] User Ratings
+  - [x] Last ratings
+  - [ ] All pages ([branch](https://github.com/bartholomej/node-csfd-api/tree/user-rating-all))
 
 ## Development
 
