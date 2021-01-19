@@ -40,7 +40,7 @@ jobs:
         run: bash <(curl -s https://codecov.io/bash)
 
       - name: Publish NPM
-        if: startsWith(github.ref, 'refs/tags/v') && includes!(github.ref, 'beta') === false
+        if: startsWith(github.ref, 'refs/tags/v') && includes(github.ref, 'beta') === false
         run: npm publish --folder dist --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
