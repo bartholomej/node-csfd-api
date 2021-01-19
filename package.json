@@ -1,6 +1,6 @@
 {
   "name": "node-csfd-api",
-  "version": "1.1.0",
+  "version": "1.2.0-beta.0",
   "description": "Simple NPM library for scraping CSFD",
   "main": "index.js",
   "author": "BART! <bart@bartweb.cz>",
@@ -15,10 +15,10 @@
     "test": "jest",
     "publish:next": "yarn && yarn build && yarn test --coverage true && npm publish --folder dist --tag beta",
     "postversion": "git push && git push --follow-tags",
-    "release:beta": "npm version prerelease -m \"chore(update): prelease %s 💥 \"",
-    "release:patch": "git checkout master && npm version patch -m \"chore(update): patch release %s 🐛 \"",
+    "release:beta": "npm version prerelease -m \"chore(update): prelease %s β\"",
+    "release:patch": "git checkout master && npm version patch -m \"chore(update): patch release %s 🐛\"",
     "release:minor": "git checkout master && npm version minor -m \"chore(update): release %s 🚀\"",
-    "release:major": "git checkout master && npm version major -m \"chore(update): major release %s 💥 \""
+    "release:major": "git checkout master && npm version major -m \"chore(update): major release %s 💥\""
   },
   "dependencies": {
     "cross-fetch": "^3.0.6",
