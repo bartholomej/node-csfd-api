@@ -34,12 +34,12 @@ export class UserRatingsScraper {
 
     if (config?.allPages) {
       console.log('Fetching all pages', pages);
-      for (let i = 1; i <= pages; i++) {
+      for (let i = 2; i <= pages; i++) {
         console.log('Fetching page', i, 'out of', pages, '...');
         const response = await fetchUserRatings(user, i);
         const items = parse(response);
         const movies = items.querySelectorAll('.box-user-rating .table-container tbody tr');
-        allMovies = [...allMovies, ...this.getPage(config, movies)];
+        allMovies = [...this.getPage(config, movies)];
 
         // Sleep
         if (config.allPagesDelay) {
