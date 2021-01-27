@@ -8,7 +8,8 @@ import {
   getType,
   getUrl,
   getUserRating,
-  getYear
+  getYear,
+  sleep
 } from '../helpers/user-ratings.helper';
 import { CSFDColorRating, CSFDStars } from '../interfaces/global';
 import { CSFDUserRatingConfig, CSFDUserRatings } from '../interfaces/user-ratings.interface';
@@ -39,6 +40,11 @@ export class UserRatingsScraper {
         const items = parse(response);
         const movies = items.querySelectorAll('.box-user-rating .table-container tbody tr');
         allMovies = [...allMovies, ...this.getPage(config, movies)];
+
+        // Sleep
+        if (config.allPagesDelay) {
+          await sleep(config.allPagesDelay);
+        }
       }
       return allMovies;
     }

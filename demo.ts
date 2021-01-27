@@ -10,7 +10,8 @@ const userId = 912;
 csfd
   .userRatings(userId, {
     excludes: ['epizoda', 'TV pořad', 'série'],
-    allPages: true
+    allPages: true,
+    allPagesDelay: 2000
   })
   .then((ratings) => {
     console.log('Saved in file:', `./${userId}.json`);
