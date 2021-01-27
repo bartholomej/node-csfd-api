@@ -1,15 +1,23 @@
+import { writeFile } from 'fs';
 import { csfd } from './src';
 
 // Parse movie
 // csfd.movie(535121).then((movie) => console.log(movie));
 
-// Exclude seasons and episodes
+// Save data in file
+const userId = 912;
+
 csfd
-  .userRatings('1331', {
+  .userRatings(userId, {
     excludes: ['epizoda', 'TV pořad', 'série'],
-    allPages: false
+    allPages: true
   })
-  .then((ratings) => ratings.map((x) => console.log(x)));
+  .then((ratings) => {
+    console.log('Saved in file:', `./${userId}.json`);
+    writeFile(`${userId}.json`, JSON.stringify(ratings), (err) => {
+      if (err) return console.log(err);
+    });
+  });
 
 // // Only TV series
 // csfd
