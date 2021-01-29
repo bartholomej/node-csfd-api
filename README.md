@@ -15,6 +15,7 @@ Scraper:
 
 > - [Movies and TV Series](#Movie)
 > - [User Ratings](#User-Ratings)
+> - [Search](#Search)
 
 ## Install
 
@@ -30,9 +31,7 @@ via npm
 npm install node-csfd-api
 ```
 
-## Usage
-
-### Movie
+## Movie
 
 Get info about [this movie](https://www.csfd.cz/film/535121-na-spatne-strane/komentare/)
 
@@ -42,7 +41,7 @@ import { csfd } from 'node-csfd-api';
 csfd.movie(535121).then((movie) => console.log(movie));
 ```
 
-#### Results
+### Results
 
 ```javascript
 {
@@ -108,7 +107,57 @@ csfd.movie(535121).then((movie) => console.log(movie));
 }
 ```
 
-### User Ratings
+## Search
+
+> Search movies and users
+
+```javascript
+import { csfd } from 'node-csfd-api';
+
+csfd.search('bart').then((search) => console.log(search));
+```
+
+### Results
+
+```javascript
+movies: [
+  {
+    id: 19653,
+    title: 'Black Bart',
+    year: '1975',
+    url: 'https://www.csfd.cz/film/19653-black-bart/',
+    type: 'TV film',
+    colorRating: 'bad',
+    poster: 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7',
+    origins: ['USA'],
+    creators: {
+      directors: [{
+        id: 87470,
+        name: 'S. Craig Zahler',
+        url: 'https://www.csfd.cz/tvurce/87470-s-craig-zahler/'
+      }],
+      actors: [{
+        id: 1,
+        name: 'Mel Gibson',
+        url: 'https://www.csfd.cz/tvurce/1-mel-gibson/'
+      }]
+    }
+  },
+  // ...
+],
+users: [
+  {
+    id: 912,
+    user: 'BART!',
+    userRealName: 'Lukáš Barták',
+    avatar: '//image.pmgstatic.com/cache/resized/w45h60/files/images/user/avatars/000/281/281554_1c0fef.jpg',
+    url: 'https://www.csfd.cz/uzivatel/912-bart/'
+  },
+  // ...
+]
+```
+
+## User Ratings
 
 ### Last ratings (last page)
 
@@ -162,7 +211,7 @@ csfd
 ];
 ```
 
-#### Options
+### Options
 
 | Option            | Type                                                                                                                                       | Default | Description                                               |
 | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | ------- | --------------------------------------------------------- |
@@ -178,9 +227,9 @@ _Note: You can not use both parameters 'includesOnly' and 'excludes'. Parameter 
 ### Scraping more pages
 
 - [ ] Search ([branch](https://github.com/bartholomej/node-csfd-api/tree/search))
-  - [ ] Movies
+  - [x] Movies
+  - [x] Users
   - [ ] TV Series
-  - [ ] Users
   - [ ] Creators
 - [ ] Creators
   - [ ] Bio
