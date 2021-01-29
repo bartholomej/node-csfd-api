@@ -14,11 +14,17 @@ export interface CSFDSearchMovie extends CSFDScreening {
   creators: CSFDSearchCreators;
 }
 
+export interface CSFDSearchUser {
+  id: number;
+  user: string;
+  userRealName: string;
+  avatar: string;
+  url: string;
+}
+
 export interface CSFDSearchCreator extends CSFDCreator {
   image: string;
 }
-
-export interface CSFDSearchUser extends CSFDSearchCreator {}
 
 export interface CSFDSearchCreators {
   directors: CSFDCreator[];

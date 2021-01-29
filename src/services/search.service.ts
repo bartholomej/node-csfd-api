@@ -1,7 +1,8 @@
-import { CSFDSearch, CSFDSearchMovie } from 'interfaces/search.interface';
+import { CSFDSearch, CSFDSearchMovie, CSFDSearchUser } from 'interfaces/search.interface';
 import { HTMLElement, parse } from 'node-html-parser';
 import { fetchSearch } from '../fetchers';
 import { parseIdFromUrl } from '../helpers/global.helper';
+import { getAvatar, getUser, getUserRealName, getUserUrl } from '../helpers/search-user.helper';
 import {
   getColorRating,
   getOrigins,
@@ -19,11 +20,13 @@ export class SearchScraper {
 
     const html = parse(response);
     const moviesNode = html.querySelectorAll('.main-movies article');
-    return this.parseSearch(moviesNode);
+    const usersNode = html.querySelectorAll('.main-users article');
+    return this.parseSearch(moviesNode, usersNode);
   }
 
-  private parseSearch(moviesNode: HTMLElement[]) {
+  private parseSearch(moviesNode: HTMLElement[], usersNode: HTMLElement[]) {
     const movies: CSFDSearchMovie[] = [];
+    const users: CSFDSearchUser[] = [];
 
     moviesNode.map((m) => {
       const url = getUrl(m);
@@ -44,11 +47,25 @@ export class SearchScraper {
       };
       movies.push(movie);
     });
+
+    usersNode.map((m) => {
+      const url = getUserUrl(m);
+
+      const user: CSFDSearchUser = {
+        id: parseIdFromUrl(url),
+        user: getUser(m),
+        userRealName: getUserRealName(m),
+        avatar: getAvatar(m),
+        url: `https://www.csfd.cz${url}`
+      };
+      users.push(user);
+    });
+
     const search: CSFDSearch = {
       movies: movies,
+      users: users,
       tvSeries: [],
-      creators: [],
-      users: []
+      creators: []
     };
     return search;
   }

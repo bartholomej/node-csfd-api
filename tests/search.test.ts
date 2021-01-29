@@ -1,4 +1,5 @@
 import { parse } from 'node-html-parser';
+import { getAvatar, getUser, getUserRealName, getUserUrl } from '../src/helpers/search-user.helper';
 import {
   getColorRating,
   getOrigins,
@@ -15,6 +16,7 @@ import { searchMock } from './mocks/search.html';
 
 const html = parse(searchMock);
 const moviesNode = html.querySelectorAll('.main-movies article');
+const usersNode = html.querySelectorAll('.main-users article');
 
 describe('Get Movie titles', () => {
   test('First movie', () => {
@@ -157,5 +159,49 @@ describe('Get Movie creators', () => {
         url: 'https://www.csfd.cz/tvurce/294809-luoyong-wang/'
       }
     ]);
+  });
+});
+
+describe('Get Users name', () => {
+  test('First user', () => {
+    const movie = getUser(usersNode[0]);
+    expect(movie).toEqual<string>('matrix');
+  });
+  test('Last user', () => {
+    const movie = getUser(usersNode[usersNode.length - 1]);
+    expect(movie).toEqual<string>('matrix15');
+  });
+});
+
+describe('Get Users real name', () => {
+  test('First user (nothing)', () => {
+    const movie = getUserRealName(usersNode[0]);
+    expect(movie).toEqual<string>(null);
+  });
+  test('Some name', () => {
+    const movie = getUserRealName(usersNode[3]);
+    expect(movie).toEqual<string>('Manny Negros');
+  });
+});
+
+describe('Get Users avatar', () => {
+  test('First user (nothing)', () => {
+    const movie = getAvatar(usersNode[0]);
+    expect(movie).toEqual<string>(
+      'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'
+    );
+  });
+  test('Some name', () => {
+    const movie = getAvatar(usersNode[3]);
+    expect(movie).toEqual<string>(
+      '//image.pmgstatic.com/cache/resized/w45h60/files/images/user/avatars/160/991/160991965_f10d9a.jpg'
+    );
+  });
+});
+
+describe('Get Users url', () => {
+  test('First user', () => {
+    const movie = getUserUrl(usersNode[0]);
+    expect(movie).toEqual<string>('/uzivatel/615105-matrix/');
   });
 });
