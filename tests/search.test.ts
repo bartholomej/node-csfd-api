@@ -6,9 +6,11 @@ import {
   getTitle,
   getType,
   getUrl,
-  getYear
+  getYear,
+  parsePeople
 } from '../src/helpers/search.helper';
 import { CSFDColorRating, CSFDFilmTypes } from '../src/interfaces/global';
+import { CSFDCreator } from '../src/interfaces/movie.interface';
 import { searchMock } from './mocks/search.html';
 
 const html = parse(searchMock);
@@ -122,5 +124,38 @@ describe('Get Movie origins', () => {
   test('Some movie', () => {
     const movie = getOrigins(moviesNode[4]);
     expect(movie).toEqual<string[]>(['Slovensko']);
+  });
+});
+
+describe('Get Movie creators', () => {
+  test('First movie directors', () => {
+    const movie = parsePeople(moviesNode[0], 'director');
+    expect(movie).toEqual<CSFDCreator[]>([
+      {
+        id: 3112,
+        name: 'Lilly Wachowski',
+        url: 'https://www.csfd.cz/tvurce/3112-lilly-wachowski/'
+      },
+      {
+        id: 3113,
+        name: 'Lana Wachowski',
+        url: 'https://www.csfd.cz/tvurce/3113-lana-wachowski/'
+      }
+    ]);
+  });
+  test('Last movie actors', () => {
+    const movie = parsePeople(moviesNode[moviesNode.length - 1], 'actors');
+    expect(movie).toEqual<CSFDCreator[]>([
+      {
+        id: 67747,
+        name: "Genevieve O'Reilly",
+        url: 'https://www.csfd.cz/tvurce/67747-genevieve-o-reilly/'
+      },
+      {
+        id: 294809,
+        name: 'Luoyong Wang',
+        url: 'https://www.csfd.cz/tvurce/294809-luoyong-wang/'
+      }
+    ]);
   });
 });

@@ -9,7 +9,8 @@ import {
   getTitle,
   getType,
   getUrl,
-  getYear
+  getYear,
+  parsePeople
 } from '../helpers/search.helper';
 
 export class SearchScraper {
@@ -36,7 +37,10 @@ export class SearchScraper {
         colorRating: getColorRating(m),
         poster: getPoster(m),
         origins: getOrigins(m),
-        creators: null
+        creators: {
+          directors: parsePeople(m, 'director'),
+          actors: parsePeople(m, 'actors')
+        }
       };
       movies.push(movie);
     });

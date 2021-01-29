@@ -1,4 +1,5 @@
 import { CSFDColorRating, CSFDFilmTypes } from 'interfaces/global';
+import { CSFDCreator } from 'interfaces/movie.interface';
 import { Colors } from 'interfaces/user-ratings.interface';
 import { HTMLElement } from 'node-html-parser';
 import { parseColor, parseIdFromUrl } from './global.helper';
@@ -38,4 +39,15 @@ export const getOrigins = (el: HTMLElement): string[] => {
   const origins = originsRaw?.split(', ');
   origins.pop();
   return origins;
+};
+
+export const parsePeople = (el: HTMLElement, type: 'director' | 'actors'): CSFDCreator[] => {
+  const people = el.querySelectorAll(`.article-content .${type} a`);
+  return people.map((person) => {
+    return {
+      id: parseIdFromUrl(person.attributes.href),
+      name: person.innerText.trim(),
+      url: `https://www.csfd.cz${person.attributes.href}`
+    };
+  });
 };
