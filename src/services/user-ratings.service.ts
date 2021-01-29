@@ -1,5 +1,5 @@
 import { HTMLElement, parse } from 'node-html-parser';
-import { fetchUserRatings } from '../fetchers';
+import { fetchPage } from '../fetchers';
 import {
   getColorRating,
   getDate,
@@ -13,6 +13,7 @@ import {
 } from '../helpers/user-ratings.helper';
 import { CSFDColorRating, CSFDStars } from '../interfaces/global';
 import { CSFDUserRatingConfig, CSFDUserRatings } from '../interfaces/user-ratings.interface';
+import { userRatingsUrl } from '../vars';
 
 export class UserRatingsScraper {
   private films: CSFDUserRatings[] = [];
@@ -22,7 +23,9 @@ export class UserRatingsScraper {
     config?: CSFDUserRatingConfig
   ): Promise<CSFDUserRatings[]> {
     let allMovies: CSFDUserRatings[] = [];
-    const response = await fetchUserRatings(user);
+    const url = userRatingsUrl(user);
+    const response = await fetchPage(url);
+
     const items = parse(response);
     const movies = items.querySelectorAll('.box-user-rating .table-container tbody tr');
 
@@ -34,9 +37,11 @@ export class UserRatingsScraper {
 
     if (config?.allPages) {
       console.log('Fetching all pages', pages);
-      for (let i = 2; i <= pages; i++) {
+      for (let i = 2; i <= 4; i++) {
         console.log('Fetching page', i, 'out of', pages, '...');
-        const response = await fetchUserRatings(user, i);
+        const url = userRatingsUrl(user, i);
+        const response = await fetchPage(url);
+
         const items = parse(response);
         const movies = items.querySelectorAll('.box-user-rating .table-container tbody tr');
         allMovies = [...this.getPage(config, movies)];

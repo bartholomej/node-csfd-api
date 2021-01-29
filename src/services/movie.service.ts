@@ -1,5 +1,5 @@
 import { HTMLElement, parse } from 'node-html-parser';
-import { fetchMovie } from '../fetchers';
+import { fetchPage } from '../fetchers';
 import {
   getColorRating,
   getDescriptions,
@@ -24,7 +24,8 @@ export class MovieScraper {
   private film: CSFDMovie;
 
   public async movie(movieId: number): Promise<CSFDMovie> {
-    const response = await fetchMovie(+movieId);
+    const url = movieUrl(+movieId);
+    const response = await fetchPage(url);
 
     const movieHtml = parse(response);
 

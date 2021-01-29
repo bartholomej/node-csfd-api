@@ -1,6 +1,6 @@
 import { CSFDSearch, CSFDSearchMovie, CSFDSearchUser } from 'interfaces/search.interface';
 import { HTMLElement, parse } from 'node-html-parser';
-import { fetchSearch } from '../fetchers';
+import { fetchPage } from '../fetchers';
 import { parseIdFromUrl } from '../helpers/global.helper';
 import { getAvatar, getUser, getUserRealName, getUserUrl } from '../helpers/search-user.helper';
 import {
@@ -13,10 +13,12 @@ import {
   getYear,
   parsePeople
 } from '../helpers/search.helper';
+import { searchUrl } from '../vars';
 
 export class SearchScraper {
   public async search(text: string): Promise<CSFDSearch> {
-    const response = await fetchSearch(text);
+    const url = searchUrl(text);
+    const response = await fetchPage(url);
 
     const html = parse(response);
     const moviesNode = html.querySelectorAll('.main-movies article');

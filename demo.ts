@@ -2,21 +2,21 @@
 import { csfd } from './src';
 
 // Parse movie
-// csfd.movie(10135).then((movie) => console.log(movie));
+csfd.movie(10135).then((movie) => console.log(movie));
 
-csfd.search('matrix').then((search) => console.log(search));
+// csfd.search('matrix').then((search) => console.log(search));
 
 /**
  * USER RATINGS
  */
 
-// // Save all pages in json file
+// Save all pages in json file
 // const userId = 912;
-//
+
 // csfd
 //   .userRatings(userId, {
 //     excludes: ['epizoda', 'TV pořad', 'série'],
-//     allPages: true,
+//     allPages: false,
 //     allPagesDelay: 2000
 //   })
 //   .then((ratings) => {
@@ -26,7 +26,7 @@ csfd.search('matrix').then((search) => console.log(search));
 //     });
 //   });
 
-// // Only TV series
+// Only TV series
 // csfd
 //   .userRatings('912-bart', { includesOnly: ['TV seriál'] })
-//   .then((ratings) => ratings.map((x) => console.log(x.type)));
+//   .then((ratings) => console.log(ratings));
