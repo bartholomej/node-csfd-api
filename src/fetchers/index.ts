@@ -45,6 +45,14 @@ export const fetchMovie = async (movieId: number): Promise<string> => {
 
 export const fetchSearch = async (text: string): Promise<string> => {
   const url = searchUrl(text);
-  const response = await fetch(url);
-  return await response.text();
+  try {
+    const response = await fetch(url, { headers });
+    if (response.status >= 400 && response.status < 600) {
+      throw new Error(`node-csfd-api: Bad response ${response.status} for url: ${url}`);
+    }
+    return await response.text();
+  } catch (e) {
+    console.error(e);
+    return 'Error';
+  }
 };
