@@ -110,7 +110,9 @@ csfd.movie(535121).then((movie) => console.log(movie));
 
 ### User Ratings
 
-Get all of [my ratings](https://www.csfd.cz/uzivatel/912-bart/hodnoceni/)
+### Last ratings (last page)
+
+Get [my last 50 ratings](https://www.csfd.cz/uzivatel/912-bart/hodnoceni/)
 
 ```javascript
 import { csfd } from 'node-csfd-api';
@@ -118,7 +120,24 @@ import { csfd } from 'node-csfd-api';
 csfd.userRatings('912-bart').then((ratings) => console.log(ratings));
 ```
 
-#### Results
+### All ratings (all pages)
+
+> Warning: Use it wisely. Can be detected and banned. Consider using it together with `allPagesDelay` attribute.
+
+Get [all of my ratings](https://www.csfd.cz/uzivatel/912-bart/hodnoceni/)
+
+```javascript
+import { csfd } from 'node-csfd-api';
+
+csfd
+  .userRatings('912-bart', {
+    allPages: true, // Download all pages (one by one)
+    allPageDelay: 2000 // Make delay 2000ms on each page request
+  })
+  .then((ratings) => console.log(ratings));
+```
+
+### Results
 
 ```javascript
 [
@@ -145,10 +164,12 @@ csfd.userRatings('912-bart').then((ratings) => console.log(ratings));
 
 #### Options
 
-| Option           | Type                                                                                                                                       | Default | Description                                               |
-| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | ------- | --------------------------------------------------------- |
-| **includesOnly** | [CSFDFilmTypes[]](https://github.com/bartholomej/node-csfd-api/blob/8fa5f9cbc7e7f2b62b0bd2c2b5a24c9a63444f6a/src/interfaces/global.ts#L25) | null    | Including only film types. eg. `['TV Seriál', 'koncert']` |
-| **exclude**      | [CSFDFilmTypes[]](https://github.com/bartholomej/node-csfd-api/blob/8fa5f9cbc7e7f2b62b0bd2c2b5a24c9a63444f6a/src/interfaces/global.ts#L25) | null    | Excluding film types eg. `['epizoda', 'série']`           |
+| Option            | Type                                                                                                                                       | Default | Description                                               |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | ------- | --------------------------------------------------------- |
+| **includesOnly**  | [CSFDFilmTypes[]](https://github.com/bartholomej/node-csfd-api/blob/8fa5f9cbc7e7f2b62b0bd2c2b5a24c9a63444f6a/src/interfaces/global.ts#L25) | null    | Including only film types. eg. `['TV Seriál', 'koncert']` |
+| **exclude**       | [CSFDFilmTypes[]](https://github.com/bartholomej/node-csfd-api/blob/8fa5f9cbc7e7f2b62b0bd2c2b5a24c9a63444f6a/src/interfaces/global.ts#L25) | null    | Excluding film types eg. `['epizoda', 'série']`           |
+| **allPages**      | boolean                                                                                                                                    | false   | Get all pages                                             |
+| **allPagesDelay** | number                                                                                                                                     | 0       | Delay on each page request. In milliseconds               |
 
 _Note: You can not use both parameters 'includesOnly' and 'excludes'. Parameter 'includesOnly' has a priority._
 
@@ -162,9 +183,11 @@ _Note: You can not use both parameters 'includesOnly' and 'excludes'. Parameter 
   - [ ] Users
   - [ ] Creators
 - [ ] Creators
-- [ ] User Ratings
+  - [ ] Bio
+  - [ ] Movies
+- [x] User Ratings
   - [x] Last ratings
-  - [ ] All pages ([branch](https://github.com/bartholomej/node-csfd-api/tree/user-rating-all))
+  - [x] All pages
 
 ## Development
 
