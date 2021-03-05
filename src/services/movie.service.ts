@@ -10,6 +10,7 @@ import {
   getOrigins,
   getOtherTitles,
   getPoster,
+  getPremieres,
   getRating,
   getTags,
   getTitle,
@@ -70,7 +71,8 @@ export class MovieScraper {
         productionDesign: getGroup(el, 'Scénografie')
       },
       vod: getVods(asideEl),
-      tags: getTags(asideEl)
+      tags: getTags(asideEl),
+      premieres: getPremieres(asideEl)
     };
   }
 }

@@ -5,6 +5,7 @@ import {
   CSFDCreatorGroups,
   CSFDGenres,
   CSFDOtherTitles,
+  CSFDPremiere,
   CSFDVod
 } from '../interfaces/movie.interface';
 import { getColor, parseIdFromUrl } from './global.helper';
@@ -156,6 +157,21 @@ export const getVods = (el: HTMLElement): CSFDVod[] => {
 //   const headers = el.querySelectorAll('section.box .box-header');
 //   return headers.find((header) => header.querySelector('h3').text.trim().includes(box));
 // };
+
+export const getPremieres = (el: HTMLElement): CSFDPremiere[] => {
+  const premieresNode = el.querySelectorAll('.box-premieres li');
+  const premiere: CSFDPremiere[] = [];
+  for (const premiereNode of premieresNode) {
+    const [date, ...company] = premiereNode.querySelector('p + span').attributes.title.split(' ');
+    premiere.push({
+      country: premiereNode.querySelector('.flag').attributes.title,
+      format: premiereNode.querySelector('p').text.trim().split(' od')[0],
+      date,
+      company: company.join(' ')
+    });
+  }
+  return premiere;
+};
 
 export const getTags = (el: HTMLElement): string[] => {
   const tagsRaw = el.querySelectorAll('.box-content a[href*="/podrobne-vyhledavani/?tag="]');

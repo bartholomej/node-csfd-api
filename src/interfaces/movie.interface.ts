@@ -11,6 +11,7 @@ export interface CSFDMovie extends CSFDScreening {
   creators: CSFDCreators;
   vod: CSFDVod[];
   tags: string[];
+  premieres: CSFDPremiere[];
 }
 
 export interface CSFDVod {
@@ -116,3 +117,10 @@ export type CSFDCreatorGroups =
   | 'Předloha'
   | 'Scénografie'
   | 'Kostýmy';
+
+export interface CSFDPremiere {
+  country: string;
+  format: string;
+  date: string;
+  company: string;
+}
