@@ -10,7 +10,7 @@ export interface CSFDMovie extends CSFDScreening {
   genres: CSFDGenres[] | string[];
   creators: CSFDCreators;
   vod: CSFDVod[];
-  // tags: string[];
+  tags: string[];
 }
 
 export interface CSFDVod {

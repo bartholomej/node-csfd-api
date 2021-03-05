@@ -11,6 +11,7 @@ import {
   getOtherTitles,
   getPoster,
   getRating,
+  getTags,
   getTitle,
   getType,
   getVods,
@@ -30,17 +31,16 @@ export class MovieScraper {
     const movieHtml = parse(response);
 
     const pageClasses = movieHtml.querySelector('.page-content').classNames;
-    // const asideNode = movieHtml.querySelector('.box-rating-container');
+    const asideNode = movieHtml.querySelector('.aside-movie-profile');
     const movieNode = movieHtml.querySelector('.main-movie-profile');
-    const buttonsNode = movieHtml.querySelectorAll('.box-buttons')[0];
-    this.buildMovie(+movieId, movieNode, buttonsNode, pageClasses);
+    this.buildMovie(+movieId, movieNode, asideNode, pageClasses);
     return this.film;
   }
 
   private buildMovie(
     movieId: number,
     el: HTMLElement,
-    elButtons: HTMLElement,
+    asideEl: HTMLElement,
     pageClasses: string[]
   ) {
     this.film = {
@@ -54,7 +54,7 @@ export class MovieScraper {
       url: movieUrl(movieId),
       origins: getOrigins(el),
       colorRating: getColorRating(pageClasses),
-      rating: getRating(el),
+      rating: getRating(asideEl),
       otherTitles: getOtherTitles(el),
       poster: getPoster(el),
       creators: {
@@ -69,7 +69,8 @@ export class MovieScraper {
         costumeDesign: getGroup(el, 'Kostýmy'),
         productionDesign: getGroup(el, 'Scénografie')
       },
-      vod: getVods(elButtons)
+      vod: getVods(asideEl),
+      tags: getTags(asideEl)
     };
   }
 }

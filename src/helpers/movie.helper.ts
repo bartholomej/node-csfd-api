@@ -139,8 +139,7 @@ export const getType = (el: HTMLElement): string => {
 export const getVods = (el: HTMLElement): CSFDVod[] => {
   let vods: CSFDVod[] = [];
   if (el) {
-    const buttons = el.querySelectorAll('.button');
-    // Filter out social buttons
+    const buttons = el.querySelectorAll('.box-buttons .button');
     const buttonsVod = buttons.filter((x) => !x.classNames.includes('button-social'));
     vods = buttonsVod.map((btn) => {
       return {
@@ -152,14 +151,13 @@ export const getVods = (el: HTMLElement): CSFDVod[] => {
   return vods.length ? vods : [];
 };
 
-// TODO tags
+// // TODO tags
 // export const getBoxContent = (el: HTMLElement, box: string): HTMLElement => {
-//   const headers = el.querySelectorAll('section.box .box-header h3');
-//   return headers.find((header) => header.text.trim().includes(box));
+//   const headers = el.querySelectorAll('section.box .box-header');
+//   return headers.find((header) => header.querySelector('h3').text.trim().includes(box));
 // };
 
-// export const getTags = (el: HTMLElement): string[] => {
-//   // const tagsRaw = getBoxContent(el, 'Tagy');
-//   const tagsRaw = el.querySelectorAll('.tags .content a');
-//   return tagsRaw.map((elem) => elem.text.trim());
-// };
+export const getTags = (el: HTMLElement): string[] => {
+  const tagsRaw = el.querySelectorAll('.box-content a[href*="/podrobne-vyhledavani/?tag="]');
+  return tagsRaw.map((tag) => tag.text);
+};
