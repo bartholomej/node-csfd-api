@@ -164,7 +164,7 @@ export const getPremieres = (el: HTMLElement): CSFDPremiere[] => {
   for (const premiereNode of premieresNode) {
     const [date, ...company] = premiereNode.querySelector('p + span').attributes.title.split(' ');
     premiere.push({
-      country: premiereNode.querySelector('.flag').attributes.title,
+      country: premiereNode.querySelector('.flag')?.attributes.title || null,
       format: premiereNode.querySelector('p').text.trim().split(' od')[0],
       date,
       company: company.join(' ')
