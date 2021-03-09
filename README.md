@@ -222,11 +222,22 @@ csfd
 
 _Note: You can not use both parameters 'includesOnly' and 'excludes'. Parameter 'includesOnly' has a priority._
 
+## Used by
+
+- [Dafilms web extension](https://chrome.google.com/webstore/detail/dafilms/hgcgneddmgflnbmhkjnefiobjgobbmdm?hl=en) ([code](https://github.com/bartholomej/dafilms-ext)) – Parser for film ratings (web extension)
+- [bartweb.cz](https://bartweb.cz) – **Last seen** section (Firebase function)
+
 ## Roadmap
 
 ### Scraping more pages
 
-- [ ] Search ([branch](https://github.com/bartholomej/node-csfd-api/tree/search))
+- [ ] Movies
+  - [ ] Premieres
+  - [ ] Tags
+  - [ ] Images
+  - [ ] Reviews
+  - [ ] OST
+- [ ] Search
   - [x] Movies
   - [x] Users
   - [ ] TV Series
