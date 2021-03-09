@@ -28,10 +28,10 @@
   "devDependencies": {
     "@babel/preset-typescript": "^7.13.0",
     "@types/jest": "^26.0.20",
-    "@types/node": "^14.14.31",
+    "@types/node": "^14.14.33",
     "@types/node-fetch": "^2.5.8",
-    "@typescript-eslint/eslint-plugin": "^4.16.1",
-    "@typescript-eslint/parser": "^4.16.1",
+    "@typescript-eslint/eslint-plugin": "^4.17.0",
+    "@typescript-eslint/parser": "^4.17.0",
     "eslint": "^7.21.0",
     "eslint-config-google": "^0.14.0",
     "eslint-config-prettier": "^8.1.0",
@@ -54,7 +54,7 @@
   "bugs": {
     "url": "https://github.com/bartholomej/node-csfd-api/issues"
   },
-  "homepage": "https://github.com/bartholomej/node-csfd-api#readme",  
+  "homepage": "https://github.com/bartholomej/node-csfd-api#readme",
   "keywords": [
     "csfd",
     "čsfd",
