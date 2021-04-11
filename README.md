@@ -45,6 +45,7 @@ csfd.movie(535121).then((movie) => console.log(movie));
 
 ```javascript
 {
+  id: 535121,
   title: 'Na špatné straně',
   year: '2018',
   descriptions: [
@@ -65,44 +66,68 @@ csfd.movie(535121).then((movie) => console.log(movie));
     { country: 'Velká Británie', title: 'Dragged Across Concrete' }
   ],
   poster: '//img.csfd.cz/files/images/film/posters/163/579/163579352_bf8737.jpg?h180',
-  directors: [
+  creators: {
+    directors: [
     {
       id: 87470,
       name: 'S. Craig Zahler',
       url: 'https://www.csfd.cz/tvurce/87470-s-craig-zahler/'
+      }
+    ],
+    actors: [
+      {
+        id: 1,
+        name: 'Mel Gibson',
+        url: 'https://www.csfd.cz/tvurce/1-mel-gibson/'
+      }
+    ],
+    basedOn: [],
+    writers: [
+      {
+        id: 87470,
+        name: 'S. Craig Zahler',
+        url: 'https://www.csfd.cz/tvurce/87470-s-craig-zahler/'
+      }
+    ],
+    music: [
+      {
+        id: 203209,
+        name: 'Jeff Herriott',
+        url: 'https://www.csfd.cz/tvurce/203209-jeff-herriott/'
+      }
+    ],
+    producers: [
+      {
+        id: 320006,
+        name: 'Sefton Fincham',
+        url: 'https://www.csfd.cz/tvurce/320006-sefton-fincham/'
+      }
+    ]
+  },
+  vod: [
+    {
+      title: 'Voyo',
+      url: 'https://voyo.nova.cz/filmy/4604-na-spatne-strane'
+    },
+    {
+      title: 'DVD',
+      url: 'https://filmy.heureka.cz/na-spatne-strane-dvd/#utm_source=csfd.cz&utm_medium=cooperation&utm_campaign=csfd_movies_feed'
     }
   ],
-  actors: [
-    {
-      id: 1,
-      name: 'Mel Gibson',
-      url: 'https://www.csfd.cz/tvurce/1-mel-gibson/'
+  tags: ['policie', 'zbraně', 'zloděj', 'město', 'sledování'],
+  premieres: [
+   {
+      country: 'Česko',
+      format: 'Na Blu-ray',
+      date: '07.08.2019',
+      company: 'Magic Box'
     },
-    // ...
-  ],
-  basedOn: [],
-  writers: [
     {
-      id: 87470,
-      name: 'S. Craig Zahler',
-      url: 'https://www.csfd.cz/tvurce/87470-s-craig-zahler/'
+      country: 'USA',
+      format: 'V kinech',
+      date: '22.03.2019',
+      company: 'Lionsgate US'
     }
-  ],
-  music: [
-    {
-      id: 203209,
-      name: 'Jeff Herriott',
-      url: 'https://www.csfd.cz/tvurce/203209-jeff-herriott/'
-    },
-    // ...
-  ],
-  producers: [
-    {
-      id: 320006,
-      name: 'Sefton Fincham',
-      url: 'https://www.csfd.cz/tvurce/320006-sefton-fincham/'
-    },
-    // ...
   ]
 }
 ```
@@ -142,8 +167,7 @@ movies: [
         url: 'https://www.csfd.cz/tvurce/1-mel-gibson/'
       }]
     }
-  },
-  // ...
+  }
 ],
 users: [
   {
@@ -152,8 +176,7 @@ users: [
     userRealName: 'Lukáš Barták',
     avatar: '//image.pmgstatic.com/cache/resized/w45h60/files/images/user/avatars/000/281/281554_1c0fef.jpg',
     url: 'https://www.csfd.cz/uzivatel/912-bart/'
-  },
-  // ...
+  }
 ]
 ```
 
@@ -232,16 +255,42 @@ _Note: You can not use both parameters 'includesOnly' and 'excludes'. Parameter 
 ### Scraping more pages
 
 - [ ] Movies
-  - [ ] Premieres
-  - [ ] Tags
-  - [ ] Images
+  - [x] Titles
+  - [x] Years
+  - [x] Type
+  - [x] User rating
+  - [x] Color rating
+  - [x] Poster
+  - [x] Duration
+  - [x] Other titles
+  - [x] Origins
+  - [x] Descriptions
+  - [x] Genres
+  - [x] VOD
+  - [x] Tags
+  - [x] Premieres
+  - [x] Creators
+    - [x] Directors
+    - [x] Writers
+    - [x] Cinematography
+    - [x] Music
+    - [x] Actors
+    - [x] BasedOn
+    - [x] Producers
+    - [x] Film editors
+    - [x] Costume designers
+    - [x] Production designers
+  - [x] Premieres
+  - [ ] All images
   - [ ] Reviews
+  - [ ] Related movies
+  - [ ] Connected movies
   - [ ] OST
 - [ ] Search
   - [x] Movies
   - [x] Users
-  - [ ] TV Series
   - [ ] Creators
+  - [ ] TV Series
 - [ ] Creators
   - [ ] Bio
   - [ ] Movies
