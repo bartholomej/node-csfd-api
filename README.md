@@ -249,6 +249,7 @@ _Note: You can not use both parameters 'includesOnly' and 'excludes'. Parameter 
 
 - [Dafilms web extension](https://chrome.google.com/webstore/detail/dafilms/hgcgneddmgflnbmhkjnefiobjgobbmdm?hl=en) ([code](https://github.com/bartholomej/dafilms-ext)) – Parser for film ratings (web extension)
 - [bartweb.cz](https://bartweb.cz) – **Last seen** section (Firebase function)
+- KinoKlub – Mobile application for Aerofilms (native Adnroid + iOS application)
 
 ## Roadmap
 
