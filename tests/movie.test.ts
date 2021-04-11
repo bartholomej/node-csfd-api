@@ -1,5 +1,6 @@
 import { HTMLElement, parse } from 'node-html-parser';
 import {
+  getBoxMovies,
   getColorRating,
   getDescriptions,
   getDirectors,
@@ -11,7 +12,6 @@ import {
   getPoster,
   getPremieres,
   getRating,
-  getRelated,
   getTitle,
   getTitlesOther,
   getType,
@@ -297,11 +297,11 @@ describe('Get people', () => {
   // TODO get movies with related box
   describe('Get related', () => {
     test('Get movie related', () => {
-      const movie = getRelated(asideNode);
+      const movie = getBoxMovies(asideNode, 'Související');
       expect(movie).toEqual<CSFDMovieListItem[]>([]);
     });
     test('Get series related', () => {
-      const movie = getRelated(asideNodeSeries);
+      const movie = getBoxMovies(asideNodeSeries, 'Související');
       expect(movie).toEqual<CSFDMovieListItem[]>([
         {
           id: 116244,
@@ -311,7 +311,23 @@ describe('Get people', () => {
       ]);
     });
     test('Get blank related', () => {
-      const movie = getRelated(asideNodeBlank);
+      const movie = getBoxMovies(asideNodeBlank, 'Související');
+      expect(movie).toEqual<CSFDMovieListItem[]>([]);
+    });
+  });
+
+  // TODO get movies with similar box
+  describe('Get similar', () => {
+    test('Get movie similar', () => {
+      const movie = getBoxMovies(asideNode, 'Podobné');
+      expect(movie).toEqual<CSFDMovieListItem[]>([]);
+    });
+    test('Get series similar', () => {
+      const movie = getBoxMovies(asideNodeSeries, 'Podobné');
+      expect(movie).toEqual<CSFDMovieListItem[]>([]);
+    });
+    test('Get blank similar', () => {
+      const movie = getBoxMovies(asideNodeBlank, 'Podobné');
       expect(movie).toEqual<CSFDMovieListItem[]>([]);
     });
   });

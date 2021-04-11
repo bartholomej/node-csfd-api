@@ -1,6 +1,7 @@
 import { HTMLElement } from 'node-html-parser';
 import { CSFDColorRating } from '../interfaces/global';
 import {
+  CSFDBoxContent,
   CSFDCreator,
   CSFDCreatorGroups,
   CSFDGenres,
@@ -159,7 +160,7 @@ export const getBoxContent = (el: HTMLElement, box: string): HTMLElement => {
   return headers.find((header) => header.querySelector('h3').text.trim().includes(box))?.parentNode;
 };
 
-export const getBoxMovies = (el: HTMLElement, boxName: string): CSFDMovieListItem[] => {
+export const getBoxMovies = (el: HTMLElement, boxName: CSFDBoxContent): CSFDMovieListItem[] => {
   const movieListItem: CSFDMovieListItem[] = [];
   const box = getBoxContent(el, boxName);
   const movieTitleNodes = box?.querySelectorAll('.article-header .film-title-name');
@@ -173,10 +174,6 @@ export const getBoxMovies = (el: HTMLElement, boxName: string): CSFDMovieListIte
     }
   }
   return movieListItem;
-};
-
-export const getRelated = (el: HTMLElement): CSFDMovieListItem[] => {
-  return getBoxMovies(el, 'Související');
 };
 
 export const getPremieres = (el: HTMLElement): CSFDPremiere[] => {

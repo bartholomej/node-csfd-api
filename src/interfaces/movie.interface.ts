@@ -12,7 +12,8 @@ export interface CSFDMovie extends CSFDScreening {
   vod: CSFDVod[];
   tags: string[];
   premieres: CSFDPremiere[];
-  related: any; // TODO
+  related: CSFDMovieListItem[];
+  similar: CSFDMovieListItem[];
 }
 
 export interface CSFDVod {
@@ -131,3 +132,5 @@ export interface CSFDPremiere {
   date: string;
   company: string;
 }
+
+export type CSFDBoxContent = 'Související' | 'Podobné';

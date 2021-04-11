@@ -1,6 +1,7 @@
 import { HTMLElement, parse } from 'node-html-parser';
 import { fetchPage } from '../fetchers';
 import {
+  getBoxMovies,
   getColorRating,
   getDescriptions,
   getDirectors,
@@ -11,7 +12,6 @@ import {
   getPoster,
   getPremieres,
   getRating,
-  getRelated,
   getTags,
   getTitle,
   getTitlesOther,
@@ -74,7 +74,8 @@ export class MovieScraper {
       vod: getVods(asideEl),
       tags: getTags(asideEl),
       premieres: getPremieres(asideEl),
-      related: getRelated(asideEl)
+      related: getBoxMovies(asideEl, 'Související'),
+      similar: getBoxMovies(asideEl, 'Podobné')
     };
   }
 }
