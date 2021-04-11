@@ -10,6 +10,7 @@ import {
   getOrigins,
   getOtherTitles,
   getPoster,
+  getPremieres,
   getRating,
   getTitle,
   getType,
@@ -17,7 +18,12 @@ import {
   getYear
 } from '../src/helpers/movie.helper';
 import { CSFDColorRating } from '../src/interfaces/global';
-import { CSFDCreator, CSFDOtherTitles, CSFDVod } from '../src/interfaces/movie.interface';
+import {
+  CSFDCreator,
+  CSFDOtherTitles,
+  CSFDPremiere,
+  CSFDVod
+} from '../src/interfaces/movie.interface';
 import { movieMock } from './mocks/movie1.html';
 import { movieMockBlank } from './mocks/movie2.html';
 import { seriesMock } from './mocks/series1.html';
@@ -28,15 +34,18 @@ const pageClasses = movieHtml.querySelector('.page-content').classNames.split(' 
 const asideNode = movieHtml.querySelector('.aside-movie-profile');
 const movieNode = movieHtml.querySelector('.main-movie-profile');
 
-const movieNodeBlank = parse(movieMockBlank);
-const moviePageBlank: HTMLElement = movieNodeBlank.querySelector('.main-movie-profile');
-const bodyClassesBlank = movieNodeBlank.querySelector('.page-content').classNames.split(' ');
-const buttonsNodeBlank = movieNodeBlank.querySelectorAll('.box-buttons')[0];
+const movieHtmlBlank = parse(movieMockBlank);
 
-const seriesNode = parse(seriesMock);
-const seriesPage: HTMLElement = seriesNode.querySelector('.main-movie-profile');
-const seriesButtonsNode = seriesPage.querySelectorAll('.box-buttons')[0];
-// const bodyClassesSeries = seriesNode.querySelector('.page-content').classNames;
+const pageClassesBlank = movieHtmlBlank.querySelector('.page-content').classNames.split(' ');
+const asideNodeBlank = movieHtmlBlank.querySelector('.aside-movie-profile');
+const movieNodeBlank: HTMLElement = movieHtmlBlank.querySelector('.main-movie-profile');
+
+const seriesHtml = parse(seriesMock);
+
+const seriesNode: HTMLElement = seriesHtml.querySelector('.main-movie-profile');
+const asideNodeSeries = seriesHtml.querySelector('.aside-movie-profile');
+
+// const bodyClassesSeries = seriesHtml.querySelector('.page-content').classNames;
 
 describe('Get ID', () => {
   test('Movie ID', () => {
@@ -51,7 +60,7 @@ describe('Get Movie Title', () => {
     expect(movie).toEqual<string>('Na špatné straně');
   });
   test('Series title', () => {
-    const movie = getTitle(seriesPage);
+    const movie = getTitle(seriesNode);
     expect(movie).toEqual<string>('Království');
   });
 });
@@ -64,7 +73,7 @@ describe('Get Poster', () => {
     );
   });
   test('Movie Blank poster', () => {
-    const movie = getPoster(moviePageBlank);
+    const movie = getPoster(movieNodeBlank);
     expect(movie).toEqual<string>(null);
   });
 });
@@ -75,11 +84,11 @@ describe('Get Duration', () => {
     expect(movie).toEqual<number>(159);
   });
   test('Duration Blank', () => {
-    const movie = getDuration(moviePageBlank);
+    const movie = getDuration(movieNodeBlank);
     expect(movie).toEqual<number>(null);
   });
   test('Duration Series', () => {
-    const movie = getDuration(seriesPage);
+    const movie = getDuration(seriesNode);
     expect(movie).toEqual<number>(560);
   });
 });
@@ -102,11 +111,11 @@ describe('Get VOD', () => {
     ]);
   });
   test('Get vods series', () => {
-    const movie = getVods(seriesButtonsNode);
+    const movie = getVods(asideNodeSeries);
     expect(movie).toEqual<CSFDVod[]>([]);
   });
   test('Get vods blank', () => {
-    const movie = getVods(buttonsNodeBlank);
+    const movie = getVods(asideNodeBlank);
     expect(movie).toEqual<CSFDVod[]>([]);
   });
 });
@@ -141,7 +150,7 @@ describe('Get otherTitles', () => {
     ]);
   });
   test('otherTitles Blank', () => {
-    const movie = getOtherTitles(moviePageBlank);
+    const movie = getOtherTitles(movieNodeBlank);
     expect(movie).toEqual<CSFDOtherTitles[]>([]);
   });
 });
@@ -152,7 +161,7 @@ describe('Get origins', () => {
     expect(movie).toEqual<string[]>(['USA', 'Kanada']);
   });
   test('Origins Series', () => {
-    const movie = getOrigins(seriesPage);
+    const movie = getOrigins(seriesNode);
     expect(movie).toEqual<string[]>(['Dánsko', 'Francie', 'Německo', 'Švédsko']);
   });
 });
@@ -165,7 +174,7 @@ describe('Get descriptions', () => {
     ]);
   });
   test('Description blank', () => {
-    const movie = getDescriptions(moviePageBlank);
+    const movie = getDescriptions(movieNodeBlank);
     expect(movie).toEqual<string[]>([]);
   });
 });
@@ -176,7 +185,7 @@ describe('Get genres', () => {
     expect(movie).toEqual<string[]>(['Krimi', 'Drama', 'Thriller']);
   });
   test('Genres Series', () => {
-    const movie = getGenres(seriesPage);
+    const movie = getGenres(seriesNode);
     expect(movie).toEqual<string[]>(['Drama', 'Horor', 'Mysteriózní', 'Komedie']);
   });
 });
@@ -187,7 +196,7 @@ describe('Get type', () => {
     expect(movie).toEqual<string>('film');
   });
   test('Type Series', () => {
-    const movie = getType(seriesPage);
+    const movie = getType(seriesNode);
     expect(movie).toEqual<string>('TV seriál');
   });
 });
@@ -198,7 +207,7 @@ describe('Get year', () => {
     expect(movie).toEqual<string | number>('2018');
   });
   test('Year Series', () => {
-    const movie = getYear(seriesPage);
+    const movie = getYear(seriesNode);
     expect(movie).toEqual<string | number>('1994–1997');
   });
 });
@@ -213,7 +222,7 @@ describe('Get ratings', () => {
     expect(movie).toEqual<CSFDColorRating>('good');
   });
   test('Blank Rating', () => {
-    const movie = getColorRating(bodyClassesBlank);
+    const movie = getColorRating(pageClassesBlank);
     expect(movie).toEqual<CSFDColorRating>('unknown');
   });
 });
@@ -258,5 +267,28 @@ describe('Get people', () => {
   test('Based on', () => {
     const movie = getGroup(movieNode, 'Předloha');
     expect(movie.slice(0, 1)).toEqual<CSFDCreator[]>([]);
+  });
+
+  describe('Get premieres', () => {
+    test('Get movie premiere', () => {
+      const movie = getPremieres(asideNode);
+      expect(movie).toEqual<CSFDPremiere[]>([
+        { company: 'Magic Box', country: 'Česko', date: '07.08.2019', format: 'Na DVD' },
+        { company: 'Magic Box', country: 'Česko', date: '07.08.2019', format: 'Na Blu-ray' },
+        { company: 'Lionsgate US', country: 'USA', date: '22.03.2019', format: 'V kinech' }
+      ]);
+    });
+    test('Get series premiere', () => {
+      const movie = getPremieres(asideNodeSeries);
+      expect(movie).toEqual<CSFDPremiere[]>([
+        { company: 'Levné knihy', country: 'Česko', date: '22.12.2010', format: 'Na DVD' },
+        { company: 'Danmarks Radio', country: 'Dánsko', date: '24.11.1994', format: 'V TV' },
+        { company: 'SVT', country: 'Švédsko', date: '04.03.1995', format: 'V TV' }
+      ]);
+    });
+    test('Get blank premiere', () => {
+      const movie = getPremieres(asideNodeBlank);
+      expect(movie).toEqual<CSFDPremiere[]>([]);
+    });
   });
 });
