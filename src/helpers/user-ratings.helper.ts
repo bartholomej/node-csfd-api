@@ -9,7 +9,7 @@ export const getId = (el: HTMLElement): number => {
 };
 
 export const getUserRating = (el: HTMLElement): CSFDStars => {
-  const ratingText = el.querySelector('td.star-rating-only .stars').classNames.pop();
+  const ratingText = el.querySelector('td.star-rating-only .stars').classNames.split(' ').pop();
 
   const rating = ratingText.includes('stars-') ? +ratingText.split('-').pop() : 0;
   return rating as CSFDStars;
@@ -30,7 +30,7 @@ export const getYear = (el: HTMLElement): number => {
 };
 
 export const getColorRating = (el: HTMLElement): CSFDColorRating => {
-  const color = parseColor(el.querySelector('td.name .icon').classNames.pop() as Colors);
+  const color = parseColor(el.querySelector('td.name .icon').classNames.split(' ').pop() as Colors);
   return color;
 };
 

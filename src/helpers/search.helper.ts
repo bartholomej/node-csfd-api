@@ -27,7 +27,9 @@ export const getUrl = (el: HTMLElement): string => {
 };
 
 export const getColorRating = (el: HTMLElement): CSFDColorRating => {
-  return parseColor(el.querySelector('.article-header i.icon').classNames.pop() as Colors);
+  return parseColor(
+    el.querySelector('.article-header i.icon').classNames.split(' ').pop() as Colors
+  );
 };
 
 export const getPoster = (el: HTMLElement): string => {

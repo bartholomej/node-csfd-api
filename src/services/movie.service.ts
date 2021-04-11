@@ -31,7 +31,7 @@ export class MovieScraper {
 
     const movieHtml = parse(response);
 
-    const pageClasses = movieHtml.querySelector('.page-content').classNames;
+    const pageClasses = movieHtml.querySelector('.page-content').classNames.split(' ');
     const asideNode = movieHtml.querySelector('.aside-movie-profile');
     const movieNode = movieHtml.querySelector('.main-movie-profile');
     this.buildMovie(+movieId, movieNode, asideNode, pageClasses);

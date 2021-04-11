@@ -22,14 +22,15 @@ import { movieMock } from './mocks/movie1.html';
 import { movieMockBlank } from './mocks/movie2.html';
 import { seriesMock } from './mocks/series1.html';
 
-const movieNode = parse(movieMock);
-const moviePage: HTMLElement = movieNode.querySelector('.main-movie-profile');
-const bodyClasses = movieNode.querySelector('.page-content').classNames;
-const buttonsNode = movieNode.querySelectorAll('.box-buttons')[0];
+const movieHtml = parse(movieMock);
+
+const pageClasses = movieHtml.querySelector('.page-content').classNames.split(' ');
+const asideNode = movieHtml.querySelector('.aside-movie-profile');
+const movieNode = movieHtml.querySelector('.main-movie-profile');
 
 const movieNodeBlank = parse(movieMockBlank);
 const moviePageBlank: HTMLElement = movieNodeBlank.querySelector('.main-movie-profile');
-const bodyClassesBlank = movieNodeBlank.querySelector('.page-content').classNames;
+const bodyClassesBlank = movieNodeBlank.querySelector('.page-content').classNames.split(' ');
 const buttonsNodeBlank = movieNodeBlank.querySelectorAll('.box-buttons')[0];
 
 const seriesNode = parse(seriesMock);
@@ -39,14 +40,14 @@ const seriesButtonsNode = seriesPage.querySelectorAll('.box-buttons')[0];
 
 describe('Get ID', () => {
   test('Movie ID', () => {
-    const movie = getId(moviePage);
+    const movie = getId(movieNode);
     expect(movie).toEqual<number>(535121);
   });
 });
 
 describe('Get Movie Title', () => {
   test('Movie title', () => {
-    const movie = getTitle(moviePage);
+    const movie = getTitle(movieNode);
     expect(movie).toEqual<string>('Na špatné straně');
   });
   test('Series title', () => {
@@ -57,9 +58,9 @@ describe('Get Movie Title', () => {
 
 describe('Get Poster', () => {
   test('Movie poster', () => {
-    const movie = getPoster(moviePage);
+    const movie = getPoster(movieNode);
     expect(movie).toEqual<string>(
-      '//image.pmgstatic.com/files/images/film/posters/163/579/163579352_bf8737.jpg'
+      '//image.pmgstatic.com/cache/resized/w140/files/images/film/posters/163/579/163579352_bf8737.jpg'
     );
   });
   test('Movie Blank poster', () => {
@@ -70,7 +71,7 @@ describe('Get Poster', () => {
 
 describe('Get Duration', () => {
   test('Duration', () => {
-    const movie = getDuration(moviePage);
+    const movie = getDuration(movieNode);
     expect(movie).toEqual<number>(159);
   });
   test('Duration Blank', () => {
@@ -85,9 +86,10 @@ describe('Get Duration', () => {
 
 describe('Get VOD', () => {
   test('Get vods movie', () => {
-    const movie = getVods(buttonsNode);
+    const movie = getVods(asideNode);
+    console.log(movie);
     expect(movie).toEqual<CSFDVod[]>([
-      { title: 'HBOGO', url: 'https://hbogo.sk/filmy/na-spatne-strane' },
+      { title: 'Voyo', url: 'https://voyo.nova.cz/filmy/4604-na-spatne-strane' },
       {
         title: 'DVD',
         url:
@@ -113,7 +115,7 @@ describe('Get VOD', () => {
 // TODO
 // describe('Get additional info', () => {
 //   test('Get tags', () => {
-//     const item = getTags(moviePage);
+//     const item = getTags(movieNode);
 //     expect(item).toEqual<string[]>([
 //       'policie',
 //       'zbraně',
@@ -130,7 +132,7 @@ describe('Get VOD', () => {
 
 describe('Get otherTitles', () => {
   test('otherTitles', () => {
-    const movie = getOtherTitles(moviePage);
+    const movie = getOtherTitles(movieNode);
     expect(movie).toEqual<CSFDOtherTitles[]>([
       { country: 'USA', title: 'Dragged Across Concrete' },
       { country: 'Kanada', title: 'Dragged Across Concrete' },
@@ -147,7 +149,7 @@ describe('Get otherTitles', () => {
 
 describe('Get origins', () => {
   test('Origins', () => {
-    const movie = getOrigins(moviePage);
+    const movie = getOrigins(movieNode);
     expect(movie).toEqual<string[]>(['USA', 'Kanada']);
   });
   test('Origins Series', () => {
@@ -158,7 +160,7 @@ describe('Get origins', () => {
 
 describe('Get descriptions', () => {
   test('descriptions', () => {
-    const movie = getDescriptions(moviePage);
+    const movie = getDescriptions(movieNode);
     expect(movie).toEqual<string[]>([
       'Otupělý policejní veterán Ridgeman (Mel Gibson) a jeho náladový mladší kolega Anthony (Vince Vaughn) jsou suspendováni ze služby poté, co do médií unikne videozáznam jejich svérázných metod. Bez prostředků a velkých šancí se oba zatrpklí vojáci vydají do kriminálního podsvětí, aby učinili spravedlnosti zadost. Mezitím je v jiné části města propuštěn z vězení mladý zločinec Henry Jones a zjišťuje, že jeho matce a postiženému bratrovi hrozí vystěhování. Ve snaze najít způsob, jak jim pomoci, se obrátí na kamaráda z dětství jménem Biscuit, který ho představí nelítostnému kriminálnímu bossovi, jehož ambiciózní plány jej postaví do přímého konfliktu s oběma policejními odpadlíky.(HBO Europe)'
     ]);
@@ -171,7 +173,7 @@ describe('Get descriptions', () => {
 
 describe('Get genres', () => {
   test('Genres', () => {
-    const movie = getGenres(moviePage);
+    const movie = getGenres(movieNode);
     expect(movie).toEqual<string[]>(['Krimi', 'Drama', 'Thriller']);
   });
   test('Genres Series', () => {
@@ -182,7 +184,7 @@ describe('Get genres', () => {
 
 describe('Get type', () => {
   test('Type', () => {
-    const movie = getType(moviePage);
+    const movie = getType(movieNode);
     expect(movie).toEqual<string>('film');
   });
   test('Type Series', () => {
@@ -193,7 +195,7 @@ describe('Get type', () => {
 
 describe('Get year', () => {
   test('Year', () => {
-    const movie = getYear(moviePage);
+    const movie = getYear(movieNode);
     expect(movie).toEqual<string | number>('2018');
   });
   test('Year Series', () => {
@@ -204,11 +206,11 @@ describe('Get year', () => {
 
 describe('Get ratings', () => {
   test('Rating', () => {
-    const movie = getRating(moviePage);
+    const movie = getRating(movieNode);
     expect(movie).toEqual<number>(72);
   });
   test('Color Rating', () => {
-    const movie = getColorRating(bodyClasses);
+    const movie = getColorRating(pageClasses);
     expect(movie).toEqual<CSFDColorRating>('good');
   });
   test('Blank Rating', () => {
@@ -219,7 +221,7 @@ describe('Get ratings', () => {
 
 describe('Get people', () => {
   test('directors', () => {
-    const movie = getDirectors(moviePage);
+    const movie = getDirectors(movieNode);
     expect(movie).toEqual<CSFDCreator[]>([
       {
         id: 87470,
@@ -229,7 +231,7 @@ describe('Get people', () => {
     ]);
   });
   test('Screenwriters', () => {
-    const movie = getGroup(moviePage, 'Scénář');
+    const movie = getGroup(movieNode, 'Scénář');
     expect(movie.slice(0, 1)).toEqual<CSFDCreator[]>([
       {
         id: 87470,
@@ -239,13 +241,13 @@ describe('Get people', () => {
     ]);
   });
   test('Music composers', () => {
-    const movie = getGroup(moviePage, 'Hudba');
+    const movie = getGroup(movieNode, 'Hudba');
     expect(movie.slice(0, 1)).toEqual<CSFDCreator[]>([
       { id: 203209, name: 'Jeff Herriott', url: 'https://www.csfd.cz/tvurce/203209-jeff-herriott/' }
     ]);
   });
   test('Actors', () => {
-    const movie = getGroup(moviePage, 'Hrají');
+    const movie = getGroup(movieNode, 'Hrají');
     expect(movie.slice(0, 1)).toEqual<CSFDCreator[]>([
       {
         id: 1,
@@ -255,7 +257,7 @@ describe('Get people', () => {
     ]);
   });
   test('Based on', () => {
-    const movie = getGroup(moviePage, 'Předloha');
+    const movie = getGroup(movieNode, 'Předloha');
     expect(movie.slice(0, 1)).toEqual<CSFDCreator[]>([]);
   });
 });
