@@ -4,8 +4,8 @@ import {
   CSFDCreator,
   CSFDCreatorGroups,
   CSFDGenres,
-  CSFDOtherTitles,
   CSFDPremiere,
+  CSFDTitlesOther,
   CSFDVod
 } from '../interfaces/movie.interface';
 import { getColor, parseIdFromUrl } from './global.helper';
@@ -64,7 +64,7 @@ export const getDuration = (el: HTMLElement): number => {
   }
 };
 
-export const getOtherTitles = (el: HTMLElement): CSFDOtherTitles[] => {
+export const getTitlesOther = (el: HTMLElement): CSFDTitlesOther[] => {
   const namesNode = el.querySelectorAll('.film-names li');
   return namesNode.map((el) => {
     const country = el.querySelector('img.flag').attributes.alt;

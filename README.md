@@ -58,7 +58,7 @@ csfd.movie(535121).then((movie) => console.log(movie));
   origins: [ 'USA', 'Kanada' ],
   colorRating: 'good',
   rating: 73,
-  otherTitles: [
+  titlesOther: [
     { country: 'USA', title: 'Dragged Across Concrete' },
     { country: 'Kanada', title: 'Dragged Across Concrete' },
     { country: 'Slovensko', title: 'Na zlej strane' },
@@ -262,7 +262,6 @@ _Note: You can not use both parameters 'includesOnly' and 'excludes'. Parameter 
   - [x] Color rating
   - [x] Poster
   - [x] Duration
-  - [x] Other titles
   - [x] Origins
   - [x] Descriptions
   - [x] Genres

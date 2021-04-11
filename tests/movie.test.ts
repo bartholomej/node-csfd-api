@@ -8,11 +8,11 @@ import {
   getGroup,
   getId,
   getOrigins,
-  getOtherTitles,
   getPoster,
   getPremieres,
   getRating,
   getTitle,
+  getTitlesOther,
   getType,
   getVods,
   getYear
@@ -20,8 +20,8 @@ import {
 import { CSFDColorRating } from '../src/interfaces/global';
 import {
   CSFDCreator,
-  CSFDOtherTitles,
   CSFDPremiere,
+  CSFDTitlesOther,
   CSFDVod
 } from '../src/interfaces/movie.interface';
 import { movieMock } from './mocks/movie1.html';
@@ -138,10 +138,10 @@ describe('Get VOD', () => {
 //   });
 // });
 
-describe('Get otherTitles', () => {
-  test('otherTitles', () => {
-    const movie = getOtherTitles(movieNode);
-    expect(movie).toEqual<CSFDOtherTitles[]>([
+describe('Get titlesOther', () => {
+  test('Titles Other', () => {
+    const movie = getTitlesOther(movieNode);
+    expect(movie).toEqual<CSFDTitlesOther[]>([
       { country: 'USA', title: 'Dragged Across Concrete' },
       { country: 'Kanada', title: 'Dragged Across Concrete' },
       { country: 'Slovensko', title: 'Na zlej strane' },
@@ -149,9 +149,9 @@ describe('Get otherTitles', () => {
       { country: 'Velká Británie', title: 'Dragged Across Concrete' }
     ]);
   });
-  test('otherTitles Blank', () => {
-    const movie = getOtherTitles(movieNodeBlank);
-    expect(movie).toEqual<CSFDOtherTitles[]>([]);
+  test('Titles Other Blank', () => {
+    const movie = getTitlesOther(movieNodeBlank);
+    expect(movie).toEqual<CSFDTitlesOther[]>([]);
   });
 });
 

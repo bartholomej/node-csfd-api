@@ -4,7 +4,7 @@ export interface CSFDMovie extends CSFDScreening {
   rating: number | null;
   poster: string;
   duration: number | string;
-  otherTitles: CSFDOtherTitles[];
+  titlesOther: CSFDTitlesOther[];
   origins: string[];
   descriptions: string[];
   genres: CSFDGenres[] | string[];
@@ -44,7 +44,7 @@ export interface CSFDCreators {
   productionDesign: CSFDCreator[];
 }
 
-export interface CSFDOtherTitles {
+export interface CSFDTitlesOther {
   country: string;
   title: string;
 }

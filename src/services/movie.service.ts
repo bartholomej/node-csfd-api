@@ -8,12 +8,12 @@ import {
   getGenres,
   getGroup,
   getOrigins,
-  getOtherTitles,
   getPoster,
   getPremieres,
   getRating,
   getTags,
   getTitle,
+  getTitlesOther,
   getType,
   getVods,
   getYear
@@ -56,7 +56,7 @@ export class MovieScraper {
       origins: getOrigins(el),
       colorRating: getColorRating(pageClasses),
       rating: getRating(asideEl),
-      otherTitles: getOtherTitles(el),
+      titlesOther: getTitlesOther(el),
       poster: getPoster(el),
       creators: {
         directors: getDirectors(el),
