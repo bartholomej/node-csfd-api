@@ -4,6 +4,7 @@ import {
   CSFDCreator,
   CSFDCreatorGroups,
   CSFDGenres,
+  CSFDMovieListItem,
   CSFDPremiere,
   CSFDTitlesOther,
   CSFDVod
@@ -152,11 +153,31 @@ export const getVods = (el: HTMLElement): CSFDVod[] => {
   return vods.length ? vods : [];
 };
 
-// // TODO tags
-// export const getBoxContent = (el: HTMLElement, box: string): HTMLElement => {
-//   const headers = el.querySelectorAll('section.box .box-header');
-//   return headers.find((header) => header.querySelector('h3').text.trim().includes(box));
-// };
+// Get box content
+export const getBoxContent = (el: HTMLElement, box: string): HTMLElement => {
+  const headers = el.querySelectorAll('section.box .box-header');
+  return headers.find((header) => header.querySelector('h3').text.trim().includes(box))?.parentNode;
+};
+
+export const getBoxMovies = (el: HTMLElement, boxName: string): CSFDMovieListItem[] => {
+  const movieListItem: CSFDMovieListItem[] = [];
+  const box = getBoxContent(el, boxName);
+  const movieTitleNodes = box?.querySelectorAll('.article-header .film-title-name');
+  if (movieTitleNodes?.length) {
+    for (const item of movieTitleNodes) {
+      movieListItem.push({
+        id: parseIdFromUrl(item.attributes.href),
+        title: item.textContent.trim(),
+        url: `https://www.csfd.cz${item.attributes.href}`
+      });
+    }
+  }
+  return movieListItem;
+};
+
+export const getRelated = (el: HTMLElement): CSFDMovieListItem[] => {
+  return getBoxMovies(el, 'Související');
+};
 
 export const getPremieres = (el: HTMLElement): CSFDPremiere[] => {
   const premieresNode = el.querySelectorAll('.box-premieres li');

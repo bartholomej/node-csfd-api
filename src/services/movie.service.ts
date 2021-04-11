@@ -11,6 +11,7 @@ import {
   getPoster,
   getPremieres,
   getRating,
+  getRelated,
   getTags,
   getTitle,
   getTitlesOther,
@@ -72,7 +73,8 @@ export class MovieScraper {
       },
       vod: getVods(asideEl),
       tags: getTags(asideEl),
-      premieres: getPremieres(asideEl)
+      premieres: getPremieres(asideEl),
+      related: getRelated(asideEl)
     };
   }
 }

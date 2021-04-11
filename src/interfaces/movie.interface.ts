@@ -12,6 +12,7 @@ export interface CSFDMovie extends CSFDScreening {
   vod: CSFDVod[];
   tags: string[];
   premieres: CSFDPremiere[];
+  related: any; // TODO
 }
 
 export interface CSFDVod {
@@ -59,6 +60,12 @@ export interface CSFDCreator {
    */
   id: number;
   name: string;
+  url: string;
+}
+
+export interface CSFDMovieListItem {
+  id: number;
+  title: string;
   url: string;
 }
 

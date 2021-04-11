@@ -11,6 +11,7 @@ import {
   getPoster,
   getPremieres,
   getRating,
+  getRelated,
   getTitle,
   getTitlesOther,
   getType,
@@ -20,6 +21,7 @@ import {
 import { CSFDColorRating } from '../src/interfaces/global';
 import {
   CSFDCreator,
+  CSFDMovieListItem,
   CSFDPremiere,
   CSFDTitlesOther,
   CSFDVod
@@ -289,6 +291,28 @@ describe('Get people', () => {
     test('Get blank premiere', () => {
       const movie = getPremieres(asideNodeBlank);
       expect(movie).toEqual<CSFDPremiere[]>([]);
+    });
+  });
+
+  // TODO get movies with related box
+  describe('Get related', () => {
+    test('Get movie related', () => {
+      const movie = getRelated(asideNode);
+      expect(movie).toEqual<CSFDMovieListItem[]>([]);
+    });
+    test('Get series related', () => {
+      const movie = getRelated(asideNodeSeries);
+      expect(movie).toEqual<CSFDMovieListItem[]>([
+        {
+          id: 116244,
+          title: 'Královská nemocnice',
+          url: 'https://www.csfd.cz/film/116244-kralovska-nemocnice/'
+        }
+      ]);
+    });
+    test('Get blank related', () => {
+      const movie = getRelated(asideNodeBlank);
+      expect(movie).toEqual<CSFDMovieListItem[]>([]);
     });
   });
 });
