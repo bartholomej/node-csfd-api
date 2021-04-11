@@ -16,15 +16,16 @@ export const searchMock = `
 
 		<title> Výsledky vyhledávání: "matrix" | ČSFD.cz </title>
 		<meta name="robots" content="noindex, nofollow">
-		<link rel="stylesheet" href="//static.pmgstatic.com/assets/web-css/1cf738c14d4543a76fd7c4c32a35b676/styles.min.css">
-		<link rel="shortcut icon" href="//static.pmgstatic.com/assets/images/9196e02aad8eb984363abe09616f3844/favicon.ico">
-		<link rel="apple-touch-icon" href="//static.pmgstatic.com/assets/images/9196e02aad8eb984363abe09616f3844/apple-touch-icon.png">
-		<script src="//static.pmgstatic.com/assets/vendor/3c72c45acfec19f6fe524ca29df000a0/jquery.min.js"></script>
-		<script src="//static.pmgstatic.com/assets/web-js/027133c204472118c5c877237301b328/scripts.min.js" defer></script>
+		<link rel="stylesheet" href="//static.pmgstatic.com/assets/web-css/887a24d540c210687e3317d3af3ca683/styles.min.css">
+		<link rel="shortcut icon" href="//static.pmgstatic.com/assets/images/e6f1398ef08c2931792cb606492be51c/favicon.ico">
+		<link rel="apple-touch-icon" href="//static.pmgstatic.com/assets/images/e6f1398ef08c2931792cb606492be51c/apple-touch-icon.png">
+		<script src="//static.pmgstatic.com/assets/vendor/184a128d92fb5e42f3c13bad2aaa254a/jquery.min.js"></script>
+		<script src="//static.pmgstatic.com/assets/web-js/aa3062389b707677ae7dfa748f5d31d5/scripts.min.js" defer></script>
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap&subset=latin-ext">
 
-		<script type="text/javascript">
+		
+<script type="text/javascript">
 	window.AdsObject = {};
 	window.sasUrl = "https://a.csfd.cz/csfd";
 </script>
@@ -49,9 +50,11 @@ export const searchMock = `
 
 		<div class="ad-wrapper">
 			<div id="leaderboard-wrapper">
+				<p class="box-banner-text-center">Reklama</p>
 <div id="leaderboard" class="ad-pmg" style="height: 200px;"></div>
 			</div>
 			<div class="box box-banner-mobile">
+				<p class="box-banner-text-center">Reklama</p>
 <div id="mobile_leaderboard" class="ad-pmg" style="height: 100px;"></div>
 			</div>
 		</div>
@@ -96,21 +99,23 @@ export const searchMock = `
 <div class="dropdown-content main-menu">
 	<h2>Ovládací panel</h2>
 		<ul class="blue">
-				<li><a class="disabled" title="Omlouváme se, přihlášení do nové ČSFD umožníme v nejbližších týdnech. Děkujeme za pochopení." href="#">Přihlášení</a></li>
-				<li><a class="disabled" href="#">Registrace</a></li>
-				<li><a class="disabled" href="#">Zapomenuté heslo</a></li>
+			<li><a href="/prihlaseni/">Přihlášení</a></li>
+			<li><a href="/registrace/">Registrace</a></li>
+			<li><a href="/ztracene-heslo/">Zapomenuté heslo</a></li>
 		</ul>
 	<hr>
 	<ul>
 <div id="contributionFilm" class="modal mfp-hide" role="dialog">
 	<h2>Přidat film</h2>
-		<p>Omlouváme se, přihlášení do nové ČSFD umožníme v nejbližších týdnech. Děkujeme za pochopení.</p>
+	<p>Pro přidání filmu se musíš nejdřív přihlásit.</p>
+	<a class="button button-red" href="/pridat/film/">Přihlásit se</a>
 </div>
 			<li><a href="#contributionFilm" rel="contentInfoModal">Přidat film</a></li>
 
 <div id="contributionCreator" class="modal mfp-hide" role="dialog">
 	<h2>Přidat tvůrce/herce</h2>
-		<p>Omlouváme se, přihlášení do nové ČSFD umožníme v nejbližších týdnech. Děkujeme za pochopení.</p>
+	<p>Pro přidání tvůrce se musíš nejdřív přihlásit.</p>
+	<a class="button button-red" href="/pridat/tvurce/">Přihlásit se</a>
 </div>
 			<li><a href="#contributionCreator" rel="contentInfoModal">Přidat tvůrce</a></li>
 	</ul>
@@ -129,13 +134,13 @@ export const searchMock = `
 			<a href="/televize/">Televize</a>
 		</li>
 		<li class="tab-title">
-			<a href="/kino/">Kino</a>
+			<a href="/kino/?period=today">Kino</a>
 		</li>
 		<li class="tab-title">
-			<a href="/vod/">VOD<span class="top-nav-new">NEW</span></a>
+			<a href="/vod/?year=2021&amp;month=4">VOD<span class="top-nav-new">NEW</span></a>
 		</li>
 		<li class="tab-title">
-			<a href="/zebricky/">Žebříčky</a>
+			<a href="/zebricky/filmy/nejlepsi/">Žebříčky</a>
 		</li>
 		<li class="tab-title">
 			<a href="/bluray/">Blu-ray</a>
@@ -172,7 +177,7 @@ export const searchMock = `
 					<a href="/vod/">VOD<span class="top-nav-new">NEW</span></a>
 				</li>
 				<li class="tab-title">
-					<a href="/zebricky/">Žebříčky</a>
+					<a href="/zebricky/filmy/nejlepsi/">Žebříčky</a>
 				</li>
 				<li class="tab-title">
 					<a href="/bluray/">Blu-ray</a>
@@ -220,179 +225,179 @@ export const searchMock = `
 				<div class="box-content">
 
 
-
 					<div data-ajax-append="true" id="snippet--containerFilms">
-						<article class="article article-user-60">
-							<figure class="article-img">
-								<a title="Matrix" href="/film/9499-matrix/">
-									<img alt="Matrix" src="//image.pmgstatic.com/cache/resized/w60h85/files/images/film/posters/000/008/8959_164d69.jpg" loading="lazy" width="60" height="84" srcset="//image.pmgstatic.com/cache/resized/w60h85/files/images/film/posters/000/008/8959_164d69.jpg 1x, //image.pmgstatic.com/cache/resized/w120h170/files/images/film/posters/000/008/8959_164d69.jpg 2x, //image.pmgstatic.com/cache/resized/w180h255/files/images/film/posters/000/008/8959_164d69.jpg 3x">
-								</a>
-							</figure>
-							<div class="article-content">
-								<header class="article-header">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/9499-matrix/" class="film-title-name">Matrix</a> <span class="film-title-info"><span class="info">(1999)</span></span></h3>								</header>
+							<article class="article article-user-60">
+		<figure class="article-img">
+			<a title="The Matrix" href="/film/9499-the-matrix/">
+				<img alt="The Matrix" src="//image.pmgstatic.com/cache/resized/w60h85/files/images/film/posters/000/008/8959_164d69.jpg" loading="lazy" width="60" height="84" srcset="//image.pmgstatic.com/cache/resized/w60h85/files/images/film/posters/000/008/8959_164d69.jpg 1x, //image.pmgstatic.com/cache/resized/w120h170/files/images/film/posters/000/008/8959_164d69.jpg 2x, //image.pmgstatic.com/cache/resized/w180h255/files/images/film/posters/000/008/8959_164d69.jpg 3x">
+			</a>
+		</figure>
+		<div class="article-content">
+			<header class="article-header">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/9499-the-matrix/" class="film-title-name">The Matrix</a> <span class="film-title-info"><span class="info">(1999)</span></span></h3>			</header>
 
-								<p><span class="info">USA, Akční / Sci-Fi</span></p>
+			<p><span class="info">USA, Akční / Sci-Fi</span></p>
 
-									<p class="director">
-										Režie:
-											<a href="/tvurce/3112-lilly-wachowski/">Lilly Wachowski</a>,
-											<a href="/tvurce/3113-lana-wachowski/">Lana Wachowski</a>
-									</p>
+				<p class="director">
+					Režie:
+						<a href="/tvurce/3112-lilly-wachowski/">Lilly Wachowski</a>,
+						<a href="/tvurce/3113-lana-wachowski/">Lana Wachowski</a>
+				</p>
 
-									<p class="actors">
-										Hrají:
-											<a href="/tvurce/46-keanu-reeves/">Keanu Reeves</a>,
-											<a href="/tvurce/47-laurence-fishburne/">Laurence Fishburne</a>
-									</p>
-							</div>
-						</article>
-						<article class="article article-user-60">
-							<figure class="article-img">
-								<a title="Matrix Reloaded" href="/film/9497-matrix-reloaded/">
-									<img alt="Matrix Reloaded" src="//image.pmgstatic.com/cache/resized/w60h85/files/images/film/posters/159/989/159989184_8467ed.jpg" loading="lazy" width="59" height="85" srcset="//image.pmgstatic.com/cache/resized/w60h85/files/images/film/posters/159/989/159989184_8467ed.jpg 1x, //image.pmgstatic.com/cache/resized/w120h170/files/images/film/posters/159/989/159989184_8467ed.jpg 2x, //image.pmgstatic.com/cache/resized/w180h255/files/images/film/posters/159/989/159989184_8467ed.jpg 3x">
-								</a>
-							</figure>
-							<div class="article-content">
-								<header class="article-header">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/9497-matrix-reloaded/" class="film-title-name">Matrix Reloaded</a> <span class="film-title-info"><span class="info">(2003)</span></span></h3>								</header>
+				<p class="actors">
+					Hrají:
+						<a href="/tvurce/46-keanu-reeves/">Keanu Reeves</a>,
+						<a href="/tvurce/47-laurence-fishburne/">Laurence Fishburne</a>
+				</p>
+		</div>
+	</article>
+	<article class="article article-user-60">
+		<figure class="article-img">
+			<a title="Matrix Reloaded" href="/film/9497-matrix-reloaded/">
+				<img alt="Matrix Reloaded" src="//image.pmgstatic.com/cache/resized/w60h85/files/images/film/posters/159/989/159989184_8467ed.jpg" loading="lazy" width="59" height="85" srcset="//image.pmgstatic.com/cache/resized/w60h85/files/images/film/posters/159/989/159989184_8467ed.jpg 1x, //image.pmgstatic.com/cache/resized/w120h170/files/images/film/posters/159/989/159989184_8467ed.jpg 2x, //image.pmgstatic.com/cache/resized/w180h255/files/images/film/posters/159/989/159989184_8467ed.jpg 3x">
+			</a>
+		</figure>
+		<div class="article-content">
+			<header class="article-header">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/9497-matrix-reloaded/" class="film-title-name">Matrix Reloaded</a> <span class="film-title-info"><span class="info">(2003)</span></span></h3>			</header>
 
-								<p><span class="info">USA, Austrálie, Akční / Sci-Fi</span></p>
+			<p><span class="info">USA, Austrálie, Akční / Sci-Fi</span></p>
 
-									<p class="director">
-										Režie:
-											<a href="/tvurce/3112-lilly-wachowski/">Lilly Wachowski</a>,
-											<a href="/tvurce/3113-lana-wachowski/">Lana Wachowski</a>
-									</p>
+				<p class="director">
+					Režie:
+						<a href="/tvurce/3112-lilly-wachowski/">Lilly Wachowski</a>,
+						<a href="/tvurce/3113-lana-wachowski/">Lana Wachowski</a>
+				</p>
 
-									<p class="actors">
-										Hrají:
-											<a href="/tvurce/46-keanu-reeves/">Keanu Reeves</a>,
-											<a href="/tvurce/47-laurence-fishburne/">Laurence Fishburne</a>
-									</p>
-							</div>
-						</article>
-						<article class="article article-user-60">
-							<figure class="article-img">
-								<a title="Matrix Revolutions" href="/film/9498-matrix-revolutions/">
-									<img alt="Matrix Revolutions" src="//image.pmgstatic.com/cache/resized/w60h85/files/images/film/posters/164/947/164947139_d7f09f.jpg" loading="lazy" width="60" height="83" srcset="//image.pmgstatic.com/cache/resized/w60h85/files/images/film/posters/164/947/164947139_d7f09f.jpg 1x, //image.pmgstatic.com/cache/resized/w120h170/files/images/film/posters/164/947/164947139_d7f09f.jpg 2x, //image.pmgstatic.com/cache/resized/w180h255/files/images/film/posters/164/947/164947139_d7f09f.jpg 3x">
-								</a>
-							</figure>
-							<div class="article-content">
-								<header class="article-header">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/9498-matrix-revolutions/" class="film-title-name">Matrix Revolutions</a> <span class="film-title-info"><span class="info">(2003)</span></span></h3>								</header>
+				<p class="actors">
+					Hrají:
+						<a href="/tvurce/46-keanu-reeves/">Keanu Reeves</a>,
+						<a href="/tvurce/47-laurence-fishburne/">Laurence Fishburne</a>
+				</p>
+		</div>
+	</article>
+	<article class="article article-user-60">
+		<figure class="article-img">
+			<a title="Matrix Revolutions" href="/film/9498-matrix-revolutions/">
+				<img alt="Matrix Revolutions" src="//image.pmgstatic.com/cache/resized/w60h85/files/images/film/posters/164/947/164947139_d7f09f.jpg" loading="lazy" width="60" height="83" srcset="//image.pmgstatic.com/cache/resized/w60h85/files/images/film/posters/164/947/164947139_d7f09f.jpg 1x, //image.pmgstatic.com/cache/resized/w120h170/files/images/film/posters/164/947/164947139_d7f09f.jpg 2x, //image.pmgstatic.com/cache/resized/w180h255/files/images/film/posters/164/947/164947139_d7f09f.jpg 3x">
+			</a>
+		</figure>
+		<div class="article-content">
+			<header class="article-header">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/9498-matrix-revolutions/" class="film-title-name">Matrix Revolutions</a> <span class="film-title-info"><span class="info">(2003)</span></span></h3>			</header>
 
-								<p><span class="info">USA, Austrálie, Akční / Sci-Fi</span></p>
+			<p><span class="info">USA, Austrálie, Akční / Sci-Fi</span></p>
 
-									<p class="director">
-										Režie:
-											<a href="/tvurce/3112-lilly-wachowski/">Lilly Wachowski</a>,
-											<a href="/tvurce/3113-lana-wachowski/">Lana Wachowski</a>
-									</p>
+				<p class="director">
+					Režie:
+						<a href="/tvurce/3112-lilly-wachowski/">Lilly Wachowski</a>,
+						<a href="/tvurce/3113-lana-wachowski/">Lana Wachowski</a>
+				</p>
 
-									<p class="actors">
-										Hrají:
-											<a href="/tvurce/46-keanu-reeves/">Keanu Reeves</a>,
-											<a href="/tvurce/47-laurence-fishburne/">Laurence Fishburne</a>
-									</p>
-							</div>
-						</article>
-						<article class="article article-user-60">
-							<figure class="article-img">
-								<a title="Matrix: Nová návštěva" href="/film/17748-matrix-nova-navsteva/">
-									<img alt="Matrix: Nová návštěva" src="//image.pmgstatic.com/cache/resized/w60h85/files/images/film/posters/000/014/14980_de6026.jpg" loading="lazy" width="54" height="85" srcset="//image.pmgstatic.com/cache/resized/w60h85/files/images/film/posters/000/014/14980_de6026.jpg 1x, //image.pmgstatic.com/cache/resized/w120h170/files/images/film/posters/000/014/14980_de6026.jpg 2x">
-								</a>
-							</figure>
-							<div class="article-content">
-								<header class="article-header">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/17748-matrix-nova-navsteva/" class="film-title-name">Matrix: Nová návštěva</a> <span class="film-title-info"><span class="info">(2001)</span></span></h3>								</header>
+				<p class="actors">
+					Hrají:
+						<a href="/tvurce/46-keanu-reeves/">Keanu Reeves</a>,
+						<a href="/tvurce/47-laurence-fishburne/">Laurence Fishburne</a>
+				</p>
+		</div>
+	</article>
+	<article class="article article-user-60">
+		<figure class="article-img">
+			<a title="Matrix: Nová návštěva" href="/film/17748-matrix-nova-navsteva/">
+				<img alt="Matrix: Nová návštěva" src="//image.pmgstatic.com/cache/resized/w60h85/files/images/film/posters/000/014/14980_de6026.jpg" loading="lazy" width="54" height="85" srcset="//image.pmgstatic.com/cache/resized/w60h85/files/images/film/posters/000/014/14980_de6026.jpg 1x, //image.pmgstatic.com/cache/resized/w120h170/files/images/film/posters/000/014/14980_de6026.jpg 2x">
+			</a>
+		</figure>
+		<div class="article-content">
+			<header class="article-header">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/17748-matrix-nova-navsteva/" class="film-title-name">Matrix: Nová návštěva</a> <span class="film-title-info"><span class="info">(2001)</span></span></h3>			</header>
 
-								<p><span class="info">USA, Dokumentární</span></p>
+			<p><span class="info">USA, Dokumentární</span></p>
 
-									<p class="director">
-										Režie:
-											<a href="/tvurce/33509-josh-oreck/">Josh Oreck</a>
-									</p>
+				<p class="director">
+					Režie:
+						<a href="/tvurce/33509-josh-oreck/">Josh Oreck</a>
+				</p>
 
-									<p class="actors">
-										Hrají:
-											<a href="/tvurce/101-carrie-anne-moss/">Carrie-Anne Moss</a>,
-											<a href="/tvurce/3134-woo-ping-yuen/">Woo-ping Yuen</a>
-									</p>
-							</div>
-						</article>
-						<article class="article article-user-60">
-							<figure class="article-img">
-								<a title="Matrix" href="/film/799868-matrix/">
-									<img alt="Matrix" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" loading="lazy" class="empty-image" width="60" height="85">
-								</a>
-							</figure>
-							<div class="article-content">
-								<header class="article-header">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/799868-matrix/" class="film-title-name">Matrix</a> <span class="film-title-info"><span class="info">(2019)</span> <span class="info">(divadelní záznam)</span></span></h3>								</header>
+				<p class="actors">
+					Hrají:
+						<a href="/tvurce/101-carrie-anne-moss/">Carrie-Anne Moss</a>,
+						<a href="/tvurce/3134-woo-ping-yuen/">Woo-ping Yuen</a>
+				</p>
+		</div>
+	</article>
+	<article class="article article-user-60">
+		<figure class="article-img">
+			<a title="Matrix" href="/film/799868-matrix/">
+				<img alt="Matrix" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" loading="lazy" class="empty-image" width="60" height="85">
+			</a>
+		</figure>
+		<div class="article-content">
+			<header class="article-header">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/799868-matrix/" class="film-title-name">Matrix</a> <span class="film-title-info"><span class="info">(2019)</span> <span class="info">(divadelní záznam)</span></span></h3>			</header>
 
-								<p><span class="info">Slovensko, Komedie</span></p>
+			<p><span class="info">Slovensko, Komedie</span></p>
 
-									<p class="director">
-										Režie:
-											<a href="/tvurce/55457-karol-vosatko/">Karol Vosátko</a>
-									</p>
+				<p class="director">
+					Režie:
+						<a href="/tvurce/55457-karol-vosatko/">Karol Vosátko</a>
+				</p>
 
-									<p class="actors">
-										Hrají:
-											<a href="/tvurce/986-miroslav-noga/">Miroslav Noga</a>,
-											<a href="/tvurce/92294-renata-rynikova/">Renáta Ryníková</a>
-									</p>
-							</div>
-						</article>
-						<article class="article article-user-60">
-							<figure class="article-img">
-								<a title="Sex and the Matrix" href="/film/12593-sex-and-the-matrix/">
-									<img alt="Sex and the Matrix" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" loading="lazy" class="empty-image" width="60" height="85">
-								</a>
-							</figure>
-							<div class="article-content">
-								<header class="article-header">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/12593-sex-and-the-matrix/" class="film-title-name">Sex and the Matrix</a> <span class="film-title-info"><span class="info">(2000)</span> <span class="info">(TV film)</span></span></h3>								</header>
+				<p class="actors">
+					Hrají:
+						<a href="/tvurce/986-miroslav-noga/">Miroslav Noga</a>,
+						<a href="/tvurce/92294-renata-rynikova/">Renáta Ryníková</a>
+				</p>
+		</div>
+	</article>
+	<article class="article article-user-60">
+		<figure class="article-img">
+			<a title="Sex and the Matrix" href="/film/12593-sex-and-the-matrix/">
+				<img alt="Sex and the Matrix" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" loading="lazy" class="empty-image" width="60" height="85">
+			</a>
+		</figure>
+		<div class="article-content">
+			<header class="article-header">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/12593-sex-and-the-matrix/" class="film-title-name">Sex and the Matrix</a> <span class="film-title-info"><span class="info">(2000)</span> <span class="info">(TV film)</span></span></h3>			</header>
 
-								<p><span class="info">USA, Krátkometrážní / Komedie</span></p>
+			<p><span class="info">USA, Krátkometrážní / Komedie</span></p>
 
-									<p class="director">
-										Režie:
-											<a href="/tvurce/13476-joel-gallen/">Joel Gallen</a>
-									</p>
+				<p class="director">
+					Režie:
+						<a href="/tvurce/13476-joel-gallen/">Joel Gallen</a>
+				</p>
 
-									<p class="actors">
-										Hrají:
-											<a href="/tvurce/579-sarah-jessica-parker/">Sarah Jessica Parker</a>,
-											<a href="/tvurce/525-kim-cattrall/">Kim Cattrall</a>
-									</p>
-							</div>
-						</article>
-						<article class="article article-user-60">
-							<figure class="article-img">
-								<a title="Matrix hunter" href="/film/40940-matrix-hunter/">
-									<img alt="Matrix hunter" src="//image.pmgstatic.com/cache/resized/w60h85/files/images/film/posters/161/619/161619026_17b7a1.jpg" loading="lazy" width="60" height="82" srcset="//image.pmgstatic.com/cache/resized/w60h85/files/images/film/posters/161/619/161619026_17b7a1.jpg 1x, //image.pmgstatic.com/cache/resized/w120h170/files/images/film/posters/161/619/161619026_17b7a1.jpg 2x, //image.pmgstatic.com/cache/resized/w180h255/files/images/film/posters/161/619/161619026_17b7a1.jpg 3x">
-								</a>
-							</figure>
-							<div class="article-content">
-								<header class="article-header">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/40940-matrix-hunter/" class="film-title-name">Matrix hunter</a> <span class="film-title-info"><span class="info">(2004)</span></span></h3>								</header>
+				<p class="actors">
+					Hrají:
+						<a href="/tvurce/579-sarah-jessica-parker/">Sarah Jessica Parker</a>,
+						<a href="/tvurce/525-kim-cattrall/">Kim Cattrall</a>
+				</p>
+		</div>
+	</article>
+	<article class="article article-user-60">
+		<figure class="article-img">
+			<a title="Matrix hunter" href="/film/40940-matrix-hunter/">
+				<img alt="Matrix hunter" src="//image.pmgstatic.com/cache/resized/w60h85/files/images/film/posters/161/619/161619026_17b7a1.jpg" loading="lazy" width="60" height="82" srcset="//image.pmgstatic.com/cache/resized/w60h85/files/images/film/posters/161/619/161619026_17b7a1.jpg 1x, //image.pmgstatic.com/cache/resized/w120h170/files/images/film/posters/161/619/161619026_17b7a1.jpg 2x, //image.pmgstatic.com/cache/resized/w180h255/files/images/film/posters/161/619/161619026_17b7a1.jpg 3x">
+			</a>
+		</figure>
+		<div class="article-content">
+			<header class="article-header">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/40940-matrix-hunter/" class="film-title-name">Matrix hunter</a> <span class="film-title-info"><span class="info">(2004)</span></span></h3>			</header>
 
-								<p><span class="info">Singapur, Sci-Fi / Akční</span></p>
+			<p><span class="info">Singapur, Sci-Fi / Akční</span></p>
 
-									<p class="director">
-										Režie:
-											<a href="/tvurce/67759-jian-hong-kuo/">Jian Hong Kuo</a>
-									</p>
+				<p class="director">
+					Režie:
+						<a href="/tvurce/67759-jian-hong-kuo/">Jian Hong Kuo</a>
+				</p>
 
-									<p class="actors">
-										Hrají:
-											<a href="/tvurce/67747-genevieve-o-reilly/">Genevieve O'Reilly</a>,
-											<a href="/tvurce/294809-luoyong-wang/">Luoyong Wang</a>
-									</p>
-							</div>
-						</article>
+				<p class="actors">
+					Hrají:
+						<a href="/tvurce/67747-genevieve-o-reilly/">Genevieve O'Reilly</a>,
+						<a href="/tvurce/294809-luoyong-wang/">Luoyong Wang</a>
+				</p>
+		</div>
+	</article>
+
 					</div>
 
 					<div class="box-content-more-gray" id="snippet--moreFilms">
@@ -415,184 +420,179 @@ export const searchMock = `
 
 
 					<div data-ajax-append="true" id="snippet--containerSeries">
-						<article class="article article-poster-60">
-							<figure class="article-img">
-								<a title="Matrix" href="/film/72014-matrix/">
-									<img alt="Matrix" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" loading="lazy" class="empty-image" width="60" height="85">
-								</a>
-							</figure>
-							<div class="article-content">
-								<header class="article-header">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/72014-matrix/" class="film-title-name">Matrix</a> <span class="film-title-info"><span class="info">(1993)</span> <span class="info">(TV seriál)</span></span></h3>								</header>
+							<article class="article article-user-60">
+		<figure class="article-img">
+			<a title="Matrix" href="/film/72014-matrix/">
+				<img alt="Matrix" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" loading="lazy" class="empty-image" width="60" height="85">
+			</a>
+		</figure>
+		<div class="article-content">
+			<header class="article-header">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/72014-matrix/" class="film-title-name">Matrix</a> <span class="film-title-info"><span class="info">(1993)</span> <span class="info">(TV seriál)</span></span></h3>			</header>
 
-								<p><span class="info">Kanada, Akční / Drama</span></p>
+			<p><span class="info">Kanada, Akční / Drama</span></p>
 
-									<p class="director">
-										Režie:
-											<a href="/tvurce/8877-allan-eastman/">Allan Eastman</a>,
-											<a href="/tvurce/8686-mario-azzopardi/">Mario Azzopardi</a>
-									</p>
+				<p class="director">
+					Režie:
+						<a href="/tvurce/8877-allan-eastman/">Allan Eastman</a>,
+						<a href="/tvurce/8686-mario-azzopardi/">Mario Azzopardi</a>
+				</p>
 
-									<p class="actors">
-										Hrají:
-											<a href="/tvurce/9741-nick-mancuso/">Nick Mancuso</a>,
-											<a href="/tvurce/384012-phillip-jarrett/">Phillip Jarrett</a>
-									</p>
-							</div>
-						</article>
-						<article class="article article-poster-60">
-							<figure class="article-img">
-								<a title="Český žurnál - Matrix AB" href="/film/327536-cesky-zurnal/134498-matrix-ab/">
-									<img alt="Český žurnál - Matrix AB" src="//image.pmgstatic.com/cache/resized/w60h85/files/images/film/posters/160/240/160240664_d9cd23.jpg" loading="lazy" width="59" height="84" srcset="//image.pmgstatic.com/cache/resized/w60h85/files/images/film/posters/160/240/160240664_d9cd23.jpg 1x, //image.pmgstatic.com/cache/resized/w120h170/files/images/film/posters/160/240/160240664_d9cd23.jpg 2x, //image.pmgstatic.com/cache/resized/w180h255/files/images/film/posters/160/240/160240664_d9cd23.jpg 3x">
-								</a>
-							</figure>
-							<div class="article-content">
-								<header class="article-header">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/327536-cesky-zurnal/134498-matrix-ab/" class="film-title-name">Český žurnál - Matrix AB</a> <span class="film-title-info"><span class="info">(2015)</span> <span class="info">(epizoda)</span> <span class="info">(S03E02)</span></span></h3>								</header>
+				<p class="actors">
+					Hrají:
+						<a href="/tvurce/9741-nick-mancuso/">Nick Mancuso</a>,
+						<a href="/tvurce/384012-phillip-jarrett/">Phillip Jarrett</a>
+				</p>
+		</div>
+	</article>
+	<article class="article article-user-60">
+		<figure class="article-img">
+			<a title="Český žurnál - Matrix AB" href="/film/327536-cesky-zurnal/134498-matrix-ab/">
+				<img alt="Český žurnál - Matrix AB" src="//image.pmgstatic.com/cache/resized/w60h85/files/images/film/posters/160/240/160240664_d9cd23.jpg" loading="lazy" width="59" height="84" srcset="//image.pmgstatic.com/cache/resized/w60h85/files/images/film/posters/160/240/160240664_d9cd23.jpg 1x, //image.pmgstatic.com/cache/resized/w120h170/files/images/film/posters/160/240/160240664_d9cd23.jpg 2x, //image.pmgstatic.com/cache/resized/w180h255/files/images/film/posters/160/240/160240664_d9cd23.jpg 3x">
+			</a>
+		</figure>
+		<div class="article-content">
+			<header class="article-header">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/327536-cesky-zurnal/134498-matrix-ab/" class="film-title-name">Český žurnál - Matrix AB</a> <span class="film-title-info"><span class="info">(2015)</span> <span class="info">(epizoda)</span></span></h3>			</header>
 
-								<p><span class="info">Česko, Dokumentární</span></p>
+			<p><span class="info">Česko, Dokumentární</span></p>
 
-									<p class="director">
-										Režie:
-											<a href="/tvurce/13302-vit-klusak/">Vít Klusák</a>
-									</p>
+				<p class="director">
+					Režie:
+						<a href="/tvurce/13302-vit-klusak/">Vít Klusák</a>
+				</p>
 
-									<p class="actors">
-										Hrají:
-											<a href="/tvurce/70932-andrej-babis/">Andrej Babiš</a>,
-											<a href="/tvurce/473-jean-reno/">Jean Reno</a>
-									</p>
-							</div>
-						</article>
-						<article class="article article-poster-60">
-							<figure class="article-img">
-								<a title="Wynonna Earp - Gone as a Girl Can Get" href="/film/430529-wynonna-earp/516053-gone-as-a-girl-can-get/">
-									<img alt="Wynonna Earp - Gone as a Girl Can Get" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" loading="lazy" class="empty-image" width="60" height="85">
-								</a>
-							</figure>
-							<div class="article-content">
-								<header class="article-header">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/430529-wynonna-earp/516053-gone-as-a-girl-can-get/" class="film-title-name">Wynonna Earp - Gone as a Girl Can Get</a> <span class="film-title-info"><span class="info">(2017)</span> <span class="info">(epizoda)</span> <span class="info">(S02E11)</span></span></h3>									<p class="search-name">(Matrix)</p>
-								</header>
+				<p class="actors">
+					Hrají:
+						<a href="/tvurce/70932-andrej-babis/">Andrej Babiš</a>,
+						<a href="/tvurce/473-jean-reno/">Jean Reno</a>
+				</p>
+		</div>
+	</article>
+	<article class="article article-user-60">
+		<figure class="article-img">
+			<a title="Wynonna Earp - Gone as a Girl Can Get" href="/film/430529-wynonna-earp/516053-gone-as-a-girl-can-get/">
+				<img alt="Wynonna Earp - Gone as a Girl Can Get" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" loading="lazy" class="empty-image" width="60" height="85">
+			</a>
+		</figure>
+		<div class="article-content">
+			<header class="article-header">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/430529-wynonna-earp/516053-gone-as-a-girl-can-get/" class="film-title-name">Wynonna Earp - Gone as a Girl Can Get</a> <span class="film-title-info"><span class="info">(2017)</span> <span class="info">(epizoda)</span></span></h3>				<p class="search-name">(Matrix)</p>
+			</header>
 
-								<p><span class="info">USA, Kanada, Akční / Drama</span></p>
+			<p><span class="info">USA, Kanada, Akční / Drama</span></p>
 
-									<p class="director">
-										Režie:
-											<a href="/tvurce/8659-paolo-barzman/">Paolo Barzman</a>
-									</p>
+				<p class="director">
+					Režie:
+						<a href="/tvurce/8659-paolo-barzman/">Paolo Barzman</a>
+				</p>
 
-									<p class="actors">
-										Hrají:
-											<a href="/tvurce/177456-melanie-scrofano/">Melanie Scrofano</a>,
-											<a href="/tvurce/162762-shamier-anderson/">Shamier Anderson</a>
-									</p>
-							</div>
-						</article>
-						<article class="article article-poster-60">
-							<figure class="article-img">
-								<a title="Broad City - The Matrix" href="/film/364687-broad-city/554555-the-matrix/">
-									<img alt="Broad City - The Matrix" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" loading="lazy" class="empty-image" width="60" height="85">
-								</a>
-							</figure>
-							<div class="article-content">
-								<header class="article-header">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/364687-broad-city/554555-the-matrix/" class="film-title-name">Broad City - The Matrix</a> <span class="film-title-info"><span class="info">(2015)</span> <span class="info">(epizoda)</span> <span class="info">(S02E06)</span></span></h3>								</header>
+				<p class="actors">
+					Hrají:
+						<a href="/tvurce/177456-melanie-scrofano/">Melanie Scrofano</a>,
+						<a href="/tvurce/162762-shamier-anderson/">Shamier Anderson</a>
+				</p>
+		</div>
+	</article>
+	<article class="article article-user-60">
+		<figure class="article-img">
+			<a title="Broad City - The Matrix" href="/film/364687-broad-city/554555-the-matrix/">
+				<img alt="Broad City - The Matrix" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" loading="lazy" class="empty-image" width="60" height="85">
+			</a>
+		</figure>
+		<div class="article-content">
+			<header class="article-header">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/364687-broad-city/554555-the-matrix/" class="film-title-name">Broad City - The Matrix</a> <span class="film-title-info"><span class="info">(2015)</span> <span class="info">(epizoda)</span></span></h3>			</header>
 
-								<p><span class="info">USA, Komedie</span></p>
+			<p><span class="info">USA, Komedie</span></p>
 
-									<p class="director">
-										Režie:
-											<a href="/tvurce/236117-john-lee/">John Lee</a>
-									</p>
+				<p class="director">
+					Režie:
+						<a href="/tvurce/236117-john-lee/">John Lee</a>
+				</p>
 
-									<p class="actors">
-										Hrají:
-											<a href="/tvurce/107825-ilana-glazer/">Ilana Glazer</a>,
-											<a href="/tvurce/107827-abbi-jacobson/">Abbi Jacobson</a>
-									</p>
-							</div>
-						</article>
-						<article class="article article-poster-60">
-							<figure class="article-img">
-								<a title="Futurama - Skoro poslední přání" href="/film/77748-futurama/483972-skoro-posledni-prani/">
-									<img alt="Futurama - Skoro poslední přání" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" loading="lazy" class="empty-image" width="60" height="85">
-								</a>
-							</figure>
-							<div class="article-content">
-								<header class="article-header">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/77748-futurama/483972-skoro-posledni-prani/" class="film-title-name">Futurama - Skoro poslední přání</a> <span class="film-title-info"><span class="info">(2012)</span> <span class="info">(epizoda)</span> <span class="info">(S07E10)</span></span></h3>									<p class="search-name">(Matrix Revolutions)</p>
-								</header>
+				<p class="actors">
+					Hrají:
+						<a href="/tvurce/107825-ilana-glazer/">Ilana Glazer</a>,
+						<a href="/tvurce/107827-abbi-jacobson/">Abbi Jacobson</a>
+				</p>
+		</div>
+	</article>
+	<article class="article article-user-60">
+		<figure class="article-img">
+			<a title="Futurama - Skoro poslední přání" href="/film/77748-futurama/483972-skoro-posledni-prani/">
+				<img alt="Futurama - Skoro poslední přání" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" loading="lazy" class="empty-image" width="60" height="85">
+			</a>
+		</figure>
+		<div class="article-content">
+			<header class="article-header">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/77748-futurama/483972-skoro-posledni-prani/" class="film-title-name">Futurama - Skoro poslední přání</a> <span class="film-title-info"><span class="info">(2012)</span> <span class="info">(epizoda)</span></span></h3>				<p class="search-name">(Matrix Revolutions)</p>
+			</header>
 
-								<p><span class="info">USA, Animovaný / Komedie</span></p>
+			<p><span class="info">USA, Animovaný / Komedie</span></p>
 
-									<p class="director">
-										Režie:
-											<a href="/tvurce/291287-lance-kramer/">Lance Kramer</a>
-									</p>
+				<p class="director">
+					Režie:
+						<a href="/tvurce/291287-lance-kramer/">Lance Kramer</a>
+				</p>
 
-									<p class="actors">
-										Hrají:
-											<a href="/tvurce/20335-billy-west/">Billy West</a>,
-											<a href="/tvurce/1931-katey-sagal/">Katey Sagal</a>
-									</p>
-							</div>
-						</article>
-						<article class="article article-poster-60">
-							<figure class="article-img">
-								<a title="Situace: Ohrožení" href="/film/135819-situace-ohrozeni/">
-									<img alt="Situace: Ohrožení" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" loading="lazy" class="empty-image" width="60" height="85">
-								</a>
-							</figure>
-							<div class="article-content">
-								<header class="article-header">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/135819-situace-ohrozeni/" class="film-title-name">Situace: Ohrožení</a> <span class="film-title-info"><span class="info">(2003)</span> <span class="info">(TV seriál)</span></span></h3>									<p class="search-name">(Threat Matrix)</p>
-								</header>
+				<p class="actors">
+					Hrají:
+						<a href="/tvurce/20335-billy-west/">Billy West</a>,
+						<a href="/tvurce/1931-katey-sagal/">Katey Sagal</a>
+				</p>
+		</div>
+	</article>
+	<article class="article article-user-60">
+		<figure class="article-img">
+			<a title="Situace: Ohrožení" href="/film/135819-situace-ohrozeni/">
+				<img alt="Situace: Ohrožení" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" loading="lazy" class="empty-image" width="60" height="85">
+			</a>
+		</figure>
+		<div class="article-content">
+			<header class="article-header">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/135819-situace-ohrozeni/" class="film-title-name">Situace: Ohrožení</a> <span class="film-title-info"><span class="info">(2003)</span> <span class="info">(TV seriál)</span></span></h3>				<p class="search-name">(Threat Matrix)</p>
+			</header>
 
-								<p><span class="info">USA, Drama / Thriller</span></p>
+			<p><span class="info">USA, Drama / Thriller</span></p>
 
-									<p class="director">
-										Režie:
-											<a href="/tvurce/20640-david-grossman/">David Grossman</a>,
-											<a href="/tvurce/13285-larry-shaw/">Larry Shaw</a>
-									</p>
+				<p class="director">
+					Režie:
+						<a href="/tvurce/20640-david-grossman/">David Grossman</a>,
+						<a href="/tvurce/13285-larry-shaw/">Larry Shaw</a>
+				</p>
 
-									<p class="actors">
-										Hrají:
-											<a href="/tvurce/5907-kelly-rutherford/">Kelly Rutherford</a>,
-											<a href="/tvurce/47156-will-lyman/">Will Lyman</a>
-									</p>
-							</div>
-						</article>
-						<article class="article article-poster-60">
-							<figure class="article-img">
-								<a title="Vostè mateix" href="/film/62189-voste-mateix/">
-									<img alt="Vostè mateix" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" loading="lazy" class="empty-image" width="60" height="85">
-								</a>
-							</figure>
-							<div class="article-content">
-								<header class="article-header">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/62189-voste-mateix/" class="film-title-name">Vostè mateix</a> <span class="film-title-info"><span class="info">(1993)</span> <span class="info">(TV seriál)</span></span></h3>								</header>
+				<p class="actors">
+					Hrají:
+						<a href="/tvurce/5907-kelly-rutherford/">Kelly Rutherford</a>,
+						<a href="/tvurce/47156-will-lyman/">Will Lyman</a>
+				</p>
+		</div>
+	</article>
+	<article class="article article-user-60">
+		<figure class="article-img">
+			<a title="Escape the Matrix" href="/film/999565-escape-the-matrix/">
+				<img alt="Escape the Matrix" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" loading="lazy" class="empty-image" width="60" height="85">
+			</a>
+		</figure>
+		<div class="article-content">
+			<header class="article-header">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/999565-escape-the-matrix/" class="film-title-name">Escape the Matrix</a> <span class="film-title-info"><span class="info">(2020)</span> <span class="info">(TV seriál)</span></span></h3>			</header>
 
-								<p><span class="info">Španělsko</span></p>
+			<p><span class="info">Velká Británie, Dokumentární</span></p>
 
-									<p class="director">
-										Režie:
-											<a href="/tvurce/197266-joan-bas/">Joan Bas</a>,
-											<a href="/tvurce/230068-jordi-frades/">Jordi Frades</a>
-									</p>
 
-									<p class="actors">
-										Hrají:
-											<a href="/tvurce/193922-enric-arredondo/">Enric Arredondo</a>,
-											<a href="/tvurce/193957-ricard-borras/">Ricard Borràs</a>
-									</p>
-							</div>
-						</article>
+				<p class="actors">
+					Hrají:
+						<a href="/tvurce/61834-david-icke/">David Icke</a>
+				</p>
+		</div>
+	</article>
+
 					</div>
 
 					<div class="box-content-more-gray" id="snippet--moreSeries">
-						<a class="ajax-link-preloader ajax" href="/hledat/?pageSeries=2&amp;q=matrix">Další nalezené seriálý<i class="icon icon-search"></i></a>
+						<a class="ajax-link-preloader ajax" href="/hledat/?pageSeries=2&amp;q=matrix">Další nalezené seriály<i class="icon icon-search"></i></a>
 					</div>
 				</div>
 			</section>
@@ -624,7 +624,7 @@ export const searchMock = `
 									<p class="search-name">(Metrix Steel)</p>
 								</header>
 
-								<p><span class="info">účinkující / herec / režisér</span></p>
+								<p><span class="info">režisér / herec / účinkující</span></p>
 							</div>
 						</article>
 						<article class="article article-user-45">
@@ -840,7 +840,7 @@ export const searchMock = `
 				<div id="bottom-banner">
 					<div class="box box-banner box-bannercenter box-banner-spacetop box-banner-hidedesktop">
 						<p class="box-banner-text-center">Reklama</p>
-<div id="billboard" class="ad-pmg" style="height: 310px;"></div>
+<div id="billboard" class="ad-pmg" style="height: 315px;"></div>
 					</div>
 					<div class="box box-banner-mobile box-banner-mobile-padding">
 						<p class="box-banner-text">Reklama</p>
@@ -868,6 +868,8 @@ export const searchMock = `
 					<div class="linklist">
 						<h3>Užitečné</h3>
 						<ul>
+								<li><a href="/prihlaseni/">Přihlášení</a></li>
+								<li><a href="/registrace/">Registrace</a></li>
 							<li><a href="/vyvojari/">Pracuj pro nás</a></li>
 							<li><a href="/napis-nam/">Napiš nám</a></li>
 						</ul>
@@ -912,7 +914,7 @@ export const searchMock = `
 
 <script type="text/javascript">
 	window.addEventListener('load', function () {
-		CSFD.Ads.complete({"ball":{"page":17,"login":2,"site":"csfd.cz"},"b1":{"area":"leaderboard","size":"1000x210,2000x1400,1000x200,1000x210,970x210,998x200,750x200,750x100,970x90,728x90,branding_web"},"b2":{"area":"halfpage_sticky_1","size":"300x600,160x600,300x300,300x250"},"b3":{"area":"billboard","size":"1000x310,970x310,970x250,480x300,750x300,970x90,728x90"},"b4":{"area":"mobile_leaderboard","size":"320x100,320x50,300x100,300x50"},"b5":{"area":"mobile_square_1","size":"300x300,300x250,interscroller"},"b6":{"area":"mobile_square_2","size":"300x300,300x250,250x250"},"b7":{"area":"mobile_billboard","size":"300x300,300x250"}});
+		CSFD.Ads.complete({"ball":{"page":17,"login":2,"site":"csfd.cz"},"b1":{"area":"leaderboard","size":"1000x210,2000x1400,1000x200,1000x210,970x210,998x200,750x200,750x100,970x90,728x90,branding_web"},"b2":{"area":"halfpage_sticky_1","size":"300x600,160x600,300x300,300x250"},"b3":{"area":"billboard","size":"1000x310,970x310,560x315,480x300,750x300,970x250,970x90,728x90"},"b4":{"area":"mobile_leaderboard","size":"320x100,320x50,300x100,300x50"},"b5":{"area":"mobile_square_1","size":"300x300,300x250,interscroller"},"b6":{"area":"mobile_square_2","size":"300x300,300x250,250x250"},"b7":{"area":"mobile_billboard","size":"300x300,300x250"}});
 		CSFD.Ads.setTServer("https://a.csfd.cz/csfd/tserver");
 	});
 </script>

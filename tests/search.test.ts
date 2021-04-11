@@ -21,7 +21,7 @@ const usersNode = html.querySelectorAll('.main-users article');
 describe('Get Movie titles', () => {
   test('First movie', () => {
     const movie = getTitle(moviesNode[0]);
-    expect(movie).toEqual<string>('Matrix');
+    expect(movie).toEqual<string>('The Matrix');
   });
   test('Last movie', () => {
     const movie = getTitle(moviesNode[moviesNode.length - 1]);
@@ -51,7 +51,7 @@ describe('Get Movie years', () => {
 describe('Get Movie url', () => {
   test('First movie', () => {
     const movie = getUrl(moviesNode[0]);
-    expect(movie).toEqual<string>('/film/9499-matrix/');
+    expect(movie).toEqual<string>('/film/9499-the-matrix/');
   });
   test('Last movie', () => {
     const movie = getUrl(moviesNode[moviesNode.length - 1]);
