@@ -281,10 +281,10 @@ _Note: You can not use both parameters 'includesOnly' and 'excludes'. Parameter 
     - [x] Costume designers
     - [x] Production designers
   - [x] Premieres
+  - [x] Related movies
+  - [x] Similar movies
   - [ ] All images
   - [ ] Reviews
-  - [ ] Related movies
-  - [ ] Connected movies
   - [ ] OST
 - [ ] Search
   - [x] Movies
