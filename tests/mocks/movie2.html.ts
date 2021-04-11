@@ -19,15 +19,16 @@ export const movieMockBlank = `
 
 		<title> Loan Shark, The (1912) | Tvůrci | ČSFD.cz </title>
 		<meta name="robots" content="noindex, nofollow">
-		<link rel="stylesheet" href="//static.pmgstatic.com/assets/web-css/9ae1a35645d2c67a10ad142f9f93dc41/styles.min.css">
-		<link rel="shortcut icon" href="//static.pmgstatic.com/assets/images/aefe89df1094922b1bb323298bbb4dc1/favicon.ico">
-		<link rel="apple-touch-icon" href="//static.pmgstatic.com/assets/images/aefe89df1094922b1bb323298bbb4dc1/apple-touch-icon.png">
-		<script src="//static.pmgstatic.com/assets/vendor/f8fa325d9a3fa1b647a8c390fc5eb4f5/jquery.min.js"></script>
-		<script src="//static.pmgstatic.com/assets/web-js/f9e6c2a181ccbdcfa553308839894a66/scripts.min.js" defer></script>
+		<link rel="stylesheet" href="//static.pmgstatic.com/assets/web-css/887a24d540c210687e3317d3af3ca683/styles.min.css">
+		<link rel="shortcut icon" href="//static.pmgstatic.com/assets/images/e6f1398ef08c2931792cb606492be51c/favicon.ico">
+		<link rel="apple-touch-icon" href="//static.pmgstatic.com/assets/images/e6f1398ef08c2931792cb606492be51c/apple-touch-icon.png">
+		<script src="//static.pmgstatic.com/assets/vendor/184a128d92fb5e42f3c13bad2aaa254a/jquery.min.js"></script>
+		<script src="//static.pmgstatic.com/assets/web-js/aa3062389b707677ae7dfa748f5d31d5/scripts.min.js" defer></script>
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap&subset=latin-ext">
 
-		<script type="text/javascript">
+		
+<script type="text/javascript">
 	window.AdsObject = {};
 	window.sasUrl = "https://a.csfd.cz/csfd";
 </script>
@@ -52,9 +53,11 @@ export const movieMockBlank = `
 
 		<div class="ad-wrapper">
 			<div id="leaderboard-wrapper">
+				<p class="box-banner-text-center">Reklama</p>
 <div id="leaderboard" class="ad-pmg" style="height: 200px;"></div>
 			</div>
 			<div class="box box-banner-mobile">
+				<p class="box-banner-text-center">Reklama</p>
 <div id="mobile_leaderboard" class="ad-pmg" style="height: 100px;"></div>
 			</div>
 		</div>
@@ -99,21 +102,23 @@ export const movieMockBlank = `
 <div class="dropdown-content main-menu">
 	<h2>Ovládací panel</h2>
 		<ul class="blue">
-				<li><a class="disabled" title="Omlouváme se, přihlášení do nové ČSFD umožníme v nejbližších týdnech. Děkujeme za pochopení." href="#">Přihlášení</a></li>
-				<li><a class="disabled" href="#">Registrace</a></li>
-				<li><a class="disabled" href="#">Zapomenuté heslo</a></li>
+			<li><a href="/prihlaseni/">Přihlášení</a></li>
+			<li><a href="/registrace/">Registrace</a></li>
+			<li><a href="/ztracene-heslo/">Zapomenuté heslo</a></li>
 		</ul>
 	<hr>
 	<ul>
 <div id="contributionFilm" class="modal mfp-hide" role="dialog">
 	<h2>Přidat film</h2>
-		<p>Omlouváme se, přihlášení do nové ČSFD umožníme v nejbližších týdnech. Děkujeme za pochopení.</p>
+	<p>Pro přidání filmu se musíš nejdřív přihlásit.</p>
+	<a class="button button-red" href="/pridat/film/">Přihlásit se</a>
 </div>
 			<li><a href="#contributionFilm" rel="contentInfoModal">Přidat film</a></li>
 
 <div id="contributionCreator" class="modal mfp-hide" role="dialog">
 	<h2>Přidat tvůrce/herce</h2>
-		<p>Omlouváme se, přihlášení do nové ČSFD umožníme v nejbližších týdnech. Děkujeme za pochopení.</p>
+	<p>Pro přidání tvůrce se musíš nejdřív přihlásit.</p>
+	<a class="button button-red" href="/pridat/tvurce/">Přihlásit se</a>
 </div>
 			<li><a href="#contributionCreator" rel="contentInfoModal">Přidat tvůrce</a></li>
 	</ul>
@@ -132,13 +137,13 @@ export const movieMockBlank = `
 			<a href="/televize/">Televize</a>
 		</li>
 		<li class="tab-title">
-			<a href="/kino/">Kino</a>
+			<a href="/kino/?period=today">Kino</a>
 		</li>
 		<li class="tab-title">
-			<a href="/vod/">VOD<span class="top-nav-new">NEW</span></a>
+			<a href="/vod/?year=2021&amp;month=4">VOD<span class="top-nav-new">NEW</span></a>
 		</li>
 		<li class="tab-title">
-			<a href="/zebricky/">Žebříčky</a>
+			<a href="/zebricky/filmy/nejlepsi/">Žebříčky</a>
 		</li>
 		<li class="tab-title">
 			<a href="/bluray/">Blu-ray</a>
@@ -175,7 +180,7 @@ export const movieMockBlank = `
 					<a href="/vod/">VOD<span class="top-nav-new">NEW</span></a>
 				</li>
 				<li class="tab-title">
-					<a href="/zebricky/">Žebříčky</a>
+					<a href="/zebricky/filmy/nejlepsi/">Žebříčky</a>
 				</li>
 				<li class="tab-title">
 					<a href="/bluray/">Blu-ray</a>
@@ -237,6 +242,7 @@ export const movieMockBlank = `
 						</div>
 
 					</div>
+
 
 					<a href="/film/99999-loan-shark-the/hraji/?name=ratingAndFanclub&amp;do=modalWindow" class="ajax more more-modal-ratings-fanclub" rel="contentModal" data-mfp-main-class="modal-ratings-fanclub" data-mfp-src="#panelModal">
 						Hodnocení a fanklub
@@ -407,12 +413,12 @@ export const movieMockBlank = `
 		<div class="column column-100">
 			<section class="box box-film-creator">
 				<header class="box-header">
-					<h2>Hrají</h2>
+					<h2>Herec</h2>
 				</header>
 				<div class="box-content">
 					<article class="article article-user-88">
 						<figure class="article-img">
-							<img src="//image.pmgstatic.com/files/images/creator/photos/000/270/270980_0a2cc7.jpg?w88h116crop" loading="lazy" width="88" height="116" srcset="//image.pmgstatic.com/files/images/creator/photos/000/270/270980_0a2cc7.jpg?w88h116crop 1x">
+							<img src="//image.pmgstatic.com/cache/resized/w88h116crop/files/images/creator/photos/000/270/270980_0a2cc7.jpg" loading="lazy" width="88" height="116" srcset="//image.pmgstatic.com/cache/resized/w88h116crop/files/images/creator/photos/000/270/270980_0a2cc7.jpg 1x">
 						</figure>
 						<div class="article-content">
 							<header class="article-header">
@@ -503,65 +509,74 @@ export const movieMockBlank = `
 				data-rating="0"
 				rel="contentInfoModal"
 				href="#rating"
-		 class="star star-0">		
+			 class="star star-0"></a>
+
 
 			<a
-				data-rating="1"
+				data-rating="20"
 				rel="contentInfoModal"
 				href="#rating"
-		 class="star star-1">		
+			 class="star star-20"></a>
+
 
 			<a
-				data-rating="2"
+				data-rating="40"
 				rel="contentInfoModal"
 				href="#rating"
-		 class="star star-2">		
+			 class="star star-40"></a>
+
 
 			<a
-				data-rating="3"
+				data-rating="60"
 				rel="contentInfoModal"
 				href="#rating"
-		 class="star star-3">		
+			 class="star star-60"></a>
+
 
 			<a
-				data-rating="4"
+				data-rating="80"
 				rel="contentInfoModal"
 				href="#rating"
-		 class="star star-4">		
+			 class="star star-80"></a>
+
 
 			<a
-				data-rating="5"
+				data-rating="100"
 				rel="contentInfoModal"
 				href="#rating"
-		 class="star star-5">		
+			 class="star star-100"></a>
 	</span>
 </div>
 <div id="rating" class="modal mfp-hide" role="dialog">
 	<h2>Hodnocení</h2>
-		<p>Omlouváme se, přihlášení do nové ČSFD umožníme v nejbližších týdnech. Děkujeme za pochopení.</p>
+	<p>Pro přidání hodnocení musíš být přihlášen.</p>
+	<a class="button button-red" href="/prihlaseni/">Přihlásit se</a>
 </div>
 
 <div id="snippet--publicControlMenu">						<hr>
 						<ul class="blue">
 <div id="comment" class="modal mfp-hide" role="dialog">
 	<h2>Přidat externí recenzi</h2>
-		<p>Omlouváme se, přihlášení do nové ČSFD umožníme v nejbližších týdnech. Děkujeme za pochopení.</p>
+	<p>Pro přidání recenze se prosím nejdřív přihlas.</p>
+	<a class="button button-red" href="/prihlaseni/">Přihlásit se</a>
 </div>
 								<li><a href="#comment" rel="contentInfoModal">Přidat recenzi</a></li>
 							<li>
 <div id="watchlist" class="modal mfp-hide" role="dialog">
 	<h2>Chci vidět</h2>
-		<p>Omlouváme se, přihlášení do nové ČSFD umožníme v nejbližších týdnech. Děkujeme za pochopení.</p>
+	<p>Pro přidání filmu do Chci vidět se prosím nejdřív přihlas.</p>
+	<a class="button button-red" href="/prihlaseni/">Přihlásit se</a>
 </div>
 									<a href="#watchlist" rel="contentInfoModal">Přidat do Chci vidět</a>
 							</li>
 							<li>
-									<a href="/prihlaseni/">Přidat do oblíbených</a>
+																	<a href="/prihlaseni/">Přidat do oblíbených</a>
 							</li>
 							<li>
 <div id="collection" class="modal mfp-hide" role="dialog">
 	<h2>Přidat do filmotéky</h2>
-		<p>Omlouváme se, přihlášení do nové ČSFD umožníme v nejbližších týdnech. Děkujeme za pochopení.</p>
+	<p>Pro přidání filmu do filmotéky se prosím nejdřív přihlas.</p>
+	<a class="button button-red" href="/prihlaseni/">Přihlásit se</a>
 </div>
 									<a href="#collection" rel="contentInfoModal">Přidat do filmotéky</a>
 							</li>
@@ -570,47 +585,55 @@ export const movieMockBlank = `
 						<ul class="blue">
 <div id="contributionPlot" class="modal mfp-hide" role="dialog">
 	<h2>Přidat obsah</h2>
-		<p>Omlouváme se, přihlášení do nové ČSFD umožníme v nejbližších týdnech. Děkujeme za pochopení.</p>
+	<p>Pro přidání obsahu se prosím nejdřív přihlas.</p>
+	<a class="button button-red" href="/prihlaseni/">Přihlásit se</a>
 </div>
 								<li><a href="#contributionPlot" rel="contentInfoModal">Přidat obsah</a></li>
 
 <div id="contributionTrivia" class="modal mfp-hide" role="dialog">
 	<h2>Přidat zajímavost</h2>
-		<p>Omlouváme se, přihlášení do nové ČSFD umožníme v nejbližších týdnech. Děkujeme za pochopení.</p>
+	<p>Pro přidání zajímavosti se prosím nejdřív přihlas.</p>
+	<a class="button button-red" href="/prihlaseni/">Přihlásit se</a>
 </div>
 								<li><a href="#contributionTrivia" rel="contentInfoModal">Přidat zajímavost</a></li>
 
 <div id="contributionImage" class="modal mfp-hide" role="dialog">
 	<h2>Přidat obrázky</h2>
-		<p>Omlouváme se, přihlášení do nové ČSFD umožníme v nejbližších týdnech. Děkujeme za pochopení.</p>
+	<p>Pro přidání obrázku se prosím nejdřív přihlas.</p>
+	<a class="button button-red" href="/prihlaseni/">Přihlásit se</a>
 </div>
 								<li><a href="#contributionImage" rel="contentInfoModal">Přidat obrázky</a></li>
 
 <div id="contributionSimilarFilm" class="modal mfp-hide" role="dialog">
 	<h2>Přidat podobné filmy</h2>
-		<p>Omlouváme se, přihlášení do nové ČSFD umožníme v nejbližších týdnech. Děkujeme za pochopení.</p>
+	<p>Pro přidání souvisejícího nebo podobného filmu/seriálu se prosím nejdřív přihlas.</p>
+	<a class="button button-red" href="/prihlaseni/">Přihlásit se</a>
 </div>
 								<li><a href="#contributionSimilarFilm" rel="contentInfoModal">Přidat podobné filmy</a></li>
 
 <div id="contributionRelatedFilm" class="modal mfp-hide" role="dialog">
 	<h2>Přidat související filmy</h2>
-		<p>Omlouváme se, přihlášení do nové ČSFD umožníme v nejbližších týdnech. Děkujeme za pochopení.</p>
+	<p>Pro přidání souvisejícího filmu se prosím nejdřív přihlas.</p>
+	<a class="button button-red" href="/prihlaseni/">Přihlásit se</a>
 </div>
 								<li><a href="#contributionRelatedFilm" rel="contentInfoModal">Přidat související filmy</a></li>
 
 <div id="contributionReview" class="modal mfp-hide" role="dialog">
 	<h2>Přidat externí recenzi</h2>
-		<p>Omlouváme se, přihlášení do nové ČSFD umožníme v nejbližších týdnech. Děkujeme za pochopení.</p>
+	<p>Pro přidání recenze se prosím nejdřív přihlas.</p>
+	<a class="button button-red" href="/prihlaseni/">Přihlásit se</a>
 </div>
 								<li><a href="#contributionReview" rel="contentInfoModal">Přidat externí recenzi</a></li>
 
 <div id="contributionTag" class="modal mfp-hide" role="dialog">
 	<h2>Přidat tagy</h2>
-		<p>Omlouváme se, přihlášení do nové ČSFD umožníme v nejbližších týdnech. Děkujeme za pochopení.</p>
+	<p>Pro přidání tagu se prosím nejdřív přihlas.</p>
+	<a class="button button-red" href="/prihlaseni/">Přihlásit se</a>
 </div>
 								<li><a href="#contributionTag" rel="contentInfoModal">Přidat tagy</a></li>
 						</ul>
-</div>				</div>
+</div>
+				</div>
 
 			</div>
 		</div>
@@ -626,14 +649,13 @@ export const movieMockBlank = `
 
 
 
-
 	</aside>
 </div>
 
 				<div id="bottom-banner">
 					<div class="box box-banner box-bannercenter box-banner-spacetop box-banner-hidedesktop">
 						<p class="box-banner-text-center">Reklama</p>
-<div id="billboard" class="ad-pmg" style="height: 310px;"></div>
+<div id="billboard" class="ad-pmg" style="height: 315px;"></div>
 					</div>
 					<div class="box box-banner-mobile box-banner-mobile-padding">
 						<p class="box-banner-text">Reklama</p>
@@ -661,6 +683,8 @@ export const movieMockBlank = `
 					<div class="linklist">
 						<h3>Užitečné</h3>
 						<ul>
+								<li><a href="/prihlaseni/">Přihlášení</a></li>
+								<li><a href="/registrace/">Registrace</a></li>
 							<li><a href="/vyvojari/">Pracuj pro nás</a></li>
 							<li><a href="/napis-nam/">Napiš nám</a></li>
 						</ul>
@@ -685,7 +709,7 @@ export const movieMockBlank = `
 					</div>
 					<div class="site-info">
 						<p>Česko-Slovenská filmová databáze</p>
-						<p>&copy; 2001-2020 POMO Media Group s.r.o.</p>
+						<p>&copy; 2001-2021 POMO Media Group s.r.o.</p>
 						<p>Všechna práva vyhrazena.</p>
 					</div>
 				</div>
@@ -694,7 +718,8 @@ export const movieMockBlank = `
 		</footer>
 		<div id="panelModal" class="modal mfp-hide" role="dialog">
 	<span id="mfp-modalWindow">
-		<div id="snippet--modalWindow"></div>	</span>
+		<div id="snippet--modalWindow"></div>
+	</span>
 </div>
 
 
@@ -709,7 +734,7 @@ export const movieMockBlank = `
 
 <script type="text/javascript">
 	window.addEventListener('load', function () {
-		CSFD.Ads.complete({"ball":{"login":2,"film_id":99999,"film_type":0,"film_genre":[2,14],"film_origin":[172],"film_year":1912,"film_creators":[18452,6140,331812],"site":"csfd.cz"},"b1":{"area":"leaderboard","size":"1000x210,2000x1400,1000x200,1000x210,970x210,998x200,750x200,750x100,970x90,728x90,branding_web"},"b2":{"area":"halfpage","size":"300x600,160x600"},"b3":{"area":"billboard","size":"1000x310,970x310,970x250,480x300,750x300,970x90,728x90"},"b4":{"area":"mobile_leaderboard","size":"320x100,320x50,300x100,300x50"},"b5":{"area":"mobile_billboard","size":"300x300,300x250"}});
+		CSFD.Ads.complete({"ball":{"page":2,"login":2,"film_id":99999,"film_type":0,"film_genre":[2,14],"film_origin":[172],"film_year":1912,"film_creators":[18452,6140,331812],"site":"csfd.cz"},"b1":{"area":"leaderboard","size":"1000x210,2000x1400,1000x200,1000x210,970x210,998x200,750x200,750x100,970x90,728x90,branding_web"},"b2":{"area":"halfpage","size":"300x600,160x600"},"b3":{"area":"billboard","size":"1000x310,970x310,560x315,480x300,750x300,970x250,970x90,728x90"},"b4":{"area":"mobile_leaderboard","size":"320x100,320x50,300x100,300x50"},"b5":{"area":"mobile_billboard","size":"300x300,300x250"}});
 		CSFD.Ads.setTServer("https://a.csfd.cz/csfd/tserver");
 	});
 </script>

@@ -87,7 +87,6 @@ describe('Get Duration', () => {
 describe('Get VOD', () => {
   test('Get vods movie', () => {
     const movie = getVods(asideNode);
-    console.log(movie);
     expect(movie).toEqual<CSFDVod[]>([
       { title: 'Voyo', url: 'https://voyo.nova.cz/filmy/4604-na-spatne-strane' },
       {
