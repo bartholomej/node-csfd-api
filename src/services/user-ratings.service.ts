@@ -36,8 +36,9 @@ export class UserRatingsScraper {
     allMovies = this.getPage(config, movies);
 
     if (config?.allPages) {
+      console.log('User', user, url);
       console.log('Fetching all pages', pages);
-      for (let i = 2; i <= 4; i++) {
+      for (let i = 2; i <= pages; i++) {
         console.log('Fetching page', i, 'out of', pages, '...');
         const url = userRatingsUrl(user, i);
         const response = await fetchPage(url);
