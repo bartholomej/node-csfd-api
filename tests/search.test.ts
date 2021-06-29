@@ -29,7 +29,7 @@ describe('Get Movie titles', () => {
   });
   test('Some movie', () => {
     const movie = getTitle(moviesNode[4]);
-    expect(movie).toEqual<string>('Matrix');
+    expect(movie).toEqual<string>('Matrix: Nová návštěva');
   });
 });
 
@@ -44,7 +44,7 @@ describe('Get Movie years', () => {
   });
   test('Some movie', () => {
     const movie = getYear(moviesNode[4]);
-    expect(movie).toEqual<string>('2019');
+    expect(movie).toEqual<string>('2001');
   });
 });
 
@@ -59,7 +59,7 @@ describe('Get Movie url', () => {
   });
   test('Some movie', () => {
     const movie = getUrl(moviesNode[4]);
-    expect(movie).toEqual<string>('/film/799868-matrix/');
+    expect(movie).toEqual<string>('/film/17748-matrix-nova-navsteva/');
   });
 });
 
@@ -73,7 +73,7 @@ describe('Get Movie types', () => {
     expect(movie).toEqual<CSFDFilmTypes>('film');
   });
   test('Some movie', () => {
-    const movie = getType(moviesNode[4]);
+    const movie = getType(moviesNode[1]);
     expect(movie).toEqual<CSFDFilmTypes>('divadelní záznam');
   });
 });
@@ -88,7 +88,7 @@ describe('Get Movie colors', () => {
     expect(movie).toEqual<CSFDColorRating>('average');
   });
   test('Some movie', () => {
-    const movie = getColorRating(moviesNode[4]);
+    const movie = getColorRating(moviesNode[1]);
     expect(movie).toEqual<CSFDColorRating>('unknown');
   });
 });
@@ -107,7 +107,7 @@ describe('Get Movie posters', () => {
     );
   });
   test('Some movie', () => {
-    const movie = getPoster(moviesNode[4]);
+    const movie = getPoster(moviesNode[1]);
     expect(movie).toEqual<string>(
       'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'
     );
@@ -121,11 +121,15 @@ describe('Get Movie origins', () => {
   });
   test('Second movie', () => {
     const movie = getOrigins(moviesNode[1]);
+    expect(movie).toEqual<string[]>(['Slovensko']);
+  });
+  test('Third movie', () => {
+    const movie = getOrigins(moviesNode[2]);
     expect(movie).toEqual<string[]>(['USA', 'Austrálie']);
   });
   test('Some movie', () => {
-    const movie = getOrigins(moviesNode[4]);
-    expect(movie).toEqual<string[]>(['Slovensko']);
+    const movie = getOrigins(moviesNode[5]);
+    expect(movie).toEqual<string[]>(['Singapur']);
   });
 });
 
@@ -169,7 +173,7 @@ describe('Get Users name', () => {
   });
   test('Last user', () => {
     const movie = getUser(usersNode[usersNode.length - 1]);
-    expect(movie).toEqual<string>('matrix15');
+    expect(movie).toEqual<string>('MatrixHK');
   });
 });
 

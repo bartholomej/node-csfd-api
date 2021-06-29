@@ -99,16 +99,15 @@ describe('Get VOD', () => {
   test('Get vods movie', () => {
     const movie = getVods(asideNode);
     expect(movie).toEqual<CSFDVod[]>([
+      { title: 'Aerovod', url: 'https://aerovod.cz/katalog/na-spatne-strane' },
       { title: 'Voyo', url: 'https://voyo.nova.cz/filmy/4604-na-spatne-strane' },
       {
         title: 'DVD',
-        url:
-          'https://filmy.heureka.cz/na-spatne-strane-dvd/#utm_source=csfd.cz&utm_medium=cooperation&utm_campaign=csfd_movies_feed'
+        url: 'https://filmy.heureka.cz/na-spatne-strane-dvd/#utm_source=csfd.cz&utm_medium=cooperation&utm_campaign=csfd_movies_feed'
       },
       {
         title: 'Blu-ray',
-        url:
-          'https://filmy.heureka.cz/na-spatne-strane-bd/#utm_source=csfd.cz&utm_medium=cooperation&utm_campaign=csfd_movies_feed'
+        url: 'https://filmy.heureka.cz/na-spatne-strane-bd/#utm_source=csfd.cz&utm_medium=cooperation&utm_campaign=csfd_movies_feed'
       }
     ]);
   });

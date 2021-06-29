@@ -8,7 +8,7 @@ describe('Fetch rating page', () => {
   test('Fetch `912-bart` user', async () => {
     const url = userRatingsUrl(912);
     const html = await fetchPage(url);
-    expect(html).toContain('Vlkochodci');
+    expect(html).toContain('Palm Springs');
   });
 });
 
@@ -16,7 +16,7 @@ describe('Fetch rating page 2', () => {
   test('Fetch `912-bart` user – page 2', async () => {
     const url = userRatingsUrl(912, 2);
     const html = await fetchPage(url);
-    expect(html).toContain('Neviditelný');
+    expect(html).toContain('Jak Bůh hledal Karla');
   });
 });
 
@@ -25,7 +25,7 @@ describe('Fetch movie page', () => {
   test('Fetch `535121-na-spatne-strane` movie', async () => {
     const url = movieUrl(535121);
     const html = await fetchPage(url);
-    expect(html).toContain('Na špatné straně');
+    expect(html).toContain('Dragged Across Concrete');
   });
 });
 
