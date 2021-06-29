@@ -1,4 +1,5 @@
 import { HTMLElement, parse } from 'node-html-parser';
+import { getColor } from '../src/helpers/global.helper';
 import {
   getBoxMovies,
   getColorRating,
@@ -225,6 +226,18 @@ describe('Get ratings', () => {
   test('Blank Rating', () => {
     const movie = getColorRating(pageClassesBlank);
     expect(movie).toEqual<CSFDColorRating>('unknown');
+  });
+  test('Bad Rating', () => {
+    const rating = getColor('nothing!');
+    expect(rating).toEqual<CSFDColorRating>('unknown');
+  });
+  test('Bad Rating', () => {
+    const rating = getColor('page-grey');
+    expect(rating).toEqual<CSFDColorRating>('bad');
+  });
+  test('Bad Rating', () => {
+    const rating = getColor('page-blue');
+    expect(rating).toEqual<CSFDColorRating>('average');
   });
 });
 

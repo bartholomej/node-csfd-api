@@ -4,11 +4,6 @@ import { Colors } from 'interfaces/user-ratings.interface';
 import { HTMLElement } from 'node-html-parser';
 import { parseColor, parseIdFromUrl } from './global.helper';
 
-export const getId = (el: HTMLElement): number => {
-  const url = el.querySelector('td.name .film-title-name').attributes.href;
-  return parseIdFromUrl(url);
-};
-
 export const getType = (el: HTMLElement): CSFDFilmTypes => {
   const type = el.querySelectorAll('.film-title-info .info')[1];
   return (type?.innerText.replace(/[{()}]/g, '') || 'film') as CSFDFilmTypes;
