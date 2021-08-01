@@ -1,5 +1,5 @@
 import { CSFDMovie, CSFDMovieConfig } from './interfaces/movie.interface';
-import { CSFDSearch } from './interfaces/search.interface';
+import { CSFDSearch, CSFDSearchConfig } from './interfaces/search.interface';
 import { CSFDUserRatingConfig, CSFDUserRatings } from './interfaces/user-ratings.interface';
 import { MovieScraper } from './services/movie.service';
 import { SearchScraper } from './services/search.service';
@@ -23,8 +23,8 @@ export class Csfd {
     return this.movieService.movie(+movie, config);
   }
 
-  public async search(text: string): Promise<CSFDSearch> {
-    return this.searchService.search(text);
+  public async search(text: string, config?: CSFDSearchConfig): Promise<CSFDSearch> {
+    return this.searchService.search(text, config);
   }
 }
 

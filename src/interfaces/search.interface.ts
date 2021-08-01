@@ -1,4 +1,4 @@
-import { CSFDScreening } from './global';
+import { CSFDScreening, Languages } from './global';
 import { CSFDCreator } from './movie.interface';
 
 export interface CSFDSearch {
@@ -29,4 +29,8 @@ export interface CSFDSearchCreator extends CSFDCreator {
 export interface CSFDSearchCreators {
   directors: CSFDCreator[];
   actors: CSFDCreator[];
+}
+
+export interface CSFDSearchConfig {
+  language?: Languages;
 }

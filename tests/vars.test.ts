@@ -12,15 +12,23 @@ describe('Vars User Ratings', () => {
 });
 
 describe('Vars Movies', () => {
-  test('Assemble movieUrl', () => {
+  test('Assemble Czech movieUrl', () => {
     const url = movieUrl(535121);
     expect(url).toBe('https://www.csfd.cz/film/535121');
+  });
+  test('Assemble Slovak movieUrl', () => {
+    const url = movieUrl(535121, 'sk');
+    expect(url).toBe('https://www.csfd.sk/film/535121');
   });
 });
 
 describe('Vars Search', () => {
-  test('Assemble searchUrl', () => {
+  test('Assemble Czech searchUrl', () => {
     const url = searchUrl('matrix');
     expect(url).toBe('https://www.csfd.cz/hledat/?q=matrix');
+  });
+  test('Assemble Slovak searchUrl', () => {
+    const url = searchUrl('matrix', 'sk');
+    expect(url).toBe('https://www.csfd.sk/hledat/?q=matrix');
   });
 });

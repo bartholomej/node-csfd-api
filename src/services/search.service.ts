@@ -1,3 +1,10 @@
+import { Languages } from 'interfaces/global';
+import {
+  CSFDSearch,
+  CSFDSearchConfig,
+  CSFDSearchMovie,
+  CSFDSearchUser
+} from 'interfaces/search.interface';
 import { HTMLElement, parse } from 'node-html-parser';
 import { fetchPage } from '../fetchers';
 import { parseIdFromUrl } from '../helpers/global.helper';
@@ -12,21 +19,20 @@ import {
   getYear,
   parsePeople
 } from '../helpers/search.helper';
-import { CSFDSearch, CSFDSearchMovie, CSFDSearchUser } from '../interfaces/search.interface';
 import { searchUrl } from '../vars';
 
 export class SearchScraper {
-  public async search(text: string): Promise<CSFDSearch> {
-    const url = searchUrl(text);
+  public async search(text: string, config?: CSFDSearchConfig): Promise<CSFDSearch> {
+    const url = searchUrl(text, config?.language);
     const response = await fetchPage(url);
 
     const html = parse(response);
     const moviesNode = html.querySelectorAll('.main-movies article');
     const usersNode = html.querySelectorAll('.main-users article');
-    return this.parseSearch(moviesNode, usersNode);
+    return this.parseSearch(moviesNode, usersNode, config?.language);
   }
 
-  private parseSearch(moviesNode: HTMLElement[], usersNode: HTMLElement[]) {
+  private parseSearch(moviesNode: HTMLElement[], usersNode: HTMLElement[], lang: Languages) {
     const movies: CSFDSearchMovie[] = [];
     const users: CSFDSearchUser[] = [];
 
@@ -37,7 +43,7 @@ export class SearchScraper {
         id: parseIdFromUrl(url),
         title: getTitle(m),
         year: getYear(m),
-        url: `https://www.csfd.cz${url}`,
+        url: `https://www.csfd.${lang}${url}`,
         type: getType(m),
         colorRating: getColorRating(m),
         poster: getPoster(m),
@@ -58,7 +64,7 @@ export class SearchScraper {
         user: getUser(m),
         userRealName: getUserRealName(m),
         avatar: getAvatar(m),
-        url: `https://www.csfd.cz${url}`
+        url: `https://www.csfd.${lang}${url}`
       };
       users.push(user);
     });
