@@ -20,14 +20,14 @@ import {
   getYear
 } from '../helpers/movie.helper';
 import { CSFDFilmTypes } from '../interfaces/global';
-import { CSFDMovie } from '../interfaces/movie.interface';
+import { CSFDMovie, CSFDMovieConfig } from '../interfaces/movie.interface';
 import { movieUrl } from '../vars';
 
 export class MovieScraper {
   private film: CSFDMovie;
 
-  public async movie(movieId: number): Promise<CSFDMovie> {
-    const url = movieUrl(+movieId);
+  public async movie(movieId: number, config: CSFDMovieConfig): Promise<CSFDMovie> {
+    const url = movieUrl(+movieId, config?.language);
     const response = await fetchPage(url);
 
     const movieHtml = parse(response);
@@ -35,7 +35,7 @@ export class MovieScraper {
     const pageClasses = movieHtml.querySelector('.page-content').classNames.split(' ');
     const asideNode = movieHtml.querySelector('.aside-movie-profile');
     const movieNode = movieHtml.querySelector('.main-movie-profile');
-    this.buildMovie(+movieId, movieNode, asideNode, pageClasses);
+    this.buildMovie(+movieId, movieNode, asideNode, pageClasses, config);
     return this.film;
   }
 
@@ -43,7 +43,8 @@ export class MovieScraper {
     movieId: number,
     el: HTMLElement,
     asideEl: HTMLElement,
-    pageClasses: string[]
+    pageClasses: string[],
+    config: CSFDMovieConfig
   ) {
     this.film = {
       id: movieId,
@@ -53,7 +54,7 @@ export class MovieScraper {
       descriptions: getDescriptions(el),
       genres: getGenres(el),
       type: getType(el) as CSFDFilmTypes,
-      url: movieUrl(movieId),
+      url: movieUrl(movieId, config?.language),
       origins: getOrigins(el),
       colorRating: getColorRating(pageClasses),
       rating: getRating(asideEl),

@@ -22,7 +22,7 @@ export type CSFDColorRating = 'bad' | 'average' | 'good' | 'unknown';
 
 export type CSFDStars = 0 | 1 | 2 | 3 | 4 | 5;
 
-export type CSFDFilmTypes =
+export type CSFDFilmTypesCS =
   | 'film'
   | 'TV film'
   | 'TV pořad'
@@ -34,3 +34,20 @@ export type CSFDFilmTypes =
   | 'amatérský film'
   | 'hudební videoklip'
   | 'epizoda';
+
+export type CSFDFilmTypesSK =
+  | 'film'
+  | 'TV film'
+  | 'TV relácia'
+  | 'TV seriál'
+  | 'divadelný záznam'
+  | 'koncert'
+  | 'TV seriál - séria'
+  | 'študentský film'
+  | 'amatérsky film'
+  | 'hudobný videoklip'
+  | 'epizóda';
+
+export type CSFDFilmTypes = CSFDFilmTypesCS | CSFDFilmTypesSK;
+
+export type Languages = 'cz' | 'sk';

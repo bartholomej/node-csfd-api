@@ -1,4 +1,4 @@
-import { CSFDScreening } from './global';
+import { CSFDScreening, Languages } from './global';
 
 export interface CSFDMovie extends CSFDScreening {
   rating: number | null;
@@ -70,7 +70,7 @@ export interface CSFDMovieListItem {
   url: string;
 }
 
-export type CSFDGenres =
+export type CSFDGenresCS =
   | 'Akční'
   | 'Animovaný'
   | 'Dobrodružný'
@@ -114,8 +114,57 @@ export type CSFDGenres =
   | 'Zábavný'
   | 'Životopisný';
 
-export type CSFDCreatorGroups =
+export type CSFDGenresSK =
+  | 'Akčný'
+  | 'Animovaný'
+  | 'Bábkový'
+  | 'Dobrodružný'
+  | 'Dokumentárny'
+  | 'Dráma'
+  | 'Erotický'
+  | 'Experimentálny'
+  | 'Fantasy'
+  | 'Film-Noir'
+  | 'Historický'
+  | 'Horor'
+  | 'Hudobný'
+  | 'IMAX'
+  | 'Katastrofický'
+  | 'Komédia'
+  | 'Krimi'
+  | 'Krátkometrážny'
+  | 'Muzikál'
+  | 'Mysteriózny'
+  | 'Náučný'
+  | 'Podobenstvo'
+  | 'Poetický'
+  | 'Pornografický'
+  | 'Poviedkový'
+  | 'Psychologický'
+  | 'Publicistický'
+  | 'Reality-TV'
+  | 'Road movie'
+  | 'Rodinný'
+  | 'Romantický'
+  | 'Rozprávka'
+  | 'Sci-Fi'
+  | 'Stand-up'
+  | 'Súťažný'
+  | 'Talk-show'
+  | 'Tanečný'
+  | 'Telenovela'
+  | 'Thriller'
+  | 'Vojnový'
+  | 'Western'
+  | 'Zábavný'
+  | 'Športový'
+  | 'Životopisný';
+
+export type CSFDGenres = CSFDGenresCS | CSFDGenresSK;
+
+export type CSFDCreatorGroupsCS =
   | 'Režie'
+  | 'Předloha'
   | 'Scénář'
   | 'Kamera'
   | 'Hudba'
@@ -124,13 +173,33 @@ export type CSFDCreatorGroups =
   | 'Střih'
   | 'Předloha'
   | 'Scénografie'
-  | 'Kostýmy';
+  | 'Kostýmy'
+  | 'Masky';
+
+export type CSFDCreatorGroupsSK =
+  | 'Réžia'
+  | 'Predloha'
+  | 'Scenár'
+  | 'Kamera'
+  | 'Hudba'
+  | 'Hrajú'
+  | 'Produkcia'
+  | 'Strih'
+  | 'Scénografia'
+  | 'Kostýmy'
+  | 'Masky';
+
+export type CSFDCreatorGroups = CSFDCreatorGroupsCS | CSFDCreatorGroupsSK;
 
 export interface CSFDPremiere {
   country: string;
   format: string;
   date: string;
   company: string;
+}
+
+export interface CSFDMovieConfig {
+  language?: Languages;
 }
 
 export type CSFDBoxContent = 'Související' | 'Podobné';
