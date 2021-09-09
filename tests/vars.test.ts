@@ -1,4 +1,4 @@
-import { movieUrl, searchUrl, userRatingsUrl } from '../src/vars';
+import { creatorUrl, movieUrl, searchUrl, userRatingsUrl } from '../src/vars';
 
 describe('Vars User Ratings', () => {
   test('Assemble User rating url', () => {
@@ -22,5 +22,12 @@ describe('Vars Search', () => {
   test('Assemble searchUrl', () => {
     const url = searchUrl('matrix');
     expect(url).toBe('https://www.csfd.cz/hledat/?q=matrix');
+  });
+});
+
+describe('Vars Creator', () => {
+  test('Assemble creatorUrl', () => {
+    const url = creatorUrl('1');
+    expect(url).toBe('https://www.csfd.cz/tvurce/1');
   });
 });

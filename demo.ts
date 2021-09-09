@@ -6,6 +6,9 @@ csfd.movie(10135).then((movie) => console.log(movie));
 
 // csfd.search('matrix').then((search) => console.log(search));
 
+// Parse creator
+csfd.creator(3091).then((creator) => console.log(creator));
+
 /**
  * USER RATINGS
  */

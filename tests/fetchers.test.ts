@@ -1,5 +1,6 @@
 import { csfd } from '../src';
 import { fetchPage } from '../src/fetchers';
+import { CSFDCreatorScreening } from '../src/interfaces/creator.interface';
 import { movieUrl, userRatingsUrl } from '../src/vars';
 
 const badId = 999999999999999;
@@ -46,6 +47,22 @@ describe('Live: Search', () => {
     expect(matrix?.creators?.directors.map((x) => x.name)).toEqual<string[]>(
       expect.arrayContaining(['Lilly Wachowski'])
     );
+  });
+});
+
+// Creator
+describe('Live: Creator page', () => {
+  test('Fetch `2018-jan-werich` creator', async () => {
+    const creator = await csfd.creator(2018);
+    expect(creator.name).toEqual<string>('Jan Werich');
+    expect(creator.birthday).toEqual('06.02.1905');
+    expect(creator.birthplace).toEqual('Praha, Čechy, Rakousko-Uhersko');
+    expect(creator.films.find((film) => film.title === 'Hej-rup!')).toEqual<CSFDCreatorScreening>({
+      id: 3106,
+      title: 'Hej-rup!',
+      year: 1934,
+      colorRating: 'good'
+    });
   });
 });
 
