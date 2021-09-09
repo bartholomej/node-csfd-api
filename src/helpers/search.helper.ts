@@ -1,7 +1,7 @@
-import { CSFDColorRating, CSFDFilmTypes } from 'interfaces/global';
-import { CSFDCreator } from 'interfaces/movie.interface';
-import { Colors } from 'interfaces/user-ratings.interface';
 import { HTMLElement } from 'node-html-parser';
+import { CSFDColorRating, CSFDFilmTypes } from '../interfaces/global';
+import { CSFDCreator } from '../interfaces/movie.interface';
+import { Colors } from '../interfaces/user-ratings.interface';
 import { parseColor, parseIdFromUrl } from './global.helper';
 
 export const getType = (el: HTMLElement): CSFDFilmTypes => {

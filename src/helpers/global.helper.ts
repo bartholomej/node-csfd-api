@@ -1,4 +1,4 @@
-import { CSFDColorRating } from 'interfaces/global';
+import { CSFDColorRating } from '../interfaces/global';
 import { Colors } from '../interfaces/user-ratings.interface';
 
 export const parseIdFromUrl = (url: string): number => {
