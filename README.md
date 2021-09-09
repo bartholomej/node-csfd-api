@@ -33,7 +33,7 @@ npm install node-csfd-api
 
 ## Movie
 
-Get info about [this movie](https://www.csfd.cz/film/535121-na-spatne-strane/komentare/)
+Get info about [this movie](https://www.csfd.cz/film/535121-na-spatne-strane/komentare/) _(id: 535121)_
 
 ```javascript
 import { csfd } from 'node-csfd-api';
@@ -180,6 +180,93 @@ users: [
 ]
 ```
 
+## Creators
+
+> Search creators and filmography
+
+```javascript
+import { csfd } from 'node-csfd-api';
+
+csfd.creator(2120).then((creator) => console.log(creator));
+```
+
+### Results
+
+```javascript
+{
+  id: 2120,
+  name: 'Quentin Tarantino',
+  birthday: '27.03.1963',
+  birthplace: 'Knoxville, Tennessee, USA',
+  photo: '//image.pmgstatic.com/cache/resized/w100h132crop/files/images/creator/photos/164/515/164515525_b98f8a.jpg',
+  age: 58,
+  bio: 'Quentin Tarantino se narodil 27. března roku 1963 v americkém Knoxville teprve šestnáctileté Connie Tarantinové. Své jméno Quentin dostal podle matčiny oblíbené televizní postavy Quinta ze seriálu "Gunsmoke". Quentinův otec byl jistý Tony Tarantino, který rodinu opustil když byl Quentin ještě malinký. Jeho dětství a dospívání ovlivnily nejen filmy, ale pop kultura obecně. Televizní seriály, komiksy, populární hudba, to vše jako mladý hltal ve velkém a stále neměl…',
+  films: [
+    {
+      id: 527699,
+      title: 'Tenkrát v Hollywoodu',
+      year: 2019,
+      colorRating: 'good'
+    },
+    {
+      id: 362228,
+      title: 'Osm hrozných',
+      year: 2015,
+      colorRating: 'good'
+    },
+    {
+      id: 294824,
+      title: 'Nespoutaný Django',
+      year: 2012,
+      colorRating: 'good'
+    },
+    {
+      id: 117077,
+      title: 'Hanebný pancharti',
+      year: 2009,
+      colorRating: 'good'
+    },
+    {
+      id: 229384,
+      title: 'Grindhouse: Auto zabiják',
+      year: 2007,
+      colorRating: 'average'
+    },
+    {
+      id: 178904,
+      title: 'Sin City - město hříchu',
+      year: 2005,
+      colorRating: 'good'
+    },
+    {
+      id: 136304,
+      title: 'Kill Bill 2',
+      year: 2004,
+      colorRating: 'good'
+    },
+    { id: 43483, title: 'Kill Bill', year: 2003, colorRating: 'good' },
+    {
+      id: 8850,
+      title: 'Jackie Brown',
+      year: 1997,
+      colorRating: 'good'
+    },
+    {
+      id: 7743,
+      title: 'Čtyři pokoje',
+      year: 1995,
+      colorRating: 'good'
+    },
+    {
+      id: 8852,
+      title: 'Pulp Fiction: Historky z podsvětí',
+      year: 1994,
+      colorRating: 'good'
+    }
+  ]
+}
+```
+
 ## User Ratings
 
 ### Last ratings (last page)
@@ -291,9 +378,9 @@ _Note: You can not use both parameters 'includesOnly' and 'excludes'. Parameter 
   - [x] Users
   - [ ] Creators
   - [ ] TV Series
-- [ ] Creators
-  - [ ] Bio
-  - [ ] Movies
+- [x] Creators
+  - [x] Bio
+  - [x] Movies (TODO categories)
 - [x] User Ratings
   - [x] Last ratings
   - [x] All pages
