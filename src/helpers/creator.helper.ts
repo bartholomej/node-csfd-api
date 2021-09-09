@@ -1,7 +1,7 @@
-import { CSFDCreatorScreening } from 'interfaces/creator.interface';
-import { CSFDColorRating } from 'interfaces/global';
-import { Colors } from 'interfaces/user-ratings.interface';
 import { HTMLElement } from 'node-html-parser';
+import { CSFDCreatorScreening } from '../interfaces/creator.interface';
+import { CSFDColorRating } from '../interfaces/global';
+import { Colors } from '../interfaces/user-ratings.interface';
 import { parseColor, parseIdFromUrl } from './global.helper';
 
 export const getColorRating = (el: HTMLElement): CSFDColorRating => {
