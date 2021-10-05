@@ -59,7 +59,7 @@ describe('Includes only TV series', () => {
     const results = await resIncluded;
 
     const tvSeries = results.filter((item) => item.type === 'TV seriál');
-    expect(tvSeries.length).toBeGreaterThan(1);
+    expect(tvSeries.length).toBeGreaterThan(0);
   });
   test('Should have only TV Series', async () => {
     const results = await resIncluded;
