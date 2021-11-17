@@ -17,6 +17,7 @@
     "publish:next": "yarn && yarn build && yarn test --coverage true && npm publish --folder dist --tag beta",
     "postversion": "git push && git push --follow-tags",
     "release:beta": "npm version preminor --preid=beta -m \"chore(update): prelease %s β\"",
+    "prerelease:beta": "npm version prerelease --preid=beta -m \"chore(update): prelease %s β\"",
     "release:patch": "git checkout master && npm version patch -m \"chore(update): patch release %s 🐛\"",
     "release:minor": "git checkout master && npm version minor -m \"chore(update): release %s 🚀\"",
     "release:major": "git checkout master && npm version major -m \"chore(update): major release %s 💥\"",
