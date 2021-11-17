@@ -58,6 +58,7 @@ csfd.movie(535121).then((movie) => console.log(movie));
   origins: [ 'USA', 'Kanada' ],
   colorRating: 'good',
   rating: 73,
+  ratingCount: 6654,
   titlesOther: [
     { country: 'USA', title: 'Dragged Across Concrete' },
     { country: 'Kanada', title: 'Dragged Across Concrete' },
