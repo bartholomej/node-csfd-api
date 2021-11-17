@@ -94,13 +94,27 @@ export const getTitlesOther = (el: HTMLElement): CSFDTitlesOther[] => {
 
 export const getPoster = (el: HTMLElement): string => {
   const poster = el.querySelector('.film-posters img');
-  // Resolve empty image
-  if (poster.classNames?.includes('empty-image')) {
-    return null;
+  if (poster) {
+    // Resolve empty image
+    if (poster.classNames?.includes('empty-image')) {
+      return null;
+    } else {
+      // Full sized image (not thumb)
+      const imageThumb = poster.attributes.src.split('?')[0];
+      return imageThumb.replace(/\/w140\//, '/w1080/');
+    }
   } else {
-    // Full sized image (not thumb)
-    const imageThumb = poster.attributes.src.split('?')[0];
-    return imageThumb.replace(/\/w140\//, '/w1080/');
+    return null;
+  }
+};
+
+export const getRandomPhoto = (el: HTMLElement): string => {
+  const imageNode = el.querySelector('.gallery-item picture img');
+  const image = imageNode?.attributes?.src;
+  if (image) {
+    return image.replace(/\/w663\//, '/w1326/');
+  } else {
+    return null;
   }
 };
 

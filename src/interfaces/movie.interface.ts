@@ -3,6 +3,7 @@ import { CSFDScreening } from './global';
 export interface CSFDMovie extends CSFDScreening {
   rating: number | null;
   poster: string;
+  photo: string;
   ratingCount: number | null;
   duration: number | string;
   titlesOther: CSFDTitlesOther[];

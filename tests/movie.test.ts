@@ -12,6 +12,7 @@ import {
   getOrigins,
   getPoster,
   getPremieres,
+  getRandomPhoto,
   getRating,
   getRatingCount,
   getTitle,
@@ -49,6 +50,8 @@ const seriesHtml = parse(seriesMock);
 const seriesNode: HTMLElement = seriesHtml.querySelector('.main-movie-profile');
 const asideNodeSeries = seriesHtml.querySelector('.aside-movie-profile');
 
+const emptyHtmlNode = movieHtml.querySelector('.page-footer'); // some random node
+
 // const bodyClassesSeries = seriesHtml.querySelector('.page-content').classNames;
 
 describe('Get ID', () => {
@@ -78,6 +81,33 @@ describe('Get Poster', () => {
   });
   test('Movie Blank poster', () => {
     const movie = getPoster(movieNodeBlank);
+    expect(movie).toEqual<string>(null);
+  });
+  test('Movie empty node', () => {
+    const movie = getPoster(emptyHtmlNode);
+    expect(movie).toEqual<string>(null);
+  });
+});
+
+describe('Get Movie photo', () => {
+  test('Movie photo', () => {
+    const movie = getRandomPhoto(movieNode);
+    expect(movie).toEqual<string>(
+      '//image.pmgstatic.com/cache/resized/w1326/files/images/film/photos/163/748/163748964_3f9a56.jpg'
+    );
+  });
+  test('Movie Blank photo', () => {
+    const movie = getRandomPhoto(movieNodeBlank);
+    expect(movie).toEqual<string>(null);
+  });
+  test('Movie Series photo', () => {
+    const movie = getRandomPhoto(seriesNode);
+    expect(movie).toEqual<string>(
+      '//image.pmgstatic.com/cache/resized/w1326/files/images/film/photos/158/804/158804662_de9ba6.jpg'
+    );
+  });
+  test('Movie empty node', () => {
+    const movie = getRandomPhoto(emptyHtmlNode);
     expect(movie).toEqual<string>(null);
   });
 });
