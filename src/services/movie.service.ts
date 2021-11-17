@@ -12,6 +12,7 @@ import {
   getPoster,
   getPremieres,
   getRating,
+  getRatingCount,
   getTags,
   getTitle,
   getTitlesOther,
@@ -57,6 +58,7 @@ export class MovieScraper {
       origins: getOrigins(el),
       colorRating: getColorRating(pageClasses),
       rating: getRating(asideEl),
+      ratingCount: getRatingCount(asideEl),
       titlesOther: getTitlesOther(el),
       poster: getPoster(el),
       creators: {
