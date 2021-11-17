@@ -99,7 +99,8 @@ export const getPoster = (el: HTMLElement): string => {
     return null;
   } else {
     // Full sized image (not thumb)
-    return poster.attributes.src.split('?')[0];
+    const imageThumb = poster.attributes.src.split('?')[0];
+    return imageThumb.replace(/\/w140\//, '/w1080/');
   }
 };
 

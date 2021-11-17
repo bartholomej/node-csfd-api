@@ -66,7 +66,7 @@ csfd.movie(535121).then((movie) => console.log(movie));
     { country: 'Austrálie', title: 'Dragged Across Concrete' },
     { country: 'Velká Británie', title: 'Dragged Across Concrete' }
   ],
-  poster: '//img.csfd.cz/files/images/film/posters/163/579/163579352_bf8737.jpg?h180',
+  poster: '//image.pmgstatic.com/cache/resized/w1080/files/images/film/posters/163/579/163579352_bf8737.jpg',
   creators: {
     directors: [
     {
