@@ -13,6 +13,7 @@ import {
   getPoster,
   getPremieres,
   getRating,
+  getRatingCount,
   getTitle,
   getTitlesOther,
   getType,
@@ -211,6 +212,21 @@ describe('Get year', () => {
   test('Year Series', () => {
     const movie = getYear(seriesNode);
     expect(movie).toEqual<string | number>('1994–1997');
+  });
+});
+
+describe('Get rating count', () => {
+  test('Rating count', () => {
+    const movie = getRatingCount(asideNode);
+    expect(movie).toBeGreaterThan(6468);
+  });
+  test('Rating count', () => {
+    const movie = getRatingCount(asideNodeSeries);
+    expect(movie).toBeGreaterThan(4471);
+  });
+  test('Rating count blank', () => {
+    const movie = getRatingCount(asideNodeBlank);
+    expect(movie).toEqual(null);
   });
 });
 

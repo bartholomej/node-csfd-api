@@ -22,12 +22,12 @@ export const getTitle = (el: HTMLElement): string => {
 };
 
 export const getGenres = (el: HTMLElement): CSFDGenres[] => {
-  const genresRaw = el.querySelector('.genres').text;
+  const genresRaw = el.querySelector('.genres').textContent;
   return genresRaw.split(' / ') as CSFDGenres[];
 };
 
 export const getOrigins = (el: HTMLElement): string[] => {
-  const originsRaw = el.querySelector('.origin').text;
+  const originsRaw = el.querySelector('.origin').textContent;
   const origins = originsRaw.split(',')[0];
   return origins.split(' / ');
 };
@@ -37,10 +37,20 @@ export const getColorRating = (bodyClasses: string[]): CSFDColorRating => {
 };
 
 export const getRating = (el: HTMLElement): number => {
-  const ratingRaw = el.querySelector('.rating-average').text;
+  const ratingRaw = el.querySelector('.rating-average').textContent;
   const rating = +ratingRaw?.replace(/%/g, '').trim();
   if (Number.isInteger(rating)) {
     return rating;
+  } else {
+    return null;
+  }
+};
+
+export const getRatingCount = (el: HTMLElement): number => {
+  const ratingCountRaw = el.querySelector('.box-rating-container .counter')?.textContent;
+  const ratingCount = +ratingCountRaw?.replace(/[(\s)]/g, '');
+  if (Number.isInteger(ratingCount)) {
+    return ratingCount;
   } else {
     return null;
   }
@@ -70,7 +80,7 @@ export const getTitlesOther = (el: HTMLElement): CSFDTitlesOther[] => {
   const namesNode = el.querySelectorAll('.film-names li');
   return namesNode.map((el) => {
     const country = el.querySelector('img.flag').attributes.alt;
-    const title = el.text.trim().split('\n')[0];
+    const title = el.textContent.trim().split('\n')[0];
     if (country && title) {
       return {
         country,
@@ -97,7 +107,7 @@ export const getDescriptions = (el: HTMLElement): string[] => {
   // TODO more plots
   const plot = el
     .querySelector('.body--plots .plot-preview p')
-    ?.text.trim()
+    ?.textContent.trim()
     .replace(/(\r\n|\n|\r|\t)/gm, '');
   return plot ? [plot] : [];
 };
@@ -126,7 +136,7 @@ export const parsePeople = (el: HTMLElement): CSFDCreator[] => {
 
 export const getGroup = (el: HTMLElement, group: CSFDCreatorGroups): CSFDCreator[] => {
   const creators = el.querySelectorAll('.creators h4');
-  const element = creators.filter((elem) => elem.text.trim().includes(group))[0];
+  const element = creators.filter((elem) => elem.textContent.trim().includes(group))[0];
   if (element?.parentNode) {
     return parsePeople(element.parentNode as HTMLElement);
   } else {
@@ -146,7 +156,7 @@ export const getVods = (el: HTMLElement): CSFDVod[] => {
     const buttonsVod = buttons.filter((x) => !x.classNames.includes('button-social'));
     vods = buttonsVod.map((btn) => {
       return {
-        title: btn.text.trim(),
+        title: btn.textContent.trim(),
         url: btn.attributes.href
       };
     });
@@ -157,7 +167,8 @@ export const getVods = (el: HTMLElement): CSFDVod[] => {
 // Get box content
 export const getBoxContent = (el: HTMLElement, box: string): HTMLElement => {
   const headers = el.querySelectorAll('section.box .box-header');
-  return headers.find((header) => header.querySelector('h3').text.trim().includes(box))?.parentNode;
+  return headers.find((header) => header.querySelector('h3').textContent.trim().includes(box))
+    ?.parentNode;
 };
 
 export const getBoxMovies = (el: HTMLElement, boxName: CSFDBoxContent): CSFDMovieListItem[] => {
@@ -183,7 +194,7 @@ export const getPremieres = (el: HTMLElement): CSFDPremiere[] => {
     const [date, ...company] = premiereNode.querySelector('p + span').attributes.title.split(' ');
     premiere.push({
       country: premiereNode.querySelector('.flag')?.attributes.title || null,
-      format: premiereNode.querySelector('p').text.trim().split(' od')[0],
+      format: premiereNode.querySelector('p').textContent.trim().split(' od')[0],
       date,
       company: company.join(' ')
     });
@@ -193,5 +204,5 @@ export const getPremieres = (el: HTMLElement): CSFDPremiere[] => {
 
 export const getTags = (el: HTMLElement): string[] => {
   const tagsRaw = el.querySelectorAll('.box-content a[href*="/podrobne-vyhledavani/?tag="]');
-  return tagsRaw.map((tag) => tag.text);
+  return tagsRaw.map((tag) => tag.textContent);
 };
