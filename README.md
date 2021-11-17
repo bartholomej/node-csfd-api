@@ -59,6 +59,8 @@ csfd.movie(535121).then((movie) => console.log(movie));
   colorRating: 'good',
   rating: 73,
   ratingCount: 6654,
+  photo: '//image.pmgstatic.com/cache/resized/w1326/files/images/film/photos/162/980/162980090_bbffbb.jpg',
+  trivia: ['Když Henry (Tory Kittles) se svým mladším bratrem...', 'Ve filmu se střídají...'],
   titlesOther: [
     { country: 'USA', title: 'Dragged Across Concrete' },
     { country: 'Kanada', title: 'Dragged Across Concrete' },
@@ -371,6 +373,7 @@ _Note: You can not use both parameters 'includesOnly' and 'excludes'. Parameter 
   - [x] Premieres
   - [x] Related movies
   - [x] Similar movies
+  - [x] Trivia
   - [ ] All images
   - [ ] Reviews
   - [ ] OST

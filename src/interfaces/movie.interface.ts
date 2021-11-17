@@ -9,6 +9,7 @@ export interface CSFDMovie extends CSFDScreening {
   titlesOther: CSFDTitlesOther[];
   origins: string[];
   descriptions: string[];
+  trivia: string[];
   genres: CSFDGenres[] | string[];
   creators: CSFDCreators;
   vod: CSFDVod[];

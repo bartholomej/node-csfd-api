@@ -118,6 +118,15 @@ export const getRandomPhoto = (el: HTMLElement): string => {
   }
 };
 
+export const getTrivia = (el: HTMLElement): string[] => {
+  const triviaNodes = el.querySelectorAll('.article-trivia ul li');
+  if (triviaNodes?.length) {
+    return triviaNodes.map((node) => node.textContent.trim().replace(/(\r\n|\n|\r|\t)/gm, ''));
+  } else {
+    return null;
+  }
+};
+
 export const getDescriptions = (el: HTMLElement): string[] => {
   // TODO more plots
   const plot = el

@@ -17,6 +17,7 @@ import {
   getRatingCount,
   getTitle,
   getTitlesOther,
+  getTrivia,
   getType,
   getVods,
   getYear
@@ -93,7 +94,7 @@ describe('Get Movie photo', () => {
   test('Movie photo', () => {
     const movie = getRandomPhoto(movieNode);
     expect(movie).toEqual<string>(
-      '//image.pmgstatic.com/cache/resized/w1326/files/images/film/photos/163/748/163748964_3f9a56.jpg'
+      '//image.pmgstatic.com/cache/resized/w1326/files/images/film/photos/162/980/162980090_bbffbb.jpg'
     );
   });
   test('Movie Blank photo', () => {
@@ -108,6 +109,33 @@ describe('Get Movie photo', () => {
   });
   test('Movie empty node', () => {
     const movie = getRandomPhoto(emptyHtmlNode);
+    expect(movie).toEqual<string>(null);
+  });
+});
+
+describe('Get Movie trivia', () => {
+  test('Movie trivia', () => {
+    const movie = getTrivia(movieNode);
+    expect(movie).toEqual<string[]>([
+      'Když Henry (Tory Kittles) se svým mladším bratrem Ethanem (Myles Truitt) hrají na konzoly PS4 fiktivní hru „Shotgun Safari“, nemají ani zapnuté joysticky.(SeBig)',
+      'Ve filmu se střídají pro různé záběry dvě auta, Melovo Chevrolet je buď model Caprice ročník 1986 anebo model Impala ročník 1980. Při závěrečné scéně je v jednom záběru auto schované v garáži bílé SUV Dodge Durango, ale jinak je to Chevrolet Tahoe. Dvě úplně jiná auta.(350cuiV8)',
+      'Počas rozhovorov (čas 00:24:30 - 00:36:35) medzi Brettom (Mel Gibson), Anthonym (Vince Vaughn) a Calvertom (Don Johnson) ich odznaky, ktoré hodili na stôl, menia pozíciu medzi jednotlivými scénami.(BOURQUE)'
+    ]);
+  });
+  test('Movie Blank trivia', () => {
+    const movie = getTrivia(movieNodeBlank);
+    expect(movie).toEqual<string>(null);
+  });
+  test('Movie Series trivia', () => {
+    const movie = getTrivia(seriesNode);
+    expect(movie).toEqual<string[]>([
+      'Údajne sa plánovala i tretia séria seriálu, plány však narušila predčasná smrť niektorých hlavných hercov.(misterz)',
+      'Jméno postavy, Stig Helmer, je převzato od postavy Stig-Helmer Olsson ze švédské komediální filmové série Sällskapsresan od Lasse Áberga, která byla svého času považována za symbol švédské tuposti a přísnosti.(TomikZlesa)',
+      'Herci, kteří se v seriálu objevili jako umývači nádobí, nedokázali své dialogy řádně vyslovovat, a tak museli být předabováni.(HellFire)'
+    ]);
+  });
+  test('Movie empty node', () => {
+    const movie = getTrivia(emptyHtmlNode);
     expect(movie).toEqual<string>(null);
   });
 });
@@ -132,15 +160,15 @@ describe('Get VOD', () => {
     const movie = getVods(asideNode);
     expect(movie).toEqual<CSFDVod[]>([
       { title: 'Aerovod', url: 'https://aerovod.cz/katalog/na-spatne-strane' },
-      { title: 'Voyo', url: 'https://voyo.nova.cz/filmy/4604-na-spatne-strane' },
+      // { title: 'Voyo', url: 'https://voyo.nova.cz/filmy/4604-na-spatne-strane' },
       {
         title: 'DVD',
-        url: 'https://filmy.heureka.cz/na-spatne-strane-dvd/#utm_source=csfd.cz&utm_medium=cooperation&utm_campaign=csfd_movies_feed'
-      },
-      {
-        title: 'Blu-ray',
-        url: 'https://filmy.heureka.cz/na-spatne-strane-bd/#utm_source=csfd.cz&utm_medium=cooperation&utm_campaign=csfd_movies_feed'
+        url: 'https://www.martinus.cz/?uItem=619199'
       }
+      // {
+      //   title: 'IMDb',
+      //   url: 'https://www.imdb.com/title/tt6491178/combined'
+      // }
     ]);
   });
   test('Get vods series', () => {
@@ -178,8 +206,8 @@ describe('Get titlesOther', () => {
       { country: 'USA', title: 'Dragged Across Concrete' },
       { country: 'Kanada', title: 'Dragged Across Concrete' },
       { country: 'Slovensko', title: 'Na zlej strane' },
-      { country: 'Austrálie', title: 'Dragged Across Concrete' },
-      { country: 'Velká Británie', title: 'Dragged Across Concrete' }
+      { country: 'Velká Británie', title: 'Dragged Across Concrete' },
+      { country: 'Austrálie', title: 'Dragged Across Concrete' }
     ]);
   });
   test('Titles Other Blank', () => {
@@ -252,7 +280,7 @@ describe('Get rating count', () => {
   });
   test('Rating count', () => {
     const movie = getRatingCount(asideNodeSeries);
-    expect(movie).toBeGreaterThan(4471);
+    expect(movie).toBeGreaterThan(4450);
   });
   test('Rating count blank', () => {
     const movie = getRatingCount(asideNodeBlank);

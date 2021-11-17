@@ -17,6 +17,7 @@ import {
   getTags,
   getTitle,
   getTitlesOther,
+  getTrivia,
   getType,
   getVods,
   getYear
@@ -63,6 +64,7 @@ export class MovieScraper {
       titlesOther: getTitlesOther(el),
       poster: getPoster(el),
       photo: getRandomPhoto(el),
+      trivia: getTrivia(el),
       creators: {
         directors: getDirectors(el),
         writers: getGroup(el, 'Scénář'),
