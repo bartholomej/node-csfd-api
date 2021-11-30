@@ -21,7 +21,7 @@ export interface CSFDVod {
   title:
     | 'Netflix'
     | 'hbogo'
-    | 'Primve Video'
+    | 'Prime Video'
     | 'Apple TV+'
     | 'ivysilani'
     | 'Aerovod'
