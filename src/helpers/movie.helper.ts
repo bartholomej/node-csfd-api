@@ -95,12 +95,16 @@ export const getTitlesOther = (el: HTMLElement): CSFDTitlesOther[] => {
 export const getPoster = (el: HTMLElement): string => {
   const poster = el.querySelector('.film-posters img');
   // Resolve empty image
-  if (poster.classNames?.includes('empty-image')) {
-    return null;
+  if (poster) {
+    if (poster.classNames?.includes('empty-image')) {
+      return null;
+    } else {
+      // Full sized image (not thumb)
+      const imageThumb = poster.attributes.src.split('?')[0];
+      return imageThumb.replace(/\/w140\//, '/w1080/');
+    }
   } else {
-    // Full sized image (not thumb)
-    const imageThumb = poster.attributes.src.split('?')[0];
-    return imageThumb.replace(/\/w140\//, '/w1080/');
+    return null;
   }
 };
 
