@@ -4,14 +4,17 @@ export const movieMockBlank = `
 <html lang="cs-CZ">
 	<head>
 		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description" content="Herecké obsazení ve filmu Loan Shark, The (1912). Přehled 2 herců, které uvidíš ve filmu.">
 
 <link rel="alternate" hreflang="cs" href="https://www.csfd.cz/film/99999-loan-shark-the/hraji/">
 <link rel="alternate" hreflang="sk" href="https://www.csfd.sk/film/99999-loan-shark-the/hraju/">
 
+<link rel="canonical" href="https://www.csfd.cz/film/99999-loan-shark-the/hraji/">
+
 <meta property="og:site_name" content="csfd.cz">
-<meta property="og:image" content="">
+<meta property="og:description" content="Herecké obsazení ve filmu Loan Shark, The (1912). Přehled 2 herců, které uvidíš ve filmu.">
 <meta property="og:title" content="Loan Shark, The (1912)">
 <meta property="og:type" content="video.movie">
 <meta property="og:url" content="https://www.csfd.cz/film/99999-loan-shark-the/hraji/">
@@ -20,13 +23,15 @@ export const movieMockBlank = `
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="https://www.csfd.cz/film/99999-loan-shark-the/hraji/">
 <meta name="twitter:title" content="Loan Shark, The (1912)">
+<meta name="twitter:description" content="Herecké obsazení ve filmu Loan Shark, The (1912). Přehled 2 herců, které uvidíš ve filmu.">
+
 
 		<title> Loan Shark, The (1912) | Tvůrci | ČSFD.cz </title>
-		<link rel="stylesheet" href="//static.pmgstatic.com/assets/web-css/8e49f3aabc7d17cd7e5b4cc5319cac01/styles.min.css">
-		<link rel="shortcut icon" href="//static.pmgstatic.com/assets/images/292e62762cdb5c95c2ae9578ee5e2b27/favicon.ico">
-		<link rel="apple-touch-icon" href="//static.pmgstatic.com/assets/images/292e62762cdb5c95c2ae9578ee5e2b27/apple-touch-icon.png">
-		<script src="//static.pmgstatic.com/assets/vendor/6da7737570ce810b30138c5c85a4f2fa/jquery.min.js"></script>
-		<script src="//static.pmgstatic.com/assets/web-js/23918c9477ddc1257b9a338e786174a9/scripts.min.js" defer></script>
+		<link rel="stylesheet" href="//static.pmgstatic.com/assets/web-css/1940c6510ace5bce4efa70ce723382d3/styles.min.css">
+		<link rel="shortcut icon" href="//static.pmgstatic.com/assets/images/c9bd6a26fa717816674d2078f60af950/favicon.ico">
+		<link rel="apple-touch-icon" href="//static.pmgstatic.com/assets/images/c9bd6a26fa717816674d2078f60af950/apple-touch-icon.png">
+		<script src="//static.pmgstatic.com/assets/vendor/d4bda16db4a0ccf1befc901969f0db63/jquery.min.js"></script>
+		<script src="//static.pmgstatic.com/assets/web-js/8d2e3450dfca13939cd3b07a655adc46/scripts.min.js" defer></script>
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap&subset=latin-ext">
 
@@ -35,8 +40,9 @@ export const movieMockBlank = `
 	window.AdsObject = {};
 	window.sasUrl = "https://a.csfd.cz/csfd";
 </script>
-<script src="//assets.adobedtm.com/e949270ea86e/f1d67104c3f5/launch-5baa4d1acdaf.min.js" async></script>
+<script src="https://cdn.cpex.cz/cmp/v2/cpex-cmp.min.js"></script><script src="//assets.adobedtm.com/e949270ea86e/f1d67104c3f5/launch-5baa4d1acdaf.min.js" async></script>
 
+<script src="https://publisher.caroda.io/videoPlayer/caroda.min.js?ctok=231efd424e405a" crossorigin="anonymous" defer></script>
 
 <script>
 	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -63,6 +69,7 @@ export const movieMockBlank = `
 	</head>
 
 	<body id="top">
+
 
 		<div class="ad-wrapper">
 			<div id="leaderboard-wrapper">
@@ -141,74 +148,80 @@ export const movieMockBlank = `
 				</div>
 
 				<div class="top-nav">
-<nav>
-	<ul class="top-tabs">
-		<li class="tab-title">
+<nav class="tab-nav">
+	<ul class="tab-nav-list">
+		<li class="tab-nav-item">
 			<a href="/novinky/">Novinky</a>
 		</li>
-		<li class="tab-title">
+		<li class="tab-nav-item">
 			<a href="/televize/">Televize</a>
 		</li>
-		<li class="tab-title">
+		<li class="tab-nav-item">
 			<a href="/kino/?period=today">Kino</a>
 		</li>
-		<li class="tab-title">
-			<a href="/vod/?year=2021&amp;month=6">VOD<span class="top-nav-new">NEW</span></a>
+		<li class="tab-nav-item">
+			<a href="/vod/?year=2021&amp;month=12">VOD<span class="top-nav-new">NEW</span></a>
 		</li>
-		<li class="tab-title">
+		<li class="tab-nav-item">
 			<a href="/zebricky/filmy/nejlepsi/">Žebříčky</a>
 		</li>
-		<li class="tab-title">
+		<li class="tab-nav-item">
 			<a href="/bluray/">Blu-ray</a>
 		</li>
-		<li class="tab-title">
+		<li class="tab-nav-item">
 			<a href="/dvd/">DVD</a>
 		</li>
-		<li class="tab-title">
+		<li class="tab-nav-item">
 			<a href="/oceneni/">Ocenění</a>
 		</li>
-		<li class="tab-title">
+		<li class="tab-nav-item">
 			<a href="/uzivatele/">Uživatelé</a>
 		</li>
-		<li class="tab-title">
+		<li class="tab-nav-item">
 			<a href="/diskuze/">Diskuze</a>
 		</li>
+		<li class="tab-nav-item yellow">
+			<a href="/cesky-lev/">Český lev</a>
+		</li>
 	</ul>
-	<ul class="top-nav-more">
+	<ul class="tab-nav-more">
 		<li>
-			<a class="top-nav-more-btn" href="#dropdown-menu-1" rel="dropdownContent">
+			<a class="tab-nav-more-btn" href="#dropdown-menu-1" rel="dropdownContent">
 				další <i class="icon icon-arrow-down"></i>
 			</a>
 			<ul id="dropdown-menu-1" class="dropdown-content">
-				<li class="tab-title">
+				<li class="tab-nav-item">
 					<a href="/novinky/">Novinky</a>
 				</li>
-				<li class="tab-title">
+				<li class="tab-nav-item">
 					<a href="/televize/">Televize</a>
 				</li>
-				<li class="tab-title">
+				<li class="tab-nav-item">
 					<a href="/kino/?period=today">Kino</a>
 				</li>
-				<li class="tab-title">
-					<a href="/vod/?year=2021&amp;month=6">VOD<span class="top-nav-new">NEW</span></a>
+				<li class="tab-nav-item">
+					<a href="/vod/?year=2021&amp;month=12">VOD<span class="top-nav-new">NEW</span></a>
 				</li>
-				<li class="tab-title">
+				<li class="tab-nav-item">
 					<a href="/zebricky/filmy/nejlepsi/">Žebříčky</a>
 				</li>
-				<li class="tab-title">
+				<li class="tab-nav-item">
 					<a href="/bluray/">Blu-ray</a>
 				</li>
-				<li class="tab-title">
+				<li class="tab-nav-item">
 					<a href="/dvd/">DVD</a>
 				</li>
-				<li class="tab-title">
+				<li class="tab-nav-item">
 					<a href="/oceneni/">Ocenění</a>
 				</li>
-				<li class="tab-title">
+				<li class="tab-nav-item">
 					<a href="/uzivatele/">Uživatelé</a>
 				</li>
-				<li class="tab-title">
+				<li class="tab-nav-item">
 					<a href="/diskuze/">Diskuze</a>
+				</li>
+				<li class="tab-nav-item yellow">
+					<a href="/cesky-lev/">Český lev</a>
 				</li>
 			</ul>
 		</li>
@@ -217,19 +230,20 @@ export const movieMockBlank = `
 				</div>
 			</header>
 
-			<div itemscope itemtype="http://schema.org/Movie" class="page-content page-lightgrey">
+			<div class="page-content page-lightgrey">
 
 
 
 <div class="main-movie">
+<script type="application/ld+json">{"@context":"https://schema.org/","@type":"Movie","name":"Loan Shark, The","dateCreated":"1912","director":[{"@type":"Person","name":"Otis Turner"}],"actor":[{"@type":"Person","name":"King Baggot"},{"@type":"Person","name":"William Robert Daly"}],"image":"//static.pmgstatic.com/assets/images/c9bd6a26fa717816674d2078f60af950/empty-image.svg"}</script>
 	<div class="main-movie-profile">
 <div class="box box-film">
-
+<div id="snippet--boxOverviewTop"></div>
 	<div class="box-content"> 
 		<div class="film-info">
 			<header class="film-header">
 				<div class="film-header-name">
-					<h1 itemprop="name">
+					<h1>
 							
 							Loan Shark, The
 						
@@ -246,8 +260,18 @@ export const movieMockBlank = `
 			</header>
 			<div class="film-about">
 				<div class="film-posters">
-						<img itemprop="image" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" loading="lazy" class="empty-image" width="140">
+						<img alt="všechny plakáty" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" loading="lazy" class="empty-image" width="140">
 				</div>
+
+				<div class="mobile-video">
+					<figure class="box-video">
+						<div class="box-video-content">
+<div class="caroda-slot"></div>
+						</div>
+					</figure>
+				</div>
+			</div>
+			<div class="film-info-content">
 				<div class="mobile-film-rating">
 					<div class="box-rating not-rated">
 						<div class="rating-average">
@@ -259,13 +283,15 @@ export const movieMockBlank = `
 
 
 
+					<a href="/film/99999-loan-shark-the/hraji/?name=ratingAndFanclub&amp;do=modalWindow" class="ajax more more-modal-ratings-fanclub" rel="contentModal" data-mfp-main-class="modal-ratings-fanclub" data-mfp-src="#panelModal">
+						Hodnocení a fanklub
+					</a>
 
 				</div>
-			</div>
-			<div class="film-info-content">
+
 				<div class="genres">Drama / Krátkometrážní</div>
 				<div class="origin">USA, 
-					<span itemprop="dateCreated">1912</span>
+					<span>1912</span>
 					
 
 				</div>
@@ -273,20 +299,16 @@ export const movieMockBlank = `
 				<div class="creators">
 					<div>
 						<h4>Režie: </h4>
-						<span itemprop="director">
 
-								<a href="/tvurce/18452-otis-turner/">Otis Turner</a>
-						</span>
+							<a href="/tvurce/18452-otis-turner/">Otis Turner</a>
 
 					</div>
 					<div>
 						<h4>Hrají: </h4>
-						<span >
 
-								<a href="/tvurce/6140-king-baggot/">King Baggot</a>, 
+							<a href="/tvurce/6140-king-baggot/">King Baggot</a>, 
 
-								<a href="/tvurce/331812-william-robert-daly/">William Robert Daly</a>
-						</span>
+							<a href="/tvurce/331812-william-robert-daly/">William Robert Daly</a>
 
 					</div>
 				</div>
@@ -297,64 +319,65 @@ export const movieMockBlank = `
 
 
 
+
 		<div class="tabs">
 			<nav class="tab-nav tab-nav-count-10">
 		<ul class="tab-nav-list">
-		<li class="tab-nav-item tab-nav-item-1 disabled">
+		<li class="tab-nav-item disabled">
 			
 			<a class="tab-link" href="javascript:void(0);">
 				Přehled
 			</a>
 		</li>
-		<li class="tab-nav-item tab-nav-item-2 disabled">
+		<li class="tab-nav-item disabled not-active">
 			
 			<a class="tab-link" href="javascript:void(0);">
 				Recenze
 			</a>
 		</li>
-		<li class="tab-nav-item tab-nav-item-3 disabled">
+		<li class="tab-nav-item disabled">
 			
 			<a class="tab-link" href="javascript:void(0);">
 				Zajímavosti
 			</a>
 		</li>
-		<li class="tab-nav-item tab-nav-item-4 disabled">
+		<li class="tab-nav-item disabled">
 			
 			<a class="tab-link" href="javascript:void(0);">
 				Videa
 			</a>
 		</li>
-		<li class="tab-nav-item tab-nav-item-5 disabled">
+		<li class="tab-nav-item disabled">
 			
 			<a class="tab-link" href="javascript:void(0);">
 				Galerie
 			</a>
 		</li>
-		<li class="tab-nav-item tab-nav-item-6 active">
+		<li class="tab-nav-item active">
 			
 			<a class="tab-link" href="/film/99999-loan-shark-the/hraji/">
 				Hrají
 			</a>
 		</li>
-		<li class="tab-nav-item tab-nav-item-7 disabled">
+		<li class="tab-nav-item disabled">
 			
 			<a class="tab-link" href="javascript:void(0);">
 				Ocenění
 			</a>
 		</li>
-		<li class="tab-nav-item tab-nav-item-8 disabled">
+		<li class="tab-nav-item disabled">
 			
 			<a class="tab-link" href="javascript:void(0);">
 				OST
 			</a>
 		</li>
-		<li class="tab-nav-item tab-nav-item-9 disabled">
+		<li class="tab-nav-item disabled">
 			
 			<a class="tab-link" href="javascript:void(0);">
 				Diskuze
 			</a>
 		</li>
-		<li class="tab-nav-item tab-nav-item-10 disabled">
+		<li class="tab-nav-item disabled">
 			
 			<a class="tab-link" href="javascript:void(0);">
 				Filmotéka
@@ -366,52 +389,52 @@ export const movieMockBlank = `
 			další <i class="icon icon-arrow-down"></i>
 		</a>
 				<ul id="dropdown-menu-2" class="dropdown-content">
-			<li class="tab-nav-item tab-nav-item-1 disabled">
+			<li class="tab-nav-item disabled">
 				<a class="tab-link" href="javascript:void(0);">
 					Přehled
 				</a>
 			</li>
-			<li class="tab-nav-item tab-nav-item-2 disabled">
+			<li class="tab-nav-item disabled not-active">
 				<a class="tab-link" href="javascript:void(0);">
 					Recenze
 				</a>
 			</li>
-			<li class="tab-nav-item tab-nav-item-3 disabled">
+			<li class="tab-nav-item disabled">
 				<a class="tab-link" href="javascript:void(0);">
 					Zajímavosti
 				</a>
 			</li>
-			<li class="tab-nav-item tab-nav-item-4 disabled">
+			<li class="tab-nav-item disabled">
 				<a class="tab-link" href="javascript:void(0);">
 					Videa
 				</a>
 			</li>
-			<li class="tab-nav-item tab-nav-item-5 disabled">
+			<li class="tab-nav-item disabled">
 				<a class="tab-link" href="javascript:void(0);">
 					Galerie
 				</a>
 			</li>
-			<li class="tab-nav-item tab-nav-item-6 active">
+			<li class="tab-nav-item active">
 				<a class="tab-link" href="/film/99999-loan-shark-the/hraji/">
 					Hrají
 				</a>
 			</li>
-			<li class="tab-nav-item tab-nav-item-7 disabled">
+			<li class="tab-nav-item disabled">
 				<a class="tab-link" href="javascript:void(0);">
 					Ocenění
 				</a>
 			</li>
-			<li class="tab-nav-item tab-nav-item-8 disabled">
+			<li class="tab-nav-item disabled">
 				<a class="tab-link" href="javascript:void(0);">
 					OST
 				</a>
 			</li>
-			<li class="tab-nav-item tab-nav-item-9 disabled">
+			<li class="tab-nav-item disabled">
 				<a class="tab-link" href="javascript:void(0);">
 					Diskuze
 				</a>
 			</li>
-			<li class="tab-nav-item tab-nav-item-10 disabled">
+			<li class="tab-nav-item disabled">
 				<a class="tab-link" href="javascript:void(0);">
 					Filmotéka
 				</a>
@@ -431,7 +454,7 @@ export const movieMockBlank = `
 				<div class="box-content">
 					<article class="article article-user-88">
 						<figure class="article-img">
-							<img src="//image.pmgstatic.com/cache/resized/w88h116crop/files/images/creator/photos/000/270/270980_0a2cc7.jpg" loading="lazy" width="88" height="116" srcset="//image.pmgstatic.com/cache/resized/w88h116crop/files/images/creator/photos/000/270/270980_0a2cc7.jpg 1x">
+							<img alt="King Baggot" src="//image.pmgstatic.com/cache/resized/w88h116crop/files/images/creator/photos/000/270/270980_0a2cc7.jpg" loading="lazy" width="88" height="116" srcset="//image.pmgstatic.com/cache/resized/w88h116crop/files/images/creator/photos/000/270/270980_0a2cc7.jpg 1x">
 						</figure>
 						<div class="article-content">
 							<header class="article-header">
@@ -454,7 +477,7 @@ export const movieMockBlank = `
 					</article>
 					<article class="article article-user-88">
 						<figure class="article-img">
-							<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" loading="lazy" class="empty-image" width="88" height="116">
+							<img alt="William Robert Daly" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" loading="lazy" class="empty-image" width="88" height="116">
 						</figure>
 						<div class="article-content">
 							<header class="article-header">
@@ -484,7 +507,7 @@ export const movieMockBlank = `
 			</div>
 
 
-<div class="box-rating not-rated">
+<div class="box-rating not-rated box-rating-withtabs">
 
 	<div class="rating-average">
 			? %
@@ -495,11 +518,33 @@ export const movieMockBlank = `
 
 
 
+	<div class="tabs tabs-rating rating-fan-switch">
+		<nav class="tab-nav">
+			<ul class="tab-nav-list">
+				<li class="tab-nav-item ratings-btn active">
+					<a class="tab-link" href="#" data-show-tab=".rating-users" data-hide-tab=".fanclub-users">Hodnocení<span class="counter">(1)</span></a>
+				</li>
+				<li class="tab-nav-item fans-btn disabled">
+					<a class="tab-link" href="#" data-show-tab=".fanclub-users" data-hide-tab=".rating-users">Fanklub<span class="counter">(0)</span></a>
+				</li>
+			</ul>
+		</nav>
+	</div>
 
+	<div class="user-list rating-users">
+		<section class="others-rating">
+			<ul>
+				<li>
+											<a href="/uzivatel/327814-artmovie/">Artmovie</a>
+<span title="Vloženo v 07.10.2021"><span class="star-rating"><span class="stars stars-3"></span></span></span>
+				</li>
+			</ul>
+		</section>
+	</div>
 	<div class="user-list fanclub-users hidden">
 		<section class="fans">
 			<ul>
-			</ul>
+				<li>&nbsp;</li>			</ul>
 		</section>
 	</div>
 </div>
@@ -520,7 +565,7 @@ export const movieMockBlank = `
 <div id="snippet--publicControlMenu">						<hr>
 						<ul class="blue">
 <div id="comment" class="modal mfp-hide" role="dialog">
-	<h2>Přidat externí recenzi</h2>
+	<h2>Přidat recenzi</h2>
 	<p>Pro přidání recenze se prosím nejdřív přihlas.</p>
 	<a class="button button-red" href="/prihlaseni/">Přihlásit se</a>
 </div>
@@ -534,7 +579,12 @@ export const movieMockBlank = `
 									<a href="#watchlist" rel="contentInfoModal">Přidat do Chci vidět</a>
 							</li>
 							<li>
-																	<a href="/prihlaseni/">Přidat do oblíbených</a>
+								<div id="fanclub" class="modal mfp-hide" role="dialog">
+	<h2>Přidat do oblíbených</h2>
+	<p>Pro přidání filmu do oblíbených se prosím nejdřív přihlas.</p>
+	<a class="button button-red" href="/prihlaseni/">Přihlásit se</a>
+</div>
+									<a href="#fanclub" rel="contentInfoModal">Přidat do oblíbených</a>
 							</li>
 							<li>
 <div id="collection" class="modal mfp-hide" role="dialog">
@@ -553,13 +603,6 @@ export const movieMockBlank = `
 		</div>
 
 
-		<section class="box box-premieres">
-			<div class="box-content box-content-padding">
-				<div class="age-restriction">
-				</div>
-
-			</div>
-		</section>
 
 		<section class="box box-banner box-banner-300">
 			<p class="box-banner-text">Reklama</p>
@@ -606,7 +649,7 @@ export const movieMockBlank = `
 						<ul>
 								<li><a href="/prihlaseni/">Přihlášení</a></li>
 								<li><a href="/registrace/">Registrace</a></li>
-							<li><a href="/vyvojari/">Pracuj pro nás</a></li>
+							<li><a href="/vyvojari/">Pracuj s námi</a></li>
 							<li><a href="/napis-nam/">Napiš nám</a></li>
 						</ul>
 					</div>
@@ -626,8 +669,13 @@ export const movieMockBlank = `
 				<div class="footer-content-right">
 					<div class="footer-right-social">
 						<h3>Social</h3>
-						<a href="https://www.facebook.com/www.CSFD.cz/" class="btn-social" target="_blank"><i class="icon icon-facebook"></i></a>
-						<a href="https://www.instagram.com/csfd.cz/" class="btn-social" target="_blank"><i class="icon icon-instagram"></i></a>
+						<a href="https://www.facebook.com/www.CSFD.cz/" class="btn-social" target="_blank" rel="noreferrer"><i class="icon icon-facebook"></i></a>
+						<a href="https://www.instagram.com/csfd.cz/" class="btn-social" target="_blank" rel="noreferrer"><i class="icon icon-instagram"></i></a>
+					</div>
+					<div class="footer-right-app">
+						<h3>Mobilní aplikace</h3>
+						<a href="https://apps.apple.com/cz/app/čsfd-web/id1552901865#?platform=iphone" class="btn-app-store" target="_blank"><img alt="ČSFD Web | App Store" src="//static.pmgstatic.com/assets/images/c9bd6a26fa717816674d2078f60af950/appstore.svg"></a>
+						<a href="https://play.google.com/store/apps/details?id=cz.csfd.lite" class="btn-google-play" target="_blank"><img alt="ČSFD Web | Google Play" src="//static.pmgstatic.com/assets/images/c9bd6a26fa717816674d2078f60af950/googleplay.svg"></a>
 					</div>
 					<div class="site-info">
 						<p>Česko-Slovenská filmová databáze</p>
@@ -645,7 +693,7 @@ export const movieMockBlank = `
 </div>
 
 
-		<script type="text/json" id="js-common-config">{"country":1,"domain":"csfd.cz","host":"www.csfd.cz","userLanguageId":1,"hooks":["StarRating","AutoSubmitForm"],"dictionary":{"web.autocomplete.film.header":"Filmy","web.autocomplete.film.more.link":"Všechny filmy","web.autocomplete.series.header":"Seriály","web.autocomplete.series.more.link":"Všechny seriály","web.autocomplete.creator.header":"Tvůrci","web.autocomplete.creator.more.link":"Všichni tvůrci","web.autocomplete.user.header":"Uživatelé","web.autocomplete.user.more.link":"Všichni uživatelé","web.autocomplete.searching":"Vyhledávám...","web.autocomplete.search.select":"Vyplňte název filmu/tvůrce/uživatele","web.autocomplete.noservice":"Služba vyhledávání není momentálně dostupná.","web.search.creator.notfound":"Nenalezeni žádní tvůrci","web.search.film.notfound":"Nenalezeny žádné filmy","web.search.series.notfound":"Nenalezeny žádné seriály","web.search.user.notfound":"Nenalezeni žádní uživatelé","web.check.all":"zaškrtnout vše","web.cinema.top.link":"nahoru","web.user.profile.about.from.plain.to.html.alert":"Změnou typu editace bez uložení přijdeš o všechny změny. Pokud jsi v HTML použil konstrukce, které editor nepodporuje, uložením v editoru o tyto změny přijdeš. Opravdu chceš pokračovat?","web.user.profile.about.from.html.to.plain.alert":"Změnou typu editace bez uložení přijdeš o všechny změny. Opravdu chceš pokračovat?","web.sortable.error.move":"Při přesunu pozic došlo k chybě. Stránka bude obnovena. Pokračovat?","web.preloader.loading":"Načítání...","web.modal.confirm.close":"Opravdu chceš zavřít okno? Možná máš neuložené změny.","web.forums.respond.cancel":"zrušit odpověď","web.ajax.default.error.message":"Omlouváme se, ale nastala chyba při zpracování.","web.ajax.resend.button":"Odeslat znovu","web.fileupload.preloader":"Načítám knihovnu, prosím o strpení...","web.selectize.plugin.remove.button.remove":"Odebrat"},"route":":Web:Film:Creators:default","isLoggedIn":false,"userId":null}</script>
+		<script type="text/json" id="js-common-config">{"country":1,"domain":"csfd.cz","host":"www.csfd.cz","userLanguageId":1,"dictionary":{"web.autocomplete.film.header":"Filmy","web.autocomplete.film.more.link":"Všechny filmy","web.autocomplete.series.header":"Seriály","web.autocomplete.series.more.link":"Všechny seriály","web.autocomplete.creator.header":"Tvůrci","web.autocomplete.creator.more.link":"Všichni tvůrci","web.autocomplete.user.header":"Uživatelé","web.autocomplete.user.more.link":"Všichni uživatelé","web.autocomplete.searching":"Vyhledávám...","web.autocomplete.search.select":"Vyplňte název filmu/tvůrce/uživatele","web.autocomplete.noservice":"Služba vyhledávání není momentálně dostupná.","web.search.creator.notfound":"Nenalezeni žádní tvůrci","web.search.film.notfound":"Nenalezeny žádné filmy","web.search.series.notfound":"Nenalezeny žádné seriály","web.search.user.notfound":"Nenalezeni žádní uživatelé","web.check.all":"zaškrtnout vše","web.cinema.top.link":"nahoru","web.user.profile.about.from.plain.to.html.alert":"Změnou typu editace bez uložení přijdeš o všechny změny. Pokud jsi v HTML použil konstrukce, které editor nepodporuje, uložením v editoru o tyto změny přijdeš. Opravdu chceš pokračovat?","web.user.profile.about.from.html.to.plain.alert":"Změnou typu editace bez uložení přijdeš o všechny změny. Opravdu chceš pokračovat?","web.sortable.error.move":"Při přesunu pozic došlo k chybě. Stránka bude obnovena. Pokračovat?","web.preloader.loading":"Načítání...","web.modal.confirm.close":"Opravdu chceš zavřít okno? Možná máš neuložené změny.","web.forums.respond.cancel":"zrušit odpověď","web.ajax.default.error.message":"Omlouváme se, ale nastala chyba při zpracování.","web.ajax.resend.button":"Odeslat znovu","web.fileupload.preloader":"Načítám knihovnu, prosím o strpení...","web.selectize.plugin.remove.button.remove":"Odebrat"},"route":":Web:Film:Creators:default","isLoggedIn":false,"userId":null,"hooks":["InfoModal","ShowMore","HighlightByData","Confirm","StarRating","AutoSubmitForm"]}</script>
 
 		<div class="flash-message" data-ajax-prepend="true" id="snippet--flashes">
 			
@@ -654,14 +702,14 @@ export const movieMockBlank = `
 
 <div id="slide_up" class="ad-pmg"></div>
 
+<script src="//static.pmgstatic.com/assets/utils-js/4617ef4e80f050d67c0ef7aa2eb7f9fb/scripts.min.js"></script>
 <script type="text/javascript">
-	window.addEventListener('load', function () {
-		CSFD.Ads.complete({"ball":{"page":2,"login":2,"film_id":99999,"film_type":0,"film_genre":[2,14],"film_origin":[172],"film_year":1912,"film_creators":[18452,6140,331812],"site":"csfd.cz"},"b1":{"area":"leaderboard","size":"1000x210,2000x1400,1000x200,1000x210,970x210,998x200,750x200,750x100,970x90,728x90,branding_web"},"b2":{"area":"halfpage","size":"300x600,160x600"},"b3":{"area":"billboard","size":"1000x310,970x310,560x315,480x300,750x300,970x250,970x90,728x90"},"b4":{"area":"slide_up","size":"500x200,320x150,320x100,320x50,300x100,300x50"},"b5":{"area":"mobile_leaderboard","size":"320x100,320x50,300x100,300x50"},"b6":{"area":"mobile_billboard","size":"300x300,300x250"}});
-		CSFD.Ads.setTServer("https://a.csfd.cz/csfd/tserver");
-	});
+	CSFDAds.complete({"ball":{"page":2,"login":2,"film_id":99999,"film_type":0,"film_genre":[2,14],"film_origin":[172],"film_year":1912,"film_creators":[18452,6140,331812],"site":"csfd.cz"},"0":{"area":"leaderboard","size":"1000x210,2000x1400,1000x200,1000x210,970x210,998x200,750x200,750x100,970x90,728x90,branding_web"},"1":{"area":"halfpage","size":"300x600,160x600"},"2":{"area":"billboard","size":"1000x310,970x310,560x315,480x300,750x300,970x250,970x90,728x90"},"3":{"area":"slide_up","size":"970x310,970x250,950x200,750x300,750x200,728x90,500x200,320x150,320x100,320x50,300x100,300x50,slide_up"},"4":{"area":"mobile_leaderboard","size":"320x100,320x50,300x100,300x50"},"5":{"area":"mobile_billboard","size":"300x300,300x250"}});
+	CSFDAds.setTServer("https://a.csfd.cz/csfd/tserver");
 </script>
 	</body>
 
 	<a href="#top" title="Zpět nahoru" id="back-to-top"><i class="icon icon-arrow-up" aria-hidden="true"></i></a>
 </html>
+
 `;

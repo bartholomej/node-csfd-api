@@ -4,17 +4,20 @@ export const seriesMock = `
 <html lang="cs-CZ">
 	<head>
 		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-<meta name="description" content="Zatímco jiné nemocniční seriály vyzdvihují racionalitu svých hrdinů či melodramatické vztahy, kultovní seriálový projekt Larse von Triera obklopuje postavy chirurgů nadpřirozenými jevy a bizarními úkazy. Na druhou stranu těžko říci, jestli jsou více…">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description" content="Vše o seriálu Království (1994): Recenze, Hodnocení, Zajímavosti, Videa, Galerie, Data uvedení, Diskuze, Filmotéka a další...">
 
 <link rel="alternate" hreflang="cs" href="https://www.csfd.cz/film/71924-kralovstvi/prehled/">
 <link rel="alternate" hreflang="sk" href="https://www.csfd.sk/film/71924-riget/prehlad/">
 
+<link rel="canonical" href="https://www.csfd.cz/film/71924-kralovstvi/prehled/">
+
 <meta property="og:site_name" content="csfd.cz">
-<meta property="og:image" content="https://image.pmgstatic.com/files/images/film/photos/000/098/98624_bb2853.jpg?w370h370">
-<meta property="og:image" content="https://image.pmgstatic.com/files/images/film/photos/000/212/212813_77f951.jpg?w370h370">
-<meta property="og:image" content="https://image.pmgstatic.com/files/images/film/photos/000/228/228159_15ab2e.jpg?w370h370">
-<meta property="og:description" content="Zatímco jiné nemocniční seriály vyzdvihují racionalitu svých hrdinů či melodramatické vztahy, kultovní seriálový projekt Larse von Triera obklopuje postavy chirurgů nadpřirozenými jevy a bizarními úkazy. Na druhou stranu těžko říci, jestli jsou více…">
+<meta property="og:image" content="https://image.pmgstatic.com/files/images/film/photos/000/098/98624_bb2853.jpg">
+<meta property="og:image" content="https://image.pmgstatic.com/files/images/film/photos/000/212/212813_77f951.jpg">
+<meta property="og:image" content="https://image.pmgstatic.com/files/images/film/photos/000/228/228159_15ab2e.jpg">
+<meta property="og:description" content="Vše o seriálu Království (1994): Recenze, Hodnocení, Zajímavosti, Videa, Galerie, Data uvedení, Diskuze, Filmotéka a další...">
 <meta property="og:title" content="Království (1994)">
 <meta property="og:type" content="video.movie">
 <meta property="og:url" content="https://www.csfd.cz/film/71924-kralovstvi/prehled/">
@@ -23,15 +26,16 @@ export const seriesMock = `
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="https://www.csfd.cz/film/71924-kralovstvi/prehled/">
 <meta name="twitter:title" content="Království (1994)">
-<meta name="twitter:description" content="Zatímco jiné nemocniční seriály vyzdvihují racionalitu svých hrdinů či melodramatické vztahy, kultovní seriálový projekt Larse von Triera obklopuje postavy chirurgů nadpřirozenými jevy a bizarními úkazy. Na druhou stranu těžko říci, jestli jsou více…">
-<meta name="twitter:image" content="https://image.pmgstatic.com/files/images/film/photos/000/098/98624_bb2853.jpg?w370h370">
+<meta name="twitter:description" content="Vše o seriálu Království (1994): Recenze, Hodnocení, Zajímavosti, Videa, Galerie, Data uvedení, Diskuze, Filmotéka a další...">
+<meta name="twitter:image" content="https://image.pmgstatic.com/files/images/film/photos/000/098/98624_bb2853.jpg">
+
 
 		<title> Království (1994) | ČSFD.cz </title>
-		<link rel="stylesheet" href="//static.pmgstatic.com/assets/web-css/8e49f3aabc7d17cd7e5b4cc5319cac01/styles.min.css">
-		<link rel="shortcut icon" href="//static.pmgstatic.com/assets/images/292e62762cdb5c95c2ae9578ee5e2b27/favicon.ico">
-		<link rel="apple-touch-icon" href="//static.pmgstatic.com/assets/images/292e62762cdb5c95c2ae9578ee5e2b27/apple-touch-icon.png">
-		<script src="//static.pmgstatic.com/assets/vendor/6da7737570ce810b30138c5c85a4f2fa/jquery.min.js"></script>
-		<script src="//static.pmgstatic.com/assets/web-js/23918c9477ddc1257b9a338e786174a9/scripts.min.js" defer></script>
+		<link rel="stylesheet" href="//static.pmgstatic.com/assets/web-css/1940c6510ace5bce4efa70ce723382d3/styles.min.css">
+		<link rel="shortcut icon" href="//static.pmgstatic.com/assets/images/c9bd6a26fa717816674d2078f60af950/favicon.ico">
+		<link rel="apple-touch-icon" href="//static.pmgstatic.com/assets/images/c9bd6a26fa717816674d2078f60af950/apple-touch-icon.png">
+		<script src="//static.pmgstatic.com/assets/vendor/d4bda16db4a0ccf1befc901969f0db63/jquery.min.js"></script>
+		<script src="//static.pmgstatic.com/assets/web-js/8d2e3450dfca13939cd3b07a655adc46/scripts.min.js" defer></script>
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap&subset=latin-ext">
 
@@ -40,12 +44,9 @@ export const seriesMock = `
 	window.AdsObject = {};
 	window.sasUrl = "https://a.csfd.cz/csfd";
 </script>
-<script src="//assets.adobedtm.com/e949270ea86e/f1d67104c3f5/launch-5baa4d1acdaf.min.js" async></script>
+<script src="https://cdn.cpex.cz/cmp/v2/cpex-cmp.min.js"></script><script src="//assets.adobedtm.com/e949270ea86e/f1d67104c3f5/launch-5baa4d1acdaf.min.js" async></script>
 
 <script src="https://publisher.caroda.io/videoPlayer/caroda.min.js?ctok=231efd424e405a" crossorigin="anonymous" defer></script>
-<script src="//static.pmgstatic.com/assets/vendor/6da7737570ce810b30138c5c85a4f2fa/videojs/video.min.js" async defer></script>
-<script type="text/javascript" src="https://www.gstatic.com/cv/js/sender/v1/cast_sender.js?loadCastFramework=1" async defer></script>
-<link rel="stylesheet" href="//static.pmgstatic.com/assets/vendor/6da7737570ce810b30138c5c85a4f2fa/videojs/video-js.min.css">
 
 <script>
 	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -72,6 +73,7 @@ export const seriesMock = `
 	</head>
 
 	<body id="top">
+
 
 		<div class="ad-wrapper">
 			<div id="leaderboard-wrapper">
@@ -150,74 +152,80 @@ export const seriesMock = `
 				</div>
 
 				<div class="top-nav">
-<nav>
-	<ul class="top-tabs">
-		<li class="tab-title">
+<nav class="tab-nav">
+	<ul class="tab-nav-list">
+		<li class="tab-nav-item">
 			<a href="/novinky/">Novinky</a>
 		</li>
-		<li class="tab-title">
+		<li class="tab-nav-item">
 			<a href="/televize/">Televize</a>
 		</li>
-		<li class="tab-title">
+		<li class="tab-nav-item">
 			<a href="/kino/?period=today">Kino</a>
 		</li>
-		<li class="tab-title">
-			<a href="/vod/?year=2021&amp;month=6">VOD<span class="top-nav-new">NEW</span></a>
+		<li class="tab-nav-item">
+			<a href="/vod/?year=2021&amp;month=12">VOD<span class="top-nav-new">NEW</span></a>
 		</li>
-		<li class="tab-title">
+		<li class="tab-nav-item">
 			<a href="/zebricky/filmy/nejlepsi/">Žebříčky</a>
 		</li>
-		<li class="tab-title">
+		<li class="tab-nav-item">
 			<a href="/bluray/">Blu-ray</a>
 		</li>
-		<li class="tab-title">
+		<li class="tab-nav-item">
 			<a href="/dvd/">DVD</a>
 		</li>
-		<li class="tab-title">
+		<li class="tab-nav-item">
 			<a href="/oceneni/">Ocenění</a>
 		</li>
-		<li class="tab-title">
+		<li class="tab-nav-item">
 			<a href="/uzivatele/">Uživatelé</a>
 		</li>
-		<li class="tab-title">
+		<li class="tab-nav-item">
 			<a href="/diskuze/">Diskuze</a>
 		</li>
+		<li class="tab-nav-item yellow">
+			<a href="/cesky-lev/">Český lev</a>
+		</li>
 	</ul>
-	<ul class="top-nav-more">
+	<ul class="tab-nav-more">
 		<li>
-			<a class="top-nav-more-btn" href="#dropdown-menu-1" rel="dropdownContent">
+			<a class="tab-nav-more-btn" href="#dropdown-menu-1" rel="dropdownContent">
 				další <i class="icon icon-arrow-down"></i>
 			</a>
 			<ul id="dropdown-menu-1" class="dropdown-content">
-				<li class="tab-title">
+				<li class="tab-nav-item">
 					<a href="/novinky/">Novinky</a>
 				</li>
-				<li class="tab-title">
+				<li class="tab-nav-item">
 					<a href="/televize/">Televize</a>
 				</li>
-				<li class="tab-title">
+				<li class="tab-nav-item">
 					<a href="/kino/?period=today">Kino</a>
 				</li>
-				<li class="tab-title">
-					<a href="/vod/?year=2021&amp;month=6">VOD<span class="top-nav-new">NEW</span></a>
+				<li class="tab-nav-item">
+					<a href="/vod/?year=2021&amp;month=12">VOD<span class="top-nav-new">NEW</span></a>
 				</li>
-				<li class="tab-title">
+				<li class="tab-nav-item">
 					<a href="/zebricky/filmy/nejlepsi/">Žebříčky</a>
 				</li>
-				<li class="tab-title">
+				<li class="tab-nav-item">
 					<a href="/bluray/">Blu-ray</a>
 				</li>
-				<li class="tab-title">
+				<li class="tab-nav-item">
 					<a href="/dvd/">DVD</a>
 				</li>
-				<li class="tab-title">
+				<li class="tab-nav-item">
 					<a href="/oceneni/">Ocenění</a>
 				</li>
-				<li class="tab-title">
+				<li class="tab-nav-item">
 					<a href="/uzivatele/">Uživatelé</a>
 				</li>
-				<li class="tab-title">
+				<li class="tab-nav-item">
 					<a href="/diskuze/">Diskuze</a>
+				</li>
+				<li class="tab-nav-item yellow">
+					<a href="/cesky-lev/">Český lev</a>
 				</li>
 			</ul>
 		</li>
@@ -226,24 +234,25 @@ export const seriesMock = `
 				</div>
 			</header>
 
-			<div itemscope itemtype="http://schema.org/Movie" class="page-content page-red">
+			<div class="page-content page-red">
 
 
 
 <div class="main-movie">
+<script type="application/ld+json">{"@context":"https://schema.org/","@type":"TVSeries","name":"Království","dateCreated":"1994","director":[{"@type":"Person","name":"Lars von Trier"},{"@type":"Person","name":"Morten Arnfred"}],"actor":[{"@type":"Person","name":"Ernst-Hugo Järegård"},{"@type":"Person","name":"Kirsten Rolffes"},{"@type":"Person","name":"Søren Pilmark"},{"@type":"Person","name":"Ghita Nørby"},{"@type":"Person","name":"Jens Okking"},{"@type":"Person","name":"Baard Owe"},{"@type":"Person","name":"Peter Mygind"},{"@type":"Person","name":"Udo Kier"},{"@type":"Person","name":"Holger Perfort"},{"@type":"Person","name":"Laura Christensen"}],"aggregateRating":{"@type":"AggregateRating","worstRating":0,"bestRating":100,"ratingValue":86.75499663148439,"ratingCount":4453,"reviewCount":223},"image":"https://image.pmgstatic.com/files/images/film/posters/162/593/162593283_0ef1d5.jpg"}</script>
 	<div class="main-movie-profile">
 <div class="box box-film">
-
+<div id="snippet--boxOverviewTop"></div>
 	<div class="box-content"> 
 		<div class="film-info">
 			<header class="film-header">
 				<div class="film-header-name">
-					<h1 itemprop="name">
+					<h1>
 							
 							Království
 						
 					</h1>
-					<span class="type">(TV seriál)</span>
+					<span class="type">(seriál)</span>
 
 
 
@@ -296,9 +305,19 @@ export const seriesMock = `
 			<div class="film-about">
 				<div class="film-posters">
 					<a href="/film/71924-kralovstvi/galerie/plakaty/" title="všechny plakáty">
-						<img itemprop="image" src="//image.pmgstatic.com/cache/resized/w140/files/images/film/posters/162/593/162593283_0ef1d5.jpg" loading="lazy" width="140" height="196" srcset="//image.pmgstatic.com/cache/resized/w140/files/images/film/posters/162/593/162593283_0ef1d5.jpg 1x, //image.pmgstatic.com/cache/resized/w280/files/images/film/posters/162/593/162593283_0ef1d5.jpg 2x">
+						<img alt="všechny plakáty" src="//image.pmgstatic.com/cache/resized/w140/files/images/film/posters/162/593/162593283_0ef1d5.jpg" loading="lazy" width="140" height="196" srcset="//image.pmgstatic.com/cache/resized/w140/files/images/film/posters/162/593/162593283_0ef1d5.jpg 1x, //image.pmgstatic.com/cache/resized/w280/files/images/film/posters/162/593/162593283_0ef1d5.jpg 2x">
 					</a>
 				</div>
+
+				<div class="mobile-video">
+					<figure class="box-video">
+						<div class="box-video-content">
+<div class="caroda-slot"></div>
+						</div>
+					</figure>
+				</div>
+			</div>
+			<div class="film-info-content">
 				<div class="mobile-film-rating">
 					<div class="box-rating has-fans">
 						<div class="rating-average">
@@ -307,14 +326,14 @@ export const seriesMock = `
 
 						<div class="ranking">
 							<span><i class="icon icon-thumb-up"></i></span>
-							<a href="https://www.csfd.cz/zebricky/serialy/nejlepsi/?showMore=1#highlight-71924">
-								84. nejlepší
+							<a href="/zebricky/serialy/nejlepsi/#highlight-71924">
+								87. nejlepší
 							</a>
 						</div>
 						<div class="ranking">
 							<span><i class="icon icon-thumb-up"></i></span>
-							<a href="https://www.csfd.cz/zebricky/serialy/nejoblibenejsi/?showMore=1#highlight-71924">
-								157. nejoblíbenější
+							<a href="/zebricky/serialy/nejoblibenejsi/?from=100#highlight-71924">
+								152. nejoblíbenější
 							</a>
 						</div>
 					</div>
@@ -327,11 +346,10 @@ export const seriesMock = `
 					</a>
 
 				</div>
-			</div>
-			<div class="film-info-content">
+
 				<div class="genres">Drama / Horor / Mysteriózní / Komedie</div>
 				<div class="origin">Dánsko / Francie / Německo / Švédsko, 
-					<span itemprop="dateCreated">(1994–1997)</span>, 9 h 20 min
+					<span>(1994–1997), </span>9 h 20 min
 					(Minutáž: 62–79 min)
 
 				</div>
@@ -339,144 +357,140 @@ export const seriesMock = `
 				<div class="creators">
 					<div>
 						<h4>Režie: </h4>
-						<span itemprop="director">
 
-								<a href="/tvurce/3111-lars-von-trier/">Lars von Trier</a>, 
+							<a href="/tvurce/3111-lars-von-trier/">Lars von Trier</a>, 
 
-								<a href="/tvurce/28966-morten-arnfred/">Morten Arnfred</a>
-						</span>
+							<a href="/tvurce/28966-morten-arnfred/">Morten Arnfred</a>
 
 					</div>
 					<div>
 						<h4>Scénář: </h4>
-						<span >
 
-								<a href="/tvurce/3111-lars-von-trier/">Lars von Trier</a>, 
+							<a href="/tvurce/3111-lars-von-trier/">Lars von Trier</a>, 
 
-								<a href="/tvurce/94054-tomas-gislason/">Tómas Gislason</a>, 
+							<a href="/tvurce/94054-tomas-gislason/">Tómas Gislason</a>, 
 
-								<a href="/tvurce/374472-niels-vorsel/">Niels Vørsel</a>
-						</span>
+							<a href="/tvurce/374472-niels-vorsel/">Niels Vørsel</a>
 
 					</div>
 					<div>
 						<h4>Kamera: </h4>
-						<span >
 
-								<a href="/tvurce/110967-eric-kress/">Eric Kress</a>
-						</span>
+							<a href="/tvurce/110967-eric-kress/">Eric Kress</a>
 
 					</div>
 					<div>
 						<h4>Hudba: </h4>
-						<span >
 
-								<a href="/tvurce/70314-joachim-holbek/">Joachim Holbek</a>
-						</span>
+							<a href="/tvurce/70314-joachim-holbek/">Joachim Holbek</a>
 
 					</div>
 					<div>
 						<h4>Hrají: </h4>
-						<span >
 
-								<a href="/tvurce/32989-ernst-hugo-jaregard/">Ernst-Hugo Järegård</a>, 
+							<a href="/tvurce/32989-ernst-hugo-jaregard/">Ernst-Hugo Järegård</a>, 
 
-								<a href="/tvurce/330359-kirsten-rolffes/">Kirsten Rolffes</a>, 
+							<a href="/tvurce/330359-kirsten-rolffes/">Kirsten Rolffes</a>, 
 
-								<a href="/tvurce/8608-soren-pilmark/">Søren Pilmark</a>, 
+							<a href="/tvurce/8608-soren-pilmark/">Søren Pilmark</a>, 
 
-								<a href="/tvurce/56972-ghita-norby/">Ghita Nørby</a>, 
+							<a href="/tvurce/56972-ghita-norby/">Ghita Nørby</a>, 
 
-								<a href="/tvurce/204496-jens-okking/">Jens Okking</a>, 
+							<a href="/tvurce/204496-jens-okking/">Jens Okking</a>, 
 
-								<a href="/tvurce/70901-baard-owe/">Baard Owe</a>, 
+							<a href="/tvurce/70901-baard-owe/">Baard Owe</a>, 
 
-								<a href="/tvurce/33152-peter-mygind/">Peter Mygind</a>, 
+							<a href="/tvurce/33152-peter-mygind/">Peter Mygind</a>, 
 
-								<a href="/tvurce/2567-udo-kier/">Udo Kier</a>, 
+							<a href="/tvurce/2567-udo-kier/">Udo Kier</a>, 
 
-								<a href="/tvurce/154402-holger-perfort/">Holger Perfort</a>, 
+							<a href="/tvurce/154402-holger-perfort/">Holger Perfort</a>, 
 
-								<a href="/tvurce/16702-laura-christensen/">Laura Christensen</a>, 
-									<span class="more-member-1 hidden">
-								<a href="/tvurce/216062-ole-boisen/">Ole Boisen</a>, 
+							<a href="/tvurce/16702-laura-christensen/">Laura Christensen</a>, 
+								<span class="more-member-1 hidden">
+							<a href="/tvurce/216062-ole-boisen/">Ole Boisen</a>, 
 
-								<a href="/tvurce/3111-lars-von-trier/">Lars von Trier</a>, 
+							<a href="/tvurce/3111-lars-von-trier/">Lars von Trier</a>, 
 
-								<a href="/tvurce/200085-mette-munk-plum/">Mette Munk Plum</a>, 
+							<a href="/tvurce/200085-mette-munk-plum/">Mette Munk Plum</a>, 
 
-								<a href="/tvurce/33116-birte-tove/">Birte Tove</a>, 
+							<a href="/tvurce/33116-birte-tove/">Birte Tove</a>, 
 
-								<a href="/tvurce/204502-solbjorg-hojfeldt/">Solbjørg Højfeldt</a>, 
+							<a href="/tvurce/204502-solbjorg-hojfeldt/">Solbjørg Højfeldt</a>, 
 
-								<a href="/tvurce/53200-claus-nissen/">Claus Nissen</a>, 
+							<a href="/tvurce/53200-claus-nissen/">Claus Nissen</a>, 
 
-								<a href="/tvurce/165418-birthe-neumann/">Birthe Neumann</a>, 
+							<a href="/tvurce/165418-birthe-neumann/">Birthe Neumann</a>, 
 
-								<a href="/tvurce/154394-benny-hansen/">Benny Hansen</a>, 
+							<a href="/tvurce/154394-benny-hansen/">Benny Hansen</a>, 
 
-								<a href="/tvurce/163780-lars-lunoe/">Lars Lunøe</a>, 
+							<a href="/tvurce/163780-lars-lunoe/">Lars Lunøe</a>, 
 
-								<a href="/tvurce/233318-dick-kayso/">Dick Kaysø</a>, 
+							<a href="/tvurce/233318-dick-kayso/">Dick Kaysø</a>, 
 
-								<a href="/tvurce/7814-thomas-bo-larsen/">Thomas Bo Larsen</a>, 
+							<a href="/tvurce/7814-thomas-bo-larsen/">Thomas Bo Larsen</a>, 
 
-								<a href="/tvurce/207732-ole-dupont/">Ole Dupont</a>, 
+							<a href="/tvurce/207732-ole-dupont/">Ole Dupont</a>, 
 
-								<a href="/tvurce/232181-michael-moritzen/">Michael Moritzen</a>, 
+							<a href="/tvurce/232181-michael-moritzen/">Michael Moritzen</a>, 
 
-								<a href="/tvurce/219822-morten-eisner/">Morten Eisner</a>, 
+							<a href="/tvurce/219822-morten-eisner/">Morten Eisner</a>, 
 
-								<a href="/tvurce/157-stellan-skarsgard/">Stellan Skarsgård</a>, 
+							<a href="/tvurce/157-stellan-skarsgard/">Stellan Skarsgård</a>, 
 
-								<a href="/tvurce/215879-kurt-ravn/">Kurt Ravn</a>, 
+							<a href="/tvurce/215879-kurt-ravn/">Kurt Ravn</a>, 
 
-								<a href="/tvurce/235315-anders-hove/">Anders Hove</a>, 
+							<a href="/tvurce/235315-anders-hove/">Anders Hove</a>, 
 
-								<a href="/tvurce/14684-philip-zanden/">Philip Zandén</a>, 
+							<a href="/tvurce/14684-philip-zanden/">Philip Zandén</a>, 
 
-								<a href="/tvurce/79992-jens-jorn-spottag/">Jens Jørn Spottag</a>, 
+							<a href="/tvurce/79992-jens-jorn-spottag/">Jens Jørn Spottag</a>, 
 
-								<a href="/tvurce/167982-torben-zeller/">Torben Zeller</a>, 
+							<a href="/tvurce/167982-torben-zeller/">Torben Zeller</a>, 
 
-								<a href="/tvurce/55800-troels-lyby/">Troels Lyby</a>, 
+							<a href="/tvurce/55800-troels-lyby/">Troels Lyby</a>, 
 
-								<a href="/tvurce/303716-mette-marckmann/">Mette Marckmann</a>, 
+							<a href="/tvurce/303716-mette-marckmann/">Mette Marckmann</a>, 
 
-								<a href="/tvurce/329084-bente-eskesen/">Bente Eskesen</a>, 
+							<a href="/tvurce/329084-bente-eskesen/">Bente Eskesen</a>, 
 
-								<a href="/tvurce/337871-finn-nielsen/">Finn Nielsen</a>, 
+							<a href="/tvurce/337871-finn-nielsen/">Finn Nielsen</a>, 
 
-								<a href="/tvurce/347973-henning-jensen/">Henning Jensen</a>, 
+							<a href="/tvurce/347973-henning-jensen/">Henning Jensen</a>, 
 
-								<a href="/tvurce/354418-tove-maes/">Tove Maës</a>, 
+							<a href="/tvurce/354418-tove-maes/">Tove Maës</a>, 
 
-								<a href="/tvurce/355110-paul-huttel/">Paul Hüttel</a>, 
+							<a href="/tvurce/355110-paul-huttel/">Paul Hüttel</a>, 
 
-								<a href="/tvurce/329350-claus-flygare/">Claus Flygare</a>, 
+							<a href="/tvurce/329350-claus-flygare/">Claus Flygare</a>, 
 
-								<a href="/tvurce/279961-michelle-bjorn-andersen/">Michelle Bjørn-Andersen</a>, 
+							<a href="/tvurce/279961-michelle-bjorn-andersen/">Michelle Bjørn-Andersen</a>, 
 
-								<a href="/tvurce/270175-jannie-faurschou/">Jannie Faurschou</a>, 
+							<a href="/tvurce/270175-jannie-faurschou/">Jannie Faurschou</a>, 
 
-								<a href="/tvurce/376281-peter-gilsfort/">Peter Gilsfort</a>, 
+							<a href="/tvurce/376281-peter-gilsfort/">Peter Gilsfort</a>, 
 
-								<a href="/tvurce/405615-louise-fribo/">Louise Fribo</a>, 
+							<a href="/tvurce/405615-louise-fribo/">Louise Fribo</a>, 
 
-								<a href="/tvurce/405632-nis-bank-mikkelsen/">Nis Bank-Mikkelsen</a>, 
+							<a href="/tvurce/405632-nis-bank-mikkelsen/">Nis Bank-Mikkelsen</a>, 
 
-								<a href="/tvurce/414114-henrik-koefoed/">Henrik Koefoed</a>, 
+							<a href="/tvurce/414114-henrik-koefoed/">Henrik Koefoed</a>, 
 
-								<a href="/tvurce/427505-john-hahn-petersen/">John Hahn-Petersen</a>, 
+							<a href="/tvurce/427505-john-hahn-petersen/">John Hahn-Petersen</a>, 
 
-								<a href="/tvurce/429831-ole-emil-riisager/">Ole Emil Riisager</a> <span class="span-more-small" title="vypravěč">(vypravěč)</span>, 
+							<a href="/tvurce/429831-ole-emil-riisager/">Ole Emil Riisager</a> <span class="span-more-small" title="vypravěč">(vypravěč)</span>, 
 
-								<a href="/tvurce/430042-julie-wieth/">Julie Wieth</a>, 
+							<a href="/tvurce/430042-julie-wieth/">Julie Wieth</a>, 
 
-								<a href="/tvurce/503015-soren-lenander/">Søren Lenander</a>
-									</span>
-									<span class="span-more-small">(<a href="#" class="more" data-text="méně" data-show=".more-member-1">více</a>)</span>
-						</span>
+							<a href="/tvurce/503015-soren-lenander/">Søren Lenander</a>, 
+
+							<a href="/tvurce/690448-gunnvor-nolsoe/">Gunnvør Nolsøe</a>, 
+
+							<a href="/tvurce/690494-bjarne-g-nielsen/">Bjarne G. Nielsen</a>, 
+
+							<a href="/tvurce/690510-steen-svare/">Steen Svare</a>
+								</span>
+								<span class="span-more-small">(<a href="#" class="more" data-text="méně" data-show=".more-member-1">více</a>)</span>
 
 					</div>
 					<div class="other-professions hidden">
@@ -606,70 +620,71 @@ export const seriesMock = `
 
 
 
+
 		<div class="tabs">
 			<nav class="tab-nav tab-nav-count-11">
 		<ul class="tab-nav-list">
-		<li class="tab-nav-item tab-nav-item-1 active">
+		<li class="tab-nav-item active">
 			
 			<a class="tab-link" href="/film/71924-kralovstvi/prehled/">
 				Přehled
 			</a>
 		</li>
-		<li class="tab-nav-item tab-nav-item-2">
+		<li class="tab-nav-item">
 			
 			<a class="tab-link" href="/film/71924-kralovstvi/recenze/">
 				Recenze
 			</a>
 		</li>
-		<li class="tab-nav-item tab-nav-item-3">
+		<li class="tab-nav-item">
 			
 			<a class="tab-link" href="/film/71924-kralovstvi/zajimavosti/">
 				Zajímavosti
 			</a>
 		</li>
-		<li class="tab-nav-item tab-nav-item-4">
+		<li class="tab-nav-item">
 			
 			<a class="tab-link" href="/film/71924-kralovstvi/epizody/">
 				Epizody
 			</a>
 		</li>
-		<li class="tab-nav-item tab-nav-item-5 disabled">
+		<li class="tab-nav-item disabled">
 			
 			<a class="tab-link" href="javascript:void(0);">
 				Videa
 			</a>
 		</li>
-		<li class="tab-nav-item tab-nav-item-6">
+		<li class="tab-nav-item">
 			
 			<a class="tab-link" href="/film/71924-kralovstvi/galerie/">
 				Galerie
 			</a>
 		</li>
-		<li class="tab-nav-item tab-nav-item-7">
+		<li class="tab-nav-item">
 			
 			<a class="tab-link" href="/film/71924-kralovstvi/hraji/">
 				Hrají
 			</a>
 		</li>
-		<li class="tab-nav-item tab-nav-item-8">
+		<li class="tab-nav-item">
 			
 			<a class="tab-link" href="/film/71924-kralovstvi/oceneni/">
 				Ocenění
 			</a>
 		</li>
-		<li class="tab-nav-item tab-nav-item-9 disabled">
+		<li class="tab-nav-item disabled">
 			
 			<a class="tab-link" href="javascript:void(0);">
 				OST
 			</a>
 		</li>
-		<li class="tab-nav-item tab-nav-item-10">
+		<li class="tab-nav-item">
 			
 			<a class="tab-link" href="/film/71924-kralovstvi/diskuze/">
 				Diskuze
 			</a>
 		</li>
-		<li class="tab-nav-item tab-nav-item-11">
+		<li class="tab-nav-item">
 			
 			<a class="tab-link" href="/film/71924-kralovstvi/filmoteka/">
 				Filmotéka
@@ -681,57 +696,57 @@ export const seriesMock = `
 			další <i class="icon icon-arrow-down"></i>
 		</a>
 				<ul id="dropdown-menu-2" class="dropdown-content">
-			<li class="tab-nav-item tab-nav-item-1 active">
+			<li class="tab-nav-item active">
 				<a class="tab-link" href="/film/71924-kralovstvi/prehled/">
 					Přehled
 				</a>
 			</li>
-			<li class="tab-nav-item tab-nav-item-2">
+			<li class="tab-nav-item">
 				<a class="tab-link" href="/film/71924-kralovstvi/recenze/">
 					Recenze
 				</a>
 			</li>
-			<li class="tab-nav-item tab-nav-item-3">
+			<li class="tab-nav-item">
 				<a class="tab-link" href="/film/71924-kralovstvi/zajimavosti/">
 					Zajímavosti
 				</a>
 			</li>
-			<li class="tab-nav-item tab-nav-item-4">
+			<li class="tab-nav-item">
 				<a class="tab-link" href="/film/71924-kralovstvi/epizody/">
 					Epizody
 				</a>
 			</li>
-			<li class="tab-nav-item tab-nav-item-5 disabled">
+			<li class="tab-nav-item disabled">
 				<a class="tab-link" href="javascript:void(0);">
 					Videa
 				</a>
 			</li>
-			<li class="tab-nav-item tab-nav-item-6">
+			<li class="tab-nav-item">
 				<a class="tab-link" href="/film/71924-kralovstvi/galerie/">
 					Galerie
 				</a>
 			</li>
-			<li class="tab-nav-item tab-nav-item-7">
+			<li class="tab-nav-item">
 				<a class="tab-link" href="/film/71924-kralovstvi/hraji/">
 					Hrají
 				</a>
 			</li>
-			<li class="tab-nav-item tab-nav-item-8">
+			<li class="tab-nav-item">
 				<a class="tab-link" href="/film/71924-kralovstvi/oceneni/">
 					Ocenění
 				</a>
 			</li>
-			<li class="tab-nav-item tab-nav-item-9 disabled">
+			<li class="tab-nav-item disabled">
 				<a class="tab-link" href="javascript:void(0);">
 					OST
 				</a>
 			</li>
-			<li class="tab-nav-item tab-nav-item-10">
+			<li class="tab-nav-item">
 				<a class="tab-link" href="/film/71924-kralovstvi/diskuze/">
 					Diskuze
 				</a>
 			</li>
-			<li class="tab-nav-item tab-nav-item-11">
+			<li class="tab-nav-item">
 				<a class="tab-link" href="/film/71924-kralovstvi/filmoteka/">
 					Filmotéka
 				</a>
@@ -743,38 +758,19 @@ export const seriesMock = `
 
 
 <div class="tab-content movie-profile--tab-default">
-	<section class="box box-borderless">
+	<section class="box box-video-overview box-borderless">
 <div class="caroda-slot"></div>
 	</section>
 
 	<section class="box box-reviews">
 		<header class="box-header">
-			<h2>Recenze <span class="count">(223)</span></h2>
+			<h2>Recenze <span class="count">(224)</span></h2>
 			<div class="box-header-action">
 				<a class="button" href="/film/71924-kralovstvi/recenze/">VÍCE</a>
 			</div>
 		</header>
 		<div class="box-content">
 
-<article id="review-6549" class="article article-white">
-	<div class="article-content article-content-justify">
-		<header class="article-header article-header-review">
-			<div class="article-header-review-name">
-<h3 class="user-title"><a href="/uzivatel/151-radyo/" class="user-title-name">Radyo</a>&nbsp;<span class="user-title-info"><span class="star-rating"><span class="stars stars-4"></span></span></span></h3>			</div>
-			<div class="article-header-review-action">
-				<a href="/uzivatel/151-radyo/recenze/">všechny recenze uživatele</a>
-				
-				<a class="permanent-link" title="Trvalý odkaz: /film/71924-kralovstvi/recenze/?comment=6549" href="/film/71924-kralovstvi/recenze/?comment=6549"><i class="icon icon-permalink"></i></a>
-			</div>
-		</header>
-		<p>
-			Těžká psychárna, která se opravdu co do náročnosti pochopení blíží kultovnímu seriálu Městečko Twin Peaks. Už samotný způsob natočení může občas uvést diváka ve zmatek, natožpak složité dějové kličky. Musím se přiznat, že jsem z Království nebyl odvázaný tolik, jako právě z Twin Peaksu, ale určitou stopu ve mně zanechalo. Lars Von Trier opět potvrdil svou třídu a předvedl své schopnosti v plné parádě.
-
-
-			<span class="comment-date info">(<time>23.12.2002</time>)</span>
-		</p>
-	</div>
-</article>
 <article id="review-41793" class="article article-white">
 	<div class="article-content article-content-justify">
 		<header class="article-header article-header-review">
@@ -782,7 +778,7 @@ export const seriesMock = `
 <h3 class="user-title"><a href="/uzivatel/2107-marigold/" class="user-title-name">Marigold</a>&nbsp;<span class="user-title-info"><span class="star-rating"><span class="stars stars-5"></span></span></span></h3>			</div>
 			<div class="article-header-review-action">
 				<a href="/uzivatel/2107-marigold/recenze/">všechny recenze uživatele</a>
-				(<a href="/film/71924-kralovstvi/recenze/k-serialu/?userId=2107">k tomuto TV seriálu</a>)
+				(<a href="/film/71924-kralovstvi/recenze/k-serialu/?userId=2107">k tomuto seriálu</a>)
 				<a class="permanent-link" title="Trvalý odkaz: /film/71924-kralovstvi/recenze/?comment=41793" href="/film/71924-kralovstvi/recenze/?comment=41793"><i class="icon icon-permalink"></i></a>
 			</div>
 		</header>
@@ -790,12 +786,9 @@ export const seriesMock = `
 			Ten chlap je ALE POŠUK!!! Království je velice podivný projekt, který ve svém bažinatém nitru syntetizuje parodii na seriály z lékařského porstředí, horror a naprosto bestiální psychologický terror, který panu Trierovi zjevně dělá dobře. Tradiční atributy jako civilní herectví, dokumentaristický dojem, třaslavá kamera a takřka Lynchovsky absurdní scény vytvářejí dusivou a elektrizující atmosféru místa, které je sice na povrchu hrdým mementem civilizace, jejímuž ostrozraku žádná mystika neunikne, ale které je ve svém nitru natolik přesycená tajemnem a iracionálnem (ať už je to genius loci nebo vztahy postav), že to prostě na diváka nemůže působit jinak než depresivním dojmem. Kabinet kuriozit a bizarnosti. A jen tak mimochodem jeden z nejlepších seriálů všech dob.
 
 
+
 			<span class="comment-date info">(<time>05.03.2004</time>)</span>
 		</p>
-	</div>
-	<div class="box box-banner-mobile box-banner-mobile-filmcomments">
-		<p class="box-banner-text">Reklama</p>
-<div id="mobile_square_1" class="ad-pmg" style="height: 300px;"></div>
 	</div>
 </article>
 <article id="review-10906476" class="article article-white">
@@ -813,26 +806,32 @@ export const seriesMock = `
 			No nevím, k nepochopení toho v seriálu moc není. Spíš vás fascinuje, jak umně dokáže Lars von Trier spojit všechny ty žánry. Nerozpadly se mu pod rukama, divák vnímá tajemno, doktořinu i humor a nic nepřečnívá (zásluhu na tom má i rozumná stopáž). (Chtěný?) otevřený konec nenaštve a ten, komu by to bylo málo, má u závěrečných titulků možnost nechat si panem režisérem vše vysvětlit. 90%.
 
 
+
 			<span class="comment-date info">(<time>05.04.2018</time>)</span>
 		</p>
 	</div>
+	<div class="box box-banner-mobile box-banner-mobile-filmcomments">
+		<p class="box-banner-text">Reklama</p>
+<div id="mobile_square_1" class="ad-pmg" style="height: 300px;"></div>
+	</div>
 </article>
-<article id="review-463666" class="article article-white">
+<article id="review-6549" class="article article-white">
 	<div class="article-content article-content-justify">
 		<header class="article-header article-header-review">
 			<div class="article-header-review-name">
-<h3 class="user-title"><a href="/uzivatel/2538-b-shop/" class="user-title-name">B!shop</a>&nbsp;<span class="user-title-info"><span class="star-rating"><span class="stars stars-5"></span></span></span></h3>			</div>
+<h3 class="user-title"><a href="/uzivatel/151-radyo/" class="user-title-name">Radyo</a>&nbsp;<span class="user-title-info"><span class="star-rating"><span class="stars stars-4"></span></span></span></h3>			</div>
 			<div class="article-header-review-action">
-				<a href="/uzivatel/2538-b-shop/recenze/">všechny recenze uživatele</a>
-				(<a href="/film/71924-kralovstvi/recenze/k-serialu/?userId=2538">k tomuto TV seriálu</a>)
-				<a class="permanent-link" title="Trvalý odkaz: /film/71924-kralovstvi/recenze/?comment=463666" href="/film/71924-kralovstvi/recenze/?comment=463666"><i class="icon icon-permalink"></i></a>
+				<a href="/uzivatel/151-radyo/recenze/">všechny recenze uživatele</a>
+				
+				<a class="permanent-link" title="Trvalý odkaz: /film/71924-kralovstvi/recenze/?comment=6549" href="/film/71924-kralovstvi/recenze/?comment=6549"><i class="icon icon-permalink"></i></a>
 			</div>
 		</header>
 		<p>
-			Naprosto neskutecne atmosfericka zalezitost. Prolinaj se tady tri linie, vyzkum jater, reseni obvineni primare a babka hledajici duchy a do toho samozrejme ruzny vztahy mezi doktorama. Takze az na ty duchy to vypada jak normalni nemocnici serial. Jenze uz uvodni atmosfericky titulky (ackoliv jejich vyznam pozdejc v serialu je nulovej) a uvodni husta pisnicka davaj tusit, ze tady je neco jinak. Jednak je celej serial hozenej do hneda (ne hovna, ale filtr), pak tu je skoro az dokumentarni kamera a pro me, az na Uda, neznamy herci. To vse dohromady vytvari tak neskutecne hustou, mrazivou, mysteriozni, napinavou, syrovou a misty skoro az zlou atmosferu, o ktery se rade hororu muze jen zdat. A to tenhle serial pritom ciste horor neni. No a misty, skutecne jen minimalne, tu je nakej cernohumornej vtipek. Jakmile jsem si behem prvniho dilu zvyk na postavy, danskou rec, styl natoceni a zacal se trochu orientovat v pribehu, tak od ty doby me serial neskutecne zaujal a nemoh sem od nej odtrhnout oci.
+			Těžká psychárna, která se opravdu co do náročnosti pochopení blíží kultovnímu seriálu Městečko Twin Peaks. Už samotný způsob natočení může občas uvést diváka ve zmatek, natožpak složité dějové kličky. Musím se přiznat, že jsem z Království nebyl odvázaný tolik, jako právě z Twin Peaksu, ale určitou stopu ve mně zanechalo. Lars Von Trier opět potvrdil svou třídu a předvedl své schopnosti v plné parádě.
 
 
-			<span class="comment-date info">(<time>02.04.2008</time>)</span>
+
+			<span class="comment-date info">(<time>23.12.2002</time>)</span>
 		</p>
 	</div>
 </article>
@@ -843,7 +842,7 @@ export const seriesMock = `
 <h3 class="user-title"><a href="/uzivatel/14564-fr/" class="user-title-name">Fr</a>&nbsp;<span class="user-title-info"><span class="star-rating"><span class="stars stars-4"></span></span></span></h3>			</div>
 			<div class="article-header-review-action">
 				<a href="/uzivatel/14564-fr/recenze/">všechny recenze uživatele</a>
-				(<a href="/film/71924-kralovstvi/recenze/k-serialu/?userId=14564">k tomuto TV seriálu</a>)
+				(<a href="/film/71924-kralovstvi/recenze/k-serialu/?userId=14564">k tomuto seriálu</a>)
 				<a class="permanent-link" title="Trvalý odkaz: /film/71924-kralovstvi/recenze/?comment=8482704" href="/film/71924-kralovstvi/recenze/?comment=8482704"><i class="icon icon-permalink"></i></a>
 			</div>
 		</header>
@@ -856,7 +855,28 @@ Seriál se rozjíždí pozvolně. Dánská nemocnice na ,,kraji města“ - ve k
 /// <strong>PŘÍBĚH</strong>  ****  <strong>HUMOR</strong>  ne  <strong>AKCE</strong>  ne  <strong>NAPĚTÍ</strong>  **
 
 
+
 			<span class="comment-date info">(<time>28.06.2011</time>)</span>
+		</p>
+	</div>
+</article>
+<article id="review-463666" class="article article-white">
+	<div class="article-content article-content-justify">
+		<header class="article-header article-header-review">
+			<div class="article-header-review-name">
+<h3 class="user-title"><a href="/uzivatel/2538-b-shop/" class="user-title-name">B!shop</a>&nbsp;<span class="user-title-info"><span class="star-rating"><span class="stars stars-5"></span></span></span></h3>			</div>
+			<div class="article-header-review-action">
+				<a href="/uzivatel/2538-b-shop/recenze/">všechny recenze uživatele</a>
+				(<a href="/film/71924-kralovstvi/recenze/k-serialu/?userId=2538">k tomuto seriálu</a>)
+				<a class="permanent-link" title="Trvalý odkaz: /film/71924-kralovstvi/recenze/?comment=463666" href="/film/71924-kralovstvi/recenze/?comment=463666"><i class="icon icon-permalink"></i></a>
+			</div>
+		</header>
+		<p>
+			Naprosto neskutecne atmosfericka zalezitost. Prolinaj se tady tri linie, vyzkum jater, reseni obvineni primare a babka hledajici duchy a do toho samozrejme ruzny vztahy mezi doktorama. Takze az na ty duchy to vypada jak normalni nemocnici serial. Jenze uz uvodni atmosfericky titulky (ackoliv jejich vyznam pozdejc v serialu je nulovej) a uvodni husta pisnicka davaj tusit, ze tady je neco jinak. Jednak je celej serial hozenej do hneda (ne hovna, ale filtr), pak tu je skoro az dokumentarni kamera a pro me, az na Uda, neznamy herci. To vse dohromady vytvari tak neskutecne hustou, mrazivou, mysteriozni, napinavou, syrovou a misty skoro az zlou atmosferu, o ktery se rade hororu muze jen zdat. A to tenhle serial pritom ciste horor neni. No a misty, skutecne jen minimalne, tu je nakej cernohumornej vtipek. Jakmile jsem si behem prvniho dilu zvyk na postavy, danskou rec, styl natoceni a zacal se trochu orientovat v pribehu, tak od ty doby me serial neskutecne zaujal a nemoh sem od nej odtrhnout oci.
+
+
+
+			<span class="comment-date info">(<time>02.04.2008</time>)</span>
 		</p>
 	</div>
 </article>
@@ -884,7 +904,7 @@ Seriál se rozjíždí pozvolně. Dánská nemocnice na ,,kraji města“ - ve k
 			<source media="(max-width: 400px)" srcset="//image.pmgstatic.com/cache/resized/w360/files/images/film/photos/158/804/158804662_de9ba6.jpg 1x, //image.pmgstatic.com/cache/resized/w720/files/images/film/photos/158/804/158804662_de9ba6.jpg 2x">
 			<source media="(max-width: 650px) and (min-width: 401px)" srcset="//image.pmgstatic.com/cache/resized/w663/files/images/film/photos/158/804/158804662_de9ba6.jpg 1x">
 			<source media="(max-width: 1040px) and (min-width: 651px)" srcset="//image.pmgstatic.com/cache/resized/w763/files/images/film/photos/158/804/158804662_de9ba6.jpg 1x">
-			<img src="//image.pmgstatic.com/cache/resized/w663/files/images/film/photos/158/804/158804662_de9ba6.jpg" loading="lazy" width="663" height="442" srcset="//image.pmgstatic.com/cache/resized/w663/files/images/film/photos/158/804/158804662_de9ba6.jpg 1x">
+			<img alt="Ernst-Hugo Järegård" src="//image.pmgstatic.com/cache/resized/w663/files/images/film/photos/158/804/158804662_de9ba6.jpg" loading="lazy" width="663" height="442" srcset="//image.pmgstatic.com/cache/resized/w663/files/images/film/photos/158/804/158804662_de9ba6.jpg 1x">
 		</picture>
 	</div>
 </figure>
@@ -896,7 +916,7 @@ Seriál se rozjíždí pozvolně. Dánská nemocnice na ,,kraji města“ - ve k
 		</div></div>
 	</section>
 
-	<section class="box">
+	<section class="box box-nooverflow">
 		<header class="box-header">
 			<h2>Zajímavosti <span class="count">(10)</span></h2>
 			<div class="box-header-action">
@@ -904,43 +924,46 @@ Seriál se rozjíždí pozvolně. Dánská nemocnice na ,,kraji města“ - ve k
 			</div>
 		</header>
 		<div class="box-content">
-			<article class="article">
+			<article class="article article-trivia">
+				<div class="article-content">
+	<ul>
+		<li>
+			Věže, které doktor Helmer (Ernst-Hugo Järegård) pozoruje dalekohledem ze střechy nemocnice, patří ke švédské jaderné elektrárně v Barsebäcku. V roce 2005 byla natrvalo odstavena z provozu.
+			<span class="span-more-small">
+					(<a href="/uzivatel/227519-skudiblik/">skudiblik</a>)
+			</span>
+
+
+		</li>
+	</ul>
+</div>
+
+			</article>
+			<article class="article article-trivia">
+				<div class="article-content">
+	<ul>
+		<li>
+			Jméno postavy, Stig Helmer, je převzato od postavy Stig-Helmer Olsson ze švédské komediální filmové série <em><a href="https://www.csfd.cz/film/320828-dovolena-na-pisku/">Sällskapsresan</a></em> od <a href="https://www.csfd.cz/tvurce/165400-lasse-aberg/">Lasse Áberga</a>, která byla svého času považována za symbol švédské tuposti a přísnosti.
+			<span class="span-more-small">
+					(<a href="/uzivatel/92340-tomikzlesa/">TomikZlesa</a>)
+			</span>
+
+
+		</li>
+	</ul>
+</div>
+
+			</article>
+			<article class="article article-trivia">
 				<div class="article-content">
 	<ul>
 		<li>
 			<a href="https://www.csfd.cz/tvurce/32989-ernst-hugo-jaregard/">Ernst-Hugo Järegård</a> nikdy nevlastnil řidičský průkaz, pouze během natáčení řídil auto.
 			<span class="span-more-small">
 					(<a href="/uzivatel/92340-tomikzlesa/">TomikZlesa</a>)
-
 			</span>
-		</li>
-	</ul>
-</div>
 
-			</article>
-			<article class="article">
-				<div class="article-content">
-	<ul>
-		<li>
-			Údajne sa plánovala i tretia séria seriálu, plány však narušila predčasná smrť niektorých hlavných hercov.
-			<span class="span-more-small">
-					(<a href="/uzivatel/403581-misterz/">misterz</a>)
 
-			</span>
-		</li>
-	</ul>
-</div>
-
-			</article>
-			<article class="article">
-				<div class="article-content">
-	<ul>
-		<li>
-			<a href="https://www.csfd.cz/tvurce/32989-ernst-hugo-jaregard/">Ernst-Hugo Järegård</a> se právě díky roli v <em>Riget</em> v Dánsku výrazně zviditelnil a byl dokonce považován za nový sexuální symbol.
-			<span class="span-more-small">
-					(<a href="/uzivatel/92340-tomikzlesa/">TomikZlesa</a>)
-
-			</span>
 		</li>
 	</ul>
 </div>
@@ -959,12 +982,7 @@ Seriál se rozjíždí pozvolně. Dánská nemocnice na ,,kraji města“ - ve k
 			</div>
 
 
-<div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating" class="box-rating box-rating-withtabs">
-		<meta itemprop="worstRating" content="0">
-		<meta itemprop="bestRating" content="100">
-		<meta itemprop="ratingValue" content="86.788908765653">
-		<meta itemprop="ratingCount" content="4472">
-		<meta itemprop="reviewCount" content="222">
+<div class="box-rating box-rating-withtabs">
 
 	<div class="rating-average">
 			87%
@@ -972,14 +990,14 @@ Seriál se rozjíždí pozvolně. Dánská nemocnice na ,,kraji města“ - ve k
 
 	<div class="ranking">
 		<span><i class="icon icon-thumb-up"></i></span>
-		<a href="https://www.csfd.cz/zebricky/serialy/nejlepsi/?showMore=1#highlight-71924">
-			84. nejlepší
+		<a href="/zebricky/serialy/nejlepsi/#highlight-71924">
+			87. nejlepší
 		</a>
 	</div>
 	<div class="ranking">
 		<span><i class="icon icon-thumb-up"></i></span>
-		<a href="https://www.csfd.cz/zebricky/serialy/nejoblibenejsi/?showMore=1#highlight-71924">
-			157. nejoblíbenější
+		<a href="/zebricky/serialy/nejoblibenejsi/?from=100#highlight-71924">
+			152. nejoblíbenější
 		</a>
 	</div>
 
@@ -991,10 +1009,10 @@ Seriál se rozjíždí pozvolně. Dánská nemocnice na ,,kraji města“ - ve k
 		<nav class="tab-nav">
 			<ul class="tab-nav-list">
 				<li class="tab-nav-item ratings-btn active">
-					<a class="tab-link" href="#" data-show-tab=".rating-users" data-hide-tab=".fanclub-users">Hodnocení<span class="counter">(4 472)</span></a>
+					<a class="tab-link" href="#" data-show-tab=".rating-users" data-hide-tab=".fanclub-users">Hodnocení<span class="counter">(4 453)</span></a>
 				</li>
 				<li class="tab-nav-item fans-btn">
-					<a class="tab-link" href="#" data-show-tab=".fanclub-users" data-hide-tab=".rating-users">Fanklub<span class="counter">(836)</span></a>
+					<a class="tab-link" href="#" data-show-tab=".fanclub-users" data-hide-tab=".rating-users">Fanklub<span class="counter">(817)</span></a>
 				</li>
 			</ul>
 		</nav>
@@ -1040,12 +1058,12 @@ Seriál se rozjíždí pozvolně. Dánská nemocnice na ,,kraji města“ - ve k
 <span title="Vloženo v 03.11.2007"><span class="star-rating"><span class="stars stars-4"></span></span></span>
 				</li>
 				<li>
-											<a href="/uzivatel/151-radyo/">Radyo</a>
-<span title="Vloženo v 23.12.2002"><span class="star-rating"><span class="stars stars-4"></span></span></span>
-				</li>
-				<li>
 											<a href="/uzivatel/58909-j-a-s-m/">J*A*S*M</a>
 <span title="Vloženo v 01.11.2009"><span class="star-rating"><span class="stars stars-4"></span></span></span>
+				</li>
+				<li>
+											<a href="/uzivatel/151-radyo/">Radyo</a>
+<span title="Vloženo v 23.12.2002"><span class="star-rating"><span class="stars stars-4"></span></span></span>
 				</li>
 				<li>
 											<a href="/uzivatel/2107-marigold/">Marigold</a>
@@ -1068,12 +1086,12 @@ Seriál se rozjíždí pozvolně. Dánská nemocnice na ,,kraji města“ - ve k
 <span title="Vloženo v 19.02.2006"><span class="star-rating"><span class="stars stars-5"></span></span></span>
 				</li>
 				<li>
-											<a href="/uzivatel/51363-bluntman/">Bluntman</a>
-<span title="Vloženo v 12.01.2007"><span class="star-rating"><span class="stars stars-5"></span></span></span>
-				</li>
-				<li>
 											<a href="/uzivatel/34950-rimsy/">Rimsy</a>
 <span title="Vloženo v 15.10.2007"><span class="star-rating"><span class="stars stars-5"></span></span></span>
+				</li>
+				<li>
+											<a href="/uzivatel/51363-bluntman/">Bluntman</a>
+<span title="Vloženo v 12.01.2007"><span class="star-rating"><span class="stars stars-5"></span></span></span>
 				</li>
 				<li>
 											<a href="/uzivatel/14564-fr/">Fr</a>
@@ -1106,10 +1124,10 @@ Seriál se rozjíždí pozvolně. Dánská nemocnice na ,,kraji města“ - ve k
 					<a href="/uzivatel/25853-hirnlego/oblibene/serialy/">hirnlego</a>
 				</li>
 				<li>
-					<a href="/uzivatel/51363-bluntman/oblibene/serialy/">Bluntman</a>
+					<a href="/uzivatel/34950-rimsy/oblibene/serialy/">Rimsy</a>
 				</li>
 				<li>
-					<a href="/uzivatel/34950-rimsy/oblibene/serialy/">Rimsy</a>
+					<a href="/uzivatel/51363-bluntman/oblibene/serialy/">Bluntman</a>
 				</li>
 				<li>
 					<a href="/uzivatel/13482-eodeon/oblibene/serialy/">Eodeon</a>
@@ -1142,10 +1160,10 @@ Seriál se rozjíždí pozvolně. Dánská nemocnice na ,,kraji města“ - ve k
 					<a href="/uzivatel/117701-lupuscanis/oblibene/serialy/">lupuscanis</a>
 				</li>
 				<li>
-					<a href="/uzivatel/70661-faustka/oblibene/serialy/">Faustka</a>
+					<a href="/uzivatel/354-m-e-j-l-a/oblibene/serialy/">M.E.J.L.A.</a>
 				</li>
 				<li>
-					<a href="/uzivatel/354-m-e-j-l-a/oblibene/serialy/">M.E.J.L.A.</a>
+					<a href="/uzivatel/70661-faustka/oblibene/serialy/">Faustka</a>
 				</li>
 				<li>
 					<a href="/uzivatel/149756-flyboy/oblibene/serialy/">FlyBoy</a>
@@ -1184,7 +1202,7 @@ Seriál se rozjíždí pozvolně. Dánská nemocnice na ,,kraji města“ - ve k
 <div id="snippet--publicControlMenu">						<hr>
 						<ul class="blue">
 <div id="comment" class="modal mfp-hide" role="dialog">
-	<h2>Přidat externí recenzi</h2>
+	<h2>Přidat recenzi</h2>
 	<p>Pro přidání recenze se prosím nejdřív přihlas.</p>
 	<a class="button button-red" href="/prihlaseni/">Přihlásit se</a>
 </div>
@@ -1198,7 +1216,12 @@ Seriál se rozjíždí pozvolně. Dánská nemocnice na ,,kraji města“ - ve k
 									<a href="#watchlist" rel="contentInfoModal">Přidat do Chci vidět</a>
 							</li>
 							<li>
-																	<a href="/prihlaseni/">Přidat do oblíbených</a>
+								<div id="fanclub" class="modal mfp-hide" role="dialog">
+	<h2>Přidat do oblíbených</h2>
+	<p>Pro přidání filmu do oblíbených se prosím nejdřív přihlas.</p>
+	<a class="button button-red" href="/prihlaseni/">Přihlásit se</a>
+</div>
+									<a href="#fanclub" rel="contentInfoModal">Přidat do oblíbených</a>
 							</li>
 							<li>
 <div id="collection" class="modal mfp-hide" role="dialog">
@@ -1228,8 +1251,6 @@ Seriál se rozjíždí pozvolně. Dánská nemocnice na ,,kraji města“ - ve k
 				</h3>
 			</div>
 			<div class="box-content box-content-padding">
-				<div class="age-restriction">
-				</div>
 
 				<ul>
 					
@@ -1347,7 +1368,7 @@ Seriál se rozjíždí pozvolně. Dánská nemocnice na ,,kraji města“ - ve k
 						<ul>
 								<li><a href="/prihlaseni/">Přihlášení</a></li>
 								<li><a href="/registrace/">Registrace</a></li>
-							<li><a href="/vyvojari/">Pracuj pro nás</a></li>
+							<li><a href="/vyvojari/">Pracuj s námi</a></li>
 							<li><a href="/napis-nam/">Napiš nám</a></li>
 						</ul>
 					</div>
@@ -1367,8 +1388,13 @@ Seriál se rozjíždí pozvolně. Dánská nemocnice na ,,kraji města“ - ve k
 				<div class="footer-content-right">
 					<div class="footer-right-social">
 						<h3>Social</h3>
-						<a href="https://www.facebook.com/www.CSFD.cz/" class="btn-social" target="_blank"><i class="icon icon-facebook"></i></a>
-						<a href="https://www.instagram.com/csfd.cz/" class="btn-social" target="_blank"><i class="icon icon-instagram"></i></a>
+						<a href="https://www.facebook.com/www.CSFD.cz/" class="btn-social" target="_blank" rel="noreferrer"><i class="icon icon-facebook"></i></a>
+						<a href="https://www.instagram.com/csfd.cz/" class="btn-social" target="_blank" rel="noreferrer"><i class="icon icon-instagram"></i></a>
+					</div>
+					<div class="footer-right-app">
+						<h3>Mobilní aplikace</h3>
+						<a href="https://apps.apple.com/cz/app/čsfd-web/id1552901865#?platform=iphone" class="btn-app-store" target="_blank"><img alt="ČSFD Web | App Store" src="//static.pmgstatic.com/assets/images/c9bd6a26fa717816674d2078f60af950/appstore.svg"></a>
+						<a href="https://play.google.com/store/apps/details?id=cz.csfd.lite" class="btn-google-play" target="_blank"><img alt="ČSFD Web | Google Play" src="//static.pmgstatic.com/assets/images/c9bd6a26fa717816674d2078f60af950/googleplay.svg"></a>
 					</div>
 					<div class="site-info">
 						<p>Česko-Slovenská filmová databáze</p>
@@ -1386,7 +1412,7 @@ Seriál se rozjíždí pozvolně. Dánská nemocnice na ,,kraji města“ - ve k
 </div>
 
 
-		<script type="text/json" id="js-common-config">{"country":1,"domain":"csfd.cz","host":"www.csfd.cz","userLanguageId":1,"hooks":["StarRating","AutoSubmitForm"],"dictionary":{"web.autocomplete.film.header":"Filmy","web.autocomplete.film.more.link":"Všechny filmy","web.autocomplete.series.header":"Seriály","web.autocomplete.series.more.link":"Všechny seriály","web.autocomplete.creator.header":"Tvůrci","web.autocomplete.creator.more.link":"Všichni tvůrci","web.autocomplete.user.header":"Uživatelé","web.autocomplete.user.more.link":"Všichni uživatelé","web.autocomplete.searching":"Vyhledávám...","web.autocomplete.search.select":"Vyplňte název filmu/tvůrce/uživatele","web.autocomplete.noservice":"Služba vyhledávání není momentálně dostupná.","web.search.creator.notfound":"Nenalezeni žádní tvůrci","web.search.film.notfound":"Nenalezeny žádné filmy","web.search.series.notfound":"Nenalezeny žádné seriály","web.search.user.notfound":"Nenalezeni žádní uživatelé","web.check.all":"zaškrtnout vše","web.cinema.top.link":"nahoru","web.user.profile.about.from.plain.to.html.alert":"Změnou typu editace bez uložení přijdeš o všechny změny. Pokud jsi v HTML použil konstrukce, které editor nepodporuje, uložením v editoru o tyto změny přijdeš. Opravdu chceš pokračovat?","web.user.profile.about.from.html.to.plain.alert":"Změnou typu editace bez uložení přijdeš o všechny změny. Opravdu chceš pokračovat?","web.sortable.error.move":"Při přesunu pozic došlo k chybě. Stránka bude obnovena. Pokračovat?","web.preloader.loading":"Načítání...","web.modal.confirm.close":"Opravdu chceš zavřít okno? Možná máš neuložené změny.","web.forums.respond.cancel":"zrušit odpověď","web.ajax.default.error.message":"Omlouváme se, ale nastala chyba při zpracování.","web.ajax.resend.button":"Odeslat znovu","web.fileupload.preloader":"Načítám knihovnu, prosím o strpení...","web.selectize.plugin.remove.button.remove":"Odebrat"},"route":":Web:Film:Overview:default","isLoggedIn":false,"userId":null}</script>
+		<script type="text/json" id="js-common-config">{"country":1,"domain":"csfd.cz","host":"www.csfd.cz","userLanguageId":1,"dictionary":{"web.autocomplete.film.header":"Filmy","web.autocomplete.film.more.link":"Všechny filmy","web.autocomplete.series.header":"Seriály","web.autocomplete.series.more.link":"Všechny seriály","web.autocomplete.creator.header":"Tvůrci","web.autocomplete.creator.more.link":"Všichni tvůrci","web.autocomplete.user.header":"Uživatelé","web.autocomplete.user.more.link":"Všichni uživatelé","web.autocomplete.searching":"Vyhledávám...","web.autocomplete.search.select":"Vyplňte název filmu/tvůrce/uživatele","web.autocomplete.noservice":"Služba vyhledávání není momentálně dostupná.","web.search.creator.notfound":"Nenalezeni žádní tvůrci","web.search.film.notfound":"Nenalezeny žádné filmy","web.search.series.notfound":"Nenalezeny žádné seriály","web.search.user.notfound":"Nenalezeni žádní uživatelé","web.check.all":"zaškrtnout vše","web.cinema.top.link":"nahoru","web.user.profile.about.from.plain.to.html.alert":"Změnou typu editace bez uložení přijdeš o všechny změny. Pokud jsi v HTML použil konstrukce, které editor nepodporuje, uložením v editoru o tyto změny přijdeš. Opravdu chceš pokračovat?","web.user.profile.about.from.html.to.plain.alert":"Změnou typu editace bez uložení přijdeš o všechny změny. Opravdu chceš pokračovat?","web.sortable.error.move":"Při přesunu pozic došlo k chybě. Stránka bude obnovena. Pokračovat?","web.preloader.loading":"Načítání...","web.modal.confirm.close":"Opravdu chceš zavřít okno? Možná máš neuložené změny.","web.forums.respond.cancel":"zrušit odpověď","web.ajax.default.error.message":"Omlouváme se, ale nastala chyba při zpracování.","web.ajax.resend.button":"Odeslat znovu","web.fileupload.preloader":"Načítám knihovnu, prosím o strpení...","web.selectize.plugin.remove.button.remove":"Odebrat"},"route":":Web:Film:Overview:default","isLoggedIn":false,"userId":null,"hooks":["InfoModal","ShowMore","HighlightByData","Confirm","StarRating","AutoSubmitForm"]}</script>
 
 		<div class="flash-message" data-ajax-prepend="true" id="snippet--flashes">
 			
@@ -1395,11 +1421,10 @@ Seriál se rozjíždí pozvolně. Dánská nemocnice na ,,kraji města“ - ve k
 
 <div id="slide_up" class="ad-pmg"></div>
 
+<script src="//static.pmgstatic.com/assets/utils-js/4617ef4e80f050d67c0ef7aa2eb7f9fb/scripts.min.js"></script>
 <script type="text/javascript">
-	window.addEventListener('load', function () {
-		CSFD.Ads.complete({"ball":{"page":2,"login":2,"film_id":71924,"film_type":12,"film_genre":[2,5,16,9],"film_origin":[34,44,123,193],"film_year":1994,"film_tags":[57,548],"film_creators":[3111,28966,94054,374472,110967,70314,32989,330359,8608,56972,204496,70901,33152,2567,154402,16702,216062,200085,33116,204502,53200,165418,154394,163780,233318,7814,207732,232181,219822,157,215879,235315,14684,79992,167982,55800,303716,329084,337871,347973,354418,355110,329350,279961,270175,376281,405615,405632,414114,427505],"site":"csfd.cz"},"b1":{"area":"leaderboard","size":"1000x210,2000x1400,1000x200,1000x210,970x210,998x200,750x200,750x100,970x90,728x90,branding_web"},"b2":{"area":"halfpage","size":"300x600,160x600"},"b3":{"area":"billboard","size":"1000x310,970x310,560x315,480x300,750x300,970x250,970x90,728x90"},"b4":{"area":"slide_up","size":"500x200,320x150,320x100,320x50,300x100,300x50"},"b5":{"area":"mobile_leaderboard","size":"320x100,320x50,300x100,300x50"},"b6":{"area":"mobile_square_1","size":"300x300,300x250,interscroller"},"b7":{"area":"mobile_square_2","size":"300x300,300x250,250x250"},"b8":{"area":"mobile_billboard","size":"300x300,300x250"}});
-		CSFD.Ads.setTServer("https://a.csfd.cz/csfd/tserver");
-	});
+	CSFDAds.complete({"ball":{"page":2,"login":2,"film_id":71924,"film_type":12,"film_genre":[2,5,16,9],"film_origin":[34,44,123,193],"film_year":1994,"film_tags":[57,548],"film_creators":[3111,28966,94054,374472,110967,70314,32989,330359,8608,56972,204496,70901,33152,2567,154402,16702,216062,200085,33116,204502,53200,165418,154394,163780,233318,7814,207732,232181,219822,157,215879,235315,14684,79992,167982,55800,303716,329084,337871,347973,354418,355110,329350,279961,270175,376281,405615,405632,414114,427505],"site":"csfd.cz"},"0":{"area":"leaderboard","size":"1000x210,2000x1400,1000x200,1000x210,970x210,998x200,750x200,750x100,970x90,728x90,branding_web"},"1":{"area":"halfpage","size":"300x600,160x600"},"2":{"area":"billboard","size":"1000x310,970x310,560x315,480x300,750x300,970x250,970x90,728x90"},"3":{"area":"slide_up","size":"970x310,970x250,950x200,750x300,750x200,728x90,500x200,320x150,320x100,320x50,300x100,300x50,slide_up"},"4":{"area":"mobile_leaderboard","size":"320x100,320x50,300x100,300x50"},"5":{"area":"mobile_square_1","size":"300x300,300x250,interscroller"},"6":{"area":"mobile_square_2","size":"300x300,300x250,250x250"},"7":{"area":"mobile_billboard","size":"300x300,300x250"}});
+	CSFDAds.setTServer("https://a.csfd.cz/csfd/tserver");
 </script>
 	</body>
 

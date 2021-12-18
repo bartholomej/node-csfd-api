@@ -34,12 +34,12 @@ describe('Live: Movie page', () => {
     const movie = await csfd.movie(10135);
     expect(movie.title).toEqual<string>('Forrest Gump');
     expect(movie.rating).toBeGreaterThan(90);
-    expect(movie.creators.directors[0].name).toEqual('Robert Zemeckis');
+    expect(movie.creators.directors[0]?.name).toEqual('Robert Zemeckis');
     expect(movie.origins[0]).toEqual<string>('USA');
   });
   test('Fetch `71924-kralovstvi` serial years', async () => {
     const movie = await csfd.movie(71924);
-    expect(movie.year).toEqual<string>('1994–1997');
+    expect(movie.year).toEqual<number>(1994);
     expect(movie.title).toEqual<string>('Království');
   });
 });

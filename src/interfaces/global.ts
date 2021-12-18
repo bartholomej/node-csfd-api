@@ -1,7 +1,7 @@
 export interface CSFDScreening {
   id: number;
   title: string;
-  year: number | string;
+  year: number;
   url: string;
   type: CSFDFilmTypes;
   /**

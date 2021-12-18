@@ -56,8 +56,14 @@ export const getRatingCount = (el: HTMLElement): number => {
   }
 };
 
-export const getYear = (el: HTMLElement): string | number => {
-  return el.querySelector('.origin span').innerText.replace(/[{()}]/g, '');
+export const getYear = (el: string): number => {
+  try {
+    const jsonLd = JSON.parse(el);
+    return +jsonLd.dateCreated;
+  } catch (error) {
+    console.error('node-csfd-api: Error parsing JSON-LD', error);
+    return null;
+  }
 };
 
 export const getDuration = (el: HTMLElement): number => {
@@ -115,12 +121,6 @@ export const getDescriptions = (el: HTMLElement): string[] => {
     ?.textContent.trim()
     .replace(/(\r\n|\n|\r|\t)/gm, '');
   return plot ? [plot] : [];
-};
-
-export const getDirectors = (el: HTMLElement): CSFDCreator[] => {
-  const creators = el.querySelectorAll('.creators span');
-  const directorsSpan = creators.filter((creator) => creator.attributes.itemprop === 'director')[0];
-  return (directorsSpan && parsePeople(directorsSpan)) || [];
 };
 
 export const parsePeople = (el: HTMLElement): CSFDCreator[] => {

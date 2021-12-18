@@ -4,7 +4,6 @@ import {
   getBoxMovies,
   getColorRating,
   getDescriptions,
-  getDirectors,
   getDuration,
   getGenres,
   getGroup,
@@ -36,7 +35,8 @@ export class MovieScraper {
     const pageClasses = movieHtml.querySelector('.page-content').classNames.split(' ');
     const asideNode = movieHtml.querySelector('.aside-movie-profile');
     const movieNode = movieHtml.querySelector('.main-movie-profile');
-    this.buildMovie(+movieId, movieNode, asideNode, pageClasses);
+    const jsonLd = movieHtml.querySelector('script[type="application/ld+json"]').innerText;
+    this.buildMovie(+movieId, movieNode, asideNode, pageClasses, jsonLd);
     return this.film;
   }
 
@@ -44,12 +44,13 @@ export class MovieScraper {
     movieId: number,
     el: HTMLElement,
     asideEl: HTMLElement,
-    pageClasses: string[]
+    pageClasses: string[],
+    jsonLd: string
   ) {
     this.film = {
       id: movieId,
       title: getTitle(el),
-      year: getYear(el),
+      year: getYear(jsonLd),
       duration: getDuration(el),
       descriptions: getDescriptions(el),
       genres: getGenres(el),
@@ -62,7 +63,7 @@ export class MovieScraper {
       titlesOther: getTitlesOther(el),
       poster: getPoster(el),
       creators: {
-        directors: getDirectors(el),
+        directors: getGroup(el, 'Režie'),
         writers: getGroup(el, 'Scénář'),
         cinematography: getGroup(el, 'Kamera'),
         music: getGroup(el, 'Hudba'),

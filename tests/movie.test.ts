@@ -4,7 +4,6 @@ import {
   getBoxMovies,
   getColorRating,
   getDescriptions,
-  getDirectors,
   getDuration,
   getGenres,
   getGroup,
@@ -37,6 +36,7 @@ const movieHtml = parse(movieMock);
 const pageClasses = movieHtml.querySelector('.page-content').classNames.split(' ');
 const asideNode = movieHtml.querySelector('.aside-movie-profile');
 const movieNode = movieHtml.querySelector('.main-movie-profile');
+const movieJsonLd = movieHtml.querySelector('script[type="application/ld+json"]').innerText;
 
 const movieHtmlBlank = parse(movieMockBlank);
 
@@ -45,6 +45,7 @@ const asideNodeBlank = movieHtmlBlank.querySelector('.aside-movie-profile');
 const movieNodeBlank: HTMLElement = movieHtmlBlank.querySelector('.main-movie-profile');
 
 const seriesHtml = parse(seriesMock);
+const seriesJsonLd = seriesHtml.querySelector('script[type="application/ld+json"]').innerText;
 
 const seriesNode: HTMLElement = seriesHtml.querySelector('.main-movie-profile');
 const asideNodeSeries = seriesHtml.querySelector('.aside-movie-profile');
@@ -102,14 +103,13 @@ describe('Get VOD', () => {
     const movie = getVods(asideNode);
     expect(movie).toEqual<CSFDVod[]>([
       { title: 'Aerovod', url: 'https://aerovod.cz/katalog/na-spatne-strane' },
-      { title: 'Voyo', url: 'https://voyo.nova.cz/filmy/4604-na-spatne-strane' },
       {
-        title: 'DVD',
-        url: 'https://filmy.heureka.cz/na-spatne-strane-dvd/#utm_source=csfd.cz&utm_medium=cooperation&utm_campaign=csfd_movies_feed'
+        title: 'iTunes',
+        url: 'https://itunes.apple.com/cz/movie/dragged-across-concrete/id1469983874'
       },
       {
-        title: 'Blu-ray',
-        url: 'https://filmy.heureka.cz/na-spatne-strane-bd/#utm_source=csfd.cz&utm_medium=cooperation&utm_campaign=csfd_movies_feed'
+        title: 'DVD',
+        url: 'https://www.martinus.cz/?uItem=619213'
       }
     ]);
   });
@@ -148,8 +148,8 @@ describe('Get titlesOther', () => {
       { country: 'USA', title: 'Dragged Across Concrete' },
       { country: 'Kanada', title: 'Dragged Across Concrete' },
       { country: 'Slovensko', title: 'Na zlej strane' },
-      { country: 'Austrálie', title: 'Dragged Across Concrete' },
-      { country: 'Velká Británie', title: 'Dragged Across Concrete' }
+      { country: 'Velká Británie', title: 'Dragged Across Concrete' },
+      { country: 'Austrálie', title: 'Dragged Across Concrete' }
     ]);
   });
   test('Titles Other Blank', () => {
@@ -206,12 +206,12 @@ describe('Get type', () => {
 
 describe('Get year', () => {
   test('Year', () => {
-    const movie = getYear(movieNode);
-    expect(movie).toEqual<string | number>('2018');
+    const movie = getYear(movieJsonLd);
+    expect(movie).toEqual<number>(2018);
   });
   test('Year Series', () => {
-    const movie = getYear(seriesNode);
-    expect(movie).toEqual<string | number>('1994–1997');
+    const movie = getYear(seriesJsonLd);
+    expect(movie).toEqual<number>(1994);
   });
 });
 
@@ -222,11 +222,12 @@ describe('Get rating count', () => {
   });
   test('Rating count', () => {
     const movie = getRatingCount(asideNodeSeries);
-    expect(movie).toBeGreaterThan(4471);
+    expect(movie).toBeGreaterThan(4450);
   });
+  // TODO get new blank movie
   test('Rating count blank', () => {
     const movie = getRatingCount(asideNodeBlank);
-    expect(movie).toEqual(null);
+    expect(movie).toEqual(1);
   });
 });
 
@@ -259,7 +260,7 @@ describe('Get ratings', () => {
 
 describe('Get people', () => {
   test('directors', () => {
-    const movie = getDirectors(movieNode);
+    const movie = getGroup(movieNode, 'Režie');
     expect(movie).toEqual<CSFDCreator[]>([
       {
         id: 87470,
