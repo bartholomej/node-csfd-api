@@ -1,14 +1,18 @@
 export const searchMock = `
 
+
 <!DOCTYPE html>
 <html lang="cs-CZ">
 	<head>
 		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <meta name="description" content="">
 
 <link rel="alternate" hreflang="cs" href="https://www.csfd.cz/hledat/?q=matrix">
 <link rel="alternate" hreflang="sk" href="https://www.csfd.sk/hladat/?q=matrix">
+
+<link rel="canonical" href="https://www.csfd.cz/hledat/?q=matrix">
 
 <meta property="og:site_name" content="csfd.cz">
 <meta property="og:url" content="https://www.csfd.cz/hledat/?q=matrix">
@@ -17,12 +21,13 @@ export const searchMock = `
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="https://www.csfd.cz/hledat/?q=matrix">
 
+
 		<title> Výsledky vyhledávání: "matrix" | ČSFD.cz </title>
-		<link rel="stylesheet" href="//static.pmgstatic.com/assets/web-css/8e49f3aabc7d17cd7e5b4cc5319cac01/styles.min.css">
-		<link rel="shortcut icon" href="//static.pmgstatic.com/assets/images/292e62762cdb5c95c2ae9578ee5e2b27/favicon.ico">
-		<link rel="apple-touch-icon" href="//static.pmgstatic.com/assets/images/292e62762cdb5c95c2ae9578ee5e2b27/apple-touch-icon.png">
-		<script src="//static.pmgstatic.com/assets/vendor/6da7737570ce810b30138c5c85a4f2fa/jquery.min.js"></script>
-		<script src="//static.pmgstatic.com/assets/web-js/23918c9477ddc1257b9a338e786174a9/scripts.min.js" defer></script>
+		<link rel="stylesheet" href="//static.pmgstatic.com/assets/web-css/1940c6510ace5bce4efa70ce723382d3/styles.min.css">
+		<link rel="shortcut icon" href="//static.pmgstatic.com/assets/images/c9bd6a26fa717816674d2078f60af950/favicon.ico">
+		<link rel="apple-touch-icon" href="//static.pmgstatic.com/assets/images/c9bd6a26fa717816674d2078f60af950/apple-touch-icon.png">
+		<script src="//static.pmgstatic.com/assets/vendor/d4bda16db4a0ccf1befc901969f0db63/jquery.min.js"></script>
+		<script src="//static.pmgstatic.com/assets/web-js/8d2e3450dfca13939cd3b07a655adc46/scripts.min.js" defer></script>
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap&subset=latin-ext">
 
@@ -31,7 +36,7 @@ export const searchMock = `
 	window.AdsObject = {};
 	window.sasUrl = "https://a.csfd.cz/csfd";
 </script>
-<script src="//assets.adobedtm.com/e949270ea86e/f1d67104c3f5/launch-5baa4d1acdaf.min.js" async></script>
+<script src="https://cdn.cpex.cz/cmp/v2/cpex-cmp.min.js"></script><script src="//assets.adobedtm.com/e949270ea86e/f1d67104c3f5/launch-5baa4d1acdaf.min.js" async></script>
 
 
 <script>
@@ -59,6 +64,7 @@ export const searchMock = `
 	</head>
 
 	<body id="top">
+
 
 		<div class="ad-wrapper">
 			<div id="leaderboard-wrapper">
@@ -137,74 +143,80 @@ export const searchMock = `
 				</div>
 
 				<div class="top-nav">
-<nav>
-	<ul class="top-tabs">
-		<li class="tab-title">
+<nav class="tab-nav">
+	<ul class="tab-nav-list">
+		<li class="tab-nav-item">
 			<a href="/novinky/">Novinky</a>
 		</li>
-		<li class="tab-title">
+		<li class="tab-nav-item">
 			<a href="/televize/">Televize</a>
 		</li>
-		<li class="tab-title">
+		<li class="tab-nav-item">
 			<a href="/kino/?period=today">Kino</a>
 		</li>
-		<li class="tab-title">
-			<a href="/vod/?year=2021&amp;month=6">VOD<span class="top-nav-new">NEW</span></a>
+		<li class="tab-nav-item">
+			<a href="/vod/?year=2021&amp;month=12">VOD<span class="top-nav-new">NEW</span></a>
 		</li>
-		<li class="tab-title">
+		<li class="tab-nav-item">
 			<a href="/zebricky/filmy/nejlepsi/">Žebříčky</a>
 		</li>
-		<li class="tab-title">
+		<li class="tab-nav-item">
 			<a href="/bluray/">Blu-ray</a>
 		</li>
-		<li class="tab-title">
+		<li class="tab-nav-item">
 			<a href="/dvd/">DVD</a>
 		</li>
-		<li class="tab-title">
+		<li class="tab-nav-item">
 			<a href="/oceneni/">Ocenění</a>
 		</li>
-		<li class="tab-title">
+		<li class="tab-nav-item">
 			<a href="/uzivatele/">Uživatelé</a>
 		</li>
-		<li class="tab-title">
+		<li class="tab-nav-item">
 			<a href="/diskuze/">Diskuze</a>
 		</li>
+		<li class="tab-nav-item yellow">
+			<a href="/cesky-lev/">Český lev</a>
+		</li>
 	</ul>
-	<ul class="top-nav-more">
+	<ul class="tab-nav-more">
 		<li>
-			<a class="top-nav-more-btn" href="#dropdown-menu-1" rel="dropdownContent">
+			<a class="tab-nav-more-btn" href="#dropdown-menu-1" rel="dropdownContent">
 				další <i class="icon icon-arrow-down"></i>
 			</a>
 			<ul id="dropdown-menu-1" class="dropdown-content">
-				<li class="tab-title">
+				<li class="tab-nav-item">
 					<a href="/novinky/">Novinky</a>
 				</li>
-				<li class="tab-title">
+				<li class="tab-nav-item">
 					<a href="/televize/">Televize</a>
 				</li>
-				<li class="tab-title">
+				<li class="tab-nav-item">
 					<a href="/kino/?period=today">Kino</a>
 				</li>
-				<li class="tab-title">
-					<a href="/vod/?year=2021&amp;month=6">VOD<span class="top-nav-new">NEW</span></a>
+				<li class="tab-nav-item">
+					<a href="/vod/?year=2021&amp;month=12">VOD<span class="top-nav-new">NEW</span></a>
 				</li>
-				<li class="tab-title">
+				<li class="tab-nav-item">
 					<a href="/zebricky/filmy/nejlepsi/">Žebříčky</a>
 				</li>
-				<li class="tab-title">
+				<li class="tab-nav-item">
 					<a href="/bluray/">Blu-ray</a>
 				</li>
-				<li class="tab-title">
+				<li class="tab-nav-item">
 					<a href="/dvd/">DVD</a>
 				</li>
-				<li class="tab-title">
+				<li class="tab-nav-item">
 					<a href="/oceneni/">Ocenění</a>
 				</li>
-				<li class="tab-title">
+				<li class="tab-nav-item">
 					<a href="/uzivatele/">Uživatelé</a>
 				</li>
-				<li class="tab-title">
+				<li class="tab-nav-item">
 					<a href="/diskuze/">Diskuze</a>
+				</li>
+				<li class="tab-nav-item yellow">
+					<a href="/cesky-lev/">Český lev</a>
 				</li>
 			</ul>
 		</li>
@@ -230,11 +242,11 @@ export const searchMock = `
 <div class="column column-minus-300">
 	<div class="row">
 		<div class="column column-60">
-			<section class="box striped-articles main-movies">
+			<section class="box main-movies">
 				<header class="box-header">
 					<h2>Filmy</h2>
 				</header>
-				<div class="box-content">
+				<div class="box-content box-content-striped-articles">
 
 
 					<div data-ajax-append="true" id="snippet--containerFilms">
@@ -266,25 +278,26 @@ export const searchMock = `
 	</article>
 	<article class="article article-poster-60">
 		<figure class="article-img">
-			<a title="Matrix" href="/film/799868-matrix/">
-				<img alt="Matrix" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" loading="lazy" class="empty-image" width="60" height="85">
+			<a title="Matrix Revolutions" href="/film/9498-matrix-revolutions/">
+				<img alt="Matrix Revolutions" src="//image.pmgstatic.com/cache/resized/w60h85/files/images/film/posters/164/947/164947139_d7f09f.jpg" loading="lazy" width="60" height="83" srcset="//image.pmgstatic.com/cache/resized/w60h85/files/images/film/posters/164/947/164947139_d7f09f.jpg 1x, //image.pmgstatic.com/cache/resized/w120h170/files/images/film/posters/164/947/164947139_d7f09f.jpg 2x, //image.pmgstatic.com/cache/resized/w180h255/files/images/film/posters/164/947/164947139_d7f09f.jpg 3x">
 			</a>
 		</figure>
 		<div class="article-content">
 			<header class="article-header">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/799868-matrix/" class="film-title-name">Matrix</a> <span class="film-title-info"><span class="info">(2019)</span> <span class="info">(divadelní záznam)</span></span></h3>			</header>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/9498-matrix-revolutions/" class="film-title-name">Matrix Revolutions</a> <span class="film-title-info"><span class="info">(2003)</span></span></h3>			</header>
 
-			<p><span class="info">Slovensko, Komedie</span></p>
+			<p><span class="info">USA / Austrálie, Akční / Sci-Fi</span></p>
 
 				<p class="director">
 					Režie:
-						<a href="/tvurce/55457-karol-vosatko/">Karol Vosátko</a>
+						<a href="/tvurce/3112-lilly-wachowski/">Lilly Wachowski</a>,
+						<a href="/tvurce/3113-lana-wachowski/">Lana Wachowski</a>
 				</p>
 
 				<p class="actors">
 					Hrají:
-						<a href="/tvurce/986-miroslav-noga/">Miroslav Noga</a>,
-						<a href="/tvurce/92294-renata-rynikova/">Renáta Ryníková</a>
+						<a href="/tvurce/46-keanu-reeves/">Keanu Reeves</a>,
+						<a href="/tvurce/47-laurence-fishburne/">Laurence Fishburne</a>
 				</p>
 		</div>
 	</article>
@@ -298,7 +311,7 @@ export const searchMock = `
 			<header class="article-header">
 <h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/9497-matrix-reloaded/" class="film-title-name">Matrix Reloaded</a> <span class="film-title-info"><span class="info">(2003)</span></span></h3>			</header>
 
-			<p><span class="info">USA, Austrálie, Akční / Sci-Fi</span></p>
+			<p><span class="info">USA / Austrálie, Akční / Sci-Fi</span></p>
 
 				<p class="director">
 					Režie:
@@ -315,26 +328,26 @@ export const searchMock = `
 	</article>
 	<article class="article article-poster-60">
 		<figure class="article-img">
-			<a title="Matrix Revolutions" href="/film/9498-matrix-revolutions/">
-				<img alt="Matrix Revolutions" src="//image.pmgstatic.com/cache/resized/w60h85/files/images/film/posters/164/947/164947139_d7f09f.jpg" loading="lazy" width="60" height="83" srcset="//image.pmgstatic.com/cache/resized/w60h85/files/images/film/posters/164/947/164947139_d7f09f.jpg 1x, //image.pmgstatic.com/cache/resized/w120h170/files/images/film/posters/164/947/164947139_d7f09f.jpg 2x, //image.pmgstatic.com/cache/resized/w180h255/files/images/film/posters/164/947/164947139_d7f09f.jpg 3x">
+			<a title="The Matrix Resurrections" href="/film/499395-the-matrix-resurrections/">
+				<img alt="The Matrix Resurrections" src="//image.pmgstatic.com/cache/resized/w60h85/files/images/film/posters/165/852/165852808_71b2e1.jpg" loading="lazy" width="57" height="85" srcset="//image.pmgstatic.com/cache/resized/w60h85/files/images/film/posters/165/852/165852808_71b2e1.jpg 1x, //image.pmgstatic.com/cache/resized/w120h170/files/images/film/posters/165/852/165852808_71b2e1.jpg 2x, //image.pmgstatic.com/cache/resized/w180h255/files/images/film/posters/165/852/165852808_71b2e1.jpg 3x">
 			</a>
 		</figure>
 		<div class="article-content">
 			<header class="article-header">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/9498-matrix-revolutions/" class="film-title-name">Matrix Revolutions</a> <span class="film-title-info"><span class="info">(2003)</span></span></h3>			</header>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/499395-the-matrix-resurrections/" class="film-title-name">The Matrix Resurrections</a> <span class="film-title-info"><span class="info">(2021)</span></span></h3>				<p class="search-name">(The Matrix 4)</p>
+			</header>
 
-			<p><span class="info">USA, Austrálie, Akční / Sci-Fi</span></p>
+			<p><span class="info">USA, Akční / Sci-Fi</span></p>
 
 				<p class="director">
 					Režie:
-						<a href="/tvurce/3112-lilly-wachowski/">Lilly Wachowski</a>,
 						<a href="/tvurce/3113-lana-wachowski/">Lana Wachowski</a>
 				</p>
 
 				<p class="actors">
 					Hrají:
 						<a href="/tvurce/46-keanu-reeves/">Keanu Reeves</a>,
-						<a href="/tvurce/47-laurence-fishburne/">Laurence Fishburne</a>
+						<a href="/tvurce/101-carrie-anne-moss/">Carrie-Anne Moss</a>
 				</p>
 		</div>
 	</article>
@@ -370,7 +383,8 @@ export const searchMock = `
 		</figure>
 		<div class="article-content">
 			<header class="article-header">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/40940-matrix-hunter/" class="film-title-name">Matrix hunter</a> <span class="film-title-info"><span class="info">(2004)</span></span></h3>			</header>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/40940-matrix-hunter/" class="film-title-name">Matrix hunter</a> <span class="film-title-info"><span class="info">(2004)</span></span></h3>				<p class="search-name">(Matrix Hunter)</p>
+			</header>
 
 			<p><span class="info">Singapur, Sci-Fi / Akční</span></p>
 
@@ -384,6 +398,25 @@ export const searchMock = `
 						<a href="/tvurce/67747-genevieve-o-reilly/">Genevieve O'Reilly</a>,
 						<a href="/tvurce/294809-luoyong-wang/">Luoyong Wang</a>
 				</p>
+		</div>
+	</article>
+	<article class="article article-poster-60">
+		<figure class="article-img">
+			<a title="Matrix III" href="/film/230996-matrix-iii/">
+				<img alt="Matrix III" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" loading="lazy" class="empty-image" width="60" height="85">
+			</a>
+		</figure>
+		<div class="article-content">
+			<header class="article-header">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/230996-matrix-iii/" class="film-title-name">Matrix III</a> <span class="film-title-info"><span class="info">(1972)</span></span></h3>			</header>
+
+			<p><span class="info">USA, Krátkometrážní / Animovaný</span></p>
+
+				<p class="director">
+					Režie:
+						<a href="/tvurce/33523-john-whitney-sr/">John Whitney Sr.</a>
+				</p>
+
 		</div>
 	</article>
 
@@ -400,11 +433,11 @@ export const searchMock = `
 <div id="mobile_square_1" class="ad-pmg" style="height: 300px;"></div>
 			</div>
 
-			<section class="box striped-articles main-series">
+			<section class="box main-series">
 				<header class="box-header">
 					<h2>Seriály</h2>
 				</header>
-				<div class="box-content">
+				<div class="box-content box-content-striped-articles">
 
 
 
@@ -417,7 +450,7 @@ export const searchMock = `
 		</figure>
 		<div class="article-content">
 			<header class="article-header">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/72014-matrix/" class="film-title-name">Matrix</a> <span class="film-title-info"><span class="info">(1993)</span> <span class="info">(TV seriál)</span></span></h3>			</header>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/72014-matrix/" class="film-title-name">Matrix</a> <span class="film-title-info"><span class="info">(1993)</span> <span class="info">(seriál)</span></span></h3>			</header>
 
 			<p><span class="info">Kanada, Akční / Drama</span></p>
 
@@ -436,51 +469,66 @@ export const searchMock = `
 	</article>
 	<article class="article article-poster-60">
 		<figure class="article-img">
-			<a title="Wynonna Earp - Gone as a Girl Can Get" href="/film/430529-wynonna-earp/516053-gone-as-a-girl-can-get/">
-				<img alt="Wynonna Earp - Gone as a Girl Can Get" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" loading="lazy" class="empty-image" width="60" height="85">
+			<a title="Situace: Ohrožení" href="/film/135819-situace-ohrozeni/">
+				<img alt="Situace: Ohrožení" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" loading="lazy" class="empty-image" width="60" height="85">
 			</a>
 		</figure>
 		<div class="article-content">
 			<header class="article-header">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/430529-wynonna-earp/516053-gone-as-a-girl-can-get/" class="film-title-name">Wynonna Earp - Gone as a Girl Can Get</a> <span class="film-title-info"><span class="info">(2017)</span> <span class="info">(epizoda)</span></span></h3>				<p class="search-name">(Matrix)</p>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/135819-situace-ohrozeni/" class="film-title-name">Situace: Ohrožení</a> <span class="film-title-info"><span class="info">(2003)</span> <span class="info">(seriál)</span></span></h3>				<p class="search-name">(Matrix: Možná hrozba)</p>
 			</header>
 
-			<p><span class="info">USA, Kanada, Akční / Drama</span></p>
+			<p><span class="info">USA, Drama / Thriller</span></p>
 
 				<p class="director">
 					Režie:
-						<a href="/tvurce/8659-paolo-barzman/">Paolo Barzman</a>
+						<a href="/tvurce/20640-david-grossman/">David Grossman</a>,
+						<a href="/tvurce/13285-larry-shaw/">Larry Shaw</a>
 				</p>
 
 				<p class="actors">
 					Hrají:
-						<a href="/tvurce/177456-melanie-scrofano/">Melanie Scrofano</a>,
-						<a href="/tvurce/162762-shamier-anderson/">Shamier Anderson</a>
+						<a href="/tvurce/5907-kelly-rutherford/">Kelly Rutherford</a>,
+						<a href="/tvurce/47156-will-lyman/">Will Lyman</a>
 				</p>
 		</div>
 	</article>
 	<article class="article article-poster-60">
 		<figure class="article-img">
-			<a title="Broad City - The Matrix" href="/film/364687-broad-city/554555-the-matrix/">
-				<img alt="Broad City - The Matrix" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" loading="lazy" class="empty-image" width="60" height="85">
+			<a title="Escape the Matrix" href="/film/999565-escape-the-matrix/">
+				<img alt="Escape the Matrix" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" loading="lazy" class="empty-image" width="60" height="85">
 			</a>
 		</figure>
 		<div class="article-content">
 			<header class="article-header">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/364687-broad-city/554555-the-matrix/" class="film-title-name">Broad City - The Matrix</a> <span class="film-title-info"><span class="info">(2015)</span> <span class="info">(epizoda)</span></span></h3>			</header>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/999565-escape-the-matrix/" class="film-title-name">Escape the Matrix</a> <span class="film-title-info"><span class="info">(2020)</span> <span class="info">(seriál)</span></span></h3>			</header>
 
-			<p><span class="info">USA, Komedie</span></p>
+			<p><span class="info">Velká Británie, Dokumentární</span></p>
 
-				<p class="director">
-					Režie:
-						<a href="/tvurce/236117-john-lee/">John Lee</a>
-				</p>
 
 				<p class="actors">
 					Hrají:
-						<a href="/tvurce/107825-ilana-glazer/">Ilana Glazer</a>,
-						<a href="/tvurce/107827-abbi-jacobson/">Abbi Jacobson</a>
+						<a href="/tvurce/61834-david-icke/">David Icke</a>
 				</p>
+		</div>
+	</article>
+	<article class="article article-poster-60">
+		<figure class="article-img">
+			<a title="A Glitch in the Matrix" href="/film/995064-a-glitch-in-the-matrix/">
+				<img alt="A Glitch in the Matrix" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" loading="lazy" class="empty-image" width="60" height="85">
+			</a>
+		</figure>
+		<div class="article-content">
+			<header class="article-header">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/995064-a-glitch-in-the-matrix/" class="film-title-name">A Glitch in the Matrix</a> <span class="film-title-info"><span class="info">(2021)</span> <span class="info">(seriál)</span></span></h3>			</header>
+
+			<p><span class="info">USA, Dokumentární</span></p>
+
+				<p class="director">
+					Režie:
+						<a href="/tvurce/645570-larry-stone/">Larry Stone</a>
+				</p>
+
 		</div>
 	</article>
 	<article class="article article-poster-60">
@@ -504,31 +552,6 @@ export const searchMock = `
 					Hrají:
 						<a href="/tvurce/70932-andrej-babis/">Andrej Babiš</a>,
 						<a href="/tvurce/473-jean-reno/">Jean Reno</a>
-				</p>
-		</div>
-	</article>
-	<article class="article article-poster-60">
-		<figure class="article-img">
-			<a title="Simpsonovi - Vševidoucí brýle" href="/film/72489-simpsonovi/476363-vsevidouci-bryle/">
-				<img alt="Simpsonovi - Vševidoucí brýle" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" loading="lazy" class="empty-image" width="60" height="85">
-			</a>
-		</figure>
-		<div class="article-content">
-			<header class="article-header">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/72489-simpsonovi/476363-vsevidouci-bryle/" class="film-title-name">Simpsonovi - Vševidoucí brýle</a> <span class="film-title-info"><span class="info">(2014)</span> <span class="info">(epizoda)</span></span></h3>				<p class="search-name">(Enter the Matrix)</p>
-			</header>
-
-			<p><span class="info">USA, Animovaný / Komedie</span></p>
-
-				<p class="director">
-					Režie:
-						<a href="/tvurce/291287-lance-kramer/">Lance Kramer</a>
-				</p>
-
-				<p class="actors">
-					Hrají:
-						<a href="/tvurce/11255-dan-castellaneta/">Dan Castellaneta</a>,
-						<a href="/tvurce/11585-julie-kavner/">Julie Kavner</a>
 				</p>
 		</div>
 	</article>
@@ -559,27 +582,26 @@ export const searchMock = `
 	</article>
 	<article class="article article-poster-60">
 		<figure class="article-img">
-			<a title="Situace: Ohrožení" href="/film/135819-situace-ohrozeni/">
-				<img alt="Situace: Ohrožení" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" loading="lazy" class="empty-image" width="60" height="85">
+			<a title="Wynonna Earp - Gone as a Girl Can Get" href="/film/430529-wynonna-earp/516053-gone-as-a-girl-can-get/">
+				<img alt="Wynonna Earp - Gone as a Girl Can Get" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" loading="lazy" class="empty-image" width="60" height="85">
 			</a>
 		</figure>
 		<div class="article-content">
 			<header class="article-header">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/135819-situace-ohrozeni/" class="film-title-name">Situace: Ohrožení</a> <span class="film-title-info"><span class="info">(2003)</span> <span class="info">(TV seriál)</span></span></h3>				<p class="search-name">(Threat Matrix)</p>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/430529-wynonna-earp/516053-gone-as-a-girl-can-get/" class="film-title-name">Wynonna Earp - Gone as a Girl Can Get</a> <span class="film-title-info"><span class="info">(2017)</span> <span class="info">(epizoda)</span></span></h3>				<p class="search-name">(Matrix)</p>
 			</header>
 
-			<p><span class="info">USA, Drama / Thriller</span></p>
+			<p><span class="info">USA / Kanada, Akční / Drama</span></p>
 
 				<p class="director">
 					Režie:
-						<a href="/tvurce/20640-david-grossman/">David Grossman</a>,
-						<a href="/tvurce/13285-larry-shaw/">Larry Shaw</a>
+						<a href="/tvurce/8659-paolo-barzman/">Paolo Barzman</a>
 				</p>
 
 				<p class="actors">
 					Hrají:
-						<a href="/tvurce/5907-kelly-rutherford/">Kelly Rutherford</a>,
-						<a href="/tvurce/47156-will-lyman/">Will Lyman</a>
+						<a href="/tvurce/177456-melanie-scrofano/">Melanie Scrofano</a>,
+						<a href="/tvurce/162762-shamier-anderson/">Shamier Anderson</a>
 				</p>
 		</div>
 	</article>
@@ -598,15 +620,44 @@ export const searchMock = `
 			</div>
 		</div>
 		<div class="column column-40">
-			<section class="box striped-articles main-authors">
+			<section class="box main-authors">
 				<header class="box-header">
 					<h2>Tvůrci</h2>
 				</header>
-				<div class="box-content">
+				<div class="box-content box-content-striped-articles">
 
 
 
 					<div data-ajax-append="true" id="snippet--containerCreators">
+						<article class="article article-user-45">
+							<figure class="article-img">
+								<a title="Martin Kubíček" href="/tvurce/91360-martin-kubicek/">
+									<img alt="Martin Kubíček" src="//image.pmgstatic.com/cache/resized/w45h60crop/files/images/creator/photos/158/381/158381769_57dfe6.jpg" loading="lazy" width="45" height="60" srcset="//image.pmgstatic.com/cache/resized/w45h60crop/files/images/creator/photos/158/381/158381769_57dfe6.jpg 1x, //image.pmgstatic.com/cache/resized/w90h120crop/files/images/creator/photos/158/381/158381769_57dfe6.jpg 2x, //image.pmgstatic.com/cache/resized/w135h180crop/files/images/creator/photos/158/381/158381769_57dfe6.jpg 3x">
+								</a>
+							</figure>
+							<div class="article-content">
+								<header class="article-header">
+									<h3 class="user-title"><a href="/tvurce/91360-martin-kubicek/">Martin Kubíček</a></h3>
+									<p class="search-name">(Metrix Steel)</p>
+								</header>
+
+								<p><span class="info">účinkující / herec / režisér</span></p>
+							</div>
+						</article>
+						<article class="article article-user-45">
+							<figure class="article-img">
+								<a title="Eatrix Grubeck-Loebenstein" href="/tvurce/451317-eatrix-grubeck-loebenstein/">
+									<img alt="Eatrix Grubeck-Loebenstein" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" loading="lazy" class="empty-image" width="45" height="60">
+								</a>
+							</figure>
+							<div class="article-content">
+								<header class="article-header">
+									<h3 class="user-title"><a href="/tvurce/451317-eatrix-grubeck-loebenstein/">Eatrix Grubeck-Loebenstein</a></h3>
+								</header>
+
+								<p><span class="info">účinkující</span></p>
+							</div>
+						</article>
 						<article class="article article-user-45">
 							<figure class="article-img">
 								<a title="Virginia Mataix" href="/tvurce/166949-virginia-mataix/">
@@ -649,49 +700,6 @@ export const searchMock = `
 								<p><span class="info">herec</span></p>
 							</div>
 						</article>
-						<article class="article article-user-45">
-							<figure class="article-img">
-								<a title="John Mantrixx" href="/tvurce/550422-john-mantrixx/">
-									<img alt="John Mantrixx" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" loading="lazy" class="empty-image" width="45" height="60">
-								</a>
-							</figure>
-							<div class="article-content">
-								<header class="article-header">
-									<h3 class="user-title"><a href="/tvurce/550422-john-mantrixx/">John Mantrixx</a></h3>
-								</header>
-
-								<p><span class="info">kameraman / herec / producent</span></p>
-							</div>
-						</article>
-						<article class="article article-user-45">
-							<figure class="article-img">
-								<a title="Martin Kubíček" href="/tvurce/91360-martin-kubicek/">
-									<img alt="Martin Kubíček" src="//image.pmgstatic.com/cache/resized/w45h60/files/images/creator/photos/158/381/158381769_57dfe6.jpg" loading="lazy" width="45" height="58" srcset="//image.pmgstatic.com/cache/resized/w45h60/files/images/creator/photos/158/381/158381769_57dfe6.jpg 1x, //image.pmgstatic.com/cache/resized/w90h120/files/images/creator/photos/158/381/158381769_57dfe6.jpg 2x, //image.pmgstatic.com/cache/resized/w135h180/files/images/creator/photos/158/381/158381769_57dfe6.jpg 3x">
-								</a>
-							</figure>
-							<div class="article-content">
-								<header class="article-header">
-									<h3 class="user-title"><a href="/tvurce/91360-martin-kubicek/">Martin Kubíček</a></h3>
-									<p class="search-name">(Metrix Steel)</p>
-								</header>
-
-								<p><span class="info">režisér / herec / účinkující</span></p>
-							</div>
-						</article>
-						<article class="article article-user-45">
-							<figure class="article-img">
-								<a title="Eatrix Grubeck-Loebenstein" href="/tvurce/451317-eatrix-grubeck-loebenstein/">
-									<img alt="Eatrix Grubeck-Loebenstein" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" loading="lazy" class="empty-image" width="45" height="60">
-								</a>
-							</figure>
-							<div class="article-content">
-								<header class="article-header">
-									<h3 class="user-title"><a href="/tvurce/451317-eatrix-grubeck-loebenstein/">Eatrix Grubeck-Loebenstein</a></h3>
-								</header>
-
-								<p><span class="info">účinkující</span></p>
-							</div>
-						</article>
 					</div>
 
 					<div class="box-content-more-gray" id="snippet--moreCreators">
@@ -699,47 +707,19 @@ export const searchMock = `
 				</div>
 			</section>
 
-			<section class="box striped-articles main-users">
+			<section class="box main-users">
 				<header class="box-header">
 					<h2>Uživatelé</h2>
 				</header>
-				<div class="box-content">
+				<div class="box-content box-content-striped-articles">
 
 
 
 					<div data-ajax-append="true" id="snippet--containerUsers">
 						<article class="article article-user-45">
 							<figure class="article-img">
-								<a title="matrix" href="/uzivatel/615105-matrix/">
-									<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" loading="lazy" class="empty-image" width="45" height="60">
-								</a>
-							</figure>
-							<div class="article-content">
-								<header class="article-header">
-<h3 class="user-title"><a href="/uzivatel/615105-matrix/" class="user-title-name">matrix</a></h3>								</header>
-								<p>
-									0 bodů
-								</p>
-							</div>
-						</article>
-						<article class="article article-user-45">
-							<figure class="article-img">
-								<a title="Matrixx" href="/uzivatel/567240-matrixx/">
-									<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" loading="lazy" class="empty-image" width="45" height="60">
-								</a>
-							</figure>
-							<div class="article-content">
-								<header class="article-header">
-<h3 class="user-title"><a href="/uzivatel/567240-matrixx/" class="user-title-name">Matrixx</a></h3>								</header>
-								<p>
-									0 bodů
-								</p>
-							</div>
-						</article>
-						<article class="article article-user-45">
-							<figure class="article-img">
 								<a title="Matrix44" href="/uzivatel/100416-matrix44/">
-									<img src="//image.pmgstatic.com/cache/resized/w45h60/files/images/user/avatars/000/327/327230_b48a6e.jpg" loading="lazy" width="45" height="60" srcset="//image.pmgstatic.com/cache/resized/w45h60/files/images/user/avatars/000/327/327230_b48a6e.jpg 1x">
+									<img alt="Matrix44" src="//image.pmgstatic.com/cache/resized/w45h60crop/files/images/user/avatars/000/327/327230_b48a6e.jpg" loading="lazy" width="45" height="60" srcset="//image.pmgstatic.com/cache/resized/w45h60crop/files/images/user/avatars/000/327/327230_b48a6e.jpg 1x">
 								</a>
 							</figure>
 							<div class="article-content">
@@ -756,7 +736,7 @@ export const searchMock = `
 						<article class="article article-user-45">
 							<figure class="article-img">
 								<a title="The matrix" href="/uzivatel/265017-the-matrix/">
-									<img src="//image.pmgstatic.com/cache/resized/w45h60/files/images/user/avatars/160/991/160991965_f10d9a.jpg" loading="lazy" width="44" height="60" srcset="//image.pmgstatic.com/cache/resized/w45h60/files/images/user/avatars/160/991/160991965_f10d9a.jpg 1x, //image.pmgstatic.com/cache/resized/w90h120/files/images/user/avatars/160/991/160991965_f10d9a.jpg 2x, //image.pmgstatic.com/cache/resized/w135h180/files/images/user/avatars/160/991/160991965_f10d9a.jpg 3x">
+									<img alt="The matrix" src="//image.pmgstatic.com/cache/resized/w45h60crop/files/images/user/avatars/160/991/160991965_f10d9a.jpg" loading="lazy" width="45" height="60" srcset="//image.pmgstatic.com/cache/resized/w45h60crop/files/images/user/avatars/160/991/160991965_f10d9a.jpg 1x, //image.pmgstatic.com/cache/resized/w90h120crop/files/images/user/avatars/160/991/160991965_f10d9a.jpg 2x, //image.pmgstatic.com/cache/resized/w135h180crop/files/images/user/avatars/160/991/160991965_f10d9a.jpg 3x">
 								</a>
 							</figure>
 							<div class="article-content">
@@ -772,13 +752,16 @@ export const searchMock = `
 						</article>
 						<article class="article article-user-45">
 							<figure class="article-img">
-								<a title="MATRiX477" href="/uzivatel/474344-matrix477/">
-									<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" loading="lazy" class="empty-image" width="45" height="60">
+								<a title="Matrix.cze" href="/uzivatel/730948-matrix-cze/">
+									<img alt="Matrix.cze" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" loading="lazy" class="empty-image" width="45" height="60">
 								</a>
 							</figure>
 							<div class="article-content">
 								<header class="article-header">
-<h3 class="user-title"><a href="/uzivatel/474344-matrix477/" class="user-title-name">MATRiX477</a></h3>								</header>
+<h3 class="user-title"><a href="/uzivatel/730948-matrix-cze/" class="user-title-name">Matrix.cze</a></h3>								</header>
+								<p class="user-real-name">
+									Jaroslav Čumpl
+								</p>
 								<p>
 									0 bodů
 								</p>
@@ -786,13 +769,13 @@ export const searchMock = `
 						</article>
 						<article class="article article-user-45">
 							<figure class="article-img">
-								<a title="matrixus" href="/uzivatel/397157-matrixus/">
-									<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" loading="lazy" class="empty-image" width="45" height="60">
+								<a title="matrix123" href="/uzivatel/779151-matrix123/">
+									<img alt="matrix123" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" loading="lazy" class="empty-image" width="45" height="60">
 								</a>
 							</figure>
 							<div class="article-content">
 								<header class="article-header">
-<h3 class="user-title"><a href="/uzivatel/397157-matrixus/" class="user-title-name">matrixus</a></h3>								</header>
+<h3 class="user-title"><a href="/uzivatel/779151-matrix123/" class="user-title-name">matrix123</a></h3>								</header>
 								<p>
 									0 bodů
 								</p>
@@ -800,13 +783,41 @@ export const searchMock = `
 						</article>
 						<article class="article article-user-45">
 							<figure class="article-img">
-								<a title="MatrixHK" href="/uzivatel/27133-matrixhk/">
-									<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" loading="lazy" class="empty-image" width="45" height="60">
+								<a title="matrixed258" href="/uzivatel/405261-matrixed258/">
+									<img alt="matrixed258" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" loading="lazy" class="empty-image" width="45" height="60">
 								</a>
 							</figure>
 							<div class="article-content">
 								<header class="article-header">
-<h3 class="user-title"><a href="/uzivatel/27133-matrixhk/" class="user-title-name">MatrixHK</a></h3>								</header>
+<h3 class="user-title"><a href="/uzivatel/405261-matrixed258/" class="user-title-name">matrixed258</a></h3>								</header>
+								<p>
+									0 bodů
+								</p>
+							</div>
+						</article>
+						<article class="article article-user-45">
+							<figure class="article-img">
+								<a title="MatrixCZ" href="/uzivatel/674124-matrixcz/">
+									<img alt="MatrixCZ" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" loading="lazy" class="empty-image" width="45" height="60">
+								</a>
+							</figure>
+							<div class="article-content">
+								<header class="article-header">
+<h3 class="user-title"><a href="/uzivatel/674124-matrixcz/" class="user-title-name">MatrixCZ</a></h3>								</header>
+								<p>
+									0 bodů
+								</p>
+							</div>
+						</article>
+						<article class="article article-user-45">
+							<figure class="article-img">
+								<a title="matrix10" href="/uzivatel/438962-matrix10/">
+									<img alt="matrix10" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" loading="lazy" class="empty-image" width="45" height="60">
+								</a>
+							</figure>
+							<div class="article-content">
+								<header class="article-header">
+<h3 class="user-title"><a href="/uzivatel/438962-matrix10/" class="user-title-name">matrix10</a></h3>								</header>
 								<p>
 									0 bodů
 								</p>
@@ -865,7 +876,7 @@ export const searchMock = `
 						<ul>
 								<li><a href="/prihlaseni/">Přihlášení</a></li>
 								<li><a href="/registrace/">Registrace</a></li>
-							<li><a href="/vyvojari/">Pracuj pro nás</a></li>
+							<li><a href="/vyvojari/">Pracuj s námi</a></li>
 							<li><a href="/napis-nam/">Napiš nám</a></li>
 						</ul>
 					</div>
@@ -885,8 +896,13 @@ export const searchMock = `
 				<div class="footer-content-right">
 					<div class="footer-right-social">
 						<h3>Social</h3>
-						<a href="https://www.facebook.com/www.CSFD.cz/" class="btn-social" target="_blank"><i class="icon icon-facebook"></i></a>
-						<a href="https://www.instagram.com/csfd.cz/" class="btn-social" target="_blank"><i class="icon icon-instagram"></i></a>
+						<a href="https://www.facebook.com/www.CSFD.cz/" class="btn-social" target="_blank" rel="noreferrer"><i class="icon icon-facebook"></i></a>
+						<a href="https://www.instagram.com/csfd.cz/" class="btn-social" target="_blank" rel="noreferrer"><i class="icon icon-instagram"></i></a>
+					</div>
+					<div class="footer-right-app">
+						<h3>Mobilní aplikace</h3>
+						<a href="https://apps.apple.com/cz/app/čsfd-web/id1552901865#?platform=iphone" class="btn-app-store" target="_blank"><img alt="ČSFD Web | App Store" src="//static.pmgstatic.com/assets/images/c9bd6a26fa717816674d2078f60af950/appstore.svg"></a>
+						<a href="https://play.google.com/store/apps/details?id=cz.csfd.lite" class="btn-google-play" target="_blank"><img alt="ČSFD Web | Google Play" src="//static.pmgstatic.com/assets/images/c9bd6a26fa717816674d2078f60af950/googleplay.svg"></a>
 					</div>
 					<div class="site-info">
 						<p>Česko-Slovenská filmová databáze</p>
@@ -899,7 +915,7 @@ export const searchMock = `
 		</footer>
 		
 
-		<script type="text/json" id="js-common-config">{"country":1,"domain":"csfd.cz","host":"www.csfd.cz","userLanguageId":1,"hooks":["AutoSubmitForm"],"dictionary":{"web.autocomplete.film.header":"Filmy","web.autocomplete.film.more.link":"Všechny filmy","web.autocomplete.series.header":"Seriály","web.autocomplete.series.more.link":"Všechny seriály","web.autocomplete.creator.header":"Tvůrci","web.autocomplete.creator.more.link":"Všichni tvůrci","web.autocomplete.user.header":"Uživatelé","web.autocomplete.user.more.link":"Všichni uživatelé","web.autocomplete.searching":"Vyhledávám...","web.autocomplete.search.select":"Vyplňte název filmu/tvůrce/uživatele","web.autocomplete.noservice":"Služba vyhledávání není momentálně dostupná.","web.search.creator.notfound":"Nenalezeni žádní tvůrci","web.search.film.notfound":"Nenalezeny žádné filmy","web.search.series.notfound":"Nenalezeny žádné seriály","web.search.user.notfound":"Nenalezeni žádní uživatelé","web.check.all":"zaškrtnout vše","web.cinema.top.link":"nahoru","web.user.profile.about.from.plain.to.html.alert":"Změnou typu editace bez uložení přijdeš o všechny změny. Pokud jsi v HTML použil konstrukce, které editor nepodporuje, uložením v editoru o tyto změny přijdeš. Opravdu chceš pokračovat?","web.user.profile.about.from.html.to.plain.alert":"Změnou typu editace bez uložení přijdeš o všechny změny. Opravdu chceš pokračovat?","web.sortable.error.move":"Při přesunu pozic došlo k chybě. Stránka bude obnovena. Pokračovat?","web.preloader.loading":"Načítání...","web.modal.confirm.close":"Opravdu chceš zavřít okno? Možná máš neuložené změny.","web.forums.respond.cancel":"zrušit odpověď","web.ajax.default.error.message":"Omlouváme se, ale nastala chyba při zpracování.","web.ajax.resend.button":"Odeslat znovu","web.fileupload.preloader":"Načítám knihovnu, prosím o strpení...","web.selectize.plugin.remove.button.remove":"Odebrat"},"route":":Web:Search:default","isLoggedIn":false,"userId":null}</script>
+		<script type="text/json" id="js-common-config">{"country":1,"domain":"csfd.cz","host":"www.csfd.cz","userLanguageId":1,"dictionary":{"web.autocomplete.film.header":"Filmy","web.autocomplete.film.more.link":"Všechny filmy","web.autocomplete.series.header":"Seriály","web.autocomplete.series.more.link":"Všechny seriály","web.autocomplete.creator.header":"Tvůrci","web.autocomplete.creator.more.link":"Všichni tvůrci","web.autocomplete.user.header":"Uživatelé","web.autocomplete.user.more.link":"Všichni uživatelé","web.autocomplete.searching":"Vyhledávám...","web.autocomplete.search.select":"Vyplňte název filmu/tvůrce/uživatele","web.autocomplete.noservice":"Služba vyhledávání není momentálně dostupná.","web.search.creator.notfound":"Nenalezeni žádní tvůrci","web.search.film.notfound":"Nenalezeny žádné filmy","web.search.series.notfound":"Nenalezeny žádné seriály","web.search.user.notfound":"Nenalezeni žádní uživatelé","web.check.all":"zaškrtnout vše","web.cinema.top.link":"nahoru","web.user.profile.about.from.plain.to.html.alert":"Změnou typu editace bez uložení přijdeš o všechny změny. Pokud jsi v HTML použil konstrukce, které editor nepodporuje, uložením v editoru o tyto změny přijdeš. Opravdu chceš pokračovat?","web.user.profile.about.from.html.to.plain.alert":"Změnou typu editace bez uložení přijdeš o všechny změny. Opravdu chceš pokračovat?","web.sortable.error.move":"Při přesunu pozic došlo k chybě. Stránka bude obnovena. Pokračovat?","web.preloader.loading":"Načítání...","web.modal.confirm.close":"Opravdu chceš zavřít okno? Možná máš neuložené změny.","web.forums.respond.cancel":"zrušit odpověď","web.ajax.default.error.message":"Omlouváme se, ale nastala chyba při zpracování.","web.ajax.resend.button":"Odeslat znovu","web.fileupload.preloader":"Načítám knihovnu, prosím o strpení...","web.selectize.plugin.remove.button.remove":"Odebrat"},"route":":Web:Search:default","isLoggedIn":false,"userId":null,"hooks":["InfoModal","AjaxHistory","AutoSubmitForm"]}</script>
 
 		<div class="flash-message" data-ajax-prepend="true" id="snippet--flashes">
 			
@@ -908,11 +924,10 @@ export const searchMock = `
 
 <div id="slide_up" class="ad-pmg"></div>
 
+<script src="//static.pmgstatic.com/assets/utils-js/4617ef4e80f050d67c0ef7aa2eb7f9fb/scripts.min.js"></script>
 <script type="text/javascript">
-	window.addEventListener('load', function () {
-		CSFD.Ads.complete({"ball":{"page":17,"login":2,"site":"csfd.cz"},"b1":{"area":"leaderboard","size":"1000x210,2000x1400,1000x200,1000x210,970x210,998x200,750x200,750x100,970x90,728x90,branding_web"},"b2":{"area":"halfpage_sticky_1","size":"300x600,160x600,300x300,300x250"},"b3":{"area":"billboard","size":"1000x310,970x310,560x315,480x300,750x300,970x250,970x90,728x90"},"b4":{"area":"slide_up","size":"500x200,320x150,320x100,320x50,300x100,300x50"},"b5":{"area":"mobile_leaderboard","size":"320x100,320x50,300x100,300x50"},"b6":{"area":"mobile_square_1","size":"300x300,300x250,interscroller"},"b7":{"area":"mobile_square_2","size":"300x300,300x250,250x250"},"b8":{"area":"mobile_billboard","size":"300x300,300x250"}});
-		CSFD.Ads.setTServer("https://a.csfd.cz/csfd/tserver");
-	});
+	CSFDAds.complete({"ball":{"page":17,"login":2,"site":"csfd.cz"},"0":{"area":"leaderboard","size":"1000x210,2000x1400,1000x200,1000x210,970x210,998x200,750x200,750x100,970x90,728x90,branding_web"},"1":{"area":"halfpage_sticky_1","size":"300x600,160x600,300x300,300x250"},"2":{"area":"billboard","size":"1000x310,970x310,560x315,480x300,750x300,970x250,970x90,728x90"},"3":{"area":"slide_up","size":"970x310,970x250,950x200,750x300,750x200,728x90,500x200,320x150,320x100,320x50,300x100,300x50,slide_up"},"4":{"area":"mobile_leaderboard","size":"320x100,320x50,300x100,300x50"},"5":{"area":"mobile_square_1","size":"300x300,300x250,interscroller"},"6":{"area":"mobile_square_2","size":"300x300,300x250,250x250"},"7":{"area":"mobile_billboard","size":"300x300,300x250"}});
+	CSFDAds.setTServer("https://a.csfd.cz/csfd/tserver");
 </script>
 	</body>
 

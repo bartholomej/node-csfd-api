@@ -1,11 +1,13 @@
 export const actorMock = `
 
+
 <!DOCTYPE html>
 <html lang="cs-CZ">
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Dánský herec, celým jménem Mads Dittmann Mikkelsen, se narodil v roce 1965 v kodaňské čtvrti Østerbro. Dříve než se vrhl na hereckou dráhu, pracoval 8 let jako profesionální tanečník. Herecké vzdělání získal Mikkelsen na herecké škole při divadle v…">
+
+<meta name="description" content="Vše o tvůrci Mads Mikkelsen: Filmografie, Biografie, Zajímavosti, Videa, Galerie, Diskuze a další...">
 
 <link rel="alternate" hreflang="cs" href="https://www.csfd.cz/tvurce/4929-mads-mikkelsen/prehled/">
 <link rel="alternate" hreflang="sk" href="https://www.csfd.sk/tvorca/4929-mads-mikkelsen/prehlad/">
@@ -15,8 +17,8 @@ export const actorMock = `
 <meta property="og:site_name" content="csfd.cz">
 <meta property="og:image" content="//image.pmgstatic.com/cache/resized/w936/files/images/film/photos/160/911/160911109_dacf9d.jpg">
 <meta property="og:image" content="//image.pmgstatic.com/cache/resized/w936/files/images/film/photos/160/009/160009233_56f0a5.jpg">
-<meta property="og:image" content="//image.pmgstatic.com/cache/resized/w936/files/images/film/photos/164/535/164535337_590ddd.jpg">
-<meta property="og:description" content="Dánský herec, celým jménem Mads Dittmann Mikkelsen, se narodil v roce 1965 v kodaňské čtvrti Østerbro. Dříve než se vrhl na hereckou dráhu, pracoval 8 let jako profesionální tanečník. Herecké vzdělání získal Mikkelsen na herecké škole při divadle v…">
+<meta property="og:image" content="//image.pmgstatic.com/cache/resized/w936/files/images/film/photos/164/535/164535337_44fb5b.jpg">
+<meta property="og:description" content="Vše o tvůrci Mads Mikkelsen: Filmografie, Biografie, Zajímavosti, Videa, Galerie, Diskuze a další...">
 <meta property="og:title" content="Mads Mikkelsen">
 <meta property="og:type" content="actor">
 <meta property="og:url" content="https://www.csfd.cz/tvurce/4929-mads-mikkelsen/prehled/">
@@ -25,15 +27,16 @@ export const actorMock = `
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="https://www.csfd.cz/tvurce/4929-mads-mikkelsen/prehled/">
 <meta name="twitter:title" content="Mads Mikkelsen">
-<meta name="twitter:description" content="Dánský herec, celým jménem Mads Dittmann Mikkelsen, se narodil v roce 1965 v kodaňské čtvrti Østerbro. Dříve než se vrhl na hereckou dráhu, pracoval 8 let jako profesionální tanečník. Herecké vzdělání získal Mikkelsen na herecké škole při divadle v…">
+<meta name="twitter:description" content="Vše o tvůrci Mads Mikkelsen: Filmografie, Biografie, Zajímavosti, Videa, Galerie, Diskuze a další...">
 <meta name="twitter:image" content="//image.pmgstatic.com/cache/resized/w936/files/images/film/photos/160/911/160911109_dacf9d.jpg">
 
+
 		<title> Mads Mikkelsen | ČSFD.cz </title>
-		<link rel="stylesheet" href="//static.pmgstatic.com/assets/web-css/c920200f98cde2677a46601a7fc93edb/styles.min.css">
-		<link rel="shortcut icon" href="//static.pmgstatic.com/assets/images/8c32a59345ee07beec7a567a77b3d7a2/favicon.ico">
-		<link rel="apple-touch-icon" href="//static.pmgstatic.com/assets/images/8c32a59345ee07beec7a567a77b3d7a2/apple-touch-icon.png">
-		<script src="//static.pmgstatic.com/assets/vendor/303068987a8e00162dc0cab989a40fe7/jquery.min.js"></script>
-		<script src="//static.pmgstatic.com/assets/web-js/064b97ba4f544999de35c0c6d88c2e10/scripts.min.js" defer></script>
+		<link rel="stylesheet" href="//static.pmgstatic.com/assets/web-css/1940c6510ace5bce4efa70ce723382d3/styles.min.css">
+		<link rel="shortcut icon" href="//static.pmgstatic.com/assets/images/c9bd6a26fa717816674d2078f60af950/favicon.ico">
+		<link rel="apple-touch-icon" href="//static.pmgstatic.com/assets/images/c9bd6a26fa717816674d2078f60af950/apple-touch-icon.png">
+		<script src="//static.pmgstatic.com/assets/vendor/d4bda16db4a0ccf1befc901969f0db63/jquery.min.js"></script>
+		<script src="//static.pmgstatic.com/assets/web-js/8d2e3450dfca13939cd3b07a655adc46/scripts.min.js" defer></script>
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap&subset=latin-ext">
 
@@ -45,9 +48,9 @@ export const actorMock = `
 <script src="https://cdn.cpex.cz/cmp/v2/cpex-cmp.min.js"></script><script src="//assets.adobedtm.com/e949270ea86e/f1d67104c3f5/launch-5baa4d1acdaf.min.js" async></script>
 
 <script src="https://publisher.caroda.io/videoPlayer/caroda.min.js?ctok=231efd424e405a" crossorigin="anonymous" defer></script>
-<script src="//static.pmgstatic.com/assets/vendor/303068987a8e00162dc0cab989a40fe7/videojs/video.min.js" async defer></script>
+<script id="videojs-vendor" src="//static.pmgstatic.com/assets/vendor/d4bda16db4a0ccf1befc901969f0db63/videojs/video.min.js" async defer></script>
 <script type="text/javascript" src="https://www.gstatic.com/cv/js/sender/v1/cast_sender.js?loadCastFramework=1" async defer></script>
-<link rel="stylesheet" href="//static.pmgstatic.com/assets/vendor/303068987a8e00162dc0cab989a40fe7/videojs/video-js.min.css">
+<link rel="stylesheet" href="//static.pmgstatic.com/assets/vendor/d4bda16db4a0ccf1befc901969f0db63/videojs/video-js.min.css">
 
 <script>
 	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -74,6 +77,7 @@ export const actorMock = `
 	</head>
 
 	<body id="top">
+
 
 		<div class="ad-wrapper">
 			<div id="leaderboard-wrapper">
@@ -164,7 +168,7 @@ export const actorMock = `
 			<a href="/kino/?period=today">Kino</a>
 		</li>
 		<li class="tab-nav-item">
-			<a href="/vod/?year=2021&amp;month=9">VOD<span class="top-nav-new">NEW</span></a>
+			<a href="/vod/?year=2021&amp;month=12">VOD<span class="top-nav-new">NEW</span></a>
 		</li>
 		<li class="tab-nav-item">
 			<a href="/zebricky/filmy/nejlepsi/">Žebříčky</a>
@@ -184,6 +188,9 @@ export const actorMock = `
 		<li class="tab-nav-item">
 			<a href="/diskuze/">Diskuze</a>
 		</li>
+		<li class="tab-nav-item yellow">
+			<a href="/cesky-lev/">Český lev</a>
+		</li>
 	</ul>
 	<ul class="tab-nav-more">
 		<li>
@@ -201,7 +208,7 @@ export const actorMock = `
 					<a href="/kino/?period=today">Kino</a>
 				</li>
 				<li class="tab-nav-item">
-					<a href="/vod/?year=2021&amp;month=9">VOD<span class="top-nav-new">NEW</span></a>
+					<a href="/vod/?year=2021&amp;month=12">VOD<span class="top-nav-new">NEW</span></a>
 				</li>
 				<li class="tab-nav-item">
 					<a href="/zebricky/filmy/nejlepsi/">Žebříčky</a>
@@ -221,6 +228,9 @@ export const actorMock = `
 				<li class="tab-nav-item">
 					<a href="/diskuze/">Diskuze</a>
 				</li>
+				<li class="tab-nav-item yellow">
+					<a href="/cesky-lev/">Český lev</a>
+				</li>
 			</ul>
 		</li>
 	</ul>
@@ -233,21 +243,29 @@ export const actorMock = `
 
 
 <div class="creator-main">
+<script type="application/ld+json">{"@context":"https://schema.org/","@type":"Person","name":"Mads Mikkelsen","birthDate":"1965-11-22","birthPlace":{"@type":"Place","name":"Østerbro, Kodaň, Dánsko"},"image":"//image.pmgstatic.com/files/images/creator/photos/165/098/165098143_00fcfa.jpg?w100h132crop"}</script>
 	<div class="creator-main-content">
 		<div class="creator-about">
 			<div class="creator-profile">
-				<div class="creator-profile-head">
-					<a href="https://www.csfd.cz/zebricky/herci-a-herecky/?showMoreLeft=1#highlight-1-4929" title="Umístění tvůrce v sekci žebříčky se zvýrazněním">
-						<i class="icon icon-thumb-up"></i> 58. nejoblíbenější herec
-					</a>
+<div id="snippet--profileHead">					<div class="creator-profile-head">
 
-					<a href="/tvurce/4929-mads-mikkelsen/prehled/?name=fanclubList&amp;do=modalWindow" class="btn-fanclub ajax" rel="contentModal" data-mfp-main-class="modal-fanclub" data-mfp-src="#panelModal">
-						Fanklub (3 103)
-					</a>
-				</div>
+
+						<div class="label-simple label-favorite-white">
+							<a href="/zebricky/herci-a-herecky/#highlight-1-4929" title="Umístění tvůrce v sekci žebříčky se zvýrazněním.">
+								<i class="icon icon-thumb-up"></i>56. nejoblíbenější herec
+							</a>
+						</div>
+
+						<div class="label-simple label-fanclub">
+							<a href="/tvurce/4929-mads-mikkelsen/prehled/?name=fanclubList&amp;do=modalWindow" class="btn-fanclub ajax" rel="contentModal" data-mfp-main-class="modal-fanclub" data-mfp-src="#panelModal">
+								Fanklub (3 045)
+							</a>
+						</div>
+					</div>
+</div>
 				<div class="creator-profile-content">
 					<figure>
-							<img alt="Mads Mikkelsen" src="//image.pmgstatic.com/cache/resized/w100h132crop/files/images/creator/photos/165/098/165098142_bfe764.jpg" loading="lazy" width="100" height="132" srcset="//image.pmgstatic.com/cache/resized/w100h132crop/files/images/creator/photos/165/098/165098142_bfe764.jpg 1x, //image.pmgstatic.com/cache/resized/w200h264crop/files/images/creator/photos/165/098/165098142_bfe764.jpg 2x, //image.pmgstatic.com/cache/resized/w300h396crop/files/images/creator/photos/165/098/165098142_bfe764.jpg 3x">
+							<img alt="Mads Mikkelsen" src="//image.pmgstatic.com/cache/resized/w100h132crop/files/images/creator/photos/165/098/165098144_9f239a.jpg" loading="lazy" width="100" height="132" srcset="//image.pmgstatic.com/cache/resized/w100h132crop/files/images/creator/photos/165/098/165098144_9f239a.jpg 1x, //image.pmgstatic.com/cache/resized/w200h264crop/files/images/creator/photos/165/098/165098144_9f239a.jpg 2x, //image.pmgstatic.com/cache/resized/w300h396crop/files/images/creator/photos/165/098/165098144_9f239a.jpg 3x">
 					</figure>
 
 					<h1>
@@ -255,7 +273,7 @@ export const actorMock = `
 					</h1>
 					<p>
 							nar. 22.11.1965
-						(55 let)
+						(56 let)
 						<br>Østerbro, Kodaň, Dánsko
 
 					</p>
@@ -265,11 +283,11 @@ export const actorMock = `
 							<span class="item-text">
 								Photo from
 							</span>
-								<a class="item-movie" href="/film/365162-dykkerdrengen/">
-									Dykkerdrengen
+								<a class="item-movie" href="/film/311967-hon/">
+									Hon
 								</a>
 								<span class="item-movie-rest">
-										(2003)
+										(2012)
 								</span>
 						</div>
 					</div>
@@ -390,16 +408,19 @@ export const actorMock = `
 
 	<section class="box box-borderless">
 			<header class="box-header">
-				<h2>Videa <span class="count">(12)</span></h2>
+				<h2>Videa <span class="count">(6)</span></h2>
 				<div class="box-header-action">
 					<a class="button" href="/tvurce/4929-mads-mikkelsen/videa/">Více</a>
 				</div>
 			</header>
 			<div class="box-content">
 				<div class="box box-media">
-					<figure class="box-video preview" data-autoplay-video>
+					<figure data-autoplay-video class="box-video preview box-video-autoplay">
+							<div class="box-videoplayer-film">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/266804-doktor-strange/" class="film-title-name">Doktor Strange</a> <span class="film-title-info"><span class="info">(2016)</span></span></h3>							</div>
+
 <div class="box-video-content">
-	<a href="javascript:void(0);" class="box-video-preview preview_ disabled" data-video-player-initialize="video-player-1" data-video-player-playlist-start="0" data-video-player-autoplay="false" data-video-player-translations-url="/api/video-player/translations/">
+	<a href="javascript:void(0);" class="box-video-preview disabled" data-video-player-initialize="video-player-1" data-video-player-playlist-start="0" data-video-player-autoplay="" data-video-player-translations-url="/api/video-player/translations/">
 			<picture>
 				<source media="(max-width: 650px)" srcset="//image.pmgstatic.com/cache/resized/w360/files/images/film/video/preview/161/194/161194860_d18542.jpg 1x, //image.pmgstatic.com/cache/resized/w720/files/images/film/video/preview/161/194/161194860_d18542.jpg 2x, //image.pmgstatic.com/cache/resized/w1080/files/images/film/video/preview/161/194/161194860_d18542.jpg 3x">
 				<img alt="Rozhovor 4 - Mads Mikkelsen" class="prev-img" src="//image.pmgstatic.com/cache/resized/w663/files/images/film/video/preview/161/194/161194860_d18542.jpg" loading="lazy" width="663" height="372" srcset="//image.pmgstatic.com/cache/resized/w663/files/images/film/video/preview/161/194/161194860_d18542.jpg 1x">
@@ -417,7 +438,7 @@ export const actorMock = `
 			width="637"
 			height="360"
 			data-video-url="/api/video-player/"
-			data-videos="[{&quot;description&quot;:&quot;Rozhovor 4 - Mads Mikkelsen&quot;,&quot;language_id&quot;:3,&quot;duration&quot;:207,&quot;subtitles_language_id&quot;:1,&quot;poster_path&quot;:&quot;files/images/film/video/preview/161/194/161194860_d18542.jpg&quot;,&quot;poster_storage_id&quot;:&quot;image-production&quot;,&quot;poster_width&quot;:1280,&quot;poster_height&quot;:720,&quot;video_film_id&quot;:157718829,&quot;film_video_type_id&quot;:9,&quot;position&quot;:4,&quot;video_id&quot;:157721084,&quot;copyright&quot;:&quot;Walt Disney Studios Motion Pictures&quot;,&quot;film_name&quot;:&quot;Doktor Strange&quot;,&quot;film_year&quot;:2016,&quot;film_type&quot;:0,&quot;film_id&quot;:266804,&quot;film_rating_category&quot;:1,&quot;external_description&quot;:&quot;Doktor Strange: Rozhovor 4 - Mads Mikkelsen&quot;,&quot;poster&quot;:{&quot;width&quot;:1280,&quot;height&quot;:720,&quot;path&quot;:&quot;files/images/film/video/preview/161/194/161194860_d18542.jpg&quot;,&quot;storage_id&quot;:&quot;image-production&quot;},&quot;request_data&quot;:&quot;rlW2nJEyo0yxVwbkAGp3ZwRjBQDfVaA1LaEcqTkyGTShM3IuM2IWMUZvByfkYQWqYPW0o2gyovV6VwD5Amt4MGDkZ2D2LGZjMTL1MJAyZzIzLmt1ATH0ZzMzBQVmMTHmBGHvsD==&quot;}]"
+			data-videos="[&#123;&quot;description&quot;:&quot;Rozhovor 4 - Mads Mikkelsen&quot;,&quot;language_id&quot;:3,&quot;duration&quot;:207,&quot;subtitles_language_id&quot;:1,&quot;poster_path&quot;:&quot;files/images/film/video/preview/161/194/161194860_d18542.jpg&quot;,&quot;poster_storage_id&quot;:&quot;image-production&quot;,&quot;poster_width&quot;:1280,&quot;poster_height&quot;:720,&quot;video_film_id&quot;:157718829,&quot;film_video_type_id&quot;:9,&quot;position&quot;:4,&quot;video_id&quot;:157721084,&quot;copyright&quot;:&quot;Walt Disney Studios Motion Pictures&quot;,&quot;film_name&quot;:&quot;Doktor Strange&quot;,&quot;film_year&quot;:2016,&quot;film_type&quot;:0,&quot;film_id&quot;:266804,&quot;film_rating_category&quot;:1,&quot;external_description&quot;:&quot;Doktor Strange: Rozhovor 4 - Mads Mikkelsen&quot;,&quot;poster&quot;:&#123;&quot;width&quot;:1280,&quot;height&quot;:720,&quot;path&quot;:&quot;files/images/film/video/preview/161/194/161194860_d18542.jpg&quot;,&quot;storage_id&quot;:&quot;image-production&quot;},&quot;title&quot;:&quot;&lt;h3 class=\&quot;film-title\&quot;&gt;&lt;i class=\&quot;icon icon-rounded-square red\&quot;&gt;&lt;/i&gt;&lt;a href=\&quot;/film/266804-doktor-strange/\&quot; class=\&quot;film-title-name\&quot;&gt;Doktor Strange&lt;/a&gt; &lt;span class=\&quot;film-title-info\&quot;&gt;&lt;span class=\&quot;info\&quot;&gt;(2016)&lt;/span&gt;&lt;/span&gt;&lt;/h3&gt;&quot;,&quot;request_data&quot;:&quot;rlW2nJEyo0yxVwbkAGp3ZwRjBQDfVaA1LaEcqTkyGTShM3IuM2IWMUZvByfkYQWqYPW0o2gyovV6VzAzAQuxZzL2LmH1MwNmZJD1LmR3AQEwZ2SvZ2Z0AwRmAzAzBGD4MQZvsD==&quot;}]"
 			data-recommended-videos-url="/api/video-player/recommended-videos/?videoId=157721084&amp;limit=2"
 			data-recommended-autoplay
 		>
@@ -432,7 +453,7 @@ export const actorMock = `
 
 	<section class="box box-nooverflow">
 		<header class="box-header">
-			<h2>Zajímavosti <span class="count">(42)</span></h2>
+			<h2>Zajímavosti <span class="count">(43)</span></h2>
 			<div class="box-header-action">
 				<a class="button" href="/tvurce/4929-mads-mikkelsen/zajimavosti/">Více</a>
 			</div>
@@ -495,21 +516,19 @@ export const actorMock = `
 			<div class="box box-media">
 
 <div class="box-copyright">
-	<p class="p-box-copyright">Photo © Nordisk Film Biografdistribution</p>
+	<p class="p-box-copyright">Photo © Sony Pictures Television Networks, NBC / Robert Trachtenberg, Brooke Palmer, Sophie Giraud</p>
 </div>
 <figure class="figure-skeleton">
-	<div class="media-img" style="padding-bottom: 66.53%">
+	<div class="media-img" style="padding-bottom: 150.15%">
 		<picture>
-			<source media="(max-width: 400px)" srcset="//image.pmgstatic.com/cache/resized/w360/files/images/film/photos/158/658/158658762_c18ada.jpg 1x, //image.pmgstatic.com/cache/resized/w720/files/images/film/photos/158/658/158658762_c18ada.jpg 2x, //image.pmgstatic.com/cache/resized/w1080/files/images/film/photos/158/658/158658762_c18ada.jpg 3x">
-			<source media="(max-width: 750px) and (min-width: 401px)" srcset="//image.pmgstatic.com/cache/resized/w663/files/images/film/photos/158/658/158658762_c18ada.jpg 1x, //image.pmgstatic.com/cache/resized/w1326/files/images/film/photos/158/658/158658762_c18ada.jpg 2x, //image.pmgstatic.com/cache/resized/w1989/files/images/film/photos/158/658/158658762_c18ada.jpg 3x">
-			<img alt="Nicolas Bro, Mads Mikkelsen" src="//image.pmgstatic.com/cache/resized/w468/files/images/film/photos/158/658/158658762_c18ada.jpg" loading="lazy" width="468" height="311" srcset="//image.pmgstatic.com/cache/resized/w468/files/images/film/photos/158/658/158658762_c18ada.jpg 1x, //image.pmgstatic.com/cache/resized/w936/files/images/film/photos/158/658/158658762_c18ada.jpg 2x, //image.pmgstatic.com/cache/resized/w1404/files/images/film/photos/158/658/158658762_c18ada.jpg 3x">
+			<source media="(max-width: 400px)" srcset="//image.pmgstatic.com/cache/resized/w360/files/images/film/photos/158/620/158620517_c4faf0.jpg 1x, //image.pmgstatic.com/cache/resized/w720/files/images/film/photos/158/620/158620517_c4faf0.jpg 2x, //image.pmgstatic.com/cache/resized/w1080/files/images/film/photos/158/620/158620517_c4faf0.jpg 3x">
+			<source media="(max-width: 750px) and (min-width: 401px)" srcset="//image.pmgstatic.com/cache/resized/w663/files/images/film/photos/158/620/158620517_c4faf0.jpg 1x">
+			<img alt="Mads Mikkelsen" src="//image.pmgstatic.com/cache/resized/w468/files/images/film/photos/158/620/158620517_c4faf0.jpg" loading="lazy" width="468" height="702" srcset="//image.pmgstatic.com/cache/resized/w468/files/images/film/photos/158/620/158620517_c4faf0.jpg 1x, //image.pmgstatic.com/cache/resized/w936/files/images/film/photos/158/620/158620517_c4faf0.jpg 2x">
 		</picture>
 	</div>
 </figure>
 <figcaption>
 	
-		<a href="/tvurce/10502-nicolas-bro/">Nicolas Bro</a>,
-
 		<a href="/tvurce/4929-mads-mikkelsen/">Mads Mikkelsen</a>
 </figcaption>
 			</div>
@@ -546,17 +565,17 @@ export const actorMock = `
 				</tr>
 					<tr>
 						<td class="year">
-							2022
-						</td>
-						<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/403862-fantastic-beasts-3/" class="film-title-name">Fantastic Beasts 3</a> <span class="film-title-info"></span></h3>						</td>
-					</tr>
-					<tr>
-						<td class="year">
-							&nbsp;
+							2023
 						</td>
 						<td class="name">
 <h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/264558-untitled-indiana-jones-project/" class="film-title-name">Untitled Indiana Jones Project</a> <span class="film-title-info"></span></h3>						</td>
+					</tr>
+					<tr>
+						<td class="year">
+							2022
+						</td>
+						<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/403862-fantasticka-zvirata-brumbalova-tajemstvi/" class="film-title-name">Fantastická zvířata: Brumbálova tajemství</a> <span class="film-title-info"></span></h3>						</td>
 					</tr>
 					<tr>
 						<td class="year">
@@ -600,21 +619,21 @@ export const actorMock = `
 						<td class="name">
 <h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/519334-u-brany-vecnosti/" class="film-title-name">U brány věčnosti</a> <span class="film-title-info"></span></h3>						</td>
 					</tr>
-					<tr>
+					<tr class="tr-add-border">
 						<td class="year">
 							2016
 						</td>
 						<td class="name">
 <h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/266804-doktor-strange/" class="film-title-name">Doktor Strange</a> <span class="film-title-info"></span></h3>						</td>
 					</tr>
-					<tr>
+					<tr class="tr-banner-desktop">
 								<td class="box box-banner" colspan="2">
 									<p class="box-banner-text-center">Reklama</p>
-									<div class="box-banner-300-content"><div id="large_rectangle_1" class="ad-pmg" style="height: 300px;"></div>
+									<div class="box-banner-336-content"><div id="large_rectangle_1" class="ad-pmg" style="height: 300px;"></div>
 </div>
 								</td>
 							</tr>
-							<tr>
+							<tr class="tr-banner-mobile">
 								<td class="box box-banner-mobile" colspan="2">
 									<p class="box-banner-text">Reklama</p>
 <div id="mobile_square_2" class="ad-pmg" style="height: 300px;"></div>
@@ -863,7 +882,7 @@ export const actorMock = `
 		<table class="no-column-borders">
 			<tbody>
 				<tr>
-					<th colspan="2">TV seriály</th>
+					<th colspan="2">Seriály</th>
 				</tr>
 					<tr>
 						<td class="year">
@@ -1155,7 +1174,7 @@ export const actorMock = `
 							&nbsp;
 						</td>
 						<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/410643-pokerfjaes/" class="film-title-name">Pokerfjæs</a> <span class="film-title-info"> <span class="info">(TV seriál)</span></span></h3>						</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/410643-pokerfjaes/" class="film-title-name">Pokerfjæs</a> <span class="film-title-info"> <span class="info">(seriál)</span></span></h3>						</td>
 					</tr>
 			</tbody>
 		</table>
@@ -1311,21 +1330,21 @@ export const actorMock = `
 						<td class="name">
 <h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/57540-joonas/" class="film-title-name">Joonas</a> <span class="film-title-info"></span></h3>						</td>
 					</tr>
-					<tr>
+					<tr class="tr-add-border">
 						<td class="year">
 							2003
 						</td>
 						<td class="name">
 <h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/117277-bodilprisen-2003/" class="film-title-name">Bodilprisen 2003</a> <span class="film-title-info"></span></h3>						</td>
 					</tr>
-					<tr>
+					<tr class="tr-banner-desktop">
 								<td class="box box-banner" colspan="2">
 									<p class="box-banner-text-center">Reklama</p>
-									<div class="box-banner-300-content"><div id="large_rectangle_2" class="ad-pmg" style="height: 300px;"></div>
+									<div class="box-banner-336-content"><div id="large_rectangle_2" class="ad-pmg" style="height: 300px;"></div>
 </div>
 								</td>
 							</tr>
-							<tr>
+							<tr class="tr-banner-mobile">
 								<td class="box box-banner-mobile" colspan="2">
 									<p class="box-banner-text">Reklama</p>
 <div id="mobile_square_3" class="ad-pmg" style="height: 300px;"></div>
@@ -1389,14 +1408,14 @@ export const actorMock = `
 		<section class="fan-club">
 			<div class="fan-club-header">
 				<div class="ranking">
-					<a href="https://www.csfd.cz/zebricky/herci-a-herecky/?showMoreLeft=1#highlight-1-4929" title="Umístění tvůrce v sekci žebříčky se zvýrazněním">
-						<i class="icon icon-thumb-up"></i> 58. nejoblíbenější herec
+					<a href="/zebricky/herci-a-herecky/#highlight-1-4929" title="Umístění tvůrce v sekci žebříčky se zvýrazněním.">
+						<i class="icon icon-thumb-up"></i> 56. nejoblíbenější herec
 					</a>
 				</div>
 			</div>
 			<div class="fan-club-content">
 				<h3>Fanklub</h3>
-				<span>(3 103)</span>
+				<span>(3 045)</span>
 				<ul>
 					<li>
 						<a href="/uzivatel/1-pomo/oblibene/herci/">
@@ -1417,14 +1436,14 @@ export const actorMock = `
 						<span>(herec)</span>
 					</li>
 					<li>
-						<a href="/uzivatel/800-rob-roy/oblibene/herci/">
-							Rob Roy
+						<a href="/uzivatel/507222-flygun/oblibene/herci/">
+							FlyGun
 						</a>
 						<span>(herec)</span>
 					</li>
 					<li>
-						<a href="/uzivatel/507222-flygun/oblibene/herci/">
-							FlyGun
+						<a href="/uzivatel/800-rob-roy/oblibene/herci/">
+							Rob Roy
 						</a>
 						<span>(herec)</span>
 					</li>
@@ -1477,12 +1496,6 @@ export const actorMock = `
 						<span>(herec)</span>
 					</li>
 					<li>
-						<a href="/uzivatel/46418-morien/oblibene/herci/">
-							Morien
-						</a>
-						<span>(herec)</span>
-					</li>
-					<li>
 						<a href="/uzivatel/154594-traffic/oblibene/herci/">
 							Traffic
 						</a>
@@ -1515,6 +1528,12 @@ export const actorMock = `
 					<li>
 						<a href="/uzivatel/31883-akisha/oblibene/herci/">
 							akisha
+						</a>
+						<span>(herec)</span>
+					</li>
+					<li>
+						<a href="/uzivatel/16354-pinokkio/oblibene/herci/">
+							PinokKio
 						</a>
 						<span>(herec)</span>
 					</li>
@@ -1603,6 +1622,11 @@ export const actorMock = `
 						<a href="https://www.facebook.com/www.CSFD.cz/" class="btn-social" target="_blank" rel="noreferrer"><i class="icon icon-facebook"></i></a>
 						<a href="https://www.instagram.com/csfd.cz/" class="btn-social" target="_blank" rel="noreferrer"><i class="icon icon-instagram"></i></a>
 					</div>
+					<div class="footer-right-app">
+						<h3>Mobilní aplikace</h3>
+						<a href="https://apps.apple.com/cz/app/čsfd-web/id1552901865#?platform=iphone" class="btn-app-store" target="_blank"><img alt="ČSFD Web | App Store" src="//static.pmgstatic.com/assets/images/c9bd6a26fa717816674d2078f60af950/appstore.svg"></a>
+						<a href="https://play.google.com/store/apps/details?id=cz.csfd.lite" class="btn-google-play" target="_blank"><img alt="ČSFD Web | Google Play" src="//static.pmgstatic.com/assets/images/c9bd6a26fa717816674d2078f60af950/googleplay.svg"></a>
+					</div>
 					<div class="site-info">
 						<p>Česko-Slovenská filmová databáze</p>
 						<p>&copy; 2001-2021 POMO Media Group s.r.o.</p>
@@ -1619,7 +1643,7 @@ export const actorMock = `
 </div>
 
 
-		<script type="text/json" id="js-common-config">{"country":1,"domain":"csfd.cz","host":"www.csfd.cz","userLanguageId":1,"hooks":["FormGet","AutoSubmitForm"],"dictionary":{"web.autocomplete.film.header":"Filmy","web.autocomplete.film.more.link":"Všechny filmy","web.autocomplete.series.header":"Seriály","web.autocomplete.series.more.link":"Všechny seriály","web.autocomplete.creator.header":"Tvůrci","web.autocomplete.creator.more.link":"Všichni tvůrci","web.autocomplete.user.header":"Uživatelé","web.autocomplete.user.more.link":"Všichni uživatelé","web.autocomplete.searching":"Vyhledávám...","web.autocomplete.search.select":"Vyplňte název filmu/tvůrce/uživatele","web.autocomplete.noservice":"Služba vyhledávání není momentálně dostupná.","web.search.creator.notfound":"Nenalezeni žádní tvůrci","web.search.film.notfound":"Nenalezeny žádné filmy","web.search.series.notfound":"Nenalezeny žádné seriály","web.search.user.notfound":"Nenalezeni žádní uživatelé","web.check.all":"zaškrtnout vše","web.cinema.top.link":"nahoru","web.user.profile.about.from.plain.to.html.alert":"Změnou typu editace bez uložení přijdeš o všechny změny. Pokud jsi v HTML použil konstrukce, které editor nepodporuje, uložením v editoru o tyto změny přijdeš. Opravdu chceš pokračovat?","web.user.profile.about.from.html.to.plain.alert":"Změnou typu editace bez uložení přijdeš o všechny změny. Opravdu chceš pokračovat?","web.sortable.error.move":"Při přesunu pozic došlo k chybě. Stránka bude obnovena. Pokračovat?","web.preloader.loading":"Načítání...","web.modal.confirm.close":"Opravdu chceš zavřít okno? Možná máš neuložené změny.","web.forums.respond.cancel":"zrušit odpověď","web.ajax.default.error.message":"Omlouváme se, ale nastala chyba při zpracování.","web.ajax.resend.button":"Odeslat znovu","web.fileupload.preloader":"Načítám knihovnu, prosím o strpení...","web.selectize.plugin.remove.button.remove":"Odebrat"},"route":":Web:Creator:Overview:default","isLoggedIn":false,"userId":null}</script>
+		<script type="text/json" id="js-common-config">{"country":1,"domain":"csfd.cz","host":"www.csfd.cz","userLanguageId":1,"dictionary":{"web.autocomplete.film.header":"Filmy","web.autocomplete.film.more.link":"Všechny filmy","web.autocomplete.series.header":"Seriály","web.autocomplete.series.more.link":"Všechny seriály","web.autocomplete.creator.header":"Tvůrci","web.autocomplete.creator.more.link":"Všichni tvůrci","web.autocomplete.user.header":"Uživatelé","web.autocomplete.user.more.link":"Všichni uživatelé","web.autocomplete.searching":"Vyhledávám...","web.autocomplete.search.select":"Vyplňte název filmu/tvůrce/uživatele","web.autocomplete.noservice":"Služba vyhledávání není momentálně dostupná.","web.search.creator.notfound":"Nenalezeni žádní tvůrci","web.search.film.notfound":"Nenalezeny žádné filmy","web.search.series.notfound":"Nenalezeny žádné seriály","web.search.user.notfound":"Nenalezeni žádní uživatelé","web.check.all":"zaškrtnout vše","web.cinema.top.link":"nahoru","web.user.profile.about.from.plain.to.html.alert":"Změnou typu editace bez uložení přijdeš o všechny změny. Pokud jsi v HTML použil konstrukce, které editor nepodporuje, uložením v editoru o tyto změny přijdeš. Opravdu chceš pokračovat?","web.user.profile.about.from.html.to.plain.alert":"Změnou typu editace bez uložení přijdeš o všechny změny. Opravdu chceš pokračovat?","web.sortable.error.move":"Při přesunu pozic došlo k chybě. Stránka bude obnovena. Pokračovat?","web.preloader.loading":"Načítání...","web.modal.confirm.close":"Opravdu chceš zavřít okno? Možná máš neuložené změny.","web.forums.respond.cancel":"zrušit odpověď","web.ajax.default.error.message":"Omlouváme se, ale nastala chyba při zpracování.","web.ajax.resend.button":"Odeslat znovu","web.fileupload.preloader":"Načítám knihovnu, prosím o strpení...","web.selectize.plugin.remove.button.remove":"Odebrat"},"route":":Web:Creator:Overview:default","isLoggedIn":false,"userId":null,"hooks":["InfoModal","FormGet","AutoSubmitForm"]}</script>
 
 		<div class="flash-message" data-ajax-prepend="true" id="snippet--flashes">
 			
@@ -1628,9 +1652,9 @@ export const actorMock = `
 
 <div id="slide_up" class="ad-pmg"></div>
 
-<script src="//static.pmgstatic.com/assets/utils-js/e5e55e18ffd2fe354cbe0a8e02fa3ad6/scripts.min.js"></script>
+<script src="//static.pmgstatic.com/assets/utils-js/4617ef4e80f050d67c0ef7aa2eb7f9fb/scripts.min.js"></script>
 <script type="text/javascript">
-	CSFDAds.complete({"ball":{"page":3,"login":2,"creator_id":4929,"site":"csfd.cz"},"0":{"area":"leaderboard","size":"1000x210,2000x1400,1000x200,1000x210,970x210,998x200,750x200,750x100,970x90,728x90,branding_web"},"1":{"area":"large_rectangle_1","size":"336x300,336x280,300x300,300x250"},"2":{"area":"large_rectangle_2","size":"336x300,336x280,300x300,300x250"},"3":{"area":"billboard","size":"1000x310,970x310,560x315,480x300,750x300,970x250,970x90,728x90"},"4":{"area":"slide_up","size":"500x200,320x150,320x100,320x50,300x100,300x50"},"5":{"area":"mobile_leaderboard","size":"320x100,320x50,300x100,300x50"},"6":{"area":"mobile_square_1","size":"300x300,300x250,interscroller"},"7":{"area":"mobile_square_2","size":"300x300,300x250,250x250"},"8":{"area":"mobile_square_3","size":"300x300,300x250,250x250"},"9":{"area":"mobile_billboard","size":"300x300,300x250"},"10":{"area":"pre_roll","size":"videoad,videoad_adblock","supertag":"InstreamVideo"}});
+	CSFDAds.complete({"ball":{"page":3,"login":2,"creator_id":4929,"site":"csfd.cz"},"0":{"area":"leaderboard","size":"1000x210,2000x1400,1000x200,1000x210,970x210,998x200,750x200,750x100,970x90,728x90,branding_web"},"1":{"area":"large_rectangle_1","size":"336x300,336x280,300x300,300x250"},"2":{"area":"large_rectangle_2","size":"336x300,336x280,300x300,300x250"},"3":{"area":"billboard","size":"1000x310,970x310,560x315,480x300,750x300,970x250,970x90,728x90"},"4":{"area":"slide_up","size":"970x310,970x250,950x200,750x300,750x200,728x90,500x200,320x150,320x100,320x50,300x100,300x50,slide_up"},"5":{"area":"mobile_leaderboard","size":"320x100,320x50,300x100,300x50"},"6":{"area":"mobile_square_1","size":"300x300,300x250,interscroller"},"7":{"area":"mobile_square_2","size":"300x300,300x250,250x250"},"8":{"area":"mobile_square_3","size":"300x300,300x250,250x250"},"9":{"area":"mobile_billboard","size":"300x300,300x250"},"10":{"area":"pre_roll","size":"videoad,videoad_adblock","supertag":"InstreamVideo"}});
 	CSFDAds.setTServer("https://a.csfd.cz/csfd/tserver");
 </script>
 	</body>

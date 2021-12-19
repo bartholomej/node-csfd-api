@@ -39,7 +39,7 @@ describe('Creator info', () => {
   test('Photo', () => {
     const creator = getPhoto(asideNode);
     expect(creator).toEqual<string>(
-      '//image.pmgstatic.com/cache/resized/w100h132crop/files/images/creator/photos/164/515/164515525_b98f8a.jpg'
+      '//image.pmgstatic.com/cache/resized/w100h132crop/files/images/creator/photos/164/502/164502788_119691.jpg'
     );
   });
 });
@@ -96,7 +96,7 @@ describe('Actor info', () => {
   test('Photo', () => {
     const creator = getPhoto(asideNodeActor);
     expect(creator).toEqual<string>(
-      '//image.pmgstatic.com/cache/resized/w100h132crop/files/images/creator/photos/165/098/165098142_bfe764.jpg'
+      '//image.pmgstatic.com/cache/resized/w100h132crop/files/images/creator/photos/165/098/165098144_9f239a.jpg'
     );
   });
 });
@@ -112,16 +112,16 @@ describe('Actor birthday info', () => {
     expect(creator).toEqual<string>('Østerbro, Kodaň, Dánsko');
   });
 
-  test('Birthplace', () => {
+  test('Age', () => {
     const creator = getBirthdayInfo(asideNodeActor)?.age;
-    expect(creator).toEqual<number>(55);
+    expect(creator).toEqual<number>(56);
   });
 });
 
 describe("Creator's films", () => {
   test('First film from first section', () => {
     const films = getFilms(filmsNodeActor) as CSFDCreatorScreening[];
-    expect(films[0].title).toEqual<string>('Fantastic Beasts 3');
+    expect(films[0].title).toEqual<string>('Untitled Indiana Jones Project');
   });
 
   test('Last film from first section', () => {
@@ -176,6 +176,6 @@ describe('Composer birthday info', () => {
 describe("Creator's films", () => {
   test('First film from first section', () => {
     const films = getFilms(filmsNodeComposer) as CSFDCreatorScreening[];
-    expect(films[0].title).toEqual<string>('Poslouchej');
+    expect(films[0].title).toEqual<string>('Spolu');
   });
 });

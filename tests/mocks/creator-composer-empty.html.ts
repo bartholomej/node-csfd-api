@@ -5,7 +5,8 @@ export const composerMock = `
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="">
+
+<meta name="description" content="Biografie tvůrce Sven Mikkelsen. Vše o životě, kariéře, filmech a seriálech tvůrce Sven Mikkelsen.">
 
 <link rel="alternate" hreflang="cs" href="https://www.csfd.cz/tvurce/500749-sven-mikkelsen/biografie/">
 <link rel="alternate" hreflang="sk" href="https://www.csfd.sk/tvorca/500749-sven-mikkelsen/biografia/">
@@ -13,6 +14,7 @@ export const composerMock = `
 <link rel="canonical" href="https://www.csfd.cz/tvurce/500749-sven-mikkelsen/biografie/">
 
 <meta property="og:site_name" content="csfd.cz">
+<meta property="og:description" content="Biografie tvůrce Sven Mikkelsen. Vše o životě, kariéře, filmech a seriálech tvůrce Sven Mikkelsen.">
 <meta property="og:title" content="Sven Mikkelsen">
 <meta property="og:type" content="actor">
 <meta property="og:url" content="https://www.csfd.cz/tvurce/500749-sven-mikkelsen/biografie/">
@@ -21,13 +23,15 @@ export const composerMock = `
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="https://www.csfd.cz/tvurce/500749-sven-mikkelsen/biografie/">
 <meta name="twitter:title" content="Sven Mikkelsen">
+<meta name="twitter:description" content="Biografie tvůrce Sven Mikkelsen. Vše o životě, kariéře, filmech a seriálech tvůrce Sven Mikkelsen.">
+
 
 		<title> Sven Mikkelsen | Biografie | ČSFD.cz </title>
-		<link rel="stylesheet" href="//static.pmgstatic.com/assets/web-css/c920200f98cde2677a46601a7fc93edb/styles.min.css">
-		<link rel="shortcut icon" href="//static.pmgstatic.com/assets/images/8c32a59345ee07beec7a567a77b3d7a2/favicon.ico">
-		<link rel="apple-touch-icon" href="//static.pmgstatic.com/assets/images/8c32a59345ee07beec7a567a77b3d7a2/apple-touch-icon.png">
-		<script src="//static.pmgstatic.com/assets/vendor/303068987a8e00162dc0cab989a40fe7/jquery.min.js"></script>
-		<script src="//static.pmgstatic.com/assets/web-js/064b97ba4f544999de35c0c6d88c2e10/scripts.min.js" defer></script>
+		<link rel="stylesheet" href="//static.pmgstatic.com/assets/web-css/1940c6510ace5bce4efa70ce723382d3/styles.min.css">
+		<link rel="shortcut icon" href="//static.pmgstatic.com/assets/images/c9bd6a26fa717816674d2078f60af950/favicon.ico">
+		<link rel="apple-touch-icon" href="//static.pmgstatic.com/assets/images/c9bd6a26fa717816674d2078f60af950/apple-touch-icon.png">
+		<script src="//static.pmgstatic.com/assets/vendor/d4bda16db4a0ccf1befc901969f0db63/jquery.min.js"></script>
+		<script src="//static.pmgstatic.com/assets/web-js/8d2e3450dfca13939cd3b07a655adc46/scripts.min.js" defer></script>
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap&subset=latin-ext">
 
@@ -64,6 +68,7 @@ export const composerMock = `
 	</head>
 
 	<body id="top">
+
 
 		<div class="ad-wrapper">
 			<div id="leaderboard-wrapper">
@@ -154,7 +159,7 @@ export const composerMock = `
 			<a href="/kino/?period=today">Kino</a>
 		</li>
 		<li class="tab-nav-item">
-			<a href="/vod/?year=2021&amp;month=9">VOD<span class="top-nav-new">NEW</span></a>
+			<a href="/vod/?year=2021&amp;month=12">VOD<span class="top-nav-new">NEW</span></a>
 		</li>
 		<li class="tab-nav-item">
 			<a href="/zebricky/filmy/nejlepsi/">Žebříčky</a>
@@ -174,6 +179,9 @@ export const composerMock = `
 		<li class="tab-nav-item">
 			<a href="/diskuze/">Diskuze</a>
 		</li>
+		<li class="tab-nav-item yellow">
+			<a href="/cesky-lev/">Český lev</a>
+		</li>
 	</ul>
 	<ul class="tab-nav-more">
 		<li>
@@ -191,7 +199,7 @@ export const composerMock = `
 					<a href="/kino/?period=today">Kino</a>
 				</li>
 				<li class="tab-nav-item">
-					<a href="/vod/?year=2021&amp;month=9">VOD<span class="top-nav-new">NEW</span></a>
+					<a href="/vod/?year=2021&amp;month=12">VOD<span class="top-nav-new">NEW</span></a>
 				</li>
 				<li class="tab-nav-item">
 					<a href="/zebricky/filmy/nejlepsi/">Žebříčky</a>
@@ -211,6 +219,9 @@ export const composerMock = `
 				<li class="tab-nav-item">
 					<a href="/diskuze/">Diskuze</a>
 				</li>
+				<li class="tab-nav-item yellow">
+					<a href="/cesky-lev/">Český lev</a>
+				</li>
 			</ul>
 		</li>
 	</ul>
@@ -223,10 +234,12 @@ export const composerMock = `
 
 
 <div class="creator-main">
+<script type="application/ld+json">{"@context":"https://schema.org/","@type":"Person","name":"Sven Mikkelsen","image":"//static.pmgstatic.com/assets/images/c9bd6a26fa717816674d2078f60af950/empty-image.svg"}</script>
 	<div class="creator-main-content">
 		<div class="creator-about">
 			<div class="creator-profile">
-				<div class="creator-profile-content">
+<div id="snippet--profileHead"></div>
+				<div class="creator-profile-content creator-profile-content-nocopyright">
 					<figure>
 							<img alt="Sven Mikkelsen" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" loading="lazy" class="empty-image" width="100" height="132">
 					</figure>
@@ -240,13 +253,6 @@ export const composerMock = `
 
 					</p>
 
-					<div class="creator-photo-copyright">
-						<div class="creator-photo-copyright-content">
-							<span class="item-text">
-								
-							</span>
-						</div>
-					</div>
 
 					<div class="control-panel-mobile">
 						<a href="#dropdown-control-panel" rel="dropdownContent" class="button button-control-panel small" data-pos="js" data-pos-right-offset="16" data-pos-side="bottom-right"><i class="icon icon-menu"></i></a>
@@ -391,6 +397,13 @@ export const composerMock = `
 				</tr>
 					<tr>
 						<td class="year">
+							2022
+						</td>
+						<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/1079136-spolu/" class="film-title-name">Spolu</a> <span class="film-title-info"></span></h3>						</td>
+					</tr>
+					<tr>
+						<td class="year">
 							2019
 						</td>
 						<td class="name">
@@ -509,6 +522,11 @@ export const composerMock = `
 						<a href="https://www.facebook.com/www.CSFD.cz/" class="btn-social" target="_blank" rel="noreferrer"><i class="icon icon-facebook"></i></a>
 						<a href="https://www.instagram.com/csfd.cz/" class="btn-social" target="_blank" rel="noreferrer"><i class="icon icon-instagram"></i></a>
 					</div>
+					<div class="footer-right-app">
+						<h3>Mobilní aplikace</h3>
+						<a href="https://apps.apple.com/cz/app/čsfd-web/id1552901865#?platform=iphone" class="btn-app-store" target="_blank"><img alt="ČSFD Web | App Store" src="//static.pmgstatic.com/assets/images/c9bd6a26fa717816674d2078f60af950/appstore.svg"></a>
+						<a href="https://play.google.com/store/apps/details?id=cz.csfd.lite" class="btn-google-play" target="_blank"><img alt="ČSFD Web | Google Play" src="//static.pmgstatic.com/assets/images/c9bd6a26fa717816674d2078f60af950/googleplay.svg"></a>
+					</div>
 					<div class="site-info">
 						<p>Česko-Slovenská filmová databáze</p>
 						<p>&copy; 2001-2021 POMO Media Group s.r.o.</p>
@@ -525,7 +543,7 @@ export const composerMock = `
 </div>
 
 
-		<script type="text/json" id="js-common-config">{"country":1,"domain":"csfd.cz","host":"www.csfd.cz","userLanguageId":1,"hooks":["FormGet","AutoSubmitForm"],"dictionary":{"web.autocomplete.film.header":"Filmy","web.autocomplete.film.more.link":"Všechny filmy","web.autocomplete.series.header":"Seriály","web.autocomplete.series.more.link":"Všechny seriály","web.autocomplete.creator.header":"Tvůrci","web.autocomplete.creator.more.link":"Všichni tvůrci","web.autocomplete.user.header":"Uživatelé","web.autocomplete.user.more.link":"Všichni uživatelé","web.autocomplete.searching":"Vyhledávám...","web.autocomplete.search.select":"Vyplňte název filmu/tvůrce/uživatele","web.autocomplete.noservice":"Služba vyhledávání není momentálně dostupná.","web.search.creator.notfound":"Nenalezeni žádní tvůrci","web.search.film.notfound":"Nenalezeny žádné filmy","web.search.series.notfound":"Nenalezeny žádné seriály","web.search.user.notfound":"Nenalezeni žádní uživatelé","web.check.all":"zaškrtnout vše","web.cinema.top.link":"nahoru","web.user.profile.about.from.plain.to.html.alert":"Změnou typu editace bez uložení přijdeš o všechny změny. Pokud jsi v HTML použil konstrukce, které editor nepodporuje, uložením v editoru o tyto změny přijdeš. Opravdu chceš pokračovat?","web.user.profile.about.from.html.to.plain.alert":"Změnou typu editace bez uložení přijdeš o všechny změny. Opravdu chceš pokračovat?","web.sortable.error.move":"Při přesunu pozic došlo k chybě. Stránka bude obnovena. Pokračovat?","web.preloader.loading":"Načítání...","web.modal.confirm.close":"Opravdu chceš zavřít okno? Možná máš neuložené změny.","web.forums.respond.cancel":"zrušit odpověď","web.ajax.default.error.message":"Omlouváme se, ale nastala chyba při zpracování.","web.ajax.resend.button":"Odeslat znovu","web.fileupload.preloader":"Načítám knihovnu, prosím o strpení...","web.selectize.plugin.remove.button.remove":"Odebrat"},"route":":Web:Creator:Biographies:default","isLoggedIn":false,"userId":null}</script>
+		<script type="text/json" id="js-common-config">{"country":1,"domain":"csfd.cz","host":"www.csfd.cz","userLanguageId":1,"dictionary":{"web.autocomplete.film.header":"Filmy","web.autocomplete.film.more.link":"Všechny filmy","web.autocomplete.series.header":"Seriály","web.autocomplete.series.more.link":"Všechny seriály","web.autocomplete.creator.header":"Tvůrci","web.autocomplete.creator.more.link":"Všichni tvůrci","web.autocomplete.user.header":"Uživatelé","web.autocomplete.user.more.link":"Všichni uživatelé","web.autocomplete.searching":"Vyhledávám...","web.autocomplete.search.select":"Vyplňte název filmu/tvůrce/uživatele","web.autocomplete.noservice":"Služba vyhledávání není momentálně dostupná.","web.search.creator.notfound":"Nenalezeni žádní tvůrci","web.search.film.notfound":"Nenalezeny žádné filmy","web.search.series.notfound":"Nenalezeny žádné seriály","web.search.user.notfound":"Nenalezeni žádní uživatelé","web.check.all":"zaškrtnout vše","web.cinema.top.link":"nahoru","web.user.profile.about.from.plain.to.html.alert":"Změnou typu editace bez uložení přijdeš o všechny změny. Pokud jsi v HTML použil konstrukce, které editor nepodporuje, uložením v editoru o tyto změny přijdeš. Opravdu chceš pokračovat?","web.user.profile.about.from.html.to.plain.alert":"Změnou typu editace bez uložení přijdeš o všechny změny. Opravdu chceš pokračovat?","web.sortable.error.move":"Při přesunu pozic došlo k chybě. Stránka bude obnovena. Pokračovat?","web.preloader.loading":"Načítání...","web.modal.confirm.close":"Opravdu chceš zavřít okno? Možná máš neuložené změny.","web.forums.respond.cancel":"zrušit odpověď","web.ajax.default.error.message":"Omlouváme se, ale nastala chyba při zpracování.","web.ajax.resend.button":"Odeslat znovu","web.fileupload.preloader":"Načítám knihovnu, prosím o strpení...","web.selectize.plugin.remove.button.remove":"Odebrat"},"route":":Web:Creator:Biographies:default","isLoggedIn":false,"userId":null,"hooks":["InfoModal","FormGet","AutoSubmitForm"]}</script>
 
 		<div class="flash-message" data-ajax-prepend="true" id="snippet--flashes">
 			
@@ -534,9 +552,9 @@ export const composerMock = `
 
 <div id="slide_up" class="ad-pmg"></div>
 
-<script src="//static.pmgstatic.com/assets/utils-js/e5e55e18ffd2fe354cbe0a8e02fa3ad6/scripts.min.js"></script>
+<script src="//static.pmgstatic.com/assets/utils-js/4617ef4e80f050d67c0ef7aa2eb7f9fb/scripts.min.js"></script>
 <script type="text/javascript">
-	CSFDAds.complete({"ball":{"page":3,"login":2,"creator_id":500749,"site":"csfd.cz"},"0":{"area":"leaderboard","size":"1000x210,2000x1400,1000x200,1000x210,970x210,998x200,750x200,750x100,970x90,728x90,branding_web"},"1":{"area":"billboard","size":"1000x310,970x310,560x315,480x300,750x300,970x250,970x90,728x90"},"2":{"area":"slide_up","size":"500x200,320x150,320x100,320x50,300x100,300x50"},"3":{"area":"mobile_leaderboard","size":"320x100,320x50,300x100,300x50"},"4":{"area":"mobile_billboard","size":"300x300,300x250"}});
+	CSFDAds.complete({"ball":{"page":3,"login":2,"creator_id":500749,"site":"csfd.cz"},"0":{"area":"leaderboard","size":"1000x210,2000x1400,1000x200,1000x210,970x210,998x200,750x200,750x100,970x90,728x90,branding_web"},"1":{"area":"billboard","size":"1000x310,970x310,560x315,480x300,750x300,970x250,970x90,728x90"},"2":{"area":"slide_up","size":"970x310,970x250,950x200,750x300,750x200,728x90,500x200,320x150,320x100,320x50,300x100,300x50,slide_up"},"3":{"area":"mobile_leaderboard","size":"320x100,320x50,300x100,300x50"},"4":{"area":"mobile_billboard","size":"300x300,300x250"}});
 	CSFDAds.setTServer("https://a.csfd.cz/csfd/tserver");
 </script>
 	</body>

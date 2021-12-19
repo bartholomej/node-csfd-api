@@ -5,7 +5,8 @@ export const directorMock = `
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Quentin Tarantino se narodil 27. března roku 1963 v americkém Knoxville teprve šestnáctileté Connie Tarantinové. Své jméno Quentin dostal podle matčiny oblíbené televizní postavy Quinta ze seriálu &quot;Gunsmoke&quot;. Quentinův otec byl jistý Tony Tarantino,…">
+
+<meta name="description" content="Vše o tvůrci Quentin Tarantino: Filmografie, Biografie, Zajímavosti, Videa, Galerie, Diskuze a další...">
 
 <link rel="alternate" hreflang="cs" href="https://www.csfd.cz/tvurce/2120-quentin-tarantino/prehled/">
 <link rel="alternate" hreflang="sk" href="https://www.csfd.sk/tvorca/2120-quentin-tarantino/prehlad/">
@@ -16,7 +17,7 @@ export const directorMock = `
 <meta property="og:image" content="//image.pmgstatic.com/cache/resized/w936/files/images/film/photos/163/565/163565021_38fdcc.jpg">
 <meta property="og:image" content="//image.pmgstatic.com/files/images/film/photos/000/354/354940_3d6a30.jpg">
 <meta property="og:image" content="//image.pmgstatic.com/files/images/film/photos/000/127/127233_d667d6.jpg">
-<meta property="og:description" content="Quentin Tarantino se narodil 27. března roku 1963 v americkém Knoxville teprve šestnáctileté Connie Tarantinové. Své jméno Quentin dostal podle matčiny oblíbené televizní postavy Quinta ze seriálu &quot;Gunsmoke&quot;. Quentinův otec byl jistý Tony Tarantino,…">
+<meta property="og:description" content="Vše o tvůrci Quentin Tarantino: Filmografie, Biografie, Zajímavosti, Videa, Galerie, Diskuze a další...">
 <meta property="og:title" content="Quentin Tarantino">
 <meta property="og:type" content="director">
 <meta property="og:url" content="https://www.csfd.cz/tvurce/2120-quentin-tarantino/prehled/">
@@ -25,15 +26,16 @@ export const directorMock = `
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="https://www.csfd.cz/tvurce/2120-quentin-tarantino/prehled/">
 <meta name="twitter:title" content="Quentin Tarantino">
-<meta name="twitter:description" content="Quentin Tarantino se narodil 27. března roku 1963 v americkém Knoxville teprve šestnáctileté Connie Tarantinové. Své jméno Quentin dostal podle matčiny oblíbené televizní postavy Quinta ze seriálu &quot;Gunsmoke&quot;. Quentinův otec byl jistý Tony Tarantino,…">
+<meta name="twitter:description" content="Vše o tvůrci Quentin Tarantino: Filmografie, Biografie, Zajímavosti, Videa, Galerie, Diskuze a další...">
 <meta name="twitter:image" content="//image.pmgstatic.com/cache/resized/w936/files/images/film/photos/163/565/163565021_38fdcc.jpg">
 
+
 		<title> Quentin Tarantino | ČSFD.cz </title>
-		<link rel="stylesheet" href="//static.pmgstatic.com/assets/web-css/c920200f98cde2677a46601a7fc93edb/styles.min.css">
-		<link rel="shortcut icon" href="//static.pmgstatic.com/assets/images/8c32a59345ee07beec7a567a77b3d7a2/favicon.ico">
-		<link rel="apple-touch-icon" href="//static.pmgstatic.com/assets/images/8c32a59345ee07beec7a567a77b3d7a2/apple-touch-icon.png">
-		<script src="//static.pmgstatic.com/assets/vendor/303068987a8e00162dc0cab989a40fe7/jquery.min.js"></script>
-		<script src="//static.pmgstatic.com/assets/web-js/064b97ba4f544999de35c0c6d88c2e10/scripts.min.js" defer></script>
+		<link rel="stylesheet" href="//static.pmgstatic.com/assets/web-css/1940c6510ace5bce4efa70ce723382d3/styles.min.css">
+		<link rel="shortcut icon" href="//static.pmgstatic.com/assets/images/c9bd6a26fa717816674d2078f60af950/favicon.ico">
+		<link rel="apple-touch-icon" href="//static.pmgstatic.com/assets/images/c9bd6a26fa717816674d2078f60af950/apple-touch-icon.png">
+		<script src="//static.pmgstatic.com/assets/vendor/d4bda16db4a0ccf1befc901969f0db63/jquery.min.js"></script>
+		<script src="//static.pmgstatic.com/assets/web-js/8d2e3450dfca13939cd3b07a655adc46/scripts.min.js" defer></script>
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap&subset=latin-ext">
 
@@ -45,9 +47,9 @@ export const directorMock = `
 <script src="https://cdn.cpex.cz/cmp/v2/cpex-cmp.min.js"></script><script src="//assets.adobedtm.com/e949270ea86e/f1d67104c3f5/launch-5baa4d1acdaf.min.js" async></script>
 
 <script src="https://publisher.caroda.io/videoPlayer/caroda.min.js?ctok=231efd424e405a" crossorigin="anonymous" defer></script>
-<script src="//static.pmgstatic.com/assets/vendor/303068987a8e00162dc0cab989a40fe7/videojs/video.min.js" async defer></script>
+<script id="videojs-vendor" src="//static.pmgstatic.com/assets/vendor/d4bda16db4a0ccf1befc901969f0db63/videojs/video.min.js" async defer></script>
 <script type="text/javascript" src="https://www.gstatic.com/cv/js/sender/v1/cast_sender.js?loadCastFramework=1" async defer></script>
-<link rel="stylesheet" href="//static.pmgstatic.com/assets/vendor/303068987a8e00162dc0cab989a40fe7/videojs/video-js.min.css">
+<link rel="stylesheet" href="//static.pmgstatic.com/assets/vendor/d4bda16db4a0ccf1befc901969f0db63/videojs/video-js.min.css">
 
 <script>
 	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -74,6 +76,7 @@ export const directorMock = `
 	</head>
 
 	<body id="top">
+
 
 		<div class="ad-wrapper">
 			<div id="leaderboard-wrapper">
@@ -164,7 +167,7 @@ export const directorMock = `
 			<a href="/kino/?period=today">Kino</a>
 		</li>
 		<li class="tab-nav-item">
-			<a href="/vod/?year=2021&amp;month=9">VOD<span class="top-nav-new">NEW</span></a>
+			<a href="/vod/?year=2021&amp;month=12">VOD<span class="top-nav-new">NEW</span></a>
 		</li>
 		<li class="tab-nav-item">
 			<a href="/zebricky/filmy/nejlepsi/">Žebříčky</a>
@@ -184,6 +187,9 @@ export const directorMock = `
 		<li class="tab-nav-item">
 			<a href="/diskuze/">Diskuze</a>
 		</li>
+		<li class="tab-nav-item yellow">
+			<a href="/cesky-lev/">Český lev</a>
+		</li>
 	</ul>
 	<ul class="tab-nav-more">
 		<li>
@@ -201,7 +207,7 @@ export const directorMock = `
 					<a href="/kino/?period=today">Kino</a>
 				</li>
 				<li class="tab-nav-item">
-					<a href="/vod/?year=2021&amp;month=9">VOD<span class="top-nav-new">NEW</span></a>
+					<a href="/vod/?year=2021&amp;month=12">VOD<span class="top-nav-new">NEW</span></a>
 				</li>
 				<li class="tab-nav-item">
 					<a href="/zebricky/filmy/nejlepsi/">Žebříčky</a>
@@ -221,6 +227,9 @@ export const directorMock = `
 				<li class="tab-nav-item">
 					<a href="/diskuze/">Diskuze</a>
 				</li>
+				<li class="tab-nav-item yellow">
+					<a href="/cesky-lev/">Český lev</a>
+				</li>
 			</ul>
 		</li>
 	</ul>
@@ -233,24 +242,39 @@ export const directorMock = `
 
 
 <div class="creator-main">
+<script type="application/ld+json">{"@context":"https://schema.org/","@type":"Person","name":"Quentin Tarantino","birthDate":"1963-03-27","birthPlace":{"@type":"Place","name":"Knoxville, Tennessee, USA"},"image":"//image.pmgstatic.com/files/images/creator/photos/164/515/164515525_b98f8a.jpg?w100h132crop"}</script>
 	<div class="creator-main-content">
 		<div class="creator-about">
 			<div class="creator-profile">
-				<div class="creator-profile-head">
-					<a href="https://www.csfd.cz/zebricky/reziseri/#highlight-3-2120" title="Umístění tvůrce v sekci žebříčky se zvýrazněním">
-						<i class="icon icon-thumb-up"></i> 1. nejoblíbenější režisér
-					</a>
-					<a href="https://www.csfd.cz/zebricky/scenariste-kameramani-skladatele/#highlight-5-2120" title="Umístění tvůrce v sekci žebříčky se zvýrazněním">
-						<i class="icon icon-thumb-up"></i> 1. nejoblíbenější scenárista
-					</a>
+<div id="snippet--profileHead">					<div class="creator-profile-head">
 
-					<a href="/tvurce/2120-quentin-tarantino/prehled/?name=fanclubList&amp;do=modalWindow" class="btn-fanclub ajax" rel="contentModal" data-mfp-main-class="modal-fanclub" data-mfp-src="#panelModal">
-						Fanklub (39 085)
-					</a>
-				</div>
+
+						<div class="label-simple label-favorite-white">
+							<a href="/zebricky/reziseri/#highlight-3-2120" title="Umístění tvůrce v sekci žebříčky se zvýrazněním.">
+								<i class="icon icon-thumb-up"></i>1. nejoblíbenější režisér
+							</a>
+						</div>
+						<div class="label-simple label-favorite-white">
+							<a href="/zebricky/scenariste-kameramani-skladatele/#highlight-5-2120" title="Umístění tvůrce v sekci žebříčky se zvýrazněním.">
+								<i class="icon icon-thumb-up"></i>1. nejoblíbenější scenárista
+							</a>
+						</div>
+						<div class="label-simple label-favorite-white">
+							<a href="/zebricky/herci-a-herecky/?fromLeft=200#highlight-1-2120" title="Umístění tvůrce v sekci žebříčky se zvýrazněním.">
+								<i class="icon icon-thumb-up"></i>264. nejoblíbenější herec
+							</a>
+						</div>
+
+						<div class="label-simple label-fanclub">
+							<a href="/tvurce/2120-quentin-tarantino/prehled/?name=fanclubList&amp;do=modalWindow" class="btn-fanclub ajax" rel="contentModal" data-mfp-main-class="modal-fanclub" data-mfp-src="#panelModal">
+								Fanklub (37 359)
+							</a>
+						</div>
+					</div>
+</div>
 				<div class="creator-profile-content">
 					<figure>
-							<img alt="Quentin Tarantino" src="//image.pmgstatic.com/cache/resized/w100h132crop/files/images/creator/photos/164/515/164515525_b98f8a.jpg" loading="lazy" width="100" height="132" srcset="//image.pmgstatic.com/cache/resized/w100h132crop/files/images/creator/photos/164/515/164515525_b98f8a.jpg 1x, //image.pmgstatic.com/cache/resized/w200h264crop/files/images/creator/photos/164/515/164515525_b98f8a.jpg 2x, //image.pmgstatic.com/cache/resized/w300h396crop/files/images/creator/photos/164/515/164515525_b98f8a.jpg 3x">
+							<img alt="Quentin Tarantino" src="//image.pmgstatic.com/cache/resized/w100h132crop/files/images/creator/photos/164/502/164502788_119691.jpg" loading="lazy" width="100" height="132" srcset="//image.pmgstatic.com/cache/resized/w100h132crop/files/images/creator/photos/164/502/164502788_119691.jpg 1x, //image.pmgstatic.com/cache/resized/w200h264crop/files/images/creator/photos/164/502/164502788_119691.jpg 2x, //image.pmgstatic.com/cache/resized/w300h396crop/files/images/creator/photos/164/502/164502788_119691.jpg 3x">
 					</figure>
 
 					<h1>
@@ -266,14 +290,9 @@ export const directorMock = `
 					<div class="creator-photo-copyright">
 						<div class="creator-photo-copyright-content">
 							<span class="item-text">
-								Photo from
+								Photo ©
+									Gage Skidmore - 2015 San Diego Comic Con International in San Diego, California
 							</span>
-								<a class="item-movie" href="/film/7743-ctyri-pokoje/">
-									Čtyři pokoje
-								</a>
-								<span class="item-movie-rest">
-										(1995)
-								</span>
 						</div>
 					</div>
 
@@ -393,16 +412,19 @@ export const directorMock = `
 
 	<section class="box box-borderless">
 			<header class="box-header">
-				<h2>Videa <span class="count">(8)</span></h2>
+				<h2>Videa <span class="count">(5)</span></h2>
 				<div class="box-header-action">
 					<a class="button" href="/tvurce/2120-quentin-tarantino/videa/">Více</a>
 				</div>
 			</header>
 			<div class="box-content">
 				<div class="box box-media">
-					<figure class="box-video preview" data-autoplay-video>
+					<figure data-autoplay-video class="box-video preview box-video-autoplay">
+							<div class="box-videoplayer-film">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/527699-tenkrat-v-hollywoodu/" class="film-title-name">Tenkrát v Hollywoodu</a> <span class="film-title-info"><span class="info">(2019)</span></span></h3>							</div>
+
 <div class="box-video-content">
-	<a href="javascript:void(0);" class="box-video-preview preview_ disabled" data-video-player-initialize="video-player-1" data-video-player-playlist-start="0" data-video-player-autoplay="false" data-video-player-translations-url="/api/video-player/translations/">
+	<a href="javascript:void(0);" class="box-video-preview disabled" data-video-player-initialize="video-player-1" data-video-player-playlist-start="0" data-video-player-autoplay="" data-video-player-translations-url="/api/video-player/translations/">
 			<picture>
 				<source media="(max-width: 650px)" srcset="//image.pmgstatic.com/cache/resized/w360/files/images/film/video/preview/163/495/163495461_d25706.jpg 1x, //image.pmgstatic.com/cache/resized/w720/files/images/film/video/preview/163/495/163495461_d25706.jpg 2x, //image.pmgstatic.com/cache/resized/w1080/files/images/film/video/preview/163/495/163495461_d25706.jpg 3x">
 				<img alt="Rozhovor 2 - Quentin Tarantino, Margot Robbie" class="prev-img" src="//image.pmgstatic.com/cache/resized/w663/files/images/film/video/preview/163/495/163495461_d25706.jpg" loading="lazy" width="663" height="372" srcset="//image.pmgstatic.com/cache/resized/w663/files/images/film/video/preview/163/495/163495461_d25706.jpg 1x">
@@ -420,7 +442,7 @@ export const directorMock = `
 			width="637"
 			height="360"
 			data-video-url="/api/video-player/"
-			data-videos="[{&quot;description&quot;:&quot;Rozhovor 2 - Quentin Tarantino, Margot Robbie&quot;,&quot;language_id&quot;:3,&quot;duration&quot;:191,&quot;subtitles_language_id&quot;:1,&quot;poster_path&quot;:&quot;files/images/film/video/preview/163/495/163495461_d25706.jpg&quot;,&quot;poster_storage_id&quot;:&quot;image-production&quot;,&quot;poster_width&quot;:1280,&quot;poster_height&quot;:720,&quot;video_film_id&quot;:157746741,&quot;film_video_type_id&quot;:9,&quot;position&quot;:2,&quot;video_id&quot;:157752839,&quot;copyright&quot;:&quot;Sony Pictures Entertainment&quot;,&quot;film_name&quot;:&quot;Tenkrát v Hollywoodu&quot;,&quot;film_year&quot;:2019,&quot;film_type&quot;:0,&quot;film_id&quot;:527699,&quot;film_rating_category&quot;:1,&quot;external_description&quot;:&quot;Tenkrát v Hollywoodu: Rozhovor 2 - Quentin Tarantino, Margot Robbie&quot;,&quot;poster&quot;:{&quot;width&quot;:1280,&quot;height&quot;:720,&quot;path&quot;:&quot;files/images/film/video/preview/163/495/163495461_d25706.jpg&quot;,&quot;storage_id&quot;:&quot;image-production&quot;},&quot;request_data&quot;:&quot;rlW2nJEyo0yxVwbkAGp3AGV4ZmxfVaA1LaEcqTkyGTShM3IuM2IWMUZvByfkYQWqYPW0o2gyovV6VzHkAQuuLGuuMQV2ZwL3BQOuBTLjATHjAmt3MQt2AJV0MTVjZQN0AQZvsD==&quot;}]"
+			data-videos="[&#123;&quot;description&quot;:&quot;Rozhovor 2 - Quentin Tarantino, Margot Robbie&quot;,&quot;language_id&quot;:3,&quot;duration&quot;:191,&quot;subtitles_language_id&quot;:1,&quot;poster_path&quot;:&quot;files/images/film/video/preview/163/495/163495461_d25706.jpg&quot;,&quot;poster_storage_id&quot;:&quot;image-production&quot;,&quot;poster_width&quot;:1280,&quot;poster_height&quot;:720,&quot;video_film_id&quot;:157746741,&quot;film_video_type_id&quot;:9,&quot;position&quot;:2,&quot;video_id&quot;:157752839,&quot;copyright&quot;:&quot;Sony Pictures Entertainment&quot;,&quot;film_name&quot;:&quot;Tenkrát v Hollywoodu&quot;,&quot;film_year&quot;:2019,&quot;film_type&quot;:0,&quot;film_id&quot;:527699,&quot;film_rating_category&quot;:1,&quot;external_description&quot;:&quot;Tenkrát v Hollywoodu: Rozhovor 2 - Quentin Tarantino, Margot Robbie&quot;,&quot;poster&quot;:&#123;&quot;width&quot;:1280,&quot;height&quot;:720,&quot;path&quot;:&quot;files/images/film/video/preview/163/495/163495461_d25706.jpg&quot;,&quot;storage_id&quot;:&quot;image-production&quot;},&quot;title&quot;:&quot;&lt;h3 class=\&quot;film-title\&quot;&gt;&lt;i class=\&quot;icon icon-rounded-square red\&quot;&gt;&lt;/i&gt;&lt;a href=\&quot;/film/527699-tenkrat-v-hollywoodu/\&quot; class=\&quot;film-title-name\&quot;&gt;Tenkrát v Hollywoodu&lt;/a&gt; &lt;span class=\&quot;film-title-info\&quot;&gt;&lt;span class=\&quot;info\&quot;&gt;(2019)&lt;/span&gt;&lt;/span&gt;&lt;/h3&gt;&quot;,&quot;request_data&quot;:&quot;rlW2nJEyo0yxVwbkAGp3AGV4ZmxfVaA1LaEcqTkyGTShM3IuM2IWMUZvByfkYQWqYPW0o2gyovV6VwyxMQp0A2SzZmWwLwt2ZGNlZQyyBQplZQRlZTZ2BTAvZmSzAJEyAmxvsD==&quot;}]"
 			data-recommended-videos-url="/api/video-player/recommended-videos/?videoId=157752839&amp;limit=2"
 			data-recommended-autoplay
 		>
@@ -435,13 +457,27 @@ export const directorMock = `
 
 	<section class="box box-nooverflow">
 		<header class="box-header">
-			<h2>Zajímavosti <span class="count">(479)</span></h2>
+			<h2>Zajímavosti <span class="count">(486)</span></h2>
 			<div class="box-header-action">
 				<a class="button" href="/tvurce/2120-quentin-tarantino/zajimavosti/">Více</a>
 			</div>
 		</header>
 		<div class="box-content">
 
+<article class="article article-trivia">
+	<div class="article-content">
+
+		<ul>
+			<li>
+				<a href="https://www.csfd.cz/tvurce/320110-don-murphy/">Don Murphy</a> ho žaloval o 5,000,000 dolárov, obvinený z napadnutia. Tarantino napadol Murphyho v reštaurácii, udrel ho o stenu a udrel ho päsťami. <span class="span-more-small">
+						(<a href="/uzivatel/857128-mtmaniak/">MTManiak</a>)
+
+
+				</span>
+			</li>
+		</ul>
+	</div>
+</article>
 <article class="article article-trivia">
 	<div class="article-content">
 
@@ -470,20 +506,6 @@ export const directorMock = `
 		</ul>
 	</div>
 </article>
-<article class="article article-trivia">
-	<div class="article-content">
-
-		<ul>
-			<li>
-				V roku 2018 pridal Oxford English Dictionary do svojej zbierky výraz „Tarantinoesque“ a označil Tarantinove filmy za „charakterizované grafickým a štylizovaným násilím, nelineárnymi dejmi, nelineárnymi odkazmi, satirickými témami a ostrým dialógom“. <span class="span-more-small">
-						(<a href="/uzivatel/345485-weezy22/">Weezy22</a>)
-
-
-				</span>
-			</li>
-		</ul>
-	</div>
-</article>
 		</div>
 	</section>
 
@@ -501,17 +523,17 @@ export const directorMock = `
 	<p class="p-box-copyright">Photo © Miramax Films</p>
 </div>
 <figure class="figure-skeleton">
-	<div class="media-img" style="padding-bottom: 66.57%">
+	<div class="media-img" style="padding-bottom: 42.48%">
 		<picture>
-			<source media="(max-width: 400px)" srcset="//image.pmgstatic.com/cache/resized/w360/files/images/film/photos/000/149/149687_ccbfb0.jpg 1x">
-			<source media="(max-width: 750px) and (min-width: 401px)" srcset="//image.pmgstatic.com/cache/resized/w663/files/images/film/photos/000/149/149687_ccbfb0.jpg 1x">
-			<img alt="George Clooney, Quentin Tarantino" src="//image.pmgstatic.com/cache/resized/w468/files/images/film/photos/000/149/149687_ccbfb0.jpg" loading="lazy" width="468" height="311" srcset="//image.pmgstatic.com/cache/resized/w468/files/images/film/photos/000/149/149687_ccbfb0.jpg 1x">
+			<source media="(max-width: 400px)" srcset="//image.pmgstatic.com/cache/resized/w360/files/images/film/photos/159/947/159947638_afe04a.jpg 1x, //image.pmgstatic.com/cache/resized/w720/files/images/film/photos/159/947/159947638_afe04a.jpg 2x">
+			<source media="(max-width: 750px) and (min-width: 401px)" srcset="//image.pmgstatic.com/cache/resized/w663/files/images/film/photos/159/947/159947638_afe04a.jpg 1x">
+			<img alt="Harvey Keitel, Quentin Tarantino" src="//image.pmgstatic.com/cache/resized/w468/files/images/film/photos/159/947/159947638_afe04a.jpg" loading="lazy" width="468" height="198" srcset="//image.pmgstatic.com/cache/resized/w468/files/images/film/photos/159/947/159947638_afe04a.jpg 1x">
 		</picture>
 	</div>
 </figure>
 <figcaption>
 	
-		<a href="/tvurce/31-george-clooney/">George Clooney</a>,
+		<a href="/tvurce/280-harvey-keitel/">Harvey Keitel</a>,
 
 		<a href="/tvurce/2120-quentin-tarantino/">Quentin Tarantino</a>
 </figcaption>
@@ -603,21 +625,21 @@ export const directorMock = `
 						<td class="name">
 <h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/43483-kill-bill/" class="film-title-name">Kill Bill</a> <span class="film-title-info"></span></h3>						</td>
 					</tr>
-					<tr>
+					<tr class="tr-add-border">
 						<td class="year">
 							1997
 						</td>
 						<td class="name">
 <h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/8850-jackie-brown/" class="film-title-name">Jackie Brown</a> <span class="film-title-info"></span></h3>						</td>
 					</tr>
-					<tr>
+					<tr class="tr-banner-desktop">
 								<td class="box box-banner" colspan="2">
 									<p class="box-banner-text-center">Reklama</p>
-									<div class="box-banner-300-content"><div id="large_rectangle_1" class="ad-pmg" style="height: 300px;"></div>
+									<div class="box-banner-336-content"><div id="large_rectangle_1" class="ad-pmg" style="height: 300px;"></div>
 </div>
 								</td>
 							</tr>
-							<tr>
+							<tr class="tr-banner-mobile">
 								<td class="box box-banner-mobile" colspan="2">
 									<p class="box-banner-text">Reklama</p>
 <div id="mobile_square_2" class="ad-pmg" style="height: 300px;"></div>
@@ -663,7 +685,7 @@ export const directorMock = `
 		<table class="no-column-borders">
 			<tbody>
 				<tr>
-					<th colspan="2">TV seriály</th>
+					<th colspan="2">Seriály</th>
 				</tr>
 					<tr>
 						<td class="year">
@@ -727,7 +749,7 @@ export const directorMock = `
 							1991
 						</td>
 						<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/1051715-reservoir-dogs/" class="film-title-name">Reservoir Dogs</a> <span class="film-title-info"></span></h3>						</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1051715-reservoir-dogs-sundance-institute-1991-june-film-lab/" class="film-title-name">Reservoir Dogs: Sundance Institute 1991 June Film Lab</a> <span class="film-title-info"></span></h3>						</td>
 					</tr>
 			</tbody>
 		</table>
@@ -806,21 +828,21 @@ export const directorMock = `
 						<td class="name">
 <h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/8850-jackie-brown/" class="film-title-name">Jackie Brown</a> <span class="film-title-info"></span></h3>						</td>
 					</tr>
-					<tr>
+					<tr class="tr-add-border">
 						<td class="year">
 							1996
 						</td>
 						<td class="name">
 <h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/7744-od-soumraku-do-usvitu/" class="film-title-name">Od soumraku do úsvitu</a> <span class="film-title-info"></span></h3>						</td>
 					</tr>
-					<tr>
+					<tr class="tr-banner-desktop">
 								<td class="box box-banner" colspan="2">
 									<p class="box-banner-text-center">Reklama</p>
-									<div class="box-banner-300-content"><div id="large_rectangle_2" class="ad-pmg" style="height: 300px;"></div>
+									<div class="box-banner-336-content"><div id="large_rectangle_2" class="ad-pmg" style="height: 300px;"></div>
 </div>
 								</td>
 							</tr>
-							<tr>
+							<tr class="tr-banner-mobile">
 								<td class="box box-banner-mobile" colspan="2">
 									<p class="box-banner-text">Reklama</p>
 <div id="mobile_square_3" class="ad-pmg" style="height: 300px;"></div>
@@ -873,7 +895,7 @@ export const directorMock = `
 		<table class="no-column-borders">
 			<tbody>
 				<tr>
-					<th colspan="2">TV seriály</th>
+					<th colspan="2">Seriály</th>
 				</tr>
 					<tr>
 						<td class="year">
@@ -908,7 +930,7 @@ export const directorMock = `
 							1991
 						</td>
 						<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/1051715-reservoir-dogs/" class="film-title-name">Reservoir Dogs</a> <span class="film-title-info"></span></h3>						</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1051715-reservoir-dogs-sundance-institute-1991-june-film-lab/" class="film-title-name">Reservoir Dogs: Sundance Institute 1991 June Film Lab</a> <span class="film-title-info"></span></h3>						</td>
 					</tr>
 			</tbody>
 		</table>
@@ -987,21 +1009,21 @@ export const directorMock = `
 						<td class="name">
 <h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/221616-grindhouse-planeta-teror/" class="film-title-name">Grindhouse: Planeta Teror</a> <span class="film-title-info"></span></h3>						</td>
 					</tr>
-					<tr>
+					<tr class="tr-add-border">
 						<td class="year">
 							&nbsp;
 						</td>
 						<td class="name">
 <h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/229980-nemilosrdny-strelec/" class="film-title-name">Nemilosrdný střelec</a> <span class="film-title-info"></span></h3>						</td>
 					</tr>
-					<tr>
+					<tr class="tr-banner-desktop">
 								<td class="box box-banner" colspan="2">
 									<p class="box-banner-text-center">Reklama</p>
-									<div class="box-banner-300-content"><div id="large_rectangle_3" class="ad-pmg" style="height: 300px;"></div>
+									<div class="box-banner-336-content"><div id="large_rectangle_3" class="ad-pmg" style="height: 300px;"></div>
 </div>
 								</td>
 							</tr>
-							<tr>
+							<tr class="tr-banner-mobile">
 								<td class="box box-banner-mobile" colspan="2">
 									<p class="box-banner-text">Reklama</p>
 <div id="mobile_square_4" class="ad-pmg" style="height: 300px;"></div>
@@ -1026,7 +1048,7 @@ export const directorMock = `
 							&nbsp;
 						</td>
 						<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/44485-planet-of-the-pitts/" class="film-title-name">Planet of the Pitts</a> <span class="film-title-info"></span></h3>						</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/44485-planet-of-the-pitts/" class="film-title-name">Planet of the Pitts</a> <span class="film-title-info"></span></h3>						</td>
 					</tr>
 					<tr>
 						<td class="year">
@@ -1159,7 +1181,7 @@ export const directorMock = `
 		<table class="no-column-borders">
 			<tbody>
 				<tr>
-					<th colspan="2">TV seriály</th>
+					<th colspan="2">Seriály</th>
 				</tr>
 					<tr>
 						<td class="year">
@@ -1273,6 +1295,13 @@ export const directorMock = `
 							2021
 						</td>
 						<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/1055777-dark-side-of-the-90s/" class="film-title-name">Dark Side of the '90s</a> <span class="film-title-info"> <span class="info">(seriál)</span> - <span title="archivní záběry">a.z.</span></span></h3>						</td>
+					</tr>
+					<tr>
+						<td class="year">
+							&nbsp;
+						</td>
+						<td class="name">
 <h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/1078235-django-django/" class="film-title-name">Django &amp; Django</a> <span class="film-title-info"></span></h3>						</td>
 					</tr>
 					<tr>
@@ -1285,6 +1314,25 @@ export const directorMock = `
 					<tr>
 						<td class="year">
 							2020
+						</td>
+						<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/661760-eli-roth-historie-hororu/" class="film-title-name">Eli Roth: Historie hororu</a> <span class="film-title-info"> <span class="info">(seriál)</span></span></h3>						</td>
+					</tr>
+<tbody data-ajax-append id="snippet-careerBox-1-episodes-661760-2020">
+	<tr>
+		<td class="year">&nbsp;</td>
+		<td class="episode">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/661760-eli-roth-historie-hororu/911661-monsters/" class="film-title-name">Monsters</a> <span class="film-title-info"> <span class="info">(S02E02)</span></span></h3>		</td>
+	</tr>
+</tbody>
+
+
+<tbody id="snippet-careerBox-1-next-661760-2020">
+</tbody>
+
+					<tr>
+						<td class="year">
+							&nbsp;
 						</td>
 						<td class="name">
 <h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/830241-jay-sebring-cutting-to-the-truth/" class="film-title-name">Jay Sebring...Cutting To The Truth</a> <span class="film-title-info"></span></h3>						</td>
@@ -1343,7 +1391,7 @@ export const directorMock = `
 							2018
 						</td>
 						<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/661760-eli-roth-historie-hororu/" class="film-title-name">Eli Roth: Historie hororu</a> <span class="film-title-info"> <span class="info">(TV seriál)</span></span></h3>						</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/661760-eli-roth-historie-hororu/" class="film-title-name">Eli Roth: Historie hororu</a> <span class="film-title-info"> <span class="info">(seriál)</span></span></h3>						</td>
 					</tr>
 <tbody data-ajax-append id="snippet-careerBox-1-episodes-661760-2018">
 	<tr>
@@ -1509,7 +1557,7 @@ export const directorMock = `
 							&nbsp;
 						</td>
 						<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/537615-l-hebdo-cinema/" class="film-title-name">L'hebdo cinéma</a> <span class="film-title-info"> <span class="info">(TV seriál)</span></span></h3>						</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/537615-l-hebdo-cinema/" class="film-title-name">L'hebdo cinéma</a> <span class="film-title-info"> <span class="info">(seriál)</span></span></h3>						</td>
 					</tr>
 					<tr>
 						<td class="year">
@@ -1621,7 +1669,7 @@ export const directorMock = `
 							&nbsp;
 						</td>
 						<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/238537-filmove-zanry/" class="film-title-name">Filmové žánry</a> <span class="film-title-info"> <span class="info">(TV seriál)</span></span></h3>						</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/238537-filmove-zanry/" class="film-title-name">Filmové žánry</a> <span class="film-title-info"> <span class="info">(seriál)</span></span></h3>						</td>
 					</tr>
 					<tr>
 						<td class="year">
@@ -1656,7 +1704,7 @@ export const directorMock = `
 							&nbsp;
 						</td>
 						<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/623658-hudba-stribrneho-platna/" class="film-title-name">Hudba stříbrného plátna</a> <span class="film-title-info"> <span class="info">(TV seriál)</span></span></h3>						</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/623658-hudba-stribrneho-platna/" class="film-title-name">Hudba stříbrného plátna</a> <span class="film-title-info"> <span class="info">(seriál)</span></span></h3>						</td>
 					</tr>
 					<tr>
 						<td class="year">
@@ -1733,7 +1781,7 @@ export const directorMock = `
 							1995
 						</td>
 						<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/73245-american-cinema/" class="film-title-name">American Cinema</a> <span class="film-title-info"> <span class="info">(TV seriál)</span></span></h3>						</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/73245-american-cinema/" class="film-title-name">American Cinema</a> <span class="film-title-info"> <span class="info">(seriál)</span></span></h3>						</td>
 					</tr>
 					<tr>
 						<td class="year">
@@ -1751,10 +1799,17 @@ export const directorMock = `
 					</tr>
 					<tr>
 						<td class="year">
+							1990
+						</td>
+						<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/1110197-intimate-portrait/" class="film-title-name">Intimate Portrait</a> <span class="film-title-info"> <span class="info">(seriál)</span></span></h3>						</td>
+					</tr>
+					<tr>
+						<td class="year">
 							1987
 						</td>
 						<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/184458-biography/" class="film-title-name">Biography</a> <span class="film-title-info"> <span class="info">(TV seriál)</span></span></h3>						</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/184458-biography/" class="film-title-name">Biography</a> <span class="film-title-info"> <span class="info">(seriál)</span></span></h3>						</td>
 					</tr>
 			</tbody>
 		</table>
@@ -1789,7 +1844,7 @@ export const directorMock = `
 							1991
 						</td>
 						<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/1051715-reservoir-dogs/" class="film-title-name">Reservoir Dogs</a> <span class="film-title-info"></span></h3>						</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1051715-reservoir-dogs-sundance-institute-1991-june-film-lab/" class="film-title-name">Reservoir Dogs: Sundance Institute 1991 June Film Lab</a> <span class="film-title-info"></span></h3>						</td>
 					</tr>
 			</tbody>
 		</table>
@@ -1887,7 +1942,7 @@ export const directorMock = `
 							1991
 						</td>
 						<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/1051715-reservoir-dogs/" class="film-title-name">Reservoir Dogs</a> <span class="film-title-info"></span></h3>						</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1051715-reservoir-dogs-sundance-institute-1991-june-film-lab/" class="film-title-name">Reservoir Dogs: Sundance Institute 1991 June Film Lab</a> <span class="film-title-info"></span></h3>						</td>
 					</tr>
 			</tbody>
 		</table>
@@ -1929,7 +1984,7 @@ export const directorMock = `
 							1991
 						</td>
 						<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/1051715-reservoir-dogs/" class="film-title-name">Reservoir Dogs</a> <span class="film-title-info"></span></h3>						</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1051715-reservoir-dogs-sundance-institute-1991-june-film-lab/" class="film-title-name">Reservoir Dogs: Sundance Institute 1991 June Film Lab</a> <span class="film-title-info"></span></h3>						</td>
 					</tr>
 			</tbody>
 		</table>
@@ -1957,6 +2012,13 @@ export const directorMock = `
 							2020
 						</td>
 						<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/809546-26th-annual-screen-actors-guild-awards/" class="film-title-name">26th Annual Screen Actors Guild Awards</a> <span class="film-title-info"></span></h3>						</td>
+					</tr>
+					<tr>
+						<td class="year">
+							&nbsp;
+						</td>
+						<td class="name">
 <h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/804712-77th-golden-globe-awards/" class="film-title-name">77th Golden Globe Awards</a> <span class="film-title-info"></span></h3>						</td>
 					</tr>
 					<tr>
@@ -1965,13 +2027,6 @@ export const directorMock = `
 						</td>
 						<td class="name">
 <h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/812823-oscar-2020/" class="film-title-name">Oscar 2020</a> <span class="film-title-info"></span></h3>						</td>
-					</tr>
-					<tr>
-						<td class="year">
-							&nbsp;
-						</td>
-						<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/809546-the-26th-annual-screen-actors-guild-awards/" class="film-title-name">The 26th Annual Screen Actors Guild Awards</a> <span class="film-title-info"></span></h3>						</td>
 					</tr>
 					<tr>
 						<td class="year">
@@ -1993,6 +2048,13 @@ export const directorMock = `
 						</td>
 						<td class="name">
 <h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/330165-85-annual-academy-awards/" class="film-title-name">85. Annual Academy Awards</a> <span class="film-title-info"></span></h3>						</td>
+					</tr>
+					<tr>
+						<td class="year">
+							&nbsp;
+						</td>
+						<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/1108736-the-big-interview-with-dan-rather/" class="film-title-name">The Big Interview with Dan Rather</a> <span class="film-title-info"></span></h3>						</td>
 					</tr>
 					<tr>
 						<td class="year">
@@ -2042,6 +2104,13 @@ export const directorMock = `
 						</td>
 						<td class="name">
 <h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/266504-the-jay-leno-show/" class="film-title-name">The Jay Leno Show</a> <span class="film-title-info"></span></h3>						</td>
+					</tr>
+					<tr>
+						<td class="year">
+							&nbsp;
+						</td>
+						<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/508727-the-joe-rogan-experience/" class="film-title-name">The Joe Rogan Experience</a> <span class="film-title-info"></span></h3>						</td>
 					</tr>
 					<tr>
 						<td class="year">
@@ -2136,6 +2205,13 @@ export const directorMock = `
 					</tr>
 					<tr>
 						<td class="year">
+							&nbsp;
+						</td>
+						<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/1099123-the-46th-annual-grammy-awards/" class="film-title-name">The 46th Annual Grammy Awards</a> <span class="film-title-info"></span></h3>						</td>
+					</tr>
+					<tr>
+						<td class="year">
 							2003
 						</td>
 						<td class="name">
@@ -2147,6 +2223,13 @@ export const directorMock = `
 						</td>
 						<td class="name">
 <h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/118656-jimmy-kimmel-live/" class="film-title-name">Jimmy Kimmel Live!</a> <span class="film-title-info"></span></h3>						</td>
+					</tr>
+					<tr>
+						<td class="year">
+							&nbsp;
+						</td>
+						<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/118155-real-time-with-bill-maher/" class="film-title-name">Real Time with Bill Maher</a> <span class="film-title-info"></span></h3>						</td>
 					</tr>
 					<tr>
 						<td class="year">
@@ -2283,6 +2366,13 @@ export const directorMock = `
 					</tr>
 					<tr>
 						<td class="year">
+							1979
+						</td>
+						<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/1089648-cbs-news-sunday-morning/" class="film-title-name">CBS News Sunday Morning</a> <span class="film-title-info"></span></h3>						</td>
+					</tr>
+					<tr>
+						<td class="year">
 							1976
 						</td>
 						<td class="name">
@@ -2339,19 +2429,24 @@ export const directorMock = `
 		<section class="fan-club">
 			<div class="fan-club-header">
 				<div class="ranking">
-					<a href="https://www.csfd.cz/zebricky/reziseri/#highlight-3-2120" title="Umístění tvůrce v sekci žebříčky se zvýrazněním">
+					<a href="/zebricky/reziseri/#highlight-3-2120" title="Umístění tvůrce v sekci žebříčky se zvýrazněním.">
 						<i class="icon icon-thumb-up"></i> 1. nejoblíbenější režisér
 					</a>
 				</div>
 				<div class="ranking">
-					<a href="https://www.csfd.cz/zebricky/scenariste-kameramani-skladatele/#highlight-5-2120" title="Umístění tvůrce v sekci žebříčky se zvýrazněním">
+					<a href="/zebricky/scenariste-kameramani-skladatele/#highlight-5-2120" title="Umístění tvůrce v sekci žebříčky se zvýrazněním.">
 						<i class="icon icon-thumb-up"></i> 1. nejoblíbenější scenárista
+					</a>
+				</div>
+				<div class="ranking">
+					<a href="/zebricky/herci-a-herecky/?fromLeft=200#highlight-1-2120" title="Umístění tvůrce v sekci žebříčky se zvýrazněním.">
+						<i class="icon icon-thumb-up"></i> 264. nejoblíbenější herec
 					</a>
 				</div>
 			</div>
 			<div class="fan-club-content">
 				<h3>Fanklub</h3>
-				<span>(39 085)</span>
+				<span>(37 359)</span>
 				<ul>
 					<li>
 						<a href="/uzivatel/1-pomo/oblibene/reziseri/">
@@ -2426,14 +2521,14 @@ export const directorMock = `
 						<span>(scenárista)</span>
 					</li>
 					<li>
-						<a href="/uzivatel/151-radyo/oblibene/reziseri/">
-							Radyo
+						<a href="/uzivatel/58909-j-a-s-m/oblibene/reziseri/">
+							J*A*S*M
 						</a>
 						<span>(režisér)</span>
 					</li>
 					<li>
-						<a href="/uzivatel/58909-j-a-s-m/oblibene/reziseri/">
-							J*A*S*M
+						<a href="/uzivatel/151-radyo/oblibene/reziseri/">
+							Radyo
 						</a>
 						<span>(režisér)</span>
 					</li>
@@ -2560,6 +2655,11 @@ export const directorMock = `
 						<a href="https://www.facebook.com/www.CSFD.cz/" class="btn-social" target="_blank" rel="noreferrer"><i class="icon icon-facebook"></i></a>
 						<a href="https://www.instagram.com/csfd.cz/" class="btn-social" target="_blank" rel="noreferrer"><i class="icon icon-instagram"></i></a>
 					</div>
+					<div class="footer-right-app">
+						<h3>Mobilní aplikace</h3>
+						<a href="https://apps.apple.com/cz/app/čsfd-web/id1552901865#?platform=iphone" class="btn-app-store" target="_blank"><img alt="ČSFD Web | App Store" src="//static.pmgstatic.com/assets/images/c9bd6a26fa717816674d2078f60af950/appstore.svg"></a>
+						<a href="https://play.google.com/store/apps/details?id=cz.csfd.lite" class="btn-google-play" target="_blank"><img alt="ČSFD Web | Google Play" src="//static.pmgstatic.com/assets/images/c9bd6a26fa717816674d2078f60af950/googleplay.svg"></a>
+					</div>
 					<div class="site-info">
 						<p>Česko-Slovenská filmová databáze</p>
 						<p>&copy; 2001-2021 POMO Media Group s.r.o.</p>
@@ -2576,7 +2676,7 @@ export const directorMock = `
 </div>
 
 
-		<script type="text/json" id="js-common-config">{"country":1,"domain":"csfd.cz","host":"www.csfd.cz","userLanguageId":1,"hooks":["FormGet","AutoSubmitForm"],"dictionary":{"web.autocomplete.film.header":"Filmy","web.autocomplete.film.more.link":"Všechny filmy","web.autocomplete.series.header":"Seriály","web.autocomplete.series.more.link":"Všechny seriály","web.autocomplete.creator.header":"Tvůrci","web.autocomplete.creator.more.link":"Všichni tvůrci","web.autocomplete.user.header":"Uživatelé","web.autocomplete.user.more.link":"Všichni uživatelé","web.autocomplete.searching":"Vyhledávám...","web.autocomplete.search.select":"Vyplňte název filmu/tvůrce/uživatele","web.autocomplete.noservice":"Služba vyhledávání není momentálně dostupná.","web.search.creator.notfound":"Nenalezeni žádní tvůrci","web.search.film.notfound":"Nenalezeny žádné filmy","web.search.series.notfound":"Nenalezeny žádné seriály","web.search.user.notfound":"Nenalezeni žádní uživatelé","web.check.all":"zaškrtnout vše","web.cinema.top.link":"nahoru","web.user.profile.about.from.plain.to.html.alert":"Změnou typu editace bez uložení přijdeš o všechny změny. Pokud jsi v HTML použil konstrukce, které editor nepodporuje, uložením v editoru o tyto změny přijdeš. Opravdu chceš pokračovat?","web.user.profile.about.from.html.to.plain.alert":"Změnou typu editace bez uložení přijdeš o všechny změny. Opravdu chceš pokračovat?","web.sortable.error.move":"Při přesunu pozic došlo k chybě. Stránka bude obnovena. Pokračovat?","web.preloader.loading":"Načítání...","web.modal.confirm.close":"Opravdu chceš zavřít okno? Možná máš neuložené změny.","web.forums.respond.cancel":"zrušit odpověď","web.ajax.default.error.message":"Omlouváme se, ale nastala chyba při zpracování.","web.ajax.resend.button":"Odeslat znovu","web.fileupload.preloader":"Načítám knihovnu, prosím o strpení...","web.selectize.plugin.remove.button.remove":"Odebrat"},"route":":Web:Creator:Overview:default","isLoggedIn":false,"userId":null}</script>
+		<script type="text/json" id="js-common-config">{"country":1,"domain":"csfd.cz","host":"www.csfd.cz","userLanguageId":1,"dictionary":{"web.autocomplete.film.header":"Filmy","web.autocomplete.film.more.link":"Všechny filmy","web.autocomplete.series.header":"Seriály","web.autocomplete.series.more.link":"Všechny seriály","web.autocomplete.creator.header":"Tvůrci","web.autocomplete.creator.more.link":"Všichni tvůrci","web.autocomplete.user.header":"Uživatelé","web.autocomplete.user.more.link":"Všichni uživatelé","web.autocomplete.searching":"Vyhledávám...","web.autocomplete.search.select":"Vyplňte název filmu/tvůrce/uživatele","web.autocomplete.noservice":"Služba vyhledávání není momentálně dostupná.","web.search.creator.notfound":"Nenalezeni žádní tvůrci","web.search.film.notfound":"Nenalezeny žádné filmy","web.search.series.notfound":"Nenalezeny žádné seriály","web.search.user.notfound":"Nenalezeni žádní uživatelé","web.check.all":"zaškrtnout vše","web.cinema.top.link":"nahoru","web.user.profile.about.from.plain.to.html.alert":"Změnou typu editace bez uložení přijdeš o všechny změny. Pokud jsi v HTML použil konstrukce, které editor nepodporuje, uložením v editoru o tyto změny přijdeš. Opravdu chceš pokračovat?","web.user.profile.about.from.html.to.plain.alert":"Změnou typu editace bez uložení přijdeš o všechny změny. Opravdu chceš pokračovat?","web.sortable.error.move":"Při přesunu pozic došlo k chybě. Stránka bude obnovena. Pokračovat?","web.preloader.loading":"Načítání...","web.modal.confirm.close":"Opravdu chceš zavřít okno? Možná máš neuložené změny.","web.forums.respond.cancel":"zrušit odpověď","web.ajax.default.error.message":"Omlouváme se, ale nastala chyba při zpracování.","web.ajax.resend.button":"Odeslat znovu","web.fileupload.preloader":"Načítám knihovnu, prosím o strpení...","web.selectize.plugin.remove.button.remove":"Odebrat"},"route":":Web:Creator:Overview:default","isLoggedIn":false,"userId":null,"hooks":["InfoModal","FormGet","AutoSubmitForm"]}</script>
 
 		<div class="flash-message" data-ajax-prepend="true" id="snippet--flashes">
 			
@@ -2585,9 +2685,9 @@ export const directorMock = `
 
 <div id="slide_up" class="ad-pmg"></div>
 
-<script src="//static.pmgstatic.com/assets/utils-js/e5e55e18ffd2fe354cbe0a8e02fa3ad6/scripts.min.js"></script>
+<script src="//static.pmgstatic.com/assets/utils-js/4617ef4e80f050d67c0ef7aa2eb7f9fb/scripts.min.js"></script>
 <script type="text/javascript">
-	CSFDAds.complete({"ball":{"page":3,"login":2,"creator_id":2120,"site":"csfd.cz"},"0":{"area":"leaderboard","size":"1000x210,2000x1400,1000x200,1000x210,970x210,998x200,750x200,750x100,970x90,728x90,branding_web"},"1":{"area":"large_rectangle_1","size":"336x300,336x280,300x300,300x250"},"2":{"area":"large_rectangle_2","size":"336x300,336x280,300x300,300x250"},"3":{"area":"large_rectangle_3","size":"336x300,336x280,300x300,300x250"},"4":{"area":"billboard","size":"1000x310,970x310,560x315,480x300,750x300,970x250,970x90,728x90"},"5":{"area":"slide_up","size":"500x200,320x150,320x100,320x50,300x100,300x50"},"6":{"area":"mobile_leaderboard","size":"320x100,320x50,300x100,300x50"},"7":{"area":"mobile_square_1","size":"300x300,300x250,interscroller"},"8":{"area":"mobile_square_2","size":"300x300,300x250,250x250"},"9":{"area":"mobile_square_3","size":"300x300,300x250,250x250"},"10":{"area":"mobile_square_4","size":"300x300,300x250,250x250"},"11":{"area":"mobile_billboard","size":"300x300,300x250"},"12":{"area":"pre_roll","size":"videoad,videoad_adblock","supertag":"InstreamVideo"}});
+	CSFDAds.complete({"ball":{"page":3,"login":2,"creator_id":2120,"site":"csfd.cz"},"0":{"area":"leaderboard","size":"1000x210,2000x1400,1000x200,1000x210,970x210,998x200,750x200,750x100,970x90,728x90,branding_web"},"1":{"area":"large_rectangle_1","size":"336x300,336x280,300x300,300x250"},"2":{"area":"large_rectangle_2","size":"336x300,336x280,300x300,300x250"},"3":{"area":"large_rectangle_3","size":"336x300,336x280,300x300,300x250"},"4":{"area":"billboard","size":"1000x310,970x310,560x315,480x300,750x300,970x250,970x90,728x90"},"5":{"area":"slide_up","size":"970x310,970x250,950x200,750x300,750x200,728x90,500x200,320x150,320x100,320x50,300x100,300x50,slide_up"},"6":{"area":"mobile_leaderboard","size":"320x100,320x50,300x100,300x50"},"7":{"area":"mobile_square_1","size":"300x300,300x250,interscroller"},"8":{"area":"mobile_square_2","size":"300x300,300x250,250x250"},"9":{"area":"mobile_square_3","size":"300x300,300x250,250x250"},"10":{"area":"mobile_square_4","size":"300x300,300x250,250x250"},"11":{"area":"mobile_billboard","size":"300x300,300x250"},"12":{"area":"pre_roll","size":"videoad,videoad_adblock","supertag":"InstreamVideo"}});
 	CSFDAds.setTServer("https://a.csfd.cz/csfd/tserver");
 </script>
 	</body>

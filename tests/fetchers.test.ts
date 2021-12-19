@@ -49,7 +49,7 @@ describe('Live: Search', () => {
   test('Search matrix', async () => {
     const search = await csfd.search('matrix');
     const matrix = search.movies.find((x) => x.title === 'The Matrix');
-    expect(matrix?.year).toEqual<string>('1999');
+    expect(matrix?.year).toEqual<number>(1999);
     expect(matrix?.creators?.directors.map((x) => x.name)).toEqual<string[]>(
       expect.arrayContaining(['Lilly Wachowski'])
     );

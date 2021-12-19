@@ -25,7 +25,7 @@ describe('Get Movie titles', () => {
   });
   test('Last movie', () => {
     const movie = getTitle(moviesNode[moviesNode.length - 1]);
-    expect(movie).toEqual<string>('Matrix hunter');
+    expect(movie).toEqual<string>('Matrix III');
   });
   test('Some movie', () => {
     const movie = getTitle(moviesNode[4]);
@@ -36,15 +36,15 @@ describe('Get Movie titles', () => {
 describe('Get Movie years', () => {
   test('First movie', () => {
     const movie = getYear(moviesNode[0]);
-    expect(movie).toEqual<string>('1999');
+    expect(movie).toEqual<number>(1999);
   });
   test('Last movie', () => {
     const movie = getYear(moviesNode[moviesNode.length - 1]);
-    expect(movie).toEqual<string>('2004');
+    expect(movie).toEqual<number>(1972);
   });
   test('Some movie', () => {
     const movie = getYear(moviesNode[4]);
-    expect(movie).toEqual<string>('2001');
+    expect(movie).toEqual<number>(2001);
   });
 });
 
@@ -55,7 +55,7 @@ describe('Get Movie url', () => {
   });
   test('Last movie', () => {
     const movie = getUrl(moviesNode[moviesNode.length - 1]);
-    expect(movie).toEqual<string>('/film/40940-matrix-hunter/');
+    expect(movie).toEqual<string>('/film/230996-matrix-iii/');
   });
   test('Some movie', () => {
     const movie = getUrl(moviesNode[4]);
@@ -74,7 +74,7 @@ describe('Get Movie types', () => {
   });
   test('Some movie', () => {
     const movie = getType(moviesNode[1]);
-    expect(movie).toEqual<CSFDFilmTypes>('divadelní záznam');
+    expect(movie).toEqual<CSFDFilmTypes>('film');
   });
 });
 
@@ -88,7 +88,7 @@ describe('Get Movie colors', () => {
     expect(movie).toEqual<CSFDColorRating>('average');
   });
   test('Some movie', () => {
-    const movie = getColorRating(moviesNode[1]);
+    const movie = getColorRating(moviesNode[3]);
     expect(movie).toEqual<CSFDColorRating>('unknown');
   });
 });
@@ -103,13 +103,13 @@ describe('Get Movie posters', () => {
   test('Last movie', () => {
     const movie = getPoster(moviesNode[moviesNode.length - 1]);
     expect(movie).toEqual<string>(
-      '//image.pmgstatic.com/cache/resized/w60h85/files/images/film/posters/161/619/161619026_17b7a1.jpg'
+      'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'
     );
   });
   test('Some movie', () => {
     const movie = getPoster(moviesNode[1]);
     expect(movie).toEqual<string>(
-      'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'
+      '//image.pmgstatic.com/cache/resized/w60h85/files/images/film/posters/164/947/164947139_d7f09f.jpg'
     );
   });
 });
@@ -121,7 +121,7 @@ describe('Get Movie origins', () => {
   });
   test('Second movie', () => {
     const movie = getOrigins(moviesNode[1]);
-    expect(movie).toEqual<string[]>(['Slovensko']);
+    expect(movie).toEqual<string[]>(['USA', 'Austrálie']);
   });
   test('Third movie', () => {
     const movie = getOrigins(moviesNode[2]);
@@ -150,7 +150,7 @@ describe('Get Movie creators', () => {
     ]);
   });
   test('Last movie actors', () => {
-    const movie = parsePeople(moviesNode[moviesNode.length - 1], 'actors');
+    const movie = parsePeople(moviesNode[moviesNode.length - 2], 'actors');
     expect(movie).toEqual<CSFDCreator[]>([
       {
         id: 67747,
@@ -164,41 +164,45 @@ describe('Get Movie creators', () => {
       }
     ]);
   });
+  test('Empty actors', () => {
+    const movie = parsePeople(moviesNode[moviesNode.length - 1], 'actors');
+    expect(movie).toEqual<CSFDCreator[]>([]);
+  });
 });
 
 describe('Get Users name', () => {
   test('First user', () => {
     const movie = getUser(usersNode[0]);
-    expect(movie).toEqual<string>('matrix');
+    expect(movie).toEqual<string>('Matrix44');
   });
   test('Last user', () => {
     const movie = getUser(usersNode[usersNode.length - 1]);
-    expect(movie).toEqual<string>('MatrixHK');
+    expect(movie).toEqual<string>('matrix10');
   });
 });
 
 describe('Get Users real name', () => {
-  test('First user (nothing)', () => {
+  test('First user', () => {
     const movie = getUserRealName(usersNode[0]);
-    expect(movie).toEqual<string>(null);
+    expect(movie).toEqual<string>('Matrix 44');
   });
-  test('Some name', () => {
+  test('Some name (nothing)', () => {
     const movie = getUserRealName(usersNode[3]);
-    expect(movie).toEqual<string>('Manny Negros');
+    expect(movie).toEqual<string>(null);
   });
 });
 
 describe('Get Users avatar', () => {
-  test('First user (nothing)', () => {
+  test('First user', () => {
     const movie = getAvatar(usersNode[0]);
     expect(movie).toEqual<string>(
-      'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'
+      '//image.pmgstatic.com/cache/resized/w45h60crop/files/images/user/avatars/000/327/327230_b48a6e.jpg'
     );
   });
-  test('Some name', () => {
+  test('Some name (nothing)', () => {
     const movie = getAvatar(usersNode[3]);
     expect(movie).toEqual<string>(
-      '//image.pmgstatic.com/cache/resized/w45h60/files/images/user/avatars/160/991/160991965_f10d9a.jpg'
+      'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'
     );
   });
 });
@@ -206,6 +210,6 @@ describe('Get Users avatar', () => {
 describe('Get Users url', () => {
   test('First user', () => {
     const movie = getUserUrl(usersNode[0]);
-    expect(movie).toEqual<string>('/uzivatel/615105-matrix/');
+    expect(movie).toEqual<string>('/uzivatel/100416-matrix44/');
   });
 });

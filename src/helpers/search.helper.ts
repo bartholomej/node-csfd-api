@@ -13,8 +13,8 @@ export const getTitle = (el: HTMLElement): string => {
   return el.querySelector('.film-title-name').text;
 };
 
-export const getYear = (el: HTMLElement): string => {
-  return el.querySelectorAll('.film-title-info .info')[0]?.innerText.replace(/[{()}]/g, '');
+export const getYear = (el: HTMLElement): number => {
+  return +el.querySelectorAll('.film-title-info .info')[0]?.innerText.replace(/[{()}]/g, '');
 };
 
 export const getUrl = (el: HTMLElement): string => {
@@ -33,9 +33,8 @@ export const getPoster = (el: HTMLElement): string => {
 
 export const getOrigins = (el: HTMLElement): string[] => {
   const originsRaw = el.querySelector('.article-content p .info').text;
-  const origins = originsRaw?.split(', ');
-  origins.pop();
-  return origins;
+  const originsAll = originsRaw?.split(', ')?.[0];
+  return originsAll?.split('/').map((country) => country.trim());
 };
 
 export const parsePeople = (el: HTMLElement, type: 'director' | 'actors'): CSFDCreator[] => {
