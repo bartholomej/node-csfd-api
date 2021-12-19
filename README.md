@@ -5,33 +5,33 @@
 
 # CSFD API 2021
 
-> Tiny NPM library for scraping csfd.cz
+> JavaScript NPM library for scraping **Czech Movie Database (csfd.cz)**
 >
 > - Browser + Node.js (SSR)
-> - TypeScript 100%
-> - ✅ Ready for CSFD 2021!
-
-Scraper:
-
-> - [Movies and TV Series](#Movie)
-> - [User Ratings](#User-Ratings)
-> - [Search](#Search)
+> - JavaScript / TypeScript
+> - Tested (~100% Code coverage)
+> - ✅ Ready for new ČSFD 2021!
+> - You can use in:
+>   - Firebase function
+>   - AWS λ (lambda function)
+>   - Chrome extension
+>   - React native app
+>   - ...
 
 ## Install
 
-via yarn
-
 ```bash
-yarn add node-csfd-api
+npm install node-csfd-api --save
+# yarn add node-csfd-api
 ```
 
-via npm
+## Usage and examples
 
-```bash
-npm install node-csfd-api
-```
+- [Movies and TV Series](#Movie)
+- [User Ratings](#User-Ratings)
+- [Search](#Search)
 
-## Movie
+### Movie
 
 Get info about [this movie](https://www.csfd.cz/film/535121-na-spatne-strane/komentare/) _(id: 535121)_
 
@@ -41,7 +41,7 @@ import { csfd } from 'node-csfd-api';
 csfd.movie(535121).then((movie) => console.log(movie));
 ```
 
-### Results
+#### Results
 
 ```javascript
 {
@@ -133,7 +133,7 @@ csfd.movie(535121).then((movie) => console.log(movie));
 }
 ```
 
-## Search
+### Search
 
 > Search movies and users
 
@@ -143,7 +143,7 @@ import { csfd } from 'node-csfd-api';
 csfd.search('bart').then((search) => console.log(search));
 ```
 
-### Results
+#### Results
 
 ```javascript
 movies: [
@@ -181,7 +181,7 @@ users: [
 ]
 ```
 
-## Creators
+### Creators
 
 > Search creators and filmography
 
@@ -191,7 +191,7 @@ import { csfd } from 'node-csfd-api';
 csfd.creator(2120).then((creator) => console.log(creator));
 ```
 
-### Results
+#### Results
 
 ```javascript
 {
@@ -268,9 +268,9 @@ csfd.creator(2120).then((creator) => console.log(creator));
 }
 ```
 
-## User Ratings
+### User Ratings
 
-### Last ratings (last page)
+#### Last ratings (last page)
 
 Get [my last 50 ratings](https://www.csfd.cz/uzivatel/912-bart/hodnoceni/)
 
@@ -280,7 +280,7 @@ import { csfd } from 'node-csfd-api';
 csfd.userRatings('912-bart').then((ratings) => console.log(ratings));
 ```
 
-### All ratings (all pages)
+#### All ratings (all pages)
 
 > Warning: Use it wisely. Can be detected and banned. Consider using it together with `allPagesDelay` attribute.
 
@@ -297,7 +297,7 @@ csfd
   .then((ratings) => console.log(ratings));
 ```
 
-### Results
+#### Results
 
 ```javascript
 [
@@ -322,7 +322,7 @@ csfd
 ];
 ```
 
-### Options
+#### Options
 
 | Option            | Type                                                                                                                                       | Default | Description                                            |
 | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | ------- | ------------------------------------------------------ |
