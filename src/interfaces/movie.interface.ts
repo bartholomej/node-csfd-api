@@ -23,13 +23,20 @@ export interface CSFDVod {
     | 'hbogo'
     | 'Prime Video'
     | 'Apple TV+'
-    | 'ivysilani'
+    | 'iTunes'
     | 'Aerovod'
+    | 'Edisonline'
     | 'o2tv'
-    | 'Voyo'
+    | 'SledovaniTV'
+    | 'Starmax'
+    | 'DAFilms'
     | 'FILMY ČESKY A ZADARMO'
+    | 'Youtube Česká filmová klasika'
     | 'VAPET'
     | 'VOREL FILM'
+    | 'ivysilani'
+    | 'Google Play'
+    | 'Voyo'
     | string;
   url: string;
 }
