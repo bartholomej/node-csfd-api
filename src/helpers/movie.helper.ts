@@ -10,7 +10,7 @@ import {
   CSFDTitlesOther,
   CSFDVod
 } from '../interfaces/movie.interface';
-import { getColor, parseIdFromUrl } from './global.helper';
+import { addProtocol, getColor, parseIdFromUrl } from './global.helper';
 
 export const getId = (el: HTMLElement): number => {
   const url = el.querySelector('.tabs .tab-nav-list a').attributes.href;
@@ -107,7 +107,8 @@ export const getPoster = (el: HTMLElement): string => {
     } else {
       // Full sized image (not thumb)
       const imageThumb = poster.attributes.src.split('?')[0];
-      return imageThumb.replace(/\/w140\//, '/w1080/');
+      const image = imageThumb.replace(/\/w140\//, '/w1080/');
+      return addProtocol(image);
     }
   } else {
     return null;

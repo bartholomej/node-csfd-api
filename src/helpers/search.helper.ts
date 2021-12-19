@@ -2,7 +2,7 @@ import { HTMLElement } from 'node-html-parser';
 import { CSFDColorRating, CSFDFilmTypes } from '../interfaces/global';
 import { CSFDCreator } from '../interfaces/movie.interface';
 import { Colors } from '../interfaces/user-ratings.interface';
-import { parseColor, parseIdFromUrl } from './global.helper';
+import { addProtocol, parseColor, parseIdFromUrl } from './global.helper';
 
 export const getType = (el: HTMLElement): CSFDFilmTypes => {
   const type = el.querySelectorAll('.film-title-info .info')[1];
@@ -28,7 +28,8 @@ export const getColorRating = (el: HTMLElement): CSFDColorRating => {
 };
 
 export const getPoster = (el: HTMLElement): string => {
-  return el.querySelector('img').attributes.src;
+  const image = el.querySelector('img').attributes.src;
+  return addProtocol(image);
 };
 
 export const getOrigins = (el: HTMLElement): string[] => {

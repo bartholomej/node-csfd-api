@@ -1,4 +1,5 @@
 import { HTMLElement } from 'node-html-parser';
+import { addProtocol } from './global.helper';
 
 export const getUser = (el: HTMLElement): string => {
   return el.querySelector('.user-title-name').text;
@@ -9,7 +10,8 @@ export const getUserRealName = (el: HTMLElement): string => {
 };
 
 export const getAvatar = (el: HTMLElement): string => {
-  return el.querySelector('.article-img img').attributes.src;
+  const image = el.querySelector('.article-img img').attributes.src;
+  return addProtocol(image);
 };
 
 export const getUserUrl = (el: HTMLElement): string => {

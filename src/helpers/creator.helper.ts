@@ -2,7 +2,7 @@ import { HTMLElement } from 'node-html-parser';
 import { CSFDCreatorScreening } from '../interfaces/creator.interface';
 import { CSFDColorRating } from '../interfaces/global';
 import { Colors } from '../interfaces/user-ratings.interface';
-import { parseColor, parseIdFromUrl } from './global.helper';
+import { addProtocol, parseColor, parseIdFromUrl } from './global.helper';
 
 export const getColorRating = (el: HTMLElement): CSFDColorRating => {
   return parseColor(el?.classNames.split(' ').pop() as Colors);
@@ -45,7 +45,8 @@ export const getBio = (el: HTMLElement): string => {
 };
 
 export const getPhoto = (el: HTMLElement): string => {
-  return el.querySelector('img').attributes.src;
+  const image = el.querySelector('img').attributes.src;
+  return addProtocol(image);
 };
 
 export const parseBirthday = (text: string): any => {

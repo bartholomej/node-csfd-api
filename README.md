@@ -66,7 +66,7 @@ csfd.movie(535121).then((movie) => console.log(movie));
     { country: 'Austrálie', title: 'Dragged Across Concrete' },
     { country: 'Velká Británie', title: 'Dragged Across Concrete' }
   ],
-  poster: '//image.pmgstatic.com/cache/resized/w1080/files/images/film/posters/163/579/163579352_bf8737.jpg',
+  poster: 'https://image.pmgstatic.com/cache/resized/w1080/files/images/film/posters/163/579/163579352_bf8737.jpg',
   creators: {
     directors: [
     {
@@ -175,7 +175,7 @@ users: [
     id: 912,
     user: 'BART!',
     userRealName: 'Lukáš Barták',
-    avatar: '//image.pmgstatic.com/cache/resized/w45h60/files/images/user/avatars/000/281/281554_1c0fef.jpg',
+    avatar: 'https://image.pmgstatic.com/cache/resized/w45h60/files/images/user/avatars/000/281/281554_1c0fef.jpg',
     url: 'https://www.csfd.cz/uzivatel/912-bart/'
   }
 ]
@@ -199,7 +199,7 @@ csfd.creator(2120).then((creator) => console.log(creator));
   name: 'Quentin Tarantino',
   birthday: '27.03.1963',
   birthplace: 'Knoxville, Tennessee, USA',
-  photo: '//image.pmgstatic.com/cache/resized/w100h132crop/files/images/creator/photos/164/515/164515525_b98f8a.jpg',
+  photo: 'https://image.pmgstatic.com/cache/resized/w100h132crop/files/images/creator/photos/164/515/164515525_b98f8a.jpg',
   age: 58,
   bio: 'Quentin Tarantino se narodil 27. března roku 1963 v americkém Knoxville teprve šestnáctileté Connie Tarantinové. Své jméno Quentin dostal podle matčiny oblíbené televizní postavy Quinta ze seriálu "Gunsmoke". Quentinův otec byl jistý Tony Tarantino, který rodinu opustil když byl Quentin ještě malinký. Jeho dětství a dospívání ovlivnily nejen filmy, ale pop kultura obecně. Televizní seriály, komiksy, populární hudba, to vše jako mladý hltal ve velkém a stále neměl…',
   films: [

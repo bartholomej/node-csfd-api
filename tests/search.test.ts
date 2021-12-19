@@ -97,7 +97,7 @@ describe('Get Movie posters', () => {
   test('First movie', () => {
     const movie = getPoster(moviesNode[0]);
     expect(movie).toEqual<string>(
-      '//image.pmgstatic.com/cache/resized/w60h85/files/images/film/posters/000/008/8959_164d69.jpg'
+      'https://image.pmgstatic.com/cache/resized/w60h85/files/images/film/posters/000/008/8959_164d69.jpg'
     );
   });
   test('Last movie', () => {
@@ -109,7 +109,7 @@ describe('Get Movie posters', () => {
   test('Some movie', () => {
     const movie = getPoster(moviesNode[1]);
     expect(movie).toEqual<string>(
-      '//image.pmgstatic.com/cache/resized/w60h85/files/images/film/posters/164/947/164947139_d7f09f.jpg'
+      'https://image.pmgstatic.com/cache/resized/w60h85/files/images/film/posters/164/947/164947139_d7f09f.jpg'
     );
   });
 });
@@ -196,7 +196,7 @@ describe('Get Users avatar', () => {
   test('First user', () => {
     const movie = getAvatar(usersNode[0]);
     expect(movie).toEqual<string>(
-      '//image.pmgstatic.com/cache/resized/w45h60crop/files/images/user/avatars/000/327/327230_b48a6e.jpg'
+      'https://image.pmgstatic.com/cache/resized/w45h60crop/files/images/user/avatars/000/327/327230_b48a6e.jpg'
     );
   });
   test('Some name (nothing)', () => {

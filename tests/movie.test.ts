@@ -74,7 +74,7 @@ describe('Get Poster', () => {
   test('Movie poster', () => {
     const movie = getPoster(movieNode);
     expect(movie).toEqual<string>(
-      '//image.pmgstatic.com/cache/resized/w1080/files/images/film/posters/163/579/163579352_bf8737.jpg'
+      'https://image.pmgstatic.com/cache/resized/w1080/files/images/film/posters/163/579/163579352_bf8737.jpg'
     );
   });
   test('Movie Blank poster', () => {

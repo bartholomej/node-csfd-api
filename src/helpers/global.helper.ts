@@ -36,3 +36,7 @@ export const parseColor = (quality: Colors): CSFDColorRating => {
       return 'unknown';
   }
 };
+
+export const addProtocol = (url: string): string => {
+  return url.startsWith('//') ? 'https:' + url : url;
+};

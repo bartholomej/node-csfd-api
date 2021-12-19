@@ -39,7 +39,7 @@ describe('Creator info', () => {
   test('Photo', () => {
     const creator = getPhoto(asideNode);
     expect(creator).toEqual<string>(
-      '//image.pmgstatic.com/cache/resized/w100h132crop/files/images/creator/photos/164/502/164502788_119691.jpg'
+      'https://image.pmgstatic.com/cache/resized/w100h132crop/files/images/creator/photos/164/502/164502788_119691.jpg'
     );
   });
 });
@@ -96,7 +96,7 @@ describe('Actor info', () => {
   test('Photo', () => {
     const creator = getPhoto(asideNodeActor);
     expect(creator).toEqual<string>(
-      '//image.pmgstatic.com/cache/resized/w100h132crop/files/images/creator/photos/165/098/165098144_9f239a.jpg'
+      'https://image.pmgstatic.com/cache/resized/w100h132crop/files/images/creator/photos/165/098/165098144_9f239a.jpg'
     );
   });
 });
