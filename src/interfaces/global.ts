@@ -25,8 +25,8 @@ export type CSFDStars = 0 | 1 | 2 | 3 | 4 | 5;
 export type CSFDFilmTypes =
   | 'film'
   | 'TV film'
-  | 'TV pořad'
-  | 'TV seriál'
+  | 'pořad'
+  | 'seriál'
   | 'divadelní záznam'
   | 'koncert'
   | 'série'

@@ -13,7 +13,7 @@ describe('Fetch rating page', () => {
     const movies = await csfd.userRatings('912-bart');
     const movieSelected = movies.filter((x) => x.title === MOVIE_NAME)[0];
     expect(movies.map((x) => x.title)).toEqual(expect.arrayContaining([MOVIE_NAME]));
-    expect(movieSelected?.type).toEqual<CSFDFilmTypes>('TV seriál');
+    expect(movieSelected?.type).toEqual<CSFDFilmTypes>('seriál');
     expect(movieSelected?.year).toEqual<number>(2019);
     expect(movieSelected?.userDate).toContain<string>('2021');
     expect(movies.length).toEqual(50);
@@ -24,7 +24,7 @@ describe('Fetch rating page 2', () => {
   test('Fetch `912-bart` user – page 2 and check html', async () => {
     const url = userRatingsUrl(912, 2);
     const html = await fetchPage(url);
-    expect(html).toContain('Palm Springs');
+    expect(html).toContain('Zátopek');
   });
 });
 

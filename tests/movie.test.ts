@@ -200,7 +200,7 @@ describe('Get type', () => {
   });
   test('Type Series', () => {
     const movie = getType(seriesNode);
-    expect(movie).toEqual<string>('TV seriál');
+    expect(movie).toEqual<string>('seriál');
   });
 });
 

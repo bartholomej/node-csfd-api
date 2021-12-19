@@ -21,7 +21,7 @@ describe('Filter out episodes, TV Series and Seasons', () => {
   // Fetch data with excludes
   const userRatingsScraper = new UserRatingsScraper();
   const resExcluded: Promise<CSFDUserRatings[]> = userRatingsScraper.userRatings(USER, {
-    excludes: ['epizoda', 'TV seriál', 'série']
+    excludes: ['epizoda', 'seriál', 'série']
   });
 
   test('Should not have any episode', async () => {
@@ -32,7 +32,7 @@ describe('Filter out episodes, TV Series and Seasons', () => {
   });
   test('Should not have any TV series', async () => {
     const results = await resExcluded;
-    const tvSeries = results.filter((item) => item.type === 'TV seriál');
+    const tvSeries = results.filter((item) => item.type === 'seriál');
     expect(tvSeries.length).toBe<number>(0);
   });
   test('Should not have any Season', async () => {
@@ -46,7 +46,7 @@ describe('Includes only TV series', () => {
   // Fetch data with excludes
   const userRatingsScraper = new UserRatingsScraper();
   const resIncluded: Promise<CSFDUserRatings[]> = userRatingsScraper.userRatings(USER, {
-    includesOnly: ['TV seriál']
+    includesOnly: ['seriál']
   });
 
   test('Should not have any film', async () => {
@@ -58,13 +58,13 @@ describe('Includes only TV series', () => {
   test('Should have at least one TV series', async () => {
     const results = await resIncluded;
 
-    const tvSeries = results.filter((item) => item.type === 'TV seriál');
+    const tvSeries = results.filter((item) => item.type === 'seriál');
     expect(tvSeries.length).toBeGreaterThan(0);
   });
   test('Should have only TV Series', async () => {
     const results = await resIncluded;
 
-    const tvSeries = results.filter((item) => item.type === 'TV seriál');
+    const tvSeries = results.filter((item) => item.type === 'seriál');
     expect(tvSeries.length).toBe(results.length);
   });
 });
@@ -73,7 +73,7 @@ describe('Exclude + includes together', () => {
   // Fetch data with excludes + includes
   const userRatingsScraper = new UserRatingsScraper();
   const resBoth: Promise<CSFDUserRatings[]> = userRatingsScraper.userRatings(USER, {
-    includesOnly: ['TV seriál'],
+    includesOnly: ['seriál'],
     excludes: ['film']
   });
 
@@ -84,7 +84,7 @@ describe('Exclude + includes together', () => {
   test('Should use includesOnly', async () => {
     const results = await resBoth;
 
-    const tvSeries = results.filter((item) => item.type === 'TV seriál');
+    const tvSeries = results.filter((item) => item.type === 'seriál');
     expect(tvSeries.length).toBe<number>(results.length);
   });
 });

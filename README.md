@@ -324,12 +324,12 @@ csfd
 
 ### Options
 
-| Option            | Type                                                                                                                                       | Default | Description                                               |
-| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | ------- | --------------------------------------------------------- |
-| **includesOnly**  | [CSFDFilmTypes[]](https://github.com/bartholomej/node-csfd-api/blob/8fa5f9cbc7e7f2b62b0bd2c2b5a24c9a63444f6a/src/interfaces/global.ts#L25) | null    | Including only film types. eg. `['TV Seriál', 'koncert']` |
-| **exclude**       | [CSFDFilmTypes[]](https://github.com/bartholomej/node-csfd-api/blob/8fa5f9cbc7e7f2b62b0bd2c2b5a24c9a63444f6a/src/interfaces/global.ts#L25) | null    | Excluding film types eg. `['epizoda', 'série']`           |
-| **allPages**      | boolean                                                                                                                                    | false   | Get all pages                                             |
-| **allPagesDelay** | number                                                                                                                                     | 0       | Delay on each page request. In milliseconds               |
+| Option            | Type                                                                                                                                       | Default | Description                                            |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | ------- | ------------------------------------------------------ |
+| **includesOnly**  | [CSFDFilmTypes[]](https://github.com/bartholomej/node-csfd-api/blob/8fa5f9cbc7e7f2b62b0bd2c2b5a24c9a63444f6a/src/interfaces/global.ts#L25) | null    | Including only film types. eg. `['seriál', 'koncert']` |
+| **exclude**       | [CSFDFilmTypes[]](https://github.com/bartholomej/node-csfd-api/blob/8fa5f9cbc7e7f2b62b0bd2c2b5a24c9a63444f6a/src/interfaces/global.ts#L25) | null    | Excluding film types eg. `['epizoda', 'série']`        |
+| **allPages**      | boolean                                                                                                                                    | false   | Get all pages                                          |
+| **allPagesDelay** | number                                                                                                                                     | 0       | Delay on each page request. In milliseconds            |
 
 _Note: You can not use both parameters 'includesOnly' and 'excludes'. Parameter 'includesOnly' has a priority._
 
