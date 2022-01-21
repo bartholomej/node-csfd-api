@@ -23,7 +23,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "cross-fetch": "^3.1.4",
+    "cross-fetch": "^3.1.5",
     "node-html-parser": "^5.2.0"
   },
   "devDependencies": {
@@ -31,9 +31,9 @@
     "@types/jest": "^27.4.0",
     "@types/node": "^16.11.14",
     "@types/node-fetch": "^3.0.3",
-    "@typescript-eslint/eslint-plugin": "^5.9.0",
-    "@typescript-eslint/parser": "^5.9.0",
-    "eslint": "^8.6.0",
+    "@typescript-eslint/eslint-plugin": "^5.10.0",
+    "@typescript-eslint/parser": "^5.10.0",
+    "eslint": "^8.7.0",
     "eslint-config-google": "^0.14.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
@@ -44,9 +44,9 @@
     "prettier": "^2.5.1",
     "pretty-quick": "^3.1.3",
     "rimraf": "^3.0.2",
-    "ts-jest": "^27.1.2",
+    "ts-jest": "^27.1.3",
     "ts-node": "^10.4.0",
-    "typescript": "^4.5.4"
+    "typescript": "^4.5.5"
   },
   "repository": {
     "url": "git+https://github.com/bartholomej/node-csfd-api.git",
