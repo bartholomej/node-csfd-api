@@ -51,7 +51,7 @@ export class MovieScraper {
       id: movieId,
       title: getTitle(el),
       year: getYear(jsonLd),
-      duration: getDuration(el),
+      duration: getDuration(jsonLd, el),
       descriptions: getDescriptions(el),
       genres: getGenres(el),
       type: getType(el) as CSFDFilmTypes,

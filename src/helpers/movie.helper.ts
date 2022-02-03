@@ -10,7 +10,7 @@ import {
   CSFDTitlesOther,
   CSFDVod
 } from '../interfaces/movie.interface';
-import { addProtocol, getColor, parseIdFromUrl } from './global.helper';
+import { addProtocol, getColor, parseIdFromUrl, parseISO8601Duration } from './global.helper';
 
 export const getId = (el: HTMLElement): number => {
   const url = el.querySelector('.tabs .tab-nav-list a').attributes.href;
@@ -66,19 +66,29 @@ export const getYear = (el: string): number => {
   }
 };
 
-export const getDuration = (el: HTMLElement): number => {
-  const origin = el.querySelector('.origin').innerText;
-  const timeString = origin.split(',');
-  if (timeString.length > 2) {
-    const timeString2 = timeString.pop().trim();
-    const timeRaw = timeString2.split('(')[0].trim();
-    const hoursMinsRaw = timeRaw.split('min')[0];
-    const hoursMins = hoursMinsRaw.split('h');
-    // Resolve hours + minutes format
-    const duration = hoursMins.length > 1 ? +hoursMins[0] * 60 + +hoursMins[1] : +hoursMins[0];
-    return duration;
-  } else {
-    return null;
+export const getDuration = (jsonLdRaw: string, el: HTMLElement): number => {
+  let duration = null;
+  try {
+    const jsonLd = JSON.parse(jsonLdRaw);
+    duration = jsonLd.duration;
+    return parseISO8601Duration(duration);
+  } catch (error) {
+    const origin = el.querySelector('.origin').innerText;
+    const timeString = origin.split(',');
+    if (timeString.length > 2) {
+      // Get last time elelment
+      const timeString2 = timeString.pop().trim();
+      // Clean it
+      const timeRaw = timeString2.split('(')[0].trim();
+      // Split by minutes and hours
+      const hoursMinsRaw = timeRaw.split('min')[0];
+      const hoursMins = hoursMinsRaw.split('h');
+      // Resolve hours + minutes format
+      duration = hoursMins.length > 1 ? +hoursMins[0] * 60 + +hoursMins[1] : +hoursMins[0];
+      return duration;
+    } else {
+      return null;
+    }
   }
 };
 

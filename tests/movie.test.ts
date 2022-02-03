@@ -29,8 +29,10 @@ import {
 } from '../src/interfaces/movie.interface';
 import { movieMock } from './mocks/movie1.html';
 import { movieMockBlank } from './mocks/movie2.html';
+import { movieMockRich } from './mocks/movie3.html';
 import { seriesMock } from './mocks/series1.html';
 
+// Movie
 const movieHtml = parse(movieMock);
 
 const pageClasses = movieHtml.querySelector('.page-content').classNames.split(' ');
@@ -38,12 +40,22 @@ const asideNode = movieHtml.querySelector('.aside-movie-profile');
 const movieNode = movieHtml.querySelector('.main-movie-profile');
 const movieJsonLd = movieHtml.querySelector('script[type="application/ld+json"]').innerText;
 
+// Movie blank
 const movieHtmlBlank = parse(movieMockBlank);
 
 const pageClassesBlank = movieHtmlBlank.querySelector('.page-content').classNames.split(' ');
 const asideNodeBlank = movieHtmlBlank.querySelector('.aside-movie-profile');
 const movieNodeBlank: HTMLElement = movieHtmlBlank.querySelector('.main-movie-profile');
+const movieBlankJsonLd = movieHtmlBlank.querySelector(
+  'script[type="application/ld+json"]'
+).innerText;
 
+// Movie rich
+const movieHtmlRich = parse(movieMockRich);
+const movieNodeRich: HTMLElement = movieHtmlRich.querySelector('.main-movie-profile');
+const movieRichJsonLd = movieHtmlRich.querySelector('script[type="application/ld+json"]').innerText;
+
+// Series
 const seriesHtml = parse(seriesMock);
 const seriesJsonLd = seriesHtml.querySelector('script[type="application/ld+json"]').innerText;
 
@@ -85,15 +97,19 @@ describe('Get Poster', () => {
 
 describe('Get Duration', () => {
   test('Duration', () => {
-    const movie = getDuration(movieNode);
+    const movie = getDuration(movieJsonLd, movieNode);
     expect(movie).toEqual<number>(159);
   });
   test('Duration Blank', () => {
-    const movie = getDuration(movieNodeBlank);
+    const movie = getDuration(movieBlankJsonLd, movieNodeBlank);
     expect(movie).toEqual<number>(null);
   });
+  test('Duration Special', () => {
+    const movie = getDuration(movieRichJsonLd, movieNodeRich);
+    expect(movie).toEqual<number>(172);
+  });
   test('Duration Series', () => {
-    const movie = getDuration(seriesNode);
+    const movie = getDuration(seriesJsonLd, seriesNode);
     expect(movie).toEqual<number>(560);
   });
 });
