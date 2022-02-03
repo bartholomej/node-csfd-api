@@ -3,7 +3,7 @@
 [![Build & Publish](https://github.com/bartholomej/node-csfd-api/workflows/Publish/badge.svg)](https://github.com/bartholomej/node-csfd-api/actions)
 [![codecov](https://codecov.io/gh/bartholomej/node-csfd-api/branch/master/graph/badge.svg?token=YQH9UoVrGP)](https://codecov.io/gh/bartholomej/node-csfd-api)
 
-# CSFD API 2021
+# CSFD API 2022
 
 > JavaScript NPM library for scraping **Czech Movie Database (csfd.cz)**
 >
@@ -30,6 +30,7 @@ npm install node-csfd-api --save
 - [Movies and TV Series](#Movie)
 - [User Ratings](#User-Ratings)
 - [Search](#Search)
+- [Creators](#Creators)
 
 ### Movie
 
@@ -396,7 +397,7 @@ yarn start
 
 ### Run demo locally
 
-You can find and modify it in [`./demo.ts`](https://raw.githubusercontent.com/bartholomej/node-csfd-api/search/demo.ts) file
+You can find and modify it in [`./demo.ts`](https://github.com/bartholomej/node-csfd-api/blob/master/demo.ts) file
 
 ```bash
 yarn demo
@@ -423,9 +424,11 @@ I welcome you to customize this according to your needs ;)
 
 Pull requests for any improvements would be great!
 
-## Donation
+## ⭐️ Show your support
 
-If this project have helped you save time please consider [making a donation](https://github.com/sponsors/bartholomej) for some 🍺 or 🍵 ;)
+Give a ⭐️ if this project helped you!
+
+Or if you are brave enough consider [making a donation](https://github.com/sponsors/bartholomej) for some 🍺 or 🍵 ;)
 
 ## Privacy Policy
 
@@ -437,7 +440,7 @@ That's why, with CSFD Api, what happens on your device stays on your device till
 
 ## License
 
-Copyright &copy; 2021 [Lukas Bartak](http://bartweb.cz)
+Copyright &copy; 2022 [Lukas Bartak](http://bartweb.cz)
 
 Proudly powered by nature 🗻, wind 💨, tea 🍵 and beer 🍺 ;)
 
