@@ -440,4 +440,11 @@ describe('Get people', () => {
       expect(movie).toEqual<CSFDMovieListItem[]>([]);
     });
   });
+
+  describe('Anomaly detection', () => {
+    test('Bad node for rating', () => {
+      const movie = getRatingCount(movieNode);
+      expect(movie).toEqual<CSFDMovieListItem[]>(null);
+    });
+  });
 });
