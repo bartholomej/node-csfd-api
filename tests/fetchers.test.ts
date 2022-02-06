@@ -1,7 +1,7 @@
 import { csfd } from '../src';
 import { fetchPage } from '../src/fetchers';
 import { CSFDCreatorScreening } from '../src/interfaces/creator.interface';
-import { CSFDFilmTypes } from '../src/interfaces/global';
+import { CSFDColorRating, CSFDFilmTypes } from '../src/interfaces/global';
 import { movieUrl, userRatingsUrl } from '../src/vars';
 
 const badId = 999999999999999;
@@ -34,6 +34,15 @@ describe('Live: Movie page', () => {
     const movie = await csfd.movie(10135);
     expect(movie.title).toEqual<string>('Forrest Gump');
     expect(movie.rating).toBeGreaterThan(90);
+    expect(movie.ratingCount).toBeGreaterThan(100000);
+    // More than 10 words in description
+    expect(movie.descriptions[0].split(' ').length).toBeGreaterThan(10);
+    expect(movie.tags.length).toBeGreaterThan(3);
+    expect(movie.year).toEqual(1994);
+    expect(movie.type).toEqual<CSFDFilmTypes>('film');
+    expect(movie.duration).toBeGreaterThan(140);
+    expect(movie.premieres.length).toBeGreaterThan(1);
+    expect(movie.colorRating).toEqual<CSFDColorRating>('good');
     expect(movie.creators.directors[0]?.name).toEqual('Robert Zemeckis');
     expect(movie.origins[0]).toEqual<string>('USA');
   });

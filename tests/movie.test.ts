@@ -52,6 +52,7 @@ const movieBlankJsonLd = movieHtmlBlank.querySelector(
 
 // Movie rich
 const movieHtmlRich = parse(movieMockRich);
+const asideNodeRich = movieHtmlRich.querySelector('.aside-movie-profile');
 const movieNodeRich: HTMLElement = movieHtmlRich.querySelector('.main-movie-profile');
 const movieRichJsonLd = movieHtmlRich.querySelector('script[type="application/ld+json"]').innerText;
 
@@ -80,6 +81,10 @@ describe('Get Movie Title', () => {
     const movie = getTitle(seriesNode);
     expect(movie).toEqual<string>('Království');
   });
+  test('Movie rich title', () => {
+    const movie = getTitle(movieNodeRich);
+    expect(movie).toEqual<string>('Pán prstenů: Společenstvo Prstenu');
+  });
 });
 
 describe('Get Poster', () => {
@@ -93,6 +98,12 @@ describe('Get Poster', () => {
     const movie = getPoster(movieNodeBlank);
     expect(movie).toEqual<string>(null);
   });
+  test('Movie rich poster', () => {
+    const movie = getPoster(movieNodeRich);
+    expect(movie).toEqual<string>(
+      'https://image.pmgstatic.com/cache/resized/w1080/files/images/film/posters/158/600/158600806_7b6c15.jpg'
+    );
+  });
 });
 
 describe('Get Duration', () => {
@@ -104,7 +115,7 @@ describe('Get Duration', () => {
     const movie = getDuration(movieBlankJsonLd, movieNodeBlank);
     expect(movie).toEqual<number>(null);
   });
-  test('Duration Special', () => {
+  test('Duration Rich', () => {
     const movie = getDuration(movieRichJsonLd, movieNodeRich);
     expect(movie).toEqual<number>(172);
   });
@@ -132,6 +143,10 @@ describe('Get VOD', () => {
   test('Get vods series', () => {
     const movie = getVods(asideNodeSeries);
     expect(movie).toEqual<CSFDVod[]>([]);
+  });
+  test('Get vods rich', () => {
+    const movie = getVods(asideNodeRich);
+    expect(movie.length).toEqual<number>(8);
   });
   test('Get vods blank', () => {
     const movie = getVods(asideNodeBlank);
@@ -186,10 +201,16 @@ describe('Get origins', () => {
 });
 
 describe('Get descriptions', () => {
-  test('descriptions', () => {
+  test('Descriptions', () => {
     const movie = getDescriptions(movieNode);
     expect(movie).toEqual<string[]>([
       'Otupělý policejní veterán Ridgeman (Mel Gibson) a jeho náladový mladší kolega Anthony (Vince Vaughn) jsou suspendováni ze služby poté, co do médií unikne videozáznam jejich svérázných metod. Bez prostředků a velkých šancí se oba zatrpklí vojáci vydají do kriminálního podsvětí, aby učinili spravedlnosti zadost. Mezitím je v jiné části města propuštěn z vězení mladý zločinec Henry Jones a zjišťuje, že jeho matce a postiženému bratrovi hrozí vystěhování. Ve snaze najít způsob, jak jim pomoci, se obrátí na kamaráda z dětství jménem Biscuit, který ho představí nelítostnému kriminálnímu bossovi, jehož ambiciózní plány jej postaví do přímého konfliktu s oběma policejními odpadlíky.(HBO Europe)'
+    ]);
+  });
+  test('Descriptions rich', () => {
+    const movie = getDescriptions(movieNodeRich);
+    expect(movie).toEqual<string[]>([
+      'V dávných dobách byl vykován kouzelný prsten, který vlastnil pán Mordoru Sauron. Jeho moc začal využívat k šíření zla, ale o prsten nakonec v boji přišel, a ten na dlouhá léta zmizel. Nakonec ho našel hobit Bilbo Pytlík, který díky němu přestal stárnout. Na naléhavou žádost čaroděje Gandalfa předá prsten synovci Frodovi. Ten se svými kamarády Samem, Smíškem a Pipinem odcházejí do Hůrky a Gandalf se vydává pro radu za svým učitelem, čarodějem Sarumanem. Ten se však přidal na stranu zla a zajme ho. S pomocí tajemného hraničáře, přezdívaného Chodec, Frodo a jeho kamarádi uniknou jen o vlásek devíti černým jezdcům, kteří vyrazili z Temné věže, aby prsten našli a přinesli svému pánovi Sauronovi. Do Roklinky je svolána velká porada lidí a elfů, která rozhodne, že prsten musí být zničen. To je možné pouze tam, kde byl prsten zrozen, v ohni Hory osudu. Odvážný Frodo se nabídne, že tam prsten odnese. Nebezpečí je však příliš veliké, a tak se mu, jako jeho ochránci, postaví po bok čaroděj Gandalf, trpaslík Gimli, elf Legolas, bojovník Boromir, hobiti Sam, Smíšek a Pipin a také Chodec. Zrodí se Společenstvo Prstenu, které se vydává na nebezpečnou cestu plnou nástrah a nebezpečí.(TV Nova)'
     ]);
   });
   test('Description blank', () => {
@@ -203,6 +224,10 @@ describe('Get genres', () => {
     const movie = getGenres(movieNode);
     expect(movie).toEqual<string[]>(['Krimi', 'Drama', 'Thriller']);
   });
+  test('Genres rich', () => {
+    const movie = getGenres(movieNodeRich);
+    expect(movie).toEqual<string[]>(['Fantasy', 'Dobrodružný', 'Akční']);
+  });
   test('Genres Series', () => {
     const movie = getGenres(seriesNode);
     expect(movie).toEqual<string[]>(['Drama', 'Horor', 'Mysteriózní', 'Komedie']);
@@ -212,6 +237,10 @@ describe('Get genres', () => {
 describe('Get type', () => {
   test('Type', () => {
     const movie = getType(movieNode);
+    expect(movie).toEqual<string>('film');
+  });
+  test('Type Rich', () => {
+    const movie = getType(movieNodeRich);
     expect(movie).toEqual<string>('film');
   });
   test('Type Series', () => {
@@ -224,6 +253,10 @@ describe('Get year', () => {
   test('Year', () => {
     const movie = getYear(movieJsonLd);
     expect(movie).toEqual<number>(2018);
+  });
+  test('Year', () => {
+    const movie = getYear(movieRichJsonLd);
+    expect(movie).toEqual<number>(2001);
   });
   test('Year Series', () => {
     const movie = getYear(seriesJsonLd);
@@ -239,6 +272,10 @@ describe('Get rating count', () => {
   test('Rating count', () => {
     const movie = getRatingCount(asideNodeSeries);
     expect(movie).toBeGreaterThan(4450);
+  });
+  test('Rating count rich', () => {
+    const movie = getRatingCount(asideNodeRich);
+    expect(movie).toBeGreaterThan(100000);
   });
   // TODO get new blank movie
   test('Rating count blank', () => {
