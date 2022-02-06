@@ -32,38 +32,65 @@ import { movieMockBlank } from './mocks/movie2.html';
 import { movieMockRich } from './mocks/movie3.html';
 import { seriesMock } from './mocks/series1.html';
 
+const getPageClasses = (node: HTMLElement): string[] => {
+  return node.querySelector('.page-content').classNames.split(' ');
+};
+
+const getAsideNode = (node: HTMLElement): HTMLElement => {
+  return node.querySelector('.aside-movie-profile');
+};
+
+const getNode = (node: HTMLElement): HTMLElement => {
+  return node.querySelector('.main-movie-profile');
+};
+
+const getJsonLd = (node: HTMLElement): string => {
+  return node.querySelector('script[type="application/ld+json"]').innerText;
+};
+
+const getMovie = (
+  node: HTMLElement
+): { pClasses: string[]; aside: HTMLElement; pNode: HTMLElement; jsonLd: string } => {
+  return {
+    pClasses: getPageClasses(node),
+    aside: getAsideNode(node),
+    pNode: getNode(node),
+    jsonLd: getJsonLd(node)
+  };
+};
+
 // Movie
 const movieHtml = parse(movieMock);
-
-const pageClasses = movieHtml.querySelector('.page-content').classNames.split(' ');
-const asideNode = movieHtml.querySelector('.aside-movie-profile');
-const movieNode = movieHtml.querySelector('.main-movie-profile');
-const movieJsonLd = movieHtml.querySelector('script[type="application/ld+json"]').innerText;
+const {
+  pClasses: pageClasses,
+  aside: asideNode,
+  pNode: movieNode,
+  jsonLd: movieJsonLd
+} = getMovie(movieHtml);
 
 // Movie blank
 const movieHtmlBlank = parse(movieMockBlank);
 
-const pageClassesBlank = movieHtmlBlank.querySelector('.page-content').classNames.split(' ');
-const asideNodeBlank = movieHtmlBlank.querySelector('.aside-movie-profile');
-const movieNodeBlank: HTMLElement = movieHtmlBlank.querySelector('.main-movie-profile');
-const movieBlankJsonLd = movieHtmlBlank.querySelector(
-  'script[type="application/ld+json"]'
-).innerText;
+const {
+  pClasses: pageClassesBlank,
+  aside: asideNodeBlank,
+  pNode: movieNodeBlank,
+  jsonLd: movieBlankJsonLd
+} = getMovie(movieHtmlBlank);
 
 // Movie rich
 const movieHtmlRich = parse(movieMockRich);
-const asideNodeRich = movieHtmlRich.querySelector('.aside-movie-profile');
-const movieNodeRich: HTMLElement = movieHtmlRich.querySelector('.main-movie-profile');
-const movieRichJsonLd = movieHtmlRich.querySelector('script[type="application/ld+json"]').innerText;
+
+const {
+  aside: asideNodeRich,
+  pNode: movieNodeRich,
+  jsonLd: movieRichJsonLd
+} = getMovie(movieHtmlRich);
 
 // Series
 const seriesHtml = parse(seriesMock);
-const seriesJsonLd = seriesHtml.querySelector('script[type="application/ld+json"]').innerText;
 
-const seriesNode: HTMLElement = seriesHtml.querySelector('.main-movie-profile');
-const asideNodeSeries = seriesHtml.querySelector('.aside-movie-profile');
-
-// const bodyClassesSeries = seriesHtml.querySelector('.page-content').classNames;
+const { aside: asideNodeSeries, pNode: seriesNode, jsonLd: seriesJsonLd } = getMovie(seriesHtml);
 
 describe('Get ID', () => {
   test('Movie ID', () => {
