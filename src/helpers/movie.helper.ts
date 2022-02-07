@@ -126,12 +126,9 @@ export const getPoster = (el: HTMLElement): string => {
 };
 
 export const getDescriptions = (el: HTMLElement): string[] => {
-  // TODO more plots
-  const plot = el
-    .querySelector('.body--plots .plot-full p')
-    ?.textContent.trim()
-    .replace(/(\r\n|\n|\r|\t)/gm, '');
-  return plot ? [plot] : [];
+  return el
+    .querySelectorAll('.body--plots .plot-full p, .body--plots .plots .plots-item p')
+    .map((movie) => movie.textContent?.trim().replace(/(\r\n|\n|\r|\t)/gm, ''));
 };
 
 export const parsePeople = (el: HTMLElement): CSFDCreator[] => {
