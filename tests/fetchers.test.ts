@@ -9,13 +9,13 @@ const badId = 999999999999999;
 // User Ratings
 describe('Fetch rating page', () => {
   test('Fetch `912-bart` user and check some movie', async () => {
-    const MOVIE_NAME = 'Naše planeta';
+    const MOVIE_NAME = 'In the Earth';
     const movies = await csfd.userRatings('912-bart');
     const movieSelected = movies.filter((x) => x.title === MOVIE_NAME)[0];
     expect(movies.map((x) => x.title)).toEqual(expect.arrayContaining([MOVIE_NAME]));
-    expect(movieSelected?.type).toEqual<CSFDFilmTypes>('seriál');
-    expect(movieSelected?.year).toEqual<number>(2019);
-    expect(movieSelected?.userDate).toContain<string>('2021');
+    expect(movieSelected?.type).toEqual<CSFDFilmTypes>('film');
+    expect(movieSelected?.year).toEqual<number>(2021);
+    expect(movieSelected?.userDate).toContain<string>('2022');
     expect(movies.length).toEqual(50);
   });
 });
