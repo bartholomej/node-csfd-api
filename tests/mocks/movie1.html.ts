@@ -1,5 +1,6 @@
 export const movieMock = `
 
+
 <!DOCTYPE html>
 <html lang="cs-CZ">
 	<head>
@@ -31,13 +32,11 @@ export const movieMock = `
 
 
 		<title> Na špatné straně (2018) | ČSFD.cz </title>
-		<link rel="stylesheet" href="//static.pmgstatic.com/assets/web-css/1940c6510ace5bce4efa70ce723382d3/styles.min.css">
-		<link rel="shortcut icon" href="//static.pmgstatic.com/assets/images/c9bd6a26fa717816674d2078f60af950/favicon.ico">
-		<link rel="apple-touch-icon" href="//static.pmgstatic.com/assets/images/c9bd6a26fa717816674d2078f60af950/apple-touch-icon.png">
-		<script src="//static.pmgstatic.com/assets/vendor/d4bda16db4a0ccf1befc901969f0db63/jquery.min.js"></script>
-		<script src="//static.pmgstatic.com/assets/web-js/8d2e3450dfca13939cd3b07a655adc46/scripts.min.js" defer></script>
-
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap&subset=latin-ext">
+		<link rel="stylesheet" href="//static.pmgstatic.com/assets/web-css/89a81cbf21b101577d959c9b96bf9083/styles.min.css">
+		<link rel="shortcut icon" href="//static.pmgstatic.com/assets/images/b7aa0f25eab70d5be2e7d0f39345baea/favicon.ico">
+		<link rel="apple-touch-icon" href="//static.pmgstatic.com/assets/images/b7aa0f25eab70d5be2e7d0f39345baea/apple-touch-icon.png">
+		<script src="//static.pmgstatic.com/assets/vendor/6b61b216f614ed6711d95520f21e5693/jquery.min.js"></script>
+		<script src="//static.pmgstatic.com/assets/web-js/0fef0abf7e0f93eaf3e9ba14104b8083/scripts.min.js" defer></script>
 
 		
 <script type="text/javascript">
@@ -47,9 +46,9 @@ export const movieMock = `
 <script src="https://cdn.cpex.cz/cmp/v2/cpex-cmp.min.js"></script><script src="//assets.adobedtm.com/e949270ea86e/f1d67104c3f5/launch-5baa4d1acdaf.min.js" async></script>
 
 <script src="https://publisher.caroda.io/videoPlayer/caroda.min.js?ctok=231efd424e405a" crossorigin="anonymous" defer></script>
-<script id="videojs-vendor" src="//static.pmgstatic.com/assets/vendor/d4bda16db4a0ccf1befc901969f0db63/videojs/video.min.js" async defer></script>
+<script id="videojs-vendor" src="//static.pmgstatic.com/assets/vendor/6b61b216f614ed6711d95520f21e5693/videojs/video.min.js" async defer></script>
 <script type="text/javascript" src="https://www.gstatic.com/cv/js/sender/v1/cast_sender.js?loadCastFramework=1" async defer></script>
-<link rel="stylesheet" href="//static.pmgstatic.com/assets/vendor/d4bda16db4a0ccf1befc901969f0db63/videojs/video-js.min.css">
+<link rel="stylesheet" href="//static.pmgstatic.com/assets/vendor/6b61b216f614ed6711d95520f21e5693/videojs/video-js.min.css">
 
 <script>
 	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -57,15 +56,39 @@ export const movieMock = `
 	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-	ga('create', 'UA-11601932-1', 'auto');
+	ga('create', 'UA-11601932-1', {
+		'storage': 'none'
+	});
 	// cca 4% (1 of 25)
 	if (Math.random() < 0.04) {
 		ga('send', 'pageview');
 	}
 </script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C98FX2HV16"></script>
+<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('consent', 'default', {
+		'ad_storage': 'denied',
+		'analytics_storage': 'denied'
+	});
+
+	gtag('config', 'G-C98FX2HV16', {
+		'transport_type': 'beacon',
+		'custom_map': {
+			'dimension1': 'logged'
+		},
+		'logged': false
+	});
+</script>
+
 <script type="text/javascript">
 	<!--//--><![CDATA[//><!--
 	var pp_gemius_identifier = '.Xo70CM6eCnBhv6vp5QQNcR77xEWf47KiIqfXU6rmdf.e7';
+	var pp_gemius_use_cmp = true;
 	// lines below shouldn't be edited
 	function gemius_pending(i) { window[i] = window[i] || function() { var x = window[i+'_pdata'] = window[i+'_pdata'] || []; x[x.length]=arguments;};};
 	gemius_pending('gemius_hit'); gemius_pending('gemius_event'); gemius_pending('pp_gemius_hit'); gemius_pending('pp_gemius_event');
@@ -90,7 +113,18 @@ export const movieMock = `
 		</div>
 
 		<div id="page-wrapper">
-			<header class="page-header user-not-logged">
+			<header class="page-header user-not-logged projection-on">
+				<div class="top-info">
+					<div class="row">
+						<div class="column column-full">
+							<div class="infobox">
+								<p>
+									<a href="/akce/345-csfd-projekce-ambulance/">ČSFD projekce <em>Ambulance</em></a>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
 
 
 				<div class="header-main">
@@ -99,7 +133,7 @@ export const movieMock = `
 					</div>
 
 					<div class="header-search">
-						<form id="main-search-form" action="/hledat/" data-autocomplete-url="/search/autocomplete/" method="get" role="search">
+						<form id="main-search-form" action="/hledat/" data-autocomplete-url="/api/search/autocomplete/" method="get" role="search">
 							<div class="search-input">
 								<input name="q" type="search" autocomplete="off" placeholder="Vyhledávání">
 								<a href="javascript:void(0);" class="input-search-close">
@@ -167,7 +201,7 @@ export const movieMock = `
 			<a href="/kino/?period=today">Kino</a>
 		</li>
 		<li class="tab-nav-item">
-			<a href="/vod/?year=2021&amp;month=12">VOD<span class="top-nav-new">NEW</span></a>
+			<a href="/vod/?year=2022&amp;month=3">VOD<span class="top-nav-new">NEW</span></a>
 		</li>
 		<li class="tab-nav-item">
 			<a href="/zebricky/filmy/nejlepsi/">Žebříčky</a>
@@ -187,9 +221,6 @@ export const movieMock = `
 		<li class="tab-nav-item">
 			<a href="/diskuze/">Diskuze</a>
 		</li>
-		<li class="tab-nav-item yellow">
-			<a href="/cesky-lev/">Český lev</a>
-		</li>
 	</ul>
 	<ul class="tab-nav-more">
 		<li>
@@ -207,7 +238,7 @@ export const movieMock = `
 					<a href="/kino/?period=today">Kino</a>
 				</li>
 				<li class="tab-nav-item">
-					<a href="/vod/?year=2021&amp;month=12">VOD<span class="top-nav-new">NEW</span></a>
+					<a href="/vod/?year=2022&amp;month=3">VOD<span class="top-nav-new">NEW</span></a>
 				</li>
 				<li class="tab-nav-item">
 					<a href="/zebricky/filmy/nejlepsi/">Žebříčky</a>
@@ -227,9 +258,6 @@ export const movieMock = `
 				<li class="tab-nav-item">
 					<a href="/diskuze/">Diskuze</a>
 				</li>
-				<li class="tab-nav-item yellow">
-					<a href="/cesky-lev/">Český lev</a>
-				</li>
 			</ul>
 		</li>
 	</ul>
@@ -242,7 +270,7 @@ export const movieMock = `
 
 
 <div class="main-movie">
-<script type="application/ld+json">{"@context":"https://schema.org/","@type":"Movie","duration":"PT159M","name":"Na špatné straně","dateCreated":"2018","director":[{"@type":"Person","name":"S. Craig Zahler"}],"actor":[{"@type":"Person","name":"Mel Gibson"},{"@type":"Person","name":"Vince Vaughn"},{"@type":"Person","name":"Tory Kittles"},{"@type":"Person","name":"Michael Jai White"},{"@type":"Person","name":"Thomas Kretschmann"},{"@type":"Person","name":"Jennifer Carpenter"},{"@type":"Person","name":"Laurie Holden"},{"@type":"Person","name":"Don Johnson"},{"@type":"Person","name":"Udo Kier"},{"@type":"Person","name":"Fred Melamed"}],"aggregateRating":{"@type":"AggregateRating","worstRating":0,"bestRating":100,"ratingValue":72.33711894799761,"ratingCount":6692,"reviewCount":439},"image":"https://image.pmgstatic.com/cache/resized/w420/files/images/film/posters/163/579/163579352_bf8737.jpg"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org/","@type":"Movie","duration":"PT159M","name":"Na špatné straně","dateCreated":"2018","director":[{"@type":"Person","name":"S. Craig Zahler"}],"actor":[{"@type":"Person","name":"Mel Gibson"},{"@type":"Person","name":"Vince Vaughn"},{"@type":"Person","name":"Tory Kittles"},{"@type":"Person","name":"Michael Jai White"},{"@type":"Person","name":"Thomas Kretschmann"},{"@type":"Person","name":"Jennifer Carpenter"},{"@type":"Person","name":"Laurie Holden"},{"@type":"Person","name":"Don Johnson"},{"@type":"Person","name":"Udo Kier"},{"@type":"Person","name":"Fred Melamed"}],"aggregateRating":{"@type":"AggregateRating","worstRating":0,"bestRating":100,"ratingValue":72.24142982713155,"ratingCount":6826,"reviewCount":447},"image":"https://image.pmgstatic.com/cache/resized/w420/files/images/film/posters/163/579/163579352_bf8737.jpg"}</script>
 	<div class="main-movie-profile">
 <div class="box box-film">
 <div id="snippet--boxOverviewTop">		<div class="box-header">
@@ -250,10 +278,7 @@ export const movieMock = `
 
 
 				<div class="shown label-simple tv-list">
-					<a href="/televize/program/?day=8&amp;scheduleId=12636657#highlight-schedule-12636657">JOJ Cinema 27.12.2021 01:20</a>
-				</div>
-				<div class="shown label-simple tv-list">
-					<a href="/televize/program/?day=13&amp;scheduleId=12661306#highlight-schedule-12661306">Filmbox Premium 31.12.2021 22:40</a>
+					<a href="/televize/program/?day=4&amp;scheduleId=13156306#highlight-schedule-13156306">FilmBox 17.03.2022 22:10</a>
 				</div>
 			</div>
 
@@ -330,8 +355,8 @@ export const movieMock = `
 									<div class="box-video-content">
 	<a href="javascript:void(0);" class="box-video-preview disabled" data-video-player-initialize="video-player-1" data-video-player-playlist-start="0" data-video-player-autoplay="" data-video-player-translations-url="/api/video-player/translations/">
 			<picture>
-				<source media="(max-width: 650px)" srcset="//image.pmgstatic.com/cache/resized/w360/files/images/film/video/preview/163/327/163327937_d187a1.png 1x, //image.pmgstatic.com/cache/resized/w720/files/images/film/video/preview/163/327/163327937_d187a1.png 2x, //image.pmgstatic.com/cache/resized/w1080/files/images/film/video/preview/163/327/163327937_d187a1.png 3x">
-				<img alt="Trailer 2" class="prev-img" src="//image.pmgstatic.com/cache/resized/w663/files/images/film/video/preview/163/327/163327937_d187a1.png" loading="lazy" width="663" height="280" srcset="//image.pmgstatic.com/cache/resized/w663/files/images/film/video/preview/163/327/163327937_d187a1.png 1x, //image.pmgstatic.com/cache/resized/w1326/files/images/film/video/preview/163/327/163327937_d187a1.png 2x">
+				<source media="(max-width: 650px)" srcset="//image.pmgstatic.com/cache/resized/w360/files/images/film/video/preview/163/327/163327938_6bb54d.png 1x, //image.pmgstatic.com/cache/resized/w720/files/images/film/video/preview/163/327/163327938_6bb54d.png 2x, //image.pmgstatic.com/cache/resized/w1080/files/images/film/video/preview/163/327/163327938_6bb54d.png 3x">
+				<img alt="Trailer 1" class="prev-img" src="//image.pmgstatic.com/cache/resized/w663/files/images/film/video/preview/163/327/163327938_6bb54d.png" loading="lazy" width="663" height="280" srcset="//image.pmgstatic.com/cache/resized/w663/files/images/film/video/preview/163/327/163327938_6bb54d.png 1x, //image.pmgstatic.com/cache/resized/w1326/files/images/film/video/preview/163/327/163327938_6bb54d.png 2x">
 			</picture>
 		<span class="play-button"><i class="icon icon-play-simple"></i></span>
 	</a>
@@ -346,8 +371,8 @@ export const movieMock = `
 			width="637"
 			height="360"
 			data-video-url="/api/video-player/"
-			data-videos="[&#123;&quot;description&quot;:&quot;Trailer 2&quot;,&quot;language_id&quot;:3,&quot;duration&quot;:102,&quot;subtitles_language_id&quot;:1,&quot;poster_path&quot;:&quot;files/images/film/video/preview/163/327/163327937_d187a1.png&quot;,&quot;poster_storage_id&quot;:&quot;image-production&quot;,&quot;poster_width&quot;:1702,&quot;poster_height&quot;:720,&quot;video_film_id&quot;:157744618,&quot;film_video_type_id&quot;:1,&quot;position&quot;:2,&quot;video_id&quot;:157750530,&quot;copyright&quot;:&quot;Summit Entertainment&quot;,&quot;film_name&quot;:&quot;Na špatné straně&quot;,&quot;custom_order&quot;:1,&quot;creators&quot;:null,&quot;poster&quot;:&#123;&quot;width&quot;:1702,&quot;height&quot;:720,&quot;path&quot;:&quot;files/images/film/video/preview/163/327/163327937_d187a1.png&quot;,&quot;storage_id&quot;:&quot;image-production&quot;},&quot;external_description&quot;:&quot;Na špatné straně: Trailer 2&quot;,&quot;request_data&quot;:&quot;rlW2nJEyo0yxVwbkAGp3AGN1ZmNfVaA1LaEcqTkyGTShM3IuM2IWMUZvByfkYQWqYPW0o2gyovV6VzRjAQV3MwWwZJIuZQHjZGqyLzSvLmp4BQZmZ2Z0AJZ3MzLlLzV4ZzRvsD==&quot;},&#123;&quot;description&quot;:&quot;Trailer 1&quot;,&quot;language_id&quot;:3,&quot;duration&quot;:134,&quot;subtitles_language_id&quot;:1,&quot;poster_path&quot;:&quot;files/images/film/video/preview/163/327/163327938_6bb54d.png&quot;,&quot;poster_storage_id&quot;:&quot;image-production&quot;,&quot;poster_width&quot;:1702,&quot;poster_height&quot;:720,&quot;video_film_id&quot;:157742937,&quot;film_video_type_id&quot;:1,&quot;position&quot;:1,&quot;video_id&quot;:157748671,&quot;copyright&quot;:&quot;Bloom&quot;,&quot;film_name&quot;:&quot;Na špatné straně&quot;,&quot;custom_order&quot;:1,&quot;creators&quot;:null,&quot;poster&quot;:&#123;&quot;width&quot;:1702,&quot;height&quot;:720,&quot;path&quot;:&quot;files/images/film/video/preview/163/327/163327938_6bb54d.png&quot;,&quot;storage_id&quot;:&quot;image-production&quot;},&quot;external_description&quot;:&quot;Na špatné straně: Trailer 1&quot;,&quot;request_data&quot;:&quot;rlW2nJEyo0yxVwbkAGp3AQt2AmRfVaA1LaEcqTkyGTShM3IuM2IWMUZvByfkYQWqYPW0o2gyovV6VwIwAQWuAGp2MQIwA2H3ATSuBJD5ZwAwZmNkBTR0AQZ3Z2ZjBQVlMGpvsD==&quot;}]"
-			data-recommended-videos-url="/api/video-player/recommended-videos/?videoId=157748671"
+			data-videos="[&#123;&quot;description&quot;:&quot;Trailer 1&quot;,&quot;language_id&quot;:3,&quot;duration&quot;:134,&quot;subtitles_language_id&quot;:1,&quot;poster_path&quot;:&quot;files/images/film/video/preview/163/327/163327938_6bb54d.png&quot;,&quot;poster_storage_id&quot;:&quot;image-production&quot;,&quot;poster_width&quot;:1702,&quot;poster_height&quot;:720,&quot;video_film_id&quot;:157742937,&quot;film_video_type_id&quot;:1,&quot;position&quot;:1,&quot;video_id&quot;:157748671,&quot;copyright&quot;:&quot;Bloom&quot;,&quot;film_name&quot;:&quot;Na špatné straně&quot;,&quot;custom_order&quot;:1,&quot;creators&quot;:null,&quot;poster&quot;:&#123;&quot;width&quot;:1702,&quot;height&quot;:720,&quot;path&quot;:&quot;files/images/film/video/preview/163/327/163327938_6bb54d.png&quot;,&quot;storage_id&quot;:&quot;image-production&quot;},&quot;external_description&quot;:&quot;Na špatné straně: Trailer 1&quot;,&quot;request_data&quot;:&quot;rlW2nJEyo0yxVwbkAGp3AQt2AmRfVaA1LaEcqTkyGTShM3IuM2IWMUZvByfkYQWqYPW0o2gyovV6VwIuAQN5MTR5MzVkBTAzZ2ZlAGMyMzMvMGx4LzL2LzHjMwL1ZGHjBJLvsD&quot;},&#123;&quot;description&quot;:&quot;Trailer 2&quot;,&quot;language_id&quot;:3,&quot;duration&quot;:102,&quot;subtitles_language_id&quot;:1,&quot;poster_path&quot;:&quot;files/images/film/video/preview/163/327/163327937_d187a1.png&quot;,&quot;poster_storage_id&quot;:&quot;image-production&quot;,&quot;poster_width&quot;:1702,&quot;poster_height&quot;:720,&quot;video_film_id&quot;:157744618,&quot;film_video_type_id&quot;:1,&quot;position&quot;:2,&quot;video_id&quot;:157750530,&quot;copyright&quot;:&quot;Summit Entertainment&quot;,&quot;film_name&quot;:&quot;Na špatné straně&quot;,&quot;custom_order&quot;:1,&quot;creators&quot;:null,&quot;poster&quot;:&#123;&quot;width&quot;:1702,&quot;height&quot;:720,&quot;path&quot;:&quot;files/images/film/video/preview/163/327/163327937_d187a1.png&quot;,&quot;storage_id&quot;:&quot;image-production&quot;},&quot;external_description&quot;:&quot;Na špatné straně: Trailer 2&quot;,&quot;request_data&quot;:&quot;rlW2nJEyo0yxVwbkAGp3AGN1ZmNfVaA1LaEcqTkyGTShM3IuM2IWMUZvByfkYQWqYPW0o2gyovV6VwtlZwH1AmHkZwEzMQp0AwMuMwDjMQZ5LzEzMGV0AGDkAGxjMwH0LzDvsD&quot;}]"
+			data-recommended-videos-url="/api/video-player/recommended-videos/?videoId=157750530"
 			data-recommended-autoplay
 		>
 			<p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
@@ -362,7 +387,7 @@ export const movieMock = `
 			<div class="film-info-content">
 				<div class="mobile-film-rating">
 					<div class="box-rating has-fans">
-						<div class="rating-average">
+						<div class="film-rating-average">
 								72%
 						</div>
 
@@ -508,7 +533,8 @@ export const movieMock = `
 
 						<span>
 							<a href="/tvurce/634308-lisa-love/">Lisa Love</a>, 
-							<a href="/tvurce/146447-tate-steinsiek/">Tate Steinsiek</a>
+							<a href="/tvurce/146447-tate-steinsiek/">Tate Steinsiek</a>, 
+							<a href="/tvurce/711387-monique-venier/">Monique Venier</a>
 						</span>
 					</div>
 					<div class="other-professions hidden">
@@ -543,10 +569,10 @@ export const movieMock = `
 
 
 		<p>
-			Otupělý policejní veterán Ridgeman (<a href="https://www.csfd.cz/tvurce/1-mel-gibson/">Mel Gibson</a>) a jeho náladový mladší kolega Anthony (<a href="https://www.csfd.cz/tvurce/2012-vince-vaughn/">Vince Vaughn</a>) jsou suspendováni ze služby poté, co do médií unikne videozáznam jejich svérázných metod. Bez prostředků a velkých šancí se oba zatrpklí vojáci vydají do kriminálního podsvětí, aby učinili spravedlnosti zadost. Mezitím je v jiné části města propuštěn z vězení mladý zločinec Henry Jones a zjišťuje, že jeho matce a postiženému bratrovi hrozí vystěhování. Ve snaze najít způsob, jak jim pomoci, se obrátí na kamaráda z dětství jménem Biscuit, který ho představí nelítostnému kriminálnímu bossovi, jehož ambiciózní plány jej postaví do přímého konfliktu s oběma policejními odpadlíky.
+			Po zásahu proti drogovému dealerovi jsou detektivové Brett Ridgeman a Anthony Lurasetti postaveni na šest týdnů mimo službu bez platu. Důvodem bylo jejich násilí, které kdosi natočil a video pak předal médiím. Zatímco pro Lurasettiho, který je o několik let mladší než Ridgeman, se jedná jen o komplikaci v jeho snaze získat Denise, ženu snů, pro Bretta Ridgemana se postavení mimo službu jeví jako katastrofa. Brett má totiž doma vážně nemocnou ženu Melanii a dospívající dceru Sáru, která je šikanována pouličním gangem mladíků ze čtvrti, ve které Ridgemanovi bydlí. Brett slíbil ženě, že se ze čtvrti odstěhují. K tomu ale potřebuje právě peníze. Brett má svého života policajta tak právě dost. Proto vyhledá mocného místního muže, Friedricha, který mu dluží laskavost. Brett kdysi zametl pod koberec problémy se zákonem mladého Friedricha. Friedrich dá Brettovi tip na jakéhosi Vogelmanna, který nedávno ve městě sháněl tajný byt. Brett v noci po schůzce zavolá Lurasettiho, nechá se jím dovést před byt, který si Vogelmann najal, a prozradí Lurasettimu své plány. Vogelmann totiž podle Friedricha jede v nějaké velké špinavosti, zřejmě v prodeji velkého množství drog. Lurasetti sice není z Brettova plánu nikterak nadšený, ale nakonec souhlasí, že společně Vogelmanna oberou o peníze. V té době je z vězení propuštěn Henry Johns. Henry by rád začal nový život, ale doma ho čeká kupa problémů. Henryho a malého bratra Ethana, který je na vozíku, opustil otec. Rodina se teď protlouká, jak může, matka se kvůli tomu dala i na prostituci. Henry se od ní dozvídá, že jim hrozí exekuce. Proto nakonec kývne na nabídku svého kamaráda Biscuita, aby pro Vogelmanna udělali malou práci. Vogelmannovi další společníci už na tuto „práci“ opatřili peníze z loupeže v místním obchodě a pancéřové auto. Oba policisté Vogelmanna a jeho kumpány v tajném bytě sledují. Jedné noci nad ránem Vogelmann se svými lidmi vyrazí s pancéřovým autem do města. Brett s Lurasettim auto sledují, to se jim ale ztratí v centru města. Když policisté Vogelmannovo auto znovu objeví, zjistí, že Vogelmann se svými kumpány už přepadl místní banku. Oběma policistům je jasné, že loupeži nemohou zabránit. V bance zatím Vogelmann se svými kumpány, mezi kterými jsou i Henry a Biscuit, vraždí zaměstnance. Brett s Lurasettim gangstery alespoň na jejich útěku z banky sledují. Zatím Henry s Biscuitem zjistí, že práce, na kterou byli najati, se jim poněkud vymkla z rukou. Vogelmann oběma slíbil, že při loupeži nikdo nezemře, ale teď v bance leží pět mrtvých lidí a v autě s nimi je i jedna unesená zaměstnankyně. Když Henry s Biscuitem protestují, dá jim Vogelmann za pomoci samopalu jasně najevo, že mají mlčet a poslouchat. Henry je chytrý a pochopí, že Vogelmann chce i je dva zabít. Proto Vogelmanna neinformuje, že jejich auto kdosi sleduje...
 
 		<em class="span-more-small">
-					(<a href="http://www.hbo.eu">HBO Europe</a>)
+					(TV Prima)
 		</em>
 		</p>
 				</div>
@@ -554,10 +580,10 @@ export const movieMock = `
 					
 			
 		<p>
-			Otupělý policejní veterán Ridgeman (<a href="https://www.csfd.cz/tvurce/1-mel-gibson/">Mel Gibson</a>) a jeho náladový mladší kolega Anthony (<a href="https://www.csfd.cz/tvurce/2012-vince-vaughn/">Vince Vaughn</a>) jsou suspendováni ze služby poté, co do médií unikne videozáznam jejich svérázných metod. Bez prostředků a velkých šancí se oba zatrpklí vojáci vydají do kriminálního podsvětí, aby učinili spravedlnosti zadost. Mezitím je v jiné části města propuštěn z vězení mladý zločinec Henry Jones a zjišťuje, že jeho matce a postiženému bratrovi hrozí vystěhování. Ve snaze najít způsob, jak jim pomoci, se obrátí na kamaráda z dětství jménem Biscuit, který ho představí nelítostnému kriminálnímu bossovi, jehož ambiciózní plány jej postaví do přímého konfliktu s oběma policejními odpadlíky.
+			Po zásahu proti drogovému dealerovi jsou detektivové Brett Ridgeman a Anthony Lurasetti postaveni na šest týdnů mimo službu bez platu. Důvodem bylo jejich násilí, které kdosi natočil a video pak předal médiím. Zatímco pro Lurasettiho, který je o několik let mladší než Ridgeman, se jedná jen o komplikaci v jeho snaze získat Denise, ženu snů, pro Bretta Ridgemana se postavení mimo službu jeví jako katastrofa. Brett má totiž doma vážně nemocnou ženu Melanii a dospívající dceru Sáru, která je šikanována pouličním gangem mladíků ze čtvrti, ve které Ridgemanovi bydlí. Brett slíbil ženě, že se ze čtvrti odstěhují. K tomu ale potřebuje právě peníze. Brett má svého života policajta tak právě dost. Proto vyhledá mocného místního muže, Friedricha, který mu dluží laskavost. Brett kdysi zametl pod koberec problémy se zákonem mladého Friedricha. Friedrich dá Brettovi tip na jakéhosi Vogelmanna, který nedávno ve městě sháněl tajný byt. Brett v noci po schůzce zavolá Lurasettiho, nechá se jím dovést před byt, který si Vogelmann najal, a prozradí Lurasettimu své plány. Vogelmann totiž podle Friedricha jede v nějaké velké špinavosti, zřejmě v prodeji velkého množství drog. Lurasetti sice není z Brettova plánu nikterak nadšený, ale nakonec souhlasí, že společně Vogelmanna oberou o peníze. V té době je z vězení propuštěn Henry Johns. Henry by rád začal nový život, ale doma ho čeká kupa problémů. Henryho a malého bratra Ethana, který je na vozíku, opustil otec. Rodina se teď protlouká, jak může, matka se kvůli tomu dala i na prostituci. Henry se od ní dozvídá, že jim hrozí exekuce. Proto nakonec kývne na nabídku svého kamaráda Biscuita, aby pro Vogelmanna udělali malou práci. Vogelmannovi další společníci už na tuto „práci“ opatřili peníze z loupeže v místním obchodě a pancéřové auto. Oba policisté Vogelmanna a jeho kumpány v tajném bytě sledují. Jedné noci nad ránem Vogelmann se svými lidmi vyrazí s pancéřovým autem do města. Brett s Lurasettim auto sledují, to se jim ale ztratí v centru města. Když policisté Vogelmannovo auto znovu objeví, zjistí, že Vogelmann se svými kumpány už přepadl místní banku. Oběma policistům je jasné, že loupeži nemohou zabránit. V bance zatím Vogelmann se svými kumpány, mezi kterými jsou i Henry a Biscuit, vraždí zaměstnance. Brett s Lurasettim gangstery alespoň na jejich útěku z banky sledují. Zatím Henry s Biscuitem zjistí, že práce, na kterou byli najati, se jim poněkud vymkla z rukou. Vogelmann oběma slíbil, že při loupeži nikdo nezemře, ale teď v bance leží pět mrtvých lidí a v autě s nimi je i jedna unesená zaměstnankyně. Když Henry s Biscuitem protestují, dá jim Vogelmann za pomoci samopalu jasně najevo, že mají mlčet a poslouchat. Henry je chytrý a pochopí, že Vogelmann chce i je dva zabít. Proto Vogelmanna neinformuje, že jejich auto kdosi sleduje...
 
 		<em class="span-more-small">
-					(<a href="http://www.hbo.eu">HBO Europe</a>)
+					(TV Prima)
 		</em>
 		</p>
 
@@ -723,8 +749,8 @@ export const movieMock = `
 <div class="box-video-content">
 	<a href="javascript:void(0);" class="box-video-preview disabled" data-video-player-initialize="video-player-2" data-video-player-playlist-start="0" data-video-player-autoplay="" data-video-player-translations-url="/api/video-player/translations/">
 			<picture>
-				<source media="(max-width: 650px)" srcset="//image.pmgstatic.com/cache/resized/w360/files/images/film/video/preview/163/327/163327937_d187a1.png 1x, //image.pmgstatic.com/cache/resized/w720/files/images/film/video/preview/163/327/163327937_d187a1.png 2x, //image.pmgstatic.com/cache/resized/w1080/files/images/film/video/preview/163/327/163327937_d187a1.png 3x">
-				<img alt="Trailer 2" class="prev-img" src="//image.pmgstatic.com/cache/resized/w663/files/images/film/video/preview/163/327/163327937_d187a1.png" loading="lazy" width="663" height="280" srcset="//image.pmgstatic.com/cache/resized/w663/files/images/film/video/preview/163/327/163327937_d187a1.png 1x, //image.pmgstatic.com/cache/resized/w1326/files/images/film/video/preview/163/327/163327937_d187a1.png 2x">
+				<source media="(max-width: 650px)" srcset="//image.pmgstatic.com/cache/resized/w360/files/images/film/video/preview/163/327/163327938_6bb54d.png 1x, //image.pmgstatic.com/cache/resized/w720/files/images/film/video/preview/163/327/163327938_6bb54d.png 2x, //image.pmgstatic.com/cache/resized/w1080/files/images/film/video/preview/163/327/163327938_6bb54d.png 3x">
+				<img alt="Trailer 1" class="prev-img" src="//image.pmgstatic.com/cache/resized/w663/files/images/film/video/preview/163/327/163327938_6bb54d.png" loading="lazy" width="663" height="280" srcset="//image.pmgstatic.com/cache/resized/w663/files/images/film/video/preview/163/327/163327938_6bb54d.png 1x, //image.pmgstatic.com/cache/resized/w1326/files/images/film/video/preview/163/327/163327938_6bb54d.png 2x">
 			</picture>
 		<span class="play-button"><i class="icon icon-play-simple"></i></span>
 	</a>
@@ -739,8 +765,8 @@ export const movieMock = `
 			width="637"
 			height="360"
 			data-video-url="/api/video-player/"
-			data-videos="[&#123;&quot;description&quot;:&quot;Trailer 2&quot;,&quot;language_id&quot;:3,&quot;duration&quot;:102,&quot;subtitles_language_id&quot;:1,&quot;poster_path&quot;:&quot;files/images/film/video/preview/163/327/163327937_d187a1.png&quot;,&quot;poster_storage_id&quot;:&quot;image-production&quot;,&quot;poster_width&quot;:1702,&quot;poster_height&quot;:720,&quot;video_film_id&quot;:157744618,&quot;film_video_type_id&quot;:1,&quot;position&quot;:2,&quot;video_id&quot;:157750530,&quot;copyright&quot;:&quot;Summit Entertainment&quot;,&quot;film_name&quot;:&quot;Na špatné straně&quot;,&quot;custom_order&quot;:1,&quot;creators&quot;:null,&quot;poster&quot;:&#123;&quot;width&quot;:1702,&quot;height&quot;:720,&quot;path&quot;:&quot;files/images/film/video/preview/163/327/163327937_d187a1.png&quot;,&quot;storage_id&quot;:&quot;image-production&quot;},&quot;external_description&quot;:&quot;Na špatné straně: Trailer 2&quot;,&quot;request_data&quot;:&quot;rlW2nJEyo0yxVwbkAGp3AGN1ZmNfVaA1LaEcqTkyGTShM3IuM2IWMUZvByfkYQWqYPW0o2gyovV6VzRjAQV3MwWwZJIuZQHjZGqyLzSvLmp4BQZmZ2Z0AJZ3MzLlLzV4ZzRvsD==&quot;},&#123;&quot;description&quot;:&quot;Trailer 1&quot;,&quot;language_id&quot;:3,&quot;duration&quot;:134,&quot;subtitles_language_id&quot;:1,&quot;poster_path&quot;:&quot;files/images/film/video/preview/163/327/163327938_6bb54d.png&quot;,&quot;poster_storage_id&quot;:&quot;image-production&quot;,&quot;poster_width&quot;:1702,&quot;poster_height&quot;:720,&quot;video_film_id&quot;:157742937,&quot;film_video_type_id&quot;:1,&quot;position&quot;:1,&quot;video_id&quot;:157748671,&quot;copyright&quot;:&quot;Bloom&quot;,&quot;film_name&quot;:&quot;Na špatné straně&quot;,&quot;custom_order&quot;:1,&quot;creators&quot;:null,&quot;poster&quot;:&#123;&quot;width&quot;:1702,&quot;height&quot;:720,&quot;path&quot;:&quot;files/images/film/video/preview/163/327/163327938_6bb54d.png&quot;,&quot;storage_id&quot;:&quot;image-production&quot;},&quot;external_description&quot;:&quot;Na špatné straně: Trailer 1&quot;,&quot;request_data&quot;:&quot;rlW2nJEyo0yxVwbkAGp3AQt2AmRfVaA1LaEcqTkyGTShM3IuM2IWMUZvByfkYQWqYPW0o2gyovV6VwIwAQWuAGp2MQIwA2H3ATSuBJD5ZwAwZmNkBTR0AQZ3Z2ZjBQVlMGpvsD==&quot;}]"
-			data-recommended-videos-url="/api/video-player/recommended-videos/?videoId=157748671"
+			data-videos="[&#123;&quot;description&quot;:&quot;Trailer 1&quot;,&quot;language_id&quot;:3,&quot;duration&quot;:134,&quot;subtitles_language_id&quot;:1,&quot;poster_path&quot;:&quot;files/images/film/video/preview/163/327/163327938_6bb54d.png&quot;,&quot;poster_storage_id&quot;:&quot;image-production&quot;,&quot;poster_width&quot;:1702,&quot;poster_height&quot;:720,&quot;video_film_id&quot;:157742937,&quot;film_video_type_id&quot;:1,&quot;position&quot;:1,&quot;video_id&quot;:157748671,&quot;copyright&quot;:&quot;Bloom&quot;,&quot;film_name&quot;:&quot;Na špatné straně&quot;,&quot;custom_order&quot;:1,&quot;creators&quot;:null,&quot;poster&quot;:&#123;&quot;width&quot;:1702,&quot;height&quot;:720,&quot;path&quot;:&quot;files/images/film/video/preview/163/327/163327938_6bb54d.png&quot;,&quot;storage_id&quot;:&quot;image-production&quot;},&quot;external_description&quot;:&quot;Na špatné straně: Trailer 1&quot;,&quot;request_data&quot;:&quot;rlW2nJEyo0yxVwbkAGp3AQt2AmRfVaA1LaEcqTkyGTShM3IuM2IWMUZvByfkYQWqYPW0o2gyovV6VwIuAQN5MTR5MzVkBTAzZ2ZlAGMyMzMvMGx4LzL2LzHjMwL1ZGHjBJLvsD&quot;},&#123;&quot;description&quot;:&quot;Trailer 2&quot;,&quot;language_id&quot;:3,&quot;duration&quot;:102,&quot;subtitles_language_id&quot;:1,&quot;poster_path&quot;:&quot;files/images/film/video/preview/163/327/163327937_d187a1.png&quot;,&quot;poster_storage_id&quot;:&quot;image-production&quot;,&quot;poster_width&quot;:1702,&quot;poster_height&quot;:720,&quot;video_film_id&quot;:157744618,&quot;film_video_type_id&quot;:1,&quot;position&quot;:2,&quot;video_id&quot;:157750530,&quot;copyright&quot;:&quot;Summit Entertainment&quot;,&quot;film_name&quot;:&quot;Na špatné straně&quot;,&quot;custom_order&quot;:1,&quot;creators&quot;:null,&quot;poster&quot;:&#123;&quot;width&quot;:1702,&quot;height&quot;:720,&quot;path&quot;:&quot;files/images/film/video/preview/163/327/163327937_d187a1.png&quot;,&quot;storage_id&quot;:&quot;image-production&quot;},&quot;external_description&quot;:&quot;Na špatné straně: Trailer 2&quot;,&quot;request_data&quot;:&quot;rlW2nJEyo0yxVwbkAGp3AGN1ZmNfVaA1LaEcqTkyGTShM3IuM2IWMUZvByfkYQWqYPW0o2gyovV6VwtlZwH1AmHkZwEzMQp0AwMuMwDjMQZ5LzEzMGV0AGDkAGxjMwH0LzDvsD&quot;}]"
+			data-recommended-videos-url="/api/video-player/recommended-videos/?videoId=157750530"
 			data-recommended-autoplay
 		>
 			<p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
@@ -754,13 +780,33 @@ export const movieMock = `
 
 	<section class="box box-reviews">
 		<header class="box-header">
-			<h2>Recenze <span class="count">(444)</span></h2>
+			<h2>Recenze <span class="count">(452)</span></h2>
 			<div class="box-header-action">
 				<a class="button" href="/film/535121-na-spatne-strane/recenze/">VÍCE</a>
 			</div>
 		</header>
 		<div class="box-content">
 
+<article id="review-11148880" class="article article-white">
+	<div class="article-content article-content-justify">
+		<header class="article-header article-header-review">
+			<div class="article-header-review-name">
+<h3 class="user-title"><a href="/uzivatel/37166-cervenak/" class="user-title-name">Cervenak</a>&nbsp;<span class="user-title-info"><span class="star-rating"><span class="stars stars-5"></span></span></span></h3>			</div>
+			<div class="article-header-review-action">
+				<a href="/uzivatel/37166-cervenak/recenze/">všechny recenze uživatele</a>
+				
+				<a class="permanent-link" title="Trvalý odkaz: /film/535121-na-spatne-strane/recenze/?comment=11148880" href="/film/535121-na-spatne-strane/recenze/?comment=11148880"><i class="icon icon-permalink"></i></a>
+			</div>
+		</header>
+		<p>
+			Kiná sú plné superhrdinských veľkochujovín a poza festivalové bučky sa zakrádajú skutočné filmy pre dospelých ľudí. Nikto netočí také filmy ako S. Craig Zahler, a ani tento sa nedá k ničomu prirovnať. Tie zvláštne papierové dialógy takmer bez vulgarít a plné zaujímavých myšlienok a slovných obrazov sa už stávajú jeho trademarkom. K tomu nepredvídateľné a ukrutne brutálne násilie (scéna v banke, WTF?!) a najmä réžia sústredená akoby na celkom iné veci ako bežná kinematografia. Nie je to dokonalé, niekoho to možno uspí (má to 2 hodiny 40 a rozhodne nie dravé tempo), ale už len preto, ako veľmi je to iné, som musel nasoliť plné hodnotenie.
+
+
+
+			<span class="comment-date info">(<time>24.03.2019</time>)</span>
+		</p>
+	</div>
+</article>
 <article id="review-11163412" class="article article-white">
 	<div class="article-content article-content-justify">
 		<header class="article-header article-header-review">
@@ -778,26 +824,6 @@ export const movieMock = `
 
 
 			<span class="comment-date info">(<time>16.04.2019</time>)</span>
-		</p>
-	</div>
-</article>
-<article id="review-11152299" class="article article-white">
-	<div class="article-content article-content-justify">
-		<header class="article-header article-header-review">
-			<div class="article-header-review-name">
-<h3 class="user-title"><a href="/uzivatel/6811-enspigl/" class="user-title-name">Enšpígl</a>&nbsp;<span class="user-title-info"><span class="star-rating"><span class="stars stars-5"></span></span></span></h3>			</div>
-			<div class="article-header-review-action">
-				<a href="/uzivatel/6811-enspigl/recenze/">všechny recenze uživatele</a>
-				
-				<a class="permanent-link" title="Trvalý odkaz: /film/535121-na-spatne-strane/recenze/?comment=11152299" href="/film/535121-na-spatne-strane/recenze/?comment=11152299"><i class="icon icon-permalink"></i></a>
-			</div>
-		</header>
-		<p>
-			Absolutní filmová nirvána. Do posledního záběru jsem se ani nehnul a hltal každou scénu a dialog netušíc jaký obrat vezme příběh v následující scéně. Mistrovský kousek, kterýmu sluší velký plátynko a jsem rád, že nám Febio fest tenhle zážitek dopřál. Černohumorné strhoé dialogy, dva hlavní hrdinové, všichni tak trošku záporní, ale ve filmu jsou jedini záporní nesympaticky a druzí záporní sympaticky, mimochodem politický názor tohoto filmu je mě docela blízký. Na postavách si tu nechal někdo sakra záležet a Mel je pořád charimastickej až na půdu, pokud jde o Vince Vaughna, tak jeho agent zjevně dělá přečasy, protože on je prostě všude i na Febiu měl dva filmy. Stará drsná škola s poctivou filmařinou navrch nemůžu si přát víc, možná jak říká Pomo, celou scénu v bance, ale to bylo asi fakt hodně drsný.
-
-
-
-			<span class="comment-date info">(<time>29.03.2019</time>)</span>
 		</p>
 	</div>
 	<div class="box box-banner-mobile box-banner-mobile-filmcomments">
@@ -845,23 +871,23 @@ export const movieMock = `
 		</p>
 	</div>
 </article>
-<article id="review-11148880" class="article article-white">
+<article id="review-11152299" class="article article-white">
 	<div class="article-content article-content-justify">
 		<header class="article-header article-header-review">
 			<div class="article-header-review-name">
-<h3 class="user-title"><a href="/uzivatel/37166-cervenak/" class="user-title-name">Cervenak</a>&nbsp;<span class="user-title-info"><span class="star-rating"><span class="stars stars-5"></span></span></span></h3>			</div>
+<h3 class="user-title"><a href="/uzivatel/6811-enspigl/" class="user-title-name">Enšpígl</a>&nbsp;<span class="user-title-info"><span class="star-rating"><span class="stars stars-5"></span></span></span></h3>			</div>
 			<div class="article-header-review-action">
-				<a href="/uzivatel/37166-cervenak/recenze/">všechny recenze uživatele</a>
+				<a href="/uzivatel/6811-enspigl/recenze/">všechny recenze uživatele</a>
 				
-				<a class="permanent-link" title="Trvalý odkaz: /film/535121-na-spatne-strane/recenze/?comment=11148880" href="/film/535121-na-spatne-strane/recenze/?comment=11148880"><i class="icon icon-permalink"></i></a>
+				<a class="permanent-link" title="Trvalý odkaz: /film/535121-na-spatne-strane/recenze/?comment=11152299" href="/film/535121-na-spatne-strane/recenze/?comment=11152299"><i class="icon icon-permalink"></i></a>
 			</div>
 		</header>
 		<p>
-			Kiná sú plné superhrdinských veľkochujovín a poza festivalové bučky sa zakrádajú skutočné filmy pre dospelých ľudí. Nikto netočí také filmy ako S. Craig Zahler, a ani tento sa nedá k ničomu prirovnať. Tie zvláštne papierové dialógy takmer bez vulgarít a plné zaujímavých myšlienok a slovných obrazov sa už stávajú jeho trademarkom. K tomu nepredvídateľné a ukrutne brutálne násilie (scéna v banke, WTF?!) a najmä réžia sústredená akoby na celkom iné veci ako bežná kinematografia. Nie je to dokonalé, niekoho to možno uspí (má to 2 hodiny 40 a rozhodne nie dravé tempo), ale už len preto, ako veľmi je to iné, som musel nasoliť plné hodnotenie.
+			Absolutní filmová nirvána. Do posledního záběru jsem se ani nehnul a hltal každou scénu a dialog netušíc jaký obrat vezme příběh v následující scéně. Mistrovský kousek, kterýmu sluší velký plátynko a jsem rád, že nám Febio fest tenhle zážitek dopřál. Černohumorné strhoé dialogy, dva hlavní hrdinové, všichni tak trošku záporní, ale ve filmu jsou jedini záporní nesympaticky a druzí záporní sympaticky, mimochodem politický názor tohoto filmu je mě docela blízký. Na postavách si tu nechal někdo sakra záležet a Mel je pořád charimastickej až na půdu, pokud jde o Vince Vaughna, tak jeho agent zjevně dělá přečasy, protože on je prostě všude i na Febiu měl dva filmy. Stará drsná škola s poctivou filmařinou navrch nemůžu si přát víc, možná jak říká Pomo, celou scénu v bance, ale to bylo asi fakt hodně drsný.
 
 
 
-			<span class="comment-date info">(<time>23.03.2019</time>)</span>
+			<span class="comment-date info">(<time>29.03.2019</time>)</span>
 		</p>
 	</div>
 </article>
@@ -909,9 +935,9 @@ export const movieMock = `
 				<div class="article-content">
 	<ul>
 		<li>
-			Při přepadení obchodu ve 36. minutě, střelec rozstřílí stojan s chipsy a přitom si můžeme jasně všimnout, že zákazník pohne hlavou, i když ho předtím lupič evidentně zastřelil.
+			Když Henry (<a href="https://www.csfd.cz/tvurce/25206-tory-kittles/">Tory Kittles</a>) se svým mladším bratrem Ethanem (<a href="https://www.csfd.cz/tvurce/375392-myles-truitt/">Myles Truitt</a>) hrají na konzoly PS4 fiktivní hru „Shotgun Safari“, nemají ani zapnuté joysticky.
 			<span class="span-more-small">
-					(<a href="/uzivatel/11244-timak/">Timak</a>)
+					(<a href="/uzivatel/193605-sebig/">SeBig</a>)
 			</span>
 
 
@@ -924,9 +950,9 @@ export const movieMock = `
 				<div class="article-content">
 	<ul>
 		<li>
-			Režisér <a href="https://www.csfd.cz/tvurce/87470-s-craig-zahler/">S. Craig Zahler</a> původně napsal scénář pro věk hlavních postav 30 a 50 let. Poté našel pro roli mladšího policisty Lurasettiho svého oblíbeného herce <a href="https://www.csfd.cz/tvurce/2012-vince-vaughn/">Vinceho</a> a hledal vhodného partnera. Když se dohodl s <a href="https://www.csfd.cz/tvurce/1-mel-gibson/">Mel Gibsonem</a> na obsazení role Ridgemana, musel přepsat role do věku postav 40 a 60 let.
+			Celosvětová premiéra proběhla 3. září 2018 na Mezinárodním filmovém festivalu v Benátkách.
 			<span class="span-more-small">
-					(<a href="/uzivatel/688081-tonula/">Tonula</a>)
+					(<a href="/uzivatel/81870-bmw12/">BMW12</a>)
 			</span>
 
 
@@ -939,7 +965,7 @@ export const movieMock = `
 				<div class="article-content">
 	<ul>
 		<li>
-			Ve filmu zazní píseň „A Better Place For Us“, kterou odehrál jako hudebník režisér <a href="https://www.csfd.cz/tvurce/87470-s-craig-zahler/">S. Craig Zahler</a>.
+			Všechny písně a doplňkovou hudbu složili <a href="https://www.csfd.cz/tvurce/203209-jeff-herriott/">Jeff Herriott</a> &amp; <a href="https://www.csfd.cz/tvurce/87470-s-craig-zahler/">S. Craig Zahler</a>.
 			<span class="span-more-small">
 					(<a href="/uzivatel/268642-rominator/">Rominator</a>)
 			</span>
@@ -965,7 +991,7 @@ export const movieMock = `
 
 <div class="box-rating box-rating-withtabs">
 
-	<div class="rating-average">
+	<div class="film-rating-average">
 			72%
 	</div>
 
@@ -978,10 +1004,10 @@ export const movieMock = `
 		<nav class="tab-nav">
 			<ul class="tab-nav-list">
 				<li class="tab-nav-item ratings-btn active">
-					<a class="tab-link" href="#" data-show-tab=".rating-users" data-hide-tab=".fanclub-users">Hodnocení<span class="counter">(6 692)</span></a>
+					<a class="tab-link" href="#" data-show-tab=".rating-users" data-hide-tab=".fanclub-users">Hodnocení<span class="counter">(6 826)</span></a>
 				</li>
 				<li class="tab-nav-item fans-btn">
-					<a class="tab-link" href="#" data-show-tab=".fanclub-users" data-hide-tab=".rating-users">Fanklub<span class="counter">(12)</span></a>
+					<a class="tab-link" href="#" data-show-tab=".fanclub-users" data-hide-tab=".rating-users">Fanklub<span class="counter">(13)</span></a>
 				</li>
 			</ul>
 		</nav>
@@ -1030,57 +1056,17 @@ export const movieMock = `
 											<a href="/uzivatel/2008-matty/">Matty</a>
 <span title="Vloženo v 28.03.2019"><span class="star-rating"><span class="stars stars-4"></span></span></span>
 				</li>
-				<li>
-											<a href="/uzivatel/58909-j-a-s-m/">J*A*S*M</a>
-<span title="Vloženo v 29.03.2019"><span class="star-rating"><span class="stars stars-4"></span></span></span>
-				</li>
-				<li>
-											<a href="/uzivatel/6811-enspigl/">Enšpígl</a>
-<span title="Vloženo v 28.03.2019"><span class="star-rating"><span class="stars stars-5"></span></span></span>
-				</li>
-				<li>
-											<a href="/uzivatel/37166-cervenak/">Cervenak</a>
-<span title="Vloženo v 23.03.2019"><span class="star-rating"><span class="stars stars-5"></span></span></span>
-				</li>
-				<li>
-											<a href="/uzivatel/8560-malarkey/">Malarkey</a>
-<span title="Vloženo v 12.08.2019"><span class="star-rating"><span class="stars stars-4"></span></span></span>
-				</li>
-				<li>
-											<a href="/uzivatel/12308-t2/">T2</a>
-<span title="Vloženo v 01.04.2019"><span class="star-rating"><span class="stars stars-3"></span></span></span>
-				</li>
-				<li>
-											<a href="/uzivatel/2107-marigold/">Marigold</a>
-<span title="Vloženo v 26.03.2019"><span class="star-rating"><span class="stars stars-4"></span></span></span>
-				</li>
-				<li>
-											<a href="/uzivatel/75-gouryella/">gouryella</a>
-<span title="Vloženo v 23.08.2019"><span class="star-rating"><span class="stars stars-3"></span></span></span>
-				</li>
-				<li>
-											<a href="/uzivatel/97-mrhlad/">MrHlad</a>
-<span title="Vloženo v 24.03.2019"><span class="star-rating"><span class="stars stars-4"></span></span></span>
-				</li>
-				<li>
-											<a href="/uzivatel/3399-renton/">Renton</a>
-<span title="Vloženo v 13.02.2020"><span class="star-rating"><span class="stars stars-3"></span></span></span>
-				</li>
-				<li>
-											<a href="/uzivatel/363-woody/">woody</a>
-<span title="Vloženo v 24.03.2019"><span class="star-rating"><span class="stars stars-5"></span></span></span>
-				</li>
 			</ul>
 <div class="box-more-bar">
 	<div class="pagination">
 		<a href="/film/535121-na-spatne-strane/prehled/?pageRating=0" class="page-prev disabled"></a>
-		1 - 20
+		1 - 10
 		<a href="/film/535121-na-spatne-strane/prehled/?pageRating=2" class="page-next"></a>
 	</div>
 </div>
 		</section>
 	</div>
-	<div class="user-list fanclub-users blank-pagination hidden">
+	<div class="user-list fanclub-users hidden">
 		<section class="fans">
 			<ul>
 				<li>
@@ -1090,13 +1076,7 @@ export const movieMock = `
 					<a href="/uzivatel/702436-mircxxx/oblibene/">mircxxx</a>
 				</li>
 				<li>
-					<a href="/uzivatel/474402-lazzare/oblibene/">lazzare</a>
-				</li>
-				<li>
-					<a href="/uzivatel/588015-pinak/oblibene/">PiNak</a>
-				</li>
-				<li>
-					<a href="/uzivatel/700399-meg2/oblibene/">Meg2</a>
+					<a href="/uzivatel/423384-svijanskej/oblibene/">Svijanskej</a>
 				</li>
 				<li>
 					<a href="/uzivatel/702330-patrik-balog/oblibene/">Patrik.Balog</a>
@@ -1105,7 +1085,10 @@ export const movieMock = `
 					<a href="/uzivatel/725379-salashaska88/oblibene/">Salashaska88</a>
 				</li>
 				<li>
-					<a href="/uzivatel/748263-koleno/oblibene/">Koleno</a>
+					<a href="/uzivatel/700399-meg2/oblibene/">Meg2</a>
+				</li>
+				<li>
+					<a href="/uzivatel/588015-pinak/oblibene/">PiNak</a>
 				</li>
 				<li>
 					<a href="/uzivatel/761085-lubo81/oblibene/">lubo81</a>
@@ -1114,12 +1097,16 @@ export const movieMock = `
 					<a href="/uzivatel/173453-klerenc/oblibene/">klerenc</a>
 				</li>
 				<li>
-					<a href="/uzivatel/787487-willis59/oblibene/">Willis59</a>
+					<a href="/uzivatel/748263-koleno/oblibene/">Koleno</a>
 				</li>
-				<li>
-					<a href="/uzivatel/423384-svijanskej/oblibene/">Svijanskej</a>
-				</li>
-				<li>&nbsp;</li>				<li>&nbsp;</li>				<li>&nbsp;</li>				<li>&nbsp;</li>				<li>&nbsp;</li>				<li>&nbsp;</li>				<li>&nbsp;</li>				<li>&nbsp;</li>			</ul>
+			</ul>
+<div class="box-more-bar">
+	<div class="pagination">
+		<a href="/film/535121-na-spatne-strane/prehled/?pageFanclub=0&amp;tab=fanclub-users" class="page-prev disabled"></a>
+		1 - 10
+		<a href="/film/535121-na-spatne-strane/prehled/?pageFanclub=2&amp;tab=fanclub-users" class="page-next"></a>
+	</div>
+</div>
 		</section>
 	</div>
 </div>
@@ -1127,9 +1114,10 @@ export const movieMock = `
 			<div class="box-rating-buttons">
 				<div class="box-buttons">
 						<a href="https://aerovod.cz/katalog/na-spatne-strane" class="button button-big" data-ga-event="sales-aerovod|film|vod"><i class="icon icon-play-round"></i>Aerovod</a>
-						<a href="https://itunes.apple.com/cz/movie/dragged-across-concrete/id1469983874" class="button button-big" data-ga-event="sales-itunes|film|vod"><i class="icon icon-play-round"></i>iTunes</a>
+						<a href="https://tv.apple.com/cz/movie/dragged-across-concrete/umc.cmc.34ihj6x6alpeso7j7lpvamjfb" class="button button-big" data-ga-event="sales-apple-tv|film|vod"><i class="icon icon-play-round"></i>Apple TV+</a>
+						<a href="https://sledovanitv.cz/epg/event-new?eventId=FilmboxExtra%3A20220312113af40ca94b86438645c4e2735b9d89" class="button button-big" data-ga-event="sales-sledovanitv|film|vod"><i class="icon icon-play-round"></i>SledovaniTV</a>
 					<hr>
-						<a href="https://www.martinus.cz/?uItem=619213" class="button button-big" data-ga-event="sales-martinus-cz|film|dvd"><i class="icon icon-shopping-cart"></i>DVD</a>
+						<a href="https://www.martinus.cz/?uItem=619199" class="button button-big" data-ga-event="sales-martinus-cz|film|dvd"><i class="icon icon-shopping-cart"></i>DVD</a>
 					<hr>
 
 
@@ -1279,6 +1267,18 @@ export const movieMock = `
 							</form>
 								<p>Tvoje časové pásmo je detekováno pro Europe/Prague</p>
 						</div>
+						<div class="theme-switcher">
+							<a id="switch-to-dark-mode" href="javascript:void(0);">
+								<span>
+									<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+								</span>Tmavý vzhled
+							</a>
+							<a id="switch-to-light-mode" href="javascript:void(0);" class="hidden">
+								<span>
+									<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+								</span>Světlý vzhled
+							</a>
+						</div>
 					</div>
 
 					<div class="linklist">
@@ -1311,12 +1311,12 @@ export const movieMock = `
 					</div>
 					<div class="footer-right-app">
 						<h3>Mobilní aplikace</h3>
-						<a href="https://apps.apple.com/cz/app/čsfd-web/id1552901865#?platform=iphone" class="btn-app-store" target="_blank"><img alt="ČSFD Web | App Store" src="//static.pmgstatic.com/assets/images/c9bd6a26fa717816674d2078f60af950/appstore.svg"></a>
-						<a href="https://play.google.com/store/apps/details?id=cz.csfd.lite" class="btn-google-play" target="_blank"><img alt="ČSFD Web | Google Play" src="//static.pmgstatic.com/assets/images/c9bd6a26fa717816674d2078f60af950/googleplay.svg"></a>
+						<a href="https://apps.apple.com/cz/app/csfd-web/id1552901865#?platform=iphone" class="btn-app-store" target="_blank"><img alt="ČSFD Web | App Store" src="//static.pmgstatic.com/assets/images/b7aa0f25eab70d5be2e7d0f39345baea/appstore.svg"></a>
+						<a href="https://play.google.com/store/apps/details?id=cz.csfd.lite" class="btn-google-play" target="_blank"><img alt="ČSFD Web | Google Play" src="//static.pmgstatic.com/assets/images/b7aa0f25eab70d5be2e7d0f39345baea/googleplay.svg"></a>
 					</div>
 					<div class="site-info">
 						<p>Česko-Slovenská filmová databáze</p>
-						<p>&copy; 2001-2021 POMO Media Group s.r.o.</p>
+						<p>&copy; 2001-2022 POMO Media Group s.r.o.</p>
 						<p>Všechna práva vyhrazena.</p>
 					</div>
 				</div>
@@ -1339,9 +1339,9 @@ export const movieMock = `
 
 <div id="slide_up" class="ad-pmg"></div>
 
-<script src="//static.pmgstatic.com/assets/utils-js/4617ef4e80f050d67c0ef7aa2eb7f9fb/scripts.min.js"></script>
+<script src="//static.pmgstatic.com/assets/utils-js/6dc1fcfebf8edc10b5d9ccc4d4239d88/scripts.min.js"></script>
 <script type="text/javascript">
-	CSFDAds.complete({"ball":{"page":2,"login":2,"film_id":535121,"film_type":0,"film_genre":[18,2,8],"film_origin":[172,71],"film_year":2018,"film_tags":[67,97,162,824,1220,604,218,155,839],"film_creators":[87470,190956,203209,1,2012,25206,11486,4308,25684,22637,426,2567,56769,409531,97284,225816,148124,375392,12372,105243,240405,49500,226779,187951,284068,458083,227188,437405,432071,465337,76088,446732,601169,638625,320006,77451,213237,243221,262406,290584,634308,146447,260746],"site":"csfd.cz"},"0":{"area":"leaderboard","size":"1000x210,2000x1400,1000x200,1000x210,970x210,998x200,750x200,750x100,970x90,728x90,branding_web"},"1":{"area":"halfpage","size":"300x600,160x600"},"2":{"area":"billboard","size":"1000x310,970x310,560x315,480x300,750x300,970x250,970x90,728x90"},"3":{"area":"slide_up","size":"970x310,970x250,950x200,750x300,750x200,728x90,500x200,320x150,320x100,320x50,300x100,300x50,slide_up"},"4":{"area":"mobile_leaderboard","size":"320x100,320x50,300x100,300x50"},"5":{"area":"mobile_square_1","size":"300x300,300x250,interscroller"},"6":{"area":"mobile_square_2","size":"300x300,300x250,250x250"},"7":{"area":"mobile_billboard","size":"300x300,300x250"},"8":{"area":"branding_video_player","size":"branding_video_player,670x720"},"9":{"area":"pre_roll","size":"videoad,videoad_adblock","supertag":"InstreamVideo"}});
+	CSFDAds.complete({"ball":{"page":2,"login":2,"film_id":535121,"film_type":0,"film_genre":[18,2,8],"film_origin":[172,71],"film_year":2018,"film_tags":[67,97,162,824,1220,604,218,155,839],"film_creators":[87470,190956,203209,1,2012,25206,11486,4308,25684,22637,426,2567,56769,409531,97284,225816,148124,375392,12372,105243,240405,49500,226779,187951,284068,458083,227188,437405,432071,465337,76088,446732,601169,638625,320006,77451,213237,243221,262406,290584,634308,146447,711387,260746],"site":"csfd.cz"},"0":{"area":"leaderboard","size":"1000x210,2000x1400,1000x200,1000x210,970x210,998x200,750x200,750x100,970x90,728x90,branding_web"},"1":{"area":"halfpage","size":"300x600,160x600"},"2":{"area":"billboard","size":"1000x310,970x310,560x315,480x300,750x300,970x250,970x90,728x90"},"3":{"area":"slide_up","size":"970x310,970x250,950x200,750x300,750x200,728x90,500x200,320x150,320x100,320x50,300x100,300x50,slide_up"},"4":{"area":"mobile_leaderboard","size":"320x100,320x50,300x100,300x50"},"5":{"area":"mobile_square_1","size":"300x300,300x250,interscroller"},"6":{"area":"mobile_square_2","size":"300x300,300x250,250x250"},"7":{"area":"mobile_billboard","size":"300x300,300x250"},"8":{"area":"branding_video_player","size":"branding_video_player,670x720"},"9":{"area":"pre_roll","size":"videoad,videoad_adblock","supertag":"InstreamVideo"}});
 	CSFDAds.setTServer("https://a.csfd.cz/csfd/tserver");
 </script>
 	</body>

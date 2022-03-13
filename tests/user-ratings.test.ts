@@ -22,7 +22,7 @@ describe('Get Ratings', () => {
   });
   test('Last rating', () => {
     const movie = getUserRating(movies[movies.length - 1]);
-    expect(movie).toEqual<CSFDStars>(3);
+    expect(movie).toEqual<CSFDStars>(5);
   });
   // TODO
   // test('Zero Rating', () => {
@@ -34,11 +34,11 @@ describe('Get Ratings', () => {
 describe('Get ID', () => {
   test('First ID', () => {
     const movie = getId(movies[0]);
-    expect(movie).toEqual<number>(508449);
+    expect(movie).toEqual<number>(755072);
   });
   test('Last ID', () => {
     const movie = getId(movies[movies.length - 1]);
-    expect(movie).toEqual<number>(1040190);
+    expect(movie).toEqual<number>(923577);
   });
 });
 
@@ -48,23 +48,27 @@ describe('Get type', () => {
     expect(movie).toEqual<CSFDFilmTypes>('film');
   });
   test('TV series', () => {
-    const movie = getType(movies[1]);
+    const movie = getType(movies[5]);
     expect(movie).toEqual<CSFDFilmTypes>('seriál');
   });
-  test('Episode', () => {
-    const movie = getType(movies[23]);
-    expect(movie).toEqual<CSFDFilmTypes>('epizoda');
+  // test('Episode', () => {
+  //   const movie = getType(movies[23]);
+  //   expect(movie).toEqual<CSFDFilmTypes>('epizoda');
+  // });
+  test('TV film', () => {
+    const movie = getType(movies[18]);
+    expect(movie).toEqual<CSFDFilmTypes>('TV film');
   });
-  // test('TV film', () => {
-  //   const movie = getType(movies[21]);
-  //   expect(movie).toEqual<CSFDFilmTypes>('TV film');
-  // });
-  // test('Student film', () => {
-  //   const movie = getType(movies[27]);
-  //   expect(movie).toEqual<CSFDFilmTypes>('studentský film');
-  // });
+  test('Pořad', () => {
+    const movie = getType(movies[6]);
+    expect(movie).toEqual<CSFDFilmTypes>('pořad');
+  });
+  test('Student film', () => {
+    const movie = getType(movies[1]);
+    expect(movie).toEqual<CSFDFilmTypes>('studentský film');
+  });
   test('Season', () => {
-    const movie = getType(movies[29]);
+    const movie = getType(movies[14]);
     expect(movie).toEqual<CSFDFilmTypes>('série');
   });
 });
@@ -72,11 +76,11 @@ describe('Get type', () => {
 describe('Get title', () => {
   test('First title', () => {
     const movie = getTitle(movies[0]);
-    expect(movie).toEqual<string>('Sebevražedný oddíl');
+    expect(movie).toEqual<string>('Chyby');
   });
   test('Last title', () => {
     const movie = getTitle(movies[movies.length - 1]);
-    expect(movie).toEqual<string>('Čtvrtá brightonská ulice');
+    expect(movie).toEqual<string>('Jak na... s Johnem Wilsonem');
   });
 });
 
@@ -86,12 +90,12 @@ describe('Get year', () => {
     expect(movie).toEqual<number>(2021);
   });
   test('Some year', () => {
-    const movie = getYear(movies[movies.length - 2]);
-    expect(movie).toEqual<number>(2020);
+    const movie = getYear(movies[movies.length - 4]);
+    expect(movie).toEqual<number>(2019);
   });
   test('Last year', () => {
     const movie = getYear(movies[movies.length - 1]);
-    expect(movie).toEqual<number>(2021);
+    expect(movie).toEqual<number>(2020);
   });
 });
 
@@ -101,15 +105,15 @@ describe('Get color rating', () => {
   //   expect(movie).toEqual<CSFDColorRating>('bad');
   // });
   test('Gray', () => {
-    const movie = getColorRating(movies[11]);
+    const movie = getColorRating(movies[29]);
     expect(movie).toEqual<CSFDColorRating>('unknown');
   });
   test('Blue', () => {
-    const movie = getColorRating(movies[1]);
+    const movie = getColorRating(movies[3]);
     expect(movie).toEqual<CSFDColorRating>('average');
   });
   test('Red', () => {
-    const movie = getColorRating(movies[0]);
+    const movie = getColorRating(movies[2]);
     expect(movie).toEqual<CSFDColorRating>('good');
   });
 });
@@ -117,21 +121,21 @@ describe('Get color rating', () => {
 describe('Get date', () => {
   test('First date', () => {
     const movie = getDate(movies[0]);
-    expect(movie).toEqual<string>('17.12.2021');
+    expect(movie).toEqual<string>('12.03.2022');
   });
   test('Last date', () => {
     const movie = getDate(movies[movies.length - 1]);
-    expect(movie).toEqual<string>('26.08.2021');
+    expect(movie).toEqual<string>('11.12.2021');
   });
 });
 
 describe('Get Url', () => {
   test('First url', () => {
     const movie = getUrl(movies[0]);
-    expect(movie).toEqual<string>('https://www.csfd.cz/film/508449-sebevrazedny-oddil/');
+    expect(movie).toEqual<string>('https://www.csfd.cz/film/755072-chyby/');
   });
   test('Last url', () => {
     const movie = getUrl(movies[movies.length - 1]);
-    expect(movie).toEqual<string>('https://www.csfd.cz/film/1040190-ctvrta-brightonska-ulice/');
+    expect(movie).toEqual<string>('https://www.csfd.cz/film/923577-jak-na-s-johnem-wilsonem/');
   });
 });

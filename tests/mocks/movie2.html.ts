@@ -1,5 +1,6 @@
 export const movieMockBlank = `
 
+
 <!DOCTYPE html>
 <html lang="cs-CZ">
 	<head>
@@ -27,13 +28,11 @@ export const movieMockBlank = `
 
 
 		<title> Loan Shark, The (1912) | Tvůrci | ČSFD.cz </title>
-		<link rel="stylesheet" href="//static.pmgstatic.com/assets/web-css/1940c6510ace5bce4efa70ce723382d3/styles.min.css">
-		<link rel="shortcut icon" href="//static.pmgstatic.com/assets/images/c9bd6a26fa717816674d2078f60af950/favicon.ico">
-		<link rel="apple-touch-icon" href="//static.pmgstatic.com/assets/images/c9bd6a26fa717816674d2078f60af950/apple-touch-icon.png">
-		<script src="//static.pmgstatic.com/assets/vendor/d4bda16db4a0ccf1befc901969f0db63/jquery.min.js"></script>
-		<script src="//static.pmgstatic.com/assets/web-js/8d2e3450dfca13939cd3b07a655adc46/scripts.min.js" defer></script>
-
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap&subset=latin-ext">
+		<link rel="stylesheet" href="//static.pmgstatic.com/assets/web-css/89a81cbf21b101577d959c9b96bf9083/styles.min.css">
+		<link rel="shortcut icon" href="//static.pmgstatic.com/assets/images/b7aa0f25eab70d5be2e7d0f39345baea/favicon.ico">
+		<link rel="apple-touch-icon" href="//static.pmgstatic.com/assets/images/b7aa0f25eab70d5be2e7d0f39345baea/apple-touch-icon.png">
+		<script src="//static.pmgstatic.com/assets/vendor/6b61b216f614ed6711d95520f21e5693/jquery.min.js"></script>
+		<script src="//static.pmgstatic.com/assets/web-js/0fef0abf7e0f93eaf3e9ba14104b8083/scripts.min.js" defer></script>
 
 		
 <script type="text/javascript">
@@ -50,15 +49,39 @@ export const movieMockBlank = `
 	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-	ga('create', 'UA-11601932-1', 'auto');
+	ga('create', 'UA-11601932-1', {
+		'storage': 'none'
+	});
 	// cca 4% (1 of 25)
 	if (Math.random() < 0.04) {
 		ga('send', 'pageview');
 	}
 </script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C98FX2HV16"></script>
+<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('consent', 'default', {
+		'ad_storage': 'denied',
+		'analytics_storage': 'denied'
+	});
+
+	gtag('config', 'G-C98FX2HV16', {
+		'transport_type': 'beacon',
+		'custom_map': {
+			'dimension1': 'logged'
+		},
+		'logged': false
+	});
+</script>
+
 <script type="text/javascript">
 	<!--//--><![CDATA[//><!--
 	var pp_gemius_identifier = '.Xo70CM6eCnBhv6vp5QQNcR77xEWf47KiIqfXU6rmdf.e7';
+	var pp_gemius_use_cmp = true;
 	// lines below shouldn't be edited
 	function gemius_pending(i) { window[i] = window[i] || function() { var x = window[i+'_pdata'] = window[i+'_pdata'] || []; x[x.length]=arguments;};};
 	gemius_pending('gemius_hit'); gemius_pending('gemius_event'); gemius_pending('pp_gemius_hit'); gemius_pending('pp_gemius_event');
@@ -83,7 +106,18 @@ export const movieMockBlank = `
 		</div>
 
 		<div id="page-wrapper">
-			<header class="page-header user-not-logged">
+			<header class="page-header user-not-logged projection-on">
+				<div class="top-info">
+					<div class="row">
+						<div class="column column-full">
+							<div class="infobox">
+								<p>
+									<a href="/akce/345-csfd-projekce-ambulance/">ČSFD projekce <em>Ambulance</em></a>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
 
 
 				<div class="header-main">
@@ -92,7 +126,7 @@ export const movieMockBlank = `
 					</div>
 
 					<div class="header-search">
-						<form id="main-search-form" action="/hledat/" data-autocomplete-url="/search/autocomplete/" method="get" role="search">
+						<form id="main-search-form" action="/hledat/" data-autocomplete-url="/api/search/autocomplete/" method="get" role="search">
 							<div class="search-input">
 								<input name="q" type="search" autocomplete="off" placeholder="Vyhledávání">
 								<a href="javascript:void(0);" class="input-search-close">
@@ -160,7 +194,7 @@ export const movieMockBlank = `
 			<a href="/kino/?period=today">Kino</a>
 		</li>
 		<li class="tab-nav-item">
-			<a href="/vod/?year=2021&amp;month=12">VOD<span class="top-nav-new">NEW</span></a>
+			<a href="/vod/?year=2022&amp;month=3">VOD<span class="top-nav-new">NEW</span></a>
 		</li>
 		<li class="tab-nav-item">
 			<a href="/zebricky/filmy/nejlepsi/">Žebříčky</a>
@@ -180,9 +214,6 @@ export const movieMockBlank = `
 		<li class="tab-nav-item">
 			<a href="/diskuze/">Diskuze</a>
 		</li>
-		<li class="tab-nav-item yellow">
-			<a href="/cesky-lev/">Český lev</a>
-		</li>
 	</ul>
 	<ul class="tab-nav-more">
 		<li>
@@ -200,7 +231,7 @@ export const movieMockBlank = `
 					<a href="/kino/?period=today">Kino</a>
 				</li>
 				<li class="tab-nav-item">
-					<a href="/vod/?year=2021&amp;month=12">VOD<span class="top-nav-new">NEW</span></a>
+					<a href="/vod/?year=2022&amp;month=3">VOD<span class="top-nav-new">NEW</span></a>
 				</li>
 				<li class="tab-nav-item">
 					<a href="/zebricky/filmy/nejlepsi/">Žebříčky</a>
@@ -220,9 +251,6 @@ export const movieMockBlank = `
 				<li class="tab-nav-item">
 					<a href="/diskuze/">Diskuze</a>
 				</li>
-				<li class="tab-nav-item yellow">
-					<a href="/cesky-lev/">Český lev</a>
-				</li>
 			</ul>
 		</li>
 	</ul>
@@ -235,7 +263,7 @@ export const movieMockBlank = `
 
 
 <div class="main-movie">
-<script type="application/ld+json">{"@context":"https://schema.org/","@type":"Movie","name":"Loan Shark, The","dateCreated":"1912","director":[{"@type":"Person","name":"Otis Turner"}],"actor":[{"@type":"Person","name":"King Baggot"},{"@type":"Person","name":"William Robert Daly"}],"image":"//static.pmgstatic.com/assets/images/c9bd6a26fa717816674d2078f60af950/empty-image.svg"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org/","@type":"Movie","name":"Loan Shark, The","dateCreated":"1912","director":[{"@type":"Person","name":"Otis Turner"}],"actor":[{"@type":"Person","name":"King Baggot"},{"@type":"Person","name":"William Robert Daly"}],"image":"//static.pmgstatic.com/assets/images/b7aa0f25eab70d5be2e7d0f39345baea/empty-image.svg"}</script>
 	<div class="main-movie-profile">
 <div class="box box-film">
 <div id="snippet--boxOverviewTop"></div>
@@ -274,7 +302,7 @@ export const movieMockBlank = `
 			<div class="film-info-content">
 				<div class="mobile-film-rating">
 					<div class="box-rating not-rated">
-						<div class="rating-average">
+						<div class="film-rating-average">
 								? %
 						</div>
 
@@ -283,9 +311,6 @@ export const movieMockBlank = `
 
 
 
-					<a href="/film/99999-loan-shark-the/hraji/?name=ratingAndFanclub&amp;do=modalWindow" class="ajax more more-modal-ratings-fanclub" rel="contentModal" data-mfp-main-class="modal-ratings-fanclub" data-mfp-src="#panelModal">
-						Hodnocení a fanklub
-					</a>
 
 				</div>
 
@@ -507,9 +532,9 @@ export const movieMockBlank = `
 			</div>
 
 
-<div class="box-rating not-rated box-rating-withtabs">
+<div class="box-rating not-rated">
 
-	<div class="rating-average">
+	<div class="film-rating-average">
 			? %
 	</div>
 
@@ -518,33 +543,11 @@ export const movieMockBlank = `
 
 
 
-	<div class="tabs tabs-rating rating-fan-switch">
-		<nav class="tab-nav">
-			<ul class="tab-nav-list">
-				<li class="tab-nav-item ratings-btn active">
-					<a class="tab-link" href="#" data-show-tab=".rating-users" data-hide-tab=".fanclub-users">Hodnocení<span class="counter">(1)</span></a>
-				</li>
-				<li class="tab-nav-item fans-btn disabled">
-					<a class="tab-link" href="#" data-show-tab=".fanclub-users" data-hide-tab=".rating-users">Fanklub<span class="counter">(0)</span></a>
-				</li>
-			</ul>
-		</nav>
-	</div>
 
-	<div class="user-list rating-users">
-		<section class="others-rating">
-			<ul>
-				<li>
-											<a href="/uzivatel/327814-artmovie/">Artmovie</a>
-<span title="Vloženo v 07.10.2021"><span class="star-rating"><span class="stars stars-3"></span></span></span>
-				</li>
-			</ul>
-		</section>
-	</div>
 	<div class="user-list fanclub-users hidden">
 		<section class="fans">
 			<ul>
-				<li>&nbsp;</li>			</ul>
+			</ul>
 		</section>
 	</div>
 </div>
@@ -642,6 +645,18 @@ export const movieMockBlank = `
 							</form>
 								<p>Tvoje časové pásmo je detekováno pro Europe/Prague</p>
 						</div>
+						<div class="theme-switcher">
+							<a id="switch-to-dark-mode" href="javascript:void(0);">
+								<span>
+									<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+								</span>Tmavý vzhled
+							</a>
+							<a id="switch-to-light-mode" href="javascript:void(0);" class="hidden">
+								<span>
+									<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+								</span>Světlý vzhled
+							</a>
+						</div>
 					</div>
 
 					<div class="linklist">
@@ -674,12 +689,12 @@ export const movieMockBlank = `
 					</div>
 					<div class="footer-right-app">
 						<h3>Mobilní aplikace</h3>
-						<a href="https://apps.apple.com/cz/app/čsfd-web/id1552901865#?platform=iphone" class="btn-app-store" target="_blank"><img alt="ČSFD Web | App Store" src="//static.pmgstatic.com/assets/images/c9bd6a26fa717816674d2078f60af950/appstore.svg"></a>
-						<a href="https://play.google.com/store/apps/details?id=cz.csfd.lite" class="btn-google-play" target="_blank"><img alt="ČSFD Web | Google Play" src="//static.pmgstatic.com/assets/images/c9bd6a26fa717816674d2078f60af950/googleplay.svg"></a>
+						<a href="https://apps.apple.com/cz/app/csfd-web/id1552901865#?platform=iphone" class="btn-app-store" target="_blank"><img alt="ČSFD Web | App Store" src="//static.pmgstatic.com/assets/images/b7aa0f25eab70d5be2e7d0f39345baea/appstore.svg"></a>
+						<a href="https://play.google.com/store/apps/details?id=cz.csfd.lite" class="btn-google-play" target="_blank"><img alt="ČSFD Web | Google Play" src="//static.pmgstatic.com/assets/images/b7aa0f25eab70d5be2e7d0f39345baea/googleplay.svg"></a>
 					</div>
 					<div class="site-info">
 						<p>Česko-Slovenská filmová databáze</p>
-						<p>&copy; 2001-2021 POMO Media Group s.r.o.</p>
+						<p>&copy; 2001-2022 POMO Media Group s.r.o.</p>
 						<p>Všechna práva vyhrazena.</p>
 					</div>
 				</div>
@@ -702,7 +717,7 @@ export const movieMockBlank = `
 
 <div id="slide_up" class="ad-pmg"></div>
 
-<script src="//static.pmgstatic.com/assets/utils-js/4617ef4e80f050d67c0ef7aa2eb7f9fb/scripts.min.js"></script>
+<script src="//static.pmgstatic.com/assets/utils-js/6dc1fcfebf8edc10b5d9ccc4d4239d88/scripts.min.js"></script>
 <script type="text/javascript">
 	CSFDAds.complete({"ball":{"page":2,"login":2,"film_id":99999,"film_type":0,"film_genre":[2,14],"film_origin":[172],"film_year":1912,"film_creators":[18452,6140,331812],"site":"csfd.cz"},"0":{"area":"leaderboard","size":"1000x210,2000x1400,1000x200,1000x210,970x210,998x200,750x200,750x100,970x90,728x90,branding_web"},"1":{"area":"halfpage","size":"300x600,160x600"},"2":{"area":"billboard","size":"1000x310,970x310,560x315,480x300,750x300,970x250,970x90,728x90"},"3":{"area":"slide_up","size":"970x310,970x250,950x200,750x300,750x200,728x90,500x200,320x150,320x100,320x50,300x100,300x50,slide_up"},"4":{"area":"mobile_leaderboard","size":"320x100,320x50,300x100,300x50"},"5":{"area":"mobile_billboard","size":"300x300,300x250"}});
 	CSFDAds.setTServer("https://a.csfd.cz/csfd/tserver");
@@ -711,5 +726,6 @@ export const movieMockBlank = `
 
 	<a href="#top" title="Zpět nahoru" id="back-to-top"><i class="icon icon-arrow-up" aria-hidden="true"></i></a>
 </html>
+
 
 `;

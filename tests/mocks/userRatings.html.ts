@@ -1,12 +1,13 @@
 export const userRatingsMock = `
 
+
 <!DOCTYPE html>
 <html lang="cs-CZ">
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="description" content="Hodnocení filmů a seriálů uživatelem BART!. Prohlédni si 2579 hvězdičkových hodnocení uživatele BART!.">
+<meta name="description" content="Hodnocení filmů a seriálů uživatelem BART!. Prohlédni si 2626 hvězdičkových hodnocení uživatele BART!.">
 
 <link rel="alternate" hreflang="cs" href="https://www.csfd.cz/uzivatel/912-bart/hodnoceni/">
 <link rel="alternate" hreflang="sk" href="https://www.csfd.sk/uzivatel/912-bart/hodnotenia/">
@@ -14,7 +15,7 @@ export const userRatingsMock = `
 <link rel="canonical" href="https://www.csfd.cz/uzivatel/912-bart/hodnoceni/">
 
 <meta property="og:site_name" content="csfd.cz">
-<meta property="og:description" content="Hodnocení filmů a seriálů uživatelem BART!. Prohlédni si 2579 hvězdičkových hodnocení uživatele BART!.">
+<meta property="og:description" content="Hodnocení filmů a seriálů uživatelem BART!. Prohlédni si 2626 hvězdičkových hodnocení uživatele BART!.">
 <meta property="og:title" content="BART!">
 <meta property="og:url" content="https://www.csfd.cz/uzivatel/912-bart/hodnoceni/">
 <meta property="fb:app_id" content="260163667481043">
@@ -22,17 +23,15 @@ export const userRatingsMock = `
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="https://www.csfd.cz/uzivatel/912-bart/hodnoceni/">
 <meta name="twitter:title" content="BART!">
-<meta name="twitter:description" content="Hodnocení filmů a seriálů uživatelem BART!. Prohlédni si 2579 hvězdičkových hodnocení uživatele BART!.">
+<meta name="twitter:description" content="Hodnocení filmů a seriálů uživatelem BART!. Prohlédni si 2626 hvězdičkových hodnocení uživatele BART!.">
 
 
 		<title> BART! | Hodnocení | ČSFD.cz </title>
-		<link rel="stylesheet" href="//static.pmgstatic.com/assets/web-css/1940c6510ace5bce4efa70ce723382d3/styles.min.css">
-		<link rel="shortcut icon" href="//static.pmgstatic.com/assets/images/c9bd6a26fa717816674d2078f60af950/favicon.ico">
-		<link rel="apple-touch-icon" href="//static.pmgstatic.com/assets/images/c9bd6a26fa717816674d2078f60af950/apple-touch-icon.png">
-		<script src="//static.pmgstatic.com/assets/vendor/d4bda16db4a0ccf1befc901969f0db63/jquery.min.js"></script>
-		<script src="//static.pmgstatic.com/assets/web-js/8d2e3450dfca13939cd3b07a655adc46/scripts.min.js" defer></script>
-
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap&subset=latin-ext">
+		<link rel="stylesheet" href="//static.pmgstatic.com/assets/web-css/89a81cbf21b101577d959c9b96bf9083/styles.min.css">
+		<link rel="shortcut icon" href="//static.pmgstatic.com/assets/images/b7aa0f25eab70d5be2e7d0f39345baea/favicon.ico">
+		<link rel="apple-touch-icon" href="//static.pmgstatic.com/assets/images/b7aa0f25eab70d5be2e7d0f39345baea/apple-touch-icon.png">
+		<script src="//static.pmgstatic.com/assets/vendor/6b61b216f614ed6711d95520f21e5693/jquery.min.js"></script>
+		<script src="//static.pmgstatic.com/assets/web-js/0fef0abf7e0f93eaf3e9ba14104b8083/scripts.min.js" defer></script>
 
 		
 <script type="text/javascript">
@@ -48,15 +47,39 @@ export const userRatingsMock = `
 	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-	ga('create', 'UA-11601932-1', 'auto');
+	ga('create', 'UA-11601932-1', {
+		'storage': 'none'
+	});
 	// cca 4% (1 of 25)
 	if (Math.random() < 0.04) {
 		ga('send', 'pageview');
 	}
 </script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C98FX2HV16"></script>
+<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('consent', 'default', {
+		'ad_storage': 'denied',
+		'analytics_storage': 'denied'
+	});
+
+	gtag('config', 'G-C98FX2HV16', {
+		'transport_type': 'beacon',
+		'custom_map': {
+			'dimension1': 'logged'
+		},
+		'logged': false
+	});
+</script>
+
 <script type="text/javascript">
 	<!--//--><![CDATA[//><!--
 	var pp_gemius_identifier = '.Xo70CM6eCnBhv6vp5QQNcR77xEWf47KiIqfXU6rmdf.e7';
+	var pp_gemius_use_cmp = true;
 	// lines below shouldn't be edited
 	function gemius_pending(i) { window[i] = window[i] || function() { var x = window[i+'_pdata'] = window[i+'_pdata'] || []; x[x.length]=arguments;};};
 	gemius_pending('gemius_hit'); gemius_pending('gemius_event'); gemius_pending('pp_gemius_hit'); gemius_pending('pp_gemius_event');
@@ -81,7 +104,18 @@ export const userRatingsMock = `
 		</div>
 
 		<div id="page-wrapper">
-			<header class="page-header user-not-logged">
+			<header class="page-header user-not-logged projection-on">
+				<div class="top-info">
+					<div class="row">
+						<div class="column column-full">
+							<div class="infobox">
+								<p>
+									<a href="/akce/345-csfd-projekce-ambulance/">ČSFD projekce <em>Ambulance</em></a>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
 
 
 				<div class="header-main">
@@ -90,7 +124,7 @@ export const userRatingsMock = `
 					</div>
 
 					<div class="header-search">
-						<form id="main-search-form" action="/hledat/" data-autocomplete-url="/search/autocomplete/" method="get" role="search">
+						<form id="main-search-form" action="/hledat/" data-autocomplete-url="/api/search/autocomplete/" method="get" role="search">
 							<div class="search-input">
 								<input name="q" type="search" autocomplete="off" placeholder="Vyhledávání">
 								<a href="javascript:void(0);" class="input-search-close">
@@ -158,7 +192,7 @@ export const userRatingsMock = `
 			<a href="/kino/?period=today">Kino</a>
 		</li>
 		<li class="tab-nav-item">
-			<a href="/vod/?year=2021&amp;month=12">VOD<span class="top-nav-new">NEW</span></a>
+			<a href="/vod/?year=2022&amp;month=3">VOD<span class="top-nav-new">NEW</span></a>
 		</li>
 		<li class="tab-nav-item">
 			<a href="/zebricky/filmy/nejlepsi/">Žebříčky</a>
@@ -178,9 +212,6 @@ export const userRatingsMock = `
 		<li class="tab-nav-item">
 			<a href="/diskuze/">Diskuze</a>
 		</li>
-		<li class="tab-nav-item yellow">
-			<a href="/cesky-lev/">Český lev</a>
-		</li>
 	</ul>
 	<ul class="tab-nav-more">
 		<li>
@@ -198,7 +229,7 @@ export const userRatingsMock = `
 					<a href="/kino/?period=today">Kino</a>
 				</li>
 				<li class="tab-nav-item">
-					<a href="/vod/?year=2021&amp;month=12">VOD<span class="top-nav-new">NEW</span></a>
+					<a href="/vod/?year=2022&amp;month=3">VOD<span class="top-nav-new">NEW</span></a>
 				</li>
 				<li class="tab-nav-item">
 					<a href="/zebricky/filmy/nejlepsi/">Žebříčky</a>
@@ -217,9 +248,6 @@ export const userRatingsMock = `
 				</li>
 				<li class="tab-nav-item">
 					<a href="/diskuze/">Diskuze</a>
-				</li>
-				<li class="tab-nav-item yellow">
-					<a href="/cesky-lev/">Český lev</a>
 				</li>
 			</ul>
 		</li>
@@ -264,7 +292,7 @@ export const userRatingsMock = `
 						<div class="user-profile-footer-left">
 							Na ČSFD od 15.03.2003
 							<br>
-							Poslední přihlášení 19.12.2021 06:12
+							Poslední přihlášení 13.03.2022 10:33
 						</div>
 						<div class="user-profile-footer-right">
 						</div>
@@ -360,7 +388,7 @@ export const userRatingsMock = `
 						
 						<span title="TV film">TV film</span>
 						<div class="progress-bar">
-							<span class="meter" style="width: 2%"></span>
+							<span class="meter" style="width: 3%"></span>
 						</div>
 					</li>
 					<li>
@@ -383,14 +411,14 @@ export const userRatingsMock = `
 						
 						<span title="USA">USA</span>
 						<div class="progress-bar">
-							<span class="meter" style="width: 55%"></span>
+							<span class="meter" style="width: 54%"></span>
 						</div>
 					</li>
 					<li>
 						
 						<span title="Česko">Česko</span>
 						<div class="progress-bar">
-							<span class="meter" style="width: 16%"></span>
+							<span class="meter" style="width: 17%"></span>
 						</div>
 					</li>
 					<li>
@@ -549,7 +577,7 @@ export const userRatingsMock = `
 		<div class="column column-80">
 			<section class="box box-user-rating striped-articles">
 				<header class="box-header">
-					<h2>Hodnocení <span class="count">(2 579)</span></h2>
+					<h2>Hodnocení <span class="count">(2 626)</span></h2>
 					<div class="box-header-action">
 						<form class="form" action="" method="get" data-form="get">
 							
@@ -574,6 +602,429 @@ export const userRatingsMock = `
 
 <table class="striped">
 	<tbody>
+		<tr>
+			<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/755072-chyby/" class="film-title-name">Chyby</a> <span class="film-title-info"><span class="info">(2021)</span></span></h3>			</td>
+			<td class="star-rating-only">
+<span class="star-rating"><span class="stars stars-4"></span></span>			</td>
+			<td class="date-only">
+				12.03.2022
+			</td>
+		</tr>
+		<tr>
+			<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/859934-hrdina/" class="film-title-name">Hrdina</a> <span class="film-title-info"><span class="info">(2018)</span> <span class="info">(studentský film)</span></span></h3>			</td>
+			<td class="star-rating-only">
+<span class="star-rating"><span class="stars stars-4"></span></span>			</td>
+			<td class="date-only">
+				11.03.2022
+			</td>
+		</tr>
+		<tr>
+			<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/799103-luptakuv-vlogisek/" class="film-title-name">Luptákův vlogísek</a> <span class="film-title-info"><span class="info">(2019)</span> <span class="info">(seriál)</span></span></h3>			</td>
+			<td class="star-rating-only">
+<span class="star-rating"><span class="stars stars-3"></span></span>			</td>
+			<td class="date-only">
+				11.03.2022
+			</td>
+		</tr>
+		<tr>
+			<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1064122-nezapomen/" class="film-title-name">Nezapomeň</a> <span class="film-title-info"><span class="info">(2017)</span> <span class="info">(studentský film)</span></span></h3>			</td>
+			<td class="star-rating-only">
+<span class="star-rating"><span class="stars stars-3"></span></span>			</td>
+			<td class="date-only">
+				11.03.2022
+			</td>
+		</tr>
+		<tr>
+			<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1050915-mily-tati/" class="film-title-name">Milý tati</a> <span class="film-title-info"><span class="info">(2021)</span> <span class="info">(studentský film)</span></span></h3>			</td>
+			<td class="star-rating-only">
+<span class="star-rating"><span class="stars stars-3"></span></span>			</td>
+			<td class="date-only">
+				11.03.2022
+			</td>
+		</tr>
+		<tr>
+			<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1132031-lekce-rapu/" class="film-title-name">Lekce rapu</a> <span class="film-title-info"><span class="info">(2022)</span> <span class="info">(seriál)</span></span></h3>			</td>
+			<td class="star-rating-only">
+<span class="star-rating"><span class="stars stars-3"></span></span>			</td>
+			<td class="date-only">
+				11.03.2022
+			</td>
+		</tr>
+		<tr>
+			<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/975935-tvuj-souboj-s-divocinou-poprask-na-safari/" class="film-title-name">Tvůj souboj s divočinou: Poprask na safari</a> <span class="film-title-info"><span class="info">(2021)</span> <span class="info">(pořad)</span></span></h3>			</td>
+			<td class="star-rating-only">
+<span class="star-rating"><span class="stars stars-2"></span></span>			</td>
+			<td class="date-only">
+				11.03.2022
+			</td>
+		</tr>
+		<tr>
+			<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1077363-tvuj-souboj-s-divocinou-neprochladni/" class="film-title-name">Tvůj souboj s divočinou: Neprochladni!</a> <span class="film-title-info"><span class="info">(2021)</span> <span class="info">(pořad)</span></span></h3>			</td>
+			<td class="star-rating-only">
+<span class="star-rating"><span class="stars stars-2"></span></span>			</td>
+			<td class="date-only">
+				10.03.2022
+			</td>
+		</tr>
+		<tr>
+			<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1471-zlate-opojeni/" class="film-title-name">Zlaté opojení</a> <span class="film-title-info"><span class="info">(1925)</span></span></h3>			</td>
+			<td class="star-rating-only">
+<span class="star-rating"><span class="stars stars-5"></span></span>			</td>
+			<td class="date-only">
+				08.03.2022
+			</td>
+		</tr>
+		<tr>
+			<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1131631-proti-ledu/" class="film-title-name">Proti ledu</a> <span class="film-title-info"><span class="info">(2022)</span></span></h3>			</td>
+			<td class="star-rating-only">
+<span class="star-rating"><span class="stars stars-3"></span></span>			</td>
+			<td class="date-only">
+				08.03.2022
+			</td>
+		</tr>
+		<tr>
+			<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/981151-okupace/" class="film-title-name">Okupace</a> <span class="film-title-info"><span class="info">(2021)</span></span></h3>			</td>
+			<td class="star-rating-only">
+<span class="star-rating"><span class="stars stars-4"></span></span>			</td>
+			<td class="date-only">
+				06.03.2022
+			</td>
+		</tr>
+		<tr>
+			<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1142568-vikendovy-utek/" class="film-title-name">Víkendový útěk</a> <span class="film-title-info"><span class="info">(2022)</span></span></h3>			</td>
+			<td class="star-rating-only">
+<span class="star-rating"><span class="stars stars-3"></span></span>			</td>
+			<td class="date-only">
+				04.03.2022
+			</td>
+		</tr>
+		<tr>
+			<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1069815-rapstory/" class="film-title-name">RapStory</a> <span class="film-title-info"><span class="info">(2021)</span> <span class="info">(seriál)</span></span></h3>			</td>
+			<td class="star-rating-only">
+<span class="star-rating"><span class="stars stars-4"></span></span>			</td>
+			<td class="date-only">
+				03.03.2022
+			</td>
+		</tr>
+		<tr>
+			<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1134594-tbh/" class="film-title-name">TBH</a> <span class="film-title-info"><span class="info">(2022)</span> <span class="info">(seriál)</span></span></h3>			</td>
+			<td class="star-rating-only">
+<span class="star-rating"><span class="stars stars-3"></span></span>			</td>
+			<td class="date-only">
+				03.03.2022
+			</td>
+		</tr>
+		<tr>
+			<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/836020-jednotky-vesmirneho-nasazeni/836031-serie-1/" class="film-title-name">Jednotky vesmírného nasazení - Série 1</a> <span class="film-title-info"><span class="info">(2020)</span> <span class="info">(série)</span> <span class="info">(S01)</span></span></h3>			</td>
+			<td class="star-rating-only">
+<span class="star-rating"><span class="stars stars-3"></span></span>			</td>
+			<td class="date-only">
+				03.03.2022
+			</td>
+		</tr>
+		<tr>
+			<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/836020-jednotky-vesmirneho-nasazeni/1114194-serie-2/" class="film-title-name">Jednotky vesmírného nasazení - Série 2</a> <span class="film-title-info"><span class="info">(2022)</span> <span class="info">(série)</span> <span class="info">(S02)</span></span></h3>			</td>
+			<td class="star-rating-only">
+<span class="star-rating"><span class="stars stars-3"></span></span>			</td>
+			<td class="date-only">
+				03.03.2022
+			</td>
+		</tr>
+		<tr>
+			<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1052988-bod-varu/" class="film-title-name">Bod varu</a> <span class="film-title-info"><span class="info">(2021)</span></span></h3>			</td>
+			<td class="star-rating-only">
+<span class="star-rating"><span class="stars stars-4"></span></span>			</td>
+			<td class="date-only">
+				27.02.2022
+			</td>
+		</tr>
+		<tr>
+			<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/871651-zprava-o-zachrane-mrtveho/" class="film-title-name">Zpráva o záchraně mrtvého</a> <span class="film-title-info"><span class="info">(2021)</span></span></h3>			</td>
+			<td class="star-rating-only">
+<span class="star-rating"><span class="stars stars-2"></span></span>			</td>
+			<td class="date-only">
+				24.02.2022
+			</td>
+		</tr>
+		<tr>
+			<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/465661-zeme-revivalu/" class="film-title-name">Země revivalů</a> <span class="film-title-info"><span class="info">(2016)</span> <span class="info">(TV film)</span></span></h3>			</td>
+			<td class="star-rating-only">
+<span class="star-rating"><span class="stars stars-3"></span></span>			</td>
+			<td class="date-only">
+				18.02.2022
+			</td>
+		</tr>
+		<tr>
+			<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/647068-balada-o-busteru-scruggsovi/" class="film-title-name">Balada o Busteru Scruggsovi</a> <span class="film-title-info"><span class="info">(2018)</span></span></h3>			</td>
+			<td class="star-rating-only">
+<span class="star-rating"><span class="stars stars-4"></span></span>			</td>
+			<td class="date-only">
+				14.02.2022
+			</td>
+		</tr>
+		<tr>
+			<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/5398-spalujici-touha/" class="film-title-name">Spalující touha</a> <span class="film-title-info"><span class="info">(1999)</span></span></h3>			</td>
+			<td class="star-rating-only">
+<span class="star-rating"><span class="stars stars-4"></span></span>			</td>
+			<td class="date-only">
+				12.02.2022
+			</td>
+		</tr>
+		<tr>
+			<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/792852-spider-man-bez-domova/" class="film-title-name">Spider-Man: Bez domova</a> <span class="film-title-info"><span class="info">(2021)</span></span></h3>			</td>
+			<td class="star-rating-only">
+<span class="star-rating"><span class="stars stars-2"></span></span>			</td>
+			<td class="date-only">
+				09.02.2022
+			</td>
+		</tr>
+		<tr>
+			<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1130322-podvodnik-z-tinderu/" class="film-title-name">Podvodník z Tinderu</a> <span class="film-title-info"><span class="info">(2022)</span></span></h3>			</td>
+			<td class="star-rating-only">
+<span class="star-rating"><span class="stars stars-4"></span></span>			</td>
+			<td class="date-only">
+				09.02.2022
+			</td>
+		</tr>
+		<tr>
+			<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1052674-mimoradna-udalost/" class="film-title-name">Mimořádná událost</a> <span class="film-title-info"><span class="info">(2022)</span></span></h3>			</td>
+			<td class="star-rating-only">
+<span class="star-rating"><span class="stars stars-3"></span></span>			</td>
+			<td class="date-only">
+				08.02.2022
+			</td>
+		</tr>
+		<tr>
+			<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/687108-krotitele-duchu-odkaz/" class="film-title-name">Krotitelé duchů: Odkaz</a> <span class="film-title-info"><span class="info">(2021)</span></span></h3>			</td>
+			<td class="star-rating-only">
+<span class="star-rating"><span class="stars stars-3"></span></span>			</td>
+			<td class="date-only">
+				07.02.2022
+			</td>
+		</tr>
+		<tr>
+			<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1077160-archive-81/" class="film-title-name">Archive 81</a> <span class="film-title-info"><span class="info">(2022)</span> <span class="info">(seriál)</span></span></h3>			</td>
+			<td class="star-rating-only">
+<span class="star-rating"><span class="stars stars-3"></span></span>			</td>
+			<td class="date-only">
+				06.02.2022
+			</td>
+		</tr>
+		<tr>
+			<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/291584-vytrzeno-z-kontextu/" class="film-title-name">Vytrženo z kontextu</a> <span class="film-title-info"><span class="info">(2005)</span> <span class="info">(amatérský film)</span></span></h3>			</td>
+			<td class="star-rating-only">
+<span class="star-rating"><span class="stars stars-3"></span></span>			</td>
+			<td class="date-only">
+				06.02.2022
+			</td>
+		</tr>
+		<tr>
+			<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/292965-co-se-divis/" class="film-title-name">Co se divíš?</a> <span class="film-title-info"><span class="info">(2006)</span> <span class="info">(amatérský film)</span></span></h3>			</td>
+			<td class="star-rating-only">
+<span class="star-rating"><span class="stars stars-1"></span></span>			</td>
+			<td class="date-only">
+				06.02.2022
+			</td>
+		</tr>
+		<tr>
+			<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/954944-in-the-earth/" class="film-title-name">In the Earth</a> <span class="film-title-info"><span class="info">(2021)</span></span></h3>			</td>
+			<td class="star-rating-only">
+<span class="star-rating"><span class="stars stars-5"></span></span>			</td>
+			<td class="date-only">
+				06.02.2022
+			</td>
+		</tr>
+		<tr>
+			<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/755728-al-mukhtabar/" class="film-title-name">al-Mukhtabar</a> <span class="film-title-info"><span class="info">(2019)</span></span></h3>			</td>
+			<td class="star-rating-only">
+<span class="star-rating"><span class="stars stars-3"></span></span>			</td>
+			<td class="date-only">
+				06.02.2022
+			</td>
+		</tr>
+		<tr>
+			<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/726455-jednicky-a-nuly/" class="film-title-name">Jedničky a nuly</a> <span class="film-title-info"><span class="info">(2019)</span> <span class="info">(studentský film)</span></span></h3>			</td>
+			<td class="star-rating-only">
+<span class="star-rating"><span class="stars stars-2"></span></span>			</td>
+			<td class="date-only">
+				06.02.2022
+			</td>
+		</tr>
+		<tr>
+			<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/294838-spolecne-vylety-do-okoli/" class="film-title-name">Společné výlety do okolí</a> <span class="film-title-info"><span class="info">(2008)</span> <span class="info">(amatérský film)</span></span></h3>			</td>
+			<td class="star-rating-only">
+<span class="star-rating"><span class="stars stars-3"></span></span>			</td>
+			<td class="date-only">
+				06.02.2022
+			</td>
+		</tr>
+		<tr>
+			<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/306364-uskali-mobility/" class="film-title-name">Úskalí mobility</a> <span class="film-title-info"><span class="info">(2006)</span></span></h3>			</td>
+			<td class="star-rating-only">
+<span class="star-rating"><span class="stars stars-1"></span></span>			</td>
+			<td class="date-only">
+				06.02.2022
+			</td>
+		</tr>
+		<tr>
+			<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/290152-sedlak-ve-meste/" class="film-title-name">Sedlák ve městě</a> <span class="film-title-info"><span class="info">(2004)</span> <span class="info">(amatérský film)</span></span></h3>			</td>
+			<td class="star-rating-only">
+<span class="star-rating"><span class="stars stars-3"></span></span>			</td>
+			<td class="date-only">
+				06.02.2022
+			</td>
+		</tr>
+		<tr>
+			<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/329935-podsveti-holesovic/" class="film-title-name">Podsvětí Holešovic</a> <span class="film-title-info"><span class="info">(1978)</span> <span class="info">(amatérský film)</span></span></h3>			</td>
+			<td class="star-rating-only">
+<span class="star-rating"><span class="stars stars-2"></span></span>			</td>
+			<td class="date-only">
+				06.02.2022
+			</td>
+		</tr>
+		<tr>
+			<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/290151-inge-a-jorgen/" class="film-title-name">Inge a Jorgen</a> <span class="film-title-info"><span class="info">(2005)</span> <span class="info">(amatérský film)</span></span></h3>			</td>
+			<td class="star-rating-only">
+<span class="star-rating"><span class="stars stars-2"></span></span>			</td>
+			<td class="date-only">
+				06.02.2022
+			</td>
+		</tr>
+		<tr>
+			<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1094470-sila/" class="film-title-name">Síla</a> <span class="film-title-info"><span class="info">(2021)</span></span></h3>			</td>
+			<td class="star-rating-only">
+<span class="star-rating"><span class="stars stars-3"></span></span>			</td>
+			<td class="date-only">
+				02.02.2022
+			</td>
+		</tr>
+		<tr>
+			<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/806817-25-let-neviny/" class="film-title-name">25 let neviny</a> <span class="film-title-info"><span class="info">(2020)</span></span></h3>			</td>
+			<td class="star-rating-only">
+<span class="star-rating"><span class="stars stars-5"></span></span>			</td>
+			<td class="date-only">
+				30.01.2022
+			</td>
+		</tr>
+		<tr>
+			<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/405796-aferim/" class="film-title-name">Aferim!</a> <span class="film-title-info"><span class="info">(2015)</span></span></h3>			</td>
+			<td class="star-rating-only">
+<span class="star-rating"><span class="stars stars-4"></span></span>			</td>
+			<td class="date-only">
+				23.01.2022
+			</td>
+		</tr>
+		<tr>
+			<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/512866-kursk/" class="film-title-name">Kursk</a> <span class="film-title-info"><span class="info">(2018)</span></span></h3>			</td>
+			<td class="star-rating-only">
+<span class="star-rating"><span class="stars stars-3"></span></span>			</td>
+			<td class="date-only">
+				23.01.2022
+			</td>
+		</tr>
+		<tr>
+			<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/73244-muz-jmenem-ove/" class="film-title-name">Muž jménem Ove</a> <span class="film-title-info"><span class="info">(2015)</span></span></h3>			</td>
+			<td class="star-rating-only">
+<span class="star-rating"><span class="stars stars-3"></span></span>			</td>
+			<td class="date-only">
+				17.01.2022
+			</td>
+		</tr>
+		<tr>
+			<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1046037-cesta-za-smirenim/" class="film-title-name">Cesta za smířením</a> <span class="film-title-info"><span class="info">(2021)</span></span></h3>			</td>
+			<td class="star-rating-only">
+<span class="star-rating"><span class="stars stars-4"></span></span>			</td>
+			<td class="date-only">
+				15.01.2022
+			</td>
+		</tr>
+		<tr>
+			<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/906706-k-zemi-hled/" class="film-title-name">K zemi hleď!</a> <span class="film-title-info"><span class="info">(2021)</span></span></h3>			</td>
+			<td class="star-rating-only">
+<span class="star-rating"><span class="stars stars-4"></span></span>			</td>
+			<td class="date-only">
+				09.01.2022
+			</td>
+		</tr>
+		<tr>
+			<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/722182-sila-psa/" class="film-title-name">Síla psa</a> <span class="film-title-info"><span class="info">(2021)</span></span></h3>			</td>
+			<td class="star-rating-only">
+<span class="star-rating"><span class="stars stars-4"></span></span>			</td>
+			<td class="date-only">
+				03.01.2022
+			</td>
+		</tr>
+		<tr>
+			<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1115677-smrt-roku-2021/" class="film-title-name">Smrt roku 2021!</a> <span class="film-title-info"><span class="info">(2021)</span> <span class="info">(TV film)</span></span></h3>			</td>
+			<td class="star-rating-only">
+<span class="star-rating"><span class="stars stars-3"></span></span>			</td>
+			<td class="date-only">
+				31.12.2021
+			</td>
+		</tr>
+		<tr>
+			<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/564692-john-wick-3/" class="film-title-name">John Wick 3</a> <span class="film-title-info"><span class="info">(2019)</span></span></h3>			</td>
+			<td class="star-rating-only">
+<span class="star-rating"><span class="stars stars-2"></span></span>			</td>
+			<td class="date-only">
+				20.12.2021
+			</td>
+		</tr>
+		<tr>
+			<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/277532-zombieland-rana-jistoty/" class="film-title-name">Zombieland: Rána jistoty</a> <span class="film-title-info"><span class="info">(2019)</span></span></h3>			</td>
+			<td class="star-rating-only">
+<span class="star-rating"><span class="stars stars-2"></span></span>			</td>
+			<td class="date-only">
+				19.12.2021
+			</td>
+		</tr>
 		<tr>
 			<td class="name">
 <h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/508449-sebevrazedny-oddil/" class="film-title-name">Sebevražedný oddíl</a> <span class="film-title-info"><span class="info">(2021)</span></span></h3>			</td>
@@ -601,429 +1052,6 @@ export const userRatingsMock = `
 				11.12.2021
 			</td>
 		</tr>
-		<tr>
-			<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/114663-dobry-casy/" class="film-title-name">Dobrý časy</a> <span class="film-title-info"><span class="info">(2017)</span></span></h3>			</td>
-			<td class="star-rating-only">
-<span class="star-rating"><span class="stars stars-4"></span></span>			</td>
-			<td class="date-only">
-				08.12.2021
-			</td>
-		</tr>
-		<tr>
-			<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/857113-mraziva-past/" class="film-title-name">Mrazivá past</a> <span class="film-title-info"><span class="info">(2021)</span></span></h3>			</td>
-			<td class="star-rating-only">
-<span class="star-rating"><span class="stars stars-3"></span></span>			</td>
-			<td class="date-only">
-				05.12.2021
-			</td>
-		</tr>
-		<tr>
-			<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/5999-happy-end/" class="film-title-name">Happy end</a> <span class="film-title-info"><span class="info">(1967)</span></span></h3>			</td>
-			<td class="star-rating-only">
-<span class="star-rating"><span class="stars stars-5"></span></span>			</td>
-			<td class="date-only">
-				30.11.2021
-			</td>
-		</tr>
-		<tr>
-			<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/818045-rozhnevany-muz/" class="film-title-name">Rozhněvaný muž</a> <span class="film-title-info"><span class="info">(2021)</span></span></h3>			</td>
-			<td class="star-rating-only">
-<span class="star-rating"><span class="stars stars-4"></span></span>			</td>
-			<td class="date-only">
-				29.11.2021
-			</td>
-		</tr>
-		<tr>
-			<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/307898-7-zivotu/" class="film-title-name">7 životů</a> <span class="film-title-info"><span class="info">(2017)</span></span></h3>			</td>
-			<td class="star-rating-only">
-<span class="star-rating"><span class="stars stars-3"></span></span>			</td>
-			<td class="date-only">
-				28.11.2021
-			</td>
-		</tr>
-		<tr>
-			<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/651079-freaks/" class="film-title-name">Freaks</a> <span class="film-title-info"><span class="info">(2018)</span></span></h3>			</td>
-			<td class="star-rating-only">
-<span class="star-rating"><span class="stars stars-4"></span></span>			</td>
-			<td class="date-only">
-				27.11.2021
-			</td>
-		</tr>
-		<tr>
-			<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/739802-anima/" class="film-title-name">Anima</a> <span class="film-title-info"><span class="info">(2019)</span></span></h3>			</td>
-			<td class="star-rating-only">
-<span class="star-rating"><span class="stars stars-4"></span></span>			</td>
-			<td class="date-only">
-				23.11.2021
-			</td>
-		</tr>
-		<tr>
-			<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/954647-the-present/" class="film-title-name">The Present</a> <span class="film-title-info"><span class="info">(2020)</span></span></h3>			</td>
-			<td class="star-rating-only">
-<span class="star-rating"><span class="stars stars-4"></span></span>			</td>
-			<td class="date-only">
-				23.11.2021
-			</td>
-		</tr>
-		<tr>
-			<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/697921-poacher/" class="film-title-name">Poacher</a> <span class="film-title-info"><span class="info">(2018)</span></span></h3>			</td>
-			<td class="star-rating-only">
-<span class="star-rating"><span class="stars stars-3"></span></span>			</td>
-			<td class="date-only">
-				22.11.2021
-			</td>
-		</tr>
-		<tr>
-			<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/410534-ready-player-one-hra-zacina/" class="film-title-name">Ready Player One: Hra začíná</a> <span class="film-title-info"><span class="info">(2018)</span></span></h3>			</td>
-			<td class="star-rating-only">
-<span class="star-rating"><span class="stars stars-4"></span></span>			</td>
-			<td class="date-only">
-				22.11.2021
-			</td>
-		</tr>
-		<tr>
-			<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/32467-sicilsky-klan/" class="film-title-name">Sicilský klan</a> <span class="film-title-info"><span class="info">(1969)</span></span></h3>			</td>
-			<td class="star-rating-only">
-<span class="star-rating"><span class="stars stars-3"></span></span>			</td>
-			<td class="date-only">
-				20.11.2021
-			</td>
-		</tr>
-		<tr>
-			<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/3303-strach-a-hnus-v-las-vegas/" class="film-title-name">Strach a hnus v Las Vegas</a> <span class="film-title-info"><span class="info">(1998)</span></span></h3>			</td>
-			<td class="star-rating-only">
-<span class="star-rating"><span class="stars stars-4"></span></span>			</td>
-			<td class="date-only">
-				20.11.2021
-			</td>
-		</tr>
-		<tr>
-			<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/548315-chaos/" class="film-title-name">Chaos</a> <span class="film-title-info"><span class="info">(2021)</span></span></h3>			</td>
-			<td class="star-rating-only">
-<span class="star-rating"><span class="stars stars-4"></span></span>			</td>
-			<td class="date-only">
-				17.11.2021
-			</td>
-		</tr>
-		<tr>
-			<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/830492-greenland-posledni-ukryt/" class="film-title-name">Greenland: Poslední úkryt</a> <span class="film-title-info"><span class="info">(2020)</span></span></h3>			</td>
-			<td class="star-rating-only">
-<span class="star-rating"><span class="stars stars-3"></span></span>			</td>
-			<td class="date-only">
-				17.11.2021
-			</td>
-		</tr>
-		<tr>
-			<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/743603-mistnost-sebevrahu-hater/" class="film-title-name">Místnost sebevrahů. Hater</a> <span class="film-title-info"><span class="info">(2020)</span></span></h3>			</td>
-			<td class="star-rating-only">
-<span class="star-rating"><span class="stars stars-5"></span></span>			</td>
-			<td class="date-only">
-				14.11.2021
-			</td>
-		</tr>
-		<tr>
-			<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/236957-duna/" class="film-title-name">Duna</a> <span class="film-title-info"><span class="info">(2021)</span></span></h3>			</td>
-			<td class="star-rating-only">
-<span class="star-rating"><span class="stars stars-4"></span></span>			</td>
-			<td class="date-only">
-				12.11.2021
-			</td>
-		</tr>
-		<tr>
-			<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/634308-jumanji-dalsi-level/" class="film-title-name">Jumanji: Další level</a> <span class="film-title-info"><span class="info">(2019)</span></span></h3>			</td>
-			<td class="star-rating-only">
-<span class="star-rating"><span class="stars stars-3"></span></span>			</td>
-			<td class="date-only">
-				10.11.2021
-			</td>
-		</tr>
-		<tr>
-			<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/532980-buh-serengeti/" class="film-title-name">Bůh: Serengeti</a> <span class="film-title-info"><span class="info">(2017)</span></span></h3>			</td>
-			<td class="star-rating-only">
-<span class="star-rating"><span class="stars stars-3"></span></span>			</td>
-			<td class="date-only">
-				03.11.2021
-			</td>
-		</tr>
-		<tr>
-			<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/573045-adam-the-mirror/" class="film-title-name">Adam: The Mirror</a> <span class="film-title-info"><span class="info">(2017)</span></span></h3>			</td>
-			<td class="star-rating-only">
-<span class="star-rating"><span class="stars stars-2"></span></span>			</td>
-			<td class="date-only">
-				03.11.2021
-			</td>
-		</tr>
-		<tr>
-			<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/573129-adam-3-dil/" class="film-title-name">ADAM: 3. díl</a> <span class="film-title-info"><span class="info">(2017)</span></span></h3>			</td>
-			<td class="star-rating-only">
-<span class="star-rating"><span class="stars stars-4"></span></span>			</td>
-			<td class="date-only">
-				03.11.2021
-			</td>
-		</tr>
-		<tr>
-			<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/697624-love-death-robots/800489-utonuly-obr/" class="film-title-name">Love, Death &amp; Robots - Utonulý obr</a> <span class="film-title-info"><span class="info">(2021)</span> <span class="info">(epizoda)</span> <span class="info">(S02E08)</span></span></h3>			</td>
-			<td class="star-rating-only">
-<span class="star-rating"><span class="stars stars-3"></span></span>			</td>
-			<td class="date-only">
-				03.11.2021
-			</td>
-		</tr>
-		<tr>
-			<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/532981-vareni-s-billem-damasu-prestoveg-smoothie-sushi/" class="film-title-name">Vaření s Billem: Damasu / PrestoVeg / Smoothie / Sushi</a> <span class="film-title-info"><span class="info">(2017)</span> <span class="info">(seriál)</span></span></h3>			</td>
-			<td class="star-rating-only">
-<span class="star-rating"><span class="stars stars-2"></span></span>			</td>
-			<td class="date-only">
-				30.10.2021
-			</td>
-		</tr>
-		<tr>
-			<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/524894-zakladna/" class="film-title-name">Základna</a> <span class="film-title-info"><span class="info">(2017)</span></span></h3>			</td>
-			<td class="star-rating-only">
-<span class="star-rating"><span class="stars stars-4"></span></span>			</td>
-			<td class="date-only">
-				30.10.2021
-			</td>
-		</tr>
-		<tr>
-			<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/702726-free-guy/" class="film-title-name">Free Guy</a> <span class="film-title-info"><span class="info">(2021)</span></span></h3>			</td>
-			<td class="star-rating-only">
-<span class="star-rating"><span class="stars stars-3"></span></span>			</td>
-			<td class="date-only">
-				16.10.2021
-			</td>
-		</tr>
-		<tr>
-			<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/670559-nase-planeta/" class="film-title-name">Naše planeta</a> <span class="film-title-info"><span class="info">(2019)</span> <span class="info">(seriál)</span></span></h3>			</td>
-			<td class="star-rating-only">
-<span class="star-rating"><span class="stars stars-5"></span></span>			</td>
-			<td class="date-only">
-				14.10.2021
-			</td>
-		</tr>
-		<tr>
-			<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/772224-hra-na-olihen/" class="film-title-name">Hra na oliheň</a> <span class="film-title-info"><span class="info">(2021)</span> <span class="info">(seriál)</span></span></h3>			</td>
-			<td class="star-rating-only">
-<span class="star-rating"><span class="stars stars-4"></span></span>			</td>
-			<td class="date-only">
-				13.10.2021
-			</td>
-		</tr>
-		<tr>
-			<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/867768-ted-lasso/867769-serie-1/" class="film-title-name">Ted Lasso - Série 1</a> <span class="film-title-info"><span class="info">(2020)</span> <span class="info">(série)</span> <span class="info">(S01)</span></span></h3>			</td>
-			<td class="star-rating-only">
-<span class="star-rating"><span class="stars stars-4"></span></span>			</td>
-			<td class="date-only">
-				10.10.2021
-			</td>
-		</tr>
-		<tr>
-			<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/867768-ted-lasso/982262-serie-2/" class="film-title-name">Ted Lasso - Série 2</a> <span class="film-title-info"><span class="info">(2021)</span> <span class="info">(série)</span> <span class="info">(S02)</span></span></h3>			</td>
-			<td class="star-rating-only">
-<span class="star-rating"><span class="stars stars-3"></span></span>			</td>
-			<td class="date-only">
-				10.10.2021
-			</td>
-		</tr>
-		<tr>
-			<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/882089-cas/" class="film-title-name">Čas</a> <span class="film-title-info"><span class="info">(2021)</span></span></h3>			</td>
-			<td class="star-rating-only">
-<span class="star-rating"><span class="stars stars-2"></span></span>			</td>
-			<td class="date-only">
-				08.10.2021
-			</td>
-		</tr>
-		<tr>
-			<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1046311-kazda-minuta-zivota/" class="film-title-name">Každá minuta života</a> <span class="film-title-info"><span class="info">(2021)</span></span></h3>			</td>
-			<td class="star-rating-only">
-<span class="star-rating"><span class="stars stars-3"></span></span>			</td>
-			<td class="date-only">
-				03.10.2021
-			</td>
-		</tr>
-		<tr>
-			<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/570659-chata-na-prodej/" class="film-title-name">Chata na prodej</a> <span class="film-title-info"><span class="info">(2018)</span></span></h3>			</td>
-			<td class="star-rating-only">
-<span class="star-rating"><span class="stars stars-4"></span></span>			</td>
-			<td class="date-only">
-				24.09.2021
-			</td>
-		</tr>
-		<tr>
-			<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1064324-dvojka-na-zabiti/1065703-pani-columbova/" class="film-title-name">Dvojka na zabití - Paní Columbová</a> <span class="film-title-info"><span class="info">(2021)</span> <span class="info">(epizoda)</span> <span class="info">(E01)</span></span></h3>			</td>
-			<td class="star-rating-only">
-<span class="star-rating"><span class="stars stars-1"></span></span>			</td>
-			<td class="date-only">
-				05.09.2021
-			</td>
-		</tr>
-		<tr>
-			<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/437380-godzilla-vs-kong/" class="film-title-name">Godzilla vs. Kong</a> <span class="film-title-info"><span class="info">(2021)</span></span></h3>			</td>
-			<td class="star-rating-only">
-<span class="star-rating"><span class="stars stars-1"></span></span>			</td>
-			<td class="date-only">
-				01.09.2021
-			</td>
-		</tr>
-		<tr>
-			<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/137070-pokropeny-kropic/" class="film-title-name">Pokropený kropič</a> <span class="film-title-info"><span class="info">(1895)</span></span></h3>			</td>
-			<td class="star-rating-only">
-<span class="star-rating"><span class="stars stars-4"></span></span>			</td>
-			<td class="date-only">
-				28.08.2021
-			</td>
-		</tr>
-		<tr>
-			<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1052631-vsechno-nejlepsi-chiaro/" class="film-title-name">Všechno nejlepší, Chiaro!</a> <span class="film-title-info"><span class="info">(2021)</span></span></h3>			</td>
-			<td class="star-rating-only">
-<span class="star-rating"><span class="stars stars-3"></span></span>			</td>
-			<td class="date-only">
-				28.08.2021
-			</td>
-		</tr>
-		<tr>
-			<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1037239-drajv-maj-kar/" class="film-title-name">Drajv maj kár</a> <span class="film-title-info"><span class="info">(2021)</span></span></h3>			</td>
-			<td class="star-rating-only">
-<span class="star-rating"><span class="stars stars-3"></span></span>			</td>
-			<td class="date-only">
-				28.08.2021
-			</td>
-		</tr>
-		<tr>
-			<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/909205-hrnec-zlataku-par-drinku-s-shanem-macgowanem/" class="film-title-name">Hrnec zlaťáků: Pár drinků s Shanem MacGowanem</a> <span class="film-title-info"><span class="info">(2020)</span></span></h3>			</td>
-			<td class="star-rating-only">
-<span class="star-rating"><span class="stars stars-3"></span></span>			</td>
-			<td class="date-only">
-				28.08.2021
-			</td>
-		</tr>
-		<tr>
-			<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1056098-zkouska/" class="film-title-name">Zkouška</a> <span class="film-title-info"><span class="info">(2021)</span></span></h3>			</td>
-			<td class="star-rating-only">
-<span class="star-rating"><span class="stars stars-4"></span></span>			</td>
-			<td class="date-only">
-				28.08.2021
-			</td>
-		</tr>
-		<tr>
-			<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/893916-jina-smecka/" class="film-title-name">Jiná smečka</a> <span class="film-title-info"><span class="info">(2021)</span></span></h3>			</td>
-			<td class="star-rating-only">
-<span class="star-rating"><span class="stars stars-4"></span></span>			</td>
-			<td class="date-only">
-				28.08.2021
-			</td>
-		</tr>
-		<tr>
-			<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/925734-pariz-13-obvod/" class="film-title-name">Paříž, 13. obvod</a> <span class="film-title-info"><span class="info">(2021)</span></span></h3>			</td>
-			<td class="star-rating-only">
-<span class="star-rating"><span class="stars stars-4"></span></span>			</td>
-			<td class="date-only">
-				27.08.2021
-			</td>
-		</tr>
-		<tr>
-			<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/775939-laska-pod-kapotou/" class="film-title-name">Láska pod kapotou</a> <span class="film-title-info"><span class="info">(2021)</span></span></h3>			</td>
-			<td class="star-rating-only">
-<span class="star-rating"><span class="stars stars-4"></span></span>			</td>
-			<td class="date-only">
-				27.08.2021
-			</td>
-		</tr>
-		<tr>
-			<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/874916-ahedino-koleno/" class="film-title-name">Ahedino koleno</a> <span class="film-title-info"><span class="info">(2021)</span></span></h3>			</td>
-			<td class="star-rating-only">
-<span class="star-rating"><span class="stars stars-3"></span></span>			</td>
-			<td class="date-only">
-				27.08.2021
-			</td>
-		</tr>
-		<tr>
-			<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1036025-zeme-potomku/" class="film-title-name">Země potomků</a> <span class="film-title-info"><span class="info">(2021)</span></span></h3>			</td>
-			<td class="star-rating-only">
-<span class="star-rating"><span class="stars stars-4"></span></span>			</td>
-			<td class="date-only">
-				27.08.2021
-			</td>
-		</tr>
-		<tr>
-			<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/975420-nejhorsi-clovek-na-svete/" class="film-title-name">Nejhorší člověk na světě</a> <span class="film-title-info"><span class="info">(2021)</span></span></h3>			</td>
-			<td class="star-rating-only">
-<span class="star-rating"><span class="stars stars-5"></span></span>			</td>
-			<td class="date-only">
-				26.08.2021
-			</td>
-		</tr>
-		<tr>
-			<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/811319-ada/" class="film-title-name">Ada</a> <span class="film-title-info"><span class="info">(2021)</span></span></h3>			</td>
-			<td class="star-rating-only">
-<span class="star-rating"><span class="stars stars-3"></span></span>			</td>
-			<td class="date-only">
-				26.08.2021
-			</td>
-		</tr>
-		<tr>
-			<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/904020-jabka/" class="film-title-name">Jabka</a> <span class="film-title-info"><span class="info">(2020)</span></span></h3>			</td>
-			<td class="star-rating-only">
-<span class="star-rating"><span class="stars stars-5"></span></span>			</td>
-			<td class="date-only">
-				26.08.2021
-			</td>
-		</tr>
-		<tr>
-			<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1040190-ctvrta-brightonska-ulice/" class="film-title-name">Čtvrtá brightonská ulice</a> <span class="film-title-info"><span class="info">(2021)</span></span></h3>			</td>
-			<td class="star-rating-only">
-<span class="star-rating"><span class="stars stars-3"></span></span>			</td>
-			<td class="date-only">
-				26.08.2021
-			</td>
-		</tr>
 	</tbody>
 </table>
 
@@ -1039,9 +1067,9 @@ export const userRatingsMock = `
 			<span>&hellip;</span>
 				<a href="/uzivatel/912-bart/hodnoceni/?page=27">27</a>
 			<span>&hellip;</span>
-				<a href="/uzivatel/912-bart/hodnoceni/?page=39">39</a>
+				<a href="/uzivatel/912-bart/hodnoceni/?page=40">40</a>
 			<span>&hellip;</span>
-				<a href="/uzivatel/912-bart/hodnoceni/?page=52">52</a>
+				<a href="/uzivatel/912-bart/hodnoceni/?page=53">53</a>
 		<a href="/uzivatel/912-bart/hodnoceni/?page=2" class="page-next"></a>
 	</div>
 </div>
@@ -1256,6 +1284,18 @@ export const userRatingsMock = `
 							</form>
 								<p>Tvoje časové pásmo je detekováno pro Europe/Prague</p>
 						</div>
+						<div class="theme-switcher">
+							<a id="switch-to-dark-mode" href="javascript:void(0);">
+								<span>
+									<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+								</span>Tmavý vzhled
+							</a>
+							<a id="switch-to-light-mode" href="javascript:void(0);" class="hidden">
+								<span>
+									<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+								</span>Světlý vzhled
+							</a>
+						</div>
 					</div>
 
 					<div class="linklist">
@@ -1288,12 +1328,12 @@ export const userRatingsMock = `
 					</div>
 					<div class="footer-right-app">
 						<h3>Mobilní aplikace</h3>
-						<a href="https://apps.apple.com/cz/app/čsfd-web/id1552901865#?platform=iphone" class="btn-app-store" target="_blank"><img alt="ČSFD Web | App Store" src="//static.pmgstatic.com/assets/images/c9bd6a26fa717816674d2078f60af950/appstore.svg"></a>
-						<a href="https://play.google.com/store/apps/details?id=cz.csfd.lite" class="btn-google-play" target="_blank"><img alt="ČSFD Web | Google Play" src="//static.pmgstatic.com/assets/images/c9bd6a26fa717816674d2078f60af950/googleplay.svg"></a>
+						<a href="https://apps.apple.com/cz/app/csfd-web/id1552901865#?platform=iphone" class="btn-app-store" target="_blank"><img alt="ČSFD Web | App Store" src="//static.pmgstatic.com/assets/images/b7aa0f25eab70d5be2e7d0f39345baea/appstore.svg"></a>
+						<a href="https://play.google.com/store/apps/details?id=cz.csfd.lite" class="btn-google-play" target="_blank"><img alt="ČSFD Web | Google Play" src="//static.pmgstatic.com/assets/images/b7aa0f25eab70d5be2e7d0f39345baea/googleplay.svg"></a>
 					</div>
 					<div class="site-info">
 						<p>Česko-Slovenská filmová databáze</p>
-						<p>&copy; 2001-2021 POMO Media Group s.r.o.</p>
+						<p>&copy; 2001-2022 POMO Media Group s.r.o.</p>
 						<p>Všechna práva vyhrazena.</p>
 					</div>
 				</div>
@@ -1316,7 +1356,7 @@ export const userRatingsMock = `
 
 <div id="slide_up" class="ad-pmg"></div>
 
-<script src="//static.pmgstatic.com/assets/utils-js/4617ef4e80f050d67c0ef7aa2eb7f9fb/scripts.min.js"></script>
+<script src="//static.pmgstatic.com/assets/utils-js/6dc1fcfebf8edc10b5d9ccc4d4239d88/scripts.min.js"></script>
 <script type="text/javascript">
 	CSFDAds.complete({"ball":{"login":2,"site":"csfd.cz"},"0":{"area":"leaderboard","size":"1000x210,2000x1400,1000x200,1000x210,970x210,998x200,750x200,750x100,970x90,728x90,branding_web"},"1":{"area":"wide_skyscraper_sticky","size":"180x600,120x600,160x600"},"2":{"area":"billboard","size":"1000x310,970x310,560x315,480x300,750x300,970x250,970x90,728x90"},"3":{"area":"slide_up","size":"970x310,970x250,950x200,750x300,750x200,728x90,500x200,320x150,320x100,320x50,300x100,300x50,slide_up"},"4":{"area":"mobile_leaderboard","size":"320x100,320x50,300x100,300x50"},"5":{"area":"mobile_billboard","size":"300x300,300x250"}});
 	CSFDAds.setTServer("https://a.csfd.cz/csfd/tserver");
@@ -1325,4 +1365,5 @@ export const userRatingsMock = `
 
 	<a href="#top" title="Zpět nahoru" id="back-to-top"><i class="icon icon-arrow-up" aria-hidden="true"></i></a>
 </html>
+
 `;
