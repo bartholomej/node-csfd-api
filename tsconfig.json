@@ -14,6 +14,7 @@
     "outDir": "./dist/esm",
     "strict": true,
     "declaration": true,
+    "declarationDir": "./dist/types",
     "pretty": true,
     "skipLibCheck": true,
     "alwaysStrict": true,
