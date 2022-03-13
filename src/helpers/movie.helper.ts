@@ -125,6 +125,25 @@ export const getPoster = (el: HTMLElement): string => {
   }
 };
 
+export const getRandomPhoto = (el: HTMLElement): string => {
+  const imageNode = el.querySelector('.gallery-item picture img');
+  const image = imageNode?.attributes?.src;
+  if (image) {
+    return image.replace(/\/w663\//, '/w1326/');
+  } else {
+    return null;
+  }
+};
+
+export const getTrivia = (el: HTMLElement): string[] => {
+  const triviaNodes = el.querySelectorAll('.article-trivia ul li');
+  if (triviaNodes?.length) {
+    return triviaNodes.map((node) => node.textContent.trim().replace(/(\r\n|\n|\r|\t)/gm, ''));
+  } else {
+    return null;
+  }
+};
+
 export const getDescriptions = (el: HTMLElement): string[] => {
   return el
     .querySelectorAll('.body--plots .plot-full p, .body--plots .plots .plots-item p')

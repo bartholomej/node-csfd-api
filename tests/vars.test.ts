@@ -14,7 +14,7 @@ describe('Vars User Ratings', () => {
 describe('Vars Movies', () => {
   test('Assemble movieUrl', () => {
     const url = movieUrl(535121);
-    expect(url).toBe('https://www.csfd.cz/film/535121');
+    expect(url).toBe('https://www.csfd.cz/film/535121/prehled/');
   });
 });
 

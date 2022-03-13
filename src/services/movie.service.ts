@@ -10,11 +10,13 @@ import {
   getOrigins,
   getPoster,
   getPremieres,
+  getRandomPhoto,
   getRating,
   getRatingCount,
   getTags,
   getTitle,
   getTitlesOther,
+  getTrivia,
   getType,
   getVods,
   getYear
@@ -62,6 +64,8 @@ export class MovieScraper {
       ratingCount: getRatingCount(asideEl),
       titlesOther: getTitlesOther(el),
       poster: getPoster(el),
+      photo: getRandomPhoto(el),
+      trivia: getTrivia(el),
       creators: {
         directors: getGroup(el, 'Režie'),
         writers: getGroup(el, 'Scénář'),

@@ -4,7 +4,7 @@ export const userRatingsUrl = (user: string | number, page?: number): string =>
   }`;
 
 export const movieUrl = (movie: number): string =>
-  `https://www.csfd.cz/film/${encodeURIComponent(movie)}`;
+  `https://www.csfd.cz/film/${encodeURIComponent(movie)}/prehled/`;
 
 export const creatorUrl = (creator: number | string): string =>
   `https://www.csfd.cz/tvurce/${encodeURIComponent(creator)}`;

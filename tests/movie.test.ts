@@ -11,10 +11,12 @@ import {
   getOrigins,
   getPoster,
   getPremieres,
+  getRandomPhoto,
   getRating,
   getRatingCount,
   getTitle,
   getTitlesOther,
+  getTrivia,
   getType,
   getVods,
   getYear
@@ -92,6 +94,8 @@ const seriesHtml = parse(seriesMock);
 
 const { aside: asideNodeSeries, pNode: seriesNode, jsonLd: seriesJsonLd } = getMovie(seriesHtml);
 
+const emptyHtmlNode = movieHtml.querySelector('.page-footer'); // some random node
+
 describe('Get ID', () => {
   test('Movie ID', () => {
     const movie = getId(movieNode);
@@ -131,6 +135,60 @@ describe('Get Poster', () => {
       'https://image.pmgstatic.com/cache/resized/w1080/files/images/film/posters/158/600/158600806_7b6c15.jpg'
     );
   });
+  test('Movie empty node', () => {
+    const movie = getPoster(emptyHtmlNode);
+    expect(movie).toEqual<string>(null);
+  });
+});
+
+describe('Get Movie photo', () => {
+  test('Movie photo', () => {
+    const movie = getRandomPhoto(movieNode);
+    expect(movie).toEqual<string>(
+      '//image.pmgstatic.com/cache/resized/w1326/files/images/film/photos/163/416/163416561_5cd5e4.jpg'
+    );
+  });
+  test('Movie Blank photo', () => {
+    const movie = getRandomPhoto(movieNodeBlank);
+    expect(movie).toEqual<string>(null);
+  });
+  test('Movie Series photo', () => {
+    const movie = getRandomPhoto(seriesNode);
+    expect(movie).toEqual<string>(
+      '//image.pmgstatic.com/cache/resized/w1326/files/images/film/photos/158/804/158804662_de9ba6.jpg'
+    );
+  });
+  test('Movie empty node', () => {
+    const movie = getRandomPhoto(emptyHtmlNode);
+    expect(movie).toEqual<string>(null);
+  });
+});
+
+describe('Get Movie trivia', () => {
+  test('Movie trivia', () => {
+    const movie = getTrivia(movieNode);
+    expect(movie).toEqual<string[]>([
+      'Když Henry (Tory Kittles) se svým mladším bratrem Ethanem (Myles Truitt) hrají na konzoly PS4 fiktivní hru „Shotgun Safari“, nemají ani zapnuté joysticky.(SeBig)',
+      'Celosvětová premiéra proběhla 3. září 2018 na Mezinárodním filmovém festivalu v Benátkách.(BMW12)',
+      'Všechny písně a doplňkovou hudbu složili Jeff Herriott & S. Craig Zahler.(Rominator)'
+    ]);
+  });
+  test('Movie Blank trivia', () => {
+    const movie = getTrivia(movieNodeBlank);
+    expect(movie).toEqual<string>(null);
+  });
+  test('Movie Series trivia', () => {
+    const movie = getTrivia(seriesNode);
+    expect(movie).toEqual<string[]>([
+      'Údajne sa plánovala i tretia séria seriálu, plány však narušila predčasná smrť niektorých hlavných hercov.(misterz)',
+      'Věže, které doktor Helmer (Ernst-Hugo Järegård) pozoruje dalekohledem ze střechy nemocnice, patří ke švédské jaderné elektrárně v Barsebäcku. V roce 2005 byla natrvalo odstavena z provozu.(skudiblik)',
+      'Ernst-Hugo Järegård se právě díky roli v Riget v Dánsku výrazně zviditelnil a byl dokonce považován za nový sexuální symbol.(TomikZlesa)'
+    ]);
+  });
+  test('Movie empty node', () => {
+    const movie = getTrivia(emptyHtmlNode);
+    expect(movie).toEqual<string>(null);
+  });
 });
 
 describe('Get Duration', () => {
@@ -169,6 +227,10 @@ describe('Get VOD', () => {
         title: 'DVD',
         url: 'https://www.martinus.cz/?uItem=619199'
       }
+      // {
+      //   title: 'IMDb',
+      //   url: 'https://www.imdb.com/title/tt6491178/combined'
+      // }
     ]);
   });
   test('Get vods series', () => {
