@@ -2,9 +2,13 @@ import { CSFDColorRating } from '../interfaces/global';
 import { Colors } from '../interfaces/user-ratings.interface';
 
 export const parseIdFromUrl = (url: string): number => {
-  const idSlug = url.split('/')[2];
-  const id = idSlug.split('-')[0];
-  return +id;
+  if (url) {
+    const idSlug = url?.split('/')[2];
+    const id = idSlug?.split('-')[0];
+    return +id || null;
+  } else {
+    return null;
+  }
 };
 
 export const getColor = (cls: string): CSFDColorRating => {

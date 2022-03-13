@@ -101,6 +101,10 @@ describe('Get ID', () => {
     const movie = getId(movieNode);
     expect(movie).toEqual<number>(535121);
   });
+  // test('Empty node', () => {
+  //   const movie = getId(emptyHtmlNode);
+  //   expect(movie).toEqual<number>(null);
+  // });
 });
 
 describe('Get Movie Title', () => {
@@ -116,6 +120,10 @@ describe('Get Movie Title', () => {
     const movie = getTitle(movieNodeRich);
     expect(movie).toEqual<string>('Pán prstenů: Společenstvo Prstenu');
   });
+  // test('Empty node', () => {
+  //   const movie = getTitle(emptyHtmlNode);
+  //   expect(movie).toEqual<string>(null);
+  // });
 });
 
 describe('Get Poster', () => {
@@ -208,6 +216,10 @@ describe('Get Duration', () => {
     const movie = getDuration(seriesJsonLd, seriesNode);
     expect(movie).toEqual<number>(560);
   });
+  // test('Empty node', () => {
+  //   const movie = getDuration('bad json', emptyHtmlNode);
+  //   expect(movie).toEqual<number>(null);
+  // });
 });
 
 describe('Get VOD', () => {
@@ -243,6 +255,10 @@ describe('Get VOD', () => {
   });
   test('Get vods blank', () => {
     const movie = getVods(asideNodeBlank);
+    expect(movie).toEqual<CSFDVod[]>([]);
+  });
+  test('Empty node', () => {
+    const movie = getVods(emptyHtmlNode);
     expect(movie).toEqual<CSFDVod[]>([]);
   });
 });
