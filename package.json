@@ -7,7 +7,8 @@
   "scripts": {
     "start": "tsc -w",
     "prebuild": "rimraf dist",
-    "build": "tsc && tsc -p tsconfig-cjs.json",
+    "build": "tsc && tsc -p tsconfig-cjs.json && yarn barrels",
+    "barrels": "barrelsby --delete -c barrels.json",
     "postbuild": "npm-prepare-dist -s postinstall -s prepare && yarn fix-paths",
     "tsc": "tsc",
     "demo": "tsx demo",
@@ -43,6 +44,7 @@
     "@vitest/coverage-istanbul": "^4.0.3",
     "@vitest/ui": "4.0.3",
     "dotenv": "^17.2.3",
+    "barrelsby": "^2.3.4",
     "eslint": "^9.38.0",
     "eslint-config-google": "^0.14.0",
     "eslint-config-prettier": "^10.1.8",
