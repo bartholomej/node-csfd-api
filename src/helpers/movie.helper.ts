@@ -22,14 +22,14 @@ export const getTitle = (el: HTMLElement): string => {
 };
 
 export const getGenres = (el: HTMLElement): CSFDGenres[] => {
-  const genresRaw = el.querySelector('.genres').textContent;
-  return genresRaw.split(' / ') as CSFDGenres[];
+  const genresRaw = el.querySelector('.genres')?.textContent;
+  return (genresRaw?.split(' / ') as CSFDGenres[]) || null;
 };
 
 export const getOrigins = (el: HTMLElement): string[] => {
-  const originsRaw = el.querySelector('.origin').textContent;
-  const origins = originsRaw.split(',')[0];
-  return origins.split(' / ');
+  const originsRaw = el.querySelector('.origin')?.textContent;
+  const origins = originsRaw?.split(',')[0];
+  return origins?.split(' / ') || null;
 };
 
 export const getColorRating = (bodyClasses: string[]): CSFDColorRating => {

@@ -23,10 +23,10 @@ export class CreatorScraper {
     this.person = {
       id,
       name: getName(asideEl),
-      birthday: getBirthdayInfo(asideEl)?.birthday,
-      birthplace: getBirthdayInfo(asideEl)?.birthPlace,
+      birthday: getBirthdayInfo(asideEl).birthday,
+      birthplace: getBirthdayInfo(asideEl).birthPlace,
       photo: getPhoto(asideEl),
-      age: getBirthdayInfo(asideEl)?.age || null,
+      age: getBirthdayInfo(asideEl).age,
       bio: getBio(asideEl),
       films: getFilms(filmsNode)
     };
