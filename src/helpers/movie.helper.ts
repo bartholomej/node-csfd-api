@@ -37,7 +37,7 @@ export const getColorRating = (bodyClasses: string[]): CSFDColorRating => {
 };
 
 export const getRating = (el: HTMLElement): number => {
-  const ratingRaw = el.querySelector('.rating-average').textContent;
+  const ratingRaw = el.querySelector('.film-rating-average').textContent;
   const rating = +ratingRaw?.replace(/%/g, '').trim();
   if (Number.isInteger(rating)) {
     return rating;
