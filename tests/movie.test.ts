@@ -307,6 +307,10 @@ describe('Get origins', () => {
     const movie = getOrigins(seriesNode);
     expect(movie).toEqual<string[]>(['Dánsko', 'Francie', 'Německo', 'Švédsko']);
   });
+  test('Empty node', () => {
+    const movie = getOrigins(emptyHtmlNode);
+    expect(movie).toEqual<string[]>(null);
+  });
 });
 
 describe('Get descriptions', () => {
@@ -328,6 +332,10 @@ describe('Get descriptions', () => {
     const movie = getDescriptions(movieNodeBlank);
     expect(movie).toEqual<string[]>([]);
   });
+  test('Description empty node', () => {
+    const movie = getDescriptions(emptyHtmlNode);
+    expect(movie).toEqual<string[]>([]);
+  });
 });
 
 describe('Get genres', () => {
@@ -342,6 +350,10 @@ describe('Get genres', () => {
   test('Genres Series', () => {
     const movie = getGenres(seriesNode);
     expect(movie).toEqual<string[]>(['Drama', 'Horor', 'Mysteriózní', 'Komedie']);
+  });
+  test('Empty node', () => {
+    const movie = getGenres(emptyHtmlNode);
+    expect(movie).toEqual<string[]>(null);
   });
 });
 
@@ -358,6 +370,10 @@ describe('Get type', () => {
     const movie = getType(seriesNode);
     expect(movie).toEqual<string>('seriál');
   });
+  test('Empty node type', () => {
+    const movie = getType(emptyHtmlNode);
+    expect(movie).toEqual<string>('film');
+  });
 });
 
 describe('Get year', () => {
@@ -372,6 +388,10 @@ describe('Get year', () => {
   test('Year Series', () => {
     const movie = getYear(seriesJsonLd);
     expect(movie).toEqual<number>(1994);
+  });
+  test('Year Empty', () => {
+    const movie = getYear('bad json');
+    expect(movie).toEqual<number>(null);
   });
 });
 
@@ -391,6 +411,10 @@ describe('Get rating count', () => {
   // TODO get new blank movie
   test('Rating count blank', () => {
     const movie = getRatingCount(asideNodeBlank);
+    expect(movie).toEqual(null);
+  });
+  test('Rating empty blank', () => {
+    const movie = getRatingCount(emptyHtmlNode);
     expect(movie).toEqual(null);
   });
 });
@@ -464,71 +488,88 @@ describe('Get people', () => {
     expect(movie.slice(0, 1)).toEqual<CSFDCreator[]>([]);
   });
 
-  describe('Get premieres', () => {
-    test('Get movie premiere', () => {
-      const movie = getPremieres(asideNode);
-      expect(movie).toEqual<CSFDPremiere[]>([
-        { company: 'Magic Box', country: 'Česko', date: '07.08.2019', format: 'Na DVD' },
-        { company: 'Magic Box', country: 'Česko', date: '07.08.2019', format: 'Na Blu-ray' },
-        { company: 'Lionsgate US', country: 'USA', date: '22.03.2019', format: 'V kinech' }
-      ]);
-    });
-    test('Get series premiere', () => {
-      const movie = getPremieres(asideNodeSeries);
-      expect(movie).toEqual<CSFDPremiere[]>([
-        { company: 'Levné knihy', country: 'Česko', date: '22.12.2010', format: 'Na DVD' },
-        { company: 'Danmarks Radio', country: 'Dánsko', date: '24.11.1994', format: 'V TV' },
-        { company: 'SVT', country: 'Švédsko', date: '04.03.1995', format: 'V TV' }
-      ]);
-    });
-    test('Get blank premiere', () => {
-      const movie = getPremieres(asideNodeBlank);
-      expect(movie).toEqual<CSFDPremiere[]>([]);
-    });
+  test('Empty node', () => {
+    const movie = getGroup(emptyHtmlNode, 'Předloha');
+    expect(movie.slice(0, 1)).toEqual<CSFDCreator[]>([]);
   });
+});
 
-  // TODO get movies with related box
-  describe('Get related', () => {
-    test('Get movie related', () => {
-      const movie = getBoxMovies(asideNode, 'Související');
-      expect(movie).toEqual<CSFDMovieListItem[]>([]);
-    });
-    test('Get series related', () => {
-      const movie = getBoxMovies(asideNodeSeries, 'Související');
-      expect(movie).toEqual<CSFDMovieListItem[]>([
-        {
-          id: 116244,
-          title: 'Královská nemocnice',
-          url: 'https://www.csfd.cz/film/116244-kralovska-nemocnice/'
-        }
-      ]);
-    });
-    test('Get blank related', () => {
-      const movie = getBoxMovies(asideNodeBlank, 'Související');
-      expect(movie).toEqual<CSFDMovieListItem[]>([]);
-    });
+describe('Get premieres', () => {
+  test('Get movie premiere', () => {
+    const movie = getPremieres(asideNode);
+    expect(movie).toEqual<CSFDPremiere[]>([
+      { company: 'Magic Box', country: 'Česko', date: '07.08.2019', format: 'Na DVD' },
+      { company: 'Magic Box', country: 'Česko', date: '07.08.2019', format: 'Na Blu-ray' },
+      { company: 'Lionsgate US', country: 'USA', date: '22.03.2019', format: 'V kinech' }
+    ]);
   });
-
-  // TODO get movies with similar box
-  describe('Get similar', () => {
-    test('Get movie similar', () => {
-      const movie = getBoxMovies(asideNode, 'Podobné');
-      expect(movie).toEqual<CSFDMovieListItem[]>([]);
-    });
-    test('Get series similar', () => {
-      const movie = getBoxMovies(asideNodeSeries, 'Podobné');
-      expect(movie).toEqual<CSFDMovieListItem[]>([]);
-    });
-    test('Get blank similar', () => {
-      const movie = getBoxMovies(asideNodeBlank, 'Podobné');
-      expect(movie).toEqual<CSFDMovieListItem[]>([]);
-    });
+  test('Get series premiere', () => {
+    const movie = getPremieres(asideNodeSeries);
+    expect(movie).toEqual<CSFDPremiere[]>([
+      { company: 'Levné knihy', country: 'Česko', date: '22.12.2010', format: 'Na DVD' },
+      { company: 'Danmarks Radio', country: 'Dánsko', date: '24.11.1994', format: 'V TV' },
+      { company: 'SVT', country: 'Švédsko', date: '04.03.1995', format: 'V TV' }
+    ]);
   });
+  test('Get blank premiere', () => {
+    const movie = getPremieres(asideNodeBlank);
+    expect(movie).toEqual<CSFDPremiere[]>([]);
+  });
+  test('Empty node', () => {
+    const movie = getPremieres(emptyHtmlNode);
+    expect(movie).toEqual<CSFDPremiere[]>([]);
+  });
+});
 
-  describe('Anomaly detection', () => {
-    test('Bad node for rating', () => {
-      const movie = getRatingCount(movieNode);
-      expect(movie).toEqual<CSFDMovieListItem[]>(null);
-    });
+// TODO get movies with related box
+describe('Get related', () => {
+  test('Get movie related', () => {
+    const movie = getBoxMovies(asideNode, 'Související');
+    expect(movie).toEqual<CSFDMovieListItem[]>([]);
+  });
+  test('Get series related', () => {
+    const movie = getBoxMovies(asideNodeSeries, 'Související');
+    expect(movie).toEqual<CSFDMovieListItem[]>([
+      {
+        id: 116244,
+        title: 'Královská nemocnice',
+        url: 'https://www.csfd.cz/film/116244-kralovska-nemocnice/'
+      }
+    ]);
+  });
+  test('Get blank related', () => {
+    const movie = getBoxMovies(asideNodeBlank, 'Související');
+    expect(movie).toEqual<CSFDMovieListItem[]>([]);
+  });
+  test('Empty node', () => {
+    const movie = getBoxMovies(emptyHtmlNode, 'Související');
+    expect(movie).toEqual<CSFDMovieListItem[]>([]);
+  });
+});
+
+// TODO get movies with similar box
+describe('Get similar', () => {
+  test('Get movie similar', () => {
+    const movie = getBoxMovies(asideNode, 'Podobné');
+    expect(movie).toEqual<CSFDMovieListItem[]>([]);
+  });
+  test('Get series similar', () => {
+    const movie = getBoxMovies(asideNodeSeries, 'Podobné');
+    expect(movie).toEqual<CSFDMovieListItem[]>([]);
+  });
+  test('Get blank similar', () => {
+    const movie = getBoxMovies(asideNodeBlank, 'Podobné');
+    expect(movie).toEqual<CSFDMovieListItem[]>([]);
+  });
+  test('Get empty node', () => {
+    const movie = getBoxMovies(emptyHtmlNode, 'Podobné');
+    expect(movie).toEqual<CSFDMovieListItem[]>([]);
+  });
+});
+
+describe('Anomaly detection', () => {
+  test('Bad node for rating', () => {
+    const movie = getRatingCount(movieNode);
+    expect(movie).toEqual<CSFDMovieListItem[]>(null);
   });
 });

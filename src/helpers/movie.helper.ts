@@ -13,23 +13,23 @@ import {
 import { addProtocol, getColor, parseIdFromUrl, parseISO8601Duration } from './global.helper';
 
 export const getId = (el: HTMLElement): number => {
-  const url = el.querySelector('.tabs .tab-nav-list a').attributes.href;
+  const url = el.querySelector('.tabs .tab-nav-list a')?.attributes?.href;
   return parseIdFromUrl(url);
 };
 
 export const getTitle = (el: HTMLElement): string => {
-  return el.querySelector('h1').innerText.split(`(`)[0].trim();
+  return el.querySelector('h1')?.innerText?.split(`(`)[0].trim() ?? null;
 };
 
 export const getGenres = (el: HTMLElement): CSFDGenres[] => {
-  const genresRaw = el.querySelector('.genres').textContent;
-  return genresRaw.split(' / ') as CSFDGenres[];
+  const genresRaw = el.querySelector('.genres')?.textContent;
+  return (genresRaw?.split(' / ') as CSFDGenres[]) || null;
 };
 
 export const getOrigins = (el: HTMLElement): string[] => {
-  const originsRaw = el.querySelector('.origin').textContent;
-  const origins = originsRaw.split(',')[0];
-  return origins.split(' / ');
+  const originsRaw = el.querySelector('.origin')?.textContent;
+  const origins = originsRaw?.split(',')[0];
+  return origins?.split(' / ') || null;
 };
 
 export const getColorRating = (bodyClasses: string[]): CSFDColorRating => {
@@ -73,9 +73,9 @@ export const getDuration = (jsonLdRaw: string, el: HTMLElement): number => {
     duration = jsonLd.duration;
     return parseISO8601Duration(duration);
   } catch (error) {
-    const origin = el.querySelector('.origin').innerText;
-    const timeString = origin.split(',');
-    if (timeString.length > 2) {
+    const origin = el.querySelector('.origin')?.innerText;
+    const timeString = origin?.split(',');
+    if (timeString?.length > 2) {
       // Get last time elelment
       const timeString2 = timeString.pop().trim();
       // Clean it

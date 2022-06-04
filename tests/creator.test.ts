@@ -159,12 +159,12 @@ describe('Composer info', () => {
 describe('Composer birthday info', () => {
   test('Birthday', () => {
     const creator = getBirthdayInfo(asideNodeComposer)?.birthday;
-    expect(creator).toEqual<string>('');
+    expect(creator).toEqual<string>(null);
   });
 
   test('Birthplace', () => {
     const creator = getBirthdayInfo(asideNodeComposer)?.birthPlace;
-    expect(creator).toEqual<string>('');
+    expect(creator).toEqual<string>(null);
   });
 
   test('Birthplace', () => {

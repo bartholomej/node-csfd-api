@@ -24,18 +24,18 @@ export const getBirthdayInfo = (
 ): { birthday: string; age: number; birthPlace: string } => {
   const text = el.querySelector('h1 + p').innerHTML.trim();
   const parts = text.split('\n');
-  let birthday: string;
-  let age: number;
-  let birthPlace: string;
+  let birthday: string = null;
+  let age: number = null;
+  let birthPlace: string = null;
 
   if (parts.length) {
     const birthdayRow = parts.find((x) => x.includes('nar.'));
     const ageRow = parts.find((x) => x.includes('let)'));
     const birthPlaceRow = parts.find((x) => x.includes('<br>')); // Ugly but there is no other way to detect
 
-    birthday = birthdayRow ? parseBirthday(birthdayRow) : '';
+    birthday = birthdayRow ? parseBirthday(birthdayRow) : null;
     age = ageRow ? +parseAge(ageRow) : null;
-    birthPlace = birthPlaceRow ? parseBirthPlace(birthPlaceRow) : '';
+    birthPlace = birthPlaceRow ? parseBirthPlace(birthPlaceRow) : null;
   }
   return { birthday, age, birthPlace };
 };
