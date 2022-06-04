@@ -7,14 +7,14 @@ import { movieUrl, userRatingsUrl } from '../src/vars';
 const badId = 999999999999999;
 
 // User Ratings
-describe('Fetch rating page', () => {
+describe('Live: Fetch rating page', () => {
   test('Fetch `912-bart` user and check some movie', async () => {
-    const MOVIE_NAME = 'In the Earth';
+    const MOVIE_NAME = 'Top Gun: Maverick';
     const movies = await csfd.userRatings('912-bart');
     const movieSelected = movies.filter((x) => x.title === MOVIE_NAME)[0];
     expect(movies.map((x) => x.title)).toEqual(expect.arrayContaining([MOVIE_NAME]));
     expect(movieSelected?.type).toEqual<CSFDFilmTypes>('film');
-    expect(movieSelected?.year).toEqual<number>(2021);
+    expect(movieSelected?.year).toEqual<number>(2022);
     expect(movieSelected?.userDate).toContain<string>('2022');
     expect(movies.length).toEqual(50);
   });
@@ -24,7 +24,7 @@ describe('Fetch rating page 2', () => {
   test('Fetch `912-bart` user – page 2 and check html', async () => {
     const url = userRatingsUrl(912, 2);
     const html = await fetchPage(url);
-    expect(html).toContain('Mrazivá past');
+    expect(html).toContain('In the Earth');
   });
 });
 
@@ -57,7 +57,7 @@ describe('Live: Movie page', () => {
 describe('Live: Search', () => {
   test('Search matrix', async () => {
     const search = await csfd.search('matrix');
-    const matrix = search.movies.find((x) => x.title === 'The Matrix');
+    const matrix = search.movies.find((x) => x.title === 'Matrix');
     expect(matrix?.year).toEqual<number>(1999);
     expect(matrix?.creators?.directors.map((x) => x.name)).toEqual<string[]>(
       expect.arrayContaining(['Lilly Wachowski'])
