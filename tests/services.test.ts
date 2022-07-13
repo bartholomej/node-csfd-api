@@ -42,11 +42,11 @@ describe('Filter out episodes, TV Series and Seasons', () => {
   });
 });
 
-describe('Includes only TV series', () => {
+describe('Includes only TV films', () => {
   // Fetch data with excludes
   const userRatingsScraper = new UserRatingsScraper();
   const resIncluded: Promise<CSFDUserRatings[]> = userRatingsScraper.userRatings(USER, {
-    includesOnly: ['seriál']
+    includesOnly: ['TV film']
   });
 
   test('Should not have any film', async () => {
@@ -55,16 +55,16 @@ describe('Includes only TV series', () => {
     const films = results.filter((item) => item.type === 'film');
     expect(films.length).toBe<number>(0);
   });
-  test('Should have at least one TV series', async () => {
+  test('Should have at least one TV film', async () => {
     const results = await resIncluded;
 
-    const tvSeries = results.filter((item) => item.type === 'seriál');
+    const tvSeries = results.filter((item) => item.type === 'TV film');
     expect(tvSeries.length).toBeGreaterThan(0);
   });
-  test('Should have only TV Series', async () => {
+  test('Should have only TV films', async () => {
     const results = await resIncluded;
 
-    const tvSeries = results.filter((item) => item.type === 'seriál');
+    const tvSeries = results.filter((item) => item.type === 'TV film');
     expect(tvSeries.length).toBe(results.length);
   });
 });
