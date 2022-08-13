@@ -220,16 +220,21 @@ export const getBoxMovies = (el: HTMLElement, boxName: CSFDBoxContent): CSFDMovi
 };
 
 export const getPremieres = (el: HTMLElement): CSFDPremiere[] => {
-  const premieresNode = el.querySelectorAll('.box-premieres li');
+  const premiereNodes = el.querySelectorAll('.box-premieres li');
   const premiere: CSFDPremiere[] = [];
-  for (const premiereNode of premieresNode) {
-    const [date, ...company] = premiereNode.querySelector('p + span').attributes.title.split(' ');
-    premiere.push({
-      country: premiereNode.querySelector('.flag')?.attributes.title || null,
-      format: premiereNode.querySelector('p').textContent.trim().split(' od')[0],
-      date,
-      company: company.join(' ')
-    });
+  for (const premiereNode of premiereNodes) {
+    const title = premiereNode.querySelector('p + span').attributes.title;
+
+    if (title) {
+      const [date, ...company] = title?.split(' ');
+
+      premiere.push({
+        country: premiereNode.querySelector('.flag')?.attributes.title || null,
+        format: premiereNode.querySelector('p').textContent.trim()?.split(' od')[0],
+        date,
+        company: company.join(' ')
+      });
+    }
   }
   return premiere;
 };

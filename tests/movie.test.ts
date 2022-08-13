@@ -32,6 +32,7 @@ import {
 import { movieMock } from './mocks/movie1.html';
 import { movieMockBlank } from './mocks/movie2.html';
 import { movieMockRich } from './mocks/movie3.html';
+import { movieMock4 } from './mocks/movie4.html';
 import { seriesMock } from './mocks/series1.html';
 
 const getPageClasses = (node: HTMLElement): string[] => {
@@ -88,6 +89,11 @@ const {
   pNode: movieNodeRich,
   jsonLd: movieRichJsonLd
 } = getMovie(movieHtmlRich);
+
+// Movie 4
+const movieHtml4 = parse(movieMock4);
+
+const { aside: asideNode4, pNode: movieNode4, jsonLd: movie4JsonLd } = getMovie(movieHtml4);
 
 // Series
 const seriesHtml = parse(seriesMock);
@@ -479,6 +485,41 @@ describe('Get people', () => {
         { company: 'Levné knihy', country: 'Česko', date: '22.12.2010', format: 'Na DVD' },
         { company: 'Danmarks Radio', country: 'Dánsko', date: '24.11.1994', format: 'V TV' },
         { company: 'SVT', country: 'Švédsko', date: '04.03.1995', format: 'V TV' }
+      ]);
+    });
+    test('Get other movie premiere', () => {
+      const movie = getPremieres(asideNode4);
+      expect(movie).toEqual<CSFDPremiere[]>([
+        {
+          country: 'Česko',
+          format: 'Na DVD',
+          date: '20.06.2013',
+          company: 'Bontonfilm'
+        },
+        {
+          country: 'Česko',
+          format: 'Na DVD',
+          date: '21.05.2010',
+          company: 'dvdcom'
+        },
+        {
+          country: 'Česko',
+          format: 'Na DVD',
+          date: '01.05.2004',
+          company: 'Bontonfilm'
+        },
+        {
+          country: 'Česko',
+          format: 'Na Blu-ray',
+          date: '07.12.2011',
+          company: 'Bontonfilm'
+        },
+        {
+          country: 'USA',
+          format: 'V kinech',
+          date: '27.07.2001',
+          company: '20th Century Fox'
+        }
       ]);
     });
     test('Get blank premiere', () => {
