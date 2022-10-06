@@ -62,7 +62,7 @@ export const parseBirthPlace = (text: string): any => {
 };
 
 export const getFilms = (el: HTMLElement): CSFDCreatorScreening[] => {
-  const filmNodes = el.querySelectorAll('.box:first-of-type table tr');
+  const filmNodes = el.querySelectorAll('.box')[0]?.querySelectorAll('table tr');
   let yearCache: number;
   const films = filmNodes.map((filmNode) => {
     const id = getId(filmNode.querySelector('td.name .film-title-name')?.attributes.href);
