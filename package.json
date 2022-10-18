@@ -44,7 +44,7 @@
     "@vitest/coverage-istanbul": "^4.0.3",
     "@vitest/ui": "4.0.3",
     "dotenv": "^17.2.3",
-    "barrelsby": "^2.3.4",
+    "barrelsby": "^2.5.1",
     "eslint": "^9.38.0",
     "eslint-config-google": "^0.14.0",
     "eslint-config-prettier": "^10.1.8",
