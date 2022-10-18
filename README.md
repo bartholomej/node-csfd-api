@@ -340,7 +340,7 @@ _Note: You can not use both parameters 'includesOnly' and 'excludes'. Parameter 
 
 - [Dafilms web extension](https://chrome.google.com/webstore/detail/dafilms/hgcgneddmgflnbmhkjnefiobjgobbmdm?hl=en) ([code](https://github.com/bartholomej/dafilms-ext)) – Parser for film ratings (web extension)
 - [bartweb.cz](https://bartweb.cz) – **Last seen** section (Firebase function)
-- KinoKlub – Mobile application for Aerofilms (native Adnroid + iOS application)
+- KinoKlub – Mobile application for AeroFilms (native Android + iOS application)
 
 ## Roadmap
 
@@ -439,7 +439,7 @@ I DO NOT STORE ANY DATA. PERIOD.
 
 I physically can't. I have nowhere to store it. I don't even have a server database to store it. So even if Justin Bieber asked nicely to see your data, I wouldn't have anything to show him.
 
-That's why, with CSFD Api, what happens on your device stays on your device till disappear.
+That's why, with node-csfd-api, what happens on your device stays on your device till disappear.
 
 ## License
 
