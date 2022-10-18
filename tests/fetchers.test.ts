@@ -9,7 +9,7 @@ const badId = 999999999999999;
 // User Ratings
 describe('Live: Fetch rating page', () => {
   test('Fetch `912-bart` user and check some movie', async () => {
-    const MOVIE_NAME = 'Top Gun: Maverick';
+    const MOVIE_NAME = 'BANGER.';
     const movies = await csfd.userRatings('912-bart');
     const movieSelected = movies.filter((x) => x.title === MOVIE_NAME)[0];
     expect(movies.map((x) => x.title)).toEqual(expect.arrayContaining([MOVIE_NAME]));
