@@ -19,27 +19,29 @@ export interface CSFDMovie extends CSFDScreening {
   similar: CSFDMovieListItem[];
 }
 
+export type CSFDVodService =
+  | 'Netflix'
+  | 'hbogo'
+  | 'Prime Video'
+  | 'Apple TV+'
+  | 'iTunes'
+  | 'KVIFF.TV'
+  | 'Edisonline'
+  | 'o2tv'
+  | 'SledovaniTV'
+  | 'Starmax'
+  | 'DAFilms'
+  | 'FILMY ČESKY A ZADARMO'
+  | 'Youtube Česká filmová klasika'
+  | 'VAPET'
+  | 'VOREL FILM'
+  | 'ivysilani'
+  | 'Google Play'
+  | 'Voyo'
+  | 'DVD';
+
 export interface CSFDVod {
-  title:
-    | 'Netflix'
-    | 'hbogo'
-    | 'Prime Video'
-    | 'Apple TV+'
-    | 'iTunes'
-    | 'Aerovod'
-    | 'Edisonline'
-    | 'o2tv'
-    | 'SledovaniTV'
-    | 'Starmax'
-    | 'DAFilms'
-    | 'FILMY ČESKY A ZADARMO'
-    | 'Youtube Česká filmová klasika'
-    | 'VAPET'
-    | 'VOREL FILM'
-    | 'ivysilani'
-    | 'Google Play'
-    | 'Voyo'
-    | string;
+  title: CSFDVodService;
   url: string;
 }
 

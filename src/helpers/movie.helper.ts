@@ -8,7 +8,8 @@ import {
   CSFDMovieListItem,
   CSFDPremiere,
   CSFDTitlesOther,
-  CSFDVod
+  CSFDVod,
+  CSFDVodService
 } from '../interfaces/movie.interface';
 import { addProtocol, getColor, parseIdFromUrl, parseISO8601Duration } from './global.helper';
 
@@ -108,7 +109,7 @@ export const getTitlesOther = (el: HTMLElement): CSFDTitlesOther[] => {
   });
 };
 
-export const getPoster = (el: HTMLElement): string => {
+export const getPoster = (el: HTMLElement | null): string => {
   const poster = el.querySelector('.film-posters img');
   // Resolve empty image
   if (poster) {
@@ -125,7 +126,7 @@ export const getPoster = (el: HTMLElement): string => {
   }
 };
 
-export const getRandomPhoto = (el: HTMLElement): string => {
+export const getRandomPhoto = (el: HTMLElement | null): string => {
   const imageNode = el.querySelector('.gallery-item picture img');
   const image = imageNode?.attributes?.src;
   if (image) {
@@ -135,7 +136,7 @@ export const getRandomPhoto = (el: HTMLElement): string => {
   }
 };
 
-export const getTrivia = (el: HTMLElement): string[] => {
+export const getTrivia = (el: HTMLElement | null): string[] => {
   const triviaNodes = el.querySelectorAll('.article-trivia ul li');
   if (triviaNodes?.length) {
     return triviaNodes.map((node) => node.textContent.trim().replace(/(\r\n|\n|\r|\t)/gm, ''));
@@ -181,14 +182,14 @@ export const getType = (el: HTMLElement): string => {
   return type?.innerText?.replace(/[{()}]/g, '') || 'film';
 };
 
-export const getVods = (el: HTMLElement): CSFDVod[] => {
+export const getVods = (el: HTMLElement | null): CSFDVod[] => {
   let vods: CSFDVod[] = [];
   if (el) {
     const buttons = el.querySelectorAll('.box-buttons .button');
     const buttonsVod = buttons.filter((x) => !x.classNames.includes('button-social'));
     vods = buttonsVod.map((btn) => {
       return {
-        title: btn.textContent.trim(),
+        title: btn.textContent.trim() as CSFDVodService,
         url: btn.attributes.href
       };
     });

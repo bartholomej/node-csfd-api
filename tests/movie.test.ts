@@ -128,7 +128,7 @@ describe('Get Movie Title', () => {
   });
   // test('Empty node', () => {
   //   const movie = getTitle(emptyHtmlNode);
-  //   expect(movie).toEqual<string>(null);
+  //   expect(movie).toEqual(null);
   // });
 });
 
@@ -141,7 +141,7 @@ describe('Get Poster', () => {
   });
   test('Movie Blank poster', () => {
     const movie = getPoster(movieNodeBlank);
-    expect(movie).toEqual<string>(null);
+    expect(movie).toEqual(null);
   });
   test('Movie rich poster', () => {
     const movie = getPoster(movieNodeRich);
@@ -151,7 +151,7 @@ describe('Get Poster', () => {
   });
   test('Movie empty node', () => {
     const movie = getPoster(emptyHtmlNode);
-    expect(movie).toEqual<string>(null);
+    expect(movie).toEqual(null);
   });
 });
 
@@ -159,12 +159,12 @@ describe('Get Movie photo', () => {
   test('Movie photo', () => {
     const movie = getRandomPhoto(movieNode);
     expect(movie).toEqual<string>(
-      '//image.pmgstatic.com/cache/resized/w1326/files/images/film/photos/163/416/163416561_5cd5e4.jpg'
+      '//image.pmgstatic.com/cache/resized/w1326/files/images/film/photos/163/416/163416559_60bcbb.jpg'
     );
   });
   test('Movie Blank photo', () => {
     const movie = getRandomPhoto(movieNodeBlank);
-    expect(movie).toEqual<string>(null);
+    expect(movie).toEqual(null);
   });
   test('Movie Series photo', () => {
     const movie = getRandomPhoto(seriesNode);
@@ -174,7 +174,7 @@ describe('Get Movie photo', () => {
   });
   test('Movie empty node', () => {
     const movie = getRandomPhoto(emptyHtmlNode);
-    expect(movie).toEqual<string>(null);
+    expect(movie).toEqual(null);
   });
 });
 
@@ -182,14 +182,14 @@ describe('Get Movie trivia', () => {
   test('Movie trivia', () => {
     const movie = getTrivia(movieNode);
     expect(movie).toEqual<string[]>([
-      'Když Henry (Tory Kittles) se svým mladším bratrem Ethanem (Myles Truitt) hrají na konzoly PS4 fiktivní hru „Shotgun Safari“, nemají ani zapnuté joysticky.(SeBig)',
-      'Celosvětová premiéra proběhla 3. září 2018 na Mezinárodním filmovém festivalu v Benátkách.(BMW12)',
-      'Všechny písně a doplňkovou hudbu složili Jeff Herriott & S. Craig Zahler.(Rominator)'
+      'Režisér S. Craig Zahler původně napsal scénář pro věk hlavních postav 30 a 50 let. Poté našel pro roli mladšího policisty Lurasettiho svého oblíbeného herce Vinceho a hledal vhodného partnera. Když se dohodl s Mel Gibsonem na obsazení role Ridgemana, musel přepsat role do věku postav 40 a 60 let.(Tonula)',
+      'Ve filmu se střídají pro různé záběry dvě auta, Melovo Chevrolet je buď model Caprice ročník 1986 anebo model Impala ročník 1980. Při závěrečné scéně je v jednom záběru auto schované v garáži bílé SUV Dodge Durango, ale jinak je to Chevrolet Tahoe. Dvě úplně jiná auta.(350cuiV8)',
+      'Při přepadení obchodu ve 36. minutě, střelec rozstřílí stojan s chipsy a přitom si můžeme jasně všimnout, že zákazník pohne hlavou, i když ho předtím lupič evidentně zastřelil.(Timak)'
     ]);
   });
   test('Movie Blank trivia', () => {
     const movie = getTrivia(movieNodeBlank);
-    expect(movie).toEqual<string>(null);
+    expect(movie).toEqual(null);
   });
   test('Movie Series trivia', () => {
     const movie = getTrivia(seriesNode);
@@ -201,7 +201,7 @@ describe('Get Movie trivia', () => {
   });
   test('Movie empty node', () => {
     const movie = getTrivia(emptyHtmlNode);
-    expect(movie).toEqual<string>(null);
+    expect(movie).toEqual(null);
   });
 });
 
@@ -212,7 +212,7 @@ describe('Get Duration', () => {
   });
   test('Duration Blank', () => {
     const movie = getDuration(movieBlankJsonLd, movieNodeBlank);
-    expect(movie).toEqual<number>(null);
+    expect(movie).toEqual(null);
   });
   test('Duration Rich', () => {
     const movie = getDuration(movieRichJsonLd, movieNodeRich);
@@ -232,23 +232,23 @@ describe('Get VOD', () => {
   test('Get vods movie', () => {
     const movie = getVods(asideNode);
     expect(movie).toEqual<CSFDVod[]>([
-      { title: 'Aerovod', url: 'https://aerovod.cz/katalog/na-spatne-strane' },
       {
         title: 'Apple TV+',
         url: 'https://tv.apple.com/cz/movie/dragged-across-concrete/umc.cmc.34ihj6x6alpeso7j7lpvamjfb'
       },
       {
-        title: 'SledovaniTV',
-        url: 'https://sledovanitv.cz/epg/event-new?eventId=FilmboxExtra%3A20220312113af40ca94b86438645c4e2735b9d89'
+        title: 'Voyo',
+        url: 'https://voyo.nova.cz/titul/4604-na-spatne-strane'
+      },
+      { title: 'KVIFF.TV', url: 'https://kviff.tv/katalog/na-spatne-strane' },
+      {
+        title: 'iTunes',
+        url: 'https://itunes.apple.com/cz/movie/dragged-across-concrete/id1469983874'
       },
       {
         title: 'DVD',
         url: 'https://www.martinus.cz/?uItem=619199'
       }
-      // {
-      //   title: 'IMDb',
-      //   url: 'https://www.imdb.com/title/tt6491178/combined'
-      // }
     ]);
   });
   test('Get vods series', () => {
@@ -319,8 +319,7 @@ describe('Get descriptions', () => {
   test('Descriptions', () => {
     const movie = getDescriptions(movieNode);
     expect(movie).toEqual<string[]>([
-      'Po zásahu proti drogovému dealerovi jsou detektivové Brett Ridgeman a Anthony Lurasetti postaveni na šest týdnů mimo službu bez platu. Důvodem bylo jejich násilí, které kdosi natočil a video pak předal médiím. Zatímco pro Lurasettiho, který je o několik let mladší než Ridgeman, se jedná jen o komplikaci v jeho snaze získat Denise, ženu snů, pro Bretta Ridgemana se postavení mimo službu jeví jako katastrofa. Brett má totiž doma vážně nemocnou ženu Melanii a dospívající dceru Sáru, která je šikanována pouličním gangem mladíků ze čtvrti, ve které Ridgemanovi bydlí. Brett slíbil ženě, že se ze čtvrti odstěhují. K tomu ale potřebuje právě peníze. Brett má svého života policajta tak právě dost. Proto vyhledá mocného místního muže, Friedricha, který mu dluží laskavost. Brett kdysi zametl pod koberec problémy se zákonem mladého Friedricha. Friedrich dá Brettovi tip na jakéhosi Vogelmanna, který nedávno ve městě sháněl tajný byt. Brett v noci po schůzce zavolá Lurasettiho, nechá se jím dovést před byt, který si Vogelmann najal, a prozradí Lurasettimu své plány. Vogelmann totiž podle Friedricha jede v nějaké velké špinavosti, zřejmě v prodeji velkého množství drog. Lurasetti sice není z Brettova plánu nikterak nadšený, ale nakonec souhlasí, že společně Vogelmanna oberou o peníze. V té době je z vězení propuštěn Henry Johns. Henry by rád začal nový život, ale doma ho čeká kupa problémů. Henryho a malého bratra Ethana, který je na vozíku, opustil otec. Rodina se teď protlouká, jak může, matka se kvůli tomu dala i na prostituci. Henry se od ní dozvídá, že jim hrozí exekuce. Proto nakonec kývne na nabídku svého kamaráda Biscuita, aby pro Vogelmanna udělali malou práci. Vogelmannovi další společníci už na tuto „práci“ opatřili peníze z loupeže v místním obchodě a pancéřové auto. Oba policisté Vogelmanna a jeho kumpány v tajném bytě sledují. Jedné noci nad ránem Vogelmann se svými lidmi vyrazí s pancéřovým autem do města. Brett s Lurasettim auto sledují, to se jim ale ztratí v centru města. Když policisté Vogelmannovo auto znovu objeví, zjistí, že Vogelmann se svými kumpány už přepadl místní banku. Oběma policistům je jasné, že loupeži nemohou zabránit. V bance zatím Vogelmann se svými kumpány, mezi kterými jsou i Henry a Biscuit, vraždí zaměstnance. Brett s Lurasettim gangstery alespoň na jejich útěku z banky sledují. Zatím Henry s Biscuitem zjistí, že práce, na kterou byli najati, se jim poněkud vymkla z rukou. Vogelmann oběma slíbil, že při loupeži nikdo nezemře, ale teď v bance leží pět mrtvých lidí a v autě s nimi je i jedna unesená zaměstnankyně. Když Henry s Biscuitem protestují, dá jim Vogelmann za pomoci samopalu jasně najevo, že mají mlčet a poslouchat. Henry je chytrý a pochopí, že Vogelmann chce i je dva zabít. Proto Vogelmanna neinformuje, že jejich auto kdosi sleduje...(TV Prima)',
-      'Dva až příliš horliví policisté jsou za překročení rámce svých povinností suspendováni ze služby. To jim ovšem nebrání, aby ve svém boji s podsvětím pokračovali na vlastní pěst a učinili spravedlnosti zadost. Krimi thriller s notnou dávkou násilí překračuje hranice žánru a poukazuje na problematiku přehnané politické korektnosti, která je v současném světě dovedena až ad absurdum.(Febiofest)'
+      'Otupělý policejní veterán Ridgeman (Mel Gibson) a jeho náladový mladší kolega Anthony (Vince Vaughn) jsou suspendováni ze služby poté, co do médií unikne videozáznam jejich svérázných metod. Bez prostředků a velkých šancí se oba zatrpklí vojáci vydají do kriminálního podsvětí, aby učinili spravedlnosti zadost. Mezitím je v jiné části města propuštěn z vězení mladý zločinec Henry Jones a zjišťuje, že jeho matce a postiženému bratrovi hrozí vystěhování. Ve snaze najít způsob, jak jim pomoci, se obrátí na kamaráda z dětství jménem Biscuit, který ho představí nelítostnému kriminálnímu bossovi, jehož ambiciózní plány jej postaví do přímého konfliktu s oběma policejními odpadlíky.(HBO Europe)'
     ]);
   });
   test('Descriptions rich', () => {
