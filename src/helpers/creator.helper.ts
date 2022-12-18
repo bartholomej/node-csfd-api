@@ -15,12 +15,12 @@ export const getId = (url: string): number => {
   return null;
 };
 
-export const getName = (el: HTMLElement): string => {
+export const getName = (el: HTMLElement | null): string => {
   return el.querySelector('h1').innerText.trim();
 };
 
 export const getBirthdayInfo = (
-  el: HTMLElement
+  el: HTMLElement | null
 ): { birthday: string; age: number; birthPlace: string } => {
   const text = el.querySelector('h1 + p').innerHTML.trim();
   const parts = text.split('\n');
@@ -40,11 +40,11 @@ export const getBirthdayInfo = (
   return { birthday, age, birthPlace };
 };
 
-export const getBio = (el: HTMLElement): string => {
+export const getBio = (el: HTMLElement | null): string => {
   return el.querySelector('.article-content p').text.trim().split('\n')[0].trim();
 };
 
-export const getPhoto = (el: HTMLElement): string => {
+export const getPhoto = (el: HTMLElement | null): string => {
   const image = el.querySelector('img').attributes.src;
   return addProtocol(image);
 };
@@ -61,7 +61,7 @@ export const parseBirthPlace = (text: string): any => {
   return text.trim().replace(/<br>/g, '').trim();
 };
 
-export const getFilms = (el: HTMLElement): CSFDCreatorScreening[] => {
+export const getFilms = (el: HTMLElement | null): CSFDCreatorScreening[] => {
   const filmNodes = el.querySelectorAll('.box')[0]?.querySelectorAll('table tr');
   let yearCache: number;
   const films = filmNodes.map((filmNode) => {

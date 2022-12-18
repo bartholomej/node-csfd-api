@@ -55,9 +55,9 @@ describe('Creator birthday info', () => {
     expect(creator).toEqual<string>('Knoxville, Tennessee, USA');
   });
 
-  test('Birthplace', () => {
+  test('Age', () => {
     const creator = getBirthdayInfo(asideNode)?.age;
-    expect(creator).toEqual<number>(58);
+    expect(creator).toEqual<number>(59);
   });
 });
 
@@ -109,19 +109,19 @@ describe('Actor birthday info', () => {
 
   test('Birthplace', () => {
     const creator = getBirthdayInfo(asideNodeActor)?.birthPlace;
-    expect(creator).toEqual<string>('Østerbro, Kodaň, Dánsko');
+    expect(creator).toEqual<string>('Østerbro, København, Dánsko');
   });
 
   test('Age', () => {
     const creator = getBirthdayInfo(asideNodeActor)?.age;
-    expect(creator).toEqual<number>(56);
+    expect(creator).toEqual<number>(57);
   });
 });
 
 describe("Creator's films", () => {
   test('First film from first section', () => {
     const films = getFilms(filmsNodeActor) as CSFDCreatorScreening[];
-    expect(films[0].title).toEqual<string>('Untitled Indiana Jones Project');
+    expect(films[0].title).toEqual<string>('Dust Bunny');
   });
 
   test('Last film from first section', () => {
@@ -131,7 +131,7 @@ describe("Creator's films", () => {
 
   test('Year second movie', () => {
     const films = getFilms(filmsNodeActor) as CSFDCreatorScreening[];
-    expect(films[1].year).toEqual<number>(2022);
+    expect(films[1].year).toEqual<number>(2023);
   });
 });
 
@@ -169,7 +169,7 @@ describe('Composer birthday info', () => {
 
   test('Birthplace', () => {
     const creator = getBirthdayInfo(asideNodeComposer)?.age;
-    expect(creator).toEqual<number>(null);
+    expect(creator).toEqual(null);
   });
 });
 

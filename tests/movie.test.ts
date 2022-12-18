@@ -169,7 +169,7 @@ describe('Get Movie photo', () => {
   test('Movie Series photo', () => {
     const movie = getRandomPhoto(seriesNode);
     expect(movie).toEqual<string>(
-      '//image.pmgstatic.com/cache/resized/w1326/files/images/film/photos/158/804/158804662_de9ba6.jpg'
+      '//image.pmgstatic.com/cache/resized/w1326/files/images/film/photos/166/598/166598546_c16928.jpg'
     );
   });
   test('Movie empty node', () => {
@@ -194,8 +194,8 @@ describe('Get Movie trivia', () => {
   test('Movie Series trivia', () => {
     const movie = getTrivia(seriesNode);
     expect(movie).toEqual<string[]>([
+      'Herci, kteří se v seriálu objevili jako umývači nádobí, nedokázali své dialogy řádně vyslovovat, a tak museli být předabováni.(HellFire)',
       'Údajne sa plánovala i tretia séria seriálu, plány však narušila predčasná smrť niektorých hlavných hercov.(misterz)',
-      'Věže, které doktor Helmer (Ernst-Hugo Järegård) pozoruje dalekohledem ze střechy nemocnice, patří ke švédské jaderné elektrárně v Barsebäcku. V roce 2005 byla natrvalo odstavena z provozu.(skudiblik)',
       'Ernst-Hugo Järegård se právě díky roli v Riget v Dánsku výrazně zviditelnil a byl dokonce považován za nový sexuální symbol.(TomikZlesa)'
     ]);
   });
@@ -220,7 +220,7 @@ describe('Get Duration', () => {
   });
   test('Duration Series', () => {
     const movie = getDuration(seriesJsonLd, seriesNode);
-    expect(movie).toEqual<number>(560);
+    expect(movie).toEqual<number>(860);
   });
   // test('Empty node', () => {
   //   const movie = getDuration('bad json', emptyHtmlNode);
@@ -253,11 +253,16 @@ describe('Get VOD', () => {
   });
   test('Get vods series', () => {
     const movie = getVods(asideNodeSeries);
-    expect(movie).toEqual<CSFDVod[]>([]);
+    expect(movie).toEqual<CSFDVod[]>([
+      {
+        title: 'KVIFF.TV',
+        url: 'https://kviff.tv/katalog/kralovstvi-cast-sedma-gargantua'
+      }
+    ]);
   });
   test('Get vods rich', () => {
     const movie = getVods(asideNodeRich);
-    expect(movie.length).toEqual<number>(8);
+    expect(movie.length).toEqual<number>(11);
   });
   test('Get vods blank', () => {
     const movie = getVods(asideNodeBlank);
@@ -481,8 +486,15 @@ describe('Get people', () => {
     test('Get series premiere', () => {
       const movie = getPremieres(asideNodeSeries);
       expect(movie).toEqual<CSFDPremiere[]>([
+        {
+          company: 'Aerofilms',
+          country: 'Česko',
+          date: '26.09.2022',
+          format: 'V kinech'
+        },
         { company: 'Levné knihy', country: 'Česko', date: '22.12.2010', format: 'Na DVD' },
         { company: 'Danmarks Radio', country: 'Dánsko', date: '24.11.1994', format: 'V TV' },
+        { company: 'arte', country: 'Německo', date: '11.03.1995', format: 'V TV' },
         { company: 'SVT', country: 'Švédsko', date: '04.03.1995', format: 'V TV' }
       ]);
     });
