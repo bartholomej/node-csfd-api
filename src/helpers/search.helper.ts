@@ -4,6 +4,8 @@ import { CSFDCreator } from '../interfaces/movie.interface';
 import { Colors } from '../interfaces/user-ratings.interface';
 import { addProtocol, parseColor, parseIdFromUrl } from './global.helper';
 
+type Creator = 'Režie:' | 'Hrají:';
+
 export const getType = (el: HTMLElement): CSFDFilmTypes => {
   const type = el.querySelectorAll('.film-title-info .info')[1];
   return (type?.innerText.replace(/[{()}]/g, '') || 'film') as CSFDFilmTypes;
@@ -39,12 +41,25 @@ export const getOrigins = (el: HTMLElement): string[] => {
 };
 
 export const parsePeople = (el: HTMLElement, type: 'director' | 'actors'): CSFDCreator[] => {
-  const people = el.querySelectorAll(`.article-content .${type} a`);
-  return people.map((person) => {
-    return {
-      id: parseIdFromUrl(person.attributes.href),
-      name: person.innerText.trim(),
-      url: `https://www.csfd.cz${person.attributes.href}`
-    };
-  });
+  let who: Creator;
+  if (type === 'director') who = 'Režie:';
+  if (type === 'actors') who = 'Hrají:';
+
+  const peopleNode = Array.from(el && el.querySelectorAll('.article-content p')).find((el) =>
+    el.textContent.includes(who)
+  );
+
+  if (peopleNode) {
+    const people = Array.from(peopleNode.querySelectorAll('a')) as unknown as HTMLElement[];
+
+    return people.map((person) => {
+      return {
+        id: parseIdFromUrl(person.attributes.href),
+        name: person.innerText.trim(),
+        url: `https://www.csfd.cz${person.attributes.href}`
+      };
+    });
+  } else {
+    return [];
+  }
 };
