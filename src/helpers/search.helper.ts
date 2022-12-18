@@ -40,9 +40,9 @@ export const getOrigins = (el: HTMLElement): string[] => {
   return originsAll?.split('/').map((country) => country.trim());
 };
 
-export const parsePeople = (el: HTMLElement, type: 'director' | 'actors'): CSFDCreator[] => {
+export const parsePeople = (el: HTMLElement, type: 'directors' | 'actors'): CSFDCreator[] => {
   let who: Creator;
-  if (type === 'director') who = 'Režie:';
+  if (type === 'directors') who = 'Režie:';
   if (type === 'actors') who = 'Hrají:';
 
   const peopleNode = Array.from(el && el.querySelectorAll('.article-content p')).find((el) =>

@@ -135,7 +135,7 @@ describe('Get Movie origins', () => {
 
 describe('Get Movie creators', () => {
   test('First movie directors', () => {
-    const movie = parsePeople(moviesNode[0], 'director');
+    const movie = parsePeople(moviesNode[0], 'directors');
     expect(movie).toEqual<CSFDCreator[]>([
       {
         id: 3112,
@@ -188,7 +188,7 @@ describe('Get Users real name', () => {
   });
   test('Some name (nothing)', () => {
     const movie = getUserRealName(usersNode[3]);
-    expect(movie).toEqual<string>(null);
+    expect(movie).toEqual(null);
   });
 });
 

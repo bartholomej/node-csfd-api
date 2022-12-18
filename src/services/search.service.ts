@@ -43,7 +43,7 @@ export class SearchScraper {
         poster: getPoster(m),
         origins: getOrigins(m),
         creators: {
-          directors: parsePeople(m, 'director'),
+          directors: parsePeople(m, 'directors'),
           actors: parsePeople(m, 'actors')
         }
       };
