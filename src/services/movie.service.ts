@@ -18,6 +18,7 @@ import {
   getTitlesOther,
   getTrivia,
   getType,
+  getEpisodeNum,
   getVods,
   getYear
 } from '../helpers/movie.helper';
@@ -57,6 +58,7 @@ export class MovieScraper {
       descriptions: getDescriptions(el),
       genres: getGenres(el),
       type: getType(el) as CSFDFilmTypes,
+      episodeNum: getEpisodeNum(el),
       url: movieUrl(movieId),
       origins: getOrigins(el),
       colorRating: getColorRating(pageClasses),
