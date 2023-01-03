@@ -192,6 +192,15 @@ export const getMovieType = (el: HTMLElement): string => {
   return type?.innerText?.replace(/[{()}]/g, '') || 'film';
 };
 
+export const getEpisodeNum = (el: HTMLElement): string => {
+  const titleArray = el.querySelector('h1').innerText.split(`(`);
+  if (titleArray.length > 1) {
+    return (titleArray[titleArray.length - 1].replace(`)`, ``).trim())
+  } else {
+    return (null);
+  }
+};
+
 export const getMovieVods = (el: HTMLElement | null): CSFDVod[] => {
   let vods: CSFDVod[] = [];
   if (el) {

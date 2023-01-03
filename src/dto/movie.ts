@@ -17,6 +17,7 @@ export interface CSFDMovie extends CSFDScreening {
   premieres: CSFDPremiere[];
   related: CSFDMovieListItem[];
   similar: CSFDMovieListItem[];
+  episodeNum: string;
 }
 
 export type CSFDVodService =

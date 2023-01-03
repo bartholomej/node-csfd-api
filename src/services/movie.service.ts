@@ -3,6 +3,7 @@ import { CSFDFilmTypes } from '../dto/global';
 import { CSFDMovie } from '../dto/movie';
 import { fetchPage } from '../fetchers';
 import {
+  getEpisodeNum,
   getMovieBoxMovies,
   getMovieColorRating,
   getMovieDescriptions,
@@ -21,7 +22,7 @@ import {
   getMovieTrivia,
   getMovieType,
   getMovieVods,
-  getMovieYear
+  getMovieYear,
 } from '../helpers/movie.helper';
 import { movieUrl } from '../vars';
 
@@ -61,6 +62,7 @@ export class MovieScraper {
       descriptions: getMovieDescriptions(el),
       genres: getMovieGenres(el),
       type: getMovieType(el) as CSFDFilmTypes,
+      episodeNum: getEpisodeNum(el),
       url: movieUrl(movieId),
       origins: getMovieOrigins(el),
       colorRating: getMovieColorRating(pageClasses),
