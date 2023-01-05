@@ -18,6 +18,7 @@ export interface CSFDMovie extends CSFDScreening {
   related: CSFDMovieListItem[];
   similar: CSFDMovieListItem[];
   episodeNum: string;
+  parentId: string;
 }
 
 export type CSFDVodService =
