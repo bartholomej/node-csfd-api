@@ -27,14 +27,16 @@ export const getParent = (el: HTMLElement): string => {
   parentId = getId(el.querySelector('h2').childNodes) || getId(el.querySelector('h1').childNodes);
   return (parentId);
 
-  function getId(nodes){
+  function getId(nodes: any){
       let parentId = null;
       let i = nodes.length; //we get all objects
       while (i > 0){
           i--;
           let node = nodes[i];
           if (node?._rawAttrs?.href){
-              let arr = node._rawAttrs.href.split("/").filter(n => n);
+              let arr = node._rawAttrs.href.split("/").filter(function (el: any) {
+                return el != "";
+              });
               parentId = arr[arr.length-1].split("-")[0];
               break;
           }
