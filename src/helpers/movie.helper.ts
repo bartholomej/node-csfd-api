@@ -22,6 +22,27 @@ export const getMovieTitle = (el: HTMLElement): string => {
   return el.querySelector('h1').innerText.split(`(`)[0].trim();
 };
 
+export const getParent = (el: HTMLElement): string => {
+  let parentId = null;
+  parentId = getId(el.querySelector('h2').childNodes) || getId(el.querySelector('h1').childNodes);
+  return (parentId);
+
+  function getId(nodes) {
+    let parentId = null;
+    let i = nodes.length; //we get all objects
+    while (i > 0) {
+      i--;
+      let node = nodes[i];
+      if (node?._rawAttrs?.href) {
+        let arr = node._rawAttrs.href.split("/").filter(n => n);
+        parentId = arr[arr.length - 1].split("-")[0];
+        break;
+      }
+    }
+    return (parentId);
+  };
+};
+
 export const getMovieGenres = (el: HTMLElement): CSFDGenres[] => {
   const genresRaw = el.querySelector('.genres').textContent;
   return genresRaw.split(' / ') as CSFDGenres[];

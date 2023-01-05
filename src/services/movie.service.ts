@@ -23,6 +23,7 @@ import {
   getMovieType,
   getMovieVods,
   getMovieYear,
+  getParent
 } from '../helpers/movie.helper';
 import { movieUrl } from '../vars';
 
@@ -57,6 +58,7 @@ export class MovieScraper {
     this.film = {
       id: movieId,
       title: getMovieTitle(el),
+      parentId: getParent(el),
       year: getMovieYear(jsonLd),
       duration: getMovieDuration(jsonLd, el),
       descriptions: getMovieDescriptions(el),
