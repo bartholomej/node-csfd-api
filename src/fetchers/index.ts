@@ -17,7 +17,6 @@ export const fetchPage = async (url: string): Promise<string> => {
     if (response.status >= 400 && response.status < 600) {
       throw new Error(`node-csfd-api: Bad response ${response.status} for url: ${url}`);
     }
-    console.log(response.text)
     return await response.text();
   } catch (e) {
     console.error(e);
