@@ -15,6 +15,7 @@ import {
   getRatingCount,
   getTags,
   getTitle,
+  getParent,
   getTitlesOther,
   getTrivia,
   getType,
@@ -53,6 +54,7 @@ export class MovieScraper {
     this.film = {
       id: movieId,
       title: getTitle(el),
+      parentId: getParent(el),
       year: getYear(jsonLd),
       duration: getDuration(jsonLd, el),
       descriptions: getDescriptions(el),
