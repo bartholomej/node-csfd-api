@@ -3,7 +3,7 @@
 [![Build & Publish](https://github.com/bartholomej/node-csfd-api/workflows/Publish/badge.svg)](https://github.com/bartholomej/node-csfd-api/actions)
 [![codecov](https://codecov.io/gh/bartholomej/node-csfd-api/branch/master/graph/badge.svg?token=YQH9UoVrGP)](https://codecov.io/gh/bartholomej/node-csfd-api)
 
-# CSFD API 2022
+# CSFD API 2023
 
 > JavaScript NPM library for scraping **Czech Movie Database (csfd.cz)**
 >
@@ -171,6 +171,19 @@ movies: [
         url: 'https://www.csfd.cz/tvurce/1-mel-gibson/'
       }]
     }
+  }
+],
+tvSeries: [
+  {
+    id: 71924,
+    title: 'Království',
+    year: 1994,
+    url: 'https://www.csfd.cz/film/71924-kralovstvi/',
+    type: 'seriál',
+    colorRating: 'good',
+    poster: 'https://image.pmgstatic.com/cache/resized/w60h85/files/images/film/posters/166/708/166708064_2da697.jpg',
+    origins: ['Dánsko'],
+    creators: []
   }
 ],
 users: [
@@ -381,8 +394,8 @@ _Note: You can not use both parameters 'includesOnly' and 'excludes'. Parameter 
 - [ ] Search
   - [x] Movies
   - [x] Users
+  - [x] TV Series
   - [ ] Creators
-  - [ ] TV Series
 - [x] Creators
   - [x] Bio
   - [x] Movies (TODO categories)
@@ -443,7 +456,7 @@ That's why, with node-csfd-api, what happens on your device stays on your device
 
 ## License
 
-Copyright &copy; 2022 [Lukas Bartak](http://bartweb.cz)
+Copyright &copy; 2020 – 2023 [Lukas Bartak](http://bartweb.cz)
 
 Proudly powered by nature 🗻, wind 💨, tea 🍵 and beer 🍺 ;)
 
