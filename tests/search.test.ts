@@ -17,6 +17,7 @@ import { searchMock } from './mocks/search.html';
 const html = parse(searchMock);
 const moviesNode = html.querySelectorAll('.main-movies article');
 const usersNode = html.querySelectorAll('.main-users article');
+const tvSeriesNode = html.querySelectorAll('.main-series article');
 
 describe('Get Movie titles', () => {
   test('First movie', () => {
@@ -169,6 +170,168 @@ describe('Get Movie creators', () => {
     expect(movie).toEqual<CSFDCreator[]>([]);
   });
 });
+
+// TV SERIES
+
+describe('Get TV series titles', () => {
+  test('First TV series', () => {
+    const movie = getTitle(tvSeriesNode[0]);
+    expect(movie).toEqual<string>('Matrix');
+  });
+  test('Last TV series', () => {
+    const movie = getTitle(tvSeriesNode[tvSeriesNode.length - 1]);
+    expect(movie).toEqual<string>('Futurama - Skoro poslední přání');
+  });
+  test('Some TV series', () => {
+    const movie = getTitle(tvSeriesNode[5]);
+    expect(movie).toEqual<string>('MP4orce - Dungeon Matrix');
+  });
+});
+
+describe('Get TV series years', () => {
+  test('First TV series', () => {
+    const movie = getYear(tvSeriesNode[0]);
+    expect(movie).toEqual<number>(1993);
+  });
+  test('Last TV series', () => {
+    const movie = getYear(tvSeriesNode[tvSeriesNode.length - 1]);
+    expect(movie).toEqual<number>(2012);
+  });
+  test('Some TV series', () => {
+    const movie = getYear(tvSeriesNode[4]);
+    expect(movie).toEqual<number>(2020);
+  });
+});
+
+describe('Get TV series url', () => {
+  test('First TV series', () => {
+    const movie = getUrl(tvSeriesNode[0]);
+    expect(movie).toEqual<string>('/film/72014-matrix/');
+  });
+  test('Last TV series', () => {
+    const movie = getUrl(tvSeriesNode[tvSeriesNode.length - 1]);
+    expect(movie).toEqual<string>('/film/77748-futurama/483972-skoro-posledni-prani/');
+  });
+  test('Some TV series', () => {
+    const movie = getUrl(tvSeriesNode[4]);
+    expect(movie).toEqual<string>('/film/999565-escape-the-matrix/');
+  });
+});
+
+describe('Get TV series types', () => {
+  test('First TV series', () => {
+    const movie = getType(tvSeriesNode[0]);
+    expect(movie).toEqual<CSFDFilmTypes>('seriál');
+  });
+  test('Last TV series', () => {
+    const movie = getType(tvSeriesNode[tvSeriesNode.length - 1]);
+    expect(movie).toEqual<CSFDFilmTypes>('epizoda');
+  });
+  test('Some TV series', () => {
+    const movie = getType(tvSeriesNode[1]);
+    expect(movie).toEqual<CSFDFilmTypes>('epizoda');
+  });
+});
+
+describe('Get TV series colors', () => {
+  test('First TV series', () => {
+    const movie = getColorRating(tvSeriesNode[0]);
+    expect(movie).toEqual<CSFDColorRating>('good');
+  });
+  test('Last TV series', () => {
+    const movie = getColorRating(tvSeriesNode[3]);
+    expect(movie).toEqual<CSFDColorRating>('average');
+  });
+  test('Some TV series', () => {
+    const movie = getColorRating(tvSeriesNode[5]);
+    expect(movie).toEqual<CSFDColorRating>('unknown');
+  });
+});
+
+describe('Get TV series posters', () => {
+  test('Some TV series', () => {
+    const movie = getPoster(tvSeriesNode[2]);
+    expect(movie).toEqual<string>(
+      'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'
+    );
+  });
+  test('Empty poster', () => {
+    const movie = getPoster(tvSeriesNode[4]);
+    expect(movie).toEqual<string>(
+      'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'
+    );
+  });
+});
+
+describe('Get TV series origins', () => {
+  test('First TV series', () => {
+    const movie = getOrigins(tvSeriesNode[0]);
+    expect(movie).toEqual<string[]>(['Kanada']);
+  });
+  test('Second TV series', () => {
+    const movie = getOrigins(tvSeriesNode[1]);
+    expect(movie).toEqual<string[]>(['Česko']);
+  });
+  test('Third TV series', () => {
+    const movie = getOrigins(tvSeriesNode[2]);
+    expect(movie).toEqual<string[]>(['USA', 'Kanada']);
+  });
+  test('Some TV series', () => {
+    const movie = getOrigins(tvSeriesNode[4]);
+    expect(movie).toEqual<string[]>(['Velká Británie']);
+  });
+});
+
+describe('Get TV series creators', () => {
+  test('First TV series directors', () => {
+    const movie = parsePeople(tvSeriesNode[0], 'directors');
+    expect(movie).toEqual<CSFDCreator[]>([
+      {
+        id: 8877,
+        name: 'Allan Eastman',
+        url: 'https://www.csfd.cz/tvurce/8877-allan-eastman/'
+      },
+      {
+        id: 8686,
+        name: 'Mario Azzopardi',
+        url: 'https://www.csfd.cz/tvurce/8686-mario-azzopardi/'
+      }
+    ]);
+  });
+  test('Last TV series actors', () => {
+    const movie = parsePeople(tvSeriesNode[tvSeriesNode.length - 1], 'actors');
+    expect(movie).toEqual<CSFDCreator[]>([
+      {
+        id: 20335,
+        name: 'Billy West',
+        url: 'https://www.csfd.cz/tvurce/20335-billy-west/'
+      },
+      {
+        id: 1931,
+        name: 'Katey Sagal',
+        url: 'https://www.csfd.cz/tvurce/1931-katey-sagal/'
+      }
+    ]);
+  });
+  test('Empty actors', () => {
+    const movie = parsePeople(tvSeriesNode[5], 'actors');
+    expect(movie).toEqual<CSFDCreator[]>([]);
+  });
+  test('Empty directors + some actors', () => {
+    const movie = parsePeople(tvSeriesNode[4], 'actors');
+    const movieDirectors = parsePeople(tvSeriesNode[4], 'directors');
+    expect(movie).toEqual<CSFDCreator[]>([
+      {
+        id: 61834,
+        name: 'David Icke',
+        url: 'https://www.csfd.cz/tvurce/61834-david-icke/'
+      }
+    ]);
+    expect(movieDirectors).toEqual<CSFDCreator[]>([]);
+  });
+});
+
+// USERS
 
 describe('Get Users name', () => {
   test('First user', () => {
