@@ -14,7 +14,7 @@
     "lint": "eslint ./src/**/**/* --fix",
     "test": "jest",
     "postinstall": "yarn husky install",
-    "publish:next": "yarn && yarn build && yarn test --coverage true && npm publish --folder dist --tag beta",
+    "publish:next": "yarn && yarn build && yarn test --coverage true && cd dist && npm publish --tag next",
     "postversion": "git push && git push --follow-tags",
     "release:beta": "npm version preminor --preid=beta -m \"chore(update): prelease %s β\"",
     "prerelease:beta": "npm version prerelease --preid=beta -m \"chore(update): prelease %s β\"",
@@ -22,6 +22,10 @@
     "release:minor": "git checkout master && npm version minor -m \"chore(update): release %s 🚀\"",
     "release:major": "git checkout master && npm version major -m \"chore(update): major release %s 💥\"",
     "prepare": "husky install"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
   },
   "dependencies": {
     "cross-fetch": "^3.1.5",
