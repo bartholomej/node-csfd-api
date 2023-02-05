@@ -7,16 +7,17 @@
 
 > JavaScript NPM library for scraping **Czech Movie Database (csfd.cz)**
 >
-> - Browser + Node.js (SSR)
 > - JavaScript / TypeScript
+> - Browser + Node.js (SSR)
 > - Tested (~100% Code coverage)
 > - ✅ Ready for new ČSFD 2021!
 > - You can use in:
 >   - Firebase function
 >   - AWS λ (lambda function)
+>   - CloudFlare Worker
 >   - Chrome extension
 >   - React native app
->   - ...
+>   - Browsers (Pay attention to CORS)
 
 ## Install
 
@@ -138,7 +139,7 @@ csfd.movie(535121).then((movie) => console.log(movie));
 
 ### Search
 
-> Search movies and users
+> Search movies, users and TV series
 
 ```javascript
 import { csfd } from 'node-csfd-api';
@@ -199,7 +200,7 @@ users: [
 
 ### Creators
 
-> Search creators and filmography
+> Get creator info + filmography
 
 ```javascript
 import { csfd } from 'node-csfd-api';
@@ -351,9 +352,19 @@ _Note: You can not use both parameters 'includesOnly' and 'excludes'. Parameter 
 
 ## Used by
 
-- [Dafilms web extension](https://chrome.google.com/webstore/detail/dafilms/hgcgneddmgflnbmhkjnefiobjgobbmdm?hl=en) ([code](https://github.com/bartholomej/dafilms-ext)) – Parser for film ratings (web extension)
-- [bartweb.cz](https://bartweb.cz) – **Last seen** section (Firebase function)
-- KinoKlub – Mobile application for AeroFilms (native Android + iOS application)
+### Web extensions
+
+- [Netflix: chrome extension](https://chrome.google.com/webstore/detail/netflix-csfd/eomgekccbddnlpmehgdjmlphndjgnlni) ([code](https://github.com/bartholomej/netflix-csfd-ext))
+- [Dafilms: chrome extension](https://chrome.google.com/webstore/detail/dafilms/hgcgneddmgflnbmhkjnefiobjgobbmdm) ([code](https://github.com/bartholomej/dafilms-ext))
+- [Kviff.tv: chrome extension](https://chrome.google.com/webstore/detail/kvifftv-%20-csfd/ihpngekoejodiligajlppbeedofhnmfm) ([code](https://github.com/bartholomej/kviff-ext))
+
+### Web applications
+
+- [bartweb.cz](https://bartweb.cz) – **Last seen** section (**Firebase function**)
+
+### Mobile applications
+
+- KinoKlub – Mobile application for AeroFilms (React Native: Android + iOS application)
 
 ## Roadmap
 
