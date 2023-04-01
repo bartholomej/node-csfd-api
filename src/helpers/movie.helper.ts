@@ -11,7 +11,7 @@ import {
   CSFDVod,
   CSFDVodService
 } from '../interfaces/movie.interface';
-import { addProtocol, getColor, parseIdFromUrl, parseISO8601Duration } from './global.helper';
+import { addProtocol, getColor, parseISO8601Duration, parseIdFromUrl } from './global.helper';
 
 export const getId = (el: HTMLElement): number => {
   const url = el.querySelector('.tabs .tab-nav-list a').attributes.href;
@@ -39,9 +39,11 @@ export const getColorRating = (bodyClasses: string[]): CSFDColorRating => {
 
 export const getRating = (el: HTMLElement): number => {
   const ratingRaw = el.querySelector('.film-rating-average').textContent;
-  const rating = +ratingRaw?.replace(/%/g, '').trim();
-  if (Number.isInteger(rating)) {
-    return rating;
+  const rating = ratingRaw?.replace(/%/g, '').trim();
+  const ratingInt = parseInt(rating);
+
+  if (Number.isInteger(ratingInt)) {
+    return ratingInt;
   } else {
     return null;
   }
@@ -95,9 +97,15 @@ export const getDuration = (jsonLdRaw: string, el: HTMLElement): number => {
 
 export const getTitlesOther = (el: HTMLElement): CSFDTitlesOther[] => {
   const namesNode = el.querySelectorAll('.film-names li');
-  return namesNode.map((el) => {
+
+  if (!namesNode.length) {
+    return [];
+  }
+
+  const titlesOther = namesNode.map((el) => {
     const country = el.querySelector('img.flag').attributes.alt;
     const title = el.textContent.trim().split('\n')[0];
+
     if (country && title) {
       return {
         country,
@@ -107,6 +115,8 @@ export const getTitlesOther = (el: HTMLElement): CSFDTitlesOther[] => {
       return null;
     }
   });
+
+  return titlesOther.filter((x) => x);
 };
 
 export const getPoster = (el: HTMLElement | null): string => {

@@ -72,6 +72,11 @@ const {
   jsonLd: movieJsonLd
 } = getMovie(movieHtml);
 
+// Wrong html
+const wrongHtml = parse(
+  '<div class="film-rating-average"></div><ul class="film-names"><li><img class="flag" /></li></ul>'
+);
+
 // Movie blank
 const movieHtmlBlank = parse(movieMockBlank);
 
@@ -384,6 +389,10 @@ describe('Get year', () => {
     const movie = getYear(seriesJsonLd);
     expect(movie).toEqual<number>(1994);
   });
+  test('Wrong year', () => {
+    const movie = getYear(null as any);
+    expect(movie).toEqual(null);
+  });
 });
 
 describe('Get rating count', () => {
@@ -581,7 +590,17 @@ describe('Get people', () => {
   describe('Anomaly detection', () => {
     test('Bad node for rating', () => {
       const movie = getRatingCount(movieNode);
-      expect(movie).toEqual<CSFDMovieListItem[]>(null);
+      expect(movie).toEqual<CSFDMovieListItem[]>(null as any);
+    });
+
+    test('Wrong rating', () => {
+      const movie = getRating(wrongHtml);
+      expect(movie).toEqual(null);
+    });
+
+    test('Wrong otherTitle', () => {
+      const movie = getTitlesOther(wrongHtml);
+      expect(movie).toEqual([]);
     });
   });
 });

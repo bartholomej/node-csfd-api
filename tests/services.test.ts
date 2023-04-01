@@ -4,17 +4,31 @@ import { UserRatingsScraper } from '../src/services/user-ratings.service';
 
 // Live API tests
 const USER = 912;
+const USER2 = 228645;
 
 describe('Simple call', () => {
   // Fetch data with excludes
   const userRatingsScraper = new UserRatingsScraper();
   const res: Promise<CSFDUserRatings[]> = userRatingsScraper.userRatings(USER);
 
-  test('Should have at least one film', async () => {
+  test('Should have some movies', async () => {
     const results = await res;
 
     const films = results.filter((item) => item.type === 'film');
-    expect(films.length).toBeGreaterThan(1);
+    expect(films.length).toBeGreaterThan(10);
+  });
+});
+
+describe('AllPages', () => {
+  const userRatingsScraper = new UserRatingsScraper();
+  const res: Promise<CSFDUserRatings[]> = userRatingsScraper.userRatings(USER2, {
+    allPages: true,
+    allPagesDelay: 100
+  });
+
+  test('Should have exact number of movies', async () => {
+    const results = await res;
+    expect(results.length).toBeCloseTo(181);
   });
 });
 
