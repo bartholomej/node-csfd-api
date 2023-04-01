@@ -1,4 +1,5 @@
 import { parse } from 'node-html-parser';
+import { describe, expect, test } from 'vitest';
 import {
   getBio,
   getBirthdayInfo,

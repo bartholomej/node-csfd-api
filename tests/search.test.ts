@@ -1,4 +1,5 @@
 import { parse } from 'node-html-parser';
+import { describe, expect, test } from 'vitest';
 import { getAvatar, getUser, getUserRealName, getUserUrl } from '../src/helpers/search-user.helper';
 import {
   getColorRating,

@@ -1,3 +1,4 @@
+import { describe, expect, test } from 'vitest';
 import { CSFDUserRatings } from '../src/interfaces/user-ratings.interface';
 import { UserRatingsScraper } from '../src/services/user-ratings.service';
 

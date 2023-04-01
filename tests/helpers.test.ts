@@ -1,3 +1,4 @@
+import { describe, expect, test } from 'vitest';
 import { addProtocol, parseColor, parseIdFromUrl } from '../src/helpers/global.helper';
 
 describe('Add protocol', () => {

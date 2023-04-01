@@ -1,3 +1,4 @@
+import { describe, expect, test } from 'vitest';
 import { creatorUrl, movieUrl, searchUrl, userRatingsUrl } from '../src/vars';
 
 describe('Vars User Ratings', () => {
