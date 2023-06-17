@@ -9,5 +9,12 @@ export const movieUrl = (movie: number): string =>
 export const creatorUrl = (creator: number | string): string =>
   `https://www.csfd.cz/tvurce/${encodeURIComponent(creator)}`;
 
+export const cinemasUrl = (
+  district: number | string = 1,
+  period: 'today' | 'weekend' | 'week' | 'tomorrow' | 'month' = 'today'
+): string => {
+  return `https://www.csfd.cz/kino/?period=${period}&district=${district}`;
+};
+
 export const searchUrl = (text: string): string =>
   `https://www.csfd.cz/hledat/?q=${encodeURIComponent(text)}`;
