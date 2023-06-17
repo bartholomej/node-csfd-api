@@ -1,7 +1,9 @@
+import { CSFDCinema } from 'interfaces/cinema.interface';
 import { CSFDCreator } from './interfaces/creator.interface';
 import { CSFDMovie } from './interfaces/movie.interface';
 import { CSFDSearch } from './interfaces/search.interface';
 import { CSFDUserRatingConfig, CSFDUserRatings } from './interfaces/user-ratings.interface';
+import { CinemaScraper } from './services/cinema.service';
 import { CreatorScraper } from './services/creator.service';
 import { MovieScraper } from './services/movie.service';
 import { SearchScraper } from './services/search.service';
@@ -12,7 +14,8 @@ export class Csfd {
     private userRatingsService: UserRatingsScraper,
     private movieService: MovieScraper,
     private creatorService: CreatorScraper,
-    private searchService: SearchScraper
+    private searchService: SearchScraper,
+    private cinemaService: CinemaScraper
   ) {}
 
   public async userRatings(
@@ -33,10 +36,22 @@ export class Csfd {
   public async search(text: string): Promise<CSFDSearch> {
     return this.searchService.search(text);
   }
+
+  public async cinema(district: number): Promise<CSFDCinema[]> {
+    return this.cinemaService.cinemas(+district);
+  }
 }
 
 const movieScraper = new MovieScraper();
 const userRatingsScraper = new UserRatingsScraper();
+const cinemaScraper = new CinemaScraper();
 const creatorScraper = new CreatorScraper();
 const searchScraper = new SearchScraper();
-export const csfd = new Csfd(userRatingsScraper, movieScraper, creatorScraper, searchScraper);
+
+export const csfd = new Csfd(
+  userRatingsScraper,
+  movieScraper,
+  creatorScraper,
+  searchScraper,
+  cinemaScraper
+);
