@@ -1,8 +1,9 @@
 import { HTMLElement, parse } from 'node-html-parser';
 import { fetchPage } from '../fetchers';
-import { CSFDCinema } from '../interfaces/cinema.interface';
+import { CSFDCinema, CSFDCinemaPeriod } from '../interfaces/cinema.interface';
 import { cinemasUrl } from '../vars';
 import {
+  getCinemaId,
   getCinemaUrl,
   getCoords,
   getGroupedFilmsByDate,
@@ -12,8 +13,11 @@ import {
 export class CinemaScraper {
   private cinema: CSFDCinema[];
 
-  public async cinemas(district: number): Promise<CSFDCinema[]> {
-    const url = cinemasUrl(district, 'week');
+  public async cinemas(
+    district: number = 1,
+    period: CSFDCinemaPeriod = 'today'
+  ): Promise<CSFDCinema[]> {
+    const url = cinemasUrl(district, period);
     const response = await fetchPage(url);
 
     const cinemasHtml = parse(response);
@@ -28,7 +32,8 @@ export class CinemaScraper {
     const cinemas: CSFDCinema[] = [];
 
     contentNode.map((x) => {
-      const cinema = {
+      const cinema: CSFDCinema = {
+        id: getCinemaId(x),
         name: parseCinema(x)?.name,
         city: parseCinema(x)?.city,
         url: getCinemaUrl(x),
