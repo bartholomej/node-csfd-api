@@ -1,4 +1,4 @@
-import { CSFDCinema } from 'interfaces/cinema.interface';
+import { CSFDCinema, CSFDCinemaPeriod } from 'interfaces/cinema.interface';
 import { CSFDCreator } from './interfaces/creator.interface';
 import { CSFDMovie } from './interfaces/movie.interface';
 import { CSFDSearch } from './interfaces/search.interface';
@@ -37,8 +37,8 @@ export class Csfd {
     return this.searchService.search(text);
   }
 
-  public async cinema(district: number): Promise<CSFDCinema[]> {
-    return this.cinemaService.cinemas(+district);
+  public async cinema(district: number, period: CSFDCinemaPeriod): Promise<CSFDCinema[]> {
+    return this.cinemaService.cinemas(+district, period);
   }
 }
 
