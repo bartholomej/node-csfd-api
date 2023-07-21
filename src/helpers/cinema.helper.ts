@@ -1,4 +1,8 @@
-import { CSFDCinemaMeta, CSFDCinemaMovie } from 'interfaces/cinema.interface';
+import {
+  CSFDCinemaGroupedFilmsByDate,
+  CSFDCinemaMeta,
+  CSFDCinemaMovie
+} from 'interfaces/cinema.interface';
 import { HTMLElement } from 'node-html-parser';
 import { CSFDColorRating } from '../interfaces/global';
 import { Colors } from '../interfaces/user-ratings.interface';
@@ -6,6 +10,11 @@ import { parseColor, parseIdFromUrl } from './global.helper';
 
 export const getColorRating = (el: HTMLElement): CSFDColorRating => {
   return parseColor(el?.classNames.split(' ').pop() as Colors);
+};
+
+export const getCinemaId = (el: HTMLElement | null): number => {
+  const id = el?.id?.split('-')[1];
+  return +id;
 };
 
 export const getId = (url: string): number => {
@@ -39,7 +48,7 @@ export const parseCinema = (el: HTMLElement | null): { city: string; name: strin
   return { city, name };
 };
 
-export const getGroupedFilmsByDate = (el: HTMLElement | null): any => {
+export const getGroupedFilmsByDate = (el: HTMLElement | null): CSFDCinemaGroupedFilmsByDate[] => {
   const divs = el.querySelectorAll(':scope > div');
   const getDatesAndFilms = divs
     .map((_, index) => index)
