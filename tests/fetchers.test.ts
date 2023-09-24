@@ -71,7 +71,7 @@ describe('Live: Creator page', () => {
     const creator = await csfd.creator(2018);
     expect(creator.name).toEqual<string>('Jan Werich');
     expect(creator.birthday).toEqual('06.02.1905');
-    expect(creator.birthplace).toEqual('Praha, Čechy, Rakousko-Uhersko');
+    expect(creator.birthplace).toEqual('Praha, Praha, Hlavní město Praha, Rakousko-Uhersko');
     expect(creator.films.find((film) => film.title === 'Hej-rup!')).toEqual<CSFDCreatorScreening>({
       id: 3106,
       title: 'Hej-rup!',
