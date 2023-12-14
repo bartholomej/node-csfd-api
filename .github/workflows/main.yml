@@ -32,5 +32,5 @@ jobs:
       - name: Run tests
         run: yarn test:coverage
 
-      - name: Upload code coverage
-        run: bash <(curl -s https://codecov.io/bash)
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v3
