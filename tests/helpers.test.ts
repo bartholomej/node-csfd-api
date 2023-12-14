@@ -44,6 +44,10 @@ describe('Parse color', () => {
     const url = parseColor('blue');
     expect(url).toBe('average');
   });
+  test('Light grey', () => {
+    const url = parseColor('lightgrey');
+    expect(url).toBe('unknown');
+  });
   test('Grey', () => {
     const url = parseColor('grey');
     expect(url).toBe('bad');
