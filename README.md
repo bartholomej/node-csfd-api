@@ -3,14 +3,14 @@
 [![Build & Publish](https://github.com/bartholomej/node-csfd-api/workflows/Publish/badge.svg)](https://github.com/bartholomej/node-csfd-api/actions)
 [![codecov](https://codecov.io/gh/bartholomej/node-csfd-api/branch/master/graph/badge.svg?token=YQH9UoVrGP)](https://codecov.io/gh/bartholomej/node-csfd-api)
 
-# CSFD API 2023
+# CSFD API 🎥 2024
 
 > JavaScript NPM library for scraping **Czech Movie Database (csfd.cz)**
 >
 > - JavaScript / TypeScript
 > - Browser + Node.js (SSR)
 > - Tested (~100% Code coverage)
-> - ✅ Ready for new ČSFD 2021!
+> - ✅ Ready for new ČSFD 2024!
 > - You can use in:
 >   - Firebase function
 >   - AWS λ (lambda function)
@@ -19,14 +19,14 @@
 >   - React native app
 >   - Browsers (Pay attention to CORS)
 
-## Install
+## 🗜️ Install
 
 ```bash
 npm install node-csfd-api
 # yarn add node-csfd-api
 ```
 
-## Usage and examples
+## 🛠️ Usage and examples
 
 - [Movies and TV Series](#Movie)
 - [User Ratings](#User-Ratings)
@@ -35,7 +35,7 @@ npm install node-csfd-api
 
 ### Movie
 
-Get info about [this movie](https://www.csfd.cz/film/535121-na-spatne-strane/komentare/) _(id: 535121)_
+> Get info about [this movie](https://www.csfd.cz/film/535121-na-spatne-strane/komentare/) _(id: 535121)_
 
 ```javascript
 import { csfd } from 'node-csfd-api';
@@ -43,8 +43,9 @@ import { csfd } from 'node-csfd-api';
 csfd.movie(535121).then((movie) => console.log(movie));
 ```
 
-#### Results
-
+<details>
+  <summary>Click here to see full result example</summary>
+  
 ```javascript
 {
   id: 535121,
@@ -136,6 +137,7 @@ csfd.movie(535121).then((movie) => console.log(movie));
   ]
 }
 ```
+</details>
 
 ### Search
 
@@ -147,10 +149,11 @@ import { csfd } from 'node-csfd-api';
 csfd.search('bart').then((search) => console.log(search));
 ```
 
-#### Results
-
+<details>
+  <summary>Click here to see full result example</summary>
+  
 ```javascript
-movies: [
+[
   {
     id: 19653,
     title: 'Black Bart',
@@ -198,6 +201,8 @@ users: [
 ]
 ```
 
+</details>
+
 ### Creators
 
 > Get creator info + filmography
@@ -208,7 +213,8 @@ import { csfd } from 'node-csfd-api';
 csfd.creator(2120).then((creator) => console.log(creator));
 ```
 
-#### Results
+<details>
+  <summary>Click here to see full result example</summary>
 
 ```javascript
 {
@@ -285,6 +291,8 @@ csfd.creator(2120).then((creator) => console.log(creator));
 }
 ```
 
+</details>
+
 ### User Ratings
 
 #### Last ratings (last page)
@@ -314,7 +322,8 @@ csfd
   .then((ratings) => console.log(ratings));
 ```
 
-#### Results
+<details>
+  <summary>Click here to see full result example</summary>
 
 ```javascript
 [
@@ -339,7 +348,9 @@ csfd
 ];
 ```
 
-#### Options
+</details>
+
+#### Options for user ratings
 
 | Option            | Type                                                                                                                                       | Default | Description                                            |
 | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | ------- | ------------------------------------------------------ |
@@ -348,7 +359,7 @@ csfd
 | **allPages**      | boolean                                                                                                                                    | false   | Get all pages                                          |
 | **allPagesDelay** | number                                                                                                                                     | 0       | Delay on each page request. In milliseconds            |
 
-_Note: You can not use both parameters 'includesOnly' and 'excludes'. Parameter 'includesOnly' has a priority._
+_Note: You can not use both parameters `includesOnly` and `excludes`. Parameter `includesOnly` has a priority._
 
 ## 🧑‍💻 Used by
 
@@ -364,7 +375,7 @@ _Note: You can not use both parameters 'includesOnly' and 'excludes'. Parameter 
 
 ### Mobile applications
 
-- KinoKlub – Mobile application for AeroFilms (React Native: Android + iOS application)
+- [KinoKlub](https://play.google.com/store/apps/details?id=com.aquasoup) – Mobile application for AeroFilms (React Native: Android + iOS application)
 
 ## 🔮 Roadmap
 
@@ -414,7 +425,7 @@ _Note: You can not use both parameters 'includesOnly' and 'excludes'. Parameter 
   - [x] Last ratings
   - [x] All pages
 
-## Development
+## 🛠️ Development
 
 ### Developing and debugging library
 
