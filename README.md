@@ -22,7 +22,7 @@
 ## Install
 
 ```bash
-npm install node-csfd-api --save
+npm install node-csfd-api
 # yarn add node-csfd-api
 ```
 
@@ -350,7 +350,7 @@ csfd
 
 _Note: You can not use both parameters 'includesOnly' and 'excludes'. Parameter 'includesOnly' has a priority._
 
-## Used by
+## 🧑‍💻 Used by
 
 ### Web extensions
 
@@ -366,7 +366,7 @@ _Note: You can not use both parameters 'includesOnly' and 'excludes'. Parameter 
 
 - KinoKlub – Mobile application for AeroFilms (React Native: Android + iOS application)
 
-## Roadmap
+## 🔮 Roadmap
 
 ### Scraping more pages
 
@@ -430,22 +430,7 @@ You can find and modify it in [`./demo.ts`](https://github.com/bartholomej/node-
 yarn demo
 ```
 
-## Development (notes for me)
-
-### Publish Stable
-
-```shell
-yarn release:patch
-# yarn release:minor
-# yarn release:major
-```
-
-### Publish next channel
-
-1. Bump version `-beta.0` in `package.json`
-2. `yarn release:beta`
-
-## Contribution
+## 🤝 Contribution
 
 I welcome you to customize this according to your needs ;)
 
@@ -457,7 +442,7 @@ Give a ⭐️ if this project helped you!
 
 Or if you are brave enough consider [making a donation](https://github.com/sponsors/bartholomej) for some 🍺 or 🍵 ;)
 
-## Privacy Policy
+## 🕵️‍♀️ Privacy Policy
 
 I DO NOT STORE ANY DATA. PERIOD.
 
@@ -465,9 +450,9 @@ I physically can't. I have nowhere to store it. I don't even have a server datab
 
 That's why, with node-csfd-api, what happens on your device stays on your device till disappear.
 
-## License
+## 📝 License
 
-Copyright &copy; 2020 – 2023 [Lukas Bartak](http://bartweb.cz)
+Copyright &copy; 2020 – 2024 [Lukas Bartak](http://bartweb.cz)
 
 Proudly powered by nature 🗻, wind 💨, tea 🍵 and beer 🍺 ;)
 
