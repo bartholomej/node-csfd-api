@@ -10,7 +10,7 @@
     "build": "tsc",
     "postbuild": "npm-prepare-dist -s postinstall -s prepare",
     "tsc": "tsc",
-    "demo": "ts-node demo",
+    "demo": "tsx demo",
     "lint": "eslint ./src/**/**/* --fix",
     "test": "vitest",
     "test:coverage": "yarn test run --coverage",
@@ -47,7 +47,7 @@
     "npm-prepare-dist": "^0.4.1",
     "prettier": "^3.1.1",
     "rimraf": "^5.0.5",
-    "ts-node": "^10.9.2",
+    "tsx": "^4.7.0",
     "typescript": "^5.3.3",
     "vitest": "^1.1.0"
   },
