@@ -14,7 +14,6 @@
     "lint": "eslint ./src/**/**/* --fix",
     "test": "vitest",
     "test:coverage": "yarn test run --coverage",
-    "postinstall": "yarn husky install",
     "publish:next": "yarn && yarn build && yarn test:coverage && cd dist && npm publish --tag next",
     "postversion": "git push && git push --follow-tags",
     "release:beta": "npm version preminor --preid=beta -m \"chore(update): prelease %s β\"",
