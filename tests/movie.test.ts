@@ -37,19 +37,19 @@ import { movieMock4 } from './mocks/movie4.html';
 import { seriesMock } from './mocks/series1.html';
 
 const getPageClasses = (node: HTMLElement): string[] => {
-  return node.querySelector('.page-content').classNames.split(' ');
+  return node.querySelector('.page-content')?.classNames.split(' ') ?? [''];
 };
 
 const getAsideNode = (node: HTMLElement): HTMLElement => {
-  return node.querySelector('.aside-movie-profile');
+  return node.querySelector('.aside-movie-profile') as HTMLElement;
 };
 
 const getNode = (node: HTMLElement): HTMLElement => {
-  return node.querySelector('.main-movie-profile');
+  return node.querySelector('.main-movie-profile') as HTMLElement;
 };
 
 const getJsonLd = (node: HTMLElement): string => {
-  return node.querySelector('script[type="application/ld+json"]').innerText;
+  return node.querySelector('script[type="application/ld+json"]')?.innerText ?? '{}';
 };
 
 const getMovie = (
@@ -99,7 +99,7 @@ const {
 // Movie 4
 const movieHtml4 = parse(movieMock4);
 
-const { aside: asideNode4, pNode: movieNode4, jsonLd: movie4JsonLd } = getMovie(movieHtml4);
+const { aside: asideNode4 } = getMovie(movieHtml4);
 
 // Series
 const seriesHtml = parse(seriesMock);

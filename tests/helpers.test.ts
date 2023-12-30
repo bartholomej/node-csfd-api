@@ -26,7 +26,7 @@ describe('Parse Id', () => {
     expect(url).toBe(906693);
   });
   test('Handle bad url', () => {
-    const url = parseIdFromUrl(null);
+    const url = parseIdFromUrl(null as any);
     expect(url).toBe(null);
   });
   test('bad string', () => {

@@ -4,7 +4,7 @@ export default defineConfig({
   test: {
     coverage: {
       provider: 'istanbul',
-      exclude: [...configDefaults.exclude, 'demo.ts']
+      exclude: [...configDefaults.exclude, 'demo.ts', '**/*.polyfill.ts', 'vars.ts']
     }
   }
 });
