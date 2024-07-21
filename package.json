@@ -29,26 +29,26 @@
   },
   "dependencies": {
     "cross-fetch": "^4.0.0",
-    "node-html-parser": "^6.1.12"
+    "node-html-parser": "^6.1.13"
   },
   "devDependencies": {
-    "@babel/preset-typescript": "^7.23.3",
-    "@types/node": "^20.10.6",
-    "@typescript-eslint/eslint-plugin": "^6.16.0",
-    "@typescript-eslint/parser": "^6.16.0",
-    "@vitest/coverage-istanbul": "^1.1.0",
+    "@babel/preset-typescript": "^7.24.7",
+    "@types/node": "^20.14.11",
+    "@typescript-eslint/eslint-plugin": "^7.16.1",
+    "@typescript-eslint/parser": "^7.16.1",
+    "@vitest/coverage-istanbul": "^2.0.3",
     "eslint": "^8.56.0",
     "eslint-config-google": "^0.14.0",
     "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-prettier": "^5.1.2",
-    "husky": "^8.0.3",
-    "lint-staged": "^15.2.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "husky": "^9.1.1",
+    "lint-staged": "^15.2.7",
     "npm-prepare-dist": "^0.4.1",
-    "prettier": "^3.1.1",
-    "rimraf": "^5.0.5",
-    "tsx": "^4.7.0",
-    "typescript": "^5.3.3",
-    "vitest": "^1.1.0"
+    "prettier": "^3.3.3",
+    "rimraf": "^6.0.1",
+    "tsx": "^4.16.2",
+    "typescript": "^5.5.3",
+    "vitest": "^2.0.3"
   },
   "repository": {
     "url": "git+https://github.com/bartholomej/node-csfd-api.git",
