@@ -39,7 +39,7 @@ export const getCoords = (el: HTMLElement | null): { lat: number; lng: number } 
 };
 
 export const getCinemaUrl = (el: HTMLElement | null): string => {
-  return el.querySelector('.box-header .cinema-logo a')?.attributes.href;
+  return el.querySelector('.box-header .cinema-logo a')?.attributes.href ?? '';
 };
 
 export const parseCinema = (el: HTMLElement | null): { city: string; name: string } => {
