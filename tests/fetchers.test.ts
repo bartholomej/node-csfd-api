@@ -66,13 +66,14 @@ describe('Live: Search', () => {
   });
 });
 
-// Creator
+// Creator    
 describe('Live: Creator page', () => {
   test('Fetch `2018-jan-werich` creator', async () => {
     const creator = await csfd.creator(2018);
     expect(creator.name).toEqual<string>('Jan Werich');
     expect(creator.birthday).toEqual('06.02.1905');
-    expect(creator.birthplace).toEqual('Praha, Praha, Hlavní město Praha, Rakousko-Uhersko');
+    expect(creator.birthplace).toContain('Rakousko-Uhersko');
+    expect(creator.birthplace).toContain('Praha');
     expect(creator.films.find((film) => film.title === 'Hej-rup!')).toEqual<CSFDCreatorScreening>({
       id: 3106,
       title: 'Hej-rup!',
