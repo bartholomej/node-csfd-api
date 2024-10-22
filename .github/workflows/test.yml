@@ -1,4 +1,4 @@
-name: Build
+name: Build && Test
 
 on:
   schedule:
@@ -13,7 +13,7 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
 
       - name: Cache node modules
         uses: actions/cache@v4
@@ -31,5 +31,8 @@ jobs:
       - name: Build app
         run: yarn build
 
+      - name: Build app
+        run: yarn test:coverage
+
       - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v3
+        uses: codecov/codecov-action@v4
