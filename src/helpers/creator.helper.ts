@@ -22,21 +22,23 @@ export const getName = (el: HTMLElement | null): string => {
 export const getBirthdayInfo = (
   el: HTMLElement | null
 ): { birthday: string; age: number; birthPlace: string } => {
-  const text = el.querySelector('h1 + p').innerHTML.trim();
-  const parts = text.split('\n');
-  let birthday: string;
-  let age: number;
-  let birthPlace: string;
+  const infoBlock = el.querySelector('h1 + p');
+  const text = infoBlock?.innerHTML.trim();
 
-  if (parts.length) {
+  const birthPlaceRow = infoBlock?.querySelector('.info-place')?.innerHTML.trim();
+  const ageRow = infoBlock?.querySelector('.info')?.innerHTML.trim();
+
+  let birthday: string = '';
+
+  if (text) {
+    const parts = text.split('\n');
     const birthdayRow = parts.find((x) => x.includes('nar.'));
-    const ageRow = parts.find((x) => x.includes('let)'));
-    const birthPlaceRow = parts.find((x) => x.includes('<br>')); // Ugly but there is no other way to detect
-
     birthday = birthdayRow ? parseBirthday(birthdayRow) : '';
-    age = ageRow ? +parseAge(ageRow) : null;
-    birthPlace = birthPlaceRow ? parseBirthPlace(birthPlaceRow) : '';
   }
+
+  const age = ageRow ? +parseAge(ageRow) : null;
+  const birthPlace = birthPlaceRow ? parseBirthPlace(birthPlaceRow) : '';
+
   return { birthday, age, birthPlace };
 };
 
