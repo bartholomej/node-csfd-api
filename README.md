@@ -3,14 +3,14 @@
 [![Build & Publish](https://github.com/bartholomej/node-csfd-api/workflows/Publish/badge.svg)](https://github.com/bartholomej/node-csfd-api/actions)
 [![codecov](https://codecov.io/gh/bartholomej/node-csfd-api/branch/master/graph/badge.svg?token=YQH9UoVrGP)](https://codecov.io/gh/bartholomej/node-csfd-api)
 
-# CSFD API 🎥 2024
+# CSFD API 🎥 2025
 
 > JavaScript NPM library for scraping **Czech Movie Database (csfd.cz)**
 >
 > - JavaScript / TypeScript
 > - Browser + Node.js (SSR)
 > - Tested (~100% Code coverage)
-> - ✅ Ready for new ČSFD 2024!
+> - ✅ Ready for new ČSFD 2025!
 > - You can use in:
 >   - Firebase function
 >   - AWS λ (lambda function)
@@ -463,7 +463,7 @@ That's why, with node-csfd-api, what happens on your device stays on your device
 
 ## 📝 License
 
-Copyright &copy; 2020 – 2024 [Lukas Bartak](http://bartweb.cz)
+Copyright &copy; 2020 – 2025 [Lukas Bartak](http://bartweb.cz)
 
 Proudly powered by nature 🗻, wind 💨, tea 🍵 and beer 🍺 ;)
 
