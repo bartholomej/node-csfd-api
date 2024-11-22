@@ -1,9 +1,24 @@
 import express from 'express';
+import packageJson from './package.json';
 import { csfd } from './src';
 import { CSFDFilmTypes } from './src/interfaces/global';
 
 const app = express();
 const port = process.env.PORT || 3000;
+
+app.get('/', (_, res) => {
+  res.json({
+    name: packageJson.name,
+    version: packageJson.version,
+    docs: packageJson.homepage,
+    links: ['/movie/:id', '/creator/:id', '/search/:query', '/user-ratings/:id']
+  });
+});
+
+app.get(['/movie/', '/creator/', '/search/', '/user-ratings/'], (req, res) => {
+  console.log(req.url);
+  res.json({ error: `ID is missing. Provide ID like this: ${req.url}${req.url.endsWith('/') ? '' : '/'}1234` });
+});
 
 app.get('/movie/:id', async (req, res) => {
   try {
