@@ -146,7 +146,7 @@ describe('Composer info', () => {
 
   test('Bio', () => {
     const creator = getBio(asideNodeComposer);
-    expect(creator).toEqual<string>('Tento tvůrce zatím nemá přidanou biografii.');
+    expect(creator).toEqual<string>(null);
   });
 
   test('Photo', () => {

@@ -43,7 +43,7 @@ export const getBirthdayInfo = (
 };
 
 export const getBio = (el: HTMLElement | null): string => {
-  return el.querySelector('.article-content p').text.trim().split('\n')[0].trim();
+  return el.querySelector('.article-content p')?.text.trim().split('\n')[0].trim() || null;
 };
 
 export const getPhoto = (el: HTMLElement | null): string => {
