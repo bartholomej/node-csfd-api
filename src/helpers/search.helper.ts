@@ -35,7 +35,8 @@ export const getPoster = (el: HTMLElement): string => {
 };
 
 export const getOrigins = (el: HTMLElement): string[] => {
-  const originsRaw = el.querySelector('.article-content p .info').text;
+  const originsRaw = el.querySelector('.article-content p .info')?.text;
+  if (!originsRaw) return [];
   const originsAll = originsRaw?.split(', ')?.[0];
   return originsAll?.split('/').map((country) => country.trim());
 };
