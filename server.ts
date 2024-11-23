@@ -16,7 +16,6 @@ app.get('/', (_, res) => {
 });
 
 app.get(['/movie/', '/creator/', '/search/', '/user-ratings/'], (req, res) => {
-  console.log(req.url);
   res.json({ error: `ID is missing. Provide ID like this: ${req.url}${req.url.endsWith('/') ? '' : '/'}1234` });
 });
 

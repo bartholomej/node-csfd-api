@@ -12,6 +12,7 @@
 > - Tested (~100% Code coverage)
 > - ✅ Ready for new ČSFD 2025!
 > - You can use in:
+>   - Docker – [_How to do it?_](#-docker)
 >   - Firebase function
 >   - AWS λ (lambda function)
 >   - CloudFlare Worker
@@ -360,6 +361,43 @@ csfd
 | **allPagesDelay** | number                                                                                                                                     | 0       | Delay on each page request. In milliseconds            |
 
 _Note: You can not use both parameters `includesOnly` and `excludes`. Parameter `includesOnly` has a priority._
+
+## 📦 Docker
+
+You can use this library in Docker.
+
+We have [prepared a Docker image](https://hub.docker.com/r/bartholomej/node-csfd-api) for you.
+
+### Prebuilt image
+
+```bash
+docker pull bartholomej/node-csfd-api
+```
+
+### Build & run your own image
+
+> Build image
+
+```bash
+docker build -t node-csfd-api .
+```
+
+> Run image on port 3000
+
+```bash
+docker run -p 3000:3000 node-csfd-api
+```
+
+> Open http://localhost:3000
+
+### API endpoints
+
+> Some examples
+
+- `/movies/535121`
+- `/search/quentin+tarantino`
+- `/creators/2120`
+- `/user-ratings/912-bart`
 
 ## 🧑‍💻 Used by
 
