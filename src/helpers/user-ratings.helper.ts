@@ -26,7 +26,7 @@ export const getTitle = (el: HTMLElement): string => {
 };
 
 export const getYear = (el: HTMLElement): number => {
-  return +el.querySelectorAll('td.name .film-title-info .info')[0].text.slice(1, -1);
+  return +el.querySelectorAll('td.name .film-title-info .info')[0]?.text.slice(1, -1) || null;
 };
 
 export const getColorRating = (el: HTMLElement): CSFDColorRating => {
