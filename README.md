@@ -396,7 +396,7 @@ docker run -p 3000:3000 node-csfd-api
 
 - `/movie/535121`
 - `/search/quentin+tarantino`
-- `/creators/2120`
+- `/creator/2120`
 - `/user-ratings/912-bart`
 
 ## 🧑‍💻 Used by
