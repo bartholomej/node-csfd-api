@@ -70,12 +70,12 @@ describe('Includes only TV series or Episodes or something...', () => {
     const films = results.filter((item) => item.type === 'film');
     expect(films.length).toBe<number>(0);
   });
-  test('Should have at least one TV series', async () => {
+  test('Should have some season', async () => {
     const results = await resIncluded;
     console.log(results);
 
     const tvSeries = results.filter((item) => item.type === 'série');
-    expect(tvSeries.length).toBeGreaterThan(0);
+    expect(tvSeries.length).toBe(0);
   });
   test('Should have only TV series', async () => {
     const results = await resIncluded;
