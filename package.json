@@ -35,12 +35,12 @@
     "@babel/preset-typescript": "^7.27.1",
     "@eslint/eslintrc": "^3.3.1",
     "@eslint/js": "^9.28.0",
-    "@types/express": "^5.0.2",
-    "@types/node": "^22.15.29",
-    "@typescript-eslint/eslint-plugin": "^8.33.0",
-    "@typescript-eslint/parser": "^8.33.0",
-    "@vitest/coverage-istanbul": "^3.1.4",
-    "@vitest/ui": "3.1.4",
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.0.0",
+    "@typescript-eslint/eslint-plugin": "^8.34.0",
+    "@typescript-eslint/parser": "^8.34.0",
+    "@vitest/coverage-istanbul": "^3.2.3",
+    "@vitest/ui": "3.2.3",
     "eslint": "^9.28.0",
     "eslint-config-google": "^0.14.0",
     "eslint-config-prettier": "^10.1.5",
@@ -54,7 +54,7 @@
     "rimraf": "^6.0.1",
     "tsx": "^4.19.4",
     "typescript": "^5.8.3",
-    "vitest": "^3.1.4"
+    "vitest": "^3.2.3"
   },
   "repository": {
     "url": "git+https://github.com/bartholomej/node-csfd-api.git",
