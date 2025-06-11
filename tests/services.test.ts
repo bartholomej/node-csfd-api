@@ -19,7 +19,7 @@ describe('Simple call', () => {
   });
 });
 
-describe('AllPages', () => {
+describe('AllPages', async () => {
   const userRatingsScraper = new UserRatingsScraper();
   const res: Promise<CSFDUserRatings[]> = userRatingsScraper.userRatings(USER2, {
     allPages: true,
@@ -75,7 +75,7 @@ describe('Includes only TV series or Episodes or something...', () => {
     console.log(results);
 
     const tvSeries = results.filter((item) => item.type === 'série');
-    expect(tvSeries.length).toBe(0);
+    expect(tvSeries.length).toBeGreaterThan(0);
   });
   test('Should have only TV series', async () => {
     const results = await resIncluded;

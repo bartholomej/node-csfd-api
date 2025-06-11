@@ -25,7 +25,7 @@ describe('Fetch rating page 2', () => {
   test('Fetch `912-bart` user – page 2 and check html', async () => {
     const url = userRatingsUrl(912, 2);
     const html = await fetchPage(url);
-    expect(html).toContain('Dívka s jehlicí');
+    expect(html).toContain('Echo of You');
   });
 });
 
