@@ -64,7 +64,7 @@ export const getGroupedFilmsByDate = (el: HTMLElement | null): CSFDCinemaGrouped
     .filter((index) => index % 2 === 0)
     .map((index) => {
       const [date, films] = divs.slice(index, index + 2);
-      const dateText = date?.innerText.trim();
+      const dateText = date?.firstChild?.textContent?.trim() ?? "";
       return { date: dateText, films: getFilms('', films) };
     });
 

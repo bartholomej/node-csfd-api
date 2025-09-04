@@ -27,22 +27,22 @@ describe('Cinema info', () => {
 
   test('cinemaUrl 2', () => {
     const item = getCinemaUrl(contentNode[2]);
-    expect(item).toEqual<string>('');
+    expect(item).toEqual<string>('http://www.cinemacity.cz');
   });
 
   test('cinemaCoords', () => {
     const item = getCoords(contentNode[2]);
     expect(item).toEqual({
-      lat: 50.1000546,
-      lng: 14.4301766
+      lat: 50.0779486,
+      lng: 14.4605098
     });
   });
 
   test('parseCinema', () => {
-    const item = parseCinema(contentNode[2]);
+    const item = parseCinema(contentNode[10]);
     expect(item).toEqual({
       city: 'Praha',
-      name: 'Bio Oko'
+      name: 'Kino Aero'
     });
   });
 });
@@ -50,18 +50,13 @@ describe('Cinema info', () => {
 describe('Cinema films by date', () => {
   test('getGroupedFilmsByDate', () => {
     const item = getGroupedFilmsByDate(contentNode[2]);
-    expect(item[0]?.date).toEqual('sobota 13.01.2024');
-    expect(item[0]?.films[0].title).toEqual('Cesta do fantazie');
+    expect(item[0]?.date).toEqual('čtvrtek 04.09.2025');
+    expect(item[0]?.films[0].title).toEqual('13 dní, 13 nocí');
   });
 
-  test('getFilms', () => {
+  test('getSubtitles', () => {
     const filmNode = contentNode[0].querySelectorAll('.cinema-table tr');
-
-    console.log('aas', filmNode[0].querySelectorAll('.td-title span'));
-    const meta = filmNode[0].querySelectorAll('.td-title span')?.map((x) => x.text.trim());
-    expect(meta).toEqual({
-      city: 'Praha',
-      name: 'Bio Oko'
-    });
+    const meta = filmNode[0].querySelector('.td-title span')?.text.trim();
+    expect(meta).toEqual('T');
   });
 });
