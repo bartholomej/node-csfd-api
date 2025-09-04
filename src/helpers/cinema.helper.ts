@@ -29,17 +29,26 @@ export const getName = (el: HTMLElement | null): string => {
 };
 
 export const getCoords = (el: HTMLElement | null): { lat: number; lng: number } => {
-  const link = el
-    ?.querySelector('.box-header img[alt="Google Maps"]')
-    .closest('a')
-    .getAttribute('href');
-  const coords = link.split('q=')[1].split(',');
-  const [lat, lng] = coords;
-  return { lat: +lat, lng: +lng };
+
+  const linkMapsEl = el.querySelector('a[href*="q="]');
+  if (!linkMapsEl) return null;
+
+  const linkMaps = linkMapsEl.getAttribute('href');
+  const [_, latLng] = linkMaps.split('q=');
+
+  const coords = latLng.split(',');
+  if (coords.length !== 2) return null;
+
+  const lat = Number(coords[0]);
+  const lng = Number(coords[1]);
+  if (Number.isFinite(lat) && Number.isFinite(lng)) {
+    return { lat, lng };
+  }
+  return null;
 };
 
 export const getCinemaUrl = (el: HTMLElement | null): string => {
-  return el.querySelector('.box-header .cinema-logo a')?.attributes.href ?? '';
+  return el.querySelector('a[title="Přejít na webovou stránku kina"]')?.attributes.href ?? '';
 };
 
 export const parseCinema = (el: HTMLElement | null): { city: string; name: string } => {
