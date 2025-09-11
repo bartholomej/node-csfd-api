@@ -100,7 +100,21 @@ app.use((req, res) => {
 
 // --- Start server ---
 app.listen(port, () => {
-  console.log(`API is running on http://localhost:${port}`);
+  console.log(`
+                  _                  __    _               _ 
+                 | |                / _|  | |             (_)
+  _ __   ___   __| | ___    ___ ___| |_ __| |   __ _ _ __  _ 
+ | '_ \\ / _ \\ / _\` |/ _ \\  / __/ __|  _/ _\` |  / _\` | '_ \\| |
+ | | | | (_) | (_| |  __/ | (__\\__ \\ || (_| | | (_| | |_) | |
+ |_| |_|\\___/ \\__,_|\\___|  \\___|___/_| \\__,_|  \\__,_| .__/|_|
+                                                    | |      
+                                                    |_|      
+`);
+  console.log(`node-csfd-api@${packageJson.version}\n`);
+  console.log(`Docs: ${packageJson.homepage}`);
+  console.log(`Endpoints: /movie/:id, /creator/:id, /search/:query, /user-ratings/:id\n`);
+
+  console.log(`API is running on: http://localhost:${port}\n`);
   if (!API_KEY) {
     console.log('\x1b[31m%s\x1b[0m', '⚠️ Server is OPEN!\n- Your server will be open to the world and potentially everyone can use it without any restriction.\n- To enable some basic protection, set API_KEY environment variable with a value and provide the same value in request header: ' + API_KEY_NAME);
   } else {
