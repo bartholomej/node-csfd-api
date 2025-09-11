@@ -15,6 +15,13 @@ enum Errors {
   PAGE_NOT_FOUND = 'PAGE_NOT_FOUND'
 }
 
+enum Endpoint {
+  MOVIE = '/movie/:id',
+  CREATOR = '/creator/:id',
+  SEARCH = '/search/:query',
+  USER_RATINGS = '/user-ratings/:id'
+}
+
 const app = express();
 const port = process.env.PORT || 3000;
 
@@ -44,7 +51,7 @@ app.get('/', (_, res) => {
     name: packageJson.name,
     version: packageJson.version,
     docs: packageJson.homepage,
-    links: ['/movie/:id', '/creator/:id', '/search/:query', '/user-ratings/:id']
+    links: Object.values(Endpoint)
   });
 });
 
@@ -52,7 +59,7 @@ app.get(['/movie/', '/creator/', '/search/', '/user-ratings/'], (req, res) => {
   res.json({ error: Errors.ID_MISSING, message: `ID is missing. Provide ID like this: ${req.url}${req.url.endsWith('/') ? '' : '/'}1234` });
 });
 
-app.get('/movie/:id', async (req, res) => {
+app.get(Endpoint.MOVIE, async (req, res) => {
   try {
     const movie = await csfd.movie(+req.params.id);
     res.json(movie);
@@ -61,7 +68,7 @@ app.get('/movie/:id', async (req, res) => {
   }
 });
 
-app.get('/creator/:id', async (req, res) => {
+app.get(Endpoint.CREATOR, async (req, res) => {
   try {
     const result = await csfd.creator(+req.params.id);
     res.json(result);
@@ -70,7 +77,7 @@ app.get('/creator/:id', async (req, res) => {
   }
 });
 
-app.get('/search/:query', async (req, res) => {
+app.get(Endpoint.SEARCH, async (req, res) => {
   try {
     const result = await csfd.search(req.params.query);
     res.json(result);
@@ -79,7 +86,7 @@ app.get('/search/:query', async (req, res) => {
   }
 });
 
-app.get('/user-ratings/:id', async (req, res) => {
+app.get(Endpoint.USER_RATINGS, async (req, res) => {
   const { allPages, allPagesDelay, excludes, includesOnly } = req.query;
   try {
     const result = await csfd.userRatings(req.params.id, {
@@ -94,8 +101,8 @@ app.get('/user-ratings/:id', async (req, res) => {
   }
 });
 
-app.use((req, res) => {
-  res.status(404).json({ error: Errors.PAGE_NOT_FOUND, message: "The requested endpoint could not be found." });
+app.use((_, res) => {
+  res.status(404).json({ error: Errors.PAGE_NOT_FOUND, message: 'The requested endpoint could not be found.' });
 });
 
 // --- Start server ---
@@ -112,7 +119,7 @@ app.listen(port, () => {
 `);
   console.log(`node-csfd-api@${packageJson.version}\n`);
   console.log(`Docs: ${packageJson.homepage}`);
-  console.log(`Endpoints: /movie/:id, /creator/:id, /search/:query, /user-ratings/:id\n`);
+  console.log(`Endpoints: ${Object.values(Endpoint).join(', ')}\n`);
 
   console.log(`API is running on: http://localhost:${port}\n`);
   if (!API_KEY) {
