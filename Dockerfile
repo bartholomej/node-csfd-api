@@ -7,7 +7,7 @@ WORKDIR /usr/src/app
 COPY package.json yarn.lock ./
 
 # Install dependencies
-RUN yarn install
+RUN yarn install --frozen-lockfile --cache-folder /tmp/.yarn-cache && rm -rf /tmp/.yarn-cache
 
 # Copy the application code
 COPY . .
