@@ -60,14 +60,16 @@ enum Errors {
   CREATOR_FETCH_FAILED = 'CREATOR_FETCH_FAILED',
   SEARCH_FETCH_FAILED = 'SEARCH_FETCH_FAILED',
   USER_RATINGS_FETCH_FAILED = 'USER_RATINGS_FETCH_FAILED',
-  PAGE_NOT_FOUND = 'PAGE_NOT_FOUND'
+  CINEMAS_FETCH_FAILED = 'CINEMAS_FETCH_FAILED',
+  PAGE_NOT_FOUND = 'PAGE_NOT_FOUND',
 }
 
 enum Endpoint {
   MOVIE = '/movie/:id',
   CREATOR = '/creator/:id',
   SEARCH = '/search/:query',
-  USER_RATINGS = '/user-ratings/:id'
+  USER_RATINGS = '/user-ratings/:id',
+  CINEMAS = '/cinemas'
 }
 
 type ErrorLog = {
@@ -168,6 +170,19 @@ app.get(Endpoint.USER_RATINGS, async (req, res) => {
     logMessage('success', { error: null, message: `${Endpoint.USER_RATINGS}: ${req.params.id}` }, req);
   } catch (error) {
     const log: ErrorLog = { error: Errors.USER_RATINGS_FETCH_FAILED, message: 'Failed to fetch user-ratings data: ' + error };
+    logMessage('error', log, req);
+    res.status(500).json(log);
+  }
+});
+
+
+app.get(Endpoint.CINEMAS, async (req, res) => {
+  try {
+    const result = await csfd.cinema(1, 'today');
+    logMessage('success', { error: null, message: `${Endpoint.CINEMAS}` }, req);
+    res.json(result);
+  } catch (error) {
+    const log: ErrorLog = { error: Errors.CINEMAS_FETCH_FAILED, message: 'Failed to fetch cinemas data: ' + error }
     logMessage('error', log, req);
     res.status(500).json(log);
   }
