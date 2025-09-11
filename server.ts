@@ -1,8 +1,8 @@
+import 'dotenv/config';
 import express, { NextFunction, Request, Response } from 'express';
 import packageJson from './package.json';
 import { csfd } from './src';
 import { CSFDFilmTypes } from './src/interfaces/global';
-
 
 enum Errors {
   API_KEY_MISSING = 'API_KEY_MISSING',
