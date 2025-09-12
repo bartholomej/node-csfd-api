@@ -5,28 +5,43 @@ import packageJson from './package.json';
 import { csfd } from './src';
 import { CSFDFilmTypes } from './src/interfaces/global';
 
-type Severity = 'info' | 'warn' | 'error';
+type Severity = 'info' | 'warn' | 'error' | 'success';
 
 function logMessage(severity: Severity, log: ErrorLog, req?: Request) {
   const colors = {
-    info: '\x1b[36m',   // cyan
-    warn: '\x1b[33m',   // yellow
-    error: '\x1b[31m',  // red
+    info: '\x1b[36m',    // cyan
+    warn: '\x1b[33m',    // yellow
+    error: '\x1b[31m',   // red
+    success: '\x1b[32m', // green
     reset: '\x1b[0m'
   };
 
   const symbols = {
     info: 'ℹ️',
     warn: '⚠️',
-    error: '❌'
+    error: '❌',
+    success: '✅'
   };
 
   const time = new Date().toISOString();
   const reqInfo = req
-    ? `| IP: ${req.ip} | ${req.method}: ${req.originalUrl}`
+    ? `${req.method}: ${req.originalUrl}`
     : '';
-  const msg = `${colors[severity]}[${severity.toUpperCase()}]${colors.reset} ${time} ${reqInfo} ${symbols[severity]} ${log.error}: ${log.message}`;
-  if (severity === 'error') {
+
+  const paddedSeverity = {
+    info: 'INFO   ',
+    warn: 'WARN   ',
+    error: 'ERROR  ',
+    success: 'SUCCESS'
+  };
+
+  const msg = `${colors[severity]}[${paddedSeverity[severity]}]${colors.reset} ${time} | IP: ${req?.ip} ${symbols[severity]} ${log.error ? log.error + ':' : ''} ${log.message} 🔗 ${reqInfo}`;
+  const logSuccessEnabled = process.env.VERBOSE === 'true';
+  if (severity === 'success') {
+    if (logSuccessEnabled) {
+      console.log(msg);
+    }
+  } else if (severity === 'error') {
     console.error(msg);
   } else if (severity === 'warn') {
     console.warn(msg);
@@ -54,7 +69,7 @@ enum Endpoint {
 }
 
 type ErrorLog = {
-  error: keyof typeof Errors;
+  error: keyof typeof Errors | null;
   message: string;
 }
 
@@ -105,6 +120,7 @@ app.get(Endpoint.MOVIE, async (req, res) => {
   try {
     const movie = await csfd.movie(+req.params.id);
     res.json(movie);
+    logMessage('success', { error: null, message: `${Endpoint.MOVIE}: ${req.params.id}` }, req);
   } catch (error) {
     const log: ErrorLog = { error: Errors.MOVIE_FETCH_FAILED, message: 'Failed to fetch movie data: ' + error };
     logMessage('error', log, req);
@@ -116,6 +132,7 @@ app.get(Endpoint.CREATOR, async (req, res) => {
   try {
     const result = await csfd.creator(+req.params.id);
     res.json(result);
+    logMessage('success', { error: null, message: `${Endpoint.CREATOR}: ${req.params.id}` }, req);
   } catch (error) {
     const log: ErrorLog = { error: Errors.CREATOR_FETCH_FAILED, message: 'Failed to fetch creator data: ' + error };
     logMessage('error', log, req);
@@ -127,6 +144,7 @@ app.get(Endpoint.SEARCH, async (req, res) => {
   try {
     const result = await csfd.search(req.params.query);
     res.json(result);
+    logMessage('success', { error: null, message: `${Endpoint.SEARCH}: ${req.params.query}` }, req);
   } catch (error) {
     const log: ErrorLog = { error: Errors.SEARCH_FETCH_FAILED, message: 'Failed to fetch search data: ' + error };
     logMessage('error', log, req);
@@ -144,6 +162,7 @@ app.get(Endpoint.USER_RATINGS, async (req, res) => {
       includesOnly: includesOnly ? (includesOnly as string).split(',') as CSFDFilmTypes[] : undefined
     });
     res.json(result);
+    logMessage('success', { error: null, message: `${Endpoint.USER_RATINGS}: ${req.params.id}` }, req);
   } catch (error) {
     const log: ErrorLog = { error: Errors.USER_RATINGS_FETCH_FAILED, message: 'Failed to fetch user-ratings data: ' + error };
     logMessage('error', log, req);
