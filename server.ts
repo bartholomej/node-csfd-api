@@ -1,8 +1,39 @@
+
 import 'dotenv/config';
 import express, { NextFunction, Request, Response } from 'express';
 import packageJson from './package.json';
 import { csfd } from './src';
 import { CSFDFilmTypes } from './src/interfaces/global';
+
+type Severity = 'info' | 'warn' | 'error';
+
+function logMessage(severity: Severity, log: ErrorLog, req?: Request) {
+  const colors = {
+    info: '\x1b[36m',   // cyan
+    warn: '\x1b[33m',   // yellow
+    error: '\x1b[31m',  // red
+    reset: '\x1b[0m'
+  };
+
+  const symbols = {
+    info: 'ℹ️',
+    warn: '⚠️',
+    error: '❌'
+  };
+
+  const time = new Date().toISOString();
+  const reqInfo = req
+    ? `| IP: ${req.ip} | ${req.method}: ${req.originalUrl}`
+    : '';
+  const msg = `${colors[severity]}[${severity.toUpperCase()}]${colors.reset} ${time} ${reqInfo} ${symbols[severity]} ${log.error}: ${log.message}`;
+  if (severity === 'error') {
+    console.error(msg);
+  } else if (severity === 'warn') {
+    console.warn(msg);
+  } else {
+    console.log(msg);
+  }
+}
 
 enum Errors {
   API_KEY_MISSING = 'API_KEY_MISSING',
@@ -22,6 +53,11 @@ enum Endpoint {
   USER_RATINGS = '/user-ratings/:id'
 }
 
+type ErrorLog = {
+  error: keyof typeof Errors;
+  message: string;
+}
+
 const app = express();
 const port = process.env.PORT || 3000;
 
@@ -34,11 +70,15 @@ app.use((req: Request, res: Response, next: NextFunction): void => {
   if (API_KEY) {
     const apiKey = req.headers[API_KEY_NAME] as string | undefined;
     if (!apiKey) {
-      res.status(401).json({ error: Errors.API_KEY_MISSING, message: `Missing API key in request header: ${API_KEY_NAME}` });
+      const log: ErrorLog = { error: Errors.API_KEY_MISSING, message: `Missing API key in request header: ${API_KEY_NAME}` };
+      logMessage('error', log, req);
+      res.status(401).json(log);
       return;
     }
     if (apiKey !== API_KEY) {
-      res.status(401).json({ error: Errors.API_KEY_INVALID, message: `Invalid API key in request header: ${API_KEY_NAME}` });
+      const log: ErrorLog = { error: Errors.API_KEY_INVALID, message: `Invalid API key in request header: ${API_KEY_NAME}` };
+      logMessage('error', log, req);
+      res.status(401).json(log);
       return;
     }
   }
@@ -56,7 +96,9 @@ app.get('/', (_, res) => {
 });
 
 app.get(['/movie/', '/creator/', '/search/', '/user-ratings/'], (req, res) => {
-  res.json({ error: Errors.ID_MISSING, message: `ID is missing. Provide ID like this: ${req.url}${req.url.endsWith('/') ? '' : '/'}1234` });
+  const log: ErrorLog = { error: Errors.ID_MISSING, message: `ID is missing. Provide ID like this: ${req.url}${req.url.endsWith('/') ? '' : '/'}1234` }
+  logMessage('warn', log, req);
+  res.status(404).json(log);
 });
 
 app.get(Endpoint.MOVIE, async (req, res) => {
@@ -64,7 +106,9 @@ app.get(Endpoint.MOVIE, async (req, res) => {
     const movie = await csfd.movie(+req.params.id);
     res.json(movie);
   } catch (error) {
-    res.status(500).json({ error: Errors.MOVIE_FETCH_FAILED, message: 'Failed to fetch movie data: ' + error });
+    const log: ErrorLog = { error: Errors.MOVIE_FETCH_FAILED, message: 'Failed to fetch movie data: ' + error };
+    logMessage('error', log, req);
+    res.status(500).json(log);
   }
 });
 
@@ -73,7 +117,9 @@ app.get(Endpoint.CREATOR, async (req, res) => {
     const result = await csfd.creator(+req.params.id);
     res.json(result);
   } catch (error) {
-    res.status(500).json({ error: Errors.CREATOR_FETCH_FAILED, message: 'Failed to fetch creator data: ' + error });
+    const log: ErrorLog = { error: Errors.CREATOR_FETCH_FAILED, message: 'Failed to fetch creator data: ' + error };
+    logMessage('error', log, req);
+    res.status(500).json(log);
   }
 });
 
@@ -82,7 +128,9 @@ app.get(Endpoint.SEARCH, async (req, res) => {
     const result = await csfd.search(req.params.query);
     res.json(result);
   } catch (error) {
-    res.status(500).json({ error: Errors.SEARCH_FETCH_FAILED, message: 'Failed to fetch search data: ' + error });
+    const log: ErrorLog = { error: Errors.SEARCH_FETCH_FAILED, message: 'Failed to fetch search data: ' + error };
+    logMessage('error', log, req);
+    res.status(500).json(log);
   }
 });
 
@@ -97,12 +145,16 @@ app.get(Endpoint.USER_RATINGS, async (req, res) => {
     });
     res.json(result);
   } catch (error) {
-    res.status(500).json({ error: Errors.USER_RATINGS_FETCH_FAILED, message: 'Failed to fetch user-ratings data: ' + error });
+    const log: ErrorLog = { error: Errors.USER_RATINGS_FETCH_FAILED, message: 'Failed to fetch user-ratings data: ' + error };
+    logMessage('error', log, req);
+    res.status(500).json(log);
   }
 });
 
-app.use((_, res) => {
-  res.status(404).json({ error: Errors.PAGE_NOT_FOUND, message: 'The requested endpoint could not be found.' });
+app.use((req, res) => {
+  const log: ErrorLog = { error: Errors.PAGE_NOT_FOUND, message: 'The requested endpoint could not be found.' };
+  logMessage('warn', log, req);
+  res.status(404).json(log);
 });
 
 // --- Start server ---
