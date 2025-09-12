@@ -27,6 +27,7 @@ function logMessage(severity: Severity, log: ErrorLog, req?: Request) {
   const reqInfo = req
     ? `${req.method}: ${req.originalUrl}`
     : '';
+  const reqIp = req ? req.headers['x-forwarded-for'] || req.socket.remoteAddress || req.ip || req.ips : '';
 
   const paddedSeverity = {
     info: 'INFO   ',
@@ -35,8 +36,9 @@ function logMessage(severity: Severity, log: ErrorLog, req?: Request) {
     success: 'SUCCESS'
   };
 
-  const msg = `${colors[severity]}[${paddedSeverity[severity]}]${colors.reset} ${time} | IP: ${req?.ip} ${symbols[severity]} ${log.error ? log.error + ':' : ''} ${log.message} 🔗 ${reqInfo}`;
+  const msg = `${colors[severity]}[${paddedSeverity[severity]}]${colors.reset} ${time} | IP: ${reqIp} ${symbols[severity]} ${log.error ? log.error + ':' : ''} ${log.message} 🔗 ${reqInfo}`;
   const logSuccessEnabled = process.env.VERBOSE === 'true';
+
   if (severity === 'success') {
     if (logSuccessEnabled) {
       console.log(msg);
@@ -102,6 +104,7 @@ app.use((req: Request, res: Response, next: NextFunction): void => {
 
 // --- Endpoints ---
 app.get('/', (_, res) => {
+  logMessage('info', { error: null, message: '/' });
   res.json({
     name: packageJson.name,
     version: packageJson.version,
