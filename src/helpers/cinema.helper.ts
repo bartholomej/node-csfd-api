@@ -24,10 +24,6 @@ export const getId = (url: string): number => {
   return null;
 };
 
-export const getName = (el: HTMLElement | null): string => {
-  return el.querySelector('h1').innerText.trim();
-};
-
 export const getCoords = (el: HTMLElement | null): { lat: number; lng: number } => {
 
   const linkMapsEl = el.querySelector('a[href*="q="]');
