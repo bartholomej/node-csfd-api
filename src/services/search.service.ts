@@ -37,7 +37,7 @@ export class SearchScraper {
     const users: CSFDSearchUser[] = [];
     const tvSeries: CSFDSearchMovie[] = [];
 
-    moviesNode.map((m) => {
+    moviesNode.forEach((m) => {
       const url = getUrl(m);
 
       const movie: CSFDSearchMovie = {
@@ -57,7 +57,7 @@ export class SearchScraper {
       movies.push(movie);
     });
 
-    usersNode.map((m) => {
+    usersNode.forEach((m) => {
       const url = getUserUrl(m);
 
       const user: CSFDSearchUser = {
@@ -70,7 +70,7 @@ export class SearchScraper {
       users.push(user);
     });
 
-    tvSeriesNode.map((m) => {
+    tvSeriesNode.forEach((m) => {
       const url = getUrl(m);
 
       const user: CSFDSearchMovie = {

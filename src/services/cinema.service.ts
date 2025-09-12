@@ -31,11 +31,12 @@ export class CinemaScraper {
   private buildCinemas(contentNode: HTMLElement[]) {
     const cinemas: CSFDCinema[] = [];
 
-    contentNode.map((x) => {
+    contentNode.forEach((x) => {
+      const cinemaInfo = parseCinema(x);
       const cinema: CSFDCinema = {
         id: getCinemaId(x),
-        name: parseCinema(x)?.name,
-        city: parseCinema(x)?.city,
+        name: cinemaInfo?.name,
+        city: cinemaInfo?.city,
         url: getCinemaUrl(x),
         coords: getCoords(x),
         screenings: getGroupedFilmsByDate(x)

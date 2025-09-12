@@ -17,7 +17,7 @@ export const getCinemaId = (el: HTMLElement | null): number => {
   return +id;
 };
 
-export const getId = (url: string): number => {
+export const getId = (url: string): number | null => {
   if (url) {
     return parseIdFromUrl(url);
   }
