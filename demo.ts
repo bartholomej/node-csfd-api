@@ -5,6 +5,7 @@ import { csfd } from './src';
 csfd.movie(10135).then((movie) => console.log(movie));
 
 // csfd.search('matrix').then((search) => console.log(search));
+// csfd.cinema(1, 'today').then((cinema) => console.log(cinema));
 
 // Parse creator
 csfd.creator(2120).then((creator) => console.log(creator));
