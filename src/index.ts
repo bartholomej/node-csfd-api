@@ -16,7 +16,7 @@ export class Csfd {
     private creatorService: CreatorScraper,
     private searchService: SearchScraper,
     private cinemaService: CinemaScraper
-  ) {}
+  ) { }
 
   public async userRatings(
     user: string | number,
@@ -37,7 +37,7 @@ export class Csfd {
     return this.searchService.search(text);
   }
 
-  public async cinema(district: number, period: CSFDCinemaPeriod): Promise<CSFDCinema[]> {
+  public async cinema(district: number | string, period: CSFDCinemaPeriod): Promise<CSFDCinema[]> {
     return this.cinemaService.cinemas(+district, period);
   }
 }

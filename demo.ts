@@ -2,13 +2,13 @@
 import { csfd } from './src';
 
 // Parse movie
-csfd.cinema(1, 'today').then((cinema) => console.log(cinema));
-// csfd.movie(10135).then((movie) => console.log(movie));
+csfd.movie(10135).then((movie) => console.log(movie));
 
 // csfd.search('matrix').then((search) => console.log(search));
+// csfd.cinema(1, 'today').then((cinema) => console.log(cinema));
 
 // Parse creator
-// csfd.creator(2120).then((creator) => console.log(creator));
+csfd.creator(2120).then((creator) => console.log(creator));
 
 /**
  * USER RATINGS

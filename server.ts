@@ -182,7 +182,7 @@ app.get(Endpoint.CINEMAS, async (req, res) => {
     logMessage('success', { error: null, message: `${Endpoint.CINEMAS}` }, req);
     res.json(result);
   } catch (error) {
-    const log: ErrorLog = { error: Errors.CINEMAS_FETCH_FAILED, message: 'Failed to fetch cinemas data: ' + error }
+    const log: ErrorLog = { error: Errors.CINEMAS_FETCH_FAILED, message: 'Failed to fetch cinemas data: ' + error };
     logMessage('error', log, req);
     res.status(500).json(log);
   }

@@ -24,8 +24,9 @@ export const getId = (url: string): number | null => {
   return null;
 };
 
-export const getCoords = (el: HTMLElement | null): { lat: number; lng: number } => {
+export const getCoords = (el: HTMLElement | null): { lat: number; lng: number } | null => {
 
+  if (!el) return null;
   const linkMapsEl = el.querySelector('a[href*="q="]');
   if (!linkMapsEl) return null;
 
@@ -44,6 +45,7 @@ export const getCoords = (el: HTMLElement | null): { lat: number; lng: number } 
 };
 
 export const getCinemaUrl = (el: HTMLElement | null): string => {
+  if (!el) return '';
   return el.querySelector('a[title="Přejít na webovou stránku kina"]')?.attributes.href ?? '';
 };
 
@@ -60,7 +62,7 @@ export const getGroupedFilmsByDate = (el: HTMLElement | null): CSFDCinemaGrouped
     .filter((index) => index % 2 === 0)
     .map((index) => {
       const [date, films] = divs.slice(index, index + 2);
-      const dateText = date?.firstChild?.textContent?.trim() ?? "";
+      const dateText = date?.firstChild?.textContent?.trim() ?? null;
       return { date: dateText, films: getFilms('', films) };
     });
 
