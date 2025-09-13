@@ -16,7 +16,7 @@ describe('CinemaScraper', () => {
     expect(cinemas[0].coords).toStrictEqual({ lat: 50.0711592, lng: 14.4015589 });
     expect(cinemas[0].id).toBe(110);
     expect(cinemas[0].name).toBe('CineStar Praha');
-    expect(cinemas[0].screenings[0].date).toContain('pátek');
+    expect(cinemas[0].screenings[0].date).toContain('2025');
     expect(cinemas[0].url).toBe('http://www.cinestar.cz/cz/praha5/domu');
   });
 

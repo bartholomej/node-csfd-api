@@ -1,12 +1,12 @@
 import { HTMLElement, parse } from 'node-html-parser';
 import { describe, expect, test } from 'vitest';
 import {
+  getCinemaCoords,
+  getCinemaFilms,
   getCinemaId,
   getCinemaUrl,
-  getCoords,
-  getFilms,
+  getCinemaUrlId,
   getGroupedFilmsByDate,
-  getId,
   parseCinema,
   parseMeta
 } from './../src/helpers/cinema.helper';
@@ -24,11 +24,11 @@ describe('Cinema info', () => {
 
   test('getId returns correct id from url', () => {
     // /film/456 should return 456
-    expect(getId('/film/456')).toBe(456);
+    expect(getCinemaUrlId('/film/456')).toBe(456);
   });
 
   test('getId returns null for empty string', () => {
-    expect(getId('')).toBeNull();
+    expect(getCinemaUrlId('')).toBeNull();
   });
 
   test('cinemaUrl 0', () => {
@@ -42,7 +42,7 @@ describe('Cinema info', () => {
   });
 
   test('cinemaCoords', () => {
-    const item = getCoords(contentNode[2]);
+    const item = getCinemaCoords(contentNode[2]);
     expect(item).toEqual({
       lat: 50.0779486,
       lng: 14.4605098
@@ -52,7 +52,7 @@ describe('Cinema info', () => {
   test('getCoords returns null if no linkMapsEl', () => {
     // create html element without map link to test the null return
     const el = new HTMLElement('section', {}, '');
-    expect(getCoords(el)).toBe(null);
+    expect(getCinemaCoords(el)).toBe(null);
   });
 
   test('parseCinema', () => {
@@ -73,7 +73,7 @@ describe('Cinema films by date', () => {
 
   test('getFilms returns correct film data', () => {
     const table = contentNode[2].querySelector('.cinema-table');
-    const films = getFilms('', table);
+    const films = getCinemaFilms('', table);
     expect(Array.isArray(films)).toBe(true);
     if (films.length > 0) {
       expect(films[0]).toHaveProperty('id');
