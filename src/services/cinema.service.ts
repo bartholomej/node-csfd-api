@@ -3,9 +3,9 @@ import { fetchPage } from '../fetchers';
 import { CSFDCinema, CSFDCinemaPeriod } from '../interfaces/cinema.interface';
 import { cinemasUrl } from '../vars';
 import {
+  getCinemaCoords,
   getCinemaId,
   getCinemaUrl,
-  getCoords,
   getGroupedFilmsByDate,
   parseCinema
 } from './../helpers/cinema.helper';
@@ -38,7 +38,7 @@ export class CinemaScraper {
         name: cinemaInfo?.name,
         city: cinemaInfo?.city,
         url: getCinemaUrl(x),
-        coords: getCoords(x),
+        coords: getCinemaCoords(x),
         screenings: getGroupedFilmsByDate(x)
       };
       cinemas.push(cinema);
