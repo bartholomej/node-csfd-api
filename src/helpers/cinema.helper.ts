@@ -8,7 +8,7 @@ import {
 } from './../interfaces/cinema.interface';
 import { parseColor, parseIdFromUrl } from './global.helper';
 
-export const getColorRating = (el: HTMLElement): CSFDColorRating => {
+export const getCinemaColorRating = (el: HTMLElement): CSFDColorRating => {
   return parseColor(el?.classNames.split(' ').pop() as Colors);
 };
 
@@ -17,14 +17,14 @@ export const getCinemaId = (el: HTMLElement | null): number => {
   return +id;
 };
 
-export const getId = (url: string): number | null => {
+export const getCinemaUrlId = (url: string): number | null => {
   if (url) {
     return parseIdFromUrl(url);
   }
   return null;
 };
 
-export const getCoords = (el: HTMLElement | null): { lat: number; lng: number } | null => {
+export const getCinemaCoords = (el: HTMLElement | null): { lat: number; lng: number } | null => {
 
   if (!el) return null;
   const linkMapsEl = el.querySelector('a[href*="q="]');
@@ -63,20 +63,20 @@ export const getGroupedFilmsByDate = (el: HTMLElement | null): CSFDCinemaGrouped
     .map((index) => {
       const [date, films] = divs.slice(index, index + 2);
       const dateText = date?.firstChild?.textContent?.trim() ?? null;
-      return { date: dateText, films: getFilms('', films) };
+      return { date: dateText, films: getCinemaFilms('', films) };
     });
 
   return getDatesAndFilms;
 };
 
-export const getFilms = (date: string, el: HTMLElement | null): CSFDCinemaMovie[] => {
+export const getCinemaFilms = (date: string, el: HTMLElement | null): CSFDCinemaMovie[] => {
   const filmNodes = el.querySelectorAll('.cinema-table tr');
 
   const films = filmNodes.map((filmNode) => {
     const url = filmNode.querySelector('td.name h3 a')?.attributes.href;
-    const id = getId(url);
+    const id = getCinemaUrlId(url);
     const title = filmNode.querySelector('.name h3')?.text.trim();
-    const colorRating = getColorRating(filmNode.querySelector('.name .icon'));
+    const colorRating = getCinemaColorRating(filmNode.querySelector('.name .icon'));
     const showTimes = filmNode.querySelectorAll('.td-time')?.map((x) => x.textContent.trim());
     const meta = filmNode.querySelectorAll('.td-title span')?.map((x) => x.text.trim());
 
