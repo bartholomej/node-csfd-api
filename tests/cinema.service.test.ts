@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'vitest';
-import { CSFDCinema } from '../src/interfaces/cinema.interface';
+import { CSFDCinema } from '../src/dto/cinema.interface';
 import { CinemaScraper } from '../src/services/cinema.service';
 
 const DISTRICT = 1;

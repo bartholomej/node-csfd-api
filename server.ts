@@ -3,7 +3,7 @@ import 'dotenv/config';
 import express, { NextFunction, Request, Response } from 'express';
 import packageJson from './package.json';
 import { csfd } from './src';
-import { CSFDFilmTypes } from './src/interfaces/global';
+import { CSFDFilmTypes } from './src/dto/global';
 
 type Severity = 'info' | 'warn' | 'error' | 'success';
 

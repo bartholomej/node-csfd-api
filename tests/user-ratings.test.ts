@@ -1,5 +1,6 @@
 import { HTMLElement, parse } from 'node-html-parser';
 import { describe, expect, test } from 'vitest';
+import { CSFDColorRating, CSFDFilmTypes, CSFDStars } from '../src/dto/global';
 import {
   getUserRating,
   getUserRatingColorRating,
@@ -10,7 +11,6 @@ import {
   getUserRatingUrl,
   getUserRatingYear
 } from '../src/helpers/user-ratings.helper';
-import { CSFDColorRating, CSFDFilmTypes, CSFDStars } from '../src/interfaces/global';
 import { userRatingsMock } from './mocks/userRatings.html';
 
 const items = parse(userRatingsMock);

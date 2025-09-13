@@ -1,4 +1,5 @@
 import { HTMLElement, parse } from 'node-html-parser';
+import { CSFDSearch, CSFDSearchMovie, CSFDSearchUser } from '../dto/search';
 import { fetchPage } from '../fetchers';
 import { parseIdFromUrl } from '../helpers/global.helper';
 import { getAvatar, getUser, getUserRealName, getUserUrl } from '../helpers/search-user.helper';
@@ -12,7 +13,6 @@ import {
   getSearchYear,
   parseSearchPeople
 } from '../helpers/search.helper';
-import { CSFDSearch, CSFDSearchMovie, CSFDSearchUser } from '../interfaces/search.interface';
 import { searchUrl } from '../vars';
 
 export class SearchScraper {

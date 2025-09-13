@@ -1,5 +1,6 @@
 import { parse } from 'node-html-parser';
 import { describe, expect, test } from 'vitest';
+import { CSFDCreatorScreening } from '../src/dto/creator';
 import {
   getCreatorBio,
   getCreatorBirthdayInfo,
@@ -7,7 +8,6 @@ import {
   getCreatorName,
   getCreatorPhoto
 } from '../src/helpers/creator.helper';
-import { CSFDCreatorScreening } from '../src/interfaces/creator.interface';
 import { actorMock } from './mocks/creator-actor.html';
 import { composerMock } from './mocks/creator-composer-empty.html';
 import { directorMock } from './mocks/creator-director.html';

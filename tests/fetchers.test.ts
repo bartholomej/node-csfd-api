@@ -1,8 +1,8 @@
 import { describe, expect, test } from 'vitest';
 import { csfd } from '../src';
+import { CSFDCreatorScreening } from '../src/dto/creator';
+import { CSFDColorRating, CSFDFilmTypes } from '../src/dto/global';
 import { fetchPage } from '../src/fetchers';
-import { CSFDCreatorScreening } from '../src/interfaces/creator.interface';
-import { CSFDColorRating, CSFDFilmTypes } from '../src/interfaces/global';
 import { movieUrl, userRatingsUrl } from '../src/vars';
 const badId = 999999999999999;
 

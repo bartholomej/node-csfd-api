@@ -1,5 +1,13 @@
 import { HTMLElement, parse } from 'node-html-parser';
 import { describe, expect, test } from 'vitest';
+import { CSFDColorRating } from '../src/dto/global';
+import {
+  CSFDMovieCreator,
+  CSFDMovieListItem,
+  CSFDPremiere,
+  CSFDTitlesOther,
+  CSFDVod
+} from '../src/dto/movie';
 import { getColor } from '../src/helpers/global.helper';
 import {
   getMovieBoxMovies,
@@ -22,14 +30,6 @@ import {
   getMovieVods,
   getMovieYear
 } from '../src/helpers/movie.helper';
-import { CSFDColorRating } from '../src/interfaces/global';
-import {
-  CSFDMovieCreator,
-  CSFDMovieListItem,
-  CSFDPremiere,
-  CSFDTitlesOther,
-  CSFDVod
-} from '../src/interfaces/movie.interface';
 import { movieMock } from './mocks/movie1.html';
 import { movieMockBlank } from './mocks/movie2.html';
 import { movieMockRich } from './mocks/movie3.html';
