@@ -1,11 +1,11 @@
 import { parse } from 'node-html-parser';
 import { describe, expect, test } from 'vitest';
 import {
-  getBio,
-  getBirthdayInfo,
-  getFilms,
-  getName,
-  getPhoto
+  getCreatorBio,
+  getCreatorBirthdayInfo,
+  getCreatorFilms,
+  getCreatorName,
+  getCreatorPhoto
 } from '../src/helpers/creator.helper';
 import { CSFDCreatorScreening } from '../src/interfaces/creator.interface';
 import { actorMock } from './mocks/creator-actor.html';
@@ -26,19 +26,19 @@ const filmsNodeComposer = htmlComposer.querySelector('.creator-filmography');
 
 describe('Creator info', () => {
   test('Name', () => {
-    const creator = getName(asideNode);
+    const creator = getCreatorName(asideNode);
     expect(creator).toEqual<string>('Quentin Tarantino');
   });
 
   test('Bio', () => {
-    const creator = getBio(asideNode);
+    const creator = getCreatorBio(asideNode);
     expect(creator).toEqual<string>(
       'Narodil se teprve šestnáctileté Connii McHugh, která mu dala křestní jméno podle své oblíbené postavy Quinta ze seriálu Gunsmoke. Jeho biologickým otcem byl jistý Tony Tarantino, který rodinu opustil když byl Quentin ještě malinký a nikdy o syna nejevil zájem (přesněji řečeno jen do doby, než se potomek stal slavným – pak se na jeho úspěchu pokoušel parazitovat). Jeho náhradním tatínkem se stal hudebník s československými kořeny, který si Connii vzal a Quentina…'
     );
   });
 
   test('Photo', () => {
-    const creator = getPhoto(asideNode);
+    const creator = getCreatorPhoto(asideNode);
     expect(creator).toEqual<string>(
       'https://image.pmgstatic.com/cache/resized/w100h132crop/files/images/creator/photos/164/502/164502788_119691.jpg'
     );
@@ -47,34 +47,34 @@ describe('Creator info', () => {
 
 describe('Creator birthday info', () => {
   test('Birthday', () => {
-    const creator = getBirthdayInfo(asideNode)?.birthday;
+    const creator = getCreatorBirthdayInfo(asideNode)?.birthday;
     expect(creator).toEqual<string>('27.03.1963');
   });
 
   test('Birthplace', () => {
-    const creator = getBirthdayInfo(asideNode)?.birthPlace;
+    const creator = getCreatorBirthdayInfo(asideNode)?.birthPlace;
     expect(creator).toEqual<string>('Knoxville, Tennessee, USA');
   });
 
   test('Age', () => {
-    const creator = getBirthdayInfo(asideNode)?.age;
+    const creator = getCreatorBirthdayInfo(asideNode)?.age;
     expect(creator).toEqual<number>(62);
   });
 });
 
 describe("Creator's films", () => {
   test('First film from first section', () => {
-    const films = getFilms(filmsNode) as CSFDCreatorScreening[];
+    const films = getCreatorFilms(filmsNode) as CSFDCreatorScreening[];
     expect(films[0].title).toEqual<string>('Tenkrát v Hollywoodu');
   });
 
   test('Last film from first section', () => {
-    const films = getFilms(filmsNode) as CSFDCreatorScreening[];
+    const films = getCreatorFilms(filmsNode) as CSFDCreatorScreening[];
     expect(films[films.length - 1].id).toEqual<number>(1051715);
   });
 
   test('Year second movie', () => {
-    const films = getFilms(filmsNode) as CSFDCreatorScreening[];
+    const films = getCreatorFilms(filmsNode) as CSFDCreatorScreening[];
     expect(films[1].year).toEqual<number>(2015);
   });
 });
@@ -83,19 +83,19 @@ describe("Creator's films", () => {
 
 describe('Actor info', () => {
   test('Name', () => {
-    const creator = getName(asideNodeActor);
+    const creator = getCreatorName(asideNodeActor);
     expect(creator).toEqual<string>('Mads Mikkelsen');
   });
 
   test('Bio', () => {
-    const creator = getBio(asideNodeActor);
+    const creator = getCreatorBio(asideNodeActor);
     expect(creator).toEqual<string>(
       'Dánský herec, celým jménem Mads Dittmann Mikkelsen, se narodil v roce 1965 v kodaňské čtvrti Østerbro. Dříve než se vrhl na hereckou dráhu, pracoval 8 let jako profesionální tanečník. Herecké vzdělání získal Mikkelsen na herecké škole při divadle v Århusu. Školu zakončil v roce 1996. Co se týká soukromého života je Mads Mikkelsen, který za svůj nejoblíbenější film považuje Taxikáře od Martina Scorseseho, od roku 1987 ženatý s dánskou choreografkou Hanne Jacobsen.…'
     );
   });
 
   test('Photo', () => {
-    const creator = getPhoto(asideNodeActor);
+    const creator = getCreatorPhoto(asideNodeActor);
     expect(creator).toEqual<string>(
       'https://image.pmgstatic.com/cache/resized/w100h132crop/files/images/creator/photos/166/233/166233273_ee93ba.jpg'
     );
@@ -104,34 +104,34 @@ describe('Actor info', () => {
 
 describe('Actor birthday info', () => {
   test('Birthday', () => {
-    const creator = getBirthdayInfo(asideNodeActor)?.birthday;
+    const creator = getCreatorBirthdayInfo(asideNodeActor)?.birthday;
     expect(creator).toEqual<string>('22.11.1965');
   });
 
   test('Birthplace', () => {
-    const creator = getBirthdayInfo(asideNodeActor)?.birthPlace;
+    const creator = getCreatorBirthdayInfo(asideNodeActor)?.birthPlace;
     expect(creator).toEqual<string>('Østerbro, København, Dánsko');
   });
 
   test('Age', () => {
-    const creator = getBirthdayInfo(asideNodeActor)?.age;
+    const creator = getCreatorBirthdayInfo(asideNodeActor)?.age;
     expect(creator).toEqual<number>(59);
   });
 });
 
 describe("Creator's films", () => {
   test('First film from first section', () => {
-    const films = getFilms(filmsNodeActor) as CSFDCreatorScreening[];
+    const films = getCreatorFilms(filmsNodeActor) as CSFDCreatorScreening[];
     expect(films[0].title).toEqual<string>('The Black Kaiser');
   });
 
   test('Last film from first section', () => {
-    const films = getFilms(filmsNodeActor) as CSFDCreatorScreening[];
+    const films = getCreatorFilms(filmsNodeActor) as CSFDCreatorScreening[];
     expect(films[films.length - 1].id).toEqual<number>(88874);
   });
 
   test('Year second movie', () => {
-    const films = getFilms(filmsNodeActor) as CSFDCreatorScreening[];
+    const films = getCreatorFilms(filmsNodeActor) as CSFDCreatorScreening[];
     expect(films[1].year).toEqual<number>(2025);
   });
 });
@@ -140,17 +140,17 @@ describe("Creator's films", () => {
 
 describe('Composer info', () => {
   test('Name', () => {
-    const creator = getName(asideNodeComposer);
+    const creator = getCreatorName(asideNodeComposer);
     expect(creator).toEqual<string>('Sven Mikkelsen');
   });
 
   test('Bio', () => {
-    const creator = getBio(asideNodeComposer);
+    const creator = getCreatorBio(asideNodeComposer);
     expect(creator).toEqual<string>('Tento tvůrce zatím nemá přidanou biografii.');
   });
 
   test('Photo', () => {
-    const creator = getPhoto(asideNodeComposer);
+    const creator = getCreatorPhoto(asideNodeComposer);
     expect(creator).toEqual<string>(
       'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'
     );
@@ -159,24 +159,24 @@ describe('Composer info', () => {
 
 describe('Composer birthday info', () => {
   test('Birthday', () => {
-    const creator = getBirthdayInfo(asideNodeComposer)?.birthday;
+    const creator = getCreatorBirthdayInfo(asideNodeComposer)?.birthday;
     expect(creator).toEqual<string>('');
   });
 
   test('Birthplace', () => {
-    const creator = getBirthdayInfo(asideNodeComposer)?.birthPlace;
+    const creator = getCreatorBirthdayInfo(asideNodeComposer)?.birthPlace;
     expect(creator).toEqual<string>('');
   });
 
   test('Birthplace', () => {
-    const creator = getBirthdayInfo(asideNodeComposer)?.age;
+    const creator = getCreatorBirthdayInfo(asideNodeComposer)?.age;
     expect(creator).toEqual(null);
   });
 });
 
 describe("Creator's films", () => {
   test('First film from first section', () => {
-    const films = getFilms(filmsNodeComposer) as CSFDCreatorScreening[];
+    const films = getCreatorFilms(filmsNodeComposer) as CSFDCreatorScreening[];
     expect(films[0].title).toEqual<string>('Spolu');
   });
 });
