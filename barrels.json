@@ -1,4 +1,5 @@
 {
-  "directory": "./dist/types/",
+  "directory": "./dist/",
+  "name": "index.dto.d",
   "noHeader": true
 }
