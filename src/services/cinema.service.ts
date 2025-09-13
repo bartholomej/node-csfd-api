@@ -1,6 +1,6 @@
 import { HTMLElement, parse } from 'node-html-parser';
+import { CSFDCinema, CSFDCinemaPeriod } from '../dto/cinema';
 import { fetchPage } from '../fetchers';
-import { CSFDCinema, CSFDCinemaPeriod } from '../interfaces/cinema.interface';
 import { cinemasUrl } from '../vars';
 import {
   getCinemaCoords,

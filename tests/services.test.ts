@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'vitest';
-import { CSFDUserRatings } from '../src/interfaces/user-ratings.interface';
+import { CSFDUserRatings } from '../src/dto/user-ratings';
 import { UserRatingsScraper } from '../src/services/user-ratings.service';
 
 // Live API tests

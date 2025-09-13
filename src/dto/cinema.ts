@@ -1,4 +1,4 @@
-import { CSFDMovieListItem } from './movie.interface';
+import { CSFDMovieListItem } from './movie';
 
 export interface CSFDCinema {
   id: number;

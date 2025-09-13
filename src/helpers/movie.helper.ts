@@ -1,5 +1,5 @@
 import { HTMLElement } from 'node-html-parser';
-import { CSFDColorRating } from '../interfaces/global';
+import { CSFDColorRating } from '../dto/global';
 import {
   CSFDBoxContent,
   CSFDCreatorGroups,
@@ -10,7 +10,7 @@ import {
   CSFDTitlesOther,
   CSFDVod,
   CSFDVodService
-} from '../interfaces/movie.interface';
+} from '../dto/movie';
 import { addProtocol, getColor, parseISO8601Duration, parseIdFromUrl } from './global.helper';
 
 export const getMovieId = (el: HTMLElement): number => {

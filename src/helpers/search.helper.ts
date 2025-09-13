@@ -1,7 +1,7 @@
 import { HTMLElement } from 'node-html-parser';
-import { CSFDColorRating, CSFDFilmTypes } from '../interfaces/global';
-import { CSFDMovieCreator } from '../interfaces/movie.interface';
-import { Colors } from '../interfaces/user-ratings.interface';
+import { CSFDColorRating, CSFDFilmTypes } from '../dto/global';
+import { CSFDMovieCreator } from '../dto/movie';
+import { Colors } from '../dto/user-ratings';
 import { addProtocol, parseColor, parseIdFromUrl } from './global.helper';
 
 type Creator = 'Režie:' | 'Hrají:';
