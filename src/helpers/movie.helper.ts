@@ -13,31 +13,31 @@ import {
 } from '../interfaces/movie.interface';
 import { addProtocol, getColor, parseISO8601Duration, parseIdFromUrl } from './global.helper';
 
-export const getId = (el: HTMLElement): number => {
+export const getMovieId = (el: HTMLElement): number => {
   const url = el.querySelector('.tabs .tab-nav-list a').attributes.href;
   return parseIdFromUrl(url);
 };
 
-export const getTitle = (el: HTMLElement): string => {
+export const getMovieTitle = (el: HTMLElement): string => {
   return el.querySelector('h1').innerText.split(`(`)[0].trim();
 };
 
-export const getGenres = (el: HTMLElement): CSFDGenres[] => {
+export const getMovieGenres = (el: HTMLElement): CSFDGenres[] => {
   const genresRaw = el.querySelector('.genres').textContent;
   return genresRaw.split(' / ') as CSFDGenres[];
 };
 
-export const getOrigins = (el: HTMLElement): string[] => {
+export const getMovieOrigins = (el: HTMLElement): string[] => {
   const originsRaw = el.querySelector('.origin').textContent;
   const origins = originsRaw.split(',')[0];
   return origins.split(' / ');
 };
 
-export const getColorRating = (bodyClasses: string[]): CSFDColorRating => {
+export const getMovieColorRating = (bodyClasses: string[]): CSFDColorRating => {
   return getColor(bodyClasses[1]);
 };
 
-export const getRating = (el: HTMLElement): number => {
+export const getMovieRating = (el: HTMLElement): number => {
   const ratingRaw = el.querySelector('.film-rating-average').textContent;
   const rating = ratingRaw?.replace(/%/g, '').trim();
   const ratingInt = parseInt(rating);
@@ -49,7 +49,7 @@ export const getRating = (el: HTMLElement): number => {
   }
 };
 
-export const getRatingCount = (el: HTMLElement): number => {
+export const getMovieRatingCount = (el: HTMLElement): number => {
   const ratingCountRaw = el.querySelector('.box-rating-container .counter')?.textContent;
   const ratingCount = +ratingCountRaw?.replace(/[(\s)]/g, '');
   if (Number.isInteger(ratingCount)) {
@@ -59,7 +59,7 @@ export const getRatingCount = (el: HTMLElement): number => {
   }
 };
 
-export const getYear = (el: string): number => {
+export const getMovieYear = (el: string): number => {
   try {
     const jsonLd = JSON.parse(el);
     return +jsonLd.dateCreated;
@@ -69,7 +69,7 @@ export const getYear = (el: string): number => {
   }
 };
 
-export const getDuration = (jsonLdRaw: string, el: HTMLElement): number => {
+export const getMovieDuration = (jsonLdRaw: string, el: HTMLElement): number => {
   let duration = null;
   try {
     const jsonLd = JSON.parse(jsonLdRaw);
@@ -95,7 +95,7 @@ export const getDuration = (jsonLdRaw: string, el: HTMLElement): number => {
   }
 };
 
-export const getTitlesOther = (el: HTMLElement): CSFDTitlesOther[] => {
+export const getMovieTitlesOther = (el: HTMLElement): CSFDTitlesOther[] => {
   const namesNode = el.querySelectorAll('.film-names li');
 
   if (!namesNode.length) {
@@ -119,7 +119,7 @@ export const getTitlesOther = (el: HTMLElement): CSFDTitlesOther[] => {
   return titlesOther.filter((x) => x);
 };
 
-export const getPoster = (el: HTMLElement | null): string => {
+export const getMoviePoster = (el: HTMLElement | null): string => {
   const poster = el.querySelector('.film-posters img');
   // Resolve empty image
   if (poster) {
@@ -136,7 +136,7 @@ export const getPoster = (el: HTMLElement | null): string => {
   }
 };
 
-export const getRandomPhoto = (el: HTMLElement | null): string => {
+export const getMovieRandomPhoto = (el: HTMLElement | null): string => {
   const imageNode = el.querySelector('.gallery-item picture img');
   const image = imageNode?.attributes?.src;
   if (image) {
@@ -146,7 +146,7 @@ export const getRandomPhoto = (el: HTMLElement | null): string => {
   }
 };
 
-export const getTrivia = (el: HTMLElement | null): string[] => {
+export const getMovieTrivia = (el: HTMLElement | null): string[] => {
   const triviaNodes = el.querySelectorAll('.article-trivia ul li');
   if (triviaNodes?.length) {
     return triviaNodes.map((node) => node.textContent.trim().replace(/(\r\n|\n|\r|\t)/gm, ''));
@@ -155,13 +155,13 @@ export const getTrivia = (el: HTMLElement | null): string[] => {
   }
 };
 
-export const getDescriptions = (el: HTMLElement): string[] => {
+export const getMovieDescriptions = (el: HTMLElement): string[] => {
   return el
     .querySelectorAll('.body--plots .plot-full p, .body--plots .plots .plots-item p')
     .map((movie) => movie.textContent?.trim().replace(/(\r\n|\n|\r|\t)/gm, ''));
 };
 
-export const parsePeople = (el: HTMLElement): CSFDCreator[] => {
+const parseMoviePeople = (el: HTMLElement): CSFDCreator[] => {
   const people = el.querySelectorAll('a');
   return (
     people
@@ -177,22 +177,22 @@ export const parsePeople = (el: HTMLElement): CSFDCreator[] => {
   );
 };
 
-export const getGroup = (el: HTMLElement, group: CSFDCreatorGroups): CSFDCreator[] => {
+export const getMovieGroup = (el: HTMLElement, group: CSFDCreatorGroups): CSFDCreator[] => {
   const creators = el.querySelectorAll('.creators h4');
   const element = creators.filter((elem) => elem.textContent.trim().includes(group))[0];
   if (element?.parentNode) {
-    return parsePeople(element.parentNode as HTMLElement);
+    return parseMoviePeople(element.parentNode as HTMLElement);
   } else {
     return [];
   }
 };
 
-export const getType = (el: HTMLElement): string => {
+export const getMovieType = (el: HTMLElement): string => {
   const type = el.querySelector('.film-header-name .type');
   return type?.innerText?.replace(/[{()}]/g, '') || 'film';
 };
 
-export const getVods = (el: HTMLElement | null): CSFDVod[] => {
+export const getMovieVods = (el: HTMLElement | null): CSFDVod[] => {
   let vods: CSFDVod[] = [];
   if (el) {
     const buttons = el.querySelectorAll('.box-buttons .button');
@@ -208,13 +208,13 @@ export const getVods = (el: HTMLElement | null): CSFDVod[] => {
 };
 
 // Get box content
-export const getBoxContent = (el: HTMLElement, box: string): HTMLElement => {
+const getBoxContent = (el: HTMLElement, box: string): HTMLElement => {
   const headers = el.querySelectorAll('section.box .box-header');
   return headers.find((header) => header.querySelector('h3').textContent.trim().includes(box))
     ?.parentNode;
 };
 
-export const getBoxMovies = (el: HTMLElement, boxName: CSFDBoxContent): CSFDMovieListItem[] => {
+export const getMovieBoxMovies = (el: HTMLElement, boxName: CSFDBoxContent): CSFDMovieListItem[] => {
   const movieListItem: CSFDMovieListItem[] = [];
   const box = getBoxContent(el, boxName);
   const movieTitleNodes = box?.querySelectorAll('.article-header .film-title-name');
@@ -230,7 +230,7 @@ export const getBoxMovies = (el: HTMLElement, boxName: CSFDBoxContent): CSFDMovi
   return movieListItem;
 };
 
-export const getPremieres = (el: HTMLElement): CSFDPremiere[] => {
+export const getMoviePremieres = (el: HTMLElement): CSFDPremiere[] => {
   const premiereNodes = el.querySelectorAll('.box-premieres li');
   const premiere: CSFDPremiere[] = [];
   for (const premiereNode of premiereNodes) {
@@ -250,7 +250,7 @@ export const getPremieres = (el: HTMLElement): CSFDPremiere[] => {
   return premiere;
 };
 
-export const getTags = (el: HTMLElement): string[] => {
+export const getMovieTags = (el: HTMLElement): string[] => {
   const tagsRaw = el.querySelectorAll('.box-content a[href*="/tag/"]');
   return tagsRaw.map((tag) => tag.textContent);
 };
