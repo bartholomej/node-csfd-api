@@ -146,7 +146,7 @@ describe('Composer info', () => {
 
   test('Bio', () => {
     const creator = getCreatorBio(asideNodeComposer);
-    expect(creator).toEqual<string>(null);
+    expect(creator).toEqual<string>(null as any);
   });
 
   test('Photo', () => {
