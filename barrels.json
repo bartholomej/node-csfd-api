@@ -1,3 +1,4 @@
 {
-  "directory": "./dist/types"
+  "directory": "./dist/types/",
+  "noHeader": true
 }
