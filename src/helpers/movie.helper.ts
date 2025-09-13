@@ -2,9 +2,9 @@ import { HTMLElement } from 'node-html-parser';
 import { CSFDColorRating } from '../interfaces/global';
 import {
   CSFDBoxContent,
-  CSFDCreator,
   CSFDCreatorGroups,
   CSFDGenres,
+  CSFDMovieCreator,
   CSFDMovieListItem,
   CSFDPremiere,
   CSFDTitlesOther,
@@ -161,7 +161,7 @@ export const getMovieDescriptions = (el: HTMLElement): string[] => {
     .map((movie) => movie.textContent?.trim().replace(/(\r\n|\n|\r|\t)/gm, ''));
 };
 
-const parseMoviePeople = (el: HTMLElement): CSFDCreator[] => {
+const parseMoviePeople = (el: HTMLElement): CSFDMovieCreator[] => {
   const people = el.querySelectorAll('a');
   return (
     people
@@ -177,7 +177,7 @@ const parseMoviePeople = (el: HTMLElement): CSFDCreator[] => {
   );
 };
 
-export const getMovieGroup = (el: HTMLElement, group: CSFDCreatorGroups): CSFDCreator[] => {
+export const getMovieGroup = (el: HTMLElement, group: CSFDCreatorGroups): CSFDMovieCreator[] => {
   const creators = el.querySelectorAll('.creators h4');
   const element = creators.filter((elem) => elem.textContent.trim().includes(group))[0];
   if (element?.parentNode) {

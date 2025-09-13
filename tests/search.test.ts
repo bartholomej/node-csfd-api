@@ -12,7 +12,7 @@ import {
   parseSearchPeople
 } from '../src/helpers/search.helper';
 import { CSFDColorRating, CSFDFilmTypes } from '../src/interfaces/global';
-import { CSFDCreator } from '../src/interfaces/movie.interface';
+import { CSFDMovieCreator } from '../src/interfaces/movie.interface';
 import { searchMock } from './mocks/search.html';
 
 const html = parse(searchMock);
@@ -138,7 +138,7 @@ describe('Get Movie origins', () => {
 describe('Get Movie creators', () => {
   test('First movie directors', () => {
     const movie = parseSearchPeople(moviesNode[0], 'directors');
-    expect(movie).toEqual<CSFDCreator[]>([
+    expect(movie).toEqual<CSFDMovieCreator[]>([
       {
         id: 3112,
         name: 'Lilly Wachowski',
@@ -153,7 +153,7 @@ describe('Get Movie creators', () => {
   });
   test('Last movie actors', () => {
     const movie = parseSearchPeople(moviesNode[moviesNode.length - 1], 'actors');
-    expect(movie).toEqual<CSFDCreator[]>([
+    expect(movie).toEqual<CSFDMovieCreator[]>([
       {
         id: 46,
         name: 'Keanu Reeves',
@@ -286,7 +286,7 @@ describe('Get TV series origins', () => {
 describe('Get TV series creators', () => {
   test('First TV series directors', () => {
     const movie = parseSearchPeople(tvSeriesNode[0], 'directors');
-    expect(movie).toEqual<CSFDCreator[]>([
+    expect(movie).toEqual<CSFDMovieCreator[]>([
       {
         id: 8877,
         name: 'Allan Eastman',
@@ -301,7 +301,7 @@ describe('Get TV series creators', () => {
   });
   test('Last TV series actors', () => {
     const movie = parseSearchPeople(tvSeriesNode[tvSeriesNode.length - 1], 'actors');
-    expect(movie).toEqual<CSFDCreator[]>([
+    expect(movie).toEqual<CSFDMovieCreator[]>([
       {
         "id": 861510,
         "name": "Donna Glaesener",
@@ -311,12 +311,12 @@ describe('Get TV series creators', () => {
   });
   test('Empty directors', () => {
     const movie = parseSearchPeople(tvSeriesNode[5], 'directors');
-    expect(movie).toEqual<CSFDCreator[]>([]);
+    expect(movie).toEqual<CSFDMovieCreator[]>([]);
   });
   test('Empty directors + some actors', () => {
     const movie = parseSearchPeople(tvSeriesNode[2], 'actors');
     const movieDirectors = parseSearchPeople(tvSeriesNode[2], 'directors');
-    expect(movie).toEqual<CSFDCreator[]>([
+    expect(movie).toEqual<CSFDMovieCreator[]>([
       {
         "id": 74751,
         "name": "Takeru Sató",
@@ -328,7 +328,7 @@ describe('Get TV series creators', () => {
         "url": "https://www.csfd.cz/tvurce/604689-ju-mijazaki/",
       },
     ]);
-    expect(movieDirectors).toEqual<CSFDCreator[]>([]);
+    expect(movieDirectors).toEqual<CSFDMovieCreator[]>([]);
   });
 });
 
