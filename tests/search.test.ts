@@ -1,5 +1,7 @@
 import { parse } from 'node-html-parser';
 import { describe, expect, test } from 'vitest';
+import { CSFDColorRating, CSFDFilmTypes } from '../src/dto/global';
+import { CSFDMovieCreator } from '../src/dto/movie';
 import { getAvatar, getUser, getUserRealName, getUserUrl } from '../src/helpers/search-user.helper';
 import {
   getSearchColorRating,
@@ -11,8 +13,6 @@ import {
   getSearchYear,
   parseSearchPeople
 } from '../src/helpers/search.helper';
-import { CSFDColorRating, CSFDFilmTypes } from '../src/interfaces/global';
-import { CSFDMovieCreator } from '../src/interfaces/movie.interface';
 import { searchMock } from './mocks/search.html';
 
 const html = parse(searchMock);

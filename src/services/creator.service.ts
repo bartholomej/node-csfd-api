@@ -1,7 +1,7 @@
 import { HTMLElement, parse } from 'node-html-parser';
+import { CSFDCreator } from '../dto/creator';
 import { fetchPage } from '../fetchers';
 import { getCreatorBio, getCreatorBirthdayInfo, getCreatorFilms, getCreatorName, getCreatorPhoto } from '../helpers/creator.helper';
-import { CSFDCreator } from '../interfaces/creator.interface';
 import { creatorUrl } from '../vars';
 
 export class CreatorScraper {
