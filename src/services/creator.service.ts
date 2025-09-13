@@ -1,6 +1,6 @@
 import { HTMLElement, parse } from 'node-html-parser';
 import { fetchPage } from '../fetchers';
-import { getBio, getBirthdayInfo, getFilms, getName, getPhoto } from '../helpers/creator.helper';
+import { getCreatorBio, getCreatorBirthdayInfo, getCreatorFilms, getCreatorName, getCreatorPhoto } from '../helpers/creator.helper';
 import { CSFDCreator } from '../interfaces/creator.interface';
 import { creatorUrl } from '../vars';
 
@@ -26,13 +26,13 @@ export class CreatorScraper {
   private buildCreator(id: number, asideEl: HTMLElement, filmsNode: HTMLElement) {
     this.person = {
       id,
-      name: getName(asideEl),
-      birthday: getBirthdayInfo(asideEl)?.birthday,
-      birthplace: getBirthdayInfo(asideEl)?.birthPlace,
-      photo: getPhoto(asideEl),
-      age: getBirthdayInfo(asideEl)?.age || null,
-      bio: getBio(asideEl),
-      films: getFilms(filmsNode)
+      name: getCreatorName(asideEl),
+      birthday: getCreatorBirthdayInfo(asideEl)?.birthday,
+      birthplace: getCreatorBirthdayInfo(asideEl)?.birthPlace,
+      photo: getCreatorPhoto(asideEl),
+      age: getCreatorBirthdayInfo(asideEl)?.age || null,
+      bio: getCreatorBio(asideEl),
+      films: getCreatorFilms(filmsNode)
     };
   }
 }
