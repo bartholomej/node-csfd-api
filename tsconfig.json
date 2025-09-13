@@ -7,7 +7,7 @@
     "esModuleInterop": true,
     "module": "esnext",
     "moduleResolution": "Node",
-    "strictNullChecks": false,
+    "strictNullChecks": false, // will be more strict in future releases
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
     "sourceMap": false,
