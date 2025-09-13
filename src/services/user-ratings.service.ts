@@ -1,14 +1,14 @@
 import { HTMLElement, parse } from 'node-html-parser';
 import { fetchPage } from '../fetchers';
 import {
-  getColorRating,
-  getDate,
-  getId,
-  getTitle,
-  getType,
-  getUrl,
   getUserRating,
-  getYear,
+  getUserRatingColorRating,
+  getUserRatingDate,
+  getUserRatingId,
+  getUserRatingTitle,
+  getUserRatingType,
+  getUserRatingUrl,
+  getUserRatingYear,
   sleep
 } from '../helpers/user-ratings.helper';
 import { CSFDColorRating, CSFDStars } from '../interfaces/global';
@@ -71,7 +71,7 @@ export class UserRatingsScraper {
     }
 
     for (const el of movies) {
-      const type = getType(el);
+      const type = getUserRatingType(el);
 
       // Filtering includesOnly
       if (config?.includesOnly?.length) {
@@ -93,13 +93,13 @@ export class UserRatingsScraper {
 
   private buildUserRatings(el: HTMLElement) {
     this.films.push({
-      id: getId(el),
-      title: getTitle(el),
-      year: getYear(el),
-      type: getType(el),
-      url: getUrl(el),
-      colorRating: getColorRating(el) as CSFDColorRating,
-      userDate: getDate(el),
+      id: getUserRatingId(el),
+      title: getUserRatingTitle(el),
+      year: getUserRatingYear(el),
+      type: getUserRatingType(el),
+      url: getUserRatingUrl(el),
+      colorRating: getUserRatingColorRating(el) as CSFDColorRating,
+      userDate: getUserRatingDate(el),
       userRating: getUserRating(el) as CSFDStars
     });
   }
