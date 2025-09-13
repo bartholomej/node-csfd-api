@@ -1,6 +1,6 @@
 import { HTMLElement } from 'node-html-parser';
 import { CSFDColorRating, CSFDFilmTypes } from '../interfaces/global';
-import { CSFDCreator } from '../interfaces/movie.interface';
+import { CSFDMovieCreator } from '../interfaces/movie.interface';
 import { Colors } from '../interfaces/user-ratings.interface';
 import { addProtocol, parseColor, parseIdFromUrl } from './global.helper';
 
@@ -41,7 +41,7 @@ export const getSearchOrigins = (el: HTMLElement): string[] => {
   return originsAll?.split('/').map((country) => country.trim());
 };
 
-export const parseSearchPeople = (el: HTMLElement, type: 'directors' | 'actors'): CSFDCreator[] => {
+export const parseSearchPeople = (el: HTMLElement, type: 'directors' | 'actors'): CSFDMovieCreator[] => {
   let who: Creator;
   if (type === 'directors') who = 'Režie:';
   if (type === 'actors') who = 'Hrají:';
