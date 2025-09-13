@@ -2,12 +2,11 @@
   "name": "node-csfd-api",
   "version": "2.14.4",
   "description": "ČSFD API in JavaScript. Amazing NPM library for scrapping csfd.cz :)",
-  "main": "index.js",
   "author": "BART! <bart@bartweb.cz>",
   "scripts": {
     "start": "tsc -w",
     "prebuild": "rimraf dist",
-    "build": "tsc && tsc -p tsconfig-cjs.json && yarn barrels",
+    "build": "tsc && tsc -p tsconfig.cjs.json && tsc -p tsconfig.esm.json && yarn barrels",
     "barrels": "barrelsby --delete -c barrels.json",
     "postbuild": "npm-prepare-dist -s postinstall -s prepare && yarn fix-paths",
     "tsc": "tsc",
@@ -15,7 +14,7 @@
     "lint": "eslint ./src/**/**/* --fix",
     "test": "vitest",
     "test:coverage": "yarn test run --coverage",
-    "fix-paths": "yarn json -I -f ./dist/package.json -e \"this.module='./esm/index.js';this.main='./cjs/index.js';this.types='./types/index.d.ts'\"",
+    "fix-paths": "yarn json -I -f ./dist/package.json -e \"this.module='./esm/index.js';this.main='./cjs/index.js';this.types='./index.dto.d.ts'\"",
     "publish:next": "yarn && yarn build && yarn test:coverage && cd dist && npm publish --tag next",
     "postversion": "git push && git push --follow-tags",
     "release:beta": "npm version preminor --preid=beta -m \"chore(update): prelease %s β\"",
@@ -90,5 +89,20 @@
   "license": "MIT",
   "lint-staged": {
     "*.ts": "eslint --cache --fix"
+  },
+  "main": "./cjs/index.js",
+  "module": "./esm/index.js",
+  "types": "./index.dto.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./index.dto.d.ts",
+        "default": "./esm/index.js"
+      },
+      "require": {
+        "types": "./index.dto.d.ts",
+        "default": "./cjs/index.js"
+      }
+    }
   }
 }
