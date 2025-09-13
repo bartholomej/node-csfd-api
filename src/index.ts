@@ -1,4 +1,4 @@
-import { CSFDCinema, CSFDCinemaPeriod } from 'interfaces/cinema.interface';
+import { CSFDCinema, CSFDCinemaPeriod } from './interfaces/cinema.interface';
 import { CSFDCreator } from './interfaces/creator.interface';
 import { CSFDMovie } from './interfaces/movie.interface';
 import { CSFDSearch } from './interfaces/search.interface';

@@ -1,8 +1,7 @@
-import { CSFDCinemaPeriod } from 'interfaces/cinema.interface';
+import { CSFDCinemaPeriod } from './interfaces/cinema.interface';
 
 export const userRatingsUrl = (user: string | number, page?: number): string =>
-  `https://www.csfd.cz/uzivatel/${encodeURIComponent(user)}/hodnoceni/${
-    page ? '?page=' + page : ''
+  `https://www.csfd.cz/uzivatel/${encodeURIComponent(user)}/hodnoceni/${page ? '?page=' + page : ''
   }`;
 
 export const movieUrl = (movie: number): string =>
