@@ -3,14 +3,14 @@ import { fetchPage } from '../fetchers';
 import { parseIdFromUrl } from '../helpers/global.helper';
 import { getAvatar, getUser, getUserRealName, getUserUrl } from '../helpers/search-user.helper';
 import {
-  getColorRating,
-  getOrigins,
-  getPoster,
-  getTitle,
-  getType,
-  getUrl,
-  getYear,
-  parsePeople
+  getSearchColorRating,
+  getSearchOrigins,
+  getSearchPoster,
+  getSearchTitle,
+  getSearchType,
+  getSearchUrl,
+  getSearchYear,
+  parseSearchPeople
 } from '../helpers/search.helper';
 import { CSFDSearch, CSFDSearchMovie, CSFDSearchUser } from '../interfaces/search.interface';
 import { searchUrl } from '../vars';
@@ -38,20 +38,20 @@ export class SearchScraper {
     const tvSeries: CSFDSearchMovie[] = [];
 
     moviesNode.forEach((m) => {
-      const url = getUrl(m);
+      const url = getSearchUrl(m);
 
       const movie: CSFDSearchMovie = {
         id: parseIdFromUrl(url),
-        title: getTitle(m),
-        year: getYear(m),
+        title: getSearchTitle(m),
+        year: getSearchYear(m),
         url: `https://www.csfd.cz${url}`,
-        type: getType(m),
-        colorRating: getColorRating(m),
-        poster: getPoster(m),
-        origins: getOrigins(m),
+        type: getSearchType(m),
+        colorRating: getSearchColorRating(m),
+        poster: getSearchPoster(m),
+        origins: getSearchOrigins(m),
         creators: {
-          directors: parsePeople(m, 'directors'),
-          actors: parsePeople(m, 'actors')
+          directors: parseSearchPeople(m, 'directors'),
+          actors: parseSearchPeople(m, 'actors')
         }
       };
       movies.push(movie);
@@ -71,20 +71,20 @@ export class SearchScraper {
     });
 
     tvSeriesNode.forEach((m) => {
-      const url = getUrl(m);
+      const url = getSearchUrl(m);
 
       const user: CSFDSearchMovie = {
         id: parseIdFromUrl(url),
-        title: getTitle(m),
-        year: getYear(m),
+        title: getSearchTitle(m),
+        year: getSearchYear(m),
         url: `https://www.csfd.cz${url}`,
-        type: getType(m),
-        colorRating: getColorRating(m),
-        poster: getPoster(m),
-        origins: getOrigins(m),
+        type: getSearchType(m),
+        colorRating: getSearchColorRating(m),
+        poster: getSearchPoster(m),
+        origins: getSearchOrigins(m),
         creators: {
-          directors: parsePeople(m, 'directors'),
-          actors: parsePeople(m, 'actors')
+          directors: parseSearchPeople(m, 'directors'),
+          actors: parseSearchPeople(m, 'actors')
         }
       };
       tvSeries.push(user);
