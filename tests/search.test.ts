@@ -12,7 +12,7 @@ import {
   parseSearchPeople
 } from '../src/helpers/search.helper';
 import { CSFDColorRating, CSFDFilmTypes } from '../src/interfaces/global';
-import { CSFDCreator } from '../src/interfaces/movie.interface';
+import { CSFDMovieCreator } from '../src/interfaces/movie.interface';
 import { searchMock } from './mocks/search.html';
 
 const html = parse(searchMock);
@@ -138,7 +138,7 @@ describe('Get Movie origins', () => {
 describe('Get Movie creators', () => {
   test('First movie directors', () => {
     const movie = parseSearchPeople(moviesNode[0], 'directors');
-    expect(movie).toEqual<CSFDCreator[]>([
+    expect(movie).toEqual<CSFDMovieCreator[]>([
       {
         id: 3112,
         name: 'Lilly Wachowski',
@@ -153,7 +153,7 @@ describe('Get Movie creators', () => {
   });
   test('Last movie actors', () => {
     const movie = parseSearchPeople(moviesNode[moviesNode.length - 1], 'actors');
-    expect(movie).toEqual<CSFDCreator[]>([
+    expect(movie).toEqual<CSFDMovieCreator[]>([
       {
         id: 67747,
         name: "Genevieve O'Reilly",
@@ -168,7 +168,7 @@ describe('Get Movie creators', () => {
   });
   test('Empty actors', () => {
     const movie = parseSearchPeople(moviesNode[5], 'actors');
-    expect(movie).toEqual<CSFDCreator[]>([]);
+    expect(movie).toEqual<CSFDMovieCreator[]>([]);
   });
 });
 
@@ -286,7 +286,7 @@ describe('Get TV series origins', () => {
 describe('Get TV series creators', () => {
   test('First TV series directors', () => {
     const movie = parseSearchPeople(tvSeriesNode[0], 'directors');
-    expect(movie).toEqual<CSFDCreator[]>([
+    expect(movie).toEqual<CSFDMovieCreator[]>([
       {
         id: 8877,
         name: 'Allan Eastman',
@@ -301,7 +301,7 @@ describe('Get TV series creators', () => {
   });
   test('Last TV series actors', () => {
     const movie = parseSearchPeople(tvSeriesNode[tvSeriesNode.length - 1], 'actors');
-    expect(movie).toEqual<CSFDCreator[]>([
+    expect(movie).toEqual<CSFDMovieCreator[]>([
       {
         id: 20335,
         name: 'Billy West',
@@ -316,19 +316,19 @@ describe('Get TV series creators', () => {
   });
   test('Empty actors', () => {
     const movie = parseSearchPeople(tvSeriesNode[5], 'actors');
-    expect(movie).toEqual<CSFDCreator[]>([]);
+    expect(movie).toEqual<CSFDMovieCreator[]>([]);
   });
   test('Empty directors + some actors', () => {
     const movie = parseSearchPeople(tvSeriesNode[4], 'actors');
     const movieDirectors = parseSearchPeople(tvSeriesNode[4], 'directors');
-    expect(movie).toEqual<CSFDCreator[]>([
+    expect(movie).toEqual<CSFDMovieCreator[]>([
       {
         id: 61834,
         name: 'David Icke',
         url: 'https://www.csfd.cz/tvurce/61834-david-icke/'
       }
     ]);
-    expect(movieDirectors).toEqual<CSFDCreator[]>([]);
+    expect(movieDirectors).toEqual<CSFDMovieCreator[]>([]);
   });
 });
 
