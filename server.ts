@@ -110,7 +110,7 @@ app.get('/', (_, res) => {
   res.json({
     name: packageJson.name,
     version: packageJson.version,
-    docs: packageJson.homepage,
+    homepage: packageJson.homepage,
     links: Object.values(Endpoint)
   });
 });

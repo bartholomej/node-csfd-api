@@ -1,6 +1,6 @@
 {
   "name": "node-csfd-api",
-  "version": "2.14.0",
+  "version": "3.0.0-next.28",
   "description": "ČSFD API in JavaScript. Amazing NPM library for scrapping csfd.cz :)",
   "author": "BART! <bart@bartweb.cz>",
   "scripts": {
@@ -9,6 +9,7 @@
     "build": "tsc && tsc -p tsconfig.cjs.json && tsc -p tsconfig.esm.json && yarn barrels",
     "barrels": "barrelsby --delete -c barrels.json",
     "postbuild": "npm-prepare-dist -s postinstall -s prepare && yarn fix-paths",
+    "build:server": "yarn build && yarn tsx scripts/prepare-server.js && yarn tsx scripts/create-version && yarn tsc -p tsconfig.server.json",
     "tsc": "tsc",
     "demo": "tsx demo",
     "lint": "eslint ./src/**/**/* --fix",
