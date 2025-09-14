@@ -29,7 +29,11 @@ export class MovieScraper {
   private film: CSFDMovie;
 
   public async movie(movieId: number): Promise<CSFDMovie> {
-    const url = movieUrl(+movieId);
+    const id = Number(movieId);
+    if (isNaN(id)) {
+      throw new Error('node-csfd-api: movieId must be a valid number');
+    }
+    const url = movieUrl(id);
     const response = await fetchPage(url);
 
     const movieHtml = parse(response);

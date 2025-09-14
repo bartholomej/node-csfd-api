@@ -8,7 +8,11 @@ export class CreatorScraper {
   private person: CSFDCreator;
 
   public async creator(creatorId: number): Promise<CSFDCreator> {
-    const url = creatorUrl(+creatorId);
+    const id = Number(creatorId);
+    if (isNaN(id)) {
+      throw new Error('node-csfd-api: creatorId must be a valid number');
+    }
+    const url = creatorUrl(id);
     const response = await fetchPage(url);
 
     const creatorHtml = parse(response);
