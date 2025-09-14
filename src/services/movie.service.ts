@@ -15,9 +15,11 @@ import {
   getRatingCount,
   getTags,
   getTitle,
+  getParent,
   getTitlesOther,
   getTrivia,
   getType,
+  getEpisodeNum,
   getVods,
   getYear
 } from '../helpers/movie.helper';
@@ -56,11 +58,13 @@ export class MovieScraper {
     this.film = {
       id: movieId,
       title: getTitle(el),
+      parentId: getParent(el),
       year: getYear(jsonLd),
       duration: getDuration(jsonLd, el),
       descriptions: getDescriptions(el),
       genres: getGenres(el),
       type: getType(el) as CSFDFilmTypes,
+      episodeNum: getEpisodeNum(el),
       url: movieUrl(movieId),
       origins: getOrigins(el),
       colorRating: getColorRating(pageClasses),
