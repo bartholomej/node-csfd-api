@@ -3,6 +3,8 @@ import { CSFDFilmTypes } from '../dto/global';
 import { CSFDMovie, MovieJsonLd } from '../dto/movie';
 import { fetchPage } from '../fetchers';
 import {
+  detectSeasonOrEpisodeListType,
+  getEpisodeCode,
   getMovieBoxMovies,
   getMovieColorRating,
   getMovieCreators,
@@ -22,8 +24,9 @@ import {
   getMovieType,
   getMovieVods,
   getMovieYear,
-  getParent,
-  getSeasonsOrEpisodes
+  getSeasonorEpisodeParent,
+  getSeasonsOrEpisodes,
+  getSerieasAndSeasonTitle
 } from '../helpers/movie.helper';
 import { CSFDOptions } from '../types';
 import { movieUrl } from '../vars';
@@ -61,9 +64,14 @@ export class MovieScraper {
     options: CSFDOptions
   ) {
     const type = getMovieType(el) as CSFDFilmTypes;
+    const { seriesName = null, seasonName = null } =
+      type === 'série' ? getSerieasAndSeasonTitle(el) : {};
+    const seasonOrEpisodeListType = detectSeasonOrEpisodeListType(el);
+
+    const title = type === 'série' && seriesName ? seriesName : getMovieTitle(el);
     return {
       id: movieId,
-      title: getMovieTitle(el),
+      title,
       year: getMovieYear(jsonLd),
       duration: getMovieDuration(jsonLd, el),
       descriptions: getMovieDescriptions(el),
@@ -84,9 +92,11 @@ export class MovieScraper {
       premieres: getMoviePremieres(asideEl),
       related: getMovieBoxMovies(asideEl, 'Související'),
       similar: getMovieBoxMovies(asideEl, 'Podobné'),
-      seasons: type === 'seriál' ? getSeasonsOrEpisodes(el) : null,
-      episodes: type === 'série' ? getSeasonsOrEpisodes(el) : null,
-      parent: getParent(el)
+      seasons: seasonOrEpisodeListType === 'seasons' ? getSeasonsOrEpisodes(el) : null,
+      episodes: seasonOrEpisodeListType === 'episodes' ? getSeasonsOrEpisodes(el) : null,
+      parent: type === 'seriál' ? null : getSeasonorEpisodeParent(el, { id: movieId, name: title }),
+      episodeCode: type === 'epizoda' ? getEpisodeCode(el) : null,
+      seasonName
     };
   }
 }
