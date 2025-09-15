@@ -20,6 +20,8 @@ export interface CSFDMovie extends CSFDScreening {
   seasons: CSFDSeason[] | null;
   episodes: CSFDSeason[] | null;
   parent: CSFDParent | null;
+  episodeCode: string | null;
+  seasonName: string | null;
 }
 
 export interface CSFDParent {
