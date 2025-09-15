@@ -21,7 +21,9 @@ import {
   getMovieTrivia,
   getMovieType,
   getMovieVods,
-  getMovieYear
+  getMovieYear,
+  getParent,
+  getSeasonsOrEpisodes
 } from '../helpers/movie.helper';
 import { movieUrl } from '../vars';
 
@@ -53,6 +55,7 @@ export class MovieScraper {
     pageClasses: string[],
     jsonLd: string
   ) {
+    const type = getMovieType(el) as CSFDFilmTypes;
     this.film = {
       id: movieId,
       title: getMovieTitle(el),
@@ -60,7 +63,7 @@ export class MovieScraper {
       duration: getMovieDuration(jsonLd, el),
       descriptions: getMovieDescriptions(el),
       genres: getMovieGenres(el),
-      type: getMovieType(el) as CSFDFilmTypes,
+      type,
       url: movieUrl(movieId),
       origins: getMovieOrigins(el),
       colorRating: getMovieColorRating(pageClasses),
@@ -86,7 +89,10 @@ export class MovieScraper {
       tags: getMovieTags(asideEl),
       premieres: getMoviePremieres(asideEl),
       related: getMovieBoxMovies(asideEl, 'Související'),
-      similar: getMovieBoxMovies(asideEl, 'Podobné')
+      similar: getMovieBoxMovies(asideEl, 'Podobné'),
+      seasons: type === 'seriál' ? getSeasonsOrEpisodes(el) : null,
+      episodes: type === 'série' ? getSeasonsOrEpisodes(el) : null,
+      parent: getParent(el)
     };
   }
 }
