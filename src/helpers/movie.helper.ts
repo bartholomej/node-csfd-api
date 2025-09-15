@@ -9,7 +9,9 @@ import {
   CSFDGenres,
   CSFDMovieCreator,
   CSFDMovieListItem,
+  CSFDParent,
   CSFDPremiere,
+  CSFDSeason,
   CSFDTitlesOther,
   CSFDVod,
   CSFDVodService,
@@ -23,6 +25,9 @@ import {
   parseFilmType,
   parseISO8601Duration,
   parseIdFromUrl
+  parseISO8601Duration,
+  parseIdFromUrl,
+  parseLastIdFromUrl
 } from './global.helper';
 
 const CREATOR_LABELS: Record<
@@ -326,6 +331,44 @@ export const getMovieCreators = (el: HTMLElement, options?: CSFDOptions): CSFDCr
   }
 
   return creators;
+};
+
+export const getSeasonsOrEpisodes = (el: HTMLElement): CSFDSeason[] | null => {
+  const childrenList = el.querySelector('.film-episodes-list');
+  if (!childrenList) return null;
+
+  const childrenNodes = childrenList.querySelectorAll('.film-title');
+  if (!childrenNodes?.length) return [];
+
+  return childrenNodes.map((season) => {
+    const nameContainer = season.querySelector('.film-title-name');
+    const infoContainer = season.querySelector('.info');
+
+    return {
+      id: parseLastIdFromUrl(nameContainer?.getAttribute('href') || ''),
+      name: nameContainer?.textContent?.trim() || null,
+      url: nameContainer?.getAttribute('href') || null,
+      info: infoContainer?.textContent?.replace(/[{()}]/g, '').trim() || null
+    };
+  });
+};
+
+export const getParent = (el: HTMLElement): CSFDParent | null => {
+  const parents = el.querySelectorAll('.film-header h2 a');
+  if (parents.length === 0) return null;
+
+  const [parentSeries, parentSeason] = parents;
+
+  return {
+    series: {
+      id: parseIdFromUrl(parentSeries?.getAttribute('href') || ''),
+      name: parentSeries?.textContent?.trim() || null
+    },
+    season: {
+      id: parseIdFromUrl(parentSeason?.getAttribute('href') || ''),
+      name: parentSeason?.textContent?.trim() || null
+    }
+  };
 };
 
 export const getMovieType = (el: HTMLElement): CSFDFilmTypes => {
