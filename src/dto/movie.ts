@@ -17,6 +17,14 @@ export interface CSFDMovie extends CSFDScreening {
   premieres: CSFDPremiere[];
   related: CSFDMovieListItem[];
   similar: CSFDMovieListItem[];
+  seasons: CSFDSeason[] | null;
+  episodes: CSFDSeason[] | null;
+  parent: CSFDParent | null;
+}
+
+export interface CSFDParent {
+  season: { id: number; name: string; };
+  series: { id: number; name: string; };
 }
 
 export type CSFDVodService =
@@ -85,6 +93,8 @@ export interface CSFDMovieListItem {
   title: string;
   url: string;
 }
+
+
 
 export type CSFDGenres =
   | 'Akční'
@@ -181,3 +191,10 @@ export interface CSFDPremiere {
 }
 
 export type CSFDBoxContent = 'Související' | 'Podobné';
+
+export interface CSFDSeason {
+  id: number;
+  name: string;
+  url: string;
+  info: string | null;
+}
