@@ -16,6 +16,16 @@ export const parseIdFromUrl = (url: string): number => {
   return +id || null;
 };
 
+export const parseLastIdFromUrl = (url: string): number => {
+  if (url) {
+    const idSlug = url?.split('/')[3];
+    const id = idSlug?.split('-')[0];
+    return +id || null;
+  } else {
+    return null;
+  }
+};
+
 export const getColor = (cls: string): CSFDColorRating => {
   switch (cls) {
     case 'page-lightgrey':
