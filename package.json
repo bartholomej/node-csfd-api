@@ -2,18 +2,19 @@
   "name": "node-csfd-api",
   "version": "2.14.1",
   "description": "ČSFD API in JavaScript. Amazing NPM library for scrapping csfd.cz :)",
-  "main": "index.js",
   "author": "BART! <bart@bartweb.cz>",
   "scripts": {
     "start": "tsc -w",
     "prebuild": "rimraf dist",
-    "build": "tsc",
-    "postbuild": "npm-prepare-dist -s postinstall -s prepare",
+    "build": "tsc && tsc -p tsconfig.cjs.json && tsc -p tsconfig.esm.json && yarn barrels",
+    "barrels": "barrelsby --delete -c barrels.json",
+    "postbuild": "npm-prepare-dist -s postinstall -s prepare && yarn fix-paths",
     "tsc": "tsc",
     "demo": "tsx demo",
     "lint": "eslint ./src/**/**/* --fix",
     "test": "vitest",
     "test:coverage": "yarn test run --coverage",
+    "fix-paths": "yarn json -I -f ./dist/package.json -e \"this.module='./esm/index.js';this.main='./cjs/index.js';this.types='./index.dto.d.ts'\"",
     "publish:next": "yarn && yarn build && yarn test:coverage && cd dist && npm publish --tag next",
     "postversion": "git push && git push --follow-tags",
     "release:beta": "npm version preminor --preid=beta -m \"chore(update): prelease %s β\"",
@@ -36,11 +37,12 @@
     "@eslint/eslintrc": "^3.3.1",
     "@eslint/js": "^9.35.0",
     "@types/express": "^5.0.3",
-    "@types/node": "^24.3.1",
-    "@typescript-eslint/eslint-plugin": "^8.43.0",
-    "@typescript-eslint/parser": "^8.43.0",
+    "@types/node": "^24.5.1",
+    "@typescript-eslint/eslint-plugin": "^8.44.0",
+    "@typescript-eslint/parser": "^8.44.0",
     "@vitest/coverage-istanbul": "^3.2.4",
     "@vitest/ui": "3.2.4",
+    "barrelsby": "^2.8.1",
     "dotenv": "^17.2.2",
     "eslint": "^9.35.0",
     "eslint-config-google": "^0.14.0",
@@ -49,6 +51,7 @@
     "express": "^5.1.0",
     "globals": "^16.4.0",
     "husky": "^9.1.7",
+    "json": "^11.0.0",
     "lint-staged": "^16.1.6",
     "npm-prepare-dist": "^0.5.0",
     "prettier": "^3.6.2",
@@ -84,5 +87,20 @@
   "license": "MIT",
   "lint-staged": {
     "*.ts": "eslint --cache --fix"
+  },
+  "main": "./cjs/index.js",
+  "module": "./esm/index.js",
+  "types": "./index.dto.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./index.dto.d.ts",
+        "default": "./esm/index.js"
+      },
+      "require": {
+        "types": "./index.dto.d.ts",
+        "default": "./cjs/index.js"
+      }
+    }
   }
 }

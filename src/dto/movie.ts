@@ -46,16 +46,16 @@ export interface CSFDVod {
 }
 
 export interface CSFDCreators {
-  directors: CSFDCreator[];
-  writers: CSFDCreator[];
-  cinematography: CSFDCreator[];
-  music: CSFDCreator[];
-  actors: CSFDCreator[];
-  basedOn: CSFDCreator[];
-  producers: CSFDCreator[];
-  filmEditing: CSFDCreator[];
-  costumeDesign: CSFDCreator[];
-  productionDesign: CSFDCreator[];
+  directors: CSFDMovieCreator[];
+  writers: CSFDMovieCreator[];
+  cinematography: CSFDMovieCreator[];
+  music: CSFDMovieCreator[];
+  actors: CSFDMovieCreator[];
+  basedOn: CSFDMovieCreator[];
+  producers: CSFDMovieCreator[];
+  filmEditing: CSFDMovieCreator[];
+  costumeDesign: CSFDMovieCreator[];
+  productionDesign: CSFDMovieCreator[];
 }
 
 export interface CSFDTitlesOther {
@@ -63,7 +63,7 @@ export interface CSFDTitlesOther {
   title: string;
 }
 
-export interface CSFDCreator {
+export interface CSFDMovieCreator {
   /**
    * CSFD person ID.
    *
