@@ -1,5 +1,6 @@
-import { describe, expect, test } from 'vitest';
+import { beforeAll, describe, expect, test } from 'vitest';
 import { csfd } from '../src';
+import { CSFDCinema } from '../src/dto/cinema';
 import { CSFDCreatorScreening } from '../src/dto/creator';
 import { CSFDColorRating, CSFDFilmTypes } from '../src/dto/global';
 import { fetchPage } from '../src/fetchers';
@@ -52,6 +53,9 @@ describe('Live: Movie page', () => {
     expect(movie.year).toEqual<number>(1994);
     expect(movie.title).toEqual<string>('Království');
   });
+  test('Fetch not number', async () => {
+    await expect(csfd.movie('test' as any)).rejects.toThrow(Error);
+  });
 });
 
 // Search
@@ -63,6 +67,33 @@ describe('Live: Search', () => {
     expect(matrix?.creators?.directors.map((x) => x.name)).toEqual<string[]>(
       expect.arrayContaining(['Lilly Wachowski'])
     );
+  });
+});
+
+// Search
+describe('Live: Cinemas', () => {
+  let cinemas: CSFDCinema[]
+  beforeAll(async () => {
+    cinemas = await csfd.cinema(1, 'today');
+  });
+  test('Check city', async () => {
+    const pragueCinemas = cinemas.filter((x) => x.city.includes('Praha'));
+    expect(pragueCinemas.length).toBeGreaterThan(0);
+  });
+  test('Check screenings', async () => {
+    const screenings = cinemas[0].screenings;
+    expect(screenings.length).toBeGreaterThan(0);
+  });
+  test('Check screenings', async () => {
+    const film = cinemas[0].screenings[0].films[0];
+    expect(film.id).toBeDefined();
+    expect(film.meta).toBeDefined();
+    expect(film.title).toBeDefined();
+    expect(film.url).toContain('/film/');
+  });
+  test('Check showtimes', async () => {
+    const film = cinemas[0].screenings[0].films[1].showTimes[0];
+    expect(film).toBeDefined();
   });
 });
 
@@ -80,6 +111,9 @@ describe('Live: Creator page', () => {
       year: 1934,
       colorRating: 'good'
     });
+  });
+  test('Fetch not number', async () => {
+    await expect(csfd.creator('test' as any)).rejects.toThrow(Error);
   });
 });
 
