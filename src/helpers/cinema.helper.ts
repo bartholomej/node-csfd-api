@@ -8,8 +8,10 @@ import { CSFDColorRating } from '../dto/global';
 import { Colors } from '../dto/user-ratings';
 import { parseColor, parseIdFromUrl } from './global.helper';
 
-export const getCinemaColorRating = (el: HTMLElement): CSFDColorRating => {
-  return parseColor(el?.classNames.split(' ').pop() as Colors);
+export const getCinemaColorRating = (el: HTMLElement | null): CSFDColorRating => {
+  const classes: string[] = el?.classNames.split(' ') ?? [];
+  const last = classes.length ? classes[classes.length - 1] : undefined;
+  return last ? parseColor(last as Colors) : 'unknown';
 };
 
 export const getCinemaId = (el: HTMLElement | null): number => {
@@ -17,11 +19,9 @@ export const getCinemaId = (el: HTMLElement | null): number => {
   return +id;
 };
 
-export const getCinemaUrlId = (url: string): number | null => {
-  if (url) {
-    return parseIdFromUrl(url);
-  }
-  return null;
+export const getCinemaUrlId = (url: string | null | undefined): number | null => {
+  if (!url) return null;
+  return parseIdFromUrl(url);
 };
 
 export const getCinemaCoords = (el: HTMLElement | null): { lat: number; lng: number } | null => {
@@ -74,7 +74,7 @@ export const getCinemaFilms = (date: string, el: HTMLElement | null): CSFDCinema
 
   const films = filmNodes.map((filmNode) => {
     const url = filmNode.querySelector('td.name h3 a')?.attributes.href;
-    const id = getCinemaUrlId(url);
+    const id = url ? getCinemaUrlId(url) : null;
     const title = filmNode.querySelector('.name h3')?.text.trim();
     const colorRating = getCinemaColorRating(filmNode.querySelector('.name .icon'));
     const showTimes = filmNode.querySelectorAll('.td-time')?.map((x) => x.textContent.trim());
