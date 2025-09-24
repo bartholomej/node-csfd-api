@@ -55,6 +55,77 @@ describe('Cinema info', () => {
     expect(getCinemaCoords(el)).toBe(null);
   });
 
+  test('getCoords returns null if element is null', () => {
+    expect(getCinemaCoords(null)).toBe(null);
+  });
+
+  test('getCoords returns null if coordinates are not finite - latitude is Infinity', () => {
+    const el = parse('<div><a href="https://maps.google.cz/maps?q=Infinity,14.4605098">Infinite latitude</a></div>');
+    expect(getCinemaCoords(el)).toBe(null);
+  });
+
+  test('getCoords returns null if coordinates are not finite - longitude is Infinity', () => {
+    const el = parse('<div><a href="https://maps.google.cz/maps?q=50.0779486,Infinity">Infinite longitude</a></div>');
+    expect(getCinemaCoords(el)).toBe(null);
+  });
+
+  test('getCoords returns null if coordinates are not finite - latitude is -Infinity', () => {
+    const el = parse('<div><a href="https://maps.google.cz/maps?q=-Infinity,14.4605098">Negative infinite latitude</a></div>');
+    expect(getCinemaCoords(el)).toBe(null);
+  });
+
+  test('getCoords returns null if coordinates are not finite - longitude is -Infinity', () => {
+    const el = parse('<div><a href="https://maps.google.cz/maps?q=50.0779486,-Infinity">Negative infinite longitude</a></div>');
+    expect(getCinemaCoords(el)).toBe(null);
+  });
+
+  test('getCoords returns null if coordinates are not finite - latitude is NaN', () => {
+    const el = parse('<div><a href="https://maps.google.cz/maps?q=notanumber,14.4605098">NaN latitude</a></div>');
+    expect(getCinemaCoords(el)).toBe(null);
+  });
+
+  test('getCoords returns null if coordinates are not finite - longitude is NaN', () => {
+    const el = parse('<div><a href="https://maps.google.cz/maps?q=50.0779486,notanumber">NaN longitude</a></div>');
+    expect(getCinemaCoords(el)).toBe(null);
+  });
+
+  test('getCoords returns null if both coordinates are not finite', () => {
+    const el = parse('<div><a href="https://maps.google.cz/maps?q=Infinity,NaN">Both invalid</a></div>');
+    expect(getCinemaCoords(el)).toBe(null);
+  });
+
+  test('getCoords returns null if linkMapsEl exists but has no href attribute', () => {
+    const el = parse('<div><a>No href</a></div>');
+    expect(getCinemaCoords(el)).toBe(null);
+  });
+
+  test('getCoords returns valid coordinates for proper format', () => {
+    const el = parse('<div><a href="https://maps.google.cz/maps?q=50.1234567,14.9876543">Valid coordinates</a></div>');
+    const result = getCinemaCoords(el);
+    expect(result).toEqual({
+      lat: 50.1234567,
+      lng: 14.9876543
+    });
+  });
+
+  test('getCoords handles negative coordinates correctly', () => {
+    const el = parse('<div><a href="https://maps.google.cz/maps?q=-50.1234567,-14.9876543">Negative coordinates</a></div>');
+    const result = getCinemaCoords(el);
+    expect(result).toEqual({
+      lat: -50.1234567,
+      lng: -14.9876543
+    });
+  });
+
+  test('getCoords handles zero coordinates correctly', () => {
+    const el = parse('<div><a href="https://maps.google.cz/maps?q=0,0">Zero coordinates</a></div>');
+    const result = getCinemaCoords(el);
+    expect(result).toEqual({
+      lat: 0,
+      lng: 0
+    });
+  });
+
   test('parseCinema', () => {
     const item = parseCinema(contentNode[10]);
     expect(item).toEqual({
