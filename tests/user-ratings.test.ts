@@ -116,6 +116,83 @@ describe('Get color rating', () => {
   test('Red', () => {
     const movie = getUserRatingColorRating(movies[2]);
     expect(movie).toEqual<CSFDColorRating>('good');
+  })
+  test('Grey color should return bad', () => {
+    // Create a mock element with grey class
+    const mockElement = parse(`
+      <tr>
+        <td class="name">
+          <span class="icon grey"></span>
+        </td>
+      </tr>
+    `);
+    const result = getUserRatingColorRating(mockElement);
+    expect(result).toEqual<CSFDColorRating>('bad');
+  });
+
+  test('Lightgrey color should return unknown', () => {
+    // Create a mock element with lightgrey class
+    const mockElement = parse(`
+      <tr>
+        <td class="name">
+          <span class="icon lightgrey"></span>
+        </td>
+      </tr>
+    `);
+    const result = getUserRatingColorRating(mockElement);
+    expect(result).toEqual<CSFDColorRating>('unknown');
+  });
+
+  test('Unknown/invalid color should return unknown (default case)', () => {
+    // Create a mock element with an unknown color class
+    const mockElement = parse(`
+      <tr>
+        <td class="name">
+          <span class="icon purple"></span>
+        </td>
+      </tr>
+    `);
+    const result = getUserRatingColorRating(mockElement);
+    expect(result).toEqual<CSFDColorRating>('unknown');
+  });
+
+  test('No color class should return unknown (default case)', () => {
+    // Create a mock element with no color class
+    const mockElement = parse(`
+      <tr>
+        <td class="name">
+          <span class="icon"></span>
+        </td>
+      </tr>
+    `);
+    const result = getUserRatingColorRating(mockElement);
+    expect(result).toEqual<CSFDColorRating>('unknown');
+  });
+
+  test('Empty string color should return unknown (default case)', () => {
+    // Create a mock element with empty class
+    const mockElement = parse(`
+      <tr>
+        <td class="name">
+          <span class="icon "></span>
+        </td>
+      </tr>
+    `);
+    const result = getUserRatingColorRating(mockElement);
+    expect(result).toEqual<CSFDColorRating>('unknown');
+  });
+
+  test('Multiple classes with valid color should work', () => {
+    // Create a mock element with multiple classes including a valid color
+    const mockElement = parse(`
+      <tr>
+        <td class="name">
+          <span class="icon some-other-class another-class red"></span>
+        </td>
+      </tr>
+    `);
+    const result = getUserRatingColorRating(mockElement);
+    expect(result).toEqual<CSFDColorRating>('good');
   });
 });
 
