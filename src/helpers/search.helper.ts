@@ -8,7 +8,7 @@ type Creator = 'Režie:' | 'Hrají:';
 
 export const getSearchType = (el: HTMLElement): CSFDFilmTypes => {
   const type = el.querySelectorAll('.film-title-info .info')[1];
-  return (type?.innerText.replace(/[{()}]/g, '') || 'film') as CSFDFilmTypes;
+  return (type?.innerText?.replace(/[{()}]/g, '')?.trim() || 'film') as CSFDFilmTypes;
 };
 
 export const getSearchTitle = (el: HTMLElement): string => {
