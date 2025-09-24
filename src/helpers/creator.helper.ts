@@ -8,12 +8,12 @@ const getCreatorColorRating = (el: HTMLElement): CSFDColorRating => {
   return parseColor(el?.classNames.split(' ').pop() as Colors);
 };
 
-export const getCreatorId = (url: string): number => {
+export const getCreatorId = (url: string): number | null => {
   if (url) {
     return parseIdFromUrl(url);
   }
   return null;
-};
+}
 
 export const getCreatorName = (el: HTMLElement | null): string => {
   return el.querySelector('h1').innerText.trim();
@@ -46,22 +46,21 @@ export const getCreatorBio = (el: HTMLElement | null): string => {
   return el.querySelector('.article-content p')?.text.trim().split('\n')[0].trim() || null;
 };
 
-export const getCreatorPhoto = (el: HTMLElement | null): string => {
-  const image = el.querySelector('img').attributes.src;
-  return addProtocol(image);
+export const getCreatorPhoto = (el: HTMLElement | null): string | null => {
+  const src = el?.querySelector('img')?.getAttribute('src');
+  return src ? addProtocol(src) : null;
 };
 
-const parseBirthday = (text: string): any => {
-  return text.replace(/nar./g, '').trim();
+const parseBirthday = (text: string): string => text.replace(/nar\./g, '').trim();
+
+const parseAge = (text: string): number | null => {
+  const digits = text.replace(/[^\d]/g, '');
+  return digits ? Number(digits) : null;
 };
 
-const parseAge = (text: string): any => {
-  return text.trim().replace(/\(/g, '').replace(/let\)/g, '').trim();
-};
+const parseBirthPlace = (text: string): string =>
+  text.trim().replace(/<br>/g, '').trim();
 
-const parseBirthPlace = (text: string): any => {
-  return text.trim().replace(/<br>/g, '').trim();
-};
 
 export const getCreatorFilms = (el: HTMLElement | null): CSFDCreatorScreening[] => {
   const filmNodes = el.querySelectorAll('.box')[0]?.querySelectorAll('table tr');
