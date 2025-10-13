@@ -1,4 +1,4 @@
-import { HTMLElement } from 'node-html-parser';
+import { HTMLElement, NodeType } from 'node-html-parser';
 import { addProtocol } from './global.helper';
 
 export const getUser = (el: HTMLElement): string => {
@@ -6,7 +6,13 @@ export const getUser = (el: HTMLElement): string => {
 };
 
 export const getUserRealName = (el: HTMLElement): string => {
-  return el.querySelector('.user-real-name')?.text.trim() || null;
+  const p = el.querySelector('.article-content p');
+  if (!p) return null;
+
+  const textNodes = p.childNodes.filter(n => n.nodeType === NodeType.TEXT_NODE && n.rawText.trim() !== '');
+  const name = textNodes.length ? textNodes[0].rawText.trim() : null;
+
+  return name;
 };
 
 export const getAvatar = (el: HTMLElement): string => {
