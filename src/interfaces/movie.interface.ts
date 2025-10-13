@@ -38,6 +38,9 @@ export type CSFDVodService =
   | 'ivysilani'
   | 'Google Play'
   | 'Voyo'
+  | 'YouTube Movies'
+  | 'prima+'
+  | 'Blu-ray'
   | 'DVD';
 
 export interface CSFDVod {
