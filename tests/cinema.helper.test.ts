@@ -67,8 +67,8 @@ describe('Cinema info', () => {
 describe('Cinema films by date', () => {
   test('getGroupedFilmsByDate', () => {
     const item = getGroupedFilmsByDate(contentNode[2]);
-    expect(item[0]?.date).toEqual('čtvrtek 04.09.2025');
-    expect(item[0]?.films[0].title).toEqual('13 dní, 13 nocí');
+    expect(item[0]?.date).toEqual('pondělí 13.10.2025');
+    expect(item[0]?.films[0].title).toEqual('Cizinci: Kapitola 2');
   });
 
   test('getFilms returns correct film data', () => {

@@ -40,6 +40,7 @@ export type CSFDVodService =
   | 'Voyo'
   | 'YouTube Movies'
   | 'prima+'
+  | 'Lepší.TV'
   | 'Blu-ray'
   | 'DVD';
 

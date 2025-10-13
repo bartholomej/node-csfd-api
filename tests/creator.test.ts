@@ -40,7 +40,7 @@ describe('Creator info', () => {
   test('Photo', () => {
     const creator = getPhoto(asideNode);
     expect(creator).toEqual<string>(
-      'https://image.pmgstatic.com/cache/resized/w100h132crop/files/images/creator/photos/164/515/164515525_b98f8a.jpg'
+      'https://image.pmgstatic.com/cache/resized/w100h132crop/files/images/creator/photos/164/502/164502788_119691.jpg'
     );
   });
 });
@@ -58,14 +58,14 @@ describe('Creator birthday info', () => {
 
   test('Age', () => {
     const creator = getBirthdayInfo(asideNode)?.age;
-    expect(creator).toEqual<number>(61);
+    expect(creator).toEqual<number>(62);
   });
 });
 
 describe("Creator's films", () => {
   test('First film from first section', () => {
     const films = getFilms(filmsNode) as CSFDCreatorScreening[];
-    expect(films[0].title).toEqual<string>('The Movie Critic');
+    expect(films[0].title).toEqual<string>('Tenkrát v Hollywoodu');
   });
 
   test('Last film from first section', () => {
@@ -75,7 +75,7 @@ describe("Creator's films", () => {
 
   test('Year second movie', () => {
     const films = getFilms(filmsNode) as CSFDCreatorScreening[];
-    expect(films[1].year).toEqual<number>(2019);
+    expect(films[1].year).toEqual<number>(2015);
   });
 });
 
@@ -97,7 +97,7 @@ describe('Actor info', () => {
   test('Photo', () => {
     const creator = getPhoto(asideNodeActor);
     expect(creator).toEqual<string>(
-      'https://image.pmgstatic.com/cache/resized/w100h132crop/files/images/creator/photos/166/233/166233274_298dbd.jpg'
+      'https://image.pmgstatic.com/cache/resized/w100h132crop/files/images/creator/photos/166/233/166233273_ee93ba.jpg'
     );
   });
 });
@@ -115,14 +115,14 @@ describe('Actor birthday info', () => {
 
   test('Age', () => {
     const creator = getBirthdayInfo(asideNodeActor)?.age;
-    expect(creator).toEqual<number>(58);
+    expect(creator).toEqual<number>(59);
   });
 });
 
 describe("Creator's films", () => {
   test('First film from first section', () => {
     const films = getFilms(filmsNodeActor) as CSFDCreatorScreening[];
-    expect(films[0].title).toEqual<string>('The Billion Dollar Spy');
+    expect(films[0].title).toEqual<string>('The Black Kaiser');
   });
 
   test('Last film from first section', () => {
@@ -146,7 +146,7 @@ describe('Composer info', () => {
 
   test('Bio', () => {
     const creator = getBio(asideNodeComposer);
-    expect(creator).toEqual<string>(null);
+    expect(creator).toEqual<string>('Tento tvůrce zatím nemá přidanou biografii.');
   });
 
   test('Photo', () => {

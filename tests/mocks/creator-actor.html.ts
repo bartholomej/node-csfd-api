@@ -1,5 +1,6 @@
 export const actorMock = `
 
+
 <!DOCTYPE html>
 <html lang="cs-CZ">
 	<head>
@@ -12,65 +13,7 @@ export const actorMock = `
 </script>
 <script src="/nativeads.js"></script>
 <script>
-	window.dataLayer = window.dataLayer || [];
-	function gtag() {window.dataLayer.push(arguments);}
-
-	gtag('consent', 'default', {
-		'ad_storage': 'denied',
-		'ad_user_data': 'denied',
-		'ad_personalization': 'denied',
-		'analytics_storage': 'denied',
-		'functionality_storage': 'denied',
-		'personalization_storage': 'denied',
-		'security_storage': 'denied'
-	});
-
-	window.didomiOnReady = window.didomiOnReady || [];
-	window.didomiOnReady.push(function () {
-		var consentIsGranted = false;
-		var consentObject = {};
-		if (Didomi.getUserConsentStatusForPurpose('publishers-Kqq3iPge')) {
-			consentObject.analytics_storage = 'granted';
-			consentIsGranted = true;
-		}
-
-		if (Didomi.getUserConsentStatusForVendor('google')) {
-			consentObject.ad_storage = 'granted';
-			consentObject.ad_user_data = 'granted';
-			consentObject.ad_personalization = 'granted';
-			consentObject.functionality_storage = 'granted';
-			consentObject.personalization_storage = 'granted';
-			consentObject.security_storage = 'granted';
-			consentIsGranted = true;
-		}
-
-		if (consentIsGranted) {
-			gtag('consent', 'update', consentObject);
-
-			window.dataLayer.push({
-				'event': 'consent_init',
-				'consent': consentObject
-			});
-		}
-	});
-
-	var googleAnalyticsPageViewData = {"event":"page_view","site":"www.csfd.cz","platform":"web","environment":"production","language":"cs","device":"desktop","user":{"id":null,"adblock":false},"page":{"id":4929,"type":"Creator","title":null,"url":"https:\/\/www.csfd.cz\/tvurce\/4929-mads-mikkelsen\/prehled\/","path":"\/tvurce\/4929-mads-mikkelsen\/prehled\/","section":"Creator"},"_clear":true};
-	if (googleAnalyticsPageViewData !== null) {
-		googleAnalyticsPageViewData.page.title = "Mads Mikkelsen | ČSFD.cz";
-		googleAnalyticsPageViewData.user.adblock = !!window[ab_detection];
-		var sp = null;
-		if (window.localStorage !== null) {
-			var i = window.localStorage.getItem('sp');
-			if (i === '1' || i === '2') {
-				sp = parseInt(i, 10);
-			} else {
-				sp = Math.floor(Math.random() * 2) + 1;
-				window.localStorage.setItem('sp', sp);
-			}
-		}
-		googleAnalyticsPageViewData.status_pair = sp === null ? Math.floor(Math.random() * 2) + 1 : sp;
-		window.dataLayer.push(googleAnalyticsPageViewData);
-	}
+	function gtag(){window.dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("consent","default",{ad_storage:"denied",ad_user_data:"denied",ad_personalization:"denied",analytics_storage:"denied",functionality_storage:"denied",personalization_storage:"denied",security_storage:"denied"}),window.didomiOnReady=window.didomiOnReady||[],window.didomiOnReady.push((function(){var a=!1,e={};Didomi.getUserConsentStatusForPurpose("publishers-Kqq3iPge")&&(e.analytics_storage="granted",a=!0),Didomi.getUserConsentStatusForVendor("google")&&(e.ad_storage="granted",e.ad_user_data="granted",e.ad_personalization="granted",e.functionality_storage="granted",e.personalization_storage="granted",e.security_storage="granted",a=!0),a&&(gtag("consent","update",e),window.dataLayer.push({event:"consent_init",consent:e}))}));var googleAnalyticsPageViewData={"event":"page_view","site":"www.csfd.cz","platform":"web","environment":"production","language":"cs","device":"desktop","user":{"id":null,"adblock":false},"page":{"id":4929,"type":"Creator","title":null,"url":"https:\/\/www.csfd.cz\/tvurce\/4929-mads-mikkelsen\/prehled\/","path":"\/tvurce\/4929-mads-mikkelsen\/prehled\/","section":"Creator","dark_mode":false},"_clear":true};if(null!==googleAnalyticsPageViewData){googleAnalyticsPageViewData.page.title="Mads Mikkelsen | ČSFD.cz",googleAnalyticsPageViewData.user.adblock=!!window[ab_detection];var sp=null;if(null!==window.localStorage){var i=window.localStorage.getItem("sp");"1"===i||"2"===i?sp=parseInt(i,10):(sp=Math.floor(2*Math.random())+1,window.localStorage.setItem("sp",sp))}googleAnalyticsPageViewData.status_pair=null===sp?Math.floor(2*Math.random())+1:sp,window.dataLayer.push(googleAnalyticsPageViewData)}
 </script>
 <script>
 window.didomiConfig = {
@@ -81,7 +24,6 @@ window.didomiConfig = {
 };
 window.gdprAppliesGlobally=true;(function(){function a(e){if(!window.frames[e]){if(document.body&&document.body.firstChild){var t=document.body;var n=document.createElement("iframe");n.style.display="none";n.name=e;n.title=e;t.insertBefore(n,t.firstChild)} else{setTimeout(function(){a(e)},5)}}}function e(n,r,o,c,s){function e(e,t,n,a){if(typeof n!=="function"){return}if(!window[r]){window[r]=[]}var i=false;if(s){i=s(e,t,n)}if(!i){window[r].push({command:e,parameter:t,callback:n,version:a})}}e.stub=true;function t(a){if(!window[n]||window[n].stub!==true){return}if(!a.data){return} var i=typeof a.data==="string";var e;try{e=i?JSON.parse(a.data):a.data}catch(t){return}if(e[o]){var r=e[o];window[n](r.command,r.parameter,function(e,t){var n={};n[c]={returnValue:e,success:t,callId:r.callId};a.source.postMessage(i?JSON.stringify(n):n,"*")},r.version)}} if(typeof window[n]!=="function"){window[n]=e;if(window.addEventListener){window.addEventListener("message",t,false)}else{window.attachEvent("onmessage",t)}}}e("__tcfapi","__tcfapiBuffer","__tcfapiCall","__tcfapiReturn");a("__tcfapiLocator"); (function(e){var t=document.createElement("script");t.id="spcloader";t.type="text/javascript";t.async=true;t.src="https://sdk.privacy-center.org/"+e+"/loader.js?target="+document.location.hostname;t.charset="utf-8";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n)})("9a8e2159-3781-4da1-9590-fbf86806f86e")})();
 </script>
-<script src="https://cdn.cpex.cz/cmp/v2/cpex-cmp-upgrade.min.js" type="text/javascript"></script>
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
@@ -120,9 +62,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="canonical" href="https://www.csfd.cz/tvurce/4929-mads-mikkelsen/prehled/">
 
 <meta property="og:site_name" content="ČSFD.cz">
-<meta property="og:image" content="//image.pmgstatic.com/cache/resized/w936/files/images/film/photos/164/535/164535337_44fb5b.jpg">
-<meta property="og:image" content="//image.pmgstatic.com/cache/resized/w936/files/images/film/photos/000/253/253567_c1cf06.jpg">
-<meta property="og:image" content="//image.pmgstatic.com/cache/resized/w936/files/images/film/photos/158/346/158346547_7da9e5.jpg">
+<meta property="og:image" content="https://image.pmgstatic.com/cache/resized/w936/files/images/film/photos/000/153/153533_3179e3.jpg">
+<meta property="og:image" content="https://image.pmgstatic.com/cache/resized/w936/files/images/film/photos/000/251/251746_e7e27a.jpg">
+<meta property="og:image" content="https://image.pmgstatic.com/cache/resized/w936/files/images/film/photos/000/253/253567_c1cf06.jpg">
 <meta property="og:description" content="Vše o tvůrci Mads Mikkelsen: Filmografie, Biografie, Zajímavosti, Videa, Galerie, Diskuze a další...">
 <meta property="og:title" content="Mads Mikkelsen | ČSFD.cz">
 <meta property="og:type" content="actor">
@@ -133,75 +75,50 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta name="twitter:url" content="https://www.csfd.cz/tvurce/4929-mads-mikkelsen/prehled/">
 <meta name="twitter:title" content="Mads Mikkelsen | ČSFD.cz">
 <meta name="twitter:description" content="Vše o tvůrci Mads Mikkelsen: Filmografie, Biografie, Zajímavosti, Videa, Galerie, Diskuze a další...">
-<meta name="twitter:image" content="//image.pmgstatic.com/cache/resized/w936/files/images/film/photos/164/535/164535337_44fb5b.jpg">
+<meta name="twitter:image" content="https://image.pmgstatic.com/cache/resized/w936/files/images/film/photos/000/153/153533_3179e3.jpg">
 		<meta name="theme-color" content="#ba0305">
 		<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ba0305">
 		<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#ba0305">
-		<link rel="stylesheet" href="//static.pmgstatic.com/assets/web-css/004abeaf57e23c8fe28a2473e92e11d5/styles.min.css">
-		<link rel="shortcut icon" href="//static.pmgstatic.com/assets/images/4b37ac5ff3cce04f5ea0278688618768/favicon.ico">
-		<link rel="apple-touch-icon" href="//static.pmgstatic.com/assets/images/4b37ac5ff3cce04f5ea0278688618768/apple-touch-icon.png">
-		<script src="//static.pmgstatic.com/assets/vendor/672bc7a35152f1a31eea0f71cc398bdb/jquery.min.js"></script>
-		<script src="//static.pmgstatic.com/assets/web-js/29a6231a0410e2580881e75f9858280b/scripts.min.js" defer></script>
+		<link rel="stylesheet" href="//static.pmgstatic.com/assets/web-css/82970f1f0d34a9fa2780f80ad6fd2ff7/styles.min.css">
+		<link rel="shortcut icon" href="//static.pmgstatic.com/assets/images/0224ed11a474c34143bc9ee692d2ac17/favicon.ico">
+		<link rel="apple-touch-icon" href="//static.pmgstatic.com/assets/images/0224ed11a474c34143bc9ee692d2ac17/apple-touch-icon.png">
+		<script src="//static.pmgstatic.com/assets/vendor/a6e0859357720145e4690f4760fda7cd/jquery.min.js"></script>
+		<script src="//static.pmgstatic.com/assets/web-js/dc255485b18cc5fe246707030d5618d5/scripts.min.js" defer></script>
 
 <script type="text/javascript">
 	window.AdsObject = {};
 	window.sasUrl = "https://a.csfd.cz/csfd";
 </script>
 <script>
-		(function () {
-			function loadScript (url, name) {
-				var script = document.createElement('script')
-				script.src = url
-				script.fetchPriority = 'high'
-				document.head.appendChild(script)
-			}
-			// R2B2 skript pro HB
-			var scriptType = window.innerWidth <= 500 ? 'mobile' : 'desktop'
-			loadScript('//trackad.cz/hb/pomoMediaGroup/pomo.csfd.cz_' + scriptType)
-			loadScript('//delivery.r2b2.cz/get/pomo.csfd.cz/hb/video_preroll')
-			// cpexPackage
-			window.cpexPackageConfig = {
-				publisherSettingsPath: 'https://cdn.cpex.cz/settings/' + isOn('stageSetPub', 'stage', 'production') + '/csfd.js',
-				websiteSettingsPath: 'https://cdn.cpex.cz/settings/' + isOn('stageSetWeb', 'stage', 'production') + '/csfd/csfd.cz.js',
-				errorPath: ''
-			}
-			function isOn(keyword, on, off) { return window.location.href.indexOf(keyword) > -1 ? on : off }
-			loadScript('https://cdn.cpex.cz/' + isOn('stagePackage', 'stage/', '') + 'package/cpex-package' + isOn('debug', '.js', '.min.js'))
-		})()
+	!function(){var t=function(t,e,c){return window.location.href.indexOf(t)>-1?e:c};window.cpexPackageConfig={publisherSettingsPath:"https://cdn.cpex.cz/settings/"+t("stageSetPub","stage","production")+"/csfd.js",websiteSettingsPath:"https://cdn.cpex.cz/settings/"+t("stageSetWeb","stage","production")+"/csfd/csfd.cz.js",errorPath:""},document.head.appendChild(Object.assign(document.createElement("script"),{src:"https://cdn.cpex.cz/"+t("stagePackage","stage/","")+"package/cpex-package"+t("cpxdebug",".js",".min.js"),fetchPriority:"high"}))}();
 </script>
 
-<script id="caroda-videoplayer-script" src="https://publisher.caroda.io/videoPlayer/caroda.min.js?ctok=231efd424e405a" crossorigin="anonymous" defer></script>
+<script type="text/javascript" src="//delivery.r2b2.cz/hb/pomoMediaGroup/pomo.csfd.cz_desktop"></script>
+
+<script id="caroda-videoplayer-script" src="https://publisher.caroda.io/videoPlayer/caroda.min.js?ctok=231efd424e405a&domain=csfd.cz" crossorigin="anonymous" defer></script>
+	<script>
+	function _typeof(t){return _typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(t){return typeof t}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":typeof t},_typeof(t)}function _regeneratorRuntime(){"use strict";_regeneratorRuntime=function(){return r};var t,r={},e=Object.prototype,n=e.hasOwnProperty,o="function"==typeof Symbol?Symbol:{},a=o.iterator||"@@iterator",i=o.asyncIterator||"@@asyncIterator",u=o.toStringTag||"@@toStringTag";function c(t,r,e,n){return Object.defineProperty(t,r,{value:e,enumerable:!n,configurable:!n,writable:!n})}try{c({},"")}catch(t){c=function(t,r,e){return t[r]=e}}function s(r,e,n,o){var a=e&&e.prototype instanceof h?e:h,i=Object.create(a.prototype);return c(i,"_invoke",function(r,e,n){var o=1;return function(a,i){if(3===o)throw Error("Generator is already running");if(4===o){if("throw"===a)throw i;return{value:t,done:!0}}for(n.method=a,n.arg=i;;){var u=n.delegate;if(u){var c=P(u,n);if(c){if(c===f)continue;return c}}if("next"===n.method)n.sent=n._sent=n.arg;else if("throw"===n.method){if(1===o)throw o=4,n.arg;n.dispatchException(n.arg)}else"return"===n.method&&n.abrupt("return",n.arg);o=3;var s=l(r,e,n);if("normal"===s.type){if(o=n.done?4:2,s.arg===f)continue;return{value:s.arg,done:n.done}}"throw"===s.type&&(o=4,n.method="throw",n.arg=s.arg)}}}(r,n,new E(o||[])),!0),i}function l(t,r,e){try{return{type:"normal",arg:t.call(r,e)}}catch(t){return{type:"throw",arg:t}}}r.wrap=s;var f={};function h(){}function y(){}function p(){}var d={};c(d,a,(function(){return this}));var v=Object.getPrototypeOf,w=v&&v(v(j([])));w&&w!==e&&n.call(w,a)&&(d=w);var g=p.prototype=h.prototype=Object.create(d);function m(t){["next","throw","return"].forEach((function(r){c(t,r,(function(t){return this._invoke(r,t)}))}))}function b(t,r){function e(o,a,i,u){var c=l(t[o],t,a);if("throw"!==c.type){var s=c.arg,f=s.value;return f&&"object"==_typeof(f)&&n.call(f,"__await")?r.resolve(f.__await).then((function(t){e("next",t,i,u)}),(function(t){e("throw",t,i,u)})):r.resolve(f).then((function(t){s.value=t,i(s)}),(function(t){return e("throw",t,i,u)}))}u(c.arg)}var o;c(this,"_invoke",(function(t,n){function a(){return new r((function(r,o){e(t,n,r,o)}))}return o=o?o.then(a,a):a()}),!0)}function P(r,e){var n=e.method,o=r.i[n];if(o===t)return e.delegate=null,"throw"===n&&r.i.return&&(e.method="return",e.arg=t,P(r,e),"throw"===e.method)||"return"!==n&&(e.method="throw",e.arg=new TypeError("The iterator does not provide a '"+n+"' method")),f;var a=l(o,r.i,e.arg);if("throw"===a.type)return e.method="throw",e.arg=a.arg,e.delegate=null,f;var i=a.arg;return i?i.done?(e[r.r]=i.value,e.next=r.n,"return"!==e.method&&(e.method="next",e.arg=t),e.delegate=null,f):i:(e.method="throw",e.arg=new TypeError("iterator result is not an object"),e.delegate=null,f)}function x(t){this.tryEntries.push(t)}function _(r){var e=r[4]||{};e.type="normal",e.arg=t,r[4]=e}function E(t){this.tryEntries=[[-1]],t.forEach(x,this),this.reset(!0)}function j(r){if(null!=r){var e=r[a];if(e)return e.call(r);if("function"==typeof r.next)return r;if(!isNaN(r.length)){var o=-1,i=function e(){for(;++o<r.length;)if(n.call(r,o))return e.value=r[o],e.done=!1,e;return e.value=t,e.done=!0,e};return i.next=i}}throw new TypeError(_typeof(r)+" is not iterable")}return y.prototype=p,c(g,"constructor",p),c(p,"constructor",y),y.displayName=c(p,u,"GeneratorFunction"),r.isGeneratorFunction=function(t){var r="function"==typeof t&&t.constructor;return!!r&&(r===y||"GeneratorFunction"===(r.displayName||r.name))},r.mark=function(t){return Object.setPrototypeOf?Object.setPrototypeOf(t,p):(t.__proto__=p,c(t,u,"GeneratorFunction")),t.prototype=Object.create(g),t},r.awrap=function(t){return{__await:t}},m(b.prototype),c(b.prototype,i,(function(){return this})),r.AsyncIterator=b,r.async=function(t,e,n,o,a){void 0===a&&(a=Promise);var i=new b(s(t,e,n,o),a);return r.isGeneratorFunction(e)?i:i.next().then((function(t){return t.done?t.value:i.next()}))},m(g),c(g,u,"Generator"),c(g,a,(function(){return this})),c(g,"toString",(function(){return"[object Generator]"})),r.keys=function(t){var r=Object(t),e=[];for(var n in r)e.unshift(n);return function t(){for(;e.length;)if((n=e.pop())in r)return t.value=n,t.done=!1,t;return t.done=!0,t}},r.values=j,E.prototype={constructor:E,reset:function(r){if(this.prev=this.next=0,this.sent=this._sent=t,this.done=!1,this.delegate=null,this.method="next",this.arg=t,this.tryEntries.forEach(_),!r)for(var e in this)"t"===e.charAt(0)&&n.call(this,e)&&!isNaN(+e.slice(1))&&(this[e]=t)},stop:function(){this.done=!0;var t=this.tryEntries[0][4];if("throw"===t.type)throw t.arg;return this.rval},dispatchException:function(r){if(this.done)throw r;var e=this;function n(t){i.type="throw",i.arg=r,e.next=t}for(var o=e.tryEntries.length-1;o>=0;--o){var a=this.tryEntries[o],i=a[4],u=this.prev,c=a[1],s=a[2];if(-1===a[0])return n("end"),!1;if(!c&&!s)throw Error("try statement without catch or finally");if(null!=a[0]&&a[0]<=u){if(u<c)return this.method="next",this.arg=t,n(c),!0;if(u<s)return n(s),!1}}},abrupt:function(t,r){for(var e=this.tryEntries.length-1;e>=0;--e){var n=this.tryEntries[e];if(n[0]>-1&&n[0]<=this.prev&&this.prev<n[2]){var o=n;break}}o&&("break"===t||"continue"===t)&&o[0]<=r&&r<=o[2]&&(o=null);var a=o?o[4]:{};return a.type=t,a.arg=r,o?(this.method="next",this.next=o[2],f):this.complete(a)},complete:function(t,r){if("throw"===t.type)throw t.arg;return"break"===t.type||"continue"===t.type?this.next=t.arg:"return"===t.type?(this.rval=this.arg=t.arg,this.method="return",this.next="end"):"normal"===t.type&&r&&(this.next=r),f},finish:function(t){for(var r=this.tryEntries.length-1;r>=0;--r){var e=this.tryEntries[r];if(e[2]===t)return this.complete(e[4],e[3]),_(e),f}},catch:function(t){for(var r=this.tryEntries.length-1;r>=0;--r){var e=this.tryEntries[r];if(e[0]===t){var n=e[4];if("throw"===n.type){var o=n.arg;_(e)}return o}}throw Error("illegal catch attempt")},delegateYield:function(r,e,n){return this.delegate={i:j(r),r:e,n:n},"next"===this.method&&(this.arg=t),f}},r}function asyncGeneratorStep(t,r,e,n,o,a,i){try{var u=t[a](i),c=u.value}catch(t){return void e(t)}u.done?r(c):Promise.resolve(c).then(n,o)}function _asyncToGenerator(t){return function(){var r=this,e=arguments;return new Promise((function(n,o){var a=t.apply(r,e);function i(t){asyncGeneratorStep(a,n,o,i,u,"next",t)}function u(t){asyncGeneratorStep(a,n,o,i,u,"throw",t)}i(void 0)}))}}!function(){window.carodaPlayerIdToCarodaInstreamLoaded={},window.carodaSyncScriptLoaded=!0;var t=function(){for(var t=arguments.length,r=new Array(t),e=0;e<t;e++)r[e]=arguments[e];var n,o;window.carodaConsole?(n=window.carodaConsole).log.apply(n,["sync"].concat(r)):(o=console).log.apply(o,["CARODA","sync"].concat(r))};!function(){if(window.videojs)console.error("CARODA :: sync script :: video.js already loaded :: run the sync script before video.js");else{window.carodaPreloadedContentPlayers=[],window.carodaOnNewContentPlayer=function(r){t("carodaProxyVideoJs","new content player",r),window.carodaPreloadedContentPlayers.push(r);var e=setInterval((function(){return r.el().classList.add("vjs-waiting")}),250);r.one("playing",(function(){return clearInterval(e)})),setTimeout((function(){var e;r.unpatchPlay&&(t("carodaProxyVideoJs","carodaOnNewContentPlayer","initializing player as Caroda has not"),window.carodaPlayerIdToCarodaInstreamLoaded[r.id()]=!1,null===(e=r.unpatchPlay)||void 0===e||e.call(r),r.play())}),5e3)};var r=void 0;Object.defineProperty(window,"videojs",{get:function(){return r},set:function(e){r=function(r){var e=r;return new Proxy(r,{apply:function(r,n,o){var a,i=e.apply(r,o);return i.carodaInitialized||(i.carodaInitialized=!0,i.pause(),a=i,t("patchPlay","patching play"),a.play=function(r){var e=r.play.bind(r);return _asyncToGenerator(_regeneratorRuntime().mark((function n(){return _regeneratorRuntime().wrap((function(n){for(;;)switch(n.prev=n.next){case 0:return t("safePlay","playing"),n.prev=1,n.next=4,e();case 4:return n.abrupt("return",n.sent);case 7:if(n.prev=7,n.t0=n.catch(1),t("safePlay",n.t0),!r.muted()){n.next=13;break}throw t("safePlay","player already muted"),n.t0;case 13:return t("safePlay","muting player and retrying"),r.muted(!0),n.abrupt("return",e());case 16:case"end":return n.stop()}}),n,null,[[1,7]])})))}(a),a._play=a.play,a.play=function(){return Promise.resolve()},a.unpatchPlay=function(){t("patchPlay","unpatching play"),a.play=a._play,delete a._play,delete a.unpatchPlay},window.carodaOnNewContentPlayer(i)),i}})}(e),t("carodaProxyVideoJs","video.js proxied")}})}}()}();
+	</script>
 
 
-<script id="videojs-vendor" src="//static.pmgstatic.com/assets/vendor/672bc7a35152f1a31eea0f71cc398bdb/videojs/video.min.js" async defer></script>
+<script id="videojs-vendor" src="//static.pmgstatic.com/assets/vendor/a6e0859357720145e4690f4760fda7cd/videojs/video.min.js" async defer></script>
 <script type="text/javascript" src="https://www.gstatic.com/cv/js/sender/v1/cast_sender.js?loadCastFramework=1" async defer></script>
-<link rel="stylesheet" href="//static.pmgstatic.com/assets/vendor/672bc7a35152f1a31eea0f71cc398bdb/videojs/video-js.min.css">
+<link rel="stylesheet" href="//static.pmgstatic.com/assets/vendor/a6e0859357720145e4690f4760fda7cd/videojs/video-js.min.css">
 	</head>
 
-	<body id="top" class="lang-1" data-page="creator">
+	<body id="top" class="csfd-cz lang-1" data-page="creator">
 		<div class="body">
 			<div class="ad-wrapper">
 				<div id="leaderboard-wrapper">
 					<p class="box-banner-text-center">Reklama</p>
 <div id="leaderboard" class="ad-pmg" style="height: 200px;"></div>
 				</div>
-				<div class="box box-banner-mobile">
-					<p class="box-banner-text-center">Reklama</p>
-<div id="mobile_leaderboard" class="ad-pmg" style="height: 100px;"></div>
-				</div>
 			</div>
 
 			<div id="page-wrapper">
 
-				<div class="top-info">
-					<div class="top-info-content">
-						<p>
-							<a href="/akce/499-csfd-projekce-gladiator-ii/">ČSFD projekce <em>Gladiátor II</em></a>
-						</p>
-					</div>
-				</div>
 
-				<header class="page-header user-not-logged projection-on">
+				<header class="page-header page-header-csfd-cz user-not-logged">
 					<div class="header-main">
 						<div class="logo">
 							<a href="/" class="csfd-cz">ČSFD.cz</a>
@@ -213,32 +130,49 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 								<div class="search-input">
 									<input name="q" type="search" autocomplete="off" placeholder="Vyhledávání">
 									<a href="javascript:void(0);" class="input-search-close">
-										<i class="icon icon-close"></i>
+										<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+											<path stroke-linecap="round" stroke-linejoin="round" d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"></path>
+										</svg>
 									</a>
-									<button type="submit" class="btn-search"><i class="icon icon-search"></i><span>Hledat</span></button>
+									<button type="submit" class="btn-search" title="Hledat">
+										Hledat
+									</button>
 								</div>
 							</form>
 
-							<a href="/podrobne-vyhledavani/" class="detailed-search">Podrobné vyhledávání</a>
+							<a href="/podrobne-vyhledavani/" class="detailed-search" title="Podrobné vyhledávání">
+								<svg width="16" height="16" viewBox="0 0 16 16" stroke="none" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M3.44714 4.66667C3.72169 5.44346 4.46252 6 5.33333 6C6.20415 6 6.94497 5.44346 7.21953 4.66667L14 4.66667V3.33333L7.21953 3.33333C6.94497 2.55654 6.20415 2 5.33333 2C4.46252 2 3.72169 2.55654 3.44714 3.33333L2 3.33333V4.66667L3.44714 4.66667ZM5.33333 3.33333C4.96514 3.33333 4.66667 3.63181 4.66667 4C4.66667 4.36819 4.96514 4.66667 5.33333 4.66667C5.70152 4.66667 6 4.36819 6 4C6 3.63181 5.70152 3.33333 5.33333 3.33333Z"></path>
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M5.33333 14C4.46252 14 3.72169 13.4435 3.44714 12.6667H2V11.3333H3.44714C3.72169 10.5565 4.46252 10 5.33333 10C6.20415 10 6.94497 10.5565 7.21953 11.3333L14 11.3333V12.6667L7.21953 12.6667C6.94497 13.4435 6.20415 14 5.33333 14ZM5.33333 11.3333C4.96514 11.3333 4.66667 11.6318 4.66667 12C4.66667 12.3682 4.96514 12.6667 5.33333 12.6667C5.70152 12.6667 6 12.3682 6 12C6 11.6318 5.70152 11.3333 5.33333 11.3333Z"></path>
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M12.5529 7.33333C12.2783 6.55654 11.5375 6 10.6667 6C9.79585 6 9.05503 6.55654 8.78047 7.33333L2 7.33333V8.66667L8.78047 8.66667C9.05503 9.44346 9.79585 10 10.6667 10C11.5375 10 12.2783 9.44346 12.5529 8.66667H14V7.33333H12.5529ZM10 8C10 7.63181 10.2985 7.33333 10.6667 7.33333C11.0349 7.33333 11.3333 7.63181 11.3333 8C11.3333 8.36819 11.0349 8.66667 10.6667 8.66667C10.2985 8.66667 10 8.36819 10 8Z"></path>
+								</svg>
+							</a>
 
 						</div>
 
 						<ul class="header-bar">
 							<li class="item-search">
 								<a href="#show-search" class="user-link show-search">
-									<i class="icon icon-search"></i>
+									<svg width="21" height="20" viewBox="0 0 21 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+										<path fill-rule="evenodd" clip-rule="evenodd" d="M3.34635 8.75002C3.34635 5.75848 5.77148 3.33335 8.76302 3.33335C11.7546 3.33335 14.1797 5.75848 14.1797 8.75002C14.1797 11.7416 11.7546 14.1667 8.76302 14.1667C5.77148 14.1667 3.34635 11.7416 3.34635 8.75002ZM8.76302 1.66669C4.851 1.66669 1.67969 4.838 1.67969 8.75002C1.67969 12.662 4.851 15.8334 8.76302 15.8334C10.4188 15.8334 11.9418 15.2653 13.1479 14.3133L16.9238 18.0893L18.1023 16.9108L14.3264 13.1348C15.2783 11.9288 15.8464 10.4057 15.8464 8.75002C15.8464 4.838 12.675 1.66669 8.76302 1.66669Z"></path>
+									</svg>
 								</a>
 							</li>
 									<li>
-										<a href="/prihlaseni/" rel="dropdownContent" class="my-account user-link">
-											<i class="icon icon-user"></i> <span>Můj účet</span>
+										<a href="/prihlaseni/" rel="dropdownContent" class="user-login">
+											<span>Můj účet</span>
+											<svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+												<path fill-rule="evenodd" clip-rule="evenodd" d="M7.08333 6.24999C7.08333 4.63916 8.38917 3.33332 10 3.33332C11.6108 3.33332 12.9167 4.63916 12.9167 6.24999C12.9167 7.86082 11.6108 9.16666 10 9.16666C8.38917 9.16666 7.08333 7.86082 7.08333 6.24999ZM10 1.66666C7.46869 1.66666 5.41667 3.71868 5.41667 6.24999C5.41667 8.78129 7.46869 10.8333 10 10.8333C12.5313 10.8333 14.5833 8.78129 14.5833 6.24999C14.5833 3.71868 12.5313 1.66666 10 1.66666ZM7.5 12.5C4.73858 12.5 2.5 14.7386 2.5 17.5H4.16667C4.16667 15.659 5.65905 14.1667 7.5 14.1667H12.5C14.3409 14.1667 15.8333 15.659 15.8333 17.5H17.5C17.5 14.7386 15.2614 12.5 12.5 12.5H7.5Z" fill="white"></path>
+											</svg>
 										</a>
 <div class="dropdown-content main-menu">
-	<h2>Ovládací panel</h2>
+	<div class="dropdown-content-head">
+		<h2>Ovládací panel</h2>
+	</div>
 		<ul class="blue">
-			<li><a href="/prihlaseni/">Přihlášení</a></li>
-			<li><a href="/registrace/">Registrace</a></li>
-			<li><a href="/ztracene-heslo/">Zapomenuté heslo</a></li>
+			<li><a href="/prihlaseni/" data-no-ads>Přihlášení</a></li>
+			<li><a href="/registrace/" data-no-ads>Registrace</a></li>
+			<li><a href="/ztracene-heslo/" data-no-ads>Zapomenuté heslo</a></li>
 		</ul>
 	<hr>
 	<ul>
@@ -255,40 +189,40 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <nav class="tab-nav">
 	<ul class="tab-nav-list">
 		<li class="tab-nav-item">
-			<a href="/novinky/">Novinky</a>
+			<a href="/novinky/" data-no-ads>Novinky</a>
 		</li>
 		<li class="tab-nav-item">
-			<a href="/televize/">Televize</a>
+			<a href="/televize/" data-no-ads>Televize</a>
 		</li>
 		<li class="tab-nav-item">
-			<a href="/kino/">Kino</a>
+			<a href="/kino/" data-no-ads>Kino</a>
 		</li>
 		<li class="tab-nav-item">
-			<a href="/vod/">VOD</a>
+			<a href="/vod/" data-no-ads>VOD</a>
 		</li>
 		<li class="tab-nav-item">
-			<a href="/zebricky/filmy/nejlepsi/">Žebříčky</a>
+			<a href="/zebricky/filmy/nejlepsi/" data-no-ads>Žebříčky</a>
 		</li>
 		<li class="tab-nav-item">
-			<a href="/bluray/">Blu-ray</a>
+			<a href="/bluray/" data-no-ads>Blu-ray</a>
 		</li>
 		<li class="tab-nav-item">
-			<a href="/dvd/">DVD</a>
+			<a href="/dvd/" data-no-ads>DVD</a>
 		</li>
 		<li class="tab-nav-item">
-			<a href="/zanry/">Žánry<span class="top-nav-new">NEW</span></a>
+			<a href="/zanry/" data-no-ads>Žánry</a>
 		</li>
 		<li class="tab-nav-item">
-			<a href="/oceneni/">Ocenění</a>
+			<a href="/oceneni/" data-no-ads>Ocenění</a>
 		</li>
 		<li class="tab-nav-item">
-			<a href="/uzivatele/">Uživatelé</a>
+			<a href="/uzivatele/" data-no-ads>Uživatelé</a>
 		</li>
 		<li class="tab-nav-item">
-			<a href="/diskuze/">Diskuze</a>
+			<a href="/diskuze/" data-no-ads>Diskuze</a>
 		</li>
 		<li class="tab-nav-item">
-			<a href="https://shop.csfd.cz"><i class="icon icon-shopping-cart"></i>Shop</a>
+			<a href="https://shop.csfd.cz" data-no-ads><i class="icon icon-shopping-cart"></i>Shop</a>
 		</li>
 	</ul>
 	<ul class="tab-nav-more">
@@ -298,40 +232,52 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			</a>
 			<ul id="dropdown-menu-1" class="dropdown-content">
 				<li class="tab-nav-item">
-					<a href="/novinky/">Novinky</a>
+					<a href="/novinky/" data-no-ads>
+						Novinky					</a>
 				</li>
 				<li class="tab-nav-item">
-					<a href="/televize/">Televize</a>
+					<a href="/televize/" data-no-ads>
+						Televize					</a>
 				</li>
 				<li class="tab-nav-item">
-					<a href="/kino/">Kino</a>
+					<a href="/kino/" data-no-ads>
+						Kino					</a>
 				</li>
 				<li class="tab-nav-item">
-					<a href="/vod/">VOD</a>
+					<a href="/vod/" data-no-ads>
+						VOD					</a>
 				</li>
 				<li class="tab-nav-item">
-					<a href="/zebricky/filmy/nejlepsi/">Žebříčky</a>
+					<a href="/zebricky/filmy/nejlepsi/" data-no-ads>
+						Žebříčky					</a>
 				</li>
 				<li class="tab-nav-item">
-					<a href="/bluray/">Blu-ray</a>
+					<a href="/bluray/" data-no-ads>
+						Blu-ray					</a>
 				</li>
 				<li class="tab-nav-item">
-					<a href="/dvd/">DVD</a>
+					<a href="/dvd/" data-no-ads>
+						DVD					</a>
 				</li>
 				<li class="tab-nav-item">
-					<a href="/zanry/">Žánry<span class="top-nav-new">NEW</span></a>
+					<a href="/zanry/" data-no-ads>
+						Žánry					</a>
 				</li>
 				<li class="tab-nav-item">
-					<a href="/oceneni/">Ocenění</a>
+					<a href="/oceneni/" data-no-ads>
+						Ocenění					</a>
 				</li>
 				<li class="tab-nav-item">
-					<a href="/uzivatele/">Uživatelé</a>
+					<a href="/uzivatele/" data-no-ads>
+						Uživatelé					</a>
 				</li>
 				<li class="tab-nav-item">
-					<a href="/diskuze/">Diskuze</a>
+					<a href="/diskuze/" data-no-ads>
+						Diskuze					</a>
 				</li>
 				<li class="tab-nav-item">
-					<a href="https://shop.csfd.cz"><i class="icon icon-shopping-cart"></i>Shop</a>
+					<a href="https://shop.csfd.cz" data-no-ads>
+						<i class="icon icon-shopping-cart"></i>Shop					</a>
 				</li>
 			</ul>
 		</li>
@@ -345,7 +291,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
 <div class="creator-main">
-<script type="application/ld+json">{"@context":"https://schema.org/","@type":"Person","name":"Mads Mikkelsen","birthDate":"1965-11-22","birthPlace":{"@type":"Place","name":"Østerbro, København, Dánsko"},"image":"//static.pmgstatic.com/assets/images/4b37ac5ff3cce04f5ea0278688618768/empty-image.svg"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org/","@type":"Person","name":"Mads Mikkelsen","birthDate":"1965-11-22","birthPlace":{"@type":"Place","name":"Østerbro, København, Dánsko"},"image":"//static.pmgstatic.com/assets/images/0224ed11a474c34143bc9ee692d2ac17/empty-image.svg"}</script>
 	<div class="creator-main-content">
 		<div class="creator-about">
 			<div class="creator-profile">
@@ -366,8 +312,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 					<div id="snippet--boxFanclub" class="snippet-box" data-auto-show-hide-parent>
 						<div class="label-simple label-fanclub" data-auto-show-hide-data-box>
-							<a href="/tvurce/4929-mads-mikkelsen/prehled/?modal=fanclubList" rel="contentModal" class="btn-fanclub" data-modal-class="modal-fanclub">
-								Fanklub (3 475)
+							<a href="/tvurce/4929-mads-mikkelsen/prehled/?modal=fanclubList" data-no-ads rel="contentModal" class="btn-fanclub" data-modal-class="modal-fanclub">
+								Fanklub (3 584)
 							</a>
 						</div>
 					</div>
@@ -375,7 +321,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 				<div class="creator-profile-content">
 					<figure>
 						
-							<img src="//image.pmgstatic.com/cache/resized/w100h132crop/files/images/creator/photos/166/233/166233274_298dbd.jpg" loading="lazy" width="100" height="132" srcset="//image.pmgstatic.com/cache/resized/w100h132crop/files/images/creator/photos/166/233/166233274_298dbd.jpg 1x, //image.pmgstatic.com/cache/resized/w200h264crop/files/images/creator/photos/166/233/166233274_298dbd.jpg 2x, //image.pmgstatic.com/cache/resized/w300h396crop/files/images/creator/photos/166/233/166233274_298dbd.jpg 3x" alt="Mads Mikkelsen">
+							<img src="//image.pmgstatic.com/cache/resized/w100h132crop/files/images/creator/photos/166/233/166233273_ee93ba.jpg" loading="lazy" width="100" height="132" srcset="//image.pmgstatic.com/cache/resized/w100h132crop/files/images/creator/photos/166/233/166233273_ee93ba.jpg 1x, //image.pmgstatic.com/cache/resized/w200h264crop/files/images/creator/photos/166/233/166233273_ee93ba.jpg 2x, //image.pmgstatic.com/cache/resized/w300h396crop/files/images/creator/photos/166/233/166233273_ee93ba.jpg 3x" alt="Mads Mikkelsen">
 						
 					</figure>
 
@@ -385,7 +331,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						</h1>
 						<p>
 									nar. 22.11.1965
-									<span class="info">(58 let)</span>
+									<span class="info">(59 let)</span>
 
 
 							<span class="info-place">
@@ -400,12 +346,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							<span class="item-text">
 								Photo from
 							</span>
-								<a href="/film/323483-hannibal/" class="item-movie">
-									Hannibal
+
+								<a href="/film/548315-chaos/" class="item-movie">
+									Chaos
 								</a>
 								<span class="item-movie-rest">
-										(2013)
-									<span>(seriál)</span>
+										(2021)
 								</span>
 						</div>
 					</div>
@@ -553,7 +499,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			height="360"
 			
 			data-video-url="/api/video-player/?data=__data__"
-			data-videos="[&#123;&quot;description&quot;:&quot;Rozhovor 4 - Mads Mikkelsen&quot;,&quot;language_id&quot;:3,&quot;duration&quot;:207,&quot;subtitles_language_id&quot;:1,&quot;preview_image_path&quot;:&quot;files/images/film/video/preview/161/194/161194860_d18542.jpg&quot;,&quot;preview_image_storage_id&quot;:&quot;image-production&quot;,&quot;preview_image_width&quot;:1280,&quot;preview_image_height&quot;:720,&quot;film_video_id&quot;:157718829,&quot;film_video_type_id&quot;:9,&quot;position&quot;:4,&quot;video_id&quot;:157721084,&quot;copyright&quot;:&quot;Walt Disney Studios Motion Pictures&quot;,&quot;film_type&quot;:0,&quot;film_root_id&quot;:null,&quot;film_root_slug&quot;:null,&quot;film_id&quot;:266804,&quot;film_slug&quot;:&quot;doktor-strange&quot;,&quot;film_name&quot;:&quot;Doktor Strange&quot;,&quot;film_year&quot;:2016,&quot;film_rating_category&quot;:1,&quot;preview_image&quot;:&#123;&quot;path&quot;:&quot;files/images/film/video/preview/161/194/161194860_d18542.jpg&quot;,&quot;storage_id&quot;:&quot;image-production&quot;,&quot;width&quot;:1280,&quot;height&quot;:720},&quot;external_description&quot;:&quot;Doktor Strange: Rozhovor 4 - Mads Mikkelsen&quot;,&quot;title&quot;:&quot;&lt;h3 class=\&quot;film-title\&quot;&gt;&lt;i class=\&quot;icon icon-rounded-square red\&quot;&gt;&lt;/i&gt;&lt;a href=\&quot;/film/266804-doktor-strange/\&quot; class=\&quot;film-title-name\&quot;&gt;Doktor Strange&lt;/a&gt; &lt;span class=\&quot;film-title-info\&quot;&gt;&lt;span class=\&quot;info\&quot;&gt;(2016)&lt;/span&gt;&lt;/span&gt;&lt;/h3&gt;&quot;,&quot;request_data&quot;:&quot;rlW2nJEyo0yxVwbkAGp3ZwRjBQDfVaA1LaEcqTkyGTShM3IuM2IWMUZvByfkYQWqYPW0o2gyovV6VwVmMGyuMQZmZJIzZ2Z0BQZ4ATAvLzL5AGH3MQD1A2MuLGD3ZQx4ZTZvsD&quot;}]"
+			data-videos="[&#123;&quot;duration&quot;:207,&quot;copyright&quot;:&quot;Walt Disney Studios Motion Pictures&quot;,&quot;title&quot;:&quot;&lt;h3 class=\&quot;film-title\&quot;&gt;&lt;i class=\&quot;icon icon-rounded-square red\&quot;&gt;&lt;/i&gt;&lt;a href=\&quot;/film/266804-doktor-strange/\&quot; class=\&quot;film-title-name\&quot;&gt;Doktor Strange&lt;/a&gt; &lt;span class=\&quot;film-title-info\&quot;&gt;&lt;span class=\&quot;info\&quot;&gt;(2016)&lt;/span&gt;&lt;/span&gt;&lt;/h3&gt;&quot;,&quot;request_data&quot;:&quot;rlW2nJEyo0yxVwbkAGp3ZwRjBQDfVaA1LaEcqTkyGTShM3IuM2IWMUZvByfkYQWqYPW0o2gyovV6VzR5MzR3MJEwLJSyAQV3AJRmLGuvZwLjLmVlL2H0AGLlMTIvLGZlAQxvsD&quot;}]"
 			data-recommended-videos-url="/api/video-player/recommended-videos/?videoId=157721084&amp;limit=2"
 			data-recommended-autoplay
 			
@@ -569,12 +515,42 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 	<section class="box box-nooverflow">
 		<header class="box-header">
-			<h2>Zajímavosti <span class="count">(70)</span></h2>
+			<h2>Zajímavosti <span class="count">(80)</span></h2>
 			<div class="box-header-action">
 				<a href="/tvurce/4929-mads-mikkelsen/zajimavosti/" class="button">Více</a>
 			</div>
 		</header>
 		<div class="box-content">
+	<article class="article article-trivia">
+		<div class="article-content article-content-justify">
+
+			<ul>
+				<li>
+					Medzi svoje najobľúbenejšie filmy a seriály uviedol: <em><a href="https://www.csfd.cz/film/8260-taxikar/">Taxikár</a></em> (1976), <em><a href="https://www.csfd.cz/film/2428-zpivani-v-desti/">Spievanie v daždi</a></em> (1952), <em><a href="https://www.csfd.cz/film/70653-dekalog/">Dekalog</a></em> (1989), <em><a href="https://www.csfd.cz/film/99087-jdi-a-divej-se/">Choď a pozeraj sa</a></em> (1985) a <em><a href="https://www.csfd.cz/film/1634-apokalypsa/">Apokalypsa</a></em> (1979). <span class="span-more-small">
+							(<a href="/uzivatel/934322-toshirom/">ToshiroM</a>)
+
+
+					</span>
+				</li>
+			</ul>
+		</div>
+	</article>
+
+	<article class="article article-trivia">
+		<div class="article-content article-content-justify">
+
+			<ul>
+				<li>
+					Aj napriek tomu, že je Dán, žije vo švédskom Göteborgu. Švédčinu aj bez problémov ovláda. <span class="span-more-small">
+							(<a href="/uzivatel/934322-toshirom/">ToshiroM</a>)
+
+
+					</span>
+				</li>
+			</ul>
+		</div>
+	</article>
+
 	<article class="article article-trivia">
 		<div class="article-content article-content-justify">
 
@@ -590,42 +566,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 		</div>
 	</article>
 
-	<article class="article article-trivia">
-		<div class="article-content article-content-justify">
-
-			<ul>
-				<li>
-					Ve volném čase rád jezdí na motocyklech. Největší raritou jeho sbírky je dánský Nimbus z roku 1937. <span class="span-more-small">
-							(<a href="/uzivatel/827814-trajektt/">Trajektt</a>)
-
-
-					</span>
-				</li>
-			</ul>
-		</div>
-	</article>
-
-	<article class="article article-trivia">
-		<div class="article-content article-content-justify">
-
-			<ul>
-				<li>
-					Domluví se plynně pěti jazyky, kromě jeho rodné dánštiny mluví ještě švédsky, anglicky, německy a francouzsky. <span class="span-more-small">
-							(<a href="/uzivatel/827814-trajektt/">Trajektt</a>)
-
-
-					</span>
-				</li>
-			</ul>
-		</div>
-	</article>
-
 		</div>
 	</section>
 
 	<section class="box box-borderless">
 		<header class="box-header">
-			<h2>Galerie <span class="count">(577)</span></h2>
+			<h2>Galerie <span class="count">(590)</span></h2>
 			<div class="box-header-action">
 				<a href="/tvurce/4929-mads-mikkelsen/galerie/" class="button">Více</a>
 			</div>
@@ -634,23 +580,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			<div class="box box-media">
 <figure class="figure-skeleton">
 	<div class="box-photo-film">
-<h3 class="film-title"><i class="icon icon-rounded-square red"></i><a href="/film/221085-adamova-jablka/" class="film-title-name">Adamova jablka</a> <span class="film-title-info"><span class="info">(2005)</span></span></h3>	</div>
+<h3 class="film-title"><i class="icon icon-rounded-square red"></i><a href="/film/323483-hannibal/447934-savoureux/" class="film-title-name">Hannibal - Savoureux</a> <span class="film-title-info"><span class="info">(2013)</span></span></h3>	</div>
 
 	<div class="box-copyright box-copyright-bottom">
-		<p class="p-box-copyright">Photo © Nordisk Film Biografdistribution</p>
+		<p class="p-box-copyright">Photo © Sony Pictures Television Networks, NBC / Robert Trachtenberg, Brooke Palmer, Sophie Giraud</p>
 	</div>
 
-	<div class="media-img" style="padding-bottom: 66.53%">
+	<div class="media-img" style="padding-bottom: 66.50%">
 		<picture>
-			<source media="(max-width: 400px)" srcset="//image.pmgstatic.com/cache/resized/w360/files/images/film/photos/158/658/158658762_c18ada.jpg 1x, //image.pmgstatic.com/cache/resized/w720/files/images/film/photos/158/658/158658762_c18ada.jpg 2x, //image.pmgstatic.com/cache/resized/w1080/files/images/film/photos/158/658/158658762_c18ada.jpg 3x">
-			<source media="(max-width: 750px) and (min-width: 401px)" srcset="//image.pmgstatic.com/cache/resized/w663/files/images/film/photos/158/658/158658762_c18ada.jpg 1x, //image.pmgstatic.com/cache/resized/w1326/files/images/film/photos/158/658/158658762_c18ada.jpg 2x, //image.pmgstatic.com/cache/resized/w1989/files/images/film/photos/158/658/158658762_c18ada.jpg 3x">
-			<img src="//image.pmgstatic.com/cache/resized/w468/files/images/film/photos/158/658/158658762_c18ada.jpg" loading="lazy" width="468" height="311" srcset="//image.pmgstatic.com/cache/resized/w468/files/images/film/photos/158/658/158658762_c18ada.jpg 1x, //image.pmgstatic.com/cache/resized/w936/files/images/film/photos/158/658/158658762_c18ada.jpg 2x, //image.pmgstatic.com/cache/resized/w1404/files/images/film/photos/158/658/158658762_c18ada.jpg 3x" alt="Nicolas Bro, Ali Kazim, Mads Mikkelsen - Adamova jablka - Z filmu" />
+			<source media="(max-width: 400px)" srcset="//image.pmgstatic.com/cache/resized/w360/files/images/film/photos/158/620/158620452_da525e.jpg 1x, //image.pmgstatic.com/cache/resized/w720/files/images/film/photos/158/620/158620452_da525e.jpg 2x, //image.pmgstatic.com/cache/resized/w1080/files/images/film/photos/158/620/158620452_da525e.jpg 3x">
+			<source media="(max-width: 750px) and (min-width: 401px)" >
+			<img src="//image.pmgstatic.com/cache/resized/w468/files/images/film/photos/158/620/158620452_da525e.jpg" loading="lazy" width="468" height="311" srcset="//image.pmgstatic.com/cache/resized/w468/files/images/film/photos/158/620/158620452_da525e.jpg 1x, //image.pmgstatic.com/cache/resized/w936/files/images/film/photos/158/620/158620452_da525e.jpg 2x" alt="Mads Mikkelsen - Hannibal - Savoureux - Z filmu" />
 		</picture>
 	</div>
 </figure>
 <figcaption>
-		<a href="/tvurce/10502-nicolas-bro/">Nicolas Bro</a>,
-		<a href="/tvurce/376218-ali-kazim/">Ali Kazim</a>,
 		<a href="/tvurce/4929-mads-mikkelsen/">Mads Mikkelsen</a>
 </figcaption>
 			</div>
@@ -668,6 +612,95 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						<div class="box-content">
 							<div class="newslist-content">
 								<div class="newslist newslist-creator">
+										<section class="newslist-item">
+											<div class="box-content">
+												<article class="article article-news article-news-60">
+													<figure class="article-img">
+														<a href="/novinky/9509-jake-filmy-se-objevi-v-programu-benatek/">
+															<img class="img" src="//image.pmgstatic.com/cache/resized/w100h132crop/files/images/news/article/170/348/170348169_muetnt.png" loading="lazy" width="100" height="132" srcset="//image.pmgstatic.com/cache/resized/w100h132crop/files/images/news/article/170/348/170348169_muetnt.png 1x, //image.pmgstatic.com/cache/resized/w200h264crop/files/images/news/article/170/348/170348169_muetnt.png 2x, //image.pmgstatic.com/cache/resized/w300h396crop/files/images/news/article/170/348/170348169_muetnt.png 3x" alt="Jaké filmy se objeví v programu Benátek?">
+														</a>
+													</figure>
+													<header class="article-header">
+														<h3>
+															<a href="/novinky/9509-jake-filmy-se-objevi-v-programu-benatek/">Jaké filmy se objeví v programu Benátek?</a>
+														</h3>
+														<div class="info">
+															<span class="date">24.07.2025</span>
+														</div>
+													</header>
+													<div class="article-news-content article-content-justify">
+														<div class="article-news-textshort">
+															<p>
+																V úterý 22. července byla Albertem Barberou, uměleckým ředitelem Mezinárodního filmového festivalu v Benátkách, odtajněna velká část značně očekávaného filmového programu nadcházejícího 82. ročníku…
+																<span class="span-more-small">(<a href="/novinky/9509-jake-filmy-se-objevi-v-programu-benatek/">více</a>)</span>
+															</p>
+														</div>
+													</div>
+												</article>
+											</div>
+										</section>
+
+										<section class="newslist-item">
+											<div class="box-content">
+												<article class="article article-news article-news-60">
+													<figure class="article-img">
+														<a href="/novinky/9265-rok-2025-nabidne-ocekavane-severske-filmy/">
+															<img class="img" src="//image.pmgstatic.com/cache/resized/w100h132crop/files/images/news/article/169/718/169718567_nmkzud.jpg" loading="lazy" width="100" height="132" srcset="//image.pmgstatic.com/cache/resized/w100h132crop/files/images/news/article/169/718/169718567_nmkzud.jpg 1x, //image.pmgstatic.com/cache/resized/w200h264crop/files/images/news/article/169/718/169718567_nmkzud.jpg 2x, //image.pmgstatic.com/cache/resized/w300h396crop/files/images/news/article/169/718/169718567_nmkzud.jpg 3x" alt="Rok 2025 nabídne očekávané severské filmy">
+														</a>
+													</figure>
+													<header class="article-header">
+														<h3>
+															<a href="/novinky/9265-rok-2025-nabidne-ocekavane-severske-filmy/">Rok 2025 nabídne očekávané severské filmy</a>
+														</h3>
+														<div class="info">
+															<span class="date">12.01.2025</span>
+														</div>
+													</header>
+													<div class="article-news-content article-content-justify">
+														<div class="article-news-textshort">
+															<p>
+																Rok 2025 slibuje bohatou úrodu filmů z oblasti severní Evropy. Režiséři z Norska, Dánska, Švédska a Finska přicházejí s originálními projekty, které těží z jejich dlouholetých zkušeností i úspěchů na…
+																<span class="span-more-small">(<a href="/novinky/9265-rok-2025-nabidne-ocekavane-severske-filmy/">více</a>)</span>
+															</p>
+														</div>
+													</div>
+												</article>
+											</div>
+										</section>
+
+											<div class="newslist-item">
+												<div class="article article-native">
+<div id="native_short_1" class="ad-pmg" style="height: 115px;"></div>
+												</div>
+											</div>
+										<section class="newslist-item">
+											<div class="box-content">
+												<article class="article article-news article-news-60">
+													<figure class="article-img">
+														<a href="/novinky/9248-nej-roku-dle-top-uzivatelu-a-adminu-csfd/">
+															<img class="img" src="//image.pmgstatic.com/cache/resized/w100h132crop/files/images/news/article/169/663/169663875_f3jo5r.jpg" loading="lazy" width="100" height="132" srcset="//image.pmgstatic.com/cache/resized/w100h132crop/files/images/news/article/169/663/169663875_f3jo5r.jpg 1x, //image.pmgstatic.com/cache/resized/w200h264crop/files/images/news/article/169/663/169663875_f3jo5r.jpg 2x, //image.pmgstatic.com/cache/resized/w300h396crop/files/images/news/article/169/663/169663875_f3jo5r.jpg 3x" alt="NEJ roku dle TOP uživatelů a adminů ČSFD">
+														</a>
+													</figure>
+													<header class="article-header">
+														<h3>
+															<a href="/novinky/9248-nej-roku-dle-top-uzivatelu-a-adminu-csfd/">NEJ roku dle TOP uživatelů a adminů ČSFD</a>
+														</h3>
+														<div class="info">
+															<span class="date">29.12.2024</span>
+														</div>
+													</header>
+													<div class="article-news-content article-content-justify">
+														<div class="article-news-textshort">
+															<p>
+																Uteklo to jako voda. Rok 2024 je téměř u konce a přišel tedy čas, abychom vám stejně jako v předešlých letech opět představili výroční topky tří nejlepších filmů a případně taky tří nejlepších…
+																<span class="span-more-small">(<a href="/novinky/9248-nej-roku-dle-top-uzivatelu-a-adminu-csfd/">více</a>)</span>
+															</p>
+														</div>
+													</div>
+												</article>
+											</div>
+										</section>
+
 										<section class="newslist-item">
 											<div class="box-content">
 												<article class="article article-news article-news-60">
@@ -724,95 +757,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 											</div>
 										</section>
 
-											<div class="newslist-item">
-												<div class="article article-native">
-<div id="native_short_1" class="ad-pmg" style="height: 115px;"></div>
-												</div>
-											</div>
-										<section class="newslist-item">
-											<div class="box-content">
-												<article class="article article-news article-news-60">
-													<figure class="article-img">
-														<a href="/novinky/8769-36-evropske-filmove-ceny-ovladla-anatomie-padu/">
-															<img class="img" src="//image.pmgstatic.com/cache/resized/w100h132crop/files/images/news/article/168/388/168388946_abi888.jpg" loading="lazy" width="100" height="132" srcset="//image.pmgstatic.com/cache/resized/w100h132crop/files/images/news/article/168/388/168388946_abi888.jpg 1x, //image.pmgstatic.com/cache/resized/w200h264crop/files/images/news/article/168/388/168388946_abi888.jpg 2x, //image.pmgstatic.com/cache/resized/w300h396crop/files/images/news/article/168/388/168388946_abi888.jpg 3x" alt="36. Evropské filmové ceny ovládla Anatomie pádu">
-														</a>
-													</figure>
-													<header class="article-header">
-														<h3>
-															<a href="/novinky/8769-36-evropske-filmove-ceny-ovladla-anatomie-padu/">36. Evropské filmové ceny ovládla Anatomie pádu</a>
-														</h3>
-														<div class="info">
-															<span class="date">10.12.2023</span>
-														</div>
-													</header>
-													<div class="article-news-content article-content-justify">
-														<div class="article-news-textshort">
-															<p>
-																V sobotu 9. prosince proběhl v Berlíně 36. ročník slavnostního předávání Evropských filmových cen, které každoročně pořádá v Německu sídlící Evropská filmová akademie. Vítězným snímkem večera se bez…
-																<span class="span-more-small">(<a href="/novinky/8769-36-evropske-filmove-ceny-ovladla-anatomie-padu/">více</a>)</span>
-															</p>
-														</div>
-													</div>
-												</article>
-											</div>
-										</section>
-
-										<section class="newslist-item">
-											<div class="box-content">
-												<article class="article article-news article-news-60">
-													<figure class="article-img">
-														<a href="/novinky/8729-36-evropske-filmove-ceny-nominace/">
-															<img class="img" src="//image.pmgstatic.com/cache/resized/w100h132crop/files/images/news/article/168/253/168253925_4c2vd8.jpg" loading="lazy" width="100" height="132" srcset="//image.pmgstatic.com/cache/resized/w100h132crop/files/images/news/article/168/253/168253925_4c2vd8.jpg 1x, //image.pmgstatic.com/cache/resized/w200h264crop/files/images/news/article/168/253/168253925_4c2vd8.jpg 2x, //image.pmgstatic.com/cache/resized/w300h396crop/files/images/news/article/168/253/168253925_4c2vd8.jpg 3x" alt="36. Evropské filmové ceny - nominace">
-														</a>
-													</figure>
-													<header class="article-header">
-														<h3>
-															<a href="/novinky/8729-36-evropske-filmove-ceny-nominace/">36. Evropské filmové ceny - nominace</a>
-														</h3>
-														<div class="info">
-															<span class="date">08.11.2023</span>
-														</div>
-													</header>
-													<div class="article-news-content article-content-justify">
-														<div class="article-news-textshort">
-															<p>
-																V úterý 7. listopadu byly zveřejněny nominace pro 36. ročník Evropských filmových cen, jež by měly upozornit na nejvýznamnější filmové počiny z Evropy za rok 2023. V kategorii pro nejlepší evropský…
-																<span class="span-more-small">(<a href="/novinky/8729-36-evropske-filmove-ceny-nominace/">více</a>)</span>
-															</p>
-														</div>
-													</div>
-												</article>
-											</div>
-										</section>
-
-										<section class="newslist-item">
-											<div class="box-content">
-												<article class="article article-news article-news-60">
-													<figure class="article-img">
-														<a href="/novinky/8339-severska-prehlidka-scandi-zacne-uz-ve-stredu/">
-															<img class="img" src="//image.pmgstatic.com/cache/resized/w100h132crop/files/images/news/article/167/081/167081151_3ea42e.jpg" loading="lazy" width="100" height="132" srcset="//image.pmgstatic.com/cache/resized/w100h132crop/files/images/news/article/167/081/167081151_3ea42e.jpg 1x, //image.pmgstatic.com/cache/resized/w200h264crop/files/images/news/article/167/081/167081151_3ea42e.jpg 2x, //image.pmgstatic.com/cache/resized/w300h396crop/files/images/news/article/167/081/167081151_3ea42e.jpg 3x" alt="Severská přehlídka SCANDI začne už ve středu!">
-														</a>
-													</figure>
-													<header class="article-header">
-														<h3>
-															<a href="/novinky/8339-severska-prehlidka-scandi-zacne-uz-ve-stredu/">Severská přehlídka SCANDI začne už ve středu!</a>
-														</h3>
-														<div class="info">
-															<span class="date">14.01.2023</span>
-														</div>
-													</header>
-													<div class="article-news-content article-content-justify">
-														<div class="article-news-textshort">
-															<p>
-																Už tuto středu odstartuje přehlídka toho nejaktuálnějšího z kinematografie severu: SCANDI 2023. Odehraje se mezi 18. a 25. lednem, představí snímky ze všech zemí Skandinávie a v programu ji bude mít…
-																<span class="span-more-small">(<a href="/novinky/8339-severska-prehlidka-scandi-zacne-uz-ve-stredu/">více</a>)</span>
-															</p>
-														</div>
-													</div>
-												</article>
-											</div>
-										</section>
-
 								</div>
 							</div>
 						</div>
@@ -832,7 +776,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 		<h2>Herec</h2>
 		<div class="box-header-action">
 			<form action="" method="get" data-form="get">
-				<select name="sort" data-auto-submit-form="true" data-empty-value="year" id="frm-sort-careerBox-1-sort-sort"><option value="year">seřadit od nejnovějšího</option><option value="sort_average">seřadit od nejlepšího</option><option value="rating_count">seřadit podle počtu hodnocení</option></select>
+				<select name="sort" data-auto-submit-form="true" data-empty-value="year" id="frm-sort-careerBox-1-sort-sort"><option value="year" selected>seřadit od nejnovějšího</option><option value="rating_count">seřadit podle počtu hodnocení</option><option value="sort_average">seřadit od nejlepšího</option></select>
 			</form>
 		</div>
 	</header>
@@ -847,63 +791,63 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 								2026
 							</td>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/1140408-the-billion-dollar-spy/" class="film-title-name">The Billion Dollar Spy</a> <span class="film-title-info"></span></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/1598299-the-black-kaiser/" class="film-title-name">The Black Kaiser</a></h3>							</td>
 						</tr>
 						<tr>
 							<td class="year">
 								2025
 							</td>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/1563219-back-to-reality/" class="film-title-name">Back to Reality</a> <span class="film-title-info"></span></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/1563219-posledni-viking/" class="film-title-name">Poslední Viking</a></h3>							</td>
+						</tr>
+						<tr>
+							<td class="year">
+								&nbsp;
+							</td>
+							<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/1259951-prachova-prisera/" class="film-title-name">Prachová příšera</a></h3>							</td>
+						</tr>
+						<tr>
+							<td class="year">
+								&nbsp;
+							</td>
+							<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/1677893-severni-pohadka/" class="film-title-name">Severní pohádka</a></h3>							</td>
 						</tr>
 						<tr>
 							<td class="year">
 								2024
 							</td>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/1259951-dust-bunny/" class="film-title-name">Dust Bunny</a> <span class="film-title-info"></span></h3>							</td>
-						</tr>
-						<tr>
-							<td class="year">
-								&nbsp;
-							</td>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/1234121-mufasa-lvi-kral/" class="film-title-name">Mufasa: Lví král</a> <span class="film-title-info"></span></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1234121-mufasa-lvi-kral/" class="film-title-name">Mufasa: Lví král</a></h3>							</td>
 						</tr>
 						<tr>
 							<td class="year">
 								2023
 							</td>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1238190-bastard/" class="film-title-name">Bastard</a> <span class="film-title-info"></span></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1238190-bastard/" class="film-title-name">Bastard</a></h3>							</td>
 						</tr>
 						<tr>
 							<td class="year">
 								&nbsp;
 							</td>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/264558-indiana-jones-a-nastroj-osudu/" class="film-title-name">Indiana Jones a nástroj osudu</a> <span class="film-title-info"></span></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/264558-indiana-jones-a-nastroj-osudu/" class="film-title-name">Indiana Jones a nástroj osudu</a></h3>							</td>
 						</tr>
 						<tr>
 							<td class="year">
 								2022
 							</td>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/403862-fantasticka-zvirata-brumbalova-tajemstvi/" class="film-title-name">Fantastická zvířata: Brumbálova tajemství</a> <span class="film-title-info"></span></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/403862-fantasticka-zvirata-brumbalova-tajemstvi/" class="film-title-name">Fantastická zvířata: Brumbálova tajemství</a></h3>							</td>
 						</tr>
-						<tr>
+						<tr class="tr-add-border">
 							<td class="year">
 								2021
 							</td>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/548315-chaos/" class="film-title-name">Chaos</a> <span class="film-title-info"></span></h3>							</td>
-						</tr>
-						<tr class="tr-add-border">
-							<td class="year">
-								2020
-							</td>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/734768-chlast/" class="film-title-name">Chlast</a> <span class="film-title-info"></span></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/548315-chaos/" class="film-title-name">Chaos</a></h3>							</td>
 						</tr>
 						<tr class="tr-banner-desktop">
 							<td class="box box-banner" colspan="2">
@@ -921,276 +865,283 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						</tr>
 						<tr>
 							<td class="year">
+								2020
+							</td>
+							<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/734768-chlast/" class="film-title-name">Chlast</a></h3>							</td>
+						</tr>
+						<tr>
+							<td class="year">
 								&nbsp;
 							</td>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/811926-rytiri-spravedlnosti/" class="film-title-name">Rytíři spravedlnosti</a> <span class="film-title-info"></span></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/811926-rytiri-spravedlnosti/" class="film-title-name">Rytíři spravedlnosti</a></h3>							</td>
 						</tr>
 						<tr>
 							<td class="year">
 								2019
 							</td>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/679617-polar/" class="film-title-name">Polar</a> <span class="film-title-info"></span></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/679617-polar/" class="film-title-name">Polar</a></h3>							</td>
 						</tr>
 						<tr>
 							<td class="year">
 								2018
 							</td>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/611856-arctic-ledove-peklo/" class="film-title-name">Arctic: Ledové peklo</a> <span class="film-title-info"></span></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/611856-arctic-ledove-peklo/" class="film-title-name">Arctic: Ledové peklo</a></h3>							</td>
 						</tr>
 						<tr>
 							<td class="year">
 								&nbsp;
 							</td>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/519334-u-brany-vecnosti/" class="film-title-name">U brány věčnosti</a> <span class="film-title-info"></span></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/519334-u-brany-vecnosti/" class="film-title-name">U brány věčnosti</a></h3>							</td>
 						</tr>
 						<tr>
 							<td class="year">
 								2016
 							</td>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/266804-doktor-strange/" class="film-title-name">Doktor Strange</a> <span class="film-title-info"></span></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/266804-doktor-strange/" class="film-title-name">Doktor Strange</a></h3>							</td>
 						</tr>
 						<tr>
 							<td class="year">
 								&nbsp;
 							</td>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/377465-rogue-one-star-wars-story/" class="film-title-name">Rogue One: Star Wars Story</a> <span class="film-title-info"></span></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/377465-rogue-one-star-wars-story/" class="film-title-name">Rogue One: Star Wars Story</a></h3>							</td>
 						</tr>
 						<tr>
 							<td class="year">
 								2015
 							</td>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/396792-o-kuratech-a-lidech/" class="film-title-name">O kuřatech a lidech</a> <span class="film-title-info"></span></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/396792-o-kuratech-a-lidech/" class="film-title-name">O kuřatech a lidech</a></h3>							</td>
 						</tr>
 						<tr>
 							<td class="year">
 								2014
 							</td>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/344786-spasa/" class="film-title-name">Spása</a> <span class="film-title-info"></span></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/344786-spasa/" class="film-title-name">Spása</a></h3>							</td>
 						</tr>
 						<tr>
 							<td class="year">
 								2013
 							</td>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/297798-charlie-musi-zemrit/" class="film-title-name">Charlie musí zemřít</a> <span class="film-title-info"></span></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/297798-charlie-musi-zemrit/" class="film-title-name">Charlie musí zemřít</a></h3>							</td>
 						</tr>
 						<tr>
 							<td class="year">
 								&nbsp;
 							</td>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/341820-michael-kohlhaas/" class="film-title-name">Michael Kohlhaas</a> <span class="film-title-info"></span></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/341820-michael-kohlhaas/" class="film-title-name">Michael Kohlhaas</a></h3>							</td>
 						</tr>
 						<tr>
 							<td class="year">
 								2012
 							</td>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/311967-hon/" class="film-title-name">Hon</a> <span class="film-title-info"></span></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/311967-hon/" class="film-title-name">Hon</a></h3>							</td>
 						</tr>
 						<tr>
 							<td class="year">
 								&nbsp;
 							</td>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/296730-kralovska-afera/" class="film-title-name">Královská aféra</a> <span class="film-title-info"></span></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/296730-kralovska-afera/" class="film-title-name">Královská aféra</a></h3>							</td>
 						</tr>
 						<tr>
 							<td class="year">
 								&nbsp;
 							</td>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/329488-move-on/" class="film-title-name">Move On</a> <span class="film-title-info"></span></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/329488-move-on/" class="film-title-name">Move On</a></h3>							</td>
 						</tr>
 						<tr>
 							<td class="year">
 								2011
 							</td>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/278300-tri-musketyri/" class="film-title-name">Tři mušketýři</a> <span class="film-title-info"></span></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/278300-tri-musketyri/" class="film-title-name">Tři mušketýři</a></h3>							</td>
 						</tr>
 						<tr>
 							<td class="year">
 								2010
 							</td>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/282891-muumi-ja-punainen-pyrstotahti/" class="film-title-name">Muumi ja punainen pyrstötähti</a> <span class="film-title-info"></span></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/282891-muumi-ja-punainen-pyrstotahti/" class="film-title-name">Muumi ja punainen pyrstötähti</a></h3>							</td>
 						</tr>
 						<tr>
 							<td class="year">
 								&nbsp;
 							</td>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/236434-souboj-titanu/" class="film-title-name">Souboj Titánů</a> <span class="film-title-info"></span></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/236434-souboj-titanu/" class="film-title-name">Souboj Titánů</a></h3>							</td>
 						</tr>
 						<tr>
 							<td class="year">
 								2009
 							</td>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/253354-barbar/" class="film-title-name">Barbar</a> <span class="film-title-info"></span></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/253354-barbar/" class="film-title-name">Barbar</a></h3>							</td>
 						</tr>
 						<tr>
 							<td class="year">
 								&nbsp;
 							</td>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/259557-coco-chanel-igor-stravinsky/" class="film-title-name">Coco Chanel &amp; Igor Stravinsky</a> <span class="film-title-info"></span></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/259557-coco-chanel-igor-stravinsky/" class="film-title-name">Coco Chanel &amp; Igor Stravinsky</a></h3>							</td>
 						</tr>
 						<tr>
 							<td class="year">
 								&nbsp;
 							</td>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/249629-dvere/" class="film-title-name">Die Tür</a> <span class="film-title-info"></span></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/249629-dvere/" class="film-title-name">Die Tür</a></h3>							</td>
 						</tr>
 						<tr>
 							<td class="year">
 								2008
 							</td>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/230173-plamen-a-citron/" class="film-title-name">Plamen a Citron</a> <span class="film-title-info"></span></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/230173-plamen-a-citron/" class="film-title-name">Plamen a Citron</a></h3>							</td>
 						</tr>
 						<tr>
 							<td class="year">
 								2006
 							</td>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/208033-casino-royale/" class="film-title-name">Casino Royale</a> <span class="film-title-info"></span></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/208033-casino-royale/" class="film-title-name">Casino Royale</a></h3>							</td>
 						</tr>
 						<tr>
 							<td class="year">
 								&nbsp;
 							</td>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/224362-po-svatbe/" class="film-title-name">Po svatbě</a> <span class="film-title-info"></span></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/224362-po-svatbe/" class="film-title-name">Po svatbě</a></h3>							</td>
 						</tr>
 						<tr>
 							<td class="year">
 								&nbsp;
 							</td>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/230898-setkani-v-praze/" class="film-title-name">Setkání v Praze</a> <span class="film-title-info"></span></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/230898-setkani-v-praze/" class="film-title-name">Setkání v Praze</a></h3>							</td>
 						</tr>
 						<tr>
 							<td class="year">
 								&nbsp;
 							</td>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/231154-vychodisko/" class="film-title-name">Východisko</a> <span class="film-title-info"></span></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/231154-vychodisko/" class="film-title-name">Východisko</a></h3>							</td>
 						</tr>
 						<tr>
 							<td class="year">
 								2005
 							</td>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/221085-adamova-jablka/" class="film-title-name">Adamova jablka</a> <span class="film-title-info"></span></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/221085-adamova-jablka/" class="film-title-name">Adamova jablka</a></h3>							</td>
 						</tr>
 						<tr>
 							<td class="year">
 								2004
 							</td>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/227552-dealer-ii/" class="film-title-name">Dealer II</a> <span class="film-title-info"></span></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/227552-dealer-ii/" class="film-title-name">Dealer II</a></h3>							</td>
 						</tr>
 						<tr>
 							<td class="year">
 								&nbsp;
 							</td>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/116485-kral-artus/" class="film-title-name">Král Artuš</a> <span class="film-title-info"></span></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/116485-kral-artus/" class="film-title-name">Král Artuš</a></h3>							</td>
 						</tr>
 						<tr>
 							<td class="year">
 								2003
 							</td>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/137518-torremolinos-73/" class="film-title-name">Torremolinos 73</a> <span class="film-title-info"></span></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/88876-reznici/" class="film-title-name">Řezníci</a></h3>							</td>
 						</tr>
 						<tr>
 							<td class="year">
 								&nbsp;
 							</td>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/88876-reznici/" class="film-title-name">Řezníci</a> <span class="film-title-info"></span></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/137518-torremolinos-73/" class="film-title-name">Torremolinos 73</a></h3>							</td>
 						</tr>
 						<tr>
 							<td class="year">
 								2002
 							</td>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/12051-dina/" class="film-title-name">Dina</a> <span class="film-title-info"></span></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/12051-dina/" class="film-title-name">Dina</a></h3>							</td>
 						</tr>
 						<tr>
 							<td class="year">
 								&nbsp;
 							</td>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/88875-otevrena-srdce/" class="film-title-name">Otevřená srdce</a> <span class="film-title-info"></span></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/88875-otevrena-srdce/" class="film-title-name">Otevřená srdce</a></h3>							</td>
 						</tr>
 						<tr>
 							<td class="year">
 								&nbsp;
 							</td>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/88881-wilbur-se-chce-zabit/" class="film-title-name">Wilbur se chce zabít</a> <span class="film-title-info"></span></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/88881-wilbur-se-chce-zabit/" class="film-title-name">Wilbur se chce zabít</a></h3>							</td>
 						</tr>
 						<tr>
 							<td class="year">
 								2001
 							</td>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/88877-monin-svet/" class="film-title-name">Monin svět</a> <span class="film-title-info"></span></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/88877-monin-svet/" class="film-title-name">Monin svět</a></h3>							</td>
 						</tr>
 						<tr>
 							<td class="year">
 								&nbsp;
 							</td>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/74979-rozhybej-to/" class="film-title-name">Rozhýbej to!</a> <span class="film-title-info"></span></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/74979-rozhybej-to/" class="film-title-name">Rozhýbej to!</a></h3>							</td>
 						</tr>
 						<tr>
 							<td class="year">
 								2000
 							</td>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/46814-blikajici-svetla/" class="film-title-name">Blikající světla</a> <span class="film-title-info"></span></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/46814-blikajici-svetla/" class="film-title-name">Blikající světla</a></h3>							</td>
 						</tr>
 						<tr>
 							<td class="year">
 								1999
 							</td>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/88164-bleeder/" class="film-title-name">Bleeder</a> <span class="film-title-info"></span></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/88164-bleeder/" class="film-title-name">Bleeder</a></h3>							</td>
 						</tr>
 						<tr>
 							<td class="year">
 								1998
 							</td>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/88880-na-scesti/" class="film-title-name">Na scestí</a> <span class="film-title-info"></span></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/88880-na-scesti/" class="film-title-name">Na scestí</a></h3>							</td>
 						</tr>
 						<tr>
 							<td class="year">
 								&nbsp;
 							</td>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/88878-nattens-engel/" class="film-title-name">Nattens engel</a> <span class="film-title-info"></span></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/88878-nattens-engel/" class="film-title-name">Nattens engel</a></h3>							</td>
 						</tr>
 						<tr>
 							<td class="year">
 								1996
 							</td>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/88170-dealer/" class="film-title-name">Dealer</a> <span class="film-title-info"></span></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/88170-dealer/" class="film-title-name">Dealer</a></h3>							</td>
 						</tr>
 			</tbody>
 		</table>
@@ -1204,7 +1155,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 								2022
 							</td>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/247487-klovn/" class="film-title-name">Klovn</a> <span class="film-title-info"></span></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/247487-klovn/" class="film-title-name">Klovn</a></h3>							</td>
 						</tr>
 <tbody id="snippet-careerBox-1-episodes-247487-2022" data-ajax-append>
 	<tr>
@@ -1238,7 +1189,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 								2015
 							</td>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/323483-hannibal/" class="film-title-name">Hannibal</a> <span class="film-title-info"></span></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/323483-hannibal/" class="film-title-name">Hannibal</a></h3>							</td>
 						</tr>
 <tbody id="snippet-careerBox-1-episodes-323483-2015" data-ajax-append>
 	<tr>
@@ -1269,7 +1220,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 								2014
 							</td>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/323483-hannibal/" class="film-title-name">Hannibal</a> <span class="film-title-info"></span></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/323483-hannibal/" class="film-title-name">Hannibal</a></h3>							</td>
 						</tr>
 <tbody id="snippet-careerBox-1-episodes-323483-2014" data-ajax-append>
 	<tr>
@@ -1300,7 +1251,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 								2013
 							</td>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/323483-hannibal/" class="film-title-name">Hannibal</a> <span class="film-title-info"></span></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/323483-hannibal/" class="film-title-name">Hannibal</a></h3>							</td>
 						</tr>
 <tbody id="snippet-careerBox-1-episodes-323483-2013" data-ajax-append>
 	<tr>
@@ -1331,7 +1282,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 								2005
 							</td>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/247487-klovn/" class="film-title-name">Klovn</a> <span class="film-title-info"></span></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/247487-klovn/" class="film-title-name">Klovn</a></h3>							</td>
 						</tr>
 <tbody id="snippet-careerBox-1-episodes-247487-2005" data-ajax-append>
 	<tr>
@@ -1348,7 +1299,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 								2004
 							</td>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/70114-rejseholdet/" class="film-title-name">Rejseholdet</a> <span class="film-title-info"></span></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/70114-rejseholdet/" class="film-title-name">Rejseholdet</a></h3>							</td>
 						</tr>
 <tbody id="snippet-careerBox-1-episodes-70114-2004" data-ajax-append>
 	<tr>
@@ -1365,7 +1316,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 								2003
 							</td>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/70114-rejseholdet/" class="film-title-name">Rejseholdet</a> <span class="film-title-info"></span></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/70114-rejseholdet/" class="film-title-name">Rejseholdet</a></h3>							</td>
 						</tr>
 <tbody id="snippet-careerBox-1-episodes-70114-2003" data-ajax-append>
 	<tr>
@@ -1382,7 +1333,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 								2002
 							</td>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/70114-rejseholdet/" class="film-title-name">Rejseholdet</a> <span class="film-title-info"></span></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/70114-rejseholdet/" class="film-title-name">Rejseholdet</a></h3>							</td>
 						</tr>
 <tbody id="snippet-careerBox-1-episodes-70114-2002" data-ajax-append>
 	<tr>
@@ -1413,9 +1364,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 								2001
 							</td>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/70114-rejseholdet/" class="film-title-name">Rejseholdet</a> <span class="film-title-info"></span></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/70114-rejseholdet/" class="film-title-name">Rejseholdet</a></h3>							</td>
 						</tr>
 <tbody id="snippet-careerBox-1-episodes-70114-2001" data-ajax-append>
+	<tr>
+		<td class="year">&nbsp;</td>
+		<td class="episode">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/70114-rejseholdet/597666-assistancemelding-a-2-01/" class="film-title-name">Assistancemelding A-2/01</a> <span class="film-title-info"> <span class="info">(S03E01)</span></span></h3>		</td>
+	</tr>
 	<tr>
 		<td class="year">&nbsp;</td>
 		<td class="episode">
@@ -1425,11 +1381,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 		<td class="year">&nbsp;</td>
 		<td class="episode">
 <h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/70114-rejseholdet/597663-assistancemelding-a-31-00-del-1/" class="film-title-name">Assistancemelding A-31/00, del 1</a> <span class="film-title-info"> <span class="info">(S02E06)</span></span></h3>		</td>
-	</tr>
-	<tr>
-		<td class="year">&nbsp;</td>
-		<td class="episode">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/70114-rejseholdet/597662-assistancemelding-a-30-00/" class="film-title-name">Assistancemelding A-30/00</a> <span class="film-title-info"> <span class="info">(S02E05)</span></span></h3>		</td>
 	</tr>
 </tbody>
 
@@ -1444,7 +1395,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 								2000
 							</td>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/70114-rejseholdet/" class="film-title-name">Rejseholdet</a> <span class="film-title-info"></span></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/70114-rejseholdet/" class="film-title-name">Rejseholdet</a></h3>							</td>
 						</tr>
 <tbody id="snippet-careerBox-1-episodes-70114-2000" data-ajax-append>
 	<tr>
@@ -1482,21 +1433,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 								2023
 							</td>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1453704-vecni-hrdinove-indiana-jones-a-harrison-ford/" class="film-title-name">Věční hrdinové: Indiana Jones a Harrison Ford</a> <span class="film-title-info"></span></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1453704-vecni-hrdinove-indiana-jones-a-harrison-ford/" class="film-title-name">Věční hrdinové: Indiana Jones a Harrison Ford</a></h3>							</td>
 						</tr>
 						<tr>
 							<td class="year">
 								2017
 							</td>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/1106475-the-stories-the-making-of-rogue-one-a-star-wars-story/" class="film-title-name">The Stories: The Making of 'Rogue One: A Star Wars Story'</a> <span class="film-title-info"></span></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/1106475-the-stories-the-making-of-rogue-one-a-star-wars-story/" class="film-title-name">The Stories: The Making of 'Rogue One: A Star Wars Story'</a></h3>							</td>
 						</tr>
 						<tr>
 							<td class="year">
 								2016
 							</td>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/429127-a-bond-for-life-how-james-bond-changed-my-life/" class="film-title-name">A Bond for Life: How James Bond Changed My Life</a> <span class="film-title-info"></span></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/429127-a-bond-for-life-how-james-bond-changed-my-life/" class="film-title-name">A Bond for Life: How James Bond Changed My Life</a></h3>							</td>
 						</tr>
 						<tr>
 							<td class="year">
@@ -1517,7 +1468,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 								2011
 							</td>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/306487-film-o-filmu-tri-musketyri-ve-3d/" class="film-title-name">Film o filmu: Tři mušketýři ve 3D</a> <span class="film-title-info"></span></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/306487-film-o-filmu-tri-musketyri-ve-3d/" class="film-title-name">Film o filmu: Tři mušketýři ve 3D</a></h3>							</td>
 						</tr>
 						<tr>
 							<td class="year">
@@ -1533,6 +1484,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							<td class="name">
 <h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/410643-pokerfjaes/" class="film-title-name">Pokerfjæs</a> <span class="film-title-info"> <span class="info">(seriál)</span></span></h3>							</td>
 						</tr>
+						<tr>
+							<td class="year">
+								2006
+							</td>
+							<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/1665418-becoming-bond/" class="film-title-name">Becoming Bond</a> <span class="film-title-info"> <span class="info">(TV film)</span></span></h3>							</td>
+						</tr>
 			</tbody>
 		</table>
 		<table class="no-column-borders">
@@ -1545,7 +1503,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 								2015
 							</td>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/54762-rihanna-bitch-better-have-my-money/" class="film-title-name">Rihanna - Bitch Better Have My Money</a> <span class="film-title-info"></span></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/54762-rihanna-bitch-better-have-my-money/" class="film-title-name">Rihanna - Bitch Better Have My Money</a></h3>							</td>
 						</tr>
 			</tbody>
 		</table>
@@ -1559,42 +1517,42 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 								2021
 							</td>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/1140476-return-of-the-goat-ii-new-world-order/" class="film-title-name">Return of the Goat II: New World Order</a> <span class="film-title-info"></span></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/1140476-return-of-the-goat-ii-new-world-order/" class="film-title-name">Return of the Goat II: New World Order</a></h3>							</td>
 						</tr>
 						<tr>
 							<td class="year">
 								2016
 							</td>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/460035-doctor-strange-bonusovy-prodlouzeny-imax-trailer/" class="film-title-name">Doctor Strange - bonusový prodloužený IMAX trailer</a> <span class="film-title-info"></span></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/460035-doctor-strange-bonusovy-prodlouzeny-imax-trailer/" class="film-title-name">Doctor Strange - bonusový prodloužený IMAX trailer</a></h3>							</td>
 						</tr>
 						<tr>
 							<td class="year">
 								&nbsp;
 							</td>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/468311-le-fantome/" class="film-title-name">Le Fantôme</a> <span class="film-title-info"></span></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/468311-le-fantome/" class="film-title-name">Le Fantôme</a></h3>							</td>
 						</tr>
 						<tr>
 							<td class="year">
 								2003
 							</td>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/365162-dykkerdrengen/" class="film-title-name">Dykkerdrengen</a> <span class="film-title-info"></span></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/365162-dykkerdrengen/" class="film-title-name">Dykkerdrengen</a></h3>							</td>
 						</tr>
 						<tr>
 							<td class="year">
 								&nbsp;
 							</td>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/88879-nu/" class="film-title-name">Nu</a> <span class="film-title-info"></span></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/88879-nu/" class="film-title-name">Nu</a></h3>							</td>
 						</tr>
 						<tr>
 							<td class="year">
 								1999
 							</td>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/396783-tom-merritt/" class="film-title-name">Tom Merritt</a> <span class="film-title-info"></span></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/396783-tom-merritt/" class="film-title-name">Tom Merritt</a></h3>							</td>
 						</tr>
 						<tr>
 							<td class="year">
@@ -1608,14 +1566,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 								1996
 							</td>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/88873-blomsterfangen/" class="film-title-name">Blomsterfangen</a> <span class="film-title-info"></span></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/88873-blomsterfangen/" class="film-title-name">Blomsterfangen</a></h3>							</td>
 						</tr>
 						<tr>
 							<td class="year">
 								&nbsp;
 							</td>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/88874-cafe-hector/" class="film-title-name">Café Hector</a> <span class="film-title-info"></span></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/88874-cafe-hector/" class="film-title-name">Café Hector</a></h3>							</td>
 						</tr>
 			</tbody>
 		</table>
@@ -1626,7 +1584,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 		<h2>Účinkující</h2>
 		<div class="box-header-action">
 			<form action="" method="get" data-form="get">
-				<select name="sort" data-auto-submit-form="true" data-empty-value="year" id="frm-sort-careerBox-14-sort-sort"><option value="year">seřadit od nejnovějšího</option><option value="sort_average">seřadit od nejlepšího</option><option value="rating_count">seřadit podle počtu hodnocení</option></select>
+				<select name="sort" data-auto-submit-form="true" data-empty-value="year" id="frm-sort-careerBox-14-sort-sort"><option value="year" selected>seřadit od nejnovějšího</option><option value="rating_count">seřadit podle počtu hodnocení</option><option value="sort_average">seřadit od nejlepšího</option></select>
 			</form>
 		</div>
 	</header>
@@ -1641,63 +1599,63 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 								2018
 							</td>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/1293890-hollywood-insider/" class="film-title-name">Hollywood Insider</a> <span class="film-title-info"></span></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/1293890-hollywood-insider/" class="film-title-name">Hollywood Insider</a></h3>							</td>
 						</tr>
 						<tr>
 							<td class="year">
 								2014
 							</td>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/367481-oscar-s-red-carpet-2014/" class="film-title-name">Oscar's Red Carpet 2014</a> <span class="film-title-info"></span></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/367481-oscar-s-red-carpet-2014/" class="film-title-name">Oscar's Red Carpet 2014</a></h3>							</td>
 						</tr>
 						<tr>
 							<td class="year">
 								&nbsp;
 							</td>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/360866-zlaty-globus-2014/" class="film-title-name">Zlatý Glóbus 2014</a> <span class="film-title-info"></span></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/360866-zlaty-globus-2014/" class="film-title-name">Zlatý Glóbus 2014</a></h3>							</td>
 						</tr>
 						<tr>
 							<td class="year">
 								2013
 							</td>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/340079-the-2013-film-independent-spirit-awards/" class="film-title-name">The 2013 Film Independent Spirit Awards</a> <span class="film-title-info"></span></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/340079-the-2013-film-independent-spirit-awards/" class="film-title-name">The 2013 Film Independent Spirit Awards</a></h3>							</td>
 						</tr>
 						<tr>
 							<td class="year">
 								2012
 							</td>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/125716-evropske-filmove-ceny-2012/" class="film-title-name">Evropské filmové ceny 2012</a> <span class="film-title-info"></span></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/125716-evropske-filmove-ceny-2012/" class="film-title-name">Evropské filmové ceny 2012</a></h3>							</td>
 						</tr>
 						<tr>
 							<td class="year">
 								2010
 							</td>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/1236882-janela-indiscreta/" class="film-title-name">Janela Indiscreta</a> <span class="film-title-info"></span></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/1236882-janela-indiscreta/" class="film-title-name">Janela Indiscreta</a></h3>							</td>
 						</tr>
 						<tr>
 							<td class="year">
 								2009
 							</td>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/697844-skavlan/" class="film-title-name">Skavlan</a> <span class="film-title-info"></span></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/697844-skavlan/" class="film-title-name">Skavlan</a></h3>							</td>
 						</tr>
 						<tr>
 							<td class="year">
 								2008
 							</td>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/251546-evropske-filmove-ceny-2008/" class="film-title-name">Evropské filmové ceny 2008</a> <span class="film-title-info"></span></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/251546-evropske-filmove-ceny-2008/" class="film-title-name">Evropské filmové ceny 2008</a></h3>							</td>
 						</tr>
 						<tr class="tr-add-border">
 							<td class="year">
 								2007
 							</td>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/250083-evropske-filmove-ceny-2007/" class="film-title-name">Evropské filmové ceny 2007</a> <span class="film-title-info"></span></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/250083-evropske-filmove-ceny-2007/" class="film-title-name">Evropské filmové ceny 2007</a></h3>							</td>
 						</tr>
 						<tr class="tr-banner-desktop">
 							<td class="box box-banner" colspan="2">
@@ -1718,56 +1676,82 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 								&nbsp;
 							</td>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/291145-xpose/" class="film-title-name">Xposé</a> <span class="film-title-info"></span></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/291145-xpose/" class="film-title-name">Xposé</a></h3>							</td>
 						</tr>
 						<tr>
 							<td class="year">
 								2006
 							</td>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/57540-joonas/" class="film-title-name">Joonas</a> <span class="film-title-info"></span></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/57540-joonas/" class="film-title-name">Joonas</a></h3>							</td>
 						</tr>
 						<tr>
 							<td class="year">
 								2005
 							</td>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/1246195-noche-hache/" class="film-title-name">Noche Hache</a> <span class="film-title-info"></span></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/1246195-noche-hache/" class="film-title-name">Noche Hache</a></h3>							</td>
 						</tr>
 						<tr>
 							<td class="year">
 								2003
 							</td>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/117277-bodilprisen-2003/" class="film-title-name">Bodilprisen 2003</a> <span class="film-title-info"></span></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/117277-bodilprisen-2003/" class="film-title-name">Bodilprisen 2003</a></h3>							</td>
 						</tr>
 						<tr>
 							<td class="year">
 								&nbsp;
 							</td>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/1235932-senkveld-med-thomas-og-harald/" class="film-title-name">Senkveld med Thomas og Harald</a> <span class="film-title-info"></span></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/1235932-senkveld-med-thomas-og-harald/" class="film-title-name">Senkveld med Thomas og Harald</a></h3>							</td>
 						</tr>
 						<tr>
 							<td class="year">
 								2001
 							</td>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/336146-viva/" class="film-title-name">Viva</a> <span class="film-title-info"></span></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/336146-viva/" class="film-title-name">Viva</a></h3>							</td>
 						</tr>
 						<tr>
 							<td class="year">
 								1994
 							</td>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/1216321-sidewalks-entertainment/" class="film-title-name">Sidewalks Entertainment</a> <span class="film-title-info"></span></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/1216321-sidewalks-entertainment/" class="film-title-name">Sidewalks Entertainment</a></h3>							</td>
 						</tr>
 						<tr>
 							<td class="year">
 								1992
 							</td>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/413801-gomorron/" class="film-title-name">Gomorron</a> <span class="film-title-info"></span></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/413801-gomorron/" class="film-title-name">Gomorron</a></h3>							</td>
+						</tr>
+			</tbody>
+		</table>
+	</div>
+</section>
+<section class="box">
+	<header class="box-header">
+		<h2>Scenárista</h2>
+		<div class="box-header-action">
+			<form action="" method="get" data-form="get">
+				<select name="sort" data-auto-submit-form="true" data-empty-value="year" id="frm-sort-careerBox-4-sort-sort"><option value="year" selected>seřadit od nejnovějšího</option><option value="rating_count">seřadit podle počtu hodnocení</option><option value="sort_average">seřadit od nejlepšího</option></select>
+			</form>
+		</div>
+	</header>
+	<div class="box-content">
+		<table class="no-column-borders">
+			<tbody>
+				<tr>
+					<th colspan="2">Filmy</th>
+				</tr>
+						<tr>
+							<td class="year">
+								2026
+							</td>
+							<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/1598299-the-black-kaiser/" class="film-title-name">The Black Kaiser</a></h3>							</td>
 						</tr>
 			</tbody>
 		</table>
@@ -1785,6 +1769,90 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						<div class="box-content">
 							<div class="newslist-content">
 								<div class="newslist newslist-creator">
+										<section class="newslist-item">
+											<div class="box-content">
+												<article class="article article-news article-news-60">
+													<figure class="article-img">
+														<a href="/novinky/9509-jake-filmy-se-objevi-v-programu-benatek/">
+															<img class="img" src="//image.pmgstatic.com/cache/resized/w100h132crop/files/images/news/article/170/348/170348169_muetnt.png" loading="lazy" width="100" height="132" srcset="//image.pmgstatic.com/cache/resized/w100h132crop/files/images/news/article/170/348/170348169_muetnt.png 1x, //image.pmgstatic.com/cache/resized/w200h264crop/files/images/news/article/170/348/170348169_muetnt.png 2x, //image.pmgstatic.com/cache/resized/w300h396crop/files/images/news/article/170/348/170348169_muetnt.png 3x" alt="Jaké filmy se objeví v programu Benátek?">
+														</a>
+													</figure>
+													<header class="article-header">
+														<h3>
+															<a href="/novinky/9509-jake-filmy-se-objevi-v-programu-benatek/">Jaké filmy se objeví v programu Benátek?</a>
+														</h3>
+														<div class="info">
+															<span class="date">24.07.2025</span>
+														</div>
+													</header>
+													<div class="article-news-content article-content-justify">
+														<div class="article-news-textshort">
+															<p>
+																V úterý 22. července byla Albertem Barberou, uměleckým ředitelem Mezinárodního filmového festivalu v Benátkách, odtajněna velká část značně očekávaného filmového programu nadcházejícího 82. ročníku…
+																<span class="span-more-small">(<a href="/novinky/9509-jake-filmy-se-objevi-v-programu-benatek/">více</a>)</span>
+															</p>
+														</div>
+													</div>
+												</article>
+											</div>
+										</section>
+
+										<section class="newslist-item">
+											<div class="box-content">
+												<article class="article article-news article-news-60">
+													<figure class="article-img">
+														<a href="/novinky/9265-rok-2025-nabidne-ocekavane-severske-filmy/">
+															<img class="img" src="//image.pmgstatic.com/cache/resized/w100h132crop/files/images/news/article/169/718/169718567_nmkzud.jpg" loading="lazy" width="100" height="132" srcset="//image.pmgstatic.com/cache/resized/w100h132crop/files/images/news/article/169/718/169718567_nmkzud.jpg 1x, //image.pmgstatic.com/cache/resized/w200h264crop/files/images/news/article/169/718/169718567_nmkzud.jpg 2x, //image.pmgstatic.com/cache/resized/w300h396crop/files/images/news/article/169/718/169718567_nmkzud.jpg 3x" alt="Rok 2025 nabídne očekávané severské filmy">
+														</a>
+													</figure>
+													<header class="article-header">
+														<h3>
+															<a href="/novinky/9265-rok-2025-nabidne-ocekavane-severske-filmy/">Rok 2025 nabídne očekávané severské filmy</a>
+														</h3>
+														<div class="info">
+															<span class="date">12.01.2025</span>
+														</div>
+													</header>
+													<div class="article-news-content article-content-justify">
+														<div class="article-news-textshort">
+															<p>
+																Rok 2025 slibuje bohatou úrodu filmů z oblasti severní Evropy. Režiséři z Norska, Dánska, Švédska a Finska přicházejí s originálními projekty, které těží z jejich dlouholetých zkušeností i úspěchů na…
+																<span class="span-more-small">(<a href="/novinky/9265-rok-2025-nabidne-ocekavane-severske-filmy/">více</a>)</span>
+															</p>
+														</div>
+													</div>
+												</article>
+											</div>
+										</section>
+
+										<section class="newslist-item">
+											<div class="box-content">
+												<article class="article article-news article-news-60">
+													<figure class="article-img">
+														<a href="/novinky/9248-nej-roku-dle-top-uzivatelu-a-adminu-csfd/">
+															<img class="img" src="//image.pmgstatic.com/cache/resized/w100h132crop/files/images/news/article/169/663/169663875_f3jo5r.jpg" loading="lazy" width="100" height="132" srcset="//image.pmgstatic.com/cache/resized/w100h132crop/files/images/news/article/169/663/169663875_f3jo5r.jpg 1x, //image.pmgstatic.com/cache/resized/w200h264crop/files/images/news/article/169/663/169663875_f3jo5r.jpg 2x, //image.pmgstatic.com/cache/resized/w300h396crop/files/images/news/article/169/663/169663875_f3jo5r.jpg 3x" alt="NEJ roku dle TOP uživatelů a adminů ČSFD">
+														</a>
+													</figure>
+													<header class="article-header">
+														<h3>
+															<a href="/novinky/9248-nej-roku-dle-top-uzivatelu-a-adminu-csfd/">NEJ roku dle TOP uživatelů a adminů ČSFD</a>
+														</h3>
+														<div class="info">
+															<span class="date">29.12.2024</span>
+														</div>
+													</header>
+													<div class="article-news-content article-content-justify">
+														<div class="article-news-textshort">
+															<p>
+																Uteklo to jako voda. Rok 2024 je téměř u konce a přišel tedy čas, abychom vám stejně jako v předešlých letech opět představili výroční topky tří nejlepších filmů a případně taky tří nejlepších…
+																<span class="span-more-small">(<a href="/novinky/9248-nej-roku-dle-top-uzivatelu-a-adminu-csfd/">více</a>)</span>
+															</p>
+														</div>
+													</div>
+												</article>
+											</div>
+										</section>
+
 										<section class="newslist-item">
 											<div class="box-content">
 												<article class="article article-news article-news-60">
@@ -1841,90 +1909,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 											</div>
 										</section>
 
-										<section class="newslist-item">
-											<div class="box-content">
-												<article class="article article-news article-news-60">
-													<figure class="article-img">
-														<a href="/novinky/8769-36-evropske-filmove-ceny-ovladla-anatomie-padu/">
-															<img class="img" src="//image.pmgstatic.com/cache/resized/w100h132crop/files/images/news/article/168/388/168388946_abi888.jpg" loading="lazy" width="100" height="132" srcset="//image.pmgstatic.com/cache/resized/w100h132crop/files/images/news/article/168/388/168388946_abi888.jpg 1x, //image.pmgstatic.com/cache/resized/w200h264crop/files/images/news/article/168/388/168388946_abi888.jpg 2x, //image.pmgstatic.com/cache/resized/w300h396crop/files/images/news/article/168/388/168388946_abi888.jpg 3x" alt="36. Evropské filmové ceny ovládla Anatomie pádu">
-														</a>
-													</figure>
-													<header class="article-header">
-														<h3>
-															<a href="/novinky/8769-36-evropske-filmove-ceny-ovladla-anatomie-padu/">36. Evropské filmové ceny ovládla Anatomie pádu</a>
-														</h3>
-														<div class="info">
-															<span class="date">10.12.2023</span>
-														</div>
-													</header>
-													<div class="article-news-content article-content-justify">
-														<div class="article-news-textshort">
-															<p>
-																V sobotu 9. prosince proběhl v Berlíně 36. ročník slavnostního předávání Evropských filmových cen, které každoročně pořádá v Německu sídlící Evropská filmová akademie. Vítězným snímkem večera se bez…
-																<span class="span-more-small">(<a href="/novinky/8769-36-evropske-filmove-ceny-ovladla-anatomie-padu/">více</a>)</span>
-															</p>
-														</div>
-													</div>
-												</article>
-											</div>
-										</section>
-
-										<section class="newslist-item">
-											<div class="box-content">
-												<article class="article article-news article-news-60">
-													<figure class="article-img">
-														<a href="/novinky/8729-36-evropske-filmove-ceny-nominace/">
-															<img class="img" src="//image.pmgstatic.com/cache/resized/w100h132crop/files/images/news/article/168/253/168253925_4c2vd8.jpg" loading="lazy" width="100" height="132" srcset="//image.pmgstatic.com/cache/resized/w100h132crop/files/images/news/article/168/253/168253925_4c2vd8.jpg 1x, //image.pmgstatic.com/cache/resized/w200h264crop/files/images/news/article/168/253/168253925_4c2vd8.jpg 2x, //image.pmgstatic.com/cache/resized/w300h396crop/files/images/news/article/168/253/168253925_4c2vd8.jpg 3x" alt="36. Evropské filmové ceny - nominace">
-														</a>
-													</figure>
-													<header class="article-header">
-														<h3>
-															<a href="/novinky/8729-36-evropske-filmove-ceny-nominace/">36. Evropské filmové ceny - nominace</a>
-														</h3>
-														<div class="info">
-															<span class="date">08.11.2023</span>
-														</div>
-													</header>
-													<div class="article-news-content article-content-justify">
-														<div class="article-news-textshort">
-															<p>
-																V úterý 7. listopadu byly zveřejněny nominace pro 36. ročník Evropských filmových cen, jež by měly upozornit na nejvýznamnější filmové počiny z Evropy za rok 2023. V kategorii pro nejlepší evropský…
-																<span class="span-more-small">(<a href="/novinky/8729-36-evropske-filmove-ceny-nominace/">více</a>)</span>
-															</p>
-														</div>
-													</div>
-												</article>
-											</div>
-										</section>
-
-										<section class="newslist-item">
-											<div class="box-content">
-												<article class="article article-news article-news-60">
-													<figure class="article-img">
-														<a href="/novinky/8339-severska-prehlidka-scandi-zacne-uz-ve-stredu/">
-															<img class="img" src="//image.pmgstatic.com/cache/resized/w100h132crop/files/images/news/article/167/081/167081151_3ea42e.jpg" loading="lazy" width="100" height="132" srcset="//image.pmgstatic.com/cache/resized/w100h132crop/files/images/news/article/167/081/167081151_3ea42e.jpg 1x, //image.pmgstatic.com/cache/resized/w200h264crop/files/images/news/article/167/081/167081151_3ea42e.jpg 2x, //image.pmgstatic.com/cache/resized/w300h396crop/files/images/news/article/167/081/167081151_3ea42e.jpg 3x" alt="Severská přehlídka SCANDI začne už ve středu!">
-														</a>
-													</figure>
-													<header class="article-header">
-														<h3>
-															<a href="/novinky/8339-severska-prehlidka-scandi-zacne-uz-ve-stredu/">Severská přehlídka SCANDI začne už ve středu!</a>
-														</h3>
-														<div class="info">
-															<span class="date">14.01.2023</span>
-														</div>
-													</header>
-													<div class="article-news-content article-content-justify">
-														<div class="article-news-textshort">
-															<p>
-																Už tuto středu odstartuje přehlídka toho nejaktuálnějšího z kinematografie severu: SCANDI 2023. Odehraje se mezi 18. a 25. lednem, představí snímky ze všech zemí Skandinávie a v programu ji bude mít…
-																<span class="span-more-small">(<a href="/novinky/8339-severska-prehlidka-scandi-zacne-uz-ve-stredu/">více</a>)</span>
-															</p>
-														</div>
-													</div>
-												</article>
-											</div>
-										</section>
-
 								</div>
 							</div>
 						</div>
@@ -1942,6 +1926,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 				<li id="snippet--publicControlMenuFanclub">
 					<a href="/registration-motivation/" rel="registrationMotivation">
 							Přidat do oblíbených
+					</a>
+				</li>
+				<li>
+					<a href="/registration-motivation/" rel="registrationMotivation">
+							Přidat do seznamu
 					</a>
 				</li>
 			</ul>
@@ -1985,126 +1974,226 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			</div>
 			<div class="fan-club-content">
 				<h3>Fanklub</h3>
-				<span>(3 475)</span>
-				<ul>
+				<span>(3 584)</span>
+				<ul id="snippet--fanclubList">
 					<li title="POMO (herec)">
-						<a href="/uzivatel/1-pomo/oblibene/herci/">
-							POMO
-						</a>
+						
+							<a href="/uzivatel/1-pomo/oblibene/herci-herecky-a-tvurci/">
+								POMO
+							</a>
+						
 						<span>herec</span>
 					</li>
 					<li title="kOCOUR (herec)">
-						<a href="/uzivatel/69-kocour/oblibene/herci/">
-							kOCOUR
-						</a>
+						
+							<a href="/uzivatel/69-kocour/oblibene/herci-herecky-a-tvurci/">
+								kOCOUR
+							</a>
+						
 						<span>herec</span>
 					</li>
 					<li title="Malarkey (herec)">
-						<a href="/uzivatel/8560-malarkey/oblibene/herci/">
-							Malarkey
-						</a>
+						
+							<a href="/uzivatel/8560-malarkey/oblibene/herci-herecky-a-tvurci/">
+								Malarkey
+							</a>
+						
 						<span>herec</span>
 					</li>
 					<li title="FlyGun (herec)">
-						<a href="/uzivatel/507222-flygun/oblibene/herci/">
-							FlyGun
-						</a>
+						
+							<a href="/uzivatel/507222-flygun/oblibene/herci-herecky-a-tvurci/">
+								FlyGun
+							</a>
+						
 						<span>herec</span>
 					</li>
 					<li title="Rob Roy (herec)">
-						<a href="/uzivatel/800-rob-roy/oblibene/herci/">
-							Rob Roy
-						</a>
+						<div class="fan-club-note-item">
+							<a href="/uzivatel/800-rob-roy/oblibene/herci-herecky-a-tvurci/">
+								Rob Roy
+							</a>
+								<span class="tooltip" data-template="fanclubText800" aria-expanded="false">
+									<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+										<path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 01.865-.501 48.172 48.172 0 003.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z"></path>
+									</svg>
+								</span>
+								<div id="fanclubText800" class="hidden">
+									<p>Tony - Pusher 2</p>
+								</div>
+						</div>
 						<span>herec</span>
 					</li>
 					<li title="hirnlego (herec)">
-						<a href="/uzivatel/25853-hirnlego/oblibene/herci/">
-							hirnlego
-						</a>
+						
+							<a href="/uzivatel/25853-hirnlego/oblibene/herci-herecky-a-tvurci/">
+								hirnlego
+							</a>
+						
 						<span>herec</span>
 					</li>
 					<li title="tron (herec)">
-						<a href="/uzivatel/5720-tron/oblibene/herci/">
-							tron
-						</a>
+						
+							<a href="/uzivatel/5720-tron/oblibene/herci-herecky-a-tvurci/">
+								tron
+							</a>
+						
 						<span>herec</span>
 					</li>
 					<li title="Gimli (herec)">
-						<a href="/uzivatel/23-gimli/oblibene/herci/">
-							Gimli
-						</a>
-						<span>herec</span>
-					</li>
-					<li title="emma53 (herec)">
-						<a href="/uzivatel/328256-emma53/oblibene/herci/">
-							emma53
-						</a>
+						
+							<a href="/uzivatel/23-gimli/oblibene/herci-herecky-a-tvurci/">
+								Gimli
+							</a>
+						
 						<span>herec</span>
 					</li>
 					<li title="Asia_Power (herec)">
-						<a href="/uzivatel/506901-asia-power/oblibene/herci/">
-							Asia_Power
-						</a>
+						
+							<a href="/uzivatel/506901-asia-power/oblibene/herci-herecky-a-tvurci/">
+								Asia_Power
+							</a>
+						
+						<span>herec</span>
+					</li>
+					<li title="emma53 (herec)">
+						<div class="fan-club-note-item">
+							<a href="/uzivatel/328256-emma53/oblibene/herci-herecky-a-tvurci/">
+								emma53
+							</a>
+								<span class="tooltip" data-template="fanclubText328256" aria-expanded="false">
+									<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+										<path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 01.865-.501 48.172 48.172 0 003.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z"></path>
+									</svg>
+								</span>
+								<div id="fanclubText328256" class="hidden">
+									<p><strong><a href="https://www.csfd.cz/film/224362-po-svatbe/">Po svatbě</a></strong></p>
+<p><strong><a href="https://www.csfd.cz/film/230173-plamen-a-citron/">Plamen a citron</a></strong></p>
+<p><strong><a href="https://www.csfd.cz/film/296730-kralovska-afera/">Královská aféra</a></strong></p>
+<p><strong><a href="https://www.csfd.cz/film/811926-rytiri-spravedlnosti/">Rytíři spravedlnosti</a></strong></p>
+<p><strong><a href="https://www.csfd.cz/film/341820-michael-kohlhaas/">Michael Kohlaas</a></strong></p>
+<p><strong><a href="https://www.csfd.cz/film/311967-hon/">Hon</a></strong></p>
+<p>Dostal mě rychle, ani nevím jak, ale jako kluk to neměl jednoduché:</p>
+<p><strong>Jaký jste byl jako kluk? Dostával jste často pár facek?</strong></p>
+<p><em>Docela jo, ale většinou se mi podařilo utéct. Vyrůstal jsem v Kodani v obyčejné dělnické čtvrti, na ulici to bylo docela drsné. Já byl takový hubený střízlík, neměl jsem moc šancí prosadit se ve rvačce, ale měl jsem rychlé nohy. Na druhou stranu jsme žili všichni tak nějak pospolu, v takové komunitě, jeden vychovával druhého</em>.</p>
+<p><strong>Čím jste chtěl být jako kluk?</strong></p>
+<p><em>Brucem Leem.</em></p>
+<p><strong>Vážně?</strong></p>
+<p><em>Nesmějte se. Většinu dětství jsem prožil tak, že jsem kopal kolem sebe a předstíral, že jsem Bruce Lee.</em></p>
+<p><strong>O tom, že to jednou natřete agentovi 007, jste jako kluk nesnil?</strong></p>
+<p><em>Ne, protože jsem netušil, kdo to je. A žádnou bondovku jsem neviděl až do doby, kdy mě pozvali na casting do Casina Royale.</em></p>
+<p><strong>Takže jste to před castingem doháněl a dal si jednu bondovku za druhou?</strong></p>
+<p><em>To jsem udělal až potom. Na castingu jsem kalil vodu, tvářil jsem se, že jsem naprosto v obraze, ale ve skutečnosti jsem věděl prd. Teď bondovky sleduju hlavně kvůli Danielu Craigovi, dost jsme se skamarádili</em>.</p>
+<p><strong>Casino Royale vám otevřelo dveře do amerických filmů, ale i do České republiky. Od té doby jste tu točil několikrát...</strong></p>
+<p><em>Jasně, točil jsem u vás filmy Plamen a Citron a Královskou aféru. Točím u vás rád, jsem pivař a vy máte dobré pivo.</em></p>
+								</div>
+						</div>
 						<span>herec</span>
 					</li>
 					<li title="Faidra (herec)">
-						<a href="/uzivatel/60347-faidra/oblibene/herci/">
-							Faidra
-						</a>
+						
+							<a href="/uzivatel/60347-faidra/oblibene/herci-herecky-a-tvurci/">
+								Faidra
+							</a>
+						
 						<span>herec</span>
 					</li>
 					<li title="DaviD3141 (herec)">
-						<a href="/uzivatel/112774-david3141/oblibene/herci/">
-							DaviD3141
-						</a>
-						<span>herec</span>
-					</li>
-					<li title="pan Hnědý (herec)">
-						<a href="/uzivatel/313948-pan-hnedy/oblibene/herci/">
-							pan Hnědý
-						</a>
+						
+							<a href="/uzivatel/112774-david3141/oblibene/herci-herecky-a-tvurci/">
+								DaviD3141
+							</a>
+						
 						<span>herec</span>
 					</li>
 					<li title="Traffic (herec)">
-						<a href="/uzivatel/154594-traffic/oblibene/herci/">
-							Traffic
-						</a>
+						
+							<a href="/uzivatel/154594-traffic/oblibene/herci-herecky-a-tvurci/">
+								Traffic
+							</a>
+						
 						<span>herec</span>
 					</li>
 					<li title="Sarkastic (herec)">
-						<a href="/uzivatel/78444-sarkastic/oblibene/herci/">
-							Sarkastic
-						</a>
+						<div class="fan-club-note-item">
+							<a href="/uzivatel/78444-sarkastic/oblibene/herci-herecky-a-tvurci/">
+								Sarkastic
+							</a>
+								<span class="tooltip" data-template="fanclubText78444" aria-expanded="false">
+									<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+										<path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 01.865-.501 48.172 48.172 0 003.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z"></path>
+									</svg>
+								</span>
+								<div id="fanclubText78444" class="hidden">
+									<p>TOP film/seriál: Hon</p>
+								</div>
+						</div>
 						<span>herec</span>
 					</li>
 					<li title="sniper18 (herec)">
-						<a href="/uzivatel/58289-sniper18/oblibene/herci/">
-							sniper18
-						</a>
+						
+							<a href="/uzivatel/58289-sniper18/oblibene/herci-herecky-a-tvurci/">
+								sniper18
+							</a>
+						
 						<span>herec</span>
 					</li>
 					<li title="ScreamJay (herec)">
-						<a href="/uzivatel/2723-screamjay/oblibene/herci/">
-							ScreamJay
-						</a>
+						
+							<a href="/uzivatel/2723-screamjay/oblibene/herci-herecky-a-tvurci/">
+								ScreamJay
+							</a>
+						
 						<span>herec</span>
 					</li>
 					<li title="Le_Chuck (herec)">
-						<a href="/uzivatel/4253-le-chuck/oblibene/herci/">
-							Le_Chuck
-						</a>
+						
+							<a href="/uzivatel/4253-le-chuck/oblibene/herci-herecky-a-tvurci/">
+								Le_Chuck
+							</a>
+						
 						<span>herec</span>
 					</li>
 					<li title="akisha (herec)">
-						<a href="/uzivatel/31883-akisha/oblibene/herci/">
-							akisha
-						</a>
+						<div class="fan-club-note-item">
+							<a href="/uzivatel/31883-akisha/oblibene/herci-herecky-a-tvurci/">
+								akisha
+							</a>
+								<span class="tooltip" data-template="fanclubText31883" aria-expanded="false">
+									<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+										<path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 01.865-.501 48.172 48.172 0 003.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z"></path>
+									</svg>
+								</span>
+								<div id="fanclubText31883" class="hidden">
+									<p>Jak to jen říct... Je to borec!</p>
+<p><strong>Nej hláška:</strong> "I'm the greatest guy in the world!"</p>
+<p><strong>Kde se mi nejvíc líbil:</strong> <a href="https://www.csfd.cz/film/221085-adamova-jablka/">Adamova jablka</a>, <a href="https://www.csfd.cz/film/227552-dealer-ii/">Pusher II</a>, <a href="https://www.csfd.cz/film/323483-hannibal/">Hannibal</a></p>
+								</div>
+						</div>
 						<span>herec</span>
 					</li>
 					<li title="PinokKio (herec)">
-						<a href="/uzivatel/16354-pinokkio/oblibene/herci/">
-							PinokKio
-						</a>
+						<div class="fan-club-note-item">
+							<a href="/uzivatel/16354-pinokkio/oblibene/herci-herecky-a-tvurci/">
+								PinokKio
+							</a>
+								<span class="tooltip" data-template="fanclubText16354" aria-expanded="false">
+									<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+										<path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 01.865-.501 48.172 48.172 0 003.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z"></path>
+									</svg>
+								</span>
+								<div id="fanclubText16354" class="hidden">
+									<p>Dealer ****  /  Bleeder ***  /  Blikající světla ****  /  Wilbur se chce zabít ***  /  Otevřená srdce ***  /  Řezníci ****  /  Král Artuš **  /  Dealer II ****  /  Adamova jablka *****  /  Po svatbě ****  /  Casino Royale *****  /  Barbar ****  /  Souboj Titánů * /  Tři mušketýři ***  /  Královská aféra ***  /  Hon *****  /  Spása ****  /  Rogue One: Star Wars Story ****  /  Doctor Strange ****  /  Arctic: Ledové peklo ****  /  Polar ****  /  Chaos **  /  Fantastická zvířata: Brumbálova tajemství ***  /  Indiana Jones a nástroj osudu ****</p>
+								</div>
+						</div>
+						<span>herec</span>
+					</li>
+					<li title="Ephemeris (herec)">
+						
+							<a href="/uzivatel/616733-ephemeris/oblibene/herci-herecky-a-tvurci/">
+								Ephemeris
+							</a>
+						
 						<span>herec</span>
 					</li>
 				</ul>
@@ -2136,7 +2225,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						<div class="box box-banner box-bannercenter box-banner-spacetop">
 							<p class="box-banner-text-center">Reklama</p>
 							<div class="bottom-banner-content">
-<div id="billboard" class="ad-pmg" style="height: 315px;"></div>
+<div id="billboard" class="ad-pmg" style="height: 310px;"></div>
 							</div>
 						</div>
 						<div class="box box-banner-mobile box-banner-mobile-padding">
@@ -2149,69 +2238,62 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 			<footer class="page-footer">
 				<div class="footer-content">
-					<div class="footer-list">
-						<div class="footer-list-size">
-							<div class="linklist languages">
-								<div class="timezones">
-									<h3>Výběr časového pásma</h3>
-									<form action="/tvurce/4929-mads-mikkelsen/prehled/" method="post" id="frm-timezoneForm">
-										<select name="timezone" data-auto-submit-form="true" id="frm-timezoneForm-timezone"><option value="Africa/Abidjan">Africa/Abidjan</option><option value="Africa/Accra">Africa/Accra</option><option value="Africa/Addis_Ababa">Africa/Addis Ababa</option><option value="Africa/Algiers">Africa/Algiers</option><option value="Africa/Asmara">Africa/Asmara</option><option value="Africa/Bamako">Africa/Bamako</option><option value="Africa/Bangui">Africa/Bangui</option><option value="Africa/Banjul">Africa/Banjul</option><option value="Africa/Bissau">Africa/Bissau</option><option value="Africa/Blantyre">Africa/Blantyre</option><option value="Africa/Brazzaville">Africa/Brazzaville</option><option value="Africa/Bujumbura">Africa/Bujumbura</option><option value="Africa/Cairo">Africa/Cairo</option><option value="Africa/Casablanca">Africa/Casablanca</option><option value="Africa/Ceuta">Africa/Ceuta</option><option value="Africa/Conakry">Africa/Conakry</option><option value="Africa/Dakar">Africa/Dakar</option><option value="Africa/Dar_es_Salaam">Africa/Dar es Salaam</option><option value="Africa/Djibouti">Africa/Djibouti</option><option value="Africa/Douala">Africa/Douala</option><option value="Africa/El_Aaiun">Africa/El Aaiun</option><option value="Africa/Freetown">Africa/Freetown</option><option value="Africa/Gaborone">Africa/Gaborone</option><option value="Africa/Harare">Africa/Harare</option><option value="Africa/Johannesburg">Africa/Johannesburg</option><option value="Africa/Juba">Africa/Juba</option><option value="Africa/Kampala">Africa/Kampala</option><option value="Africa/Khartoum">Africa/Khartoum</option><option value="Africa/Kigali">Africa/Kigali</option><option value="Africa/Kinshasa">Africa/Kinshasa</option><option value="Africa/Lagos">Africa/Lagos</option><option value="Africa/Libreville">Africa/Libreville</option><option value="Africa/Lome">Africa/Lome</option><option value="Africa/Luanda">Africa/Luanda</option><option value="Africa/Lubumbashi">Africa/Lubumbashi</option><option value="Africa/Lusaka">Africa/Lusaka</option><option value="Africa/Malabo">Africa/Malabo</option><option value="Africa/Maputo">Africa/Maputo</option><option value="Africa/Maseru">Africa/Maseru</option><option value="Africa/Mbabane">Africa/Mbabane</option><option value="Africa/Mogadishu">Africa/Mogadishu</option><option value="Africa/Monrovia">Africa/Monrovia</option><option value="Africa/Nairobi">Africa/Nairobi</option><option value="Africa/Ndjamena">Africa/Ndjamena</option><option value="Africa/Niamey">Africa/Niamey</option><option value="Africa/Nouakchott">Africa/Nouakchott</option><option value="Africa/Ouagadougou">Africa/Ouagadougou</option><option value="Africa/Porto-Novo">Africa/Porto-Novo</option><option value="Africa/Sao_Tome">Africa/Sao Tome</option><option value="Africa/Tripoli">Africa/Tripoli</option><option value="Africa/Tunis">Africa/Tunis</option><option value="Africa/Windhoek">Africa/Windhoek</option><option value="America/Adak">America/Adak</option><option value="America/Anchorage">America/Anchorage</option><option value="America/Anguilla">America/Anguilla</option><option value="America/Antigua">America/Antigua</option><option value="America/Araguaina">America/Araguaina</option><option value="America/Argentina/Buenos_Aires">America/Argentina/Buenos Aires</option><option value="America/Argentina/Catamarca">America/Argentina/Catamarca</option><option value="America/Argentina/Cordoba">America/Argentina/Cordoba</option><option value="America/Argentina/Jujuy">America/Argentina/Jujuy</option><option value="America/Argentina/La_Rioja">America/Argentina/La Rioja</option><option value="America/Argentina/Mendoza">America/Argentina/Mendoza</option><option value="America/Argentina/Rio_Gallegos">America/Argentina/Rio Gallegos</option><option value="America/Argentina/Salta">America/Argentina/Salta</option><option value="America/Argentina/San_Juan">America/Argentina/San Juan</option><option value="America/Argentina/San_Luis">America/Argentina/San Luis</option><option value="America/Argentina/Tucuman">America/Argentina/Tucuman</option><option value="America/Argentina/Ushuaia">America/Argentina/Ushuaia</option><option value="America/Aruba">America/Aruba</option><option value="America/Asuncion">America/Asuncion</option><option value="America/Atikokan">America/Atikokan</option><option value="America/Bahia">America/Bahia</option><option value="America/Bahia_Banderas">America/Bahia Banderas</option><option value="America/Barbados">America/Barbados</option><option value="America/Belem">America/Belem</option><option value="America/Belize">America/Belize</option><option value="America/Blanc-Sablon">America/Blanc-Sablon</option><option value="America/Boa_Vista">America/Boa Vista</option><option value="America/Bogota">America/Bogota</option><option value="America/Boise">America/Boise</option><option value="America/Cambridge_Bay">America/Cambridge Bay</option><option value="America/Campo_Grande">America/Campo Grande</option><option value="America/Cancun">America/Cancun</option><option value="America/Caracas">America/Caracas</option><option value="America/Cayenne">America/Cayenne</option><option value="America/Cayman">America/Cayman</option><option value="America/Chicago">America/Chicago</option><option value="America/Chihuahua">America/Chihuahua</option><option value="America/Ciudad_Juarez">America/Ciudad Juarez</option><option value="America/Costa_Rica">America/Costa Rica</option><option value="America/Creston">America/Creston</option><option value="America/Cuiaba">America/Cuiaba</option><option value="America/Curacao">America/Curacao</option><option value="America/Dawson">America/Dawson</option><option value="America/Dawson_Creek">America/Dawson Creek</option><option value="America/Denver">America/Denver</option><option value="America/Detroit">America/Detroit</option><option value="America/Dominica">America/Dominica</option><option value="America/Edmonton">America/Edmonton</option><option value="America/Eirunepe">America/Eirunepe</option><option value="America/El_Salvador">America/El Salvador</option><option value="America/Fort_Nelson">America/Fort Nelson</option><option value="America/Fortaleza">America/Fortaleza</option><option value="America/Glace_Bay">America/Glace Bay</option><option value="America/Goose_Bay">America/Goose Bay</option><option value="America/Grand_Turk">America/Grand Turk</option><option value="America/Grenada">America/Grenada</option><option value="America/Guadeloupe">America/Guadeloupe</option><option value="America/Guatemala">America/Guatemala</option><option value="America/Guayaquil">America/Guayaquil</option><option value="America/Guyana">America/Guyana</option><option value="America/Halifax">America/Halifax</option><option value="America/Havana">America/Havana</option><option value="America/Hermosillo">America/Hermosillo</option><option value="America/Indiana/Indianapolis">America/Indiana/Indianapolis</option><option value="America/Indiana/Knox">America/Indiana/Knox</option><option value="America/Indiana/Marengo">America/Indiana/Marengo</option><option value="America/Indiana/Petersburg">America/Indiana/Petersburg</option><option value="America/Indiana/Tell_City">America/Indiana/Tell City</option><option value="America/Indiana/Vevay">America/Indiana/Vevay</option><option value="America/Indiana/Vincennes">America/Indiana/Vincennes</option><option value="America/Indiana/Winamac">America/Indiana/Winamac</option><option value="America/Inuvik">America/Inuvik</option><option value="America/Iqaluit">America/Iqaluit</option><option value="America/Jamaica">America/Jamaica</option><option value="America/Juneau">America/Juneau</option><option value="America/Kentucky/Louisville">America/Kentucky/Louisville</option><option value="America/Kentucky/Monticello">America/Kentucky/Monticello</option><option value="America/Kralendijk">America/Kralendijk</option><option value="America/La_Paz">America/La Paz</option><option value="America/Lima">America/Lima</option><option value="America/Los_Angeles">America/Los Angeles</option><option value="America/Lower_Princes">America/Lower Princes</option><option value="America/Maceio">America/Maceio</option><option value="America/Managua">America/Managua</option><option value="America/Manaus">America/Manaus</option><option value="America/Marigot">America/Marigot</option><option value="America/Martinique">America/Martinique</option><option value="America/Matamoros">America/Matamoros</option><option value="America/Mazatlan">America/Mazatlan</option><option value="America/Menominee">America/Menominee</option><option value="America/Merida">America/Merida</option><option value="America/Metlakatla">America/Metlakatla</option><option value="America/Mexico_City">America/Mexico City</option><option value="America/Miquelon">America/Miquelon</option><option value="America/Moncton">America/Moncton</option><option value="America/Monterrey">America/Monterrey</option><option value="America/Montevideo">America/Montevideo</option><option value="America/Montserrat">America/Montserrat</option><option value="America/Nassau">America/Nassau</option><option value="America/New_York">America/New York</option><option value="America/Nome">America/Nome</option><option value="America/North_Dakota/Beulah">America/North Dakota/Beulah</option><option value="America/North_Dakota/Center">America/North Dakota/Center</option><option value="America/North_Dakota/New_Salem">America/North Dakota/New Salem</option><option value="America/Nuuk">America/Nuuk</option><option value="America/Ojinaga">America/Ojinaga</option><option value="America/Panama">America/Panama</option><option value="America/Paramaribo">America/Paramaribo</option><option value="America/Phoenix">America/Phoenix</option><option value="America/Port-au-Prince">America/Port-au-Prince</option><option value="America/Port_of_Spain">America/Port of_Spain</option><option value="America/Porto_Velho">America/Porto Velho</option><option value="America/Puerto_Rico">America/Puerto Rico</option><option value="America/Punta_Arenas">America/Punta Arenas</option><option value="America/Rankin_Inlet">America/Rankin Inlet</option><option value="America/Recife">America/Recife</option><option value="America/Regina">America/Regina</option><option value="America/Resolute">America/Resolute</option><option value="America/Rio_Branco">America/Rio Branco</option><option value="America/Santarem">America/Santarem</option><option value="America/Santiago">America/Santiago</option><option value="America/Santo_Domingo">America/Santo Domingo</option><option value="America/Sao_Paulo">America/Sao Paulo</option><option value="America/Scoresbysund">America/Scoresbysund</option><option value="America/Sitka">America/Sitka</option><option value="America/St_Barthelemy">America/St Barthelemy</option><option value="America/St_Johns">America/St. John's</option><option value="America/St_Kitts">America/St Kitts</option><option value="America/St_Lucia">America/St Lucia</option><option value="America/St_Thomas">America/St Thomas</option><option value="America/St_Vincent">America/St Vincent</option><option value="America/Swift_Current">America/Swift Current</option><option value="America/Tegucigalpa">America/Tegucigalpa</option><option value="America/Thule">America/Thule</option><option value="America/Tijuana">America/Tijuana</option><option value="America/Toronto">America/Toronto</option><option value="America/Tortola">America/Tortola</option><option value="America/Vancouver">America/Vancouver</option><option value="America/Whitehorse">America/Whitehorse</option><option value="America/Winnipeg">America/Winnipeg</option><option value="America/Yakutat">America/Yakutat</option><option value="America/Yellowknife">America/Yellowknife</option><option value="Antarctica/Syowa">Antarctica/Syowa</option><option value="Arctic/Longyearbyen">Arctic/Longyearbyen</option><option value="Asia/Aden">Asia/Aden</option><option value="Asia/Almaty">Asia/Almaty</option><option value="Asia/Amman">Asia/Amman</option><option value="Asia/Anadyr">Asia/Anadyr</option><option value="Asia/Aqtau">Asia/Aqtau</option><option value="Asia/Aqtobe">Asia/Aqtobe</option><option value="Asia/Ashgabat">Asia/Ashgabat</option><option value="Asia/Atyrau">Asia/Atyrau</option><option value="Asia/Baghdad">Asia/Baghdad</option><option value="Asia/Bahrain">Asia/Bahrain</option><option value="Asia/Baku">Asia/Baku</option><option value="Asia/Bangkok">Asia/Bangkok</option><option value="Asia/Barnaul">Asia/Barnaul</option><option value="Asia/Beirut">Asia/Beirut</option><option value="Asia/Bishkek">Asia/Bishkek</option><option value="Asia/Brunei">Asia/Brunei</option><option value="Asia/Chita">Asia/Chita</option><option value="Asia/Choibalsan">Asia/Choibalsan</option><option value="Asia/Colombo">Asia/Colombo</option><option value="Asia/Damascus">Asia/Damascus</option><option value="Asia/Dhaka">Asia/Dhaka</option><option value="Asia/Dili">Asia/Dili</option><option value="Asia/Dubai">Asia/Dubai</option><option value="Asia/Dushanbe">Asia/Dushanbe</option><option value="Asia/Famagusta">Asia/Famagusta</option><option value="Asia/Gaza">Asia/Gaza</option><option value="Asia/Hebron">Asia/Hebron</option><option value="Asia/Ho_Chi_Minh">Asia/Ho Chi_Minh</option><option value="Asia/Hong_Kong">Asia/Hong_Kong</option><option value="Asia/Hovd">Asia/Hovd</option><option value="Asia/Irkutsk">Asia/Irkutsk</option><option value="Asia/Jakarta">Asia/Jakarta</option><option value="Asia/Jayapura">Asia/Jayapura</option><option value="Asia/Jerusalem">Asia/Jerusalem</option><option value="Asia/Kabul">Asia/Kabul</option><option value="Asia/Kamchatka">Asia/Kamchatka</option><option value="Asia/Karachi">Asia/Karachi</option><option value="Asia/Kathmandu">Asia/Kathmandu</option><option value="Asia/Kolkata">Asia/Kolkata</option><option value="Asia/Krasnoyarsk">Asia/Krasnoyarsk</option><option value="Asia/Kuala_Lumpur">Asia/Kuala_Lumpur</option><option value="Asia/Kuching">Asia/Kuching</option><option value="Asia/Kuwait">Asia/Kuwait</option><option value="Asia/Macau">Asia/Macau</option><option value="Asia/Magadan">Asia/Magadan</option><option value="Asia/Makassar">Asia/Makassar</option><option value="Asia/Manila">Asia/Manila</option><option value="Asia/Muscat">Asia/Muscat</option><option value="Asia/Nicosia">Asia/Nicosia</option><option value="Asia/Novokuznetsk">Asia/Novokuznetsk</option><option value="Asia/Novosibirsk">Asia/Novosibirsk</option><option value="Asia/Omsk">Asia/Omsk</option><option value="Asia/Oral">Asia/Oral</option><option value="Asia/Phnom_Penh">Asia/Phnom_Penh</option><option value="Asia/Pontianak">Asia/Pontianak</option><option value="Asia/Pyongyang">Asia/Pyongyang</option><option value="Asia/Qatar">Asia/Qatar</option><option value="Asia/Qostanay">Asia/Qostanay</option><option value="Asia/Qyzylorda">Asia/Qyzylorda</option><option value="Asia/Riyadh">Asia/Riyadh</option><option value="Asia/Sakhalin">Asia/Sakhalin</option><option value="Asia/Samarkand">Asia/Samarkand</option><option value="Asia/Seoul">Asia/Seoul</option><option value="Asia/Shanghai">Asia/Shanghai</option><option value="Asia/Singapore">Asia/Singapore</option><option value="Asia/Taipei">Asia/Taipei</option><option value="Asia/Tashkent">Asia/Tashkent</option><option value="Asia/Tbilisi">Asia/Tbilisi</option><option value="Asia/Tehran">Asia/Tehran</option><option value="Asia/Thimphu">Asia/Thimphu</option><option value="Asia/Tokyo">Asia/Tokyo</option><option value="Asia/Tomsk">Asia/Tomsk</option><option value="Asia/Ulaanbaatar">Asia/Ulaanbaatar</option><option value="Asia/Urumqi">Asia/Urumqi</option><option value="Asia/Vientiane">Asia/Vientiane</option><option value="Asia/Vladivostok">Asia/Vladivostok</option><option value="Asia/Yakutsk">Asia/Yakutsk</option><option value="Asia/Yangon">Asia/Yangon</option><option value="Asia/Yekaterinburg">Asia/Yekaterinburg</option><option value="Asia/Yerevan">Asia/Yerevan</option><option value="Atlantic/Azores">Atlantic/Azores</option><option value="Atlantic/Bermuda">Atlantic/Bermuda</option><option value="Atlantic/Canary">Atlantic/Canary</option><option value="Atlantic/Cape_Verde">Atlantic/Cape Verde</option><option value="Atlantic/Faroe">Atlantic/Faroe</option><option value="Atlantic/Madeira">Atlantic/Madeira</option><option value="Atlantic/Reykjavik">Atlantic/Reykjavik</option><option value="Atlantic/South_Georgia">Atlantic/South Georgia</option><option value="Atlantic/St_Helena">Atlantic/St Helena</option><option value="Atlantic/Stanley">Atlantic/Stanley</option><option value="Australia/Adelaide">Australia/Adelaide</option><option value="Australia/Brisbane">Australia/Brisbane</option><option value="Australia/Broken_Hill">Australia/Broken Hill</option><option value="Australia/Darwin">Australia/Darwin</option><option value="Australia/Eucla">Australia/Eucla</option><option value="Australia/Hobart">Australia/Hobart</option><option value="Australia/Lindeman">Australia/Lindeman</option><option value="Australia/Lord_Howe">Australia/Lord Howe</option><option value="Australia/Melbourne">Australia/Melbourne</option><option value="Australia/Perth">Australia/Perth</option><option value="Australia/Sydney">Australia/Sydney</option><option value="Europe/Amsterdam">Europe/Amsterdam</option><option value="Europe/Andorra">Europe/Andorra</option><option value="Europe/Astrakhan">Europe/Astrakhan</option><option value="Europe/Athens">Europe/Athens</option><option value="Europe/Belgrade">Europe/Belgrade</option><option value="Europe/Berlin">Europe/Berlin</option><option value="Europe/Bratislava">Europe/Bratislava</option><option value="Europe/Brussels">Europe/Brussels</option><option value="Europe/Bucharest">Europe/Bucharest</option><option value="Europe/Budapest">Europe/Budapest</option><option value="Europe/Chisinau">Europe/Chisinau</option><option value="Europe/Copenhagen">Europe/Copenhagen</option><option value="Europe/Dublin">Europe/Dublin</option><option value="Europe/Gibraltar">Europe/Gibraltar</option><option value="Europe/Guernsey">Europe/Guernsey</option><option value="Europe/Helsinki">Europe/Helsinki</option><option value="Europe/Isle_of_Man">Europe/Isle of Man</option><option value="Europe/Istanbul">Europe/Istanbul</option><option value="Europe/Jersey">Europe/Jersey</option><option value="Europe/Kaliningrad">Europe/Kaliningrad</option><option value="Europe/Kirov">Europe/Kirov</option><option value="Europe/Kyiv">Europe/Kyiv</option><option value="Europe/Lisbon">Europe/Lisbon</option><option value="Europe/Ljubljana">Europe/Ljubljana</option><option value="Europe/London">Europe/London</option><option value="Europe/Luxembourg">Europe/Luxembourg</option><option value="Europe/Madrid">Europe/Madrid</option><option value="Europe/Malta">Europe/Malta</option><option value="Europe/Mariehamn">Europe/Mariehamn</option><option value="Europe/Minsk">Europe/Minsk</option><option value="Europe/Monaco">Europe/Monaco</option><option value="Europe/Moscow">Europe/Moscow</option><option value="Europe/Oslo">Europe/Oslo</option><option value="Europe/Paris">Europe/Paris</option><option value="Europe/Podgorica">Europe/Podgorica</option><option value="Europe/Prague" selected>Europe/Prague</option><option value="Europe/Riga">Europe/Riga</option><option value="Europe/Rome">Europe/Rome</option><option value="Europe/Samara">Europe/Samara</option><option value="Europe/San_Marino">Europe/San Marino</option><option value="Europe/Sarajevo">Europe/Sarajevo</option><option value="Europe/Saratov">Europe/Saratov</option><option value="Europe/Simferopol">Europe/Simferopol</option><option value="Europe/Skopje">Europe/Skopje</option><option value="Europe/Sofia">Europe/Sofia</option><option value="Europe/Stockholm">Europe/Stockholm</option><option value="Europe/Tallinn">Europe/Tallinn</option><option value="Europe/Tirane">Europe/Tirane</option><option value="Europe/Ulyanovsk">Europe/Ulyanovsk</option><option value="Europe/Vaduz">Europe/Vaduz</option><option value="Europe/Vatican">Europe/Vatican</option><option value="Europe/Vienna">Europe/Vienna</option><option value="Europe/Vilnius">Europe/Vilnius</option><option value="Europe/Volgograd">Europe/Volgograd</option><option value="Europe/Warsaw">Europe/Warsaw</option><option value="Europe/Zagreb">Europe/Zagreb</option><option value="Europe/Zurich">Europe/Zurich</option><option value="Indian/Antananarivo">Indian/Antananarivo</option><option value="Indian/Chagos">Indian/Chagos</option><option value="Indian/Christmas">Indian/Christmas</option><option value="Indian/Cocos">Indian/Cocos</option><option value="Indian/Comoro">Indian/Comoro</option><option value="Indian/Kerguelen">Indian/Kerguelen</option><option value="Indian/Mahe">Indian/Mahe</option><option value="Indian/Maldives">Indian/Maldives</option><option value="Indian/Mauritius">Indian/Mauritius</option><option value="Indian/Mayotte">Indian/Mayotte</option><option value="Indian/Reunion">Indian/Reunion</option><option value="Pacific/Apia">Pacific/Apia</option><option value="Pacific/Auckland">Pacific/Auckland</option><option value="Pacific/Bougainville">Pacific/Bougainville</option><option value="Pacific/Chatham">Pacific/Chatham</option><option value="Pacific/Chuuk">Pacific/Chuuk</option><option value="Pacific/Easter">Pacific/Easter</option><option value="Pacific/Efate">Pacific/Efate</option><option value="Pacific/Fakaofo">Pacific/Fakaofo</option><option value="Pacific/Fiji">Pacific/Fiji</option><option value="Pacific/Funafuti">Pacific/Funafuti</option><option value="Pacific/Galapagos">Pacific/Galapagos</option><option value="Pacific/Gambier">Pacific/Gambier</option><option value="Pacific/Guadalcanal">Pacific/Guadalcanal</option><option value="Pacific/Guam">Pacific/Guam</option><option value="Pacific/Honolulu">Pacific/Honolulu</option><option value="Pacific/Kanton">Pacific/Kanton</option><option value="Pacific/Kiritimati">Pacific/Kiritimati</option><option value="Pacific/Kosrae">Pacific/Kosrae</option><option value="Pacific/Kwajalein">Pacific/Kwajalein</option><option value="Pacific/Majuro">Pacific/Majuro</option><option value="Pacific/Marquesas">Pacific/Marquesas</option><option value="Pacific/Midway">Pacific/Midway</option><option value="Pacific/Nauru">Pacific/Nauru</option><option value="Pacific/Niue">Pacific/Niue</option><option value="Pacific/Norfolk">Pacific/Norfolk</option><option value="Pacific/Noumea">Pacific/Noumea</option><option value="Pacific/Pago_Pago">Pacific/Pago Pago</option><option value="Pacific/Palau">Pacific/Palau</option><option value="Pacific/Pitcairn">Pacific/Pitcairn</option><option value="Pacific/Pohnpei">Pacific/Pohnpei</option><option value="Pacific/Port_Moresby">Pacific/Port Moresby</option><option value="Pacific/Rarotonga">Pacific/Rarotonga</option><option value="Pacific/Saipan">Pacific/Saipan</option><option value="Pacific/Tahiti">Pacific/Tahiti</option><option value="Pacific/Tarawa">Pacific/Tarawa</option><option value="Pacific/Tongatapu">Pacific/Tongatapu</option><option value="Pacific/Wake">Pacific/Wake</option><option value="Pacific/Wallis">Pacific/Wallis</option></select>
-									<input type="hidden" name="_do" value="timezoneForm-submit"></form>
-								</div>
-								<div class="theme-switcher">
-									<a id="switch-to-dark-mode" href="javascript:void(0);">
-										<span>
-											<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
-										</span>Tmavý vzhled
-									</a>
-									<a id="switch-to-light-mode" href="javascript:void(0);" class="hidden">
-										<span>
-											<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
-										</span>Světlý vzhled
-									</a>
-								</div>
-							</div>
-							<div class="footer-list-content">
-								<div class="linklist linklist-small">
-									<h3>Užitečné</h3>
-									<ul>
-												<li><a href="/prihlaseni/">Přihlášení</a></li>
-												<li><a href="/registrace/">Registrace</a></li>
-										<li><a href="javascript:Didomi.preferences.show()">Nastavení soukromí</a></li>
-										<li><a href="/vyvojari/">Pracuj s námi</a></li>
-										<li><a href="/napis-nam/">Napiš nám</a></li>
-									</ul>
-								</div>
+					<div class="footer-action">
+						<div class="footer-action-timezones">
+							<h3>Výběr časového pásma</h3>
+							<form action="/tvurce/4929-mads-mikkelsen/prehled/" method="post" id="frm-timezoneForm">
+								<select name="timezone" data-auto-submit-form="true" id="frm-timezoneForm-timezone"><option value="africa/abidjan">Africa/Abidjan</option><option value="africa/accra">Africa/Accra</option><option value="africa/addis_ababa">Africa/Addis Ababa</option><option value="africa/algiers">Africa/Algiers</option><option value="africa/asmara">Africa/Asmara</option><option value="africa/bamako">Africa/Bamako</option><option value="africa/bangui">Africa/Bangui</option><option value="africa/banjul">Africa/Banjul</option><option value="africa/bissau">Africa/Bissau</option><option value="africa/blantyre">Africa/Blantyre</option><option value="africa/brazzaville">Africa/Brazzaville</option><option value="africa/bujumbura">Africa/Bujumbura</option><option value="africa/cairo">Africa/Cairo</option><option value="africa/casablanca">Africa/Casablanca</option><option value="africa/ceuta">Africa/Ceuta</option><option value="africa/conakry">Africa/Conakry</option><option value="africa/dakar">Africa/Dakar</option><option value="africa/dar_es_salaam">Africa/Dar es Salaam</option><option value="africa/djibouti">Africa/Djibouti</option><option value="africa/douala">Africa/Douala</option><option value="africa/el_aaiun">Africa/El Aaiun</option><option value="africa/freetown">Africa/Freetown</option><option value="africa/gaborone">Africa/Gaborone</option><option value="africa/harare">Africa/Harare</option><option value="africa/johannesburg">Africa/Johannesburg</option><option value="africa/juba">Africa/Juba</option><option value="africa/kampala">Africa/Kampala</option><option value="africa/khartoum">Africa/Khartoum</option><option value="africa/kigali">Africa/Kigali</option><option value="africa/kinshasa">Africa/Kinshasa</option><option value="africa/lagos">Africa/Lagos</option><option value="africa/libreville">Africa/Libreville</option><option value="africa/lome">Africa/Lome</option><option value="africa/luanda">Africa/Luanda</option><option value="africa/lubumbashi">Africa/Lubumbashi</option><option value="africa/lusaka">Africa/Lusaka</option><option value="africa/malabo">Africa/Malabo</option><option value="africa/maputo">Africa/Maputo</option><option value="africa/maseru">Africa/Maseru</option><option value="africa/mbabane">Africa/Mbabane</option><option value="africa/mogadishu">Africa/Mogadishu</option><option value="africa/monrovia">Africa/Monrovia</option><option value="africa/nairobi">Africa/Nairobi</option><option value="africa/ndjamena">Africa/Ndjamena</option><option value="africa/niamey">Africa/Niamey</option><option value="africa/nouakchott">Africa/Nouakchott</option><option value="africa/ouagadougou">Africa/Ouagadougou</option><option value="africa/porto-novo">Africa/Porto-Novo</option><option value="africa/sao_tome">Africa/Sao Tome</option><option value="africa/tripoli">Africa/Tripoli</option><option value="africa/tunis">Africa/Tunis</option><option value="africa/windhoek">Africa/Windhoek</option><option value="america/adak">America/Adak</option><option value="america/anchorage">America/Anchorage</option><option value="america/anguilla">America/Anguilla</option><option value="america/antigua">America/Antigua</option><option value="america/araguaina">America/Araguaina</option><option value="america/argentina/buenos_aires">America/Argentina/Buenos Aires</option><option value="america/argentina/catamarca">America/Argentina/Catamarca</option><option value="america/argentina/cordoba">America/Argentina/Cordoba</option><option value="america/argentina/jujuy">America/Argentina/Jujuy</option><option value="america/argentina/la_rioja">America/Argentina/La Rioja</option><option value="america/argentina/mendoza">America/Argentina/Mendoza</option><option value="america/argentina/rio_gallegos">America/Argentina/Rio Gallegos</option><option value="america/argentina/salta">America/Argentina/Salta</option><option value="america/argentina/san_juan">America/Argentina/San Juan</option><option value="america/argentina/san_luis">America/Argentina/San Luis</option><option value="america/argentina/tucuman">America/Argentina/Tucuman</option><option value="america/argentina/ushuaia">America/Argentina/Ushuaia</option><option value="america/aruba">America/Aruba</option><option value="america/asuncion">America/Asuncion</option><option value="america/atikokan">America/Atikokan</option><option value="america/bahia">America/Bahia</option><option value="america/bahia_banderas">America/Bahia Banderas</option><option value="america/barbados">America/Barbados</option><option value="america/belem">America/Belem</option><option value="america/belize">America/Belize</option><option value="america/blanc-sablon">America/Blanc-Sablon</option><option value="america/boa_vista">America/Boa Vista</option><option value="america/bogota">America/Bogota</option><option value="america/boise">America/Boise</option><option value="america/cambridge_bay">America/Cambridge Bay</option><option value="america/campo_grande">America/Campo Grande</option><option value="america/cancun">America/Cancun</option><option value="america/caracas">America/Caracas</option><option value="america/cayenne">America/Cayenne</option><option value="america/cayman">America/Cayman</option><option value="america/chicago">America/Chicago</option><option value="america/chihuahua">America/Chihuahua</option><option value="america/ciudad_juarez">America/Ciudad Juarez</option><option value="america/costa_rica">America/Costa Rica</option><option value="america/creston">America/Creston</option><option value="america/cuiaba">America/Cuiaba</option><option value="america/curacao">America/Curacao</option><option value="america/dawson">America/Dawson</option><option value="america/dawson_creek">America/Dawson Creek</option><option value="america/denver">America/Denver</option><option value="america/detroit">America/Detroit</option><option value="america/dominica">America/Dominica</option><option value="america/edmonton">America/Edmonton</option><option value="america/eirunepe">America/Eirunepe</option><option value="america/el_salvador">America/El Salvador</option><option value="america/fort_nelson">America/Fort Nelson</option><option value="america/fortaleza">America/Fortaleza</option><option value="america/glace_bay">America/Glace Bay</option><option value="america/goose_bay">America/Goose Bay</option><option value="america/grand_turk">America/Grand Turk</option><option value="america/grenada">America/Grenada</option><option value="america/guadeloupe">America/Guadeloupe</option><option value="america/guatemala">America/Guatemala</option><option value="america/guayaquil">America/Guayaquil</option><option value="america/guyana">America/Guyana</option><option value="america/halifax">America/Halifax</option><option value="america/havana">America/Havana</option><option value="america/hermosillo">America/Hermosillo</option><option value="america/indiana/indianapolis">America/Indiana/Indianapolis</option><option value="america/indiana/knox">America/Indiana/Knox</option><option value="america/indiana/marengo">America/Indiana/Marengo</option><option value="america/indiana/petersburg">America/Indiana/Petersburg</option><option value="america/indiana/tell_city">America/Indiana/Tell City</option><option value="america/indiana/vevay">America/Indiana/Vevay</option><option value="america/indiana/vincennes">America/Indiana/Vincennes</option><option value="america/indiana/winamac">America/Indiana/Winamac</option><option value="america/inuvik">America/Inuvik</option><option value="america/iqaluit">America/Iqaluit</option><option value="america/jamaica">America/Jamaica</option><option value="america/juneau">America/Juneau</option><option value="america/kentucky/louisville">America/Kentucky/Louisville</option><option value="america/kentucky/monticello">America/Kentucky/Monticello</option><option value="america/kralendijk">America/Kralendijk</option><option value="america/la_paz">America/La Paz</option><option value="america/lima">America/Lima</option><option value="america/los_angeles">America/Los Angeles</option><option value="america/lower_princes">America/Lower Princes</option><option value="america/maceio">America/Maceio</option><option value="america/managua">America/Managua</option><option value="america/manaus">America/Manaus</option><option value="america/marigot">America/Marigot</option><option value="america/martinique">America/Martinique</option><option value="america/matamoros">America/Matamoros</option><option value="america/mazatlan">America/Mazatlan</option><option value="america/menominee">America/Menominee</option><option value="america/merida">America/Merida</option><option value="america/metlakatla">America/Metlakatla</option><option value="america/mexico_city">America/Mexico City</option><option value="america/miquelon">America/Miquelon</option><option value="america/moncton">America/Moncton</option><option value="america/monterrey">America/Monterrey</option><option value="america/montevideo">America/Montevideo</option><option value="america/montserrat">America/Montserrat</option><option value="america/nassau">America/Nassau</option><option value="america/new_york">America/New York</option><option value="america/nome">America/Nome</option><option value="america/north_dakota/beulah">America/North Dakota/Beulah</option><option value="america/north_dakota/center">America/North Dakota/Center</option><option value="america/north_dakota/new_salem">America/North Dakota/New Salem</option><option value="america/nuuk">America/Nuuk</option><option value="america/ojinaga">America/Ojinaga</option><option value="america/panama">America/Panama</option><option value="america/paramaribo">America/Paramaribo</option><option value="america/phoenix">America/Phoenix</option><option value="america/port-au-prince">America/Port-au-Prince</option><option value="america/port_of_spain">America/Port of Spain</option><option value="america/porto_velho">America/Porto Velho</option><option value="america/puerto_rico">America/Puerto Rico</option><option value="america/punta_arenas">America/Punta Arenas</option><option value="america/rankin_inlet">America/Rankin Inlet</option><option value="america/recife">America/Recife</option><option value="america/regina">America/Regina</option><option value="america/resolute">America/Resolute</option><option value="america/rio_branco">America/Rio Branco</option><option value="america/santarem">America/Santarem</option><option value="america/santiago">America/Santiago</option><option value="america/santo_domingo">America/Santo Domingo</option><option value="america/sao_paulo">America/Sao Paulo</option><option value="america/scoresbysund">America/Scoresbysund</option><option value="america/sitka">America/Sitka</option><option value="america/st_barthelemy">America/St Barthelemy</option><option value="america/st_johns">America/St. John's</option><option value="america/st_kitts">America/St. Kitts</option><option value="america/st_lucia">America/St. Lucia</option><option value="america/st_thomas">America/St. Thomas</option><option value="america/st_vincent">America/St. Vincent</option><option value="america/swift_current">America/Swift Current</option><option value="america/tegucigalpa">America/Tegucigalpa</option><option value="america/thule">America/Thule</option><option value="america/tijuana">America/Tijuana</option><option value="america/toronto">America/Toronto</option><option value="america/tortola">America/Tortola</option><option value="america/vancouver">America/Vancouver</option><option value="america/whitehorse">America/Whitehorse</option><option value="america/winnipeg">America/Winnipeg</option><option value="america/yakutat">America/Yakutat</option><option value="america/yellowknife">America/Yellowknife</option><option value="antarctica/syowa">Antarctica/Syowa</option><option value="arctic/longyearbyen">Arctic/Longyearbyen</option><option value="asia/aden">Asia/Aden</option><option value="asia/almaty">Asia/Almaty</option><option value="asia/amman">Asia/Amman</option><option value="asia/anadyr">Asia/Anadyr</option><option value="asia/aqtau">Asia/Aqtau</option><option value="asia/aqtobe">Asia/Aqtobe</option><option value="asia/ashgabat">Asia/Ashgabat</option><option value="asia/atyrau">Asia/Atyrau</option><option value="asia/baghdad">Asia/Baghdad</option><option value="asia/bahrain">Asia/Bahrain</option><option value="asia/baku">Asia/Baku</option><option value="asia/bangkok">Asia/Bangkok</option><option value="asia/barnaul">Asia/Barnaul</option><option value="asia/beirut">Asia/Beirut</option><option value="asia/bishkek">Asia/Bishkek</option><option value="asia/brunei">Asia/Brunei</option><option value="asia/chita">Asia/Chita</option><option value="asia/choibalsan">Asia/Choibalsan</option><option value="asia/colombo">Asia/Colombo</option><option value="asia/damascus">Asia/Damascus</option><option value="asia/dhaka">Asia/Dhaka</option><option value="asia/dili">Asia/Dili</option><option value="asia/dubai">Asia/Dubai</option><option value="asia/dushanbe">Asia/Dushanbe</option><option value="asia/famagusta">Asia/Famagusta</option><option value="asia/gaza">Asia/Gaza</option><option value="asia/hebron">Asia/Hebron</option><option value="asia/ho_chi_minh">Asia/Ho Chi Minh</option><option value="asia/hong_kong">Asia/Hong Kong</option><option value="asia/hovd">Asia/Hovd</option><option value="asia/irkutsk">Asia/Irkutsk</option><option value="asia/jakarta">Asia/Jakarta</option><option value="asia/jayapura">Asia/Jayapura</option><option value="asia/jerusalem">Asia/Jerusalem</option><option value="asia/kabul">Asia/Kabul</option><option value="asia/kamchatka">Asia/Kamchatka</option><option value="asia/karachi">Asia/Karachi</option><option value="asia/kathmandu">Asia/Kathmandu</option><option value="asia/kolkata">Asia/Kolkata</option><option value="asia/krasnoyarsk">Asia/Krasnoyarsk</option><option value="asia/kuala_lumpur">Asia/Kuala Lumpur</option><option value="asia/kuching">Asia/Kuching</option><option value="asia/kuwait">Asia/Kuwait</option><option value="asia/macau">Asia/Macau</option><option value="asia/magadan">Asia/Magadan</option><option value="asia/makassar">Asia/Makassar</option><option value="asia/manila">Asia/Manila</option><option value="asia/muscat">Asia/Muscat</option><option value="asia/nicosia">Asia/Nicosia</option><option value="asia/novokuznetsk">Asia/Novokuznetsk</option><option value="asia/novosibirsk">Asia/Novosibirsk</option><option value="asia/omsk">Asia/Omsk</option><option value="asia/oral">Asia/Oral</option><option value="asia/phnom_penh">Asia/Phnom Penh</option><option value="asia/pontianak">Asia/Pontianak</option><option value="asia/pyongyang">Asia/Pyongyang</option><option value="asia/qatar">Asia/Qatar</option><option value="asia/qostanay">Asia/Qostanay</option><option value="asia/qyzylorda">Asia/Qyzylorda</option><option value="asia/riyadh">Asia/Riyadh</option><option value="asia/sakhalin">Asia/Sakhalin</option><option value="asia/samarkand">Asia/Samarkand</option><option value="asia/seoul">Asia/Seoul</option><option value="asia/shanghai">Asia/Shanghai</option><option value="asia/singapore">Asia/Singapore</option><option value="asia/taipei">Asia/Taipei</option><option value="asia/tashkent">Asia/Tashkent</option><option value="asia/tbilisi">Asia/Tbilisi</option><option value="asia/tehran">Asia/Tehran</option><option value="asia/thimphu">Asia/Thimphu</option><option value="asia/tokyo">Asia/Tokyo</option><option value="asia/tomsk">Asia/Tomsk</option><option value="asia/ulaanbaatar">Asia/Ulaanbaatar</option><option value="asia/urumqi">Asia/Urumqi</option><option value="asia/vientiane">Asia/Vientiane</option><option value="asia/vladivostok">Asia/Vladivostok</option><option value="asia/yakutsk">Asia/Yakutsk</option><option value="asia/yangon">Asia/Yangon</option><option value="asia/yekaterinburg">Asia/Yekaterinburg</option><option value="asia/yerevan">Asia/Yerevan</option><option value="atlantic/azores">Atlantic/Azores</option><option value="atlantic/bermuda">Atlantic/Bermuda</option><option value="atlantic/canary">Atlantic/Canary</option><option value="atlantic/cape_verde">Atlantic/Cape Verde</option><option value="atlantic/faroe">Atlantic/Faroe</option><option value="atlantic/madeira">Atlantic/Madeira</option><option value="atlantic/reykjavik">Atlantic/Reykjavik</option><option value="atlantic/south_georgia">Atlantic/South Georgia</option><option value="atlantic/st_helena">Atlantic/St Helena</option><option value="atlantic/stanley">Atlantic/Stanley</option><option value="australia/adelaide">Australia/Adelaide</option><option value="australia/brisbane">Australia/Brisbane</option><option value="australia/broken_hill">Australia/Broken Hill</option><option value="australia/darwin">Australia/Darwin</option><option value="australia/eucla">Australia/Eucla</option><option value="australia/hobart">Australia/Hobart</option><option value="australia/lindeman">Australia/Lindeman</option><option value="australia/lord_howe">Australia/Lord Howe</option><option value="australia/melbourne">Australia/Melbourne</option><option value="australia/perth">Australia/Perth</option><option value="australia/sydney">Australia/Sydney</option><option value="europe/amsterdam">Europe/Amsterdam</option><option value="europe/andorra">Europe/Andorra</option><option value="europe/astrakhan">Europe/Astrakhan</option><option value="europe/athens">Europe/Athens</option><option value="europe/belgrade">Europe/Belgrade</option><option value="europe/berlin">Europe/Berlin</option><option value="europe/bratislava">Europe/Bratislava</option><option value="europe/brussels">Europe/Brussels</option><option value="europe/bucharest">Europe/Bucharest</option><option value="europe/budapest">Europe/Budapest</option><option value="europe/chisinau">Europe/Chisinau</option><option value="europe/copenhagen">Europe/Copenhagen</option><option value="europe/dublin">Europe/Dublin</option><option value="europe/gibraltar">Europe/Gibraltar</option><option value="europe/guernsey">Europe/Guernsey</option><option value="europe/helsinki">Europe/Helsinki</option><option value="europe/isle_of_man">Europe/Isle of Man</option><option value="europe/istanbul">Europe/Istanbul</option><option value="europe/jersey">Europe/Jersey</option><option value="europe/kaliningrad">Europe/Kaliningrad</option><option value="europe/kirov">Europe/Kirov</option><option value="europe/kyiv">Europe/Kyiv</option><option value="europe/lisbon">Europe/Lisbon</option><option value="europe/ljubljana">Europe/Ljubljana</option><option value="europe/london">Europe/London</option><option value="europe/luxembourg">Europe/Luxembourg</option><option value="europe/madrid">Europe/Madrid</option><option value="europe/malta">Europe/Malta</option><option value="europe/mariehamn">Europe/Mariehamn</option><option value="europe/minsk">Europe/Minsk</option><option value="europe/monaco">Europe/Monaco</option><option value="europe/moscow">Europe/Moscow</option><option value="europe/oslo">Europe/Oslo</option><option value="europe/paris">Europe/Paris</option><option value="europe/podgorica">Europe/Podgorica</option><option value="europe/prague" selected>Europe/Prague</option><option value="europe/riga">Europe/Riga</option><option value="europe/rome">Europe/Rome</option><option value="europe/samara">Europe/Samara</option><option value="europe/san_marino">Europe/San Marino</option><option value="europe/sarajevo">Europe/Sarajevo</option><option value="europe/saratov">Europe/Saratov</option><option value="europe/simferopol">Europe/Simferopol</option><option value="europe/skopje">Europe/Skopje</option><option value="europe/sofia">Europe/Sofia</option><option value="europe/stockholm">Europe/Stockholm</option><option value="europe/tallinn">Europe/Tallinn</option><option value="europe/tirane">Europe/Tirane</option><option value="europe/ulyanovsk">Europe/Ulyanovsk</option><option value="europe/vaduz">Europe/Vaduz</option><option value="europe/vatican">Europe/Vatican</option><option value="europe/vienna">Europe/Vienna</option><option value="europe/vilnius">Europe/Vilnius</option><option value="europe/volgograd">Europe/Volgograd</option><option value="europe/warsaw">Europe/Warsaw</option><option value="europe/zagreb">Europe/Zagreb</option><option value="europe/zurich">Europe/Zurich</option><option value="indian/antananarivo">Indian/Antananarivo</option><option value="indian/chagos">Indian/Chagos</option><option value="indian/christmas">Indian/Christmas</option><option value="indian/cocos">Indian/Cocos</option><option value="indian/comoro">Indian/Comoro</option><option value="indian/kerguelen">Indian/Kerguelen</option><option value="indian/mahe">Indian/Mahe</option><option value="indian/maldives">Indian/Maldives</option><option value="indian/mauritius">Indian/Mauritius</option><option value="indian/mayotte">Indian/Mayotte</option><option value="indian/reunion">Indian/Reunion</option><option value="pacific/apia">Pacific/Apia</option><option value="pacific/auckland">Pacific/Auckland</option><option value="pacific/bougainville">Pacific/Bougainville</option><option value="pacific/chatham">Pacific/Chatham</option><option value="pacific/chuuk">Pacific/Chuuk</option><option value="pacific/easter">Pacific/Easter</option><option value="pacific/efate">Pacific/Efate</option><option value="pacific/fakaofo">Pacific/Fakaofo</option><option value="pacific/fiji">Pacific/Fiji</option><option value="pacific/funafuti">Pacific/Funafuti</option><option value="pacific/galapagos">Pacific/Galapagos</option><option value="pacific/gambier">Pacific/Gambier</option><option value="pacific/guadalcanal">Pacific/Guadalcanal</option><option value="pacific/guam">Pacific/Guam</option><option value="pacific/honolulu">Pacific/Honolulu</option><option value="pacific/kanton">Pacific/Kanton</option><option value="pacific/kiritimati">Pacific/Kiritimati</option><option value="pacific/kosrae">Pacific/Kosrae</option><option value="pacific/kwajalein">Pacific/Kwajalein</option><option value="pacific/majuro">Pacific/Majuro</option><option value="pacific/marquesas">Pacific/Marquesas</option><option value="pacific/midway">Pacific/Midway</option><option value="pacific/nauru">Pacific/Nauru</option><option value="pacific/niue">Pacific/Niue</option><option value="pacific/norfolk">Pacific/Norfolk</option><option value="pacific/noumea">Pacific/Noumea</option><option value="pacific/pago_pago">Pacific/Pago Pago</option><option value="pacific/palau">Pacific/Palau</option><option value="pacific/pitcairn">Pacific/Pitcairn</option><option value="pacific/pohnpei">Pacific/Pohnpei</option><option value="pacific/port_moresby">Pacific/Port Moresby</option><option value="pacific/rarotonga">Pacific/Rarotonga</option><option value="pacific/saipan">Pacific/Saipan</option><option value="pacific/tahiti">Pacific/Tahiti</option><option value="pacific/tarawa">Pacific/Tarawa</option><option value="pacific/tongatapu">Pacific/Tongatapu</option><option value="pacific/wake">Pacific/Wake</option><option value="pacific/wallis">Pacific/Wallis</option></select>
+							<input type="hidden" name="_do" value="timezoneForm-submit"></form>
+						</div>
 
-								<div class="linklist">
-									<h3>Obecné</h3>
-									<ul>
-										<li><a href="/provozovatel-a-redakce/">Provozovatel a redakce</a></li>
-										<li><a href="/reklama-a-marketing/">Reklama a marketing</a></li>
-										<li><a href="/zasady-ochrany-osobnich-udaju/">Zásady ochrany osobních údajů</a></li>
-										<li><a href="/vseobecne-podminky-uzivani/">Všeobecné podmínky užívání</a></li>
-										<li><a href="/cookies/">Cookies</a></li>
-									</ul>
-								</div>
-							</div>
+
+						<div class="theme-switcher">
+							<a id="switch-to-dark-mode" href="javascript:void(0);">
+								<span>
+									<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+								</span>Tmavý vzhled
+							</a>
+							<a id="switch-to-light-mode" href="javascript:void(0);" class="hidden">
+								<span>
+									<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+								</span>Světlý vzhled
+							</a>
+						</div>
+						<div class="footer-social-item">
+							<h3>Social</h3>
+								<a href="https://www.instagram.com/csfd.cz/" class="btn-social" target="_blank" rel="noreferrer">
+									<svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M8 1.43721C10.1375 1.43721 10.3906 1.44658 11.2313 1.48408C12.0125 1.51846 12.4344 1.64971 12.7156 1.75908C13.0875 1.90283 13.3563 2.07783 13.6344 2.35596C13.9156 2.63721 14.0875 2.90283 14.2313 3.27471C14.3406 3.55596 14.4719 3.98096 14.5063 4.75908C14.5438 5.60283 14.5531 5.85596 14.5531 7.99033C14.5531 10.1278 14.5438 10.381 14.5063 11.2216C14.4719 12.0028 14.3406 12.4247 14.2313 12.706C14.0875 13.0778 13.9125 13.3466 13.6344 13.6247C13.3531 13.906 13.0875 14.0778 12.7156 14.2216C12.4344 14.331 12.0094 14.4622 11.2313 14.4966C10.3875 14.5341 10.1344 14.5435 8 14.5435C5.8625 14.5435 5.60938 14.5341 4.76875 14.4966C3.9875 14.4622 3.56563 14.331 3.28438 14.2216C2.9125 14.0778 2.64375 13.9028 2.36563 13.6247C2.08438 13.3435 1.9125 13.0778 1.76875 12.706C1.65938 12.4247 1.52813 11.9997 1.49375 11.2216C1.45625 10.3778 1.44688 10.1247 1.44688 7.99033C1.44688 5.85283 1.45625 5.59971 1.49375 4.75908C1.52813 3.97783 1.65938 3.55596 1.76875 3.27471C1.9125 2.90283 2.0875 2.63408 2.36563 2.35596C2.64688 2.07471 2.9125 1.90283 3.28438 1.75908C3.56563 1.64971 3.99063 1.51846 4.76875 1.48408C5.60938 1.44658 5.8625 1.43721 8 1.43721ZM8 -0.00341797C5.82813 -0.00341797 5.55625 0.00595703 4.70313 0.043457C3.85313 0.080957 3.26875 0.218457 2.7625 0.415332C2.23438 0.621582 1.7875 0.893457 1.34375 1.34033C0.896875 1.78408 0.625 2.23096 0.41875 2.75596C0.221875 3.26533 0.084375 3.84658 0.046875 4.69658C0.009375 5.55283 0 5.82471 0 7.99658C0 10.1685 0.009375 10.4403 0.046875 11.2935C0.084375 12.1435 0.221875 12.7278 0.41875 13.2341C0.625 13.7622 0.896875 14.2091 1.34375 14.6528C1.7875 15.0966 2.23438 15.3716 2.75938 15.5747C3.26875 15.7716 3.85 15.9091 4.7 15.9466C5.55313 15.9841 5.825 15.9935 7.99688 15.9935C10.1688 15.9935 10.4406 15.9841 11.2938 15.9466C12.1438 15.9091 12.7281 15.7716 13.2344 15.5747C13.7594 15.3716 14.2063 15.0966 14.65 14.6528C15.0938 14.2091 15.3688 13.7622 15.5719 13.2372C15.7688 12.7278 15.9063 12.1466 15.9438 11.2966C15.9813 10.4435 15.9906 10.1716 15.9906 7.99971C15.9906 5.82783 15.9813 5.55596 15.9438 4.70283C15.9063 3.85283 15.7688 3.26846 15.5719 2.76221C15.375 2.23096 15.1031 1.78408 14.6563 1.34033C14.2125 0.896582 13.7656 0.621582 13.2406 0.418457C12.7313 0.221582 12.15 0.084082 11.3 0.046582C10.4438 0.00595704 10.1719 -0.00341797 8 -0.00341797ZM8 3.88721C5.73125 3.88721 3.89062 5.72783 3.89062 7.99658C3.89062 10.2653 5.73125 12.106 8 12.106C10.2688 12.106 12.1094 10.2653 12.1094 7.99658C12.1094 5.72783 10.2688 3.88721 8 3.88721ZM8 10.6622C6.52813 10.6622 5.33437 9.46846 5.33437 7.99658C5.33437 6.52471 6.52813 5.33096 8 5.33096C9.47188 5.33096 10.6656 6.52471 10.6656 7.99658C10.6656 9.46846 9.47188 10.6622 8 10.6622ZM12.2719 4.68405C12.8 4.68405 13.2312 4.25593 13.2312 3.72468C13.2312 3.19655 12.8 2.7653 12.2719 2.7653C11.7438 2.7653 11.3125 3.19343 11.3125 3.72468C11.3125 4.2528 11.7406 4.68405 12.2719 4.68405Z"></path>
+									</svg>
+								</a>
+								<a href="https://www.facebook.com/www.CSFD.cz/" class="btn-social" target="_blank" rel="noreferrer">
+									<svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+									<path d="M16 7.99658C16 3.5783 12.4183 -0.00341797 8 -0.00341797C3.58172 -0.00341797 0 3.5783 0 7.99658C0 11.9896 2.92547 15.2992 6.75 15.8994V10.3091H4.71875V7.99658H6.75V6.23408C6.75 4.22908 7.94438 3.12158 9.77172 3.12158C10.6467 3.12158 11.5625 3.27783 11.5625 3.27783V5.24658H10.5538C9.56 5.24658 9.25 5.8633 9.25 6.49658V7.99658H11.4688L11.1141 10.3091H9.25V15.8994C13.0745 15.2992 16 11.9896 16 7.99658Z"></path>
+									</svg>
+								</a>
 						</div>
 					</div>
 
-					<div class="footer-about">
-						<div class="footer-social">
-							<h3>Social</h3>
-								<a href="https://www.facebook.com/www.CSFD.cz/" class="btn-social" target="_blank" rel="noreferrer"><i class="icon icon-facebook"></i></a>
-								<a href="https://www.instagram.com/csfd.cz/" class="btn-social" target="_blank" rel="noreferrer"><i class="icon icon-instagram"></i></a>
-						</div>
-						<div class="footer-app">
-							<h3>Mobilní aplikace</h3>
-							<a href="https://apps.apple.com/cz/app/csfd-web/id1552901865#?platform=iphone" class="btn-app-store" target="_blank"><img src=&#47;&#47;static.pmgstatic.com&#47;assets&#47;images&#47;4b37ac5ff3cce04f5ea0278688618768&#47;appstore.svg alt="ČSFD Web | App Store"></a>
-							<a href="https://play.google.com/store/apps/details?id=cz.csfd.lite" class="btn-google-play" target="_blank"><img src=&#47;&#47;static.pmgstatic.com&#47;assets&#47;images&#47;4b37ac5ff3cce04f5ea0278688618768&#47;googleplay.svg alt="ČSFD Web | Google Play"></a>
-						</div>
-						<div class="site-info">
-							<p>Česko-Slovenská filmová databáze</p><p>&copy; 2001-2024 POMO Media Group s.r.o.</p>
-							<p>Všechna práva vyhrazena.</p>
-						</div>
+					<div class="footer-nav">
+						<ul>
+									<li><a href="/prihlaseni/">Přihlášení</a></li>
+									<li><a href="/registrace/">Registrace</a></li>
+							<li><a href="javascript:Didomi.preferences.show()">Nastavení soukromí</a></li>
+							<li><a href="/vyvojari/">Pracuj s námi</a></li>
+							<li><a href="/napis-nam/">Napiš nám</a></li>
+							<li><a href="/provozovatel-a-redakce/">Provozovatel a redakce</a></li>
+							<li><a href="/reklama-a-marketing/">Reklama a marketing</a></li>
+							<li><a href="/zasady-ochrany-osobnich-udaju/">Zásady ochrany osobních údajů</a></li>
+							<li><a href="/vseobecne-podminky-uzivani/">Všeobecné podmínky užívání</a></li>
+							<li><a href="/cookies/">Cookies</a></li>
+						</ul>
+					</div>
+					<div class="footer-site-info">
+						<p>Česko-Slovenská filmová databáze</p>
+						<p>
+							&copy; 2001-2025 POMO Media Group s.r.o.
+							<span>Všechna práva vyhrazena.</span>
+						</p>
 					</div>
 				</div>
 			</footer>
@@ -2227,14 +2309,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 		</div>
 
 <div id="slide_up" class="ad-pmg"></div>
+<div id="interstitial" class="ad-pmg"></div>
 
 
-<script type="text/json" id="js-common-config">{"country":1,"domain":"csfd.cz","host":"www.csfd.cz","userLanguageId":1,"translations":{"web.ajax.default.error.message":"Omlouváme se, ale nastala chyba při zpracování.","web.ajax.resend.button":"Odeslat znovu","web.autocomplete.creator.header":"Tvůrci","web.autocomplete.creator.more.link":"Všichni tvůrci","web.autocomplete.film.header":"Filmy","web.autocomplete.film.more.link":"Všechny filmy","web.autocomplete.noservice":"Služba vyhledávání není momentálně dostupná.","web.autocomplete.searching":"Vyhledávám...","web.autocomplete.search.select":"Vyplň název filmu / jméno tvůrce nebo uživatele","web.autocomplete.series.header":"Seriály","web.autocomplete.series.more.link":"Všechny seriály","web.autocomplete.user.header":"Uživatelé","web.autocomplete.user.more.link":"Všichni uživatelé","web.check.all":"zaškrtnout vše","web.fileupload.preloader":"Načítám knihovnu, prosím o strpení...","web.modal.confirm.close":"Opravdu chceš zavřít okno? Možná máš neuložené změny.","web.preloader.loading":"Načítání...","web.search.creator.notfound":"Nenalezeni žádní tvůrci","web.search.film.notfound":"Nenalezeny žádné filmy","web.search.series.notfound":"Nenalezeny žádné seriály","web.search.user.notfound":"Nenalezeni žádní uživatelé","web.selectize.plugin.remove.button.remove":"Odebrat","web.sortable.error.move":"Při přesunu pozic došlo k chybě. Stránka bude obnovena. Pokračovat?","web.common.onboarding.button.previous":"Předchozí","web.common.onboarding.button.next":"Další","web.common.onboarding.button.close":"Zavřít"},"route":":Web:Creator:Overview:default","isLoggedIn":false,"userId":null,"hooks":["FormGet","AutoSubmitForm"]}</script>
-<script src="//static.pmgstatic.com/assets/utils-js/c38a059f9f69d34b09118407202a750c/scripts.min.js"></script>
-<script type="text/javascript">
-	CSFDAds.setTServer("https://a.csfd.cz/csfd/tserver");
-	CSFDAds.complete({"ball":{"site":"csfd.cz","page":3,"login":2,"viewId":38134870,"creator_id":4929},"0":{"area":"leaderboard","size":"1000x210,2000x1400,1800x1000,728x90,970x210,750x100,998x200,930x180,970x90,750x200,1000x200,branding_web"},"1":{"area":"large_rectangle_1","size":"336x300,300x250,336x280,320x100,300x100,300x300"},"2":{"area":"large_rectangle_2","size":"336x300,300x250,336x280,320x100,300x100,300x300"},"3":{"area":"billboard","size":"970x250,728x90,1000x310,970x310,970x210,950x300,900x250,1000x210,750x100,998x200,930x180,970x90,750x200,1000x250,750x300,980x250,1000x200"},"4":{"area":"slide_up","size":"970x250,728x90,1000x310,320x100,970x310,970x210,320x50,300x100,300x50,360x90,500x200,320x150,slide_up"},"5":{"area":"mobile_leaderboard","size":"320x100,320x50,300x100,300x50"},"6":{"area":"mobile_square_1","size":"300x300,300x250,250x250,200x200,300x100,300x600,480x820,720x1280,Interscroller"},"7":{"area":"mobile_square_2","size":"300x300,300x250,250x250,200x200,300x100"},"8":{"area":"mobile_square_3","size":"300x300,300x250,250x250,200x200,300x100"},"9":{"area":"mobile_billboard","size":"300x300,300x250,250x250,200x200,300x100"},"10":{"area":"native_short_1","size":"native_50,430x115,320x100","options":"lazy"},"11":{"area":"pre_roll","size":"videoad","supertag":"InstreamVideo"},"12":{"area":"pre_roll_2","size":"videoad","supertag":"InstreamVideo"}}, false, false);
-</script>
+<script type="text/json" id="js-common-config">{"country":1,"domain":"csfd.cz","host":"www.csfd.cz","userLanguageId":1,"translations":{"web.ajax.default.error.message":"Omlouváme se, ale nastala chyba při zpracování.","web.ajax.resend.button":"Odeslat znovu","web.autocomplete.creator.header":"Tvůrci","web.autocomplete.film.header":"Filmy","web.autocomplete.noservice":"Služba vyhledávání není momentálně dostupná.","web.autocomplete.searching":"Vyhledávám...","web.autocomplete.search.select":"Vyplň název filmu / jméno tvůrce nebo uživatele","web.autocomplete.series.header":"Seriály","web.autocomplete.user.header":"Uživatelé","web.layout.more":"více","web.check.all":"zaškrtnout vše","web.fileupload.preloader":"Načítám knihovnu, prosím o strpení...","web.modal.confirm.close":"Opravdu chceš zavřít okno? Možná máš neuložené změny.","web.preloader.loading":"Načítání...","web.search.creator.notfound":"Nenalezeni žádní tvůrci","web.search.film.notfound":"Nenalezeny žádné filmy","web.search.series.notfound":"Nenalezeny žádné seriály","web.search.user.notfound":"Nenalezeni žádní uživatelé","web.selectize.plugin.remove.button.remove":"Odebrat","web.sortable.error.move":"Při přesunu pozic došlo k chybě. Stránka bude obnovena. Pokračovat?"},"route":":Web:Creator:Overview:default","isLoggedIn":false,"userId":null,"hooks":["FormGet","AutoSubmitForm"]}</script>
+<script src="//static.pmgstatic.com/assets/utils-js/2a35d02318ed9a527ece67a5d053b076/scripts.min.js"></script>
+<script type="text/javascript">CSFDAds.setServer('https://a.csfd.cz/csfd');CSFDAds.complete({"ball":{"site":"csfd.cz","czaidc":0,"page":3,"login":2,"viewId":24895926,"creator_id":4929},"0":{"area":"leaderboard","size":"2000x1400,1800x1000,1000x210,970x210,998x200,930x180,970x90,750x100,728x90,750x200,branding_web"},"1":{"area":"large_rectangle_1","size":"336x300,336x280,300x300,300x250,320x100"},"2":{"area":"large_rectangle_2","size":"336x300,336x280,300x300,300x250,320x100"},"3":{"area":"billboard","size":"1000x310,970x310,950x300,980x250,970x250,750x300,1000x210,970x210,998x200,930x180,750x200,970x90,728x90"},"4":{"area":"slide_up","size":"1000x310,970x310,970x250,970x210,500x200,336x280,300x300,300x250,728x90,250x250,320x100,300x100,320x50,300x50,slide_up"},"5":{"area":"interstitial","size":"970x550,300x600,300x300,300x250,250x250,336x280,480x300,interstitial"},"6":{"area":"mobile_square_1","size":"300x300,300x250,250x250,336x280,720x1280,480x820,300x600,Interscroller"},"7":{"area":"mobile_square_2","size":"300x300,300x250,250x250,336x280"},"8":{"area":"mobile_square_3","size":"300x300,300x250,250x250,336x280"},"9":{"area":"mobile_billboard","size":"300x300,300x250,250x250,336x280"},"10":{"area":"native_short_1","size":"native_50,430x115,320x100","options":"lazy"},"11":{"area":"pre_roll","size":"videoad","supertag":"InstreamVideo"},"12":{"area":"pre_roll_2","size":"videoad","supertag":"InstreamVideo"}}, false);</script>
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TM3S526" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	</body>
 

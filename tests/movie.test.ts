@@ -165,7 +165,7 @@ describe('Get Movie photo', () => {
   test('Movie photo', () => {
     const movie = getRandomPhoto(movieNode);
     expect(movie).toEqual<string>(
-      '//image.pmgstatic.com/cache/resized/w1326/files/images/film/photos/163/416/163416559_60bcbb.jpg'
+      '//image.pmgstatic.com/cache/resized/w1326/files/images/film/photos/163/748/163748964_3f9a56.jpg'
     );
   });
   test('Movie Blank photo', () => {
@@ -175,7 +175,7 @@ describe('Get Movie photo', () => {
   test('Movie Series photo', () => {
     const movie = getRandomPhoto(seriesNode);
     expect(movie).toEqual<string>(
-      '//image.pmgstatic.com/cache/resized/w1326/files/images/film/photos/166/598/166598546_c16928.jpg'
+      '//image.pmgstatic.com/cache/resized/w1326/files/images/film/photos/166/598/166598545_663234.jpg'
     );
   });
   test('Movie empty node', () => {
@@ -188,9 +188,9 @@ describe('Get Movie trivia', () => {
   test('Movie trivia', () => {
     const movie = getTrivia(movieNode);
     expect(movie).toEqual<string[]>([
-      'Režisér S. Craig Zahler původně napsal scénář pro věk hlavních postav 30 a 50 let. Poté našel pro roli mladšího policisty Lurasettiho svého oblíbeného herce Vinceho a hledal vhodného partnera. Když se dohodl s Mel Gibsonem na obsazení role Ridgemana, musel přepsat role do věku postav 40 a 60 let.(Tonula)',
-      'Ve filmu se střídají pro různé záběry dvě auta, Melovo Chevrolet je buď model Caprice ročník 1986 anebo model Impala ročník 1980. Při závěrečné scéně je v jednom záběru auto schované v garáži bílé SUV Dodge Durango, ale jinak je to Chevrolet Tahoe. Dvě úplně jiná auta.(350cuiV8)',
-      'Při přepadení obchodu ve 36. minutě, střelec rozstřílí stojan s chipsy a přitom si můžeme jasně všimnout, že zákazník pohne hlavou, i když ho předtím lupič evidentně zastřelil.(Timak)'
+      'Celosvětová premiéra proběhla 3. září 2018 na Mezinárodním filmovém festivalu v Benátkách.(BMW12)',
+      'Natáčanie filmu prebiehalo v kanadskom meste Vancouver a začalo 17.7.2017.(MikaelSVK)',
+      'Ve filmu zazní píseň „A Better Place For Us“, kterou odehrál jako hudebník režisér S. Craig Zahler.(Rominator)',
     ]);
   });
   test('Movie Blank trivia', () => {
@@ -200,9 +200,9 @@ describe('Get Movie trivia', () => {
   test('Movie Series trivia', () => {
     const movie = getTrivia(seriesNode);
     expect(movie).toEqual<string[]>([
-      'Herci, kteří se v seriálu objevili jako umývači nádobí, nedokázali své dialogy řádně vyslovovat, a tak museli být předabováni.(HellFire)',
-      'Údajne sa plánovala i tretia séria seriálu, plány však narušila predčasná smrť niektorých hlavných hercov.(misterz)',
-      'Ernst-Hugo Järegård se právě díky roli v Riget v Dánsku výrazně zviditelnil a byl dokonce považován za nový sexuální symbol.(TomikZlesa)'
+      "Ernst-Hugo Järegård (Stig Helmer) se právě díky roli v seriálu v Dánsku výrazně zviditelnil a byl dokonce považován za nový sexuální symbol.(TomikZlesa)",
+      "Plánovanú 3. sériu narušila predčasná smrť niektorých hlavných hercov, ale po 25 rokoch predsa len vznikla.(misterz)",
+      "Když nastane stav beztíže, jako hudební podkres hraje Bachovo „Preludium F moll“. Tento hudební motiv, spolu se záběrem na vznášejícího se Pontopidana (Lars Mikkelsen), je jednoznačným odkazem na podobnou scénu se stavem beztíže z filmu Solaris (1972).(Kaleidoskop)",
     ]);
   });
   test('Movie empty node', () => {
@@ -240,30 +240,35 @@ describe('Get VOD', () => {
     expect(movie).toEqual<CSFDVod[]>([
       {
         title: 'Apple TV+',
-        url: 'https://tv.apple.com/cz/movie/dragged-across-concrete/umc.cmc.34ihj6x6alpeso7j7lpvamjfb'
+        url: 'https://srv.clickfuse.com/ads/adclkr.php?id=100006636&url=https%3A//tv.apple.com/cz/movie/dragged-across-concrete/umc.cmc.34ihj6x6alpeso7j7lpvamjfb'
       },
       {
-        title: 'Voyo',
-        url: 'https://voyo.nova.cz/titul/4604-na-spatne-strane'
-      },
-      { title: 'KVIFF.TV', url: 'https://kviff.tv/katalog/na-spatne-strane' },
-      {
-        title: 'iTunes',
-        url: 'https://itunes.apple.com/cz/movie/dragged-across-concrete/id1469983874'
+        title: 'KVIFF.TV',
+        url: 'https://kviff.tv/katalog/na-spatne-strane'
       },
       {
-        title: 'DVD',
-        url: 'https://www.martinus.cz/?uItem=619199'
-      }
+        title: 'prima+',
+        url: 'https://www.iprima.cz/filmy/na-spatne-strane?utm_source=csfd&utm_medium=section_vod&utm_campaign=link_exchange'
+      },
+      {
+        title: 'YouTube Movies',
+        url: 'https://www.youtube.com/watch?v=8UGglrPklC4'
+      },
+      { title: 'DVD', url: 'https://www.martinus.cz/?uItem=619199' },
+      { title: 'Blu-ray', url: 'https://www.martinus.cz/?uItem=619213' }
     ]);
   });
   test('Get vods series', () => {
     const movie = getVods(asideNodeSeries);
     expect(movie).toEqual<CSFDVod[]>([
       {
+        title: 'Lepší.TV',
+        url: 'https://www.lepsi.tv/top_tv/serial/kralovstvi-cast-prvni-online?utm_source=csfd&utm_content=csfd',
+      },
+      {
         title: 'KVIFF.TV',
-        url: 'https://kviff.tv/katalog/kralovstvi-cast-sedma-gargantua'
-      }
+        url: 'https://kviff.tv/katalog/kralovstvi-cast-druha-prijd-kralovstvi-tve'
+      },
     ]);
   });
   test('Get vods rich', () => {
@@ -336,7 +341,7 @@ describe('Get descriptions', () => {
   test('Descriptions rich', () => {
     const movie = getDescriptions(movieNodeRich);
     expect(movie).toEqual<string[]>([
-      'V dávných dobách byl vykován kouzelný prsten, který vlastnil pán Mordoru Sauron. Jeho moc začal využívat k šíření zla, ale o prsten nakonec v boji přišel, a ten na dlouhá léta zmizel. Nakonec ho našel hobit Bilbo Pytlík, který díky němu přestal stárnout. Na naléhavou žádost čaroděje Gandalfa předá prsten synovci Frodovi. Ten se svými kamarády Samem, Smíškem a Pipinem odcházejí do Hůrky a Gandalf se vydává pro radu za svým učitelem, čarodějem Sarumanem. Ten se však přidal na stranu zla a zajme ho. S pomocí tajemného hraničáře, přezdívaného Chodec, Frodo a jeho kamarádi uniknou jen o vlásek devíti černým jezdcům, kteří vyrazili z Temné věže, aby prsten našli a přinesli svému pánovi Sauronovi. Do Roklinky je svolána velká porada lidí a elfů, která rozhodne, že prsten musí být zničen. To je možné pouze tam, kde byl prsten zrozen, v ohni Hory osudu. Odvážný Frodo se nabídne, že tam prsten odnese. Nebezpečí je však příliš veliké, a tak se mu, jako jeho ochránci, postaví po bok čaroděj Gandalf, trpaslík Gimli, elf Legolas, bojovník Boromir, hobiti Sam, Smíšek a Pipin a také Chodec. Zrodí se Společenstvo Prstenu, které se vydává na nebezpečnou cestu plnou nástrah a nebezpečí.(TV Nova)',
+      'Hlavním hrdinou je hobit Frodo Pytlík, který se ve své vlastní domovině zvané Středozemě dostal do samotného centra bitvy mytických proporcí. Bude muset během svého putování prokázat, že moc přátelství a individuální odvahy dokáže úspěšně čelit i těm nejničivějším silám temnoty. Frodova dobrodružství odstartuje dar jeho příbuzného Bilba. Od něj získá magický prsten, který Froda postaví do soboje se silami zla reprezentovanými krutovládcem Sauronem. Ten touží za každou cenu získat prsten, protože je pro něj zdrojem neomezené moci, jedině s jeho pomocí se mu může podařit zotročit lid Středozemě a stát se jeho neomezeným pánem. Ve snaze čelit Sauronovým temným plánům, se musí Frodo spojit se několika dalšími bytostmi. Vytvoří s nimi takzvané Společenstvo složené z jeho přátel, čaroděje, elfa, trpaslíka a dalších pomocníků, se kterými se vydá na cestu na jejímž konci doufají, že se jim podaří prsten jednou provždy zničit. Jejich cesta však prokáže, že nejenom magické prsteny, ale také sounáležitost všech živých bytostí mohou dokázat netušené věci. Musí však čelit nejen nebezpečím, která na ně číhají na územích ovládaných Sauronem, ale i rozkladné moci samotného prstenu.(oficiální text distributora)',
       'Budoucnost civilizace spočívá v osudu Jednoho prstenu, který byl po staletí ztracen. Osud jej však umístil do rukou mladého Hobita jménem Frodo Pytlík, který zdědil Prsten. Když se Frodo stane nositelem prstenu, čeká ho skličující úkol – zničit prsten v ohni Hory Osudu, kde byl vytvořen.(G....)'
     ]);
   });

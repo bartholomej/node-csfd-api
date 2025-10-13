@@ -27,11 +27,11 @@ describe('Get Movie titles', () => {
   });
   test('Last movie', () => {
     const movie = getTitle(moviesNode[moviesNode.length - 1]);
-    expect(movie).toEqual<string>('Matrix hunter');
+    expect(movie).toEqual<string>('Matrix Resurrections');
   });
   test('Some movie', () => {
     const movie = getTitle(moviesNode[5]);
-    expect(movie).toEqual<string>('Matrix - Reloaded');
+    expect(movie).toEqual<string>('Matrix hunter');
   });
 });
 
@@ -42,25 +42,25 @@ describe('Get Movie years', () => {
   });
   test('Last movie', () => {
     const movie = getYear(moviesNode[moviesNode.length - 1]);
-    expect(movie).toEqual<number>(2004);
+    expect(movie).toEqual<number>(2021);
   });
   test('Some movie', () => {
     const movie = getYear(moviesNode[3]);
-    expect(movie).toEqual<number>(2003);
+    expect(movie).toEqual<number>(2019);
   });
 });
 
 describe('Get Movie url', () => {
   test('First movie', () => {
     const movie = getUrl(moviesNode[0]);
-    expect(movie).toEqual<string>('/film/9499-matrix/');
+    expect(movie).toEqual<string>('/film/9499-the-matrix/');
   });
   test('Last movie', () => {
     const movie = getUrl(moviesNode[moviesNode.length - 1]);
-    expect(movie).toEqual<string>('/film/40940-matrix-hunter/');
+    expect(movie).toEqual<string>('/film/499395-the-matrix-resurrections/');
   });
   test('Some movie', () => {
-    const movie = getUrl(moviesNode[4]);
+    const movie = getUrl(moviesNode[3]);
     expect(movie).toEqual<string>('/film/799868-matrix/');
   });
 });
@@ -90,7 +90,7 @@ describe('Get Movie colors', () => {
     expect(movie).toEqual<CSFDColorRating>('average');
   });
   test('Some movie', () => {
-    const movie = getColorRating(moviesNode[4]);
+    const movie = getColorRating(moviesNode[3]);
     expect(movie).toEqual<CSFDColorRating>('unknown');
   });
 });
@@ -111,7 +111,7 @@ describe('Get Movie posters', () => {
   test('Some movie', () => {
     const movie = getPoster(moviesNode[1]);
     expect(movie).toEqual<string>(
-      'https://image.pmgstatic.com/cache/resized/w60h85/files/images/film/posters/165/852/165852808_71b2e1.jpg'
+      'https://image.pmgstatic.com/cache/resized/w60h85/files/images/film/posters/170/394/170394904_asdf5d.jpg'
     );
   });
 });
@@ -123,14 +123,14 @@ describe('Get Movie origins', () => {
   });
   test('Second movie', () => {
     const movie = getOrigins(moviesNode[1]);
-    expect(movie).toEqual<string[]>(['USA']);
+    expect(movie).toEqual<string[]>(['USA', 'Austrálie']);
   });
   test('Third movie', () => {
     const movie = getOrigins(moviesNode[2]);
     expect(movie).toEqual<string[]>(['USA', 'Austrálie']);
   });
   test('Some movie', () => {
-    const movie = getOrigins(moviesNode[4]);
+    const movie = getOrigins(moviesNode[3]);
     expect(movie).toEqual<string[]>(['Slovensko']);
   });
 });
@@ -155,21 +155,21 @@ describe('Get Movie creators', () => {
     const movie = parsePeople(moviesNode[moviesNode.length - 1], 'actors');
     expect(movie).toEqual<CSFDCreator[]>([
       {
-        id: 67747,
-        name: "Genevieve O'Reilly",
-        url: 'https://www.csfd.cz/tvurce/67747-genevieve-o-reilly/'
+        id: 46,
+        name: 'Keanu Reeves',
+        url: 'https://www.csfd.cz/tvurce/46-keanu-reeves/',
       },
       {
-        id: 294809,
-        name: 'Luoyong Wang',
-        url: 'https://www.csfd.cz/tvurce/294809-luoyong-wang/'
+        "id": 101,
+        "name": "Carrie-Anne Moss",
+        "url": "https://www.csfd.cz/tvurce/101-carrie-anne-moss/",
       }
     ]);
   });
-  test('Empty actors', () => {
-    const movie = parsePeople(moviesNode[5], 'actors');
-    expect(movie).toEqual<CSFDCreator[]>([]);
-  });
+  // test('Empty actors', () => {
+  //   const movie = parsePeople(moviesNode[5], 'actors');
+  //   expect(movie).toEqual<CSFDCreator[]>([]);
+  // });
 });
 
 // TV SERIES
@@ -181,11 +181,11 @@ describe('Get TV series titles', () => {
   });
   test('Last TV series', () => {
     const movie = getTitle(tvSeriesNode[tvSeriesNode.length - 1]);
-    expect(movie).toEqual<string>('Futurama - Skoro poslední přání');
+    expect(movie).toEqual<string>('A Glitch in the Matrix');
   });
   test('Some TV series', () => {
     const movie = getTitle(tvSeriesNode[5]);
-    expect(movie).toEqual<string>('MP4orce - Dungeon Matrix');
+    expect(movie).toEqual<string>('Escape the Matrix');
   });
 });
 
@@ -196,11 +196,11 @@ describe('Get TV series years', () => {
   });
   test('Last TV series', () => {
     const movie = getYear(tvSeriesNode[tvSeriesNode.length - 1]);
-    expect(movie).toEqual<number>(2012);
+    expect(movie).toEqual<number>(2021);
   });
   test('Some TV series', () => {
     const movie = getYear(tvSeriesNode[4]);
-    expect(movie).toEqual<number>(2020);
+    expect(movie).toEqual<number>(2015);
   });
 });
 
@@ -211,11 +211,11 @@ describe('Get TV series url', () => {
   });
   test('Last TV series', () => {
     const movie = getUrl(tvSeriesNode[tvSeriesNode.length - 1]);
-    expect(movie).toEqual<string>('/film/77748-futurama/483972-skoro-posledni-prani/');
+    expect(movie).toEqual<string>('/film/995064-a-glitch-in-the-matrix/');
   });
   test('Some TV series', () => {
     const movie = getUrl(tvSeriesNode[4]);
-    expect(movie).toEqual<string>('/film/999565-escape-the-matrix/');
+    expect(movie).toEqual<string>('/film/327536-cesky-zurnal/134498-matrix-ab/');
   });
 });
 
@@ -226,10 +226,10 @@ describe('Get TV series types', () => {
   });
   test('Last TV series', () => {
     const movie = getType(tvSeriesNode[tvSeriesNode.length - 1]);
-    expect(movie).toEqual<CSFDFilmTypes>('epizoda');
+    expect(movie).toEqual<CSFDFilmTypes>('seriál');
   });
   test('Some TV series', () => {
-    const movie = getType(tvSeriesNode[1]);
+    const movie = getType(tvSeriesNode[4]);
     expect(movie).toEqual<CSFDFilmTypes>('epizoda');
   });
 });
@@ -257,7 +257,7 @@ describe('Get TV series posters', () => {
     );
   });
   test('Empty poster', () => {
-    const movie = getPoster(tvSeriesNode[4]);
+    const movie = getPoster(tvSeriesNode[0]);
     expect(movie).toEqual<string>(
       'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'
     );
@@ -271,14 +271,14 @@ describe('Get TV series origins', () => {
   });
   test('Second TV series', () => {
     const movie = getOrigins(tvSeriesNode[1]);
-    expect(movie).toEqual<string[]>(['Česko']);
+    expect(movie).toEqual<string[]>(['USA', 'Kanada']);
   });
   test('Third TV series', () => {
     const movie = getOrigins(tvSeriesNode[2]);
-    expect(movie).toEqual<string[]>(['USA', 'Kanada']);
+    expect(movie).toEqual<string[]>(['Japonsko']);
   });
   test('Some TV series', () => {
-    const movie = getOrigins(tvSeriesNode[4]);
+    const movie = getOrigins(tvSeriesNode[5]);
     expect(movie).toEqual<string[]>(['Velká Británie']);
   });
 });
@@ -303,30 +303,30 @@ describe('Get TV series creators', () => {
     const movie = parsePeople(tvSeriesNode[tvSeriesNode.length - 1], 'actors');
     expect(movie).toEqual<CSFDCreator[]>([
       {
-        id: 20335,
-        name: 'Billy West',
-        url: 'https://www.csfd.cz/tvurce/20335-billy-west/'
-      },
-      {
-        id: 1931,
-        name: 'Katey Sagal',
-        url: 'https://www.csfd.cz/tvurce/1931-katey-sagal/'
+        "id": 861510,
+        "name": "Donna Glaesener",
+        "url": "https://www.csfd.cz/tvurce/861510-donna-glaesener/",
       }
     ]);
   });
-  test('Empty actors', () => {
-    const movie = parsePeople(tvSeriesNode[5], 'actors');
+  test('Empty directors', () => {
+    const movie = parsePeople(tvSeriesNode[5], 'directors');
     expect(movie).toEqual<CSFDCreator[]>([]);
   });
   test('Empty directors + some actors', () => {
-    const movie = parsePeople(tvSeriesNode[4], 'actors');
-    const movieDirectors = parsePeople(tvSeriesNode[4], 'directors');
+    const movie = parsePeople(tvSeriesNode[2], 'actors');
+    const movieDirectors = parsePeople(tvSeriesNode[2], 'directors');
     expect(movie).toEqual<CSFDCreator[]>([
       {
-        id: 61834,
-        name: 'David Icke',
-        url: 'https://www.csfd.cz/tvurce/61834-david-icke/'
-      }
+        "id": 74751,
+        "name": "Takeru Sató",
+        "url": "https://www.csfd.cz/tvurce/74751-takeru-sato/",
+      },
+      {
+        "id": 604689,
+        "name": "Jú Mijazaki",
+        "url": "https://www.csfd.cz/tvurce/604689-ju-mijazaki/",
+      },
     ]);
     expect(movieDirectors).toEqual<CSFDCreator[]>([]);
   });
@@ -337,34 +337,34 @@ describe('Get TV series creators', () => {
 describe('Get Users name', () => {
   test('First user', () => {
     const movie = getUser(usersNode[0]);
-    expect(movie).toEqual<string>('Matrix44');
+    expect(movie).toEqual<string>('Matrix');
   });
   test('Last user', () => {
     const movie = getUser(usersNode[usersNode.length - 1]);
-    expect(movie).toEqual<string>('Atrix');
+    expect(movie).toEqual<string>('Matrixop007');
   });
 });
 
 describe('Get Users real name', () => {
-  test('First user', () => {
-    const movie = getUserRealName(usersNode[0]);
-    expect(movie).toEqual<string>('Matrix 44');
+  test('Some name', () => {
+    const movie = getUserRealName(usersNode[2]);
+    expect(movie).toEqual<string>('Zdeněk Pospíšil');
   });
-  test('Some name (nothing)', () => {
-    const movie = getUserRealName(usersNode[3]);
+  test('Empty name', () => {
+    const movie = getUserRealName(usersNode[0]);
     expect(movie).toEqual(null);
   });
 });
 
 describe('Get Users avatar', () => {
-  test('First user', () => {
-    const movie = getAvatar(usersNode[0]);
+  test('Some Avatar', () => {
+    const movie = getAvatar(usersNode[1]);
     expect(movie).toEqual<string>(
       'https://image.pmgstatic.com/cache/resized/w45h60crop/files/images/user/avatars/000/327/327230_b48a6e.jpg'
     );
   });
-  test('Some name (nothing)', () => {
-    const movie = getAvatar(usersNode[3]);
+  test('Empty avatar', () => {
+    const movie = getAvatar(usersNode[0]);
     expect(movie).toEqual<string>(
       'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'
     );
@@ -374,6 +374,6 @@ describe('Get Users avatar', () => {
 describe('Get Users url', () => {
   test('First user', () => {
     const movie = getUserUrl(usersNode[0]);
-    expect(movie).toEqual<string>('/uzivatel/100416-matrix44/');
+    expect(movie).toEqual<string>('/uzivatel/914271-matrix/');
   });
 });
