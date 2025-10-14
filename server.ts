@@ -84,17 +84,20 @@ const port = process.env.PORT || 3000;
 const API_KEY_NAME = process.env.API_KEY_NAME || 'x-api-key';
 const API_KEY = process.env.API_KEY;
 
+const API_KEYS_LIST = API_KEY ? API_KEY.split(/[,;\s]+/).map(k => k.trim()).filter(Boolean) : [];
+
 // --- Middleware for optional header check ---
 app.use((req: Request, res: Response, next: NextFunction): void => {
+  // If API_KEY is set, it may contain one or more keys separated by comma/semicolon/whitespace.
   if (API_KEY) {
-    const apiKey = req.headers[API_KEY_NAME] as string | undefined;
+    const apiKey = (req.get(API_KEY_NAME) as string | undefined)?.trim();
     if (!apiKey) {
       const log: ErrorLog = { error: Errors.API_KEY_MISSING, message: `Missing API key in request header: ${API_KEY_NAME}` };
       logMessage('error', log, req);
       res.status(401).json(log);
       return;
     }
-    if (apiKey !== API_KEY) {
+    if (!API_KEYS_LIST.includes(apiKey)) {
       const log: ErrorLog = { error: Errors.API_KEY_INVALID, message: `Invalid API key in request header: ${API_KEY_NAME}` };
       logMessage('error', log, req);
       res.status(401).json(log);
@@ -211,9 +214,9 @@ app.listen(port, () => {
   console.log(`Endpoints: ${Object.values(Endpoint).join(', ')}\n`);
 
   console.log(`API is running on: http://localhost:${port}\n`);
-  if (!API_KEY) {
-    console.log('\x1b[31m%s\x1b[0m', '⚠️ Server is OPEN!\n- Your server will be open to the world and potentially everyone can use it without any restriction.\n- To enable some basic protection, set API_KEY environment variable with a value and provide the same value in request header: ' + API_KEY_NAME);
+  if (API_KEYS_LIST.length === 0) {
+    console.log('\x1b[31m%s\x1b[0m', '⚠️ Server is OPEN!\n- Your server will be open to the world and potentially everyone can use it without any restriction.\n- To enable some basic protection, set API_KEY environment variable (single value or comma-separated list) and provide the same value in request header: ' + API_KEY_NAME);
   } else {
-    console.log('\x1b[32m%s\x1b[0m', '✔️ Server is protected (somehow).\n- Your API_KEY is set and will be checked for each request header: ' + API_KEY_NAME);
+    console.log('\x1b[32m%s\x1b[0m', `✔️ Server is protected (somehow).\n- ${API_KEYS_LIST.length} API key(s) are configured and will be checked for each request header: ${API_KEY_NAME}`);
   }
 });
