@@ -6,7 +6,7 @@
     "baseUrl": "./src",
     "esModuleInterop": true,
     "module": "esnext",
-    "moduleResolution": "Node",
+    "moduleResolution": "node",
     "strictNullChecks": false, // will be more strict in future releases
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
