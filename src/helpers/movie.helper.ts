@@ -251,6 +251,6 @@ export const getPremieres = (el: HTMLElement): CSFDPremiere[] => {
 };
 
 export const getTags = (el: HTMLElement): string[] => {
-  const tagsRaw = el.querySelectorAll('.box-content a[href*="/podrobne-vyhledavani/?tag="]');
+  const tagsRaw = el.querySelectorAll('.box-content a[href*="/tag/"]');
   return tagsRaw.map((tag) => tag.textContent);
 };
