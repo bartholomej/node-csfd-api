@@ -1,8 +1,9 @@
-import { describe, expect, test } from 'vitest';
+import { beforeAll, describe, expect, test } from 'vitest';
 import { csfd } from '../src';
 import { fetchPage } from '../src/fetchers';
 import { CSFDCreatorScreening } from '../src/interfaces/creator.interface';
 import { CSFDColorRating, CSFDFilmTypes } from '../src/interfaces/global';
+import { CSFDMovie } from '../src/interfaces/movie.interface';
 import { movieUrl, userRatingsUrl } from '../src/vars';
 const badId = 999999999999999;
 
@@ -30,27 +31,142 @@ describe('Fetch rating page 2', () => {
 });
 
 // Movie
-describe('Live: Movie page', () => {
-  test('Fetch `10135-forrest-gump` movie', async () => {
-    const movie = await csfd.movie(10135);
+describe('Live: Movie page. Fetch `10135-forrest-gump`', () => {
+  let movie: CSFDMovie = {} as CSFDMovie;
+  beforeAll(async () => {
+    movie = await csfd.movie(10135);
+  });
+  test('Title', () => {
     expect(movie.title).toEqual<string>('Forrest Gump');
+  });
+  test('Rating', () => {
     expect(movie.rating).toBeGreaterThan(90);
+  });
+  test('Rating count', () => {
     expect(movie.ratingCount).toBeGreaterThan(100000);
-    // More than 10 words in description
+  });
+  test('Poster', () => {
+    expect(movie.poster).toContain('.jpg');
+  });
+  test('Photo', () => {
+    expect(movie.photo).toContain('.jpg');
+  });
+  test('Descriptions', () => {
     expect(movie.descriptions[0].split(' ').length).toBeGreaterThan(10);
+  });
+  test('Trivia', () => {
+    expect(movie.trivia.length).toBeGreaterThan(2);
+  });
+  test('Genres', () => {
+    expect(movie.genres.length).toBeGreaterThan(2);
+  });
+  test('Tags', () => {
     expect(movie.tags.length).toBeGreaterThan(3);
+  });
+  test('Year', () => {
     expect(movie.year).toEqual(1994);
+  });
+  test('Type', () => {
     expect(movie.type).toEqual<CSFDFilmTypes>('film');
+  });
+  test('Duration', () => {
     expect(movie.duration).toBeGreaterThan(140);
+  });
+  test('Premieres', () => {
     expect(movie.premieres.length).toBeGreaterThan(1);
+  });
+  test('Color Rating', () => {
     expect(movie.colorRating).toEqual<CSFDColorRating>('good');
+  });
+  test('Directors', () => {
     expect(movie.creators.directors[0]?.name).toEqual('Robert Zemeckis');
+  });
+  test('Origins', () => {
     expect(movie.origins[0]).toEqual<string>('USA');
   });
-  test('Fetch `71924-kralovstvi` serial years', async () => {
-    const movie = await csfd.movie(71924);
+  test('VODs', () => {
+    expect(movie.vod.length).toBeGreaterThan(0);
+  });
+  test('Related movies', () => {
+    expect(movie.related.length).toBeGreaterThan(0);
+  });
+  test('Similar movies', () => {
+    expect(movie.similar.length).toBeGreaterThan(0);
+  });
+  test('Other titles', () => {
+    expect(movie.titlesOther.length).toBeGreaterThan(2);
+  });
+  test('Creators: Actors', () => {
+    expect(movie.creators.actors.map((x) => x.name)).toEqual<string[]>(
+      expect.arrayContaining(['Tom Hanks', 'Robin Wright'])
+    );
+  });
+  test('Creators: Writers', () => {
+    expect(movie.creators.writers.map((x) => x.name)).toEqual<string[]>(
+      expect.arrayContaining(['Eric Roth'])
+    );
+  });
+  test('Creators: Music', () => {
+    expect(movie.creators.music.map((x) => x.name)).toEqual<string[]>(
+      expect.arrayContaining(['Alan Silvestri'])
+    );
+  });
+  test('Creators: Cinematography', () => {
+    expect(movie.creators.cinematography.map((x) => x.name)).toEqual<string[]>(
+      expect.arrayContaining(['Don Burgess'])
+    );
+  });
+  test('Creators: Based On', () => {
+    expect(movie.creators.basedOn.map((x) => x.name)).toEqual<string[]>(
+      expect.arrayContaining(['Winston Groom'])
+    );
+  });
+  test('Creators: Producers', () => {
+    expect(movie.creators.producers.map((x) => x.name)).toEqual<string[]>(
+      expect.arrayContaining(['Wendy Finerman'])
+    );
+  });
+  test('Creators: Film Editing', () => {
+    expect(movie.creators.filmEditing.map((x) => x.name)).toEqual<string[]>(
+      expect.arrayContaining(['Arthur Schmidt'])
+    );
+  });
+  test('Creators: Costume Design', () => {
+    expect(movie.creators.costumeDesign.map((x) => x.name)).toEqual<string[]>(
+      expect.arrayContaining(['Joanna Johnston'])
+    );
+  });
+  test('Creators: Production Design', () => {
+    expect(movie.creators.productionDesign.map((x) => x.name)).toEqual<string[]>(
+      expect.arrayContaining(['Rick Carter'])
+    );
+  });
+  test('Creators: No empty groups', () => {
+    const creators = movie.creators;
+    for (const key in creators) {
+      const group = creators[key as keyof typeof creators];
+      expect(group).toBeDefined();
+      expect(group.length).toBeGreaterThan(0);
+    }
+  });
+});
+
+describe('Live: Tv series', () => {
+  let movie: CSFDMovie = {} as CSFDMovie;
+  beforeAll(async () => {
+    movie = await csfd.movie(71924);
+  });
+  test('Year', () => {
     expect(movie.year).toEqual<number>(1994);
+  });
+  test('Type', () => {
+    expect(movie.type).toEqual<CSFDFilmTypes>('seriál');
+  });
+  test('Title', () => {
     expect(movie.title).toEqual<string>('Království');
+  });
+  test('Duration', () => {
+    expect(movie.duration).toBeGreaterThan(50);
   });
 });
 
