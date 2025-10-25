@@ -6,7 +6,7 @@ import {
 } from '../dto/cinema';
 import { CSFDColorRating } from '../dto/global';
 import { Colors } from '../dto/user-ratings';
-import { parseColor, parseIdFromUrl } from './global.helper';
+import { parseColor, parseIdFromUrl } from './global.helper.js';
 
 export const getCinemaColorRating = (el: HTMLElement | null): CSFDColorRating => {
   const classes: string[] = el?.classNames.split(' ') ?? [];

@@ -1,5 +1,5 @@
 import { HTMLElement, NodeType } from 'node-html-parser';
-import { addProtocol } from './global.helper';
+import { addProtocol } from './global.helper.js';
 
 export const getUser = (el: HTMLElement): string => {
   return el.querySelector('.user-title-name').text;

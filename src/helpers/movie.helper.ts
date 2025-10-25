@@ -11,7 +11,7 @@ import {
   CSFDVod,
   CSFDVodService
 } from '../dto/movie';
-import { addProtocol, getColor, parseISO8601Duration, parseIdFromUrl } from './global.helper';
+import { addProtocol, getColor, parseISO8601Duration, parseIdFromUrl } from './global.helper.js';
 
 export const getMovieId = (el: HTMLElement): number => {
   const url = el.querySelector('.tabs .tab-nav-list a').attributes.href;

@@ -1,7 +1,7 @@
 import { HTMLElement, parse } from 'node-html-parser';
 import { CSFDColorRating, CSFDStars } from '../dto/global';
 import { CSFDUserRatingConfig, CSFDUserRatings } from '../dto/user-ratings';
-import { fetchPage } from '../fetchers';
+import { fetchPage } from '../fetchers/fetchers.js';
 import {
   getUserRating,
   getUserRatingColorRating,
@@ -12,8 +12,8 @@ import {
   getUserRatingUrl,
   getUserRatingYear,
   sleep
-} from '../helpers/user-ratings.helper';
-import { userRatingsUrl } from '../vars';
+} from '../helpers/user-ratings.helper.js';
+import { userRatingsUrl } from '../vars.js';
 
 export class UserRatingsScraper {
   private films: CSFDUserRatings[] = [];

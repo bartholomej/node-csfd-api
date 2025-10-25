@@ -1,7 +1,7 @@
 import { HTMLElement } from 'node-html-parser';
 import { CSFDColorRating, CSFDFilmTypes, CSFDStars } from '../dto/global';
 import { Colors } from '../dto/user-ratings';
-import { parseIdFromUrl } from './global.helper';
+import { parseIdFromUrl } from './global.helper.js';
 
 export const getUserRatingId = (el: HTMLElement): number => {
   const url = el.querySelector('td.name .film-title-name').attributes.href;

@@ -1,7 +1,7 @@
 import { HTMLElement, parse } from 'node-html-parser';
 import { CSFDFilmTypes } from '../dto/global';
 import { CSFDMovie } from '../dto/movie';
-import { fetchPage } from '../fetchers';
+import { fetchPage } from '../fetchers/fetchers.js';
 import {
   getMovieBoxMovies,
   getMovieColorRating,
@@ -22,8 +22,8 @@ import {
   getMovieType,
   getMovieVods,
   getMovieYear
-} from '../helpers/movie.helper';
-import { movieUrl } from '../vars';
+} from '../helpers/movie.helper.js';
+import { movieUrl } from '../vars.js';
 
 export class MovieScraper {
   private film: CSFDMovie;

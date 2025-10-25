@@ -3,11 +3,11 @@ import { CSFDCreator } from './dto/creator';
 import { CSFDMovie } from './dto/movie';
 import { CSFDSearch } from './dto/search';
 import { CSFDUserRatingConfig, CSFDUserRatings } from './dto/user-ratings';
-import { CinemaScraper } from './services/cinema.service';
-import { CreatorScraper } from './services/creator.service';
-import { MovieScraper } from './services/movie.service';
-import { SearchScraper } from './services/search.service';
-import { UserRatingsScraper } from './services/user-ratings.service';
+import { CinemaScraper } from './services/cinema.service.js';
+import { CreatorScraper } from './services/creator.service.js';
+import { MovieScraper } from './services/movie.service.js';
+import { SearchScraper } from './services/search.service.js';
+import { UserRatingsScraper } from './services/user-ratings.service.js';
 
 export class Csfd {
   constructor(

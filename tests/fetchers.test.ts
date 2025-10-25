@@ -3,8 +3,8 @@ import { csfd } from '../src';
 import { CSFDCinema } from '../src/dto/cinema';
 import { CSFDCreatorScreening } from '../src/dto/creator';
 import { CSFDColorRating, CSFDFilmTypes } from '../src/dto/global';
-import { CSFDMovie } from '../src/dto/movie';
-import { fetchPage } from '../src/fetchers';
+import { CSFDMovie } from '../src/dto/movie.js';
+import { fetchPage } from '../src/fetchers/fetchers.js';
 import { movieUrl, userRatingsUrl } from '../src/vars';
 const badId = 999999999999999;
 

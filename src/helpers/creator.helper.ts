@@ -2,7 +2,7 @@ import { HTMLElement } from 'node-html-parser';
 import { CSFDCreatorScreening } from '../dto/creator';
 import { CSFDColorRating } from '../dto/global';
 import { Colors } from '../dto/user-ratings';
-import { addProtocol, parseColor, parseIdFromUrl } from './global.helper';
+import { addProtocol, parseColor, parseIdFromUrl } from './global.helper.js';
 
 const getCreatorColorRating = (el: HTMLElement | null): CSFDColorRating => {
   const classes: string[] = el?.classNames.split(' ') ?? [];

@@ -1,14 +1,14 @@
 import { HTMLElement, parse } from 'node-html-parser';
 import { CSFDCinema, CSFDCinemaPeriod } from '../dto/cinema';
-import { fetchPage } from '../fetchers';
-import { cinemasUrl } from '../vars';
+import { fetchPage } from '../fetchers/fetchers.js';
+import { cinemasUrl } from '../vars.js';
 import {
   getCinemaCoords,
   getCinemaId,
   getCinemaUrl,
   getGroupedFilmsByDate,
   parseCinema
-} from './../helpers/cinema.helper';
+} from './../helpers/cinema.helper.js';
 
 export class CinemaScraper {
   private cinema: CSFDCinema[];

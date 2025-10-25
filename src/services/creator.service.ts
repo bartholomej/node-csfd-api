@@ -1,8 +1,8 @@
 import { HTMLElement, parse } from 'node-html-parser';
 import { CSFDCreator } from '../dto/creator';
-import { fetchPage } from '../fetchers';
-import { getCreatorBio, getCreatorBirthdayInfo, getCreatorFilms, getCreatorName, getCreatorPhoto } from '../helpers/creator.helper';
-import { creatorUrl } from '../vars';
+import { fetchPage } from '../fetchers/fetchers.js';
+import { getCreatorBio, getCreatorBirthdayInfo, getCreatorFilms, getCreatorName, getCreatorPhoto } from '../helpers/creator.helper.js';
+import { creatorUrl } from '../vars.js';
 
 export class CreatorScraper {
   private person: CSFDCreator;

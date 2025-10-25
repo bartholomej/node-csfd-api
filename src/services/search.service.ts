@@ -1,8 +1,8 @@
 import { HTMLElement, parse } from 'node-html-parser';
 import { CSFDSearch, CSFDSearchMovie, CSFDSearchUser } from '../dto/search';
-import { fetchPage } from '../fetchers';
-import { parseIdFromUrl } from '../helpers/global.helper';
-import { getAvatar, getUser, getUserRealName, getUserUrl } from '../helpers/search-user.helper';
+import { fetchPage } from '../fetchers/fetchers.js';
+import { parseIdFromUrl } from '../helpers/global.helper.js';
+import { getAvatar, getUser, getUserRealName, getUserUrl } from '../helpers/search-user.helper.js';
 import {
   getSearchColorRating,
   getSearchOrigins,
@@ -12,8 +12,8 @@ import {
   getSearchUrl,
   getSearchYear,
   parseSearchPeople
-} from '../helpers/search.helper';
-import { searchUrl } from '../vars';
+} from '../helpers/search.helper.js';
+import { searchUrl } from '../vars.js';
 
 export class SearchScraper {
   public async search(text: string): Promise<CSFDSearch> {
