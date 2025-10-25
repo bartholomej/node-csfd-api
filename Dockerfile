@@ -9,7 +9,7 @@ COPY package.json yarn.lock ./
 
 # Install only production dependencies
 RUN yarn --frozen-lockfile --production \
-  && yarn add express dotenv tsx --production \
+  && yarn add express dotenv tsx express-rate-limit express-slow-down --production \
   && yarn cache clean --force
 
 # Copy the application code

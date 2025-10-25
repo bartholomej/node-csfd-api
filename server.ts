@@ -2,7 +2,7 @@
 import 'dotenv/config';
 import express, { NextFunction, Request, Response } from 'express';
 import rateLimit from 'express-rate-limit';
-import slowDown from "express-slow-down";
+import slowDown from 'express-slow-down';
 
 import packageJson from './package.json';
 import { csfd } from './src';
@@ -31,6 +31,7 @@ function logMessage(severity: Severity, log: ErrorLog, req?: Request) {
     ? `${req.method}: ${req.originalUrl}`
     : '';
   const reqIp = req ? req.headers['x-forwarded-for'] || req.socket.remoteAddress || req.ip || req.ips : '';
+  const apiKeyIndex = (req as any)?.apiKeyIndex ?? 'N/A';
 
   const paddedSeverity = {
     info: 'INFO   ',
@@ -39,7 +40,7 @@ function logMessage(severity: Severity, log: ErrorLog, req?: Request) {
     success: 'SUCCESS'
   };
 
-  const msg = `${colors[severity]}[${paddedSeverity[severity]}]${colors.reset} ${time} | IP: ${reqIp} ${symbols[severity]} ${log.error ? log.error + ':' : ''} ${log.message} 🔗 ${reqInfo}`;
+  const msg = `${colors[severity]}[${paddedSeverity[severity]}]${colors.reset} ${time} | IP: ${reqIp} ${symbols[severity]} ${log.error ? log.error + ':' : ''} ${log.message} 🔗 ${reqInfo} ⚿ ${apiKeyIndex}`;
   const logSuccessEnabled = process.env.VERBOSE === 'true';
 
   if (severity === 'success') {
@@ -109,6 +110,7 @@ const SPEED_LIMITER = slowDown({
   delayMs: (hits) => Math.min(hits * 150, 6000), // each subsequent request is delayed by 150 ms, max 5s delay
 });
 
+app.set('trust proxy', 1);
 app.use(SPEED_LIMITER);
 app.use(LIMITER);
 
@@ -129,6 +131,9 @@ app.use((req: Request, res: Response, next: NextFunction): void => {
       res.status(401).json(log);
       return;
     }
+
+    const keyIndex = API_KEYS_LIST.indexOf(apiKey);
+    (req as any).apiKeyIndex = keyIndex;
   }
   next();
 });
