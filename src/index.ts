@@ -1,8 +1,8 @@
-import { CSFDCinema, CSFDCinemaPeriod } from './interfaces/cinema.interface';
-import { CSFDCreator } from './interfaces/creator.interface';
-import { CSFDMovie } from './interfaces/movie.interface';
-import { CSFDSearch } from './interfaces/search.interface';
-import { CSFDUserRatingConfig, CSFDUserRatings } from './interfaces/user-ratings.interface';
+import { CSFDCinema, CSFDCinemaPeriod } from './dto/cinema';
+import { CSFDCreator } from './dto/creator';
+import { CSFDMovie } from './dto/movie';
+import { CSFDSearch } from './dto/search';
+import { CSFDUserRatingConfig, CSFDUserRatings } from './dto/user-ratings';
 import { CinemaScraper } from './services/cinema.service';
 import { CreatorScraper } from './services/creator.service';
 import { MovieScraper } from './services/movie.service';
@@ -55,3 +55,4 @@ export const csfd = new Csfd(
   searchScraper,
   cinemaScraper
 );
+export type * from './dto';

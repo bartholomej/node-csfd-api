@@ -1,5 +1,5 @@
 import { CSFDScreening } from './global';
-import { CSFDCreator } from './movie.interface';
+import { CSFDMovieCreator } from './movie';
 
 export interface CSFDSearch {
   movies: CSFDSearchMovie[];
@@ -22,11 +22,11 @@ export interface CSFDSearchUser {
   url: string;
 }
 
-export interface CSFDSearchCreator extends CSFDCreator {
+export interface CSFDSearchCreator extends CSFDMovieCreator {
   image: string;
 }
 
 export interface CSFDSearchCreators {
-  directors: CSFDCreator[];
-  actors: CSFDCreator[];
+  directors: CSFDMovieCreator[];
+  actors: CSFDMovieCreator[];
 }

@@ -1,25 +1,25 @@
 import { HTMLElement } from 'node-html-parser';
-import { CSFDCreatorScreening } from '../interfaces/creator.interface';
-import { CSFDColorRating } from '../interfaces/global';
-import { Colors } from '../interfaces/user-ratings.interface';
+import { CSFDCreatorScreening } from '../dto/creator';
+import { CSFDColorRating } from '../dto/global';
+import { Colors } from '../dto/user-ratings';
 import { addProtocol, parseColor, parseIdFromUrl } from './global.helper';
 
-export const getColorRating = (el: HTMLElement): CSFDColorRating => {
-  return parseColor(el?.classNames.split(' ').pop() as Colors);
+const getCreatorColorRating = (el: HTMLElement | null): CSFDColorRating => {
+  const classes: string[] = el?.classNames.split(' ') ?? [];
+  const last = classes[classes.length - 1] as Colors | undefined;
+  return parseColor(last);
 };
 
-export const getId = (url: string): number => {
-  if (url) {
-    return parseIdFromUrl(url);
-  }
-  return null;
+export const getCreatorId = (url: string | null | undefined): number | null => {
+  return url ? parseIdFromUrl(url) : null;
 };
 
-export const getName = (el: HTMLElement | null): string => {
-  return el.querySelector('h1').innerText.trim();
+export const getCreatorName = (el: HTMLElement | null): string | null => {
+  const h1 = el?.querySelector('h1');
+  return h1?.innerText?.trim() ?? null;
 };
 
-export const getBirthdayInfo = (
+export const getCreatorBirthdayInfo = (
   el: HTMLElement | null
 ): { birthday: string; age: number; birthPlace: string } => {
   const infoBlock = el.querySelector('h1 + p');
@@ -42,54 +42,50 @@ export const getBirthdayInfo = (
   return { birthday, age, birthPlace };
 };
 
-export const getBio = (el: HTMLElement | null): string => {
-  return el.querySelector('.article-content p')?.text.trim().split('\n')[0].trim() || null;
+export const getCreatorBio = (el: HTMLElement | null): string | null => {
+  const p = el?.querySelector('.article-content p');
+  const first = p?.text?.trim().split('\n')[0]?.trim();
+  return first || null;
 };
 
-export const getPhoto = (el: HTMLElement | null): string => {
-  const image = el.querySelector('img').attributes.src;
-  return addProtocol(image);
+export const getCreatorPhoto = (el: HTMLElement | null): string | null => {
+  const src = el?.querySelector('img')?.getAttribute('src');
+  return src ? addProtocol(src) : null;
 };
 
-export const parseBirthday = (text: string): any => {
-  return text.replace(/nar./g, '').trim();
+const parseBirthday = (text: string): string => text.replace(/nar\./g, '').trim();
+
+const parseAge = (text: string): number | null => {
+  const digits = text.replace(/[^\d]/g, '');
+  return digits ? Number(digits) : null;
 };
 
-export const parseAge = (text: string): any => {
-  return text.trim().replace(/\(/g, '').replace(/let\)/g, '').trim();
-};
+const parseBirthPlace = (text: string): string =>
+  text.trim().replace(/<br>/g, '').trim();
 
-export const parseBirthPlace = (text: string): any => {
-  return text.trim().replace(/<br>/g, '').trim();
-};
 
-export const getFilms = (el: HTMLElement | null): CSFDCreatorScreening[] => {
-  const filmNodes = el.querySelectorAll('.box')[0]?.querySelectorAll('table tr');
-  let yearCache: number;
+export const getCreatorFilms = (el: HTMLElement | null): CSFDCreatorScreening[] => {
+  const filmNodes = el?.querySelectorAll('.box')?.[0]?.querySelectorAll('table tr') ?? [];
+  let yearCache: number | null = null;
   const films = filmNodes.map((filmNode) => {
-    const id = getId(filmNode.querySelector('td.name .film-title-name')?.attributes.href);
-    const title = filmNode.querySelector('.name')?.text.trim();
-    const year = +filmNode.querySelector('.year')?.text.trim();
-    const colorRating = getColorRating(filmNode.querySelector('.name .icon'));
+    const id = getCreatorId(filmNode.querySelector('td.name .film-title-name')?.attributes?.href);
+    const title = filmNode.querySelector('.name')?.text?.trim();
+    const yearText = filmNode.querySelector('.year')?.text?.trim();
+    const year = yearText ? +yearText : null;
+    const colorRating = getCreatorColorRating(filmNode.querySelector('.name .icon'));
 
     // Cache year from previous film because there is a gap between movies with same year
-    if (year) {
+    if (typeof year === 'number' && !isNaN(year)) {
       yearCache = +year;
     }
 
-    if (id && title) {
-      return {
-        id,
-        title,
-        year: year || yearCache,
-        colorRating
-      };
+    const finalYear = year ?? yearCache;
+    if (id != null && title && finalYear != null) {
+      return { id, title, year: finalYear, colorRating };
     }
-    return {};
+    return null;
   });
   // Remove empty objects
-  const filmsUnique = films.filter(
-    (value) => Object.keys(value).length !== 0
-  ) as CSFDCreatorScreening[];
+  const filmsUnique = films.filter(Boolean) as CSFDCreatorScreening[];
   return filmsUnique;
 };

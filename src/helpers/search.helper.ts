@@ -1,47 +1,47 @@
 import { HTMLElement } from 'node-html-parser';
-import { CSFDColorRating, CSFDFilmTypes } from '../interfaces/global';
-import { CSFDCreator } from '../interfaces/movie.interface';
-import { Colors } from '../interfaces/user-ratings.interface';
+import { CSFDColorRating, CSFDFilmTypes } from '../dto/global';
+import { CSFDMovieCreator } from '../dto/movie';
+import { Colors } from '../dto/user-ratings';
 import { addProtocol, parseColor, parseIdFromUrl } from './global.helper';
 
 type Creator = 'Režie:' | 'Hrají:';
 
-export const getType = (el: HTMLElement): CSFDFilmTypes => {
+export const getSearchType = (el: HTMLElement): CSFDFilmTypes => {
   const type = el.querySelectorAll('.film-title-info .info')[1];
-  return (type?.innerText.replace(/[{()}]/g, '') || 'film') as CSFDFilmTypes;
+  return (type?.innerText?.replace(/[{()}]/g, '')?.trim() || 'film') as CSFDFilmTypes;
 };
 
-export const getTitle = (el: HTMLElement): string => {
+export const getSearchTitle = (el: HTMLElement): string => {
   return el.querySelector('.film-title-name').text;
 };
 
-export const getYear = (el: HTMLElement): number => {
+export const getSearchYear = (el: HTMLElement): number => {
   return +el.querySelectorAll('.film-title-info .info')[0]?.innerText.replace(/[{()}]/g, '');
 };
 
-export const getUrl = (el: HTMLElement): string => {
+export const getSearchUrl = (el: HTMLElement): string => {
   return el.querySelector('.film-title-name').attributes.href;
 };
 
-export const getColorRating = (el: HTMLElement): CSFDColorRating => {
+export const getSearchColorRating = (el: HTMLElement): CSFDColorRating => {
   return parseColor(
     el.querySelector('.article-header i.icon').classNames.split(' ').pop() as Colors
   );
 };
 
-export const getPoster = (el: HTMLElement): string => {
+export const getSearchPoster = (el: HTMLElement): string => {
   const image = el.querySelector('img').attributes.src;
   return addProtocol(image);
 };
 
-export const getOrigins = (el: HTMLElement): string[] => {
+export const getSearchOrigins = (el: HTMLElement): string[] => {
   const originsRaw = el.querySelector('.article-content p .info')?.text;
   if (!originsRaw) return [];
   const originsAll = originsRaw?.split(', ')?.[0];
   return originsAll?.split('/').map((country) => country.trim());
 };
 
-export const parsePeople = (el: HTMLElement, type: 'directors' | 'actors'): CSFDCreator[] => {
+export const parseSearchPeople = (el: HTMLElement, type: 'directors' | 'actors'): CSFDMovieCreator[] => {
   let who: Creator;
   if (type === 'directors') who = 'Režie:';
   if (type === 'actors') who = 'Hrají:';

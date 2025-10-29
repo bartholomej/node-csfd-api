@@ -1,19 +1,21 @@
 {
   "compilerOptions": {
-    "target": "es2017",
+    "target": "es2015",
     "lib": ["dom"],
     "types": ["node"],
     "baseUrl": "./src",
     "esModuleInterop": true,
-    "module": "commonjs",
-    "strictNullChecks": false,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "strictNullChecks": false, // will be more strict in future releases
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
     "sourceMap": false,
     "outDir": "./dist",
     "strict": true,
     "declaration": true,
     "pretty": true,
     "skipLibCheck": true,
-    "resolveJsonModule": true,
     "alwaysStrict": true,
     "noImplicitAny": true,
     "noImplicitReturns": true
