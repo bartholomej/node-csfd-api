@@ -3,14 +3,12 @@ FROM node:24-alpine AS build
 
 WORKDIR /usr/src/app
 
-COPY package.json yarn.lock tsconfig.json ./
+COPY . .
 
 # RUN corepack enable \
 #     && corepack prepare yarn@4 --activate
 
-RUN yarn
-
-COPY . .
+RUN yarn --frozen-lockfile
 
 RUN yarn build && yarn build:server
 
@@ -27,8 +25,8 @@ COPY --from=build /usr/src/app/dist ./
 # RUN corepack enable \
 #     && corepack prepare yarn@4 --activate
 
-RUN yarn --production  \
-    && yarn add express dotenv cors express-rate-limit express-slow-down \
+RUN yarn --frozen-lockfile --production  \
+    && yarn add express dotenv cors \
     && yarn cache clean
 
 EXPOSE 3000
