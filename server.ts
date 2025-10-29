@@ -1,12 +1,17 @@
 
 import 'dotenv/config';
 import express, { NextFunction, Request, Response } from 'express';
-import rateLimit from 'express-rate-limit';
-import slowDown from "express-slow-down";
-
-import packageJson from './package.json';
+// import rateLimit from 'express-rate-limit';
+// import slowDown from 'express-slow-down';
+import { readFileSync } from 'fs';
+import { dirname, join } from 'path';
+import { fileURLToPath } from 'url';
 import { csfd } from './src';
 import { CSFDFilmTypes } from './src/dto/global';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+const packageJson = JSON.parse(readFileSync(join(__dirname, 'package.json'), 'utf-8'));
 
 type Severity = 'info' | 'warn' | 'error' | 'success';
 
@@ -90,27 +95,27 @@ const API_KEY = process.env.API_KEY;
 
 const API_KEYS_LIST = API_KEY ? API_KEY.split(/[,;\s]+/).map(k => k.trim()).filter(Boolean) : [];
 
-const limiterMinutes = 15;
+// const limiterMinutes = 15;
 
-const LIMITER = rateLimit({
-  windowMs: limiterMinutes * 60 * 1000,
-  max: 300, // 300 requests / 15 minutes = average 1 req every 3 seconds
-  standardHeaders: true,
-  legacyHeaders: false,
-  message: {
-    error: Errors.TOO_MANY_REQUESTS,
-    message: `Too many requests from this IP. Please try again after ${limiterMinutes} minutes.`
-  }
-});
+// const LIMITER = rateLimit({
+//   windowMs: limiterMinutes * 60 * 1000,
+//   max: 300, // 300 requests / 15 minutes = average 1 req every 3 seconds
+//   standardHeaders: true,
+//   legacyHeaders: false,
+//   message: {
+//     error: Errors.TOO_MANY_REQUESTS,
+//     message: `Too many requests from this IP. Please try again after ${limiterMinutes} minutes.`
+//   }
+// });
 
-const SPEED_LIMITER = slowDown({
-  windowMs: 5 * 60 * 1000, // 5 minutes
-  delayAfter: 10,          // first 10 requests are free of delay
-  delayMs: (hits) => Math.min(hits * 150, 6000), // each subsequent request is delayed by 150 ms, max 5s delay
-});
+// const SPEED_LIMITER = slowDown({
+//   windowMs: 5 * 60 * 1000, // 5 minutes
+//   delayAfter: 10,          // first 10 requests are free of delay
+//   delayMs: (hits) => Math.min(hits * 150, 6000), // each subsequent request is delayed by 150 ms, max 5s delay
+// });
 
-app.use(SPEED_LIMITER);
-app.use(LIMITER);
+// app.use(SPEED_LIMITER);
+// app.use(LIMITER);
 
 // --- Middleware for optional header check ---
 app.use((req: Request, res: Response, next: NextFunction): void => {
