@@ -1,0 +1,18 @@
+{
+  "type": "commonjs",
+  "name": "cjs-example",
+  "version": "1.0.0",
+  "description": "Example for testing CJS compatibility",
+  "main": "index.js",
+  "scripts": {
+    "build": "node server.js",
+    "build:ts": "tsx server.ts"
+  },
+  "dependencies": {
+    "node-csfd-api": "^3.0.0-alpha.2"
+  },
+  "devDependencies": {
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3"
+  }
+}
