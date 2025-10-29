@@ -1,21 +1,24 @@
-name: Build && Test
+name: ⏰ Live test
 
 on:
   schedule:
     - cron: '0 9 * * TUE'
+    - cron: '0 18 * * FRI'
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
+    name: 🧪 Live test
 
     steps:
-      - uses: actions/checkout@v4
-      - name: Use Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - name: 🔧 Use Node.js
+        uses: actions/setup-node@v6
         with:
           node-version: 24
 
-      - name: Cache node modules
+      - name: 💾 Cache node modules
         uses: actions/cache@v4
         with:
           path: node_modules
@@ -25,16 +28,16 @@ jobs:
             ${{ runner.OS }}-build-
             ${{ runner.OS }}-
 
-      - name: Install dependencies
+      - name: 📦 Install dependencies
         run: yarn
 
-      - name: Build app
+      - name: 🏗️ Build app
         run: yarn build
 
-      - name: Build app
+      - name: 🧪 Tests
         run: yarn test:coverage
 
-      - name: Upload coverage to Codecov
+      - name: 📊 Upload coverage to Codecov
         uses: codecov/codecov-action@v5
         with:
           fail_ci_if_error: true
