@@ -55,3 +55,4 @@ export const csfd = new Csfd(
   searchScraper,
   cinemaScraper
 );
+export type * from './dto';
