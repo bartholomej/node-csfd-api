@@ -22,6 +22,29 @@ export const getTitle = (el: HTMLElement): string => {
   return el.querySelector('h1').innerText.split(`(`)[0].trim();
 };
 
+export const getParent = (el: HTMLElement): string => {
+  let parentId = null;
+  parentId = getId(el.querySelector('h2').childNodes) || getId(el.querySelector('h1').childNodes);
+  return (parentId);
+
+  function getId(nodes: any){
+      let parentId = null;
+      let i = nodes.length; //we get all objects
+      while (i > 0){
+          i--;
+          let node = nodes[i];
+          if (node?._rawAttrs?.href){
+              let arr = node._rawAttrs.href.split("/").filter(function (el: any) {
+                return el != "";
+              });
+              parentId = arr[arr.length-1].split("-")[0];
+              break;
+          }
+      }
+      return(parentId);
+  };
+};
+
 export const getGenres = (el: HTMLElement): CSFDGenres[] => {
   const genresRaw = el.querySelector('.genres').textContent;
   return genresRaw.split(' / ') as CSFDGenres[];
@@ -190,6 +213,15 @@ export const getGroup = (el: HTMLElement, group: CSFDCreatorGroups): CSFDCreator
 export const getType = (el: HTMLElement): string => {
   const type = el.querySelector('.film-header-name .type');
   return type?.innerText?.replace(/[{()}]/g, '') || 'film';
+};
+
+export const getEpisodeNum = (el: HTMLElement): string => {
+  const titleArray = el.querySelector('h1').innerText.split(`(`);
+  if (titleArray.length > 1){
+    return (titleArray[titleArray.length-1].replace(`)`, ``).trim())
+  } else {
+    return (null);
+  }
 };
 
 export const getVods = (el: HTMLElement | null): CSFDVod[] => {
