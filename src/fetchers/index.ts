@@ -7,13 +7,20 @@ const USER_AGENTS: string[] = [
   'Mozilla/5.0 (Linux; Android 10) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.101 Mobile Safari/537.36'
 ];
 
-const headers = new Headers({
+const defaultHeaders = {
   'User-Agent': USER_AGENTS[Math.floor(Math.random() * USER_AGENTS.length)],
-});
+};
 
 export const fetchPage = async (url: string, optionsRequest?: RequestInit): Promise<string> => {
   try {
-    const response = await fetchSafe(url, { headers, credentials: 'omit', ...optionsRequest });
+    const mergedHeaders = new Headers(defaultHeaders);
+    if (optionsRequest?.headers) {
+      const reqHeaders = new Headers(optionsRequest.headers);
+      reqHeaders.forEach((value, key) => mergedHeaders.set(key, value));
+    }
+    const { headers: _, ...restOptions } = optionsRequest || {};
+
+    const response = await fetchSafe(url, { credentials: 'omit', ...restOptions, headers: mergedHeaders });
     if (response.status >= 400 && response.status < 600) {
       throw new Error(`node-csfd-api: Bad response ${response.status} for url: ${url}`);
     }
