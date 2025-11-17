@@ -28,13 +28,13 @@ import { movieUrl } from '../vars';
 export class MovieScraper {
   private film: CSFDMovie;
 
-  public async movie(movieId: number): Promise<CSFDMovie> {
+  public async movie(movieId: number, optionsRequest?: RequestInit): Promise<CSFDMovie> {
     const id = Number(movieId);
     if (isNaN(id)) {
       throw new Error('node-csfd-api: movieId must be a valid number');
     }
     const url = movieUrl(id);
-    const response = await fetchPage(url);
+    const response = await fetchPage(url, { ...optionsRequest });
 
     const movieHtml = parse(response);
 

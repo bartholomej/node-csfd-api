@@ -20,12 +20,12 @@ export class UserRatingsScraper {
 
   public async userRatings(
     user: string | number,
-    config?: CSFDUserRatingConfig
+    config?: CSFDUserRatingConfig,
+    optionsRequest?: RequestInit
   ): Promise<CSFDUserRatings[]> {
     let allMovies: CSFDUserRatings[] = [];
     const url = userRatingsUrl(user);
-    const response = await fetchPage(url);
-
+    const response = await fetchPage(url, { ...optionsRequest });
     const items = parse(response);
     const movies = items.querySelectorAll('.box-user-rating .table-container tbody tr');
 
@@ -41,7 +41,7 @@ export class UserRatingsScraper {
       for (let i = 2; i <= pages; i++) {
         console.log('Fetching page', i, 'out of', pages, '...');
         const url = userRatingsUrl(user, i);
-        const response = await fetchPage(url);
+        const response = await fetchPage(url, { ...optionsRequest });
 
         const items = parse(response);
         const movies = items.querySelectorAll('.box-user-rating .table-container tbody tr');

@@ -15,10 +15,11 @@ export class CinemaScraper {
 
   public async cinemas(
     district: number = 1,
-    period: CSFDCinemaPeriod = 'today'
+    period: CSFDCinemaPeriod = 'today',
+    optionsRequest?: RequestInit
   ): Promise<CSFDCinema[]> {
     const url = cinemasUrl(district, period);
-    const response = await fetchPage(url);
+    const response = await fetchPage(url, { ...optionsRequest });
 
     const cinemasHtml = parse(response);
 

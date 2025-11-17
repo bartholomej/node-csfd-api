@@ -16,9 +16,9 @@ import {
 import { searchUrl } from '../vars';
 
 export class SearchScraper {
-  public async search(text: string): Promise<CSFDSearch> {
+  public async search(text: string, optionsRequest?: RequestInit): Promise<CSFDSearch> {
     const url = searchUrl(text);
-    const response = await fetchPage(url);
+    const response = await fetchPage(url, { ...optionsRequest });
 
     const html = parse(response);
     const moviesNode = html.querySelectorAll('.main-movies article');

@@ -1,6 +1,8 @@
 // import { writeFile } from 'fs';
 import { csfd } from './src';
 
+// csfd.setOptions({ optionsRequest: { credentials: 'include' } });
+
 // Parse movie
 csfd.movie(10135).then((movie) => console.log(movie));
 

@@ -7,13 +7,13 @@ import { creatorUrl } from '../vars';
 export class CreatorScraper {
   private person: CSFDCreator;
 
-  public async creator(creatorId: number): Promise<CSFDCreator> {
+  public async creator(creatorId: number, optionsRequest?: RequestInit): Promise<CSFDCreator> {
     const id = Number(creatorId);
     if (isNaN(id)) {
       throw new Error('node-csfd-api: creatorId must be a valid number');
     }
     const url = creatorUrl(id);
-    const response = await fetchPage(url);
+    const response = await fetchPage(url, { ...optionsRequest });
 
     const creatorHtml = parse(response);
 
