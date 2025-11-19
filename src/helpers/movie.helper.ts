@@ -6,16 +6,36 @@ import {
   CSFDGenres,
   CSFDMovieCreator,
   CSFDMovieListItem,
+  CSFDParent,
   CSFDPremiere,
+  CSFDSeason,
   CSFDTitlesOther,
   CSFDVod,
   CSFDVodService
 } from '../dto/movie';
-import { addProtocol, getColor, parseISO8601Duration, parseIdFromUrl } from './global.helper';
+import { addProtocol, getColor, parseISO8601Duration, parseIdFromUrl, parseLastIdFromUrl } from './global.helper';
 
 export const getMovieId = (el: HTMLElement): number => {
   const url = el.querySelector('.tabs .tab-nav-list a').attributes.href;
   return parseIdFromUrl(url);
+};
+
+export const getSerieasAndSeasonTitle = (el: HTMLElement): { seriesName: string; seasonName: string | null } => {
+  const titleElement = el.querySelector('h1');
+  if (!titleElement) {
+    return { seriesName: null, seasonName: null };
+  }
+
+  const fullText = titleElement.innerText.trim();
+
+  // Check if there's a series part indicated by ' - '
+  if (fullText.includes(' - ')) {
+    const [seriesName, seasonName] = fullText.split(' - ').map(part => part.trim());
+    return { seriesName, seasonName };
+  }
+
+  // If no series part found, return just the name
+  return { seriesName: fullText, seasonName: null };
 };
 
 export const getMovieTitle = (el: HTMLElement): string => {
@@ -176,6 +196,67 @@ const parseMoviePeople = (el: HTMLElement): CSFDMovieCreator[] => {
       })
   );
 };
+
+export const getSeasonsOrEpisodes = (el: HTMLElement, serie?: { id: number; title: string; }): CSFDSeason[] | null => {
+  const childrenList = el.querySelector('.film-episodes-list');
+  if (!childrenList) return null;
+
+  const childrenNodes = childrenList.querySelectorAll('.film-title');
+  if (!childrenNodes?.length) return [];
+
+  return childrenNodes.map((season) => {
+    const nameContainer = season.querySelector('.film-title-name');
+    const infoContainer = season.querySelector('.info');
+
+    return {
+      id: parseLastIdFromUrl(nameContainer?.getAttribute('href') || ''),
+      name: nameContainer?.textContent?.trim() || null,
+      url: nameContainer?.getAttribute('href') || null,
+      info: infoContainer?.textContent?.replace(/[{()}]/g, '').trim() || null,
+    };
+  });
+}
+
+export const getEpisodeCode = (el: HTMLElement): string | null => {
+  const filmHeaderName = el.querySelector('.film-header-name h1');
+  if (!filmHeaderName) return null;
+
+  const text = filmHeaderName.textContent?.trim() || '';
+  const match = text.match(/\(([^)]+)\)/);
+  const code = match ? match[1] : null;
+
+  return code;
+}
+
+export const detectSeasonOrEpisodeListType = (el: HTMLElement) => {
+  const headerText = el.querySelector('.box-header h3')?.innerText.trim() ?? '';
+
+  if (headerText.includes('Série')) return 'seasons';
+  if (headerText.startsWith('Epizody')) return 'episodes';
+  return null;
+}
+
+export const getSeasonorEpisodeParent = (el: HTMLElement, serie?: { id: number; name: string; }): CSFDParent | null => {
+  const parents = el.querySelectorAll('.film-header h2 a');
+  if (parents.length === 0) {
+    if (!serie) return null;
+    return { series: serie, season: null };
+  }
+
+  const [parentSeries, parentSeason] = parents;
+
+  const seriesId = parseIdFromUrl(parentSeries?.getAttribute('href'));
+  const seasonId = parseIdFromUrl(parentSeason?.getAttribute('href'));
+  const seriesName = parentSeries?.textContent?.trim() || null;
+  const seasonName = parentSeason?.textContent?.trim() || null;
+
+  const series = seriesId && seriesName ? { id: seriesId, name: seriesName } : null;
+  const season = seasonId && seasonName ? { id: seasonId, name: seasonName } : null;
+
+  if (!series && !season) return null;
+
+  return { series, season };
+}
 
 export const getMovieGroup = (el: HTMLElement, group: CSFDCreatorGroups): CSFDMovieCreator[] => {
   const creators = el.querySelectorAll('.creators h4');

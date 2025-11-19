@@ -3,6 +3,8 @@ import { CSFDFilmTypes } from '../dto/global';
 import { CSFDMovie } from '../dto/movie';
 import { fetchPage } from '../fetchers';
 import {
+  detectSeasonOrEpisodeListType,
+  getEpisodeCode,
   getMovieBoxMovies,
   getMovieColorRating,
   getMovieDescriptions,
@@ -21,7 +23,10 @@ import {
   getMovieTrivia,
   getMovieType,
   getMovieVods,
-  getMovieYear
+  getMovieYear,
+  getSeasonorEpisodeParent,
+  getSeasonsOrEpisodes,
+  getSerieasAndSeasonTitle
 } from '../helpers/movie.helper';
 import { movieUrl } from '../vars';
 
@@ -53,14 +58,19 @@ export class MovieScraper {
     pageClasses: string[],
     jsonLd: string
   ) {
+    const type = getMovieType(el) as CSFDFilmTypes;
+    const { seriesName = null, seasonName = null } = type === 'série' ? getSerieasAndSeasonTitle(el) : {};
+    const seasonOrEpisodeListType = detectSeasonOrEpisodeListType(el);
+
+    const title = type === 'série' && seriesName ? seriesName : getMovieTitle(el);
     this.film = {
       id: movieId,
-      title: getMovieTitle(el),
+      title,
       year: getMovieYear(jsonLd),
       duration: getMovieDuration(jsonLd, el),
       descriptions: getMovieDescriptions(el),
       genres: getMovieGenres(el),
-      type: getMovieType(el) as CSFDFilmTypes,
+      type,
       url: movieUrl(movieId),
       origins: getMovieOrigins(el),
       colorRating: getMovieColorRating(pageClasses),
@@ -80,13 +90,18 @@ export class MovieScraper {
         producers: getMovieGroup(el, 'Produkce'),
         filmEditing: getMovieGroup(el, 'Střih'),
         costumeDesign: getMovieGroup(el, 'Kostýmy'),
-        productionDesign: getMovieGroup(el, 'Scénografie')
+        productionDesign: getMovieGroup(el, 'Scénografie'),
       },
       vod: getMovieVods(asideEl),
       tags: getMovieTags(asideEl),
       premieres: getMoviePremieres(asideEl),
       related: getMovieBoxMovies(asideEl, 'Související'),
-      similar: getMovieBoxMovies(asideEl, 'Podobné')
+      similar: getMovieBoxMovies(asideEl, 'Podobné'),
+      seasons: seasonOrEpisodeListType === 'seasons' ? getSeasonsOrEpisodes(el) : null,
+      episodes: seasonOrEpisodeListType === 'episodes' ? getSeasonsOrEpisodes(el) : null,
+      parent: (type === 'seriál') ? null : getSeasonorEpisodeParent(el, { id: movieId, name: title }),
+      episodeCode: type === 'epizoda' ? getEpisodeCode(el) : null,
+      seasonName,
     };
   }
 }
