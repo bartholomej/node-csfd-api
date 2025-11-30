@@ -23,7 +23,7 @@ export class CinemaScraper {
 
     const cinemasHtml = parse(response);
 
-    const contentNode = cinemasHtml.querySelectorAll('#snippet--cinemas section.box');
+    const contentNode = cinemasHtml.querySelectorAll('#snippet--cinemas section[id*="cinema-"]');
 
     this.buildCinemas(contentNode);
     return this.cinema;

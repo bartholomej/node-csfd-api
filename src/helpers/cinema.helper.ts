@@ -1,9 +1,5 @@
 import { HTMLElement } from 'node-html-parser';
-import {
-  CSFDCinemaGroupedFilmsByDate,
-  CSFDCinemaMeta,
-  CSFDCinemaMovie
-} from '../dto/cinema';
+import { CSFDCinemaGroupedFilmsByDate, CSFDCinemaMeta, CSFDCinemaMovie } from '../dto/cinema';
 import { CSFDColorRating } from '../dto/global';
 import { Colors } from '../dto/user-ratings';
 import { parseColor, parseIdFromUrl } from './global.helper';
@@ -25,7 +21,6 @@ export const getCinemaUrlId = (url: string | null | undefined): number | null =>
 };
 
 export const getCinemaCoords = (el: HTMLElement | null): { lat: number; lng: number } | null => {
-
   if (!el) return null;
   const linkMapsEl = el.querySelector('a[href*="q="]');
   if (!linkMapsEl) return null;
@@ -46,11 +41,11 @@ export const getCinemaCoords = (el: HTMLElement | null): { lat: number; lng: num
 
 export const getCinemaUrl = (el: HTMLElement | null): string => {
   if (!el) return '';
-  return el.querySelector('a[title="Přejít na webovou stránku kina"]')?.attributes.href ?? '';
+  return el.querySelector('.cinema-logo a')?.attributes.href ?? '';
 };
 
 export const parseCinema = (el: HTMLElement | null): { city: string; name: string } => {
-  const title = el.querySelector('.box-header h2').innerText.trim();
+  const title = el.querySelector('header h2').innerText.trim();
   const [city, name] = title.split(' - ');
   return { city, name };
 };

@@ -51,7 +51,11 @@ export class Csfd {
     return this.searchService.search(text, opts);
   }
 
-  public async cinema(district: number | string, period: CSFDCinemaPeriod, optionsRequest?: RequestInit): Promise<CSFDCinema[]> {
+  public async cinema(
+    district: number | string,
+    period: CSFDCinemaPeriod,
+    optionsRequest?: RequestInit
+  ): Promise<CSFDCinema[]> {
     const opts = optionsRequest ?? this.defaultOptionsRequest;
     return this.cinemaService.cinemas(+district, period, opts);
   }
@@ -70,4 +74,5 @@ export const csfd = new Csfd(
   searchScraper,
   cinemaScraper
 );
+
 export type * from './dto';
