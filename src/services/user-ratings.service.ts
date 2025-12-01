@@ -16,8 +16,6 @@ import {
 import { userRatingsUrl } from '../vars';
 
 export class UserRatingsScraper {
-  private films: CSFDUserRatings[] = [];
-
   public async userRatings(
     user: string | number,
     config?: CSFDUserRatingConfig,
@@ -45,7 +43,7 @@ export class UserRatingsScraper {
 
         const items = parse(response);
         const movies = items.querySelectorAll('.box-user-rating .table-container tbody tr');
-        allMovies = [...this.getPage(config, movies)];
+        allMovies = [...allMovies, ...this.getPage(config, movies)];
 
         // Sleep
         if (config.allPagesDelay) {
@@ -59,6 +57,7 @@ export class UserRatingsScraper {
   }
 
   private getPage(config: CSFDUserRatingConfig, movies: HTMLElement[]) {
+    const films: CSFDUserRatings[] = [];
     if (config) {
       if (config.includesOnly?.length && config.excludes?.length) {
         console.warn(
@@ -76,23 +75,23 @@ export class UserRatingsScraper {
       // Filtering includesOnly
       if (config?.includesOnly?.length) {
         if (config.includesOnly.some((include) => type === include)) {
-          this.buildUserRatings(el);
+          films.push(this.buildUserRatings(el));
         }
         // Filter exludes
       } else if (config?.excludes?.length) {
         if (!config.excludes.some((exclude) => type === exclude)) {
-          this.buildUserRatings(el);
+          films.push(this.buildUserRatings(el));
         }
       } else {
         // Without filtering
-        this.buildUserRatings(el);
+        films.push(this.buildUserRatings(el));
       }
     }
-    return this.films;
+    return films;
   }
 
-  private buildUserRatings(el: HTMLElement) {
-    this.films.push({
+  private buildUserRatings(el: HTMLElement): CSFDUserRatings {
+    return {
       id: getUserRatingId(el),
       title: getUserRatingTitle(el),
       year: getUserRatingYear(el),
@@ -101,6 +100,6 @@ export class UserRatingsScraper {
       colorRating: getUserRatingColorRating(el) as CSFDColorRating,
       userDate: getUserRatingDate(el),
       userRating: getUserRating(el) as CSFDStars
-    });
+    };
   }
 }
