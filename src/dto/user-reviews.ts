@@ -4,6 +4,7 @@ export interface CSFDUserReviews extends CSFDScreening {
   userRating: CSFDStars;
   userDate: string; // TODO datetime
   text: string;
+  poster: string;
 }
 
 export interface CSFDUserReviewsConfig {

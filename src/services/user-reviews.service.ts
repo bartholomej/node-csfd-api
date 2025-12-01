@@ -7,6 +7,7 @@ import {
   getUserReviewColorRating,
   getUserReviewDate,
   getUserReviewId,
+  getUserReviewPoster,
   getUserReviewRating,
   getUserReviewText,
   getUserReviewTitle,
@@ -101,7 +102,8 @@ export class UserReviewsScraper {
       colorRating: getUserReviewColorRating(el) as CSFDColorRating,
       userDate: getUserReviewDate(el),
       userRating: getUserReviewRating(el) as CSFDStars,
-      text: getUserReviewText(el)
+      text: getUserReviewText(el),
+      poster: getUserReviewPoster(el)
     };
   }
 }

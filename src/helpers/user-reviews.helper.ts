@@ -49,3 +49,22 @@ export const getUserReviewUrl = (el: HTMLElement): string => {
 export const getUserReviewText = (el: HTMLElement): string => {
   return el.querySelector('.user-reviews-text .comment').text.trim();
 };
+
+export const getUserReviewPoster = (el: HTMLElement): string => {
+  const img = el.querySelector('.article-img img');
+  const srcset = img?.attributes.srcset;
+
+  if (srcset) {
+    // Extract 3x version from srcset (e.g., "url 1x, url 2x, url 3x")
+    const srcsetParts = srcset.split(',').map((s) => s.trim());
+    const poster3x = srcsetParts.find((s) => s.endsWith('3x'));
+    if (poster3x) {
+      const url = poster3x.replace(/\s+3x$/, '').trim();
+      return `https:${url}`;
+    }
+  }
+
+  // Fallback to src if srcset not available
+  const src = img?.attributes.src;
+  return src ? `https:${src}` : null;
+};
