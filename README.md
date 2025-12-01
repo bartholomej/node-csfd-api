@@ -31,6 +31,7 @@ npm install node-csfd-api
 
 - [Movies and TV Series](#Movie)
 - [User Ratings](#User-Ratings)
+- [User Reviews](#User-Reviews)
 - [Search](#Search)
 - [Creators](#Creators)
 
@@ -46,7 +47,7 @@ csfd.movie(535121).then((movie) => console.log(movie));
 
 <details>
   <summary>Click here to see full result example</summary>
-  
+
 ```javascript
 {
   id: 535121,
@@ -138,6 +139,7 @@ csfd.movie(535121).then((movie) => console.log(movie));
   ]
 }
 ```
+
 </details>
 
 ### Search
@@ -152,7 +154,7 @@ csfd.search('bart').then((search) => console.log(search));
 
 <details>
   <summary>Click here to see full result example</summary>
-  
+
 ```javascript
 [
   {
@@ -362,6 +364,71 @@ csfd
 
 _Note: You can not use both parameters `includesOnly` and `excludes`. Parameter `includesOnly` has a priority._
 
+### User Reviews
+
+#### Last reviews (last page)
+
+Get [user's last reviews](https://www.csfd.cz/uzivatel/195357-verbal/recenze/)
+
+```javascript
+import { csfd } from 'node-csfd-api';
+
+csfd.userReviews(195357).then((reviews) => console.log(reviews));
+```
+
+#### All reviews (all pages)
+
+> Warning: Use it wisely. Can be detected and banned. Consider using it together with `allPagesDelay` attribute.
+
+Get [all user reviews](https://www.csfd.cz/uzivatel/195357-verbal/recenze/)
+
+```javascript
+import { csfd } from 'node-csfd-api';
+
+csfd
+  .userReviews(195357, {
+    allPages: true, // Download all pages (one by one)
+    allPagesDelay: 2000 // Make delay 2000ms on each page request
+  })
+  .then((reviews) => console.log(reviews));
+```
+
+<details>
+  <summary>Click here to see full result example</summary>
+
+```javascript
+[
+  {
+    id: 1391448,
+    title: 'Co s Péťou?',
+    year: 2025,
+    type: 'film',
+    url: 'https://www.csfd.cz/film/1391448-co-s-petou/prehled/',
+    colorRating: 'good',
+    userDate: '27.11.2025',
+    userRating: 4,
+    text: 'Co s Péťou? Inu, co by? Každý normální Sparťan by to okamžitě mrdnul z útesu...',
+    poster:
+      'https://image.pmgstatic.com/cache/resized/w240h339/files/images/film/posters/170/492/170492173_1l3djd.jpg'
+  },
+  {
+    id: 1530416,
+    title: 'Kouzlo derby',
+    year: 2025,
+    type: 'film',
+    url: 'https://www.csfd.cz/film/1530416-kouzlo-derby/prehled/',
+    colorRating: 'average',
+    userDate: '26.11.2025',
+    userRating: 1,
+    text: 'Typické kolečkoidní sebevykradačské pásmo klišovitých...',
+    poster:
+      'https://image.pmgstatic.com/cache/resized/w240h339/files/images/film/posters/170/230/170230377_cimu90.jpg'
+  }
+];
+```
+
+</details>
+
 ## 📦 Docker
 
 You can use this library in Docker.
@@ -398,6 +465,7 @@ docker run -p 3000:3000 node-csfd-api
 - `/search/quentin+tarantino`
 - `/creator/2120`
 - `/user-ratings/912-bart`
+- `/user-reviews/195357`
 
 ## 🧑‍💻 Used by
 
@@ -449,7 +517,7 @@ docker run -p 3000:3000 node-csfd-api
   - [x] Similar movies
   - [x] Trivia
   - [x] Photo from movie (random)
-  - [ ] Reviews
+  - [ ] Reviews (from movie page)
   - [ ] OST
 - [ ] Search
   - [x] Movies
@@ -462,6 +530,10 @@ docker run -p 3000:3000 node-csfd-api
 - [x] User Ratings
   - [x] Last ratings
   - [x] All pages
+- [x] User Reviews
+  - [x] Last reviews
+  - [x] All pages
+  - [ ] Filter by type
 
 ## 🛠️ Development
 
