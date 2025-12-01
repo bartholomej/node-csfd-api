@@ -13,29 +13,32 @@ import {
   getSearchYear,
   parseSearchPeople
 } from '../helpers/search.helper';
+import { CSFDOptions } from '../types';
 import { searchUrl } from '../vars';
 
 export class SearchScraper {
-  public async search(text: string, optionsRequest?: RequestInit): Promise<CSFDSearch> {
-    const url = searchUrl(text);
-    const response = await fetchPage(url, { ...optionsRequest });
+  public async search(text: string, options?: CSFDOptions): Promise<CSFDSearch> {
+    const url = searchUrl(text, options?.baseUrl);
+    const response = await fetchPage(url, { ...options?.request });
 
     const html = parse(response);
     const moviesNode = html.querySelectorAll('.main-movies article');
     const usersNode = html.querySelectorAll('.main-users article');
     const tvSeriesNode = html.querySelectorAll('.main-series article');
 
-    return this.parseSearch(moviesNode, usersNode, tvSeriesNode);
+    return this.parseSearch(moviesNode, usersNode, tvSeriesNode, options?.baseUrl);
   }
 
   private parseSearch(
     moviesNode: HTMLElement[],
     usersNode: HTMLElement[],
-    tvSeriesNode: HTMLElement[]
+    tvSeriesNode: HTMLElement[],
+    baseUrl?: string
   ) {
     const movies: CSFDSearchMovie[] = [];
     const users: CSFDSearchUser[] = [];
     const tvSeries: CSFDSearchMovie[] = [];
+    const urlPrefix = baseUrl || 'https://www.csfd.cz';
 
     moviesNode.forEach((m) => {
       const url = getSearchUrl(m);
@@ -44,7 +47,7 @@ export class SearchScraper {
         id: parseIdFromUrl(url),
         title: getSearchTitle(m),
         year: getSearchYear(m),
-        url: `https://www.csfd.cz${url}`,
+        url: `${urlPrefix}${url}`,
         type: getSearchType(m),
         colorRating: getSearchColorRating(m),
         poster: getSearchPoster(m),
@@ -65,7 +68,7 @@ export class SearchScraper {
         user: getUser(m),
         userRealName: getUserRealName(m),
         avatar: getAvatar(m),
-        url: `https://www.csfd.cz${url}`
+        url: `${urlPrefix}${url}`
       };
       users.push(user);
     });
@@ -77,7 +80,7 @@ export class SearchScraper {
         id: parseIdFromUrl(url),
         title: getSearchTitle(m),
         year: getSearchYear(m),
-        url: `https://www.csfd.cz${url}`,
+        url: `${urlPrefix}${url}`,
         type: getSearchType(m),
         colorRating: getSearchColorRating(m),
         poster: getSearchPoster(m),

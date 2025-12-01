@@ -23,16 +23,17 @@ import {
   getMovieVods,
   getMovieYear
 } from '../helpers/movie.helper';
+import { CSFDOptions } from '../types';
 import { movieUrl } from '../vars';
 
 export class MovieScraper {
-  public async movie(movieId: number, optionsRequest?: RequestInit): Promise<CSFDMovie> {
+  public async movie(movieId: number, options?: CSFDOptions): Promise<CSFDMovie> {
     const id = Number(movieId);
     if (isNaN(id)) {
       throw new Error('node-csfd-api: movieId must be a valid number');
     }
-    const url = movieUrl(id);
-    const response = await fetchPage(url, { ...optionsRequest });
+    const url = movieUrl(id, options?.baseUrl);
+    const response = await fetchPage(url, { ...options?.request });
 
     const movieHtml = parse(response);
 

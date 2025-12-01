@@ -13,18 +13,19 @@ import {
   getUserRatingUrl,
   getUserRatingYear
 } from '../helpers/user-ratings.helper';
+import { CSFDOptions } from '../types';
 import { userRatingsUrl } from '../vars';
 
 export class UserRatingsScraper {
   public async userRatings(
     user: string | number,
     config?: CSFDUserRatingConfig,
-    optionsRequest?: RequestInit
+    options?: CSFDOptions
   ): Promise<CSFDUserRatings[]> {
     let allMovies: CSFDUserRatings[] = [];
     const pageToFetch = config?.page || 1;
-    const url = userRatingsUrl(user, pageToFetch > 1 ? pageToFetch : undefined);
-    const response = await fetchPage(url, { ...optionsRequest });
+    const url = userRatingsUrl(user, pageToFetch > 1 ? pageToFetch : undefined, options?.baseUrl);
+    const response = await fetchPage(url, { ...options?.request });
     const items = parse(response);
     const movies = items.querySelectorAll('.box-user-rating .table-container tbody tr');
 
@@ -39,8 +40,8 @@ export class UserRatingsScraper {
       console.log('Fetching all pages', pages);
       for (let i = 2; i <= pages; i++) {
         console.log('Fetching page', i, 'out of', pages, '...');
-        const url = userRatingsUrl(user, i);
-        const response = await fetchPage(url, { ...optionsRequest });
+        const url = userRatingsUrl(user, i, options?.baseUrl);
+        const response = await fetchPage(url, { ...options?.request });
 
         const items = parse(response);
         const movies = items.querySelectorAll('.box-user-rating .table-container tbody tr');
