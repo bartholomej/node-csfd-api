@@ -188,7 +188,7 @@ describe('Live: Search', () => {
 
 // Search
 describe('Live: Cinemas', () => {
-  let cinemas: CSFDCinema[]
+  let cinemas: CSFDCinema[];
   beforeAll(async () => {
     cinemas = await csfd.cinema(1, 'today');
   });
@@ -213,7 +213,7 @@ describe('Live: Cinemas', () => {
   });
 });
 
-// Creator    
+// Creator
 describe('Live: Creator page', () => {
   test('Fetch `2018-jan-werich` creator', async () => {
     const creator = await csfd.creator(2018);
@@ -255,5 +255,17 @@ describe('Movie page 404', () => {
     } catch (e) {
       expect(e).toThrow(Error);
     }
+  });
+});
+
+describe('Fetch with custom headers', () => {
+  test('Should fetch page with custom headers', async () => {
+    const url = userRatingsUrl(912);
+    const html = await fetchPage(url, {
+      headers: {
+        'X-Custom-Header': 'test-value'
+      }
+    });
+    expect(html).toContain('BART!');
   });
 });

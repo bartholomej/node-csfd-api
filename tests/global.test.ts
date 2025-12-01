@@ -1,4 +1,5 @@
 import { describe, expect, test } from 'vitest';
+import { csfd } from '../src';
 import { getDuration } from '../src/helpers/global.helper';
 
 export const durationInput = [
@@ -31,5 +32,20 @@ describe('Live: Fetch rating page', () => {
   test('Resolve duration', async () => {
     const resolver = getDuration(durationInput);
     expect(resolver).toEqual(result);
+  });
+});
+
+describe('CSFD setOptions', () => {
+  test('Should set custom options', async () => {
+    csfd.setOptions({ optionsRequest: { credentials: 'include' } });
+    // If setOptions works, it should not throw
+    expect(true).toBe(true);
+  });
+});
+
+describe('CSFD userReviews with custom options', () => {
+  test('Should fetch reviews with custom request options', async () => {
+    const reviews = await csfd.userReviews(912, undefined, { credentials: 'omit' });
+    expect(Array.isArray(reviews)).toBe(true);
   });
 });
