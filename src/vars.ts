@@ -1,6 +1,11 @@
 import { CSFDCinemaPeriod } from './dto/cinema';
 
-const BASE_URL = 'https://www.csfd.cz';
+let BASE_URL = 'https://www.csfd.cz';
+
+export const getBaseUrl = (): string => BASE_URL;
+export const setBaseUrl = (url: string): void => {
+  BASE_URL = url;
+};
 
 // User URLs
 export const userUrl = (user: string | number): string =>

@@ -10,6 +10,7 @@ import { MovieScraper } from './services/movie.service';
 import { SearchScraper } from './services/search.service';
 import { UserRatingsScraper } from './services/user-ratings.service';
 import { UserReviewsScraper } from './services/user-reviews.service';
+import { setBaseUrl } from './vars';
 
 export class Csfd {
   private defaultOptionsRequest?: RequestInit;
@@ -26,8 +27,13 @@ export class Csfd {
     this.defaultOptionsRequest = defaultOptionsRequest;
   }
 
-  public setOptions({ optionsRequest }: { optionsRequest: RequestInit }): void {
-    this.defaultOptionsRequest = optionsRequest;
+  public setOptions({ optionsRequest, baseUrl }: { optionsRequest?: RequestInit; baseUrl?: string }): void {
+    if (optionsRequest !== undefined) {
+      this.defaultOptionsRequest = optionsRequest;
+    }
+    if (baseUrl !== undefined) {
+      setBaseUrl(baseUrl);
+    }
   }
 
   public async userRatings(
