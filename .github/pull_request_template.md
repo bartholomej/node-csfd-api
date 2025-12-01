@@ -1,19 +1,24 @@
-## What's new and why I made this pull request?
+## Description
 
--
+<!-- Briefly describe the changes and the motivation behind them. -->
 
-## Pull request type
+## Type of change
 
-What kind of change does this PR introduce?
+- [ ] Bug fix
+- [ ] New feature
+- [ ] Refactoring (no functional changes)
+- [ ] Code style update
+- [ ] Build / CI related changes
+- [ ] Documentation update
+- [ ] Tests
+- [ ] Other
 
-```
-[ ] Bugfix
-[ ] Feature
-[ ] Code style update (formatting, local variables)
-[ ] Refactoring (no functional changes, no api changes)
-[ ] Build related changes
-[ ] CI related changes
-[ ] Documentation content changes
-[ ] Tests
-[ ] Other
-```
+## Related Issues
+
+<!-- Closes #... -->
+
+## Checklist
+
+- [ ] I have performed a self-review of my code
+- [ ] My changes generate no new warnings
+- [ ] I have added tests that prove my fix is effective or that my feature works
