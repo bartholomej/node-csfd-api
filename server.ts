@@ -1,4 +1,3 @@
-
 import 'dotenv/config';
 import express, { NextFunction, Request, Response } from 'express';
 // import rateLimit from 'express-rate-limit';
@@ -17,9 +16,9 @@ type Severity = 'info' | 'warn' | 'error' | 'success';
 
 function logMessage(severity: Severity, log: ErrorLog, req?: Request) {
   const colors = {
-    info: '\x1b[36m',    // cyan
-    warn: '\x1b[33m',    // yellow
-    error: '\x1b[31m',   // red
+    info: '\x1b[36m', // cyan
+    warn: '\x1b[33m', // yellow
+    error: '\x1b[31m', // red
     success: '\x1b[32m', // green
     reset: '\x1b[0m'
   };
@@ -32,10 +31,10 @@ function logMessage(severity: Severity, log: ErrorLog, req?: Request) {
   };
 
   const time = new Date().toISOString();
-  const reqInfo = req
-    ? `${req.method}: ${req.originalUrl}`
+  const reqInfo = req ? `${req.method}: ${req.originalUrl}` : '';
+  const reqIp = req
+    ? req.headers['x-forwarded-for'] || req.socket.remoteAddress || req.ip || req.ips
     : '';
-  const reqIp = req ? req.headers['x-forwarded-for'] || req.socket.remoteAddress || req.ip || req.ips : '';
 
   const paddedSeverity = {
     info: 'INFO   ',
@@ -68,6 +67,7 @@ enum Errors {
   CREATOR_FETCH_FAILED = 'CREATOR_FETCH_FAILED',
   SEARCH_FETCH_FAILED = 'SEARCH_FETCH_FAILED',
   USER_RATINGS_FETCH_FAILED = 'USER_RATINGS_FETCH_FAILED',
+  USER_REVIEWS_FETCH_FAILED = 'USER_REVIEWS_FETCH_FAILED',
   CINEMAS_FETCH_FAILED = 'CINEMAS_FETCH_FAILED',
   PAGE_NOT_FOUND = 'PAGE_NOT_FOUND',
   TOO_MANY_REQUESTS = 'TOO_MANY_REQUESTS'
@@ -78,13 +78,14 @@ enum Endpoint {
   CREATOR = '/creator/:id',
   SEARCH = '/search/:query',
   USER_RATINGS = '/user-ratings/:id',
+  USER_REVIEWS = '/user-reviews/:id',
   CINEMAS = '/cinemas'
 }
 
 type ErrorLog = {
   error: keyof typeof Errors | null;
   message: string;
-}
+};
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -93,7 +94,11 @@ const port = process.env.PORT || 3000;
 const API_KEY_NAME = process.env.API_KEY_NAME || 'x-api-key';
 const API_KEY = process.env.API_KEY;
 
-const API_KEYS_LIST = API_KEY ? API_KEY.split(/[,;\s]+/).map(k => k.trim()).filter(Boolean) : [];
+const API_KEYS_LIST = API_KEY
+  ? API_KEY.split(/[,;\s]+/)
+    .map((k) => k.trim())
+    .filter(Boolean)
+  : [];
 
 // const limiterMinutes = 15;
 
@@ -123,13 +128,19 @@ app.use((req: Request, res: Response, next: NextFunction): void => {
   if (API_KEY) {
     const apiKey = (req.get(API_KEY_NAME) as string | undefined)?.trim();
     if (!apiKey) {
-      const log: ErrorLog = { error: Errors.API_KEY_MISSING, message: `Missing API key in request header: ${API_KEY_NAME}` };
+      const log: ErrorLog = {
+        error: Errors.API_KEY_MISSING,
+        message: `Missing API key in request header: ${API_KEY_NAME}`
+      };
       logMessage('error', log, req);
       res.status(401).json(log);
       return;
     }
     if (!API_KEYS_LIST.includes(apiKey)) {
-      const log: ErrorLog = { error: Errors.API_KEY_INVALID, message: `Invalid API key in request header: ${API_KEY_NAME}` };
+      const log: ErrorLog = {
+        error: Errors.API_KEY_INVALID,
+        message: `Invalid API key in request header: ${API_KEY_NAME}`
+      };
       logMessage('error', log, req);
       res.status(401).json(log);
       return;
@@ -149,8 +160,11 @@ app.get('/', (_, res) => {
   });
 });
 
-app.get(['/movie/', '/creator/', '/search/', '/user-ratings/'], (req, res) => {
-  const log: ErrorLog = { error: Errors.ID_MISSING, message: `ID is missing. Provide ID like this: ${req.url}${req.url.endsWith('/') ? '' : '/'}1234` }
+app.get(['/movie/', '/creator/', '/search/', '/user-ratings/', '/user-reviews/'], (req, res) => {
+  const log: ErrorLog = {
+    error: Errors.ID_MISSING,
+    message: `ID is missing. Provide ID like this: ${req.url}${req.url.endsWith('/') ? '' : '/'}1234`
+  };
   logMessage('warn', log, req);
   res.status(404).json(log);
 });
@@ -161,7 +175,10 @@ app.get(Endpoint.MOVIE, async (req, res) => {
     res.json(movie);
     logMessage('success', { error: null, message: `${Endpoint.MOVIE}: ${req.params.id}` }, req);
   } catch (error) {
-    const log: ErrorLog = { error: Errors.MOVIE_FETCH_FAILED, message: 'Failed to fetch movie data: ' + error };
+    const log: ErrorLog = {
+      error: Errors.MOVIE_FETCH_FAILED,
+      message: 'Failed to fetch movie data: ' + error
+    };
     logMessage('error', log, req);
     res.status(500).json(log);
   }
@@ -173,7 +190,10 @@ app.get(Endpoint.CREATOR, async (req, res) => {
     res.json(result);
     logMessage('success', { error: null, message: `${Endpoint.CREATOR}: ${req.params.id}` }, req);
   } catch (error) {
-    const log: ErrorLog = { error: Errors.CREATOR_FETCH_FAILED, message: 'Failed to fetch creator data: ' + error };
+    const log: ErrorLog = {
+      error: Errors.CREATOR_FETCH_FAILED,
+      message: 'Failed to fetch creator data: ' + error
+    };
     logMessage('error', log, req);
     res.status(500).json(log);
   }
@@ -185,7 +205,10 @@ app.get(Endpoint.SEARCH, async (req, res) => {
     res.json(result);
     logMessage('success', { error: null, message: `${Endpoint.SEARCH}: ${req.params.query}` }, req);
   } catch (error) {
-    const log: ErrorLog = { error: Errors.SEARCH_FETCH_FAILED, message: 'Failed to fetch search data: ' + error };
+    const log: ErrorLog = {
+      error: Errors.SEARCH_FETCH_FAILED,
+      message: 'Failed to fetch search data: ' + error
+    };
     logMessage('error', log, req);
     res.status(500).json(log);
   }
@@ -197,18 +220,53 @@ app.get(Endpoint.USER_RATINGS, async (req, res) => {
     const result = await csfd.userRatings(req.params.id, {
       allPages: allPages === 'true',
       allPagesDelay: allPagesDelay ? +allPagesDelay : undefined,
-      excludes: excludes ? (excludes as string).split(',') as CSFDFilmTypes[] : undefined,
-      includesOnly: includesOnly ? (includesOnly as string).split(',') as CSFDFilmTypes[] : undefined
+      excludes: excludes ? ((excludes as string).split(',') as CSFDFilmTypes[]) : undefined,
+      includesOnly: includesOnly
+        ? ((includesOnly as string).split(',') as CSFDFilmTypes[])
+        : undefined
     });
     res.json(result);
-    logMessage('success', { error: null, message: `${Endpoint.USER_RATINGS}: ${req.params.id}` }, req);
+    logMessage(
+      'success',
+      { error: null, message: `${Endpoint.USER_RATINGS}: ${req.params.id}` },
+      req
+    );
   } catch (error) {
-    const log: ErrorLog = { error: Errors.USER_RATINGS_FETCH_FAILED, message: 'Failed to fetch user-ratings data: ' + error };
+    const log: ErrorLog = {
+      error: Errors.USER_RATINGS_FETCH_FAILED,
+      message: 'Failed to fetch user-ratings data: ' + error
+    };
     logMessage('error', log, req);
     res.status(500).json(log);
   }
 });
 
+app.get(Endpoint.USER_REVIEWS, async (req, res) => {
+  const { allPages, allPagesDelay, excludes, includesOnly } = req.query;
+  try {
+    const result = await csfd.userReviews(req.params.id, {
+      allPages: allPages === 'true',
+      allPagesDelay: allPagesDelay ? +allPagesDelay : undefined,
+      excludes: excludes ? ((excludes as string).split(',') as CSFDFilmTypes[]) : undefined,
+      includesOnly: includesOnly
+        ? ((includesOnly as string).split(',') as CSFDFilmTypes[])
+        : undefined
+    });
+    res.json(result);
+    logMessage(
+      'success',
+      { error: null, message: `${Endpoint.USER_REVIEWS}: ${req.params.id}` },
+      req
+    );
+  } catch (error) {
+    const log: ErrorLog = {
+      error: Errors.USER_REVIEWS_FETCH_FAILED,
+      message: 'Failed to fetch user-reviews data: ' + error
+    };
+    logMessage('error', log, req);
+    res.status(500).json(log);
+  }
+});
 
 app.get(Endpoint.CINEMAS, async (req, res) => {
   try {
@@ -216,14 +274,20 @@ app.get(Endpoint.CINEMAS, async (req, res) => {
     logMessage('success', { error: null, message: `${Endpoint.CINEMAS}` }, req);
     res.json(result);
   } catch (error) {
-    const log: ErrorLog = { error: Errors.CINEMAS_FETCH_FAILED, message: 'Failed to fetch cinemas data: ' + error };
+    const log: ErrorLog = {
+      error: Errors.CINEMAS_FETCH_FAILED,
+      message: 'Failed to fetch cinemas data: ' + error
+    };
     logMessage('error', log, req);
     res.status(500).json(log);
   }
 });
 
 app.use((req, res) => {
-  const log: ErrorLog = { error: Errors.PAGE_NOT_FOUND, message: 'The requested endpoint could not be found.' };
+  const log: ErrorLog = {
+    error: Errors.PAGE_NOT_FOUND,
+    message: 'The requested endpoint could not be found.'
+  };
   logMessage('warn', log, req);
   res.status(404).json(log);
 });
@@ -231,14 +295,14 @@ app.use((req, res) => {
 // --- Start server ---
 app.listen(port, () => {
   console.log(`
-                  _                  __    _               _ 
+                  _                  __    _               _
                  | |                / _|  | |             (_)
-  _ __   ___   __| | ___    ___ ___| |_ __| |   __ _ _ __  _ 
+  _ __   ___   __| | ___    ___ ___| |_ __| |   __ _ _ __  _
  | '_ \\ / _ \\ / _\` |/ _ \\  / __/ __|  _/ _\` |  / _\` | '_ \\| |
  | | | | (_) | (_| |  __/ | (__\\__ \\ || (_| | | (_| | |_) | |
  |_| |_|\\___/ \\__,_|\\___|  \\___|___/_| \\__,_|  \\__,_| .__/|_|
-                                                    | |      
-                                                    |_|      
+                                                    | |
+                                                    |_|
 `);
   console.log(`node-csfd-api@${packageJson.version}\n`);
   console.log(`Docs: ${packageJson.homepage}`);
@@ -246,8 +310,15 @@ app.listen(port, () => {
 
   console.log(`API is running on: http://localhost:${port}\n`);
   if (API_KEYS_LIST.length === 0) {
-    console.log('\x1b[31m%s\x1b[0m', '⚠️ Server is OPEN!\n- Your server will be open to the world and potentially everyone can use it without any restriction.\n- To enable some basic protection, set API_KEY environment variable (single value or comma-separated list) and provide the same value in request header: ' + API_KEY_NAME);
+    console.log(
+      '\x1b[31m%s\x1b[0m',
+      '⚠️ Server is OPEN!\n- Your server will be open to the world and potentially everyone can use it without any restriction.\n- To enable some basic protection, set API_KEY environment variable (single value or comma-separated list) and provide the same value in request header: ' +
+      API_KEY_NAME
+    );
   } else {
-    console.log('\x1b[32m%s\x1b[0m', `✔️ Server is protected (somehow).\n- ${API_KEYS_LIST.length} API key(s) are configured and will be checked for each request header: ${API_KEY_NAME}`);
+    console.log(
+      '\x1b[32m%s\x1b[0m',
+      `✔️ Server is protected (somehow).\n- ${API_KEYS_LIST.length} API key(s) are configured and will be checked for each request header: ${API_KEY_NAME}`
+    );
   }
 });
