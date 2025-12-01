@@ -1,12 +1,16 @@
 import { HTMLElement, parse } from 'node-html-parser';
 import { CSFDCreator } from '../dto/creator';
 import { fetchPage } from '../fetchers';
-import { getCreatorBio, getCreatorBirthdayInfo, getCreatorFilms, getCreatorName, getCreatorPhoto } from '../helpers/creator.helper';
+import {
+  getCreatorBio,
+  getCreatorBirthdayInfo,
+  getCreatorFilms,
+  getCreatorName,
+  getCreatorPhoto
+} from '../helpers/creator.helper';
 import { creatorUrl } from '../vars';
 
 export class CreatorScraper {
-  private person: CSFDCreator;
-
   public async creator(creatorId: number, optionsRequest?: RequestInit): Promise<CSFDCreator> {
     const id = Number(creatorId);
     if (isNaN(id)) {
@@ -19,12 +23,11 @@ export class CreatorScraper {
 
     const asideNode = creatorHtml.querySelector('.creator-about');
     const filmsNode = creatorHtml.querySelector('.creator-filmography');
-    this.buildCreator(+creatorId, asideNode, filmsNode);
-    return this.person;
+    return this.buildCreator(+creatorId, asideNode, filmsNode);
   }
 
-  private buildCreator(id: number, asideEl: HTMLElement, filmsNode: HTMLElement) {
-    this.person = {
+  private buildCreator(id: number, asideEl: HTMLElement, filmsNode: HTMLElement): CSFDCreator {
+    return {
       id,
       name: getCreatorName(asideEl),
       birthday: getCreatorBirthdayInfo(asideEl)?.birthday,

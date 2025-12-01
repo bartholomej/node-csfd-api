@@ -11,8 +11,6 @@ import {
 } from './../helpers/cinema.helper';
 
 export class CinemaScraper {
-  private cinema: CSFDCinema[];
-
   public async cinemas(
     district: number = 1,
     period: CSFDCinemaPeriod = 'today',
@@ -25,11 +23,10 @@ export class CinemaScraper {
 
     const contentNode = cinemasHtml.querySelectorAll('#snippet--cinemas section[id*="cinema-"]');
 
-    this.buildCinemas(contentNode);
-    return this.cinema;
+    return this.buildCinemas(contentNode);
   }
 
-  private buildCinemas(contentNode: HTMLElement[]) {
+  private buildCinemas(contentNode: HTMLElement[]): CSFDCinema[] {
     const cinemas: CSFDCinema[] = [];
 
     contentNode.forEach((x) => {
@@ -45,6 +42,6 @@ export class CinemaScraper {
       cinemas.push(cinema);
     });
 
-    this.cinema = cinemas;
+    return cinemas;
   }
 }

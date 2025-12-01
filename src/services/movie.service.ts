@@ -26,8 +26,6 @@ import {
 import { movieUrl } from '../vars';
 
 export class MovieScraper {
-  private film: CSFDMovie;
-
   public async movie(movieId: number, optionsRequest?: RequestInit): Promise<CSFDMovie> {
     const id = Number(movieId);
     if (isNaN(id)) {
@@ -42,8 +40,7 @@ export class MovieScraper {
     const asideNode = movieHtml.querySelector('.aside-movie-profile');
     const movieNode = movieHtml.querySelector('.main-movie-profile');
     const jsonLd = movieHtml.querySelector('script[type="application/ld+json"]').innerText;
-    this.buildMovie(+movieId, movieNode, asideNode, pageClasses, jsonLd);
-    return this.film;
+    return this.buildMovie(+movieId, movieNode, asideNode, pageClasses, jsonLd);
   }
 
   private buildMovie(
@@ -52,8 +49,8 @@ export class MovieScraper {
     asideEl: HTMLElement,
     pageClasses: string[],
     jsonLd: string
-  ) {
-    this.film = {
+  ): CSFDMovie {
+    return {
       id: movieId,
       title: getMovieTitle(el),
       year: getMovieYear(jsonLd),
