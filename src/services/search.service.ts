@@ -18,7 +18,7 @@ import { searchUrl } from '../vars';
 
 export class SearchScraper {
   public async search(text: string, options?: CSFDOptions): Promise<CSFDSearch> {
-    const url = searchUrl(text, options?.language);
+    const url = searchUrl(text, { language: options?.language });
     const response = await fetchPage(url, { ...options?.request });
 
     const html = parse(response);

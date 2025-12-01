@@ -26,7 +26,7 @@ export class UserReviewsScraper {
   ): Promise<CSFDUserReviews[]> {
     let allReviews: CSFDUserReviews[] = [];
     const pageToFetch = config?.page || 1;
-    const url = userReviewsUrl(user, pageToFetch > 1 ? pageToFetch : undefined, options?.language);
+    const url = userReviewsUrl(user, pageToFetch > 1 ? pageToFetch : undefined, { language: options?.language });
     const response = await fetchPage(url, { ...options?.request });
     const items = parse(response);
     const reviews = items.querySelectorAll('.user-reviews .article');
@@ -42,7 +42,7 @@ export class UserReviewsScraper {
       console.log('Fetching all pages', pages);
       for (let i = 2; i <= pages; i++) {
         console.log('Fetching page', i, 'out of', pages, '...');
-        const url = userReviewsUrl(user, i, options?.language);
+        const url = userReviewsUrl(user, i, { language: options?.language });
         const response = await fetchPage(url, { ...options?.request });
 
         const items = parse(response);

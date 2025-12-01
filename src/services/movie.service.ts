@@ -32,7 +32,7 @@ export class MovieScraper {
     if (isNaN(id)) {
       throw new Error('node-csfd-api: movieId must be a valid number');
     }
-    const url = movieUrl(id, options?.language);
+    const url = movieUrl(id, { language: options?.language });
     const response = await fetchPage(url, { ...options?.request });
 
     const movieHtml = parse(response);
@@ -49,7 +49,8 @@ export class MovieScraper {
     el: HTMLElement,
     asideEl: HTMLElement,
     pageClasses: string[],
-    jsonLd: string
+    jsonLd: string,
+    options?: CSFDOptions
   ): CSFDMovie {
     return {
       id: movieId,
@@ -59,7 +60,7 @@ export class MovieScraper {
       descriptions: getMovieDescriptions(el),
       genres: getMovieGenres(el),
       type: getMovieType(el) as CSFDFilmTypes,
-      url: movieUrl(movieId),
+      url: movieUrl(movieId, { language: options?.language }),
       origins: getMovieOrigins(el),
       colorRating: getMovieColorRating(pageClasses),
       rating: getMovieRating(asideEl),
