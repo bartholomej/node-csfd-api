@@ -325,6 +325,20 @@ csfd
   .then((ratings) => console.log(ratings));
 ```
 
+#### Specific page
+
+Get [second page of my ratings](https://www.csfd.cz/uzivatel/912-bart/hodnoceni/?page=2)
+
+```javascript
+import { csfd } from 'node-csfd-api';
+
+csfd
+  .userRatings('912-bart', {
+    page: 2 // Get specific page
+  })
+  .then((ratings) => console.log(ratings));
+```
+
 <details>
   <summary>Click here to see full result example</summary>
 
@@ -361,6 +375,7 @@ csfd
 | **exclude**       | [CSFDFilmTypes[]](https://github.com/bartholomej/node-csfd-api/blob/8fa5f9cbc7e7f2b62b0bd2c2b5a24c9a63444f6a/src/interfaces/global.ts#L25) | null    | Excluding film types eg. `['epizoda', 'série']`        |
 | **allPages**      | boolean                                                                                                                                    | false   | Get all pages                                          |
 | **allPagesDelay** | number                                                                                                                                     | 0       | Delay on each page request. In milliseconds            |
+| **page**          | number                                                                                                                                     | 1       | Specific page number to fetch (e.g., 2 for page 2)     |
 
 _Note: You can not use both parameters `includesOnly` and `excludes`. Parameter `includesOnly` has a priority._
 
@@ -389,6 +404,20 @@ csfd
   .userReviews(195357, {
     allPages: true, // Download all pages (one by one)
     allPagesDelay: 2000 // Make delay 2000ms on each page request
+  })
+  .then((reviews) => console.log(reviews));
+```
+
+#### Specific page
+
+Get [second page of user reviews](https://www.csfd.cz/uzivatel/195357-verbal/recenze/?page=2)
+
+```javascript
+import { csfd } from 'node-csfd-api';
+
+csfd
+  .userReviews(195357, {
+    page: 2 // Get specific page
   })
   .then((reviews) => console.log(reviews));
 ```
@@ -428,6 +457,18 @@ csfd
 ```
 
 </details>
+
+#### Options for user reviews
+
+| Option            | Type                                                                                                                                       | Default | Description                                            |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | ------- | ------------------------------------------------------ |
+| **includesOnly**  | [CSFDFilmTypes[]](https://github.com/bartholomej/node-csfd-api/blob/8fa5f9cbc7e7f2b62b0bd2c2b5a24c9a63444f6a/src/interfaces/global.ts#L25) | null    | Including only film types. eg. `['seriál', 'koncert']` |
+| **exclude**       | [CSFDFilmTypes[]](https://github.com/bartholomej/node-csfd-api/blob/8fa5f9cbc7e7f2b62b0bd2c2b5a24c9a63444f6a/src/interfaces/global.ts#L25) | null    | Excluding film types eg. `['epizoda', 'série']`        |
+| **allPages**      | boolean                                                                                                                                    | false   | Get all pages                                          |
+| **allPagesDelay** | number                                                                                                                                     | 0       | Delay on each page request. In milliseconds            |
+| **page**          | number                                                                                                                                     | 1       | Specific page number to fetch (e.g., 2 for page 2)     |
+
+_Note: You can not use both parameters `includesOnly` and `excludes`. Parameter `includesOnly` has a priority._
 
 ## 📦 Docker
 
