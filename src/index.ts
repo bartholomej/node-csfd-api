@@ -3,17 +3,20 @@ import { CSFDCreator } from './dto/creator';
 import { CSFDMovie } from './dto/movie';
 import { CSFDSearch } from './dto/search';
 import { CSFDUserRatingConfig, CSFDUserRatings } from './dto/user-ratings';
+import { CSFDUserReviews, CSFDUserReviewsConfig } from './dto/user-reviews';
 import { CinemaScraper } from './services/cinema.service';
 import { CreatorScraper } from './services/creator.service';
 import { MovieScraper } from './services/movie.service';
 import { SearchScraper } from './services/search.service';
 import { UserRatingsScraper } from './services/user-ratings.service';
+import { UserReviewsScraper } from './services/user-reviews.service';
 
 export class Csfd {
   private defaultOptionsRequest?: RequestInit;
 
   constructor(
     private userRatingsService: UserRatingsScraper,
+    private userReviewsService: UserReviewsScraper,
     private movieService: MovieScraper,
     private creatorService: CreatorScraper,
     private searchService: SearchScraper,
@@ -34,6 +37,15 @@ export class Csfd {
   ): Promise<CSFDUserRatings[]> {
     const opts = optionsRequest ?? this.defaultOptionsRequest;
     return this.userRatingsService.userRatings(user, config, opts);
+  }
+
+  public async userReviews(
+    user: string | number,
+    config?: CSFDUserReviewsConfig,
+    optionsRequest?: RequestInit
+  ): Promise<CSFDUserReviews[]> {
+    const opts = optionsRequest ?? this.defaultOptionsRequest;
+    return this.userReviewsService.userReviews(user, config, opts);
   }
 
   public async movie(movie: number, optionsRequest?: RequestInit): Promise<CSFDMovie> {
@@ -63,12 +75,14 @@ export class Csfd {
 
 const movieScraper = new MovieScraper();
 const userRatingsScraper = new UserRatingsScraper();
+const userReviewsScraper = new UserReviewsScraper();
 const cinemaScraper = new CinemaScraper();
 const creatorScraper = new CreatorScraper();
 const searchScraper = new SearchScraper();
 
 export const csfd = new Csfd(
   userRatingsScraper,
+  userReviewsScraper,
   movieScraper,
   creatorScraper,
   searchScraper,

@@ -104,3 +104,24 @@ describe('Exclude + includes together', () => {
     expect(tvSeries.length).toBe<number>(results.length);
   });
 });
+
+describe('Specific page', () => {
+  const userRatingsScraper = new UserRatingsScraper();
+  const resPage2: Promise<CSFDUserRatings[]> = userRatingsScraper.userRatings(USER, {
+    page: 2
+  });
+
+  test('Should fetch second page', async () => {
+    const results = await resPage2;
+    expect(results.length).toBeGreaterThan(0);
+  });
+
+  test('Each rating should have required properties', async () => {
+    const results = await resPage2;
+    results.forEach((rating) => {
+      expect(rating).toHaveProperty('id');
+      expect(rating).toHaveProperty('title');
+      expect(rating).toHaveProperty('userRating');
+    });
+  });
+});

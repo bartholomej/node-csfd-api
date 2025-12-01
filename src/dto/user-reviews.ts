@@ -1,15 +1,17 @@
 import { CSFDFilmTypes, CSFDScreening, CSFDStars } from './global';
 
-export interface CSFDUserRatings extends CSFDScreening {
+export interface CSFDUserReviews extends CSFDScreening {
   userRating: CSFDStars;
   userDate: string; // TODO datetime
+  text: string;
+  poster: string;
 }
 
-export interface CSFDUserRatingConfig {
+export interface CSFDUserReviewsConfig {
   includesOnly?: CSFDFilmTypes[];
   excludes?: CSFDFilmTypes[];
   /**
-   * Fetch all ratings. (Warning: Use it wisely. Can be detected and banned. Consider using it together with `allPagesDelay` attribute)
+   * Fetch all reviews. (Warning: Use it wisely. Can be detected and banned. Consider using it together with `allPagesDelay` attribute)
    */
   allPages?: boolean;
   /**
@@ -21,5 +23,3 @@ export interface CSFDUserRatingConfig {
    */
   page?: number;
 }
-
-export type Colors = 'lightgrey' | 'blue' | 'red' | 'grey';

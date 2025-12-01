@@ -2,6 +2,7 @@ import { HTMLElement, parse } from 'node-html-parser';
 import { CSFDColorRating, CSFDStars } from '../dto/global';
 import { CSFDUserRatingConfig, CSFDUserRatings } from '../dto/user-ratings';
 import { fetchPage } from '../fetchers';
+import { sleep } from '../helpers/global.helper';
 import {
   getUserRating,
   getUserRatingColorRating,
@@ -10,8 +11,7 @@ import {
   getUserRatingTitle,
   getUserRatingType,
   getUserRatingUrl,
-  getUserRatingYear,
-  sleep
+  getUserRatingYear
 } from '../helpers/user-ratings.helper';
 import { userRatingsUrl } from '../vars';
 
@@ -22,7 +22,8 @@ export class UserRatingsScraper {
     optionsRequest?: RequestInit
   ): Promise<CSFDUserRatings[]> {
     let allMovies: CSFDUserRatings[] = [];
-    const url = userRatingsUrl(user);
+    const pageToFetch = config?.page || 1;
+    const url = userRatingsUrl(user, pageToFetch > 1 ? pageToFetch : undefined);
     const response = await fetchPage(url, { ...optionsRequest });
     const items = parse(response);
     const movies = items.querySelectorAll('.box-user-rating .table-container tbody tr');
@@ -77,7 +78,7 @@ export class UserRatingsScraper {
         if (config.includesOnly.some((include) => type === include)) {
           films.push(this.buildUserRatings(el));
         }
-        // Filter exludes
+        // Filter excludes
       } else if (config?.excludes?.length) {
         if (!config.excludes.some((exclude) => type === exclude)) {
           films.push(this.buildUserRatings(el));

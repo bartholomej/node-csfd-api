@@ -68,3 +68,6 @@ export const parseISO8601Duration = (iso: string): number => {
 
   return +duration.minutes;
 };
+
+// Sleep in loop
+export const sleep = (ms: number) => new Promise((res) => setTimeout(res, ms));
