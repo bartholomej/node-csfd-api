@@ -18,4 +18,8 @@ export interface CSFDUserReviewsConfig {
    * Delay on each page request. In milliseconds
    */
   allPagesDelay?: number;
+  /**
+   * Specific page number to fetch (e.g., 2 for second page)
+   */
+  page?: number;
 }

@@ -96,8 +96,8 @@ const API_KEY = process.env.API_KEY;
 
 const API_KEYS_LIST = API_KEY
   ? API_KEY.split(/[,;\s]+/)
-    .map((k) => k.trim())
-    .filter(Boolean)
+      .map((k) => k.trim())
+      .filter(Boolean)
   : [];
 
 // const limiterMinutes = 15;
@@ -215,7 +215,7 @@ app.get(Endpoint.SEARCH, async (req, res) => {
 });
 
 app.get(Endpoint.USER_RATINGS, async (req, res) => {
-  const { allPages, allPagesDelay, excludes, includesOnly } = req.query;
+  const { allPages, allPagesDelay, excludes, includesOnly, page } = req.query;
   try {
     const result = await csfd.userRatings(req.params.id, {
       allPages: allPages === 'true',
@@ -223,7 +223,8 @@ app.get(Endpoint.USER_RATINGS, async (req, res) => {
       excludes: excludes ? ((excludes as string).split(',') as CSFDFilmTypes[]) : undefined,
       includesOnly: includesOnly
         ? ((includesOnly as string).split(',') as CSFDFilmTypes[])
-        : undefined
+        : undefined,
+      page: page ? +page : undefined
     });
     res.json(result);
     logMessage(
@@ -242,7 +243,7 @@ app.get(Endpoint.USER_RATINGS, async (req, res) => {
 });
 
 app.get(Endpoint.USER_REVIEWS, async (req, res) => {
-  const { allPages, allPagesDelay, excludes, includesOnly } = req.query;
+  const { allPages, allPagesDelay, excludes, includesOnly, page } = req.query;
   try {
     const result = await csfd.userReviews(req.params.id, {
       allPages: allPages === 'true',
@@ -250,7 +251,8 @@ app.get(Endpoint.USER_REVIEWS, async (req, res) => {
       excludes: excludes ? ((excludes as string).split(',') as CSFDFilmTypes[]) : undefined,
       includesOnly: includesOnly
         ? ((includesOnly as string).split(',') as CSFDFilmTypes[])
-        : undefined
+        : undefined,
+      page: page ? +page : undefined
     });
     res.json(result);
     logMessage(
@@ -313,7 +315,7 @@ app.listen(port, () => {
     console.log(
       '\x1b[31m%s\x1b[0m',
       '⚠️ Server is OPEN!\n- Your server will be open to the world and potentially everyone can use it without any restriction.\n- To enable some basic protection, set API_KEY environment variable (single value or comma-separated list) and provide the same value in request header: ' +
-      API_KEY_NAME
+        API_KEY_NAME
     );
   } else {
     console.log(

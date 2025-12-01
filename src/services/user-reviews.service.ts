@@ -24,7 +24,8 @@ export class UserReviewsScraper {
     optionsRequest?: RequestInit
   ): Promise<CSFDUserReviews[]> {
     let allReviews: CSFDUserReviews[] = [];
-    const url = userReviewsUrl(user);
+    const pageToFetch = config?.page || 1;
+    const url = userReviewsUrl(user, pageToFetch > 1 ? pageToFetch : undefined);
     const response = await fetchPage(url, { ...optionsRequest });
     const items = parse(response);
     const reviews = items.querySelectorAll('.user-reviews .article');
