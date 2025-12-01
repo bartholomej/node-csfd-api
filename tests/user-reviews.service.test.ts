@@ -145,3 +145,26 @@ describe('User Reviews - User with zero reviews', () => {
     expect(Array.isArray(results)).toBe(true);
   });
 });
+
+describe('User Reviews - Specific page', () => {
+  const userReviewsScraper = new UserReviewsScraper();
+  const resPage2: Promise<CSFDUserReviews[]> = userReviewsScraper.userReviews(USER_WITH_REVIEWS, {
+    page: 2
+  });
+
+  test('Should fetch second page', async () => {
+    const results = await resPage2;
+    expect(results.length).toBeGreaterThan(0);
+  });
+
+  test('Each review should have all properties', async () => {
+    const results = await resPage2;
+    results.forEach((review) => {
+      expect(review).toHaveProperty('id');
+      expect(review).toHaveProperty('title');
+      expect(review).toHaveProperty('text');
+      expect(review).toHaveProperty('poster');
+      expect(review).toHaveProperty('userRating');
+    });
+  });
+});
