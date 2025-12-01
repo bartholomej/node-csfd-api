@@ -1,7 +1,7 @@
 import { HTMLElement } from 'node-html-parser';
 import { CSFDColorRating, CSFDFilmTypes, CSFDStars } from '../dto/global';
 import { Colors } from '../dto/user-ratings';
-import { parseIdFromUrl } from './global.helper';
+import { parseColor, parseIdFromUrl } from './global.helper';
 
 export const getUserReviewId = (el: HTMLElement): number => {
   const url = el.querySelector('.film-title-name').attributes.href;
@@ -16,15 +16,10 @@ export const getUserReviewRating = (el: HTMLElement): CSFDStars => {
 };
 
 export const getUserReviewType = (el: HTMLElement): CSFDFilmTypes => {
-  // Reviews might not have explicit type info in the same way as ratings table,
-  // but let's try to find it if available or default to 'film'.
-  // Looking at the HTML, the type info seems to be in the span with class 'info' inside .film-title-info, but it contains year.
-  // The type might not be explicitly listed in the review list item in the same way.
-  // Let's assume 'film' for now or check if there are other indicators.
-  // In the provided HTML, there isn't a clear type indicator like in the ratings table (which had it in parentheses).
-  // However, the filter form has types.
-  // For now, we will default to 'film' or try to extract if possible.
-  return 'film';
+  // Type can be in the second .info span (e.g., "(seriál)") // TODO need more tests
+  const typeText = el.querySelectorAll('.film-title-info .info');
+
+  return (typeText.length > 1 ? typeText[1].text.slice(1, -1) : 'film') as CSFDFilmTypes;
 };
 
 export const getUserReviewTitle = (el: HTMLElement): string => {
@@ -54,21 +49,3 @@ export const getUserReviewUrl = (el: HTMLElement): string => {
 export const getUserReviewText = (el: HTMLElement): string => {
   return el.querySelector('.user-reviews-text .comment').text.trim();
 };
-
-const parseColor = (quality: Colors): CSFDColorRating => {
-  switch (quality) {
-    case 'lightgrey':
-      return 'unknown';
-    case 'red':
-      return 'good';
-    case 'blue':
-      return 'average';
-    case 'grey':
-      return 'bad';
-    default:
-      return 'unknown';
-  }
-};
-
-// Sleep in loop
-export const sleep = (ms: number) => new Promise((res) => setTimeout(res, ms));

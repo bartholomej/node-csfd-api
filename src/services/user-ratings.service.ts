@@ -2,6 +2,7 @@ import { HTMLElement, parse } from 'node-html-parser';
 import { CSFDColorRating, CSFDStars } from '../dto/global';
 import { CSFDUserRatingConfig, CSFDUserRatings } from '../dto/user-ratings';
 import { fetchPage } from '../fetchers';
+import { sleep } from '../helpers/global.helper';
 import {
   getUserRating,
   getUserRatingColorRating,
@@ -10,8 +11,7 @@ import {
   getUserRatingTitle,
   getUserRatingType,
   getUserRatingUrl,
-  getUserRatingYear,
-  sleep
+  getUserRatingYear
 } from '../helpers/user-ratings.helper';
 import { userRatingsUrl } from '../vars';
 
