@@ -93,12 +93,18 @@ const port = process.env.PORT || 3000;
 // --- Config ---
 const API_KEY_NAME = process.env.API_KEY_NAME || 'x-api-key';
 const API_KEY = process.env.API_KEY;
+const BASE_URL = process.env.BASE_URL;
 
 const API_KEYS_LIST = API_KEY
   ? API_KEY.split(/[,;\s]+/)
-      .map((k) => k.trim())
-      .filter(Boolean)
+    .map((k) => k.trim())
+    .filter(Boolean)
   : [];
+
+// Configure base URL if provided
+if (BASE_URL) {
+  csfd.setOptions({ baseUrl: BASE_URL });
+}
 
 // const limiterMinutes = 15;
 
@@ -310,12 +316,17 @@ app.listen(port, () => {
   console.log(`Docs: ${packageJson.homepage}`);
   console.log(`Endpoints: ${Object.values(Endpoint).join(', ')}\n`);
 
-  console.log(`API is running on: http://localhost:${port}\n`);
+  console.log(`API is running on: http://localhost:${port}`);
+  if (BASE_URL) {
+    console.log(`Base URL configured: ${BASE_URL}\n`);
+  } else {
+    console.log(`Base URL: https://www.csfd.cz (default)\n`);
+  }
   if (API_KEYS_LIST.length === 0) {
     console.log(
       '\x1b[31m%s\x1b[0m',
       '⚠️ Server is OPEN!\n- Your server will be open to the world and potentially everyone can use it without any restriction.\n- To enable some basic protection, set API_KEY environment variable (single value or comma-separated list) and provide the same value in request header: ' +
-        API_KEY_NAME
+      API_KEY_NAME
     );
   } else {
     console.log(
