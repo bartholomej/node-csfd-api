@@ -80,7 +80,7 @@ export class UserReviewsScraper {
         if (config.includesOnly.some((include) => type === include)) {
           films.push(this.buildUserReviews(el));
         }
-        // Filter exludes
+        // Filter excludes
       } else if (config?.excludes?.length) {
         if (!config.excludes.some((exclude) => type === exclude)) {
           films.push(this.buildUserReviews(el));

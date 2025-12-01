@@ -11,7 +11,7 @@ export interface CSFDUserReviewsConfig {
   includesOnly?: CSFDFilmTypes[];
   excludes?: CSFDFilmTypes[];
   /**
-   * Fetch all ratings. (Warning: Use it wisely. Can be detected and banned. Consider using it together with `allPagesDelay` attribute)
+   * Fetch all reviews. (Warning: Use it wisely. Can be detected and banned. Consider using it together with `allPagesDelay` attribute)
    */
   allPages?: boolean;
   /**
