@@ -17,8 +17,8 @@ export class CinemaScraper {
     period: CSFDCinemaPeriod = 'today',
     options?: CSFDOptions
   ): Promise<CSFDCinema[]> {
-    const baseUrl = options?.baseUrl;
-    const url = cinemasUrl(district, period, baseUrl);
+    const language = options?.language;
+    const url = cinemasUrl(district, period, language);
     const response = await fetchPage(url, { ...options?.request });
     const cinemasHtml = parse(response);
 

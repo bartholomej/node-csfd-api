@@ -103,7 +103,7 @@ const API_KEYS_LIST = API_KEY
 
 // Configure base URL if provided
 if (BASE_URL) {
-  csfd.setOptions({ baseUrl: BASE_URL });
+  csfd.setOptions({ language: BASE_URL });
 }
 
 // const limiterMinutes = 15;
@@ -176,13 +176,13 @@ app.get(['/movie/', '/creator/', '/search/', '/user-ratings/', '/user-reviews/']
 });
 
 app.get(Endpoint.MOVIE, async (req, res) => {
-  const { baseUrl } = req.query;
+  const { language } = req.query;
   try {
     const movie = await csfd.movie(+req.params.id, {
-      baseUrl: baseUrl as string | undefined
+      language: language as string | undefined
     });
     res.json(movie);
-    logMessage('success', { error: null, message: `${Endpoint.MOVIE}: ${req.params.id}${baseUrl ? ` [${baseUrl}]` : ''}` }, req);
+    logMessage('success', { error: null, message: `${Endpoint.MOVIE}: ${req.params.id}${language ? ` [${language}]` : ''}` }, req);
   } catch (error) {
     const log: ErrorLog = {
       error: Errors.MOVIE_FETCH_FAILED,
@@ -194,13 +194,13 @@ app.get(Endpoint.MOVIE, async (req, res) => {
 });
 
 app.get(Endpoint.CREATOR, async (req, res) => {
-  const { baseUrl } = req.query;
+  const { language } = req.query;
   try {
     const result = await csfd.creator(+req.params.id, {
-      baseUrl: baseUrl as string | undefined
+      language: language as string | undefined
     });
     res.json(result);
-    logMessage('success', { error: null, message: `${Endpoint.CREATOR}: ${req.params.id}${baseUrl ? ` [${baseUrl}]` : ''}` }, req);
+    logMessage('success', { error: null, message: `${Endpoint.CREATOR}: ${req.params.id}${language ? ` [${language}]` : ''}` }, req);
   } catch (error) {
     const log: ErrorLog = {
       error: Errors.CREATOR_FETCH_FAILED,
@@ -212,13 +212,13 @@ app.get(Endpoint.CREATOR, async (req, res) => {
 });
 
 app.get(Endpoint.SEARCH, async (req, res) => {
-  const { baseUrl } = req.query;
+  const { language } = req.query;
   try {
     const result = await csfd.search(req.params.query, {
-      baseUrl: baseUrl as string | undefined
+      language: language as string | undefined
     });
     res.json(result);
-    logMessage('success', { error: null, message: `${Endpoint.SEARCH}: ${req.params.query}${baseUrl ? ` [${baseUrl}]` : ''}` }, req);
+    logMessage('success', { error: null, message: `${Endpoint.SEARCH}: ${req.params.query}${language ? ` [${language}]` : ''}` }, req);
   } catch (error) {
     const log: ErrorLog = {
       error: Errors.SEARCH_FETCH_FAILED,
@@ -230,7 +230,7 @@ app.get(Endpoint.SEARCH, async (req, res) => {
 });
 
 app.get(Endpoint.USER_RATINGS, async (req, res) => {
-  const { allPages, allPagesDelay, excludes, includesOnly, page, baseUrl } = req.query;
+  const { allPages, allPagesDelay, excludes, includesOnly, page, language } = req.query;
   try {
     const result = await csfd.userRatings(req.params.id, {
       allPages: allPages === 'true',
@@ -241,12 +241,12 @@ app.get(Endpoint.USER_RATINGS, async (req, res) => {
         : undefined,
       page: page ? +page : undefined
     }, {
-      baseUrl: baseUrl as string | undefined
+      language: language as string | undefined
     });
     res.json(result);
     logMessage(
       'success',
-      { error: null, message: `${Endpoint.USER_RATINGS}: ${req.params.id}${baseUrl ? ` [${baseUrl}]` : ''}` },
+      { error: null, message: `${Endpoint.USER_RATINGS}: ${req.params.id}${language ? ` [${language}]` : ''}` },
       req
     );
   } catch (error) {
@@ -260,7 +260,7 @@ app.get(Endpoint.USER_RATINGS, async (req, res) => {
 });
 
 app.get(Endpoint.USER_REVIEWS, async (req, res) => {
-  const { allPages, allPagesDelay, excludes, includesOnly, page, baseUrl } = req.query;
+  const { allPages, allPagesDelay, excludes, includesOnly, page, language } = req.query;
   try {
     const result = await csfd.userReviews(req.params.id, {
       allPages: allPages === 'true',
@@ -271,12 +271,12 @@ app.get(Endpoint.USER_REVIEWS, async (req, res) => {
         : undefined,
       page: page ? +page : undefined
     }, {
-      baseUrl: baseUrl as string | undefined
+      language: language as string | undefined
     });
     res.json(result);
     logMessage(
       'success',
-      { error: null, message: `${Endpoint.USER_REVIEWS}: ${req.params.id}${baseUrl ? ` [${baseUrl}]` : ''}` },
+      { error: null, message: `${Endpoint.USER_REVIEWS}: ${req.params.id}${language ? ` [${language}]` : ''}` },
       req
     );
   } catch (error) {
@@ -290,12 +290,12 @@ app.get(Endpoint.USER_REVIEWS, async (req, res) => {
 });
 
 app.get(Endpoint.CINEMAS, async (req, res) => {
-  const { baseUrl } = req.query;
+  const { language } = req.query;
   try {
     const result = await csfd.cinema(1, 'today', {
-      baseUrl: baseUrl as string | undefined
+      language: language as string | undefined
     });
-    logMessage('success', { error: null, message: `${Endpoint.CINEMAS}${baseUrl ? ` [${baseUrl}]` : ''}` }, req);
+    logMessage('success', { error: null, message: `${Endpoint.CINEMAS}${language ? ` [${language}]` : ''}` }, req);
     res.json(result);
   } catch (error) {
     const log: ErrorLog = {

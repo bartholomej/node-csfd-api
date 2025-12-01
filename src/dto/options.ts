@@ -1,4 +1,6 @@
 export interface CSFDOptions {
-  baseUrl?: string;
+  language?: CSFDLanguage;
   request?: RequestInit;
 }
+
+export type CSFDLanguage = 'cs' | 'en' | 'sk';

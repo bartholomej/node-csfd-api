@@ -18,7 +18,7 @@ import { searchUrl } from '../vars';
 
 export class SearchScraper {
   public async search(text: string, options?: CSFDOptions): Promise<CSFDSearch> {
-    const url = searchUrl(text, options?.baseUrl);
+    const url = searchUrl(text, options?.language);
     const response = await fetchPage(url, { ...options?.request });
 
     const html = parse(response);
@@ -26,19 +26,19 @@ export class SearchScraper {
     const usersNode = html.querySelectorAll('.main-users article');
     const tvSeriesNode = html.querySelectorAll('.main-series article');
 
-    return this.parseSearch(moviesNode, usersNode, tvSeriesNode, options?.baseUrl);
+    return this.parseSearch(moviesNode, usersNode, tvSeriesNode, options?.language);
   }
 
   private parseSearch(
     moviesNode: HTMLElement[],
     usersNode: HTMLElement[],
     tvSeriesNode: HTMLElement[],
-    baseUrl?: string
+    language?: string
   ) {
     const movies: CSFDSearchMovie[] = [];
     const users: CSFDSearchUser[] = [];
     const tvSeries: CSFDSearchMovie[] = [];
-    const urlPrefix = baseUrl || 'https://www.csfd.cz';
+    const urlPrefix = language || 'https://www.csfd.cz';
 
     moviesNode.forEach((m) => {
       const url = getSearchUrl(m);

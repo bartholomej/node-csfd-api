@@ -17,7 +17,7 @@ export class CreatorScraper {
     if (isNaN(id)) {
       throw new Error('node-csfd-api: creatorId must be a valid number');
     }
-    const url = creatorUrl(id, options?.baseUrl);
+    const url = creatorUrl(id, options?.language);
     const response = await fetchPage(url, { ...options?.request });
 
     const creatorHtml = parse(response);

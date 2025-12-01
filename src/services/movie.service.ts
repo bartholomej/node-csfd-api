@@ -32,7 +32,7 @@ export class MovieScraper {
     if (isNaN(id)) {
       throw new Error('node-csfd-api: movieId must be a valid number');
     }
-    const url = movieUrl(id, options?.baseUrl);
+    const url = movieUrl(id, options?.language);
     const response = await fetchPage(url, { ...options?.request });
 
     const movieHtml = parse(response);

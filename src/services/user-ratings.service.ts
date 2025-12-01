@@ -24,7 +24,7 @@ export class UserRatingsScraper {
   ): Promise<CSFDUserRatings[]> {
     let allMovies: CSFDUserRatings[] = [];
     const pageToFetch = config?.page || 1;
-    const url = userRatingsUrl(user, pageToFetch > 1 ? pageToFetch : undefined, options?.baseUrl);
+    const url = userRatingsUrl(user, pageToFetch > 1 ? pageToFetch : undefined, options?.language);
     const response = await fetchPage(url, { ...options?.request });
     const items = parse(response);
     const movies = items.querySelectorAll('.box-user-rating .table-container tbody tr');
@@ -40,7 +40,7 @@ export class UserRatingsScraper {
       console.log('Fetching all pages', pages);
       for (let i = 2; i <= pages; i++) {
         console.log('Fetching page', i, 'out of', pages, '...');
-        const url = userRatingsUrl(user, i, options?.baseUrl);
+        const url = userRatingsUrl(user, i, options?.language);
         const response = await fetchPage(url, { ...options?.request });
 
         const items = parse(response);

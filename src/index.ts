@@ -11,7 +11,7 @@ import { SearchScraper } from './services/search.service';
 import { UserRatingsScraper } from './services/user-ratings.service';
 import { UserReviewsScraper } from './services/user-reviews.service';
 import { CSFDOptions } from './types';
-import { setBaseUrl } from './vars';
+import { setlanguage } from './vars';
 
 export class Csfd {
   private defaultOptions?: CSFDOptions;
@@ -28,12 +28,12 @@ export class Csfd {
     this.defaultOptions = defaultOptions;
   }
 
-  public setOptions({ request, baseUrl }: CSFDOptions): void {
+  public setOptions({ request, language }: CSFDOptions): void {
     if (request !== undefined) {
       this.defaultOptions = { ...this.defaultOptions, request };
     }
-    if (baseUrl !== undefined) {
-      setBaseUrl(baseUrl);
+    if (language !== undefined) {
+      setlanguage(language);
     }
   }
 
