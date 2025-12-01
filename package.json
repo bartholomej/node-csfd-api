@@ -1,6 +1,6 @@
 {
   "name": "node-csfd-api",
-  "version": "3.1.1",
+  "version": "3.2.0",
   "description": "ČSFD API in JavaScript. Amazing NPM library for scrapping csfd.cz :)",
   "author": "BART! <bart@bartweb.cz>",
   "scripts": {
