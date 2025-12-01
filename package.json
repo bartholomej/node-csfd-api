@@ -4,7 +4,9 @@
   "description": "ČSFD API in JavaScript. Amazing NPM library for scrapping csfd.cz :)",
   "author": "BART! <bart@bartweb.cz>",
   "scripts": {
-    "start": "tsc -w",
+    "dev": "tsc -w",
+    "start": "yarn dev",
+    "server": "tsx server",
     "prebuild": "rimraf dist",
     "build": "tsdown --config-loader unconfig && cp README.md dist/ && cp LICENSE dist/",
     "build:server": "npx esbuild ./server.ts --outfile=dist/server.mjs --format=esm --sourcemap && node scripts/server-mod.js",
@@ -50,7 +52,7 @@
     "eslint-config-google": "^0.14.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.4",
-    "express": "^5.1.0",
+    "express": "^5.2.0",
     "express-rate-limit": "^8.2.1",
     "express-slow-down": "^3.0.1",
     "globals": "^16.5.0",
@@ -59,7 +61,7 @@
     "prettier": "^3.7.3",
     "rimraf": "^6.1.2",
     "tsdown": "^0.15.11",
-    "tsx": "^4.20.6",
+    "tsx": "^4.21.0",
     "typescript": "^5.9.3",
     "vitest": "^4.0.14"
   },
