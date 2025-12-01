@@ -1,22 +1,29 @@
 import { CSFDCinemaPeriod } from './dto/cinema';
 
+const BASE_URL = 'https://www.csfd.cz';
+
+// User URLs
+export const userUrl = (user: string | number): string =>
+  `${BASE_URL}/uzivatel/${encodeURIComponent(user)}`;
+
 export const userRatingsUrl = (user: string | number, page?: number): string =>
-  `https://www.csfd.cz/uzivatel/${encodeURIComponent(user)}/hodnoceni/${
-    page ? '?page=' + page : ''
-  }`;
-
-export const movieUrl = (movie: number): string =>
-  `https://www.csfd.cz/film/${encodeURIComponent(movie)}/prehled/`;
-
-export const creatorUrl = (creator: number | string): string =>
-  `https://www.csfd.cz/tvurce/${encodeURIComponent(creator)}`;
-
-export const cinemasUrl = (district: number | string, period: CSFDCinemaPeriod): string => {
-  return `https://www.csfd.cz/kino/?period=${period}&district=${district}`;
-};
-
-export const searchUrl = (text: string): string =>
-  `https://www.csfd.cz/hledat/?q=${encodeURIComponent(text)}`;
+  `${userUrl(user)}/hodnoceni/${page ? '?page=' + page : ''}`;
 
 export const userReviewsUrl = (user: string | number, page?: number): string =>
-  `https://www.csfd.cz/uzivatel/${encodeURIComponent(user)}/recenze/${page ? '?page=' + page : ''}`;
+  `${userUrl(user)}/recenze/${page ? '?page=' + page : ''}`;
+
+// Movie URLs
+export const movieUrl = (movie: number): string =>
+  `${BASE_URL}/film/${encodeURIComponent(movie)}/prehled/`;
+
+// Creator URLs
+export const creatorUrl = (creator: number | string): string =>
+  `${BASE_URL}/tvurce/${encodeURIComponent(creator)}`;
+
+// Cinema URLs
+export const cinemasUrl = (district: number | string, period: CSFDCinemaPeriod): string =>
+  `${BASE_URL}/kino/?period=${period}&district=${district}`;
+
+// Search URLs
+export const searchUrl = (text: string): string =>
+  `${BASE_URL}/hledat/?q=${encodeURIComponent(text)}`;
