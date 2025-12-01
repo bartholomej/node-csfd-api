@@ -1,7 +1,8 @@
 import { CSFDCinemaPeriod } from './dto/cinema';
 
 export const userRatingsUrl = (user: string | number, page?: number): string =>
-  `https://www.csfd.cz/uzivatel/${encodeURIComponent(user)}/hodnoceni/${page ? '?page=' + page : ''
+  `https://www.csfd.cz/uzivatel/${encodeURIComponent(user)}/hodnoceni/${
+    page ? '?page=' + page : ''
   }`;
 
 export const movieUrl = (movie: number): string =>
@@ -16,3 +17,6 @@ export const cinemasUrl = (district: number | string, period: CSFDCinemaPeriod):
 
 export const searchUrl = (text: string): string =>
   `https://www.csfd.cz/hledat/?q=${encodeURIComponent(text)}`;
+
+export const userReviewsUrl = (user: string | number, page?: number): string =>
+  `https://www.csfd.cz/uzivatel/${encodeURIComponent(user)}/recenze/${page ? '?page=' + page : ''}`;
