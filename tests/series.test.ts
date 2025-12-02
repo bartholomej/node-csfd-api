@@ -5,6 +5,7 @@ import { MovieScraper } from '../src/services/movie.service';
 import { serie1Season1EpisodeMock } from './mocks/series1-season1-episode.mock';
 import { serie1Season1Mock } from './mocks/series1-season1.mock';
 import { serie1SeasonsMock } from './mocks/series1-seasons.mock';
+import { serie2EpisodeMock } from './mocks/series2-episode.mock';
 import { serie2EpisodesMock } from './mocks/series2-episodes.mock';
 
 /**
@@ -136,7 +137,7 @@ describe('Series Pattern 1: Series with Seasons (The Simpsons)', () => {
       expect(movie.parent).toBeDefined();
       expect(movie.parent).not.toBeNull();
       expect(movie.parent!.series).toBeDefined();
-      expect(movie.parent!.series.id).toBe(474212);
+      expect(movie.parent!.series.id).toBe(72489);
       expect(movie.parent!.series.name).toBe('Simpsonovi');
       // Season page doesn't have a parent season, only parent series
       expect(movie.parent!.season).toBeNull();
@@ -307,6 +308,83 @@ describe('Series Pattern 2: Series with Direct Episodes (The Curse)', () => {
     if (firstEpisode.info) {
       expect(firstEpisode.info).toMatch(/E\d+/);
     }
+  });
+});
+
+/**
+ * Series Pattern 2 Episode: Episode from Series without Seasons
+ * Structure: Series -> Episode (no season)
+ * Example: The Curse Episode 1 (1436408)
+ * - Episode has only series as parent, no season
+ */
+describe('Series Pattern 2 Episode: Episode without Season (The Curse Episode)', () => {
+  let movie: CSFDMovie;
+
+  beforeAll(() => {
+    movie = parseMovieMock(serie2EpisodeMock, 1436408);
+  });
+
+  test('Should have correct title', () => {
+    expect(movie.title).toBe('Kouzelná země');
+  });
+
+  test('Should be type "epizoda"', () => {
+    expect(movie.type).toBe('epizoda');
+  });
+
+  test('Should have episodeCode', () => {
+    expect(movie.episodeCode).toBe('E01');
+  });
+
+  test('Should have parent series but NO season', () => {
+    expect(movie.parent).toBeDefined();
+    expect(movie.parent).not.toBeNull();
+
+    // Series info
+    expect(movie.parent!.series).toBeDefined();
+    expect(movie.parent!.series.id).toBe(1431651);
+    expect(movie.parent!.series.name).toBe('The Curse');
+
+    // NO season info (this series doesn't have seasons)
+    expect(movie.parent!.season).toBeNull();
+  });
+
+  test('Should have rating', () => {
+    expect(movie.rating).toBeGreaterThan(60);
+  });
+
+  test('Should have year', () => {
+    expect(movie.year).toBe(2023);
+  });
+
+  test('Should have duration', () => {
+    expect(movie.duration).toBe(61);
+  });
+
+  test('Should have creators', () => {
+    expect(movie.creators.directors.length).toBeGreaterThan(0);
+    expect(movie.creators.actors.length).toBeGreaterThan(0);
+  });
+
+  test('Should NOT have seasons', () => {
+    expect(movie.seasons).toBeNull();
+  });
+
+  test('Should NOT have episodes', () => {
+    expect(movie.episodes).toBeNull();
+  });
+
+  test('Should have descriptions', () => {
+    expect(movie.descriptions.length).toBeGreaterThan(0);
+  });
+
+  test('Should have VOD services', () => {
+    expect(movie.vod.length).toBeGreaterThan(0);
+  });
+
+  test('Should have genres', () => {
+    expect(movie.genres).toContain('Komedie');
+    expect(movie.genres).toContain('Drama');
   });
 });
 
