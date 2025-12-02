@@ -98,7 +98,7 @@ const RAW_LANGUAGE = process.env.LANGUAGE;
 const isSupportedLanguage = (value: unknown): value is CSFDLanguage =>
   value === 'cs' || value === 'en' || value === 'sk';
 
-const BASE_URL = isSupportedLanguage(RAW_LANGUAGE) ? RAW_LANGUAGE : undefined;
+const BASE_LANGUAGE = isSupportedLanguage(RAW_LANGUAGE) ? RAW_LANGUAGE : undefined;
 
 const API_KEYS_LIST = API_KEY
   ? API_KEY.split(/[,;\s]+/)
@@ -107,8 +107,8 @@ const API_KEYS_LIST = API_KEY
   : [];
 
 // Configure base URL if provided
-if (BASE_URL) {
-  csfd.setOptions({ language: BASE_URL });
+if (BASE_LANGUAGE) {
+  csfd.setOptions({ language: BASE_LANGUAGE });
 }
 
 // const limiterMinutes = 15;
@@ -253,7 +253,7 @@ app.get(Endpoint.USER_RATINGS, async (req, res) => {
         : undefined,
       page: page ? +page : undefined
     }, {
-      language: language as CSFDLanguage | undefined
+      language
     });
     res.json(result);
     logMessage(
@@ -286,7 +286,7 @@ app.get(Endpoint.USER_REVIEWS, async (req, res) => {
         : undefined,
       page: page ? +page : undefined
     }, {
-      language: language as CSFDLanguage | undefined
+      language
     });
     res.json(result);
     logMessage(
@@ -350,10 +350,8 @@ app.listen(port, () => {
   console.log(`Endpoints: ${Object.values(Endpoint).join(', ')}\n`);
 
   console.log(`API is running on: http://localhost:${port}`);
-  if (BASE_URL) {
-    console.log(`Base URL configured: ${BASE_URL}\n`);
-  } else {
-    console.log(`Base URL: https://www.csfd.cz (default)\n`);
+  if (BASE_LANGUAGE) {
+    console.log(`Base language configured: ${BASE_LANGUAGE}\n`);
   }
   if (API_KEYS_LIST.length === 0) {
     console.log(

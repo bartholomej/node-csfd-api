@@ -23,7 +23,7 @@ import { addProtocol, getColor, parseISO8601Duration, parseIdFromUrl } from './g
  */
 export const getLocalizedCreatorLabel = (
   language: string | undefined,
-  key: 'directors' | 'writers' | 'cinematography' | 'music' | 'actors' | 'basedOn' | 'producers' | 'filmEditing' | 'costumeDesign' | 'productionDesign'
+  key: 'directors' | 'writers' | 'cinematography' | 'music' | 'actors' | 'basedOn' | 'producers' | 'filmEditing' | 'costumeDesign' | 'productionDesign' | 'casting' | 'sound' | 'makeup'
 ): CSFDCreatorGroups | CSFDCreatorGroupsEnglish | CSFDCreatorGroupsSlovak => {
   const labels: Record<string, Record<string, CSFDCreatorGroups | CSFDCreatorGroupsEnglish | CSFDCreatorGroupsSlovak>> = {
     en: {
