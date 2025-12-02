@@ -3,6 +3,7 @@ import { CSFDFilmTypes } from '../dto/global';
 import { CSFDMovie } from '../dto/movie';
 import { fetchPage } from '../fetchers';
 import {
+  getLocalizedCreatorLabel,
   getMovieBoxMovies,
   getMovieColorRating,
   getMovieDescriptions,
@@ -41,7 +42,7 @@ export class MovieScraper {
     const asideNode = movieHtml.querySelector('.aside-movie-profile');
     const movieNode = movieHtml.querySelector('.main-movie-profile');
     const jsonLd = movieHtml.querySelector('script[type="application/ld+json"]').innerText;
-    return this.buildMovie(+movieId, movieNode, asideNode, pageClasses, jsonLd);
+    return this.buildMovie(+movieId, movieNode, asideNode, pageClasses, jsonLd, options);
   }
 
   private buildMovie(
@@ -50,7 +51,7 @@ export class MovieScraper {
     asideEl: HTMLElement,
     pageClasses: string[],
     jsonLd: string,
-    options?: CSFDOptions
+    options: CSFDOptions
   ): CSFDMovie {
     return {
       id: movieId,
@@ -70,16 +71,16 @@ export class MovieScraper {
       photo: getMovieRandomPhoto(el),
       trivia: getMovieTrivia(el),
       creators: {
-        directors: getMovieGroup(el, 'Režie'),
-        writers: getMovieGroup(el, 'Scénář'),
-        cinematography: getMovieGroup(el, 'Kamera'),
-        music: getMovieGroup(el, 'Hudba'),
-        actors: getMovieGroup(el, 'Hrají'),
-        basedOn: getMovieGroup(el, 'Předloha'),
-        producers: getMovieGroup(el, 'Produkce'),
-        filmEditing: getMovieGroup(el, 'Střih'),
-        costumeDesign: getMovieGroup(el, 'Kostýmy'),
-        productionDesign: getMovieGroup(el, 'Scénografie')
+        directors: getMovieGroup(el, getLocalizedCreatorLabel(options?.language, 'directors')),
+        writers: getMovieGroup(el, getLocalizedCreatorLabel(options?.language, 'writers')),
+        cinematography: getMovieGroup(el, getLocalizedCreatorLabel(options?.language, 'cinematography')),
+        music: getMovieGroup(el, getLocalizedCreatorLabel(options?.language, 'music')),
+        actors: getMovieGroup(el, getLocalizedCreatorLabel(options?.language, 'actors')),
+        basedOn: getMovieGroup(el, getLocalizedCreatorLabel(options?.language, 'basedOn')),
+        producers: getMovieGroup(el, getLocalizedCreatorLabel(options?.language, 'producers')),
+        filmEditing: getMovieGroup(el, getLocalizedCreatorLabel(options?.language, 'filmEditing')),
+        costumeDesign: getMovieGroup(el, getLocalizedCreatorLabel(options?.language, 'costumeDesign')),
+        productionDesign: getMovieGroup(el, getLocalizedCreatorLabel(options?.language, 'productionDesign'))
       },
       vod: getMovieVods(asideEl),
       tags: getMovieTags(asideEl),

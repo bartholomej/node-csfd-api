@@ -3,6 +3,7 @@ import { CSFDColorRating } from '../dto/global';
 import {
   CSFDBoxContent,
   CSFDCreatorGroups,
+  CSFDCreatorGroupsEnglish,
   CSFDGenres,
   CSFDMovieCreator,
   CSFDMovieListItem,
@@ -12,6 +13,47 @@ import {
   CSFDVodService
 } from '../dto/movie';
 import { addProtocol, getColor, parseISO8601Duration, parseIdFromUrl } from './global.helper';
+
+/**
+ * Maps language-specific movie creator group labels.
+ * @param language - The language code (e.g., 'en', 'cs')
+ * @param key - The key of the creator group (e.g., 'directors', 'writers')
+ * @returns The localized label for the creator group
+ */
+export const getLocalizedCreatorLabel = (
+  language: string | undefined,
+  key: 'directors' | 'writers' | 'cinematography' | 'music' | 'actors' | 'basedOn' | 'producers' | 'filmEditing' | 'costumeDesign' | 'productionDesign'
+): CSFDCreatorGroups | CSFDCreatorGroupsEnglish => {
+  const labels: Record<string, Record<string, CSFDCreatorGroups | CSFDCreatorGroupsEnglish>> = {
+    en: {
+      directors: 'Directed by',
+      writers: 'Screenplay',
+      cinematography: 'Cinematography',
+      music: 'Composer',
+      actors: 'Cast',
+      basedOn: 'Based on',
+      producers: 'Produced by',
+      filmEditing: 'Editing',
+      costumeDesign: 'Costumes',
+      productionDesign: 'Production design'
+    },
+    cs: {
+      directors: 'Režie',
+      writers: 'Scénář',
+      cinematography: 'Kamera',
+      music: 'Hudba',
+      actors: 'Hrají',
+      basedOn: 'Předloha',
+      producers: 'Produkce',
+      filmEditing: 'Střih',
+      costumeDesign: 'Kostýmy',
+      productionDesign: 'Scénografie'
+    }
+  };
+
+  const lang = language || 'cs'; // Default to Czech
+  return (labels[lang] || labels['cs'])[key];
+};
 
 export const getMovieId = (el: HTMLElement): number => {
   const url = el.querySelector('.tabs .tab-nav-list a').attributes.href;
@@ -177,7 +219,7 @@ const parseMoviePeople = (el: HTMLElement): CSFDMovieCreator[] => {
   );
 };
 
-export const getMovieGroup = (el: HTMLElement, group: CSFDCreatorGroups): CSFDMovieCreator[] => {
+export const getMovieGroup = (el: HTMLElement, group: CSFDCreatorGroups | CSFDCreatorGroupsEnglish): CSFDMovieCreator[] => {
   const creators = el.querySelectorAll('.creators h4');
   const element = creators.filter((elem) => elem.textContent.trim().includes(group))[0];
   if (element?.parentNode) {

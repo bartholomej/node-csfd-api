@@ -137,10 +137,29 @@ export type CSFDCreatorGroups =
   | 'Hudba'
   | 'Hrají'
   | 'Produkce'
+  | 'Casting'
   | 'Střih'
+  | 'Zvuk'
+  | 'Masky'
   | 'Předloha'
   | 'Scénografie'
   | 'Kostýmy';
+
+
+export type CSFDCreatorGroupsEnglish =
+  | 'Directed by'
+  | 'Screenplay'
+  | 'Cinematography'
+  | 'Composer'
+  | 'Cast'
+  | 'Produced by'
+  | 'Casting'
+  | 'Editing'
+  | 'Sound'
+  | 'Make-up'
+  | 'Production design'
+  | 'Based on'
+  | 'Costumes';
 
 export interface CSFDPremiere {
   country: string;
