@@ -1,52 +1,103 @@
 [![npm version](https://badge.fury.io/js/node-csfd-api.svg)](https://badge.fury.io/js/node-csfd-api)
-[![Package License](https://img.shields.io/npm/l/node-csfd-api.svg)](https://www.npmjs.com/node-csfd-api)
+[![License](https://img.shields.io/npm/l/node-csfd-api.svg)](https://www.npmjs.com/node-csfd-api)
 [![Build & Publish](https://github.com/bartholomej/node-csfd-api/workflows/Publish/badge.svg)](https://github.com/bartholomej/node-csfd-api/actions)
-[![codecov](https://codecov.io/gh/bartholomej/node-csfd-api/branch/master/graph/badge.svg?token=YQH9UoVrGP)](https://codecov.io/gh/bartholomej/node-csfd-api)
+[![Coverage](https://codecov.io/gh/bartholomej/node-csfd-api/branch/master/graph/badge.svg?token=YQH9UoVrGP)](https://codecov.io/gh/bartholomej/node-csfd-api)
+[![npm downloads](https://img.shields.io/npm/dm/node-csfd-api.svg)](https://www.npmjs.com/node-csfd-api)
 
-# CSFD API 🎥 2025
+<div align="center">
 
-> JavaScript NPM library for scraping **Czech Movie Database (csfd.cz)**
->
-> - JavaScript / TypeScript
-> - Browser + Node.js (SSR)
-> - Tested (~100% Code coverage)
-> - ✅ Ready for new ČSFD 2025!
-> - You can use in:
->   - Docker – [_How to do it?_](#-docker)
->   - Firebase function
->   - AWS λ (lambda function)
->   - CloudFlare Worker
->   - Chrome extension
->   - React native app
->   - Browsers (Pay attention to CORS)
+# CSFD API 🎬 2025
 
-## 🗜️ Install
+#### Modern TypeScript NPM library for scraping **Czech Movie Database (csfd.cz)** _(unofficial)_
+
+[Features](#-features) • [Installation](#-installation) • [Quick Start](#-quick-start) • [API Reference](#-api-reference) • [Examples](#-usage-examples) • [Docker](#-docker-support)
+
+</div>
+
+---
+
+## ✨ Features
+
+- 🎯 **Type-safe** - Full TypeScript support with type definitions
+- 🧪 **Well-tested** - ~100% code coverage
+- 🚀 **Universal** - Works in Node.js, browsers, and serverless environments
+- 🐳 **Docker ready** - Pre-built Docker images available
+- 🔄 **Modern API** - Promise-based with async/await support
+- 📦 **One dependency** - Lightweight and efficient
+
+### Supported Platforms
+
+- Node.js (ESM & CommonJS)
+- Browsers (with CORS considerations)
+- Docker containers
+- Serverless (Firebase Functions, AWS Lambda, CloudFlare Workers, etc.)
+- Chrome Extensions
+- React Native (Yes, with Expo too!)
+
+## 📦 Installation
 
 ```bash
 npm install node-csfd-api
 # yarn add node-csfd-api
+# pnpm add node-csfd-api
 ```
 
-## 🛠️ Usage and examples
+## 🚀 Quick Start
 
-- [Movies and TV Series](#Movie)
-- [User Ratings](#User-Ratings)
-- [User Reviews](#User-Reviews)
-- [Search](#Search)
-- [Creators](#Creators)
+```typescript
+import { csfd } from 'node-csfd-api';
+
+// Fetch movie details
+const movie = await csfd.movie(535121);
+console.log(movie.title); // "Na špatné straně"
+
+// Search for content
+const results = await csfd.search('Tarantino');
+console.log(results.movies, results.tvSeries, results.users);
+
+// Get creator info
+const creator = await csfd.creator(2120);
+console.log(creator.name); // "Quentin Tarantino"
+
+// Get user ratings
+const ratings = await csfd.userRatings('912');
+console.log(ratings);
+
+// Get user reviews
+const reviews = await csfd.userReviews('195357-verbal');
+console.log(reviews);
+```
+
+## 📖 Table of Contents
+
+- [Movie Details](#movie)
+- [Search](#search)
+- [Creators](#creators)
+- [User Ratings](#user-ratings)
+- [User Reviews](#user-reviews)
+- [Docker Support](#-docker-support)
+- [Development](#-development)
+
+## 📚 API Reference
 
 ### Movie
 
-> Get info about [this movie](https://www.csfd.cz/film/535121-na-spatne-strane/komentare/) _(id: 535121)_
+> Retrieve comprehensive information about a movie or TV series by its ČSFD ID.
 
-```javascript
+**Method:** `csfd.movie(id: number): Promise<Movie>`
+
+```typescript
 import { csfd } from 'node-csfd-api';
 
+// Using async/await
+const movie = await csfd.movie(535121);
+
+// Alternatively, using promises
 csfd.movie(535121).then((movie) => console.log(movie));
 ```
 
 <details>
-  <summary>Click here to see full result example</summary>
+  <summary>🔎 Click here to see full result example</summary>
 
 ```javascript
 {
@@ -144,16 +195,23 @@ csfd.movie(535121).then((movie) => console.log(movie));
 
 ### Search
 
-> Search movies, users and TV series
+> Search for movies, TV series, and users across the ČSFD database.
 
-```javascript
+**Method:** `csfd.search(query: string): Promise<SearchResults>`
+
+```typescript
 import { csfd } from 'node-csfd-api';
 
-csfd.search('bart').then((search) => console.log(search));
+const results = await csfd.search('bart');
+
+// Access different result types
+console.log(results.movies); // Array of movies
+console.log(results.tvSeries); // Array of TV series
+console.log(results.users); // Array of users
 ```
 
 <details>
-  <summary>Click here to see full result example</summary>
+  <summary>🔎 Click here to see full result example</summary>
 
 ```javascript
 [
@@ -208,16 +266,24 @@ users: [
 
 ### Creators
 
-> Get creator info + filmography
+> Get detailed information about a creator including their biography and filmography.
 
-```javascript
+**Method:** `csfd.creator(id: number): Promise<Creator>`
+
+```typescript
 import { csfd } from 'node-csfd-api';
 
-csfd.creator(2120).then((creator) => console.log(creator));
+const creator = await csfd.creator(2120); // Quentin Tarantino
+
+console.log(creator.name); // Name
+console.log(creator.bio); // Biography
+console.log(creator.films); // Filmography
+console.log(creator.birthday); // Birth date
+// ... many more properties, see example
 ```
 
 <details>
-  <summary>Click here to see full result example</summary>
+  <summary>🔎 Click here to see full result example</summary>
 
 ```javascript
 {
@@ -298,49 +364,45 @@ csfd.creator(2120).then((creator) => console.log(creator));
 
 ### User Ratings
 
-#### Last ratings (last page)
+> Retrieve user ratings from their ČSFD profile.
 
-Get [my last 50 ratings](https://www.csfd.cz/uzivatel/912-bart/hodnoceni/)
+**Method:** `csfd.userRatings(username: string, options?: UserRatingsOptions): Promise<Rating[]>`
 
-```javascript
+#### Basic Usage
+
+```typescript
 import { csfd } from 'node-csfd-api';
 
-csfd.userRatings('912-bart').then((ratings) => console.log(ratings));
+// Get last page of ratings (~50 items)
+const ratings = await csfd.userRatings('912-bart');
 ```
 
-#### All ratings (all pages)
+#### Advanced Options
 
-> Warning: Use it wisely. Can be detected and banned. Consider using it together with `allPagesDelay` attribute.
+```typescript
+// Get specific page
+const page2 = await csfd.userRatings('912-bart', { page: 2 });
 
-Get [all of my ratings](https://www.csfd.cz/uzivatel/912-bart/hodnoceni/)
+// Get all ratings (use with caution - rate limiting applies)
+const allRatings = await csfd.userRatings('912-bart', {
+  allPages: true,
+  allPagesDelay: 2000 // 2 second delay between requests
+});
 
-```javascript
-import { csfd } from 'node-csfd-api';
+// Filter by content type
+const onlyMovies = await csfd.userRatings('912-bart', {
+  includesOnly: ['film']
+});
 
-csfd
-  .userRatings('912-bart', {
-    allPages: true, // Download all pages (one by one)
-    allPageDelay: 2000 // Make delay 2000ms on each page request
-  })
-  .then((ratings) => console.log(ratings));
+const excludeEpisodes = await csfd.userRatings('912-bart', {
+  exclude: ['epizoda', 'série']
+});
 ```
 
-#### Specific page
-
-Get [second page of my ratings](https://www.csfd.cz/uzivatel/912-bart/hodnoceni/?page=2)
-
-```javascript
-import { csfd } from 'node-csfd-api';
-
-csfd
-  .userRatings('912-bart', {
-    page: 2 // Get specific page
-  })
-  .then((ratings) => console.log(ratings));
-```
+> ⚠️ **Rate Limiting Warning**: When fetching all pages, use appropriate delays to avoid detection. Consider implementing exponential backoff for large datasets.
 
 <details>
-  <summary>Click here to see full result example</summary>
+  <summary>🔎 Click here to see full result example</summary>
 
 ```javascript
 [
@@ -367,63 +429,56 @@ csfd
 
 </details>
 
-#### Options for user ratings
+#### UserRatingsOptions
 
-| Option            | Type                                                                                                                                       | Default | Description                                            |
-| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | ------- | ------------------------------------------------------ |
-| **includesOnly**  | [CSFDFilmTypes[]](https://github.com/bartholomej/node-csfd-api/blob/8fa5f9cbc7e7f2b62b0bd2c2b5a24c9a63444f6a/src/interfaces/global.ts#L25) | null    | Including only film types. eg. `['seriál', 'koncert']` |
-| **exclude**       | [CSFDFilmTypes[]](https://github.com/bartholomej/node-csfd-api/blob/8fa5f9cbc7e7f2b62b0bd2c2b5a24c9a63444f6a/src/interfaces/global.ts#L25) | null    | Excluding film types eg. `['epizoda', 'série']`        |
-| **allPages**      | boolean                                                                                                                                    | false   | Get all pages                                          |
-| **allPagesDelay** | number                                                                                                                                     | 0       | Delay on each page request. In milliseconds            |
-| **page**          | number                                                                                                                                     | 1       | Specific page number to fetch (e.g., 2 for page 2)     |
+| Option          | Type              | Default | Description                                                      |
+| --------------- | ----------------- | ------- | ---------------------------------------------------------------- |
+| `includesOnly`  | `CSFDFilmTypes[]` | `null`  | Include only specific content types (e.g., `['film', 'seriál']`) |
+| `exclude`       | `CSFDFilmTypes[]` | `null`  | Exclude specific content types (e.g., `['epizoda']`)             |
+| `allPages`      | `boolean`         | `false` | Fetch all pages of ratings                                       |
+| `allPagesDelay` | `number`          | `0`     | Delay between page requests in milliseconds                      |
+| `page`          | `number`          | `1`     | Fetch specific page number                                       |
 
-_Note: You can not use both parameters `includesOnly` and `excludes`. Parameter `includesOnly` has a priority._
+> 📝 **Note**: `includesOnly` and `exclude` are mutually exclusive. If both are provided, `includesOnly` takes precedence.
+>
+> 🔗 See [CSFDFilmTypes definition](https://github.com/bartholomej/node-csfd-api/blob/master/src/dto/global.ts)
 
 ### User Reviews
 
-#### Last reviews (last page)
+> Retrieve detailed user reviews from their ČSFD profile.
 
-Get [user's last reviews](https://www.csfd.cz/uzivatel/195357-verbal/recenze/)
+**Method:** `csfd.userReviews(userId: number | string, options?: UserReviewsOptions): Promise<Review[]>`
 
-```javascript
+#### Basic Usage
+
+```typescript
 import { csfd } from 'node-csfd-api';
 
-csfd.userReviews(195357).then((reviews) => console.log(reviews));
+// Get latest reviews
+const reviews = await csfd.userReviews(195357);
 ```
 
-#### All reviews (all pages)
+#### Advanced Options
 
-> Warning: Use it wisely. Can be detected and banned. Consider using it together with `allPagesDelay` attribute.
+```typescript
+// Get specific page
+const page2 = await csfd.userReviews(195357, { page: 2 });
 
-Get [all user reviews](https://www.csfd.cz/uzivatel/195357-verbal/recenze/)
+// Get all reviews with rate limiting
+const allReviews = await csfd.userReviews(195357, {
+  allPages: true,
+  allPagesDelay: 2000
+});
 
-```javascript
-import { csfd } from 'node-csfd-api';
-
-csfd
-  .userReviews(195357, {
-    allPages: true, // Download all pages (one by one)
-    allPagesDelay: 2000 // Make delay 2000ms on each page request
-  })
-  .then((reviews) => console.log(reviews));
-```
-
-#### Specific page
-
-Get [second page of user reviews](https://www.csfd.cz/uzivatel/195357-verbal/recenze/?page=2)
-
-```javascript
-import { csfd } from 'node-csfd-api';
-
-csfd
-  .userReviews(195357, {
-    page: 2 // Get specific page
-  })
-  .then((reviews) => console.log(reviews));
+// Filter by content type
+const filtered = await csfd.userReviews(195357, {
+  includesOnly: ['film'],
+  exclude: ['epizoda']
+});
 ```
 
 <details>
-  <summary>Click here to see full result example</summary>
+  <summary>🔎 Click here to see full result example</summary>
 
 ```javascript
 [
@@ -458,166 +513,219 @@ csfd
 
 </details>
 
-#### Options for user reviews
+#### UserReviewsOptions
 
-| Option            | Type                                                                                                                                       | Default | Description                                            |
-| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | ------- | ------------------------------------------------------ |
-| **includesOnly**  | [CSFDFilmTypes[]](https://github.com/bartholomej/node-csfd-api/blob/8fa5f9cbc7e7f2b62b0bd2c2b5a24c9a63444f6a/src/interfaces/global.ts#L25) | null    | Including only film types. eg. `['seriál', 'koncert']` |
-| **exclude**       | [CSFDFilmTypes[]](https://github.com/bartholomej/node-csfd-api/blob/8fa5f9cbc7e7f2b62b0bd2c2b5a24c9a63444f6a/src/interfaces/global.ts#L25) | null    | Excluding film types eg. `['epizoda', 'série']`        |
-| **allPages**      | boolean                                                                                                                                    | false   | Get all pages                                          |
-| **allPagesDelay** | number                                                                                                                                     | 0       | Delay on each page request. In milliseconds            |
-| **page**          | number                                                                                                                                     | 1       | Specific page number to fetch (e.g., 2 for page 2)     |
+Same options as [UserRatingsOptions](#userrationsoptions).
 
-_Note: You can not use both parameters `includesOnly` and `excludes`. Parameter `includesOnly` has a priority._
+## 🐳 Docker Support
 
-## 📦 Docker
+Run the CSFD API as a standalone REST service using Docker.
 
-You can use this library in Docker.
-
-We have [prepared a Docker image](https://hub.docker.com/r/bartholomej/node-csfd-api) for you.
-
-### Prebuilt image
+### Using Pre-built Image
 
 ```bash
+# Pull the latest image
 docker pull bartholomej/node-csfd-api
+
+# Run the container
+docker run -p 3000:3000 bartholomej/node-csfd-api
 ```
 
-### Build & run your own image
-
-> Build image
+### Building Your Own Image
 
 ```bash
+# Build the image
 docker build -t node-csfd-api .
-```
 
-> Run image on port 3000
-
-```bash
+# Run the container
 docker run -p 3000:3000 node-csfd-api
 ```
 
-> Open http://localhost:3000
+### REST API Endpoints
 
-### API endpoints
+Once running, access the API at `http://localhost:3000`:
 
-> Some examples
+| Endpoint                  | Description       | Example                  |
+| ------------------------- | ----------------- | ------------------------ |
+| `/movie/:id`              | Get movie details | `/movie/535121`          |
+| `/search/:query`          | Search content    | `/search/tarantino`      |
+| `/creator/:id`            | Get creator info  | `/creator/2120`          |
+| `/user-ratings/:username` | Get user ratings  | `/user-ratings/912-bart` |
+| `/user-reviews/:userId`   | Get user reviews  | `/user-reviews/195357`   |
 
-- `/movie/535121`
-- `/search/quentin+tarantino`
-- `/creator/2120`
-- `/user-ratings/912-bart`
-- `/user-reviews/195357`
+**Docker Hub:** [bartholomej/node-csfd-api](https://hub.docker.com/r/bartholomej/node-csfd-api)
 
-## 🧑‍💻 Used by
+## 🌟 Real-World Usage
 
-### Web extensions
+This library powers several production applications:
 
-- [Netflix: chrome extension](https://chrome.google.com/webstore/detail/netflix-csfd/eomgekccbddnlpmehgdjmlphndjgnlni) ([code](https://github.com/bartholomej/netflix-csfd-ext))
-- [Dafilms: chrome extension](https://chrome.google.com/webstore/detail/dafilms/hgcgneddmgflnbmhkjnefiobjgobbmdm) ([code](https://github.com/bartholomej/dafilms-ext))
-- [Kviff.tv: chrome extension](https://chrome.google.com/webstore/detail/kvifftv-%20-csfd/ihpngekoejodiligajlppbeedofhnmfm) ([code](https://github.com/bartholomej/kviff-ext))
+### Browser Extensions
 
-### Web applications
+- **[Netflix ČSFD Extension](https://chrome.google.com/webstore/detail/netflix-csfd/eomgekccbddnlpmehgdjmlphndjgnlni)** - Shows ČSFD ratings on Netflix ([source](https://github.com/bartholomej/netflix-csfd-ext))
+- **[Dafilms Extension](https://chrome.google.com/webstore/detail/dafilms/hgcgneddmgflnbmhkjnefiobjgobbmdm)** - ČSFD integration for Dafilms ([source](https://github.com/bartholomej/dafilms-ext))
+- **[Kviff.tv Extension](https://chrome.google.com/webstore/detail/kvifftv-%20-csfd/ihpngekoejodiligajlppbeedofhnmfm)** - ČSFD ratings for Kviff.tv ([source](https://github.com/bartholomej/kviff-ext))
 
-- [bartweb.cz](https://bartweb.cz) – **Last seen** section (**Firebase function**)
+### Web Applications
 
-### Mobile applications
+- **[bartweb.cz](https://bartweb.cz)** - Personal website using Firebase Functions for "Last Seen" movie tracking
 
-- [KinoKlub](https://play.google.com/store/apps/details?id=com.aquasoup) – Mobile application for AeroFilms (React Native: Android + iOS application)
+### Mobile Applications
+
+- **[KinoKlub](https://play.google.com/store/apps/details?id=com.aquasoup)** - React Native app for AeroFilms cinema chain (Android & iOS)
 
 ## 🔮 Roadmap
 
-### Scraping more pages
+### Completed Features ✅
 
-- [ ] Movies
-  - [x] Titles
-  - [x] Years
-  - [x] Type
-  - [x] User rating
-  - [x] Color rating
-  - [x] Poster
-  - [x] Duration
-  - [x] Origins
-  - [x] Descriptions
-  - [x] Genres
-  - [x] VOD
-  - [x] Tags
-  - [x] Premieres
-  - [x] Creators
-    - [x] Directors
-    - [x] Writers
-    - [x] Cinematography
-    - [x] Music
-    - [x] Actors
-    - [x] BasedOn
-    - [x] Producers
-    - [x] Film editors
-    - [x] Costume designers
-    - [x] Production designers
-  - [x] Premieres
-  - [x] Related movies
-  - [x] Similar movies
-  - [x] Trivia
-  - [x] Photo from movie (random)
-  - [ ] Reviews (from movie page)
-  - [ ] OST
-- [ ] Search
-  - [x] Movies
-  - [x] Users
-  - [x] TV Series
-  - [ ] Creators
-- [x] Creators
-  - [x] Bio
-  - [x] Movies (TODO categories)
-- [x] User Ratings
-  - [x] Last ratings
-  - [x] All pages
-- [x] User Reviews
-  - [x] Last reviews
-  - [x] All pages
-  - [ ] Filter by type
+- **Movies & TV Series**
+  - Basic info (title, year, rating, poster, duration)
+  - Detailed metadata (genres, origins, VOD platforms)
+  - Cast & crew (directors, actors, writers, composers, producers, etc.)
+  - Related content (similar movies, trivia)
+  - Alternative titles, premieres, tags
+- **Search**
+  - Movies, TV series, and users
+- **Creators**
+  - Biography and filmography
+- **User Data**
+  - Ratings with pagination and filtering
+  - Reviews with pagination and filtering
+
+### Planned Features 🚧
+
+- [ ] Movie: reviews from movie detail page
+- [ ] Movie: Original soundtracks (OST) information
+- [ ] Search: Creator search functionality
+- [ ] Server: Caching layer for improved performance
+- [ ] Server: Rate limiting helpers
 
 ## 🛠️ Development
 
-### Developing and debugging library
+### Prerequisites
+
+- Node.js 18+
+- yarn/npm/pnpm/...
+
+### Setup
 
 ```bash
+# Clone the repository
+git clone https://github.com/bartholomej/node-csfd-api.git
+cd node-csfd-api
+
+# Install dependencies
+yarn install
+
+# Run tests
+yarn test
+
+# Run tests with coverage
+yarn test:coverage
+
+# Start development mode
 yarn start
-```
 
-### Run demo locally
-
-You can find and modify it in [`./demo.ts`](https://github.com/bartholomej/node-csfd-api/blob/master/demo.ts) file
-
-```bash
+# Run the demo
 yarn demo
 ```
 
-## 🤝 Contribution
+### Project Structure
 
-I welcome you to customize this according to your needs ;)
+```text
+src/
+├── dto/              # Data transfer objects & types
+├── fetchers/         # HTTP request handlers
+├── helpers/          # Parsing & data transformation
+├── services/         # Main API service classes
+└── index.ts          # Public API exports
+```
 
-Pull requests for any improvements would be great!
+### Testing
 
-## ⭐️ Show your support
+The project maintains ~100% code coverage. Tests are located in the `tests/` directory.
 
-Give a ⭐️ if this project helped you!
+```bash
+# Run all tests
+yarn test
 
-Or if you are brave enough consider [making a donation](https://github.com/sponsors/bartholomej) for some 🍺 or 🍵 ;)
+# Run tests in watch mode
+yarn test:watch
 
-## 🕵️‍♀️ Privacy Policy
+# Generate coverage report
+yarn test:coverage
+```
 
-I DO NOT STORE ANY DATA. PERIOD.
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+### How to Contribute
+
+1. **Fork the repository**
+2. **Create a feature branch** (`git checkout -b feature/amazing-feature`)
+3. **Make your changes**
+4. **Add tests** for new functionality
+5. **Ensure tests pass** (`yarn test`)
+6. **Commit your changes** (`git commit -m 'Add amazing feature'`)
+7. **Push to the branch** (`git push origin feature/amazing-feature`)
+8. **Open a Pull Request**
+
+### Guidelines
+
+- Write clear, concise commit messages
+- Add tests for new features
+- Update documentation as needed
+- Follow the existing code style
+- Ensure all tests pass before submitting PR
+
+### Reporting Issues
+
+Found a bug? Have a feature request? Please [open an issue](https://github.com/bartholomej/node-csfd-api/issues) with:
+
+- Clear description of the problem
+- Steps to reproduce (for bugs)
+- Expected vs actual behavior
+- Environment details (Node version, OS, etc.)
+
+## ⭐️ Support
+
+If you find this project useful and you are brave enough consider [making a donation](https://github.com/sponsors/bartholomej) for some 🍺 or 🍵 ;)
+
+- Giving it a ⭐️ on [GitHub](https://github.com/bartholomej/node-csfd-api)
+- Sharing it with others who might benefit
+- [Sponsoring the project](https://github.com/sponsors/bartholomej) to support ongoing development
+
+Your support helps maintain and improve this library! 🙏
+
+## 🔒 Privacy & Security
+
+**This library does not collect, store, or transmit any user data.**
+
+All requests are made directly from your application to ČSFD.cz. No intermediary servers are involved, and no data is logged or stored by this library.
 
 I physically can't. I have nowhere to store it. I don't even have a server database to store it. So even if Justin Bieber asked nicely to see your data, I wouldn't have anything to show him.
 
-That's why, with node-csfd-api, what happens on your device stays on your device till disappear.
+### Important Notes
+
+- This is a **scraping library** - use it responsibly and respect ❤️ ČSFD's terms of service
+- Implement appropriate rate limiting in production
+- Consider caching responses to minimize server load
+- Be aware of CORS restrictions when using in browsers
 
 ## 📝 License
 
-Copyright &copy; 2020 – 2025 [Lukas Bartak](http://bartweb.cz)
+MIT © 2020 - 2025 [Lukas Bartak](http://bartweb.cz)
 
-Proudly powered by nature 🗻, wind 💨, tea 🍵 and beer 🍺 ;)
+See [LICENSE](LICENSE) for full details.
 
-All contents are licensed under the [MIT license].
+---
 
-[mit license]: LICENSE
+<div align="center">
+
+**Built with ❤️ by [Lukas Bartak](https://bartweb.cz)**
+
+Powered by nature 🗻, wind 💨, tea 🍵 and beer 🍺
+
+[⭐ Star on GitHub](https://github.com/bartholomej/node-csfd-api) • [📦 NPM Package](https://www.npmjs.com/node-csfd-api) • [🐳 Docker Hub](https://hub.docker.com/r/bartholomej/node-csfd-api)
+
+</div>
