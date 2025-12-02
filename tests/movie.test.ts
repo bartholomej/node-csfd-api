@@ -11,6 +11,7 @@ import {
 } from '../src/dto/movie';
 import { getColor } from '../src/helpers/global.helper';
 import {
+  getEpisodeCode,
   getLocalizedCreatorLabel,
   getMovieBoxMovies,
   getMovieColorRating,
@@ -31,7 +32,9 @@ import {
   getMovieTrivia,
   getMovieType,
   getMovieVods,
-  getMovieYear
+  getMovieYear,
+  getSeasonorEpisodeParent,
+  getSerieasAndSeasonTitle
 } from '../src/helpers/movie.helper';
 import { movieMock } from './mocks/movie1.html';
 import { movieMockBlank } from './mocks/movie2.html';
@@ -619,5 +622,76 @@ describe('Get people', () => {
     test('Fallback to CS for unknown lang', () => {
       expect(getLocalizedCreatorLabel('fr', 'directors')).toEqual('Režie');
     });
+  });
+});
+
+describe('Get Series and Season Title', () => {
+  test('With series and season', () => {
+    const html = parse('<h1>Series Name - Season 1</h1>');
+    const result = getSerieasAndSeasonTitle(html as any);
+    expect(result).toEqual({ seriesName: 'Series Name', seasonName: 'Season 1' });
+  });
+
+  test('Only series name', () => {
+    const html = parse('<h1>Movie Name</h1>');
+    const result = getSerieasAndSeasonTitle(html as any);
+    expect(result).toEqual({ seriesName: 'Movie Name', seasonName: null });
+  });
+
+  test('No title element', () => {
+    const html = parse('<div></div>');
+    const result = getSerieasAndSeasonTitle(html as any);
+    expect(result).toEqual({ seriesName: null, seasonName: null });
+  });
+});
+
+describe('Get Episode Code', () => {
+  test('With code', () => {
+    const html = parse('<div class="film-header-name"><h1>Episode Name (S01E01)</h1></div>');
+    const result = getEpisodeCode(html as any);
+    expect(result).toEqual('S01E01');
+  });
+
+  test('Without code', () => {
+    const html = parse('<div class="film-header-name"><h1>Episode Name</h1></div>');
+    const result = getEpisodeCode(html as any);
+    expect(result).toBeNull();
+  });
+
+  test('No header', () => {
+    const html = parse('<div></div>');
+    const result = getEpisodeCode(html as any);
+    expect(result).toBeNull();
+  });
+});
+
+describe('Get Season or Episode Parent', () => {
+  test('With parents', () => {
+    const html = parse(`
+      <div class="film-header">
+        <h2>
+          <a href="/film/123-series">Series</a>
+          <a href="/film/456-season">Season</a>
+        </h2>
+      </div>
+    `);
+    const result = getSeasonorEpisodeParent(html as any);
+    expect(result).toEqual({
+      series: { id: 123, name: 'Series' },
+      season: { id: 456, name: 'Season' }
+    });
+  });
+
+  test('No parents but serie provided', () => {
+    const html = parse('<div></div>');
+    const serie = { id: 123, name: 'Series' };
+    const result = getSeasonorEpisodeParent(html as any, serie);
+    expect(result).toEqual({ series: serie, season: null });
+  });
+
+  test('No parents and no serie', () => {
+    const html = parse('<div></div>');
+    const result = getSeasonorEpisodeParent(html as any);
+    expect(result).toBeNull();
   });
 });
