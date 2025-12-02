@@ -94,7 +94,11 @@ const port = process.env.PORT || 3000;
 // --- Config ---
 const API_KEY_NAME = process.env.API_KEY_NAME || 'x-api-key';
 const API_KEY = process.env.API_KEY;
-const BASE_URL = process.env.LANGUAGE;
+const RAW_LANGUAGE = process.env.LANGUAGE;
+const isSupportedLanguage = (value: unknown): value is CSFDLanguage =>
+  value === 'cs' || value === 'en' || value === 'sk';
+
+const BASE_URL = isSupportedLanguage(RAW_LANGUAGE) ? RAW_LANGUAGE : undefined;
 
 const API_KEYS_LIST = API_KEY
   ? API_KEY.split(/[,;\s]+/)
@@ -104,7 +108,7 @@ const API_KEYS_LIST = API_KEY
 
 // Configure base URL if provided
 if (BASE_URL) {
-  csfd.setOptions({ language: BASE_URL as CSFDLanguage | undefined });
+  csfd.setOptions({ language: BASE_URL });
 }
 
 // const limiterMinutes = 15;
@@ -177,10 +181,12 @@ app.get(['/movie/', '/creator/', '/search/', '/user-ratings/', '/user-reviews/']
 });
 
 app.get(Endpoint.MOVIE, async (req, res) => {
-  const { language } = req.query;
+  const rawLanguage = req.query.language;
+  const language = isSupportedLanguage(rawLanguage) ? rawLanguage : undefined;
+
   try {
     const movie = await csfd.movie(+req.params.id, {
-      language: language as CSFDLanguage | undefined
+      language
     });
     res.json(movie);
     logMessage('success', { error: null, message: `${Endpoint.MOVIE}: ${req.params.id}${language ? ` [${language}]` : ''}` }, req);
@@ -195,10 +201,11 @@ app.get(Endpoint.MOVIE, async (req, res) => {
 });
 
 app.get(Endpoint.CREATOR, async (req, res) => {
-  const { language } = req.query;
+  const rawLanguage = req.query.language;
+  const language = isSupportedLanguage(rawLanguage) ? rawLanguage : undefined;
   try {
     const result = await csfd.creator(+req.params.id, {
-      language: language as CSFDLanguage | undefined
+      language
     });
     res.json(result);
     logMessage('success', { error: null, message: `${Endpoint.CREATOR}: ${req.params.id}${language ? ` [${language}]` : ''}` }, req);
@@ -213,10 +220,11 @@ app.get(Endpoint.CREATOR, async (req, res) => {
 });
 
 app.get(Endpoint.SEARCH, async (req, res) => {
-  const { language } = req.query;
+  const rawLanguage = req.query.language;
+  const language = isSupportedLanguage(rawLanguage) ? rawLanguage : undefined;
   try {
     const result = await csfd.search(req.params.query, {
-      language: language as CSFDLanguage | undefined
+      language
     });
     res.json(result);
     logMessage('success', { error: null, message: `${Endpoint.SEARCH}: ${req.params.query}${language ? ` [${language}]` : ''}` }, req);
@@ -231,7 +239,10 @@ app.get(Endpoint.SEARCH, async (req, res) => {
 });
 
 app.get(Endpoint.USER_RATINGS, async (req, res) => {
-  const { allPages, allPagesDelay, excludes, includesOnly, page, language } = req.query;
+  const { allPages, allPagesDelay, excludes, includesOnly, page } = req.query;
+  const rawLanguage = req.query.language;
+  const language = isSupportedLanguage(rawLanguage) ? rawLanguage : undefined;
+
   try {
     const result = await csfd.userRatings(req.params.id, {
       allPages: allPages === 'true',
@@ -261,7 +272,10 @@ app.get(Endpoint.USER_RATINGS, async (req, res) => {
 });
 
 app.get(Endpoint.USER_REVIEWS, async (req, res) => {
-  const { allPages, allPagesDelay, excludes, includesOnly, page, language } = req.query;
+  const { allPages, allPagesDelay, excludes, includesOnly, page } = req.query;
+  const rawLanguage = req.query.language;
+  const language = isSupportedLanguage(rawLanguage) ? rawLanguage : undefined;
+
   try {
     const result = await csfd.userReviews(req.params.id, {
       allPages: allPages === 'true',
@@ -291,10 +305,12 @@ app.get(Endpoint.USER_REVIEWS, async (req, res) => {
 });
 
 app.get(Endpoint.CINEMAS, async (req, res) => {
-  const { language } = req.query;
+  const rawLanguage = req.query.language;
+  const language = isSupportedLanguage(rawLanguage) ? rawLanguage : undefined;
+
   try {
     const result = await csfd.cinema(1, 'today', {
-      language: language as CSFDLanguage | undefined
+      language
     });
     logMessage('success', { error: null, message: `${Endpoint.CINEMAS}${language ? ` [${language}]` : ''}` }, req);
     res.json(result);

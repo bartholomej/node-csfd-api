@@ -14,12 +14,12 @@ const LANGUAGE_DOMAIN_MAP: Record<CSFDLanguage, string> = {
 
 let BASE_URL = LANGUAGE_DOMAIN_MAP.cs;
 
-export const getLanguage = (): string => BASE_URL;
-export const setLanguage = (url: string): void => {
-  BASE_URL = url;
+export const getBaseUrl = (): string => BASE_URL;
+export const setBaseUrl = (language: CSFDLanguage): void => {
+  BASE_URL = getUrlByLanguage(language);
 };
 
-const getUrlByLanguage = (language?: CSFDLanguage): string => {
+export const getUrlByLanguage = (language?: CSFDLanguage): string => {
   if (language && language in LANGUAGE_DOMAIN_MAP) {
     return LANGUAGE_DOMAIN_MAP[language];
   }

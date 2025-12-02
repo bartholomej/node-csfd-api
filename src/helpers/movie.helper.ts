@@ -36,7 +36,10 @@ export const getLocalizedCreatorLabel = (
       producers: 'Produced by',
       filmEditing: 'Editing',
       costumeDesign: 'Costumes',
-      productionDesign: 'Production design'
+      productionDesign: 'Production design',
+      casting: 'Casting',
+      sound: 'Sound',
+      makeup: 'Make-up'
     },
     cs: {
       directors: 'Režie',
@@ -48,7 +51,10 @@ export const getLocalizedCreatorLabel = (
       producers: 'Produkce',
       filmEditing: 'Střih',
       costumeDesign: 'Kostýmy',
-      productionDesign: 'Scénografie'
+      productionDesign: 'Scénografie',
+      casting: 'Casting',
+      sound: 'Zvuk',
+      makeup: 'Masky'
     },
     sk: {
       directors: 'Réžia',
@@ -60,7 +66,10 @@ export const getLocalizedCreatorLabel = (
       producers: 'Produkcia',
       filmEditing: 'Strih',
       costumeDesign: 'Kostýmy',
-      productionDesign: 'Scénografia'
+      productionDesign: 'Scénografia',
+      casting: 'Casting',
+      sound: 'Zvuk',
+      makeup: 'Masky'
     }
   };
 

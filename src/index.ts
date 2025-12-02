@@ -11,7 +11,6 @@ import { SearchScraper } from './services/search.service';
 import { UserRatingsScraper } from './services/user-ratings.service';
 import { UserReviewsScraper } from './services/user-reviews.service';
 import { CSFDOptions } from './types';
-import { setLanguage } from './vars';
 
 export class Csfd {
   private defaultOptions?: CSFDOptions;
@@ -33,7 +32,7 @@ export class Csfd {
       this.defaultOptions = { ...this.defaultOptions, request };
     }
     if (language !== undefined) {
-      setLanguage(language);
+      this.defaultOptions = { ...this.defaultOptions, language };
     }
   }
 
