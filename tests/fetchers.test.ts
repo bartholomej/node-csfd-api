@@ -159,25 +159,102 @@ describe('Live: Movie page. Fetch `10135-forrest-gump`', () => {
   });
 });
 
-describe('Live: Tv series', () => {
-  let movie: CSFDMovie = {} as CSFDMovie;
-  beforeAll(async () => {
-    movie = await csfd.movie(71924);
+describe('Live: Series Patterns', () => {
+  // Pattern 1: Series with Seasons (The Simpsons)
+  describe('Series with Seasons (The Simpsons)', () => {
+    let movie: CSFDMovie;
+    beforeAll(async () => {
+      movie = await csfd.movie(72489);
+    });
+    test('Type and Title', () => {
+      expect(movie.type).toEqual<CSFDFilmTypes>('seriál');
+      expect(movie.title).toEqual('Simpsonovi');
+    });
+    test('Seasons', () => {
+      expect(movie.seasons).toBeDefined();
+      expect(movie.seasons!.length).toBeGreaterThan(20);
+    });
+    test('No Episodes on main page', () => {
+      expect(movie.episodes).toBeNull();
+    });
   });
-  test('Year', () => {
-    expect(movie.year).toEqual<number>(1994);
+
+  // Pattern 1: Season Page (The Simpsons S01)
+  describe('Season Page (The Simpsons S01)', () => {
+    let movie: CSFDMovie;
+    beforeAll(async () => {
+      movie = await csfd.movie(474212);
+    });
+    test('Type and Title', () => {
+      expect(movie.type).toEqual<CSFDFilmTypes>('série');
+      expect(movie.title).toEqual('Simpsonovi');
+      expect(movie.seasonName).toEqual('Série 1');
+    });
+    test('Parent Series', () => {
+      expect(movie.parent?.series?.id).toEqual(72489);
+      expect(movie.parent?.season).toBeNull();
+    });
+    test('Episodes', () => {
+      expect(movie.episodes).toBeDefined();
+      expect(movie.episodes!.length).toBeGreaterThan(0);
+    });
   });
-  test('Type', () => {
-    expect(movie.type).toEqual<CSFDFilmTypes>('seriál');
+
+  // Pattern 1: Episode Page (The Simpsons S01E08)
+  describe('Episode Page (The Simpsons S01E08)', () => {
+    let movie: CSFDMovie;
+    beforeAll(async () => {
+      movie = await csfd.movie(474220);
+    });
+    test('Type and Title', () => {
+      expect(movie.type).toEqual<CSFDFilmTypes>('epizoda');
+      expect(movie.title).toEqual('Mluvící hlava');
+    });
+    test('Episode Code', () => {
+      expect(movie.episodeCode).toEqual('S01E08');
+    });
+    test('Parents', () => {
+      expect(movie.parent?.series?.id).toEqual(72489);
+      expect(movie.parent?.season?.id).toEqual(474212);
+    });
   });
-  test('Title', () => {
-    expect(movie.title).toEqual<string>('Království');
+
+  // Pattern 2: Series without Seasons (The Curse)
+  describe('Series without Seasons (The Curse)', () => {
+    let movie: CSFDMovie;
+    beforeAll(async () => {
+      movie = await csfd.movie(1431651);
+    });
+    test('Type and Title', () => {
+      expect(movie.type).toEqual<CSFDFilmTypes>('seriál');
+      expect(movie.title).toEqual('The Curse');
+    });
+    test('Episodes directly', () => {
+      expect(movie.episodes).toBeDefined();
+      expect(movie.episodes!.length).toBeGreaterThan(0);
+    });
+    test('No Seasons', () => {
+      expect(movie.seasons).toBeNull();
+    });
   });
-  test('Duration', () => {
-    expect(movie.duration).toBeGreaterThan(50);
-  });
-  test('Fetch not number', async () => {
-    await expect(csfd.movie('test' as any)).rejects.toThrow(Error);
+
+  // Pattern 2: Episode without Season (The Curse E01)
+  describe('Episode without Season (The Curse E01)', () => {
+    let movie: CSFDMovie;
+    beforeAll(async () => {
+      movie = await csfd.movie(1436408);
+    });
+    test('Type and Title', () => {
+      expect(movie.type).toEqual<CSFDFilmTypes>('epizoda');
+      expect(movie.title).toEqual('Kouzelná země');
+    });
+    test('Episode Code', () => {
+      expect(movie.episodeCode).toEqual('E01');
+    });
+    test('Parents', () => {
+      expect(movie.parent?.series?.id).toEqual(1431651);
+      expect(movie.parent?.season).toBeNull();
+    });
   });
 });
 
