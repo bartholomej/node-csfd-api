@@ -60,7 +60,7 @@
     "lint-staged": "^16.2.7",
     "prettier": "^3.7.3",
     "rimraf": "^6.1.2",
-    "tsdown": "^0.15.11",
+    "tsdown": "^0.17.0-beta.5",
     "tsx": "^4.21.0",
     "typescript": "^5.9.3",
     "vitest": "^4.0.15"
@@ -98,8 +98,8 @@
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.js"
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs"
     },
     "./package.json": "./package.json"
   }

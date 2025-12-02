@@ -12,6 +12,11 @@ export default defineConfig({
   sourcemap: true,
   exports: true,
   unbundle: true,
-  plugins: [copyAndFixPackageJson({ outDir, removeFields: ['packageManager', 'lint-staged', 'devDependencies', 'scripts'] })],
+  fixedExtension: false,
+  plugins: [
+    copyAndFixPackageJson({
+      outDir,
+      removeFields: ['packageManager', 'lint-staged', 'devDependencies', 'scripts']
+    })
+  ]
 });
-
