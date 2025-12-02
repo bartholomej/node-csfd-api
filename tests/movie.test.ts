@@ -10,6 +10,7 @@ import {
 } from '../src/dto/movie';
 import { getColor } from '../src/helpers/global.helper';
 import {
+  getEpisodeCode,
   getMovieBoxMovies,
   getMovieColorRating,
   getMovieDescriptions,
@@ -28,7 +29,9 @@ import {
   getMovieTrivia,
   getMovieType,
   getMovieVods,
-  getMovieYear
+  getMovieYear,
+  getSeasonorEpisodeParent,
+  getSerieasAndSeasonTitle
 } from '../src/helpers/movie.helper';
 import { movieMock } from './mocks/movie1.html';
 import { movieMockBlank } from './mocks/movie2.html';
@@ -190,7 +193,7 @@ describe('Get Movie trivia', () => {
     expect(movie).toEqual<string[]>([
       'Celosvětová premiéra proběhla 3. září 2018 na Mezinárodním filmovém festivalu v Benátkách.(BMW12)',
       'Natáčanie filmu prebiehalo v kanadskom meste Vancouver a začalo 17.7.2017.(MikaelSVK)',
-      'Ve filmu zazní píseň „A Better Place For Us“, kterou odehrál jako hudebník režisér S. Craig Zahler.(Rominator)',
+      'Ve filmu zazní píseň „A Better Place For Us“, kterou odehrál jako hudebník režisér S. Craig Zahler.(Rominator)'
     ]);
   });
   test('Movie Blank trivia', () => {
@@ -200,9 +203,9 @@ describe('Get Movie trivia', () => {
   test('Movie Series trivia', () => {
     const movie = getMovieTrivia(seriesNode);
     expect(movie).toEqual<string[]>([
-      "Ernst-Hugo Järegård (Stig Helmer) se právě díky roli v seriálu v Dánsku výrazně zviditelnil a byl dokonce považován za nový sexuální symbol.(TomikZlesa)",
-      "Plánovanú 3. sériu narušila predčasná smrť niektorých hlavných hercov, ale po 25 rokoch predsa len vznikla.(misterz)",
-      "Když nastane stav beztíže, jako hudební podkres hraje Bachovo „Preludium F moll“. Tento hudební motiv, spolu se záběrem na vznášejícího se Pontopidana (Lars Mikkelsen), je jednoznačným odkazem na podobnou scénu se stavem beztíže z filmu Solaris (1972).(Kaleidoskop)",
+      'Ernst-Hugo Järegård (Stig Helmer) se právě díky roli v seriálu v Dánsku výrazně zviditelnil a byl dokonce považován za nový sexuální symbol.(TomikZlesa)',
+      'Plánovanú 3. sériu narušila predčasná smrť niektorých hlavných hercov, ale po 25 rokoch predsa len vznikla.(misterz)',
+      'Když nastane stav beztíže, jako hudební podkres hraje Bachovo „Preludium F moll“. Tento hudební motiv, spolu se záběrem na vznášejícího se Pontopidana (Lars Mikkelsen), je jednoznačným odkazem na podobnou scénu se stavem beztíže z filmu Solaris (1972).(Kaleidoskop)'
     ]);
   });
   test('Movie empty node', () => {
@@ -263,12 +266,12 @@ describe('Get VOD', () => {
     expect(movie).toEqual<CSFDVod[]>([
       {
         title: 'Lepší.TV',
-        url: 'https://www.lepsi.tv/top_tv/serial/kralovstvi-cast-prvni-online?utm_source=csfd&utm_content=csfd',
+        url: 'https://www.lepsi.tv/top_tv/serial/kralovstvi-cast-prvni-online?utm_source=csfd&utm_content=csfd'
       },
       {
         title: 'KVIFF.TV',
         url: 'https://kviff.tv/katalog/kralovstvi-cast-druha-prijd-kralovstvi-tve'
-      },
+      }
     ]);
   });
   test('Get vods rich', () => {
@@ -607,5 +610,76 @@ describe('Get people', () => {
       const movie = getMovieTitlesOther(wrongHtml);
       expect(movie).toEqual([]);
     });
+  });
+});
+
+describe('Get Series and Season Title', () => {
+  test('With series and season', () => {
+    const html = parse('<h1>Series Name - Season 1</h1>');
+    const result = getSerieasAndSeasonTitle(html as any);
+    expect(result).toEqual({ seriesName: 'Series Name', seasonName: 'Season 1' });
+  });
+
+  test('Only series name', () => {
+    const html = parse('<h1>Movie Name</h1>');
+    const result = getSerieasAndSeasonTitle(html as any);
+    expect(result).toEqual({ seriesName: 'Movie Name', seasonName: null });
+  });
+
+  test('No title element', () => {
+    const html = parse('<div></div>');
+    const result = getSerieasAndSeasonTitle(html as any);
+    expect(result).toEqual({ seriesName: null, seasonName: null });
+  });
+});
+
+describe('Get Episode Code', () => {
+  test('With code', () => {
+    const html = parse('<div class="film-header-name"><h1>Episode Name (S01E01)</h1></div>');
+    const result = getEpisodeCode(html as any);
+    expect(result).toEqual('S01E01');
+  });
+
+  test('Without code', () => {
+    const html = parse('<div class="film-header-name"><h1>Episode Name</h1></div>');
+    const result = getEpisodeCode(html as any);
+    expect(result).toBeNull();
+  });
+
+  test('No header', () => {
+    const html = parse('<div></div>');
+    const result = getEpisodeCode(html as any);
+    expect(result).toBeNull();
+  });
+});
+
+describe('Get Season or Episode Parent', () => {
+  test('With parents', () => {
+    const html = parse(`
+      <div class="film-header">
+        <h2>
+          <a href="/film/123-series">Series</a>
+          <a href="/film/456-season">Season</a>
+        </h2>
+      </div>
+    `);
+    const result = getSeasonorEpisodeParent(html as any);
+    expect(result).toEqual({
+      series: { id: 123, name: 'Series' },
+      season: { id: 456, name: 'Season' }
+    });
+  });
+
+  test('No parents but serie provided', () => {
+    const html = parse('<div></div>');
+    const serie = { id: 123, name: 'Series' };
+    const result = getSeasonorEpisodeParent(html as any, serie);
+    expect(result).toEqual({ series: serie, season: null });
+  });
+
+  test('No parents and no serie', () => {
+    const html = parse('<div></div>');
+    const result = getSeasonorEpisodeParent(html as any);
+    expect(result).toBeNull();
   });
 });
