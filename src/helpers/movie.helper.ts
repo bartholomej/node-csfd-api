@@ -395,7 +395,12 @@ export const getSeasonorEpisodeParent = (
   el: HTMLElement,
   serie?: { id: number; name: string }
 ): CSFDParent | null => {
-  const parents = el.querySelectorAll('.film-header h2 a');
+  // Try h2 first (for episodes), then h1 (for seasons)
+  let parents = el.querySelectorAll('.film-header h2 a');
+  if (parents.length === 0) {
+    parents = el.querySelectorAll('.film-header h1 a');
+  }
+
   if (parents.length === 0) {
     if (!serie) return null;
     return { series: serie, season: null };
@@ -404,7 +409,7 @@ export const getSeasonorEpisodeParent = (
   const [parentSeries, parentSeason] = parents;
 
   const seriesId = parseIdFromUrl(parentSeries?.getAttribute('href'));
-  const seasonId = parseIdFromUrl(parentSeason?.getAttribute('href'));
+  const seasonId = parseLastIdFromUrl(parentSeason?.getAttribute('href') || '');
   const seriesName = parentSeries?.textContent?.trim() || null;
   const seasonName = parentSeason?.textContent?.trim() || null;
 
