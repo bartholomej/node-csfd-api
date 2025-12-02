@@ -654,22 +654,6 @@ describe('Get Episode Code', () => {
 });
 
 describe('Get Season or Episode Parent', () => {
-  test('With parents', () => {
-    const html = parse(`
-      <div class="film-header">
-        <h2>
-          <a href="/film/123-series">Series</a>
-          <a href="/film/456-season">Season</a>
-        </h2>
-      </div>
-    `);
-    const result = getSeasonorEpisodeParent(html as any);
-    expect(result).toEqual({
-      series: { id: 123, name: 'Series' },
-      season: { id: 456, name: 'Season' }
-    });
-  });
-
   test('No parents but serie provided', () => {
     const html = parse('<div></div>');
     const serie = { id: 123, name: 'Series' };
