@@ -14,21 +14,21 @@ describe('Vars User Ratings', () => {
 
 describe('Vars Movies', () => {
   test('Assemble movieUrl', () => {
-    const url = movieUrl(535121);
+    const url = movieUrl(535121, {});
     expect(url).toBe('https://www.csfd.cz/film/535121/prehled/');
   });
 });
 
 describe('Vars Search', () => {
   test('Assemble searchUrl', () => {
-    const url = searchUrl('matrix');
+    const url = searchUrl('matrix', {});
     expect(url).toBe('https://www.csfd.cz/hledat/?q=matrix');
   });
 });
 
 describe('Vars Creator', () => {
   test('Assemble creatorUrl', () => {
-    const url = creatorUrl('1');
+    const url = creatorUrl('1', {});
     expect(url).toBe('https://www.csfd.cz/tvurce/1');
   });
 });

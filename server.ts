@@ -7,6 +7,7 @@ import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
 import { csfd } from './src';
 import { CSFDFilmTypes } from './src/dto/global';
+import { CSFDLanguage } from './src/types';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -93,7 +94,7 @@ const port = process.env.PORT || 3000;
 // --- Config ---
 const API_KEY_NAME = process.env.API_KEY_NAME || 'x-api-key';
 const API_KEY = process.env.API_KEY;
-const BASE_URL = process.env.BASE_URL;
+const BASE_URL = process.env.LANGUAGE;
 
 const API_KEYS_LIST = API_KEY
   ? API_KEY.split(/[,;\s]+/)
@@ -103,7 +104,7 @@ const API_KEYS_LIST = API_KEY
 
 // Configure base URL if provided
 if (BASE_URL) {
-  csfd.setOptions({ language: BASE_URL });
+  csfd.setOptions({ language: BASE_URL as CSFDLanguage | undefined });
 }
 
 // const limiterMinutes = 15;
@@ -179,7 +180,7 @@ app.get(Endpoint.MOVIE, async (req, res) => {
   const { language } = req.query;
   try {
     const movie = await csfd.movie(+req.params.id, {
-      language: language as string | undefined
+      language: language as CSFDLanguage | undefined
     });
     res.json(movie);
     logMessage('success', { error: null, message: `${Endpoint.MOVIE}: ${req.params.id}${language ? ` [${language}]` : ''}` }, req);
@@ -197,7 +198,7 @@ app.get(Endpoint.CREATOR, async (req, res) => {
   const { language } = req.query;
   try {
     const result = await csfd.creator(+req.params.id, {
-      language: language as string | undefined
+      language: language as CSFDLanguage | undefined
     });
     res.json(result);
     logMessage('success', { error: null, message: `${Endpoint.CREATOR}: ${req.params.id}${language ? ` [${language}]` : ''}` }, req);
@@ -215,7 +216,7 @@ app.get(Endpoint.SEARCH, async (req, res) => {
   const { language } = req.query;
   try {
     const result = await csfd.search(req.params.query, {
-      language: language as string | undefined
+      language: language as CSFDLanguage | undefined
     });
     res.json(result);
     logMessage('success', { error: null, message: `${Endpoint.SEARCH}: ${req.params.query}${language ? ` [${language}]` : ''}` }, req);
@@ -241,7 +242,7 @@ app.get(Endpoint.USER_RATINGS, async (req, res) => {
         : undefined,
       page: page ? +page : undefined
     }, {
-      language: language as string | undefined
+      language: language as CSFDLanguage | undefined
     });
     res.json(result);
     logMessage(
@@ -271,7 +272,7 @@ app.get(Endpoint.USER_REVIEWS, async (req, res) => {
         : undefined,
       page: page ? +page : undefined
     }, {
-      language: language as string | undefined
+      language: language as CSFDLanguage | undefined
     });
     res.json(result);
     logMessage(
@@ -293,7 +294,7 @@ app.get(Endpoint.CINEMAS, async (req, res) => {
   const { language } = req.query;
   try {
     const result = await csfd.cinema(1, 'today', {
-      language: language as string | undefined
+      language: language as CSFDLanguage | undefined
     });
     logMessage('success', { error: null, message: `${Endpoint.CINEMAS}${language ? ` [${language}]` : ''}` }, req);
     res.json(result);
