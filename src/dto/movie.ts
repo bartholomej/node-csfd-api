@@ -25,8 +25,8 @@ export interface CSFDMovie extends CSFDScreening {
 }
 
 export interface CSFDParent {
-  season: { id: number; name: string; };
-  series: { id: number; name: string; };
+  season: { id: number; name: string } | null;
+  series: { id: number; name: string } | null;
 }
 
 export type CSFDVodService =
@@ -96,8 +96,6 @@ export interface CSFDMovieListItem {
   url: string;
 }
 
-
-
 export type CSFDGenres =
   | 'Akční'
   | 'Animovaný'
@@ -156,7 +154,6 @@ export type CSFDCreatorGroups =
   | 'Předloha'
   | 'Scénografie'
   | 'Kostýmy';
-
 
 export type CSFDCreatorGroupsEnglish =
   | 'Directed by'

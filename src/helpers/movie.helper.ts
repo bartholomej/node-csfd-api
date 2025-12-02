@@ -108,7 +108,7 @@ export const getMovieId = (el: HTMLElement): number => {
 
 export const getSerieasAndSeasonTitle = (
   el: HTMLElement
-): { seriesName: string; seasonName: string | null } => {
+): { seriesName: string | null; seasonName: string | null } => {
   const titleElement = el.querySelector('h1');
   if (!titleElement) {
     return { seriesName: null, seasonName: null };
