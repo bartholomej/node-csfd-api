@@ -1,13 +1,13 @@
 import { HTMLElement } from 'node-html-parser';
 import { CSFDCinemaGroupedFilmsByDate, CSFDCinemaMeta, CSFDCinemaMovie } from '../dto/cinema';
 import { CSFDColorRating } from '../dto/global';
-import { Colors } from '../dto/user-ratings';
+import { CSFDColors } from '../dto/user-ratings';
 import { parseColor, parseIdFromUrl } from './global.helper';
 
 export const getCinemaColorRating = (el: HTMLElement | null): CSFDColorRating => {
   const classes: string[] = el?.classNames.split(' ') ?? [];
   const last = classes.length ? classes[classes.length - 1] : undefined;
-  return last ? parseColor(last as Colors) : 'unknown';
+  return last ? parseColor(last as CSFDColors) : 'unknown';
 };
 
 export const getCinemaId = (el: HTMLElement | null): number => {
