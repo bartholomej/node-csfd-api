@@ -1,4 +1,4 @@
-export const serie1Season1EpisodeMock = `
+export const serie2EpisodesMock = `
 
 <!DOCTYPE html>
 <html lang="cs-CZ">
