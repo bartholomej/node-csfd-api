@@ -137,10 +137,41 @@ export type CSFDCreatorGroups =
   | 'Hudba'
   | 'Hrají'
   | 'Produkce'
+  | 'Casting'
   | 'Střih'
+  | 'Zvuk'
+  | 'Masky'
   | 'Předloha'
   | 'Scénografie'
   | 'Kostýmy';
+
+
+export type CSFDCreatorGroupsEnglish =
+  | 'Directed by'
+  | 'Screenplay'
+  | 'Cinematography'
+  | 'Composer'
+  | 'Cast'
+  | 'Produced by'
+  | 'Casting'
+  | 'Editing'
+  | 'Sound'
+  | 'Make-up'
+  | 'Production design'
+  | 'Based on'
+  | 'Costumes';
+
+export type CSFDCreatorGroupsSlovak =
+  | 'Réžia'
+  | 'Scenár'
+  | 'Kamera'
+  | 'Hudba'
+  | 'Hrajú'
+  | 'Predloha'
+  | 'Produkcia'
+  | 'Strih'
+  | 'Kostýmy'
+  | 'Scénografia';
 
 export interface CSFDPremiere {
   country: string;

@@ -22,4 +22,4 @@ export interface CSFDUserRatingConfig {
   page?: number;
 }
 
-export type Colors = 'lightgrey' | 'blue' | 'red' | 'grey';
+export type CSFDColors = 'lightgrey' | 'blue' | 'red' | 'grey';

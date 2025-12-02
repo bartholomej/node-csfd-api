@@ -10,9 +10,10 @@ import { MovieScraper } from './services/movie.service';
 import { SearchScraper } from './services/search.service';
 import { UserRatingsScraper } from './services/user-ratings.service';
 import { UserReviewsScraper } from './services/user-reviews.service';
+import { CSFDOptions } from './types';
 
 export class Csfd {
-  private defaultOptionsRequest?: RequestInit;
+  private defaultOptions?: CSFDOptions;
 
   constructor(
     private userRatingsService: UserRatingsScraper,
@@ -21,54 +22,59 @@ export class Csfd {
     private creatorService: CreatorScraper,
     private searchService: SearchScraper,
     private cinemaService: CinemaScraper,
-    defaultOptionsRequest?: RequestInit
+    defaultOptions?: CSFDOptions
   ) {
-    this.defaultOptionsRequest = defaultOptionsRequest;
+    this.defaultOptions = defaultOptions;
   }
 
-  public setOptions({ optionsRequest }: { optionsRequest: RequestInit }): void {
-    this.defaultOptionsRequest = optionsRequest;
+  public setOptions({ request, language }: CSFDOptions): void {
+    if (request !== undefined) {
+      this.defaultOptions = { ...this.defaultOptions, request };
+    }
+    if (language !== undefined) {
+      this.defaultOptions = { ...this.defaultOptions, language };
+    }
   }
 
   public async userRatings(
     user: string | number,
     config?: CSFDUserRatingConfig,
-    optionsRequest?: RequestInit
+    options?: CSFDOptions
   ): Promise<CSFDUserRatings[]> {
-    const opts = optionsRequest ?? this.defaultOptionsRequest;
+    const opts = options ?? this.defaultOptions;
     return this.userRatingsService.userRatings(user, config, opts);
   }
 
   public async userReviews(
     user: string | number,
     config?: CSFDUserReviewsConfig,
-    optionsRequest?: RequestInit
+    options?: CSFDOptions
   ): Promise<CSFDUserReviews[]> {
-    const opts = optionsRequest ?? this.defaultOptionsRequest;
+    const opts = options ?? this.defaultOptions;
     return this.userReviewsService.userReviews(user, config, opts);
   }
 
-  public async movie(movie: number, optionsRequest?: RequestInit): Promise<CSFDMovie> {
-    const opts = optionsRequest ?? this.defaultOptionsRequest;
+  public async movie(movie: number, options?: CSFDOptions): Promise<CSFDMovie> {
+    const opts = options ?? this.defaultOptions;
     return this.movieService.movie(+movie, opts);
   }
 
-  public async creator(creator: number, optionsRequest?: RequestInit): Promise<CSFDCreator> {
-    const opts = optionsRequest ?? this.defaultOptionsRequest;
+  public async creator(creator: number, options?: CSFDOptions): Promise<CSFDCreator> {
+    const opts = options ?? this.defaultOptions;
     return this.creatorService.creator(+creator, opts);
   }
 
-  public async search(text: string, optionsRequest?: RequestInit): Promise<CSFDSearch> {
-    const opts = optionsRequest ?? this.defaultOptionsRequest;
+  public async search(text: string, options?: CSFDOptions): Promise<CSFDSearch> {
+    const opts = options ?? this.defaultOptions;
     return this.searchService.search(text, opts);
   }
 
   public async cinema(
     district: number | string,
     period: CSFDCinemaPeriod,
-    optionsRequest?: RequestInit
+    options?: CSFDOptions
   ): Promise<CSFDCinema[]> {
-    const opts = optionsRequest ?? this.defaultOptionsRequest;
+    const opts = options ?? this.defaultOptions;
     return this.cinemaService.cinemas(+district, period, opts);
   }
 }
@@ -90,3 +96,4 @@ export const csfd = new Csfd(
 );
 
 export type * from './dto';
+

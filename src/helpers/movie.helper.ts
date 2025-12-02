@@ -3,6 +3,8 @@ import { CSFDColorRating } from '../dto/global';
 import {
   CSFDBoxContent,
   CSFDCreatorGroups,
+  CSFDCreatorGroupsEnglish,
+  CSFDCreatorGroupsSlovak,
   CSFDGenres,
   CSFDMovieCreator,
   CSFDMovieListItem,
@@ -12,6 +14,68 @@ import {
   CSFDVodService
 } from '../dto/movie';
 import { addProtocol, getColor, parseISO8601Duration, parseIdFromUrl } from './global.helper';
+
+/**
+ * Maps language-specific movie creator group labels.
+ * @param language - The language code (e.g., 'en', 'cs')
+ * @param key - The key of the creator group (e.g., 'directors', 'writers')
+ * @returns The localized label for the creator group
+ */
+export const getLocalizedCreatorLabel = (
+  language: string | undefined,
+  key: 'directors' | 'writers' | 'cinematography' | 'music' | 'actors' | 'basedOn' | 'producers' | 'filmEditing' | 'costumeDesign' | 'productionDesign' | 'casting' | 'sound' | 'makeup'
+): CSFDCreatorGroups | CSFDCreatorGroupsEnglish | CSFDCreatorGroupsSlovak => {
+  const labels: Record<string, Record<string, CSFDCreatorGroups | CSFDCreatorGroupsEnglish | CSFDCreatorGroupsSlovak>> = {
+    en: {
+      directors: 'Directed by',
+      writers: 'Screenplay',
+      cinematography: 'Cinematography',
+      music: 'Composer',
+      actors: 'Cast',
+      basedOn: 'Based on',
+      producers: 'Produced by',
+      filmEditing: 'Editing',
+      costumeDesign: 'Costumes',
+      productionDesign: 'Production design',
+      casting: 'Casting',
+      sound: 'Sound',
+      makeup: 'Make-up'
+    },
+    cs: {
+      directors: 'Režie',
+      writers: 'Scénář',
+      cinematography: 'Kamera',
+      music: 'Hudba',
+      actors: 'Hrají',
+      basedOn: 'Předloha',
+      producers: 'Produkce',
+      filmEditing: 'Střih',
+      costumeDesign: 'Kostýmy',
+      productionDesign: 'Scénografie',
+      casting: 'Casting',
+      sound: 'Zvuk',
+      makeup: 'Masky'
+    },
+    sk: {
+      directors: 'Réžia',
+      writers: 'Scenár',
+      cinematography: 'Kamera',
+      music: 'Hudba',
+      actors: 'Hrajú',
+      basedOn: 'Predloha',
+      producers: 'Produkcia',
+      filmEditing: 'Strih',
+      costumeDesign: 'Kostýmy',
+      productionDesign: 'Scénografia',
+      casting: 'Casting',
+      sound: 'Zvuk',
+      makeup: 'Masky'
+    }
+  };
+
+  const lang = language || 'cs'; // Default to Czech
+  return (labels[lang] || labels['cs'])[key];
+};
 
 export const getMovieId = (el: HTMLElement): number => {
   const url = el.querySelector('.tabs .tab-nav-list a').attributes.href;
@@ -177,7 +241,7 @@ const parseMoviePeople = (el: HTMLElement): CSFDMovieCreator[] => {
   );
 };
 
-export const getMovieGroup = (el: HTMLElement, group: CSFDCreatorGroups): CSFDMovieCreator[] => {
+export const getMovieGroup = (el: HTMLElement, group: CSFDCreatorGroups | CSFDCreatorGroupsEnglish | CSFDCreatorGroupsSlovak): CSFDMovieCreator[] => {
   const creators = el.querySelectorAll('.creators h4');
   const element = creators.filter((elem) => elem.textContent.trim().includes(group))[0];
   if (element?.parentNode) {

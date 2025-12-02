@@ -8,16 +8,17 @@ import {
   getCreatorName,
   getCreatorPhoto
 } from '../helpers/creator.helper';
+import { CSFDOptions } from '../types';
 import { creatorUrl } from '../vars';
 
 export class CreatorScraper {
-  public async creator(creatorId: number, optionsRequest?: RequestInit): Promise<CSFDCreator> {
+  public async creator(creatorId: number, options?: CSFDOptions): Promise<CSFDCreator> {
     const id = Number(creatorId);
     if (isNaN(id)) {
       throw new Error('node-csfd-api: creatorId must be a valid number');
     }
-    const url = creatorUrl(id);
-    const response = await fetchPage(url, { ...optionsRequest });
+    const url = creatorUrl(id, { language: options?.language });
+    const response = await fetchPage(url, { ...options?.request });
 
     const creatorHtml = parse(response);
 

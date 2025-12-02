@@ -3,6 +3,7 @@ import { CSFDFilmTypes } from '../dto/global';
 import { CSFDMovie } from '../dto/movie';
 import { fetchPage } from '../fetchers';
 import {
+  getLocalizedCreatorLabel,
   getMovieBoxMovies,
   getMovieColorRating,
   getMovieDescriptions,
@@ -23,16 +24,17 @@ import {
   getMovieVods,
   getMovieYear
 } from '../helpers/movie.helper';
+import { CSFDOptions } from '../types';
 import { movieUrl } from '../vars';
 
 export class MovieScraper {
-  public async movie(movieId: number, optionsRequest?: RequestInit): Promise<CSFDMovie> {
+  public async movie(movieId: number, options?: CSFDOptions): Promise<CSFDMovie> {
     const id = Number(movieId);
     if (isNaN(id)) {
       throw new Error('node-csfd-api: movieId must be a valid number');
     }
-    const url = movieUrl(id);
-    const response = await fetchPage(url, { ...optionsRequest });
+    const url = movieUrl(id, { language: options?.language });
+    const response = await fetchPage(url, { ...options?.request });
 
     const movieHtml = parse(response);
 
@@ -40,7 +42,7 @@ export class MovieScraper {
     const asideNode = movieHtml.querySelector('.aside-movie-profile');
     const movieNode = movieHtml.querySelector('.main-movie-profile');
     const jsonLd = movieHtml.querySelector('script[type="application/ld+json"]').innerText;
-    return this.buildMovie(+movieId, movieNode, asideNode, pageClasses, jsonLd);
+    return this.buildMovie(+movieId, movieNode, asideNode, pageClasses, jsonLd, options);
   }
 
   private buildMovie(
@@ -48,7 +50,8 @@ export class MovieScraper {
     el: HTMLElement,
     asideEl: HTMLElement,
     pageClasses: string[],
-    jsonLd: string
+    jsonLd: string,
+    options: CSFDOptions
   ): CSFDMovie {
     return {
       id: movieId,
@@ -58,7 +61,7 @@ export class MovieScraper {
       descriptions: getMovieDescriptions(el),
       genres: getMovieGenres(el),
       type: getMovieType(el) as CSFDFilmTypes,
-      url: movieUrl(movieId),
+      url: movieUrl(movieId, { language: options?.language }),
       origins: getMovieOrigins(el),
       colorRating: getMovieColorRating(pageClasses),
       rating: getMovieRating(asideEl),
@@ -68,16 +71,16 @@ export class MovieScraper {
       photo: getMovieRandomPhoto(el),
       trivia: getMovieTrivia(el),
       creators: {
-        directors: getMovieGroup(el, 'Režie'),
-        writers: getMovieGroup(el, 'Scénář'),
-        cinematography: getMovieGroup(el, 'Kamera'),
-        music: getMovieGroup(el, 'Hudba'),
-        actors: getMovieGroup(el, 'Hrají'),
-        basedOn: getMovieGroup(el, 'Předloha'),
-        producers: getMovieGroup(el, 'Produkce'),
-        filmEditing: getMovieGroup(el, 'Střih'),
-        costumeDesign: getMovieGroup(el, 'Kostýmy'),
-        productionDesign: getMovieGroup(el, 'Scénografie')
+        directors: getMovieGroup(el, getLocalizedCreatorLabel(options?.language, 'directors')),
+        writers: getMovieGroup(el, getLocalizedCreatorLabel(options?.language, 'writers')),
+        cinematography: getMovieGroup(el, getLocalizedCreatorLabel(options?.language, 'cinematography')),
+        music: getMovieGroup(el, getLocalizedCreatorLabel(options?.language, 'music')),
+        actors: getMovieGroup(el, getLocalizedCreatorLabel(options?.language, 'actors')),
+        basedOn: getMovieGroup(el, getLocalizedCreatorLabel(options?.language, 'basedOn')),
+        producers: getMovieGroup(el, getLocalizedCreatorLabel(options?.language, 'producers')),
+        filmEditing: getMovieGroup(el, getLocalizedCreatorLabel(options?.language, 'filmEditing')),
+        costumeDesign: getMovieGroup(el, getLocalizedCreatorLabel(options?.language, 'costumeDesign')),
+        productionDesign: getMovieGroup(el, getLocalizedCreatorLabel(options?.language, 'productionDesign'))
       },
       vod: getMovieVods(asideEl),
       tags: getMovieTags(asideEl),

@@ -1,6 +1,6 @@
 import { HTMLElement } from 'node-html-parser';
 import { CSFDColorRating, CSFDFilmTypes, CSFDStars } from '../dto/global';
-import { Colors } from '../dto/user-ratings';
+import { CSFDColors } from '../dto/user-ratings';
 import { parseColor, parseIdFromUrl } from './global.helper';
 
 export const getUserRatingId = (el: HTMLElement): number => {
@@ -30,7 +30,7 @@ export const getUserRatingYear = (el: HTMLElement): number => {
 };
 
 export const getUserRatingColorRating = (el: HTMLElement): CSFDColorRating => {
-  const color = parseColor(el.querySelector('td.name .icon').classNames.split(' ').pop() as Colors);
+  const color = parseColor(el.querySelector('td.name .icon').classNames.split(' ').pop() as CSFDColors);
   return color;
 };
 

@@ -1,12 +1,12 @@
 import { HTMLElement } from 'node-html-parser';
 import { CSFDCreatorScreening } from '../dto/creator';
 import { CSFDColorRating } from '../dto/global';
-import { Colors } from '../dto/user-ratings';
+import { CSFDColors } from '../dto/user-ratings';
 import { addProtocol, parseColor, parseIdFromUrl } from './global.helper';
 
 const getCreatorColorRating = (el: HTMLElement | null): CSFDColorRating => {
   const classes: string[] = el?.classNames.split(' ') ?? [];
-  const last = classes[classes.length - 1] as Colors | undefined;
+  const last = classes[classes.length - 1] as CSFDColors | undefined;
   return parseColor(last);
 };
 
