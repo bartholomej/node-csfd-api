@@ -161,6 +161,18 @@ export type CSFDCreatorGroupsEnglish =
   | 'Based on'
   | 'Costumes';
 
+export type CSFDCreatorGroupsSlovak =
+  | 'Réžia'
+  | 'Scenár'
+  | 'Kamera'
+  | 'Hudba'
+  | 'Hrajú'
+  | 'Predloha'
+  | 'Produkcia'
+  | 'Strih'
+  | 'Kostýmy'
+  | 'Scénografia';
+
 export interface CSFDPremiere {
   country: string;
   format: string;

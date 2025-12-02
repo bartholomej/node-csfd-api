@@ -4,6 +4,7 @@ import {
   CSFDBoxContent,
   CSFDCreatorGroups,
   CSFDCreatorGroupsEnglish,
+  CSFDCreatorGroupsSlovak,
   CSFDGenres,
   CSFDMovieCreator,
   CSFDMovieListItem,
@@ -23,8 +24,8 @@ import { addProtocol, getColor, parseISO8601Duration, parseIdFromUrl } from './g
 export const getLocalizedCreatorLabel = (
   language: string | undefined,
   key: 'directors' | 'writers' | 'cinematography' | 'music' | 'actors' | 'basedOn' | 'producers' | 'filmEditing' | 'costumeDesign' | 'productionDesign'
-): CSFDCreatorGroups | CSFDCreatorGroupsEnglish => {
-  const labels: Record<string, Record<string, CSFDCreatorGroups | CSFDCreatorGroupsEnglish>> = {
+): CSFDCreatorGroups | CSFDCreatorGroupsEnglish | CSFDCreatorGroupsSlovak => {
+  const labels: Record<string, Record<string, CSFDCreatorGroups | CSFDCreatorGroupsEnglish | CSFDCreatorGroupsSlovak>> = {
     en: {
       directors: 'Directed by',
       writers: 'Screenplay',
@@ -48,6 +49,18 @@ export const getLocalizedCreatorLabel = (
       filmEditing: 'Střih',
       costumeDesign: 'Kostýmy',
       productionDesign: 'Scénografie'
+    },
+    sk: {
+      directors: 'Réžia',
+      writers: 'Scenár',
+      cinematography: 'Kamera',
+      music: 'Hudba',
+      actors: 'Hrajú',
+      basedOn: 'Predloha',
+      producers: 'Produkcia',
+      filmEditing: 'Strih',
+      costumeDesign: 'Kostýmy',
+      productionDesign: 'Scénografia'
     }
   };
 
@@ -219,7 +232,7 @@ const parseMoviePeople = (el: HTMLElement): CSFDMovieCreator[] => {
   );
 };
 
-export const getMovieGroup = (el: HTMLElement, group: CSFDCreatorGroups | CSFDCreatorGroupsEnglish): CSFDMovieCreator[] => {
+export const getMovieGroup = (el: HTMLElement, group: CSFDCreatorGroups | CSFDCreatorGroupsEnglish | CSFDCreatorGroupsSlovak): CSFDMovieCreator[] => {
   const creators = el.querySelectorAll('.creators h4');
   const element = creators.filter((elem) => elem.textContent.trim().includes(group))[0];
   if (element?.parentNode) {
