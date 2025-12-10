@@ -8,8 +8,8 @@ type Options = {
 // Language to domain mapping
 const LANGUAGE_DOMAIN_MAP: Record<CSFDLanguage, string> = {
   cs: 'https://www.csfd.cz',
-  en: 'https://www.filmbooster.com',
-  sk: 'https://www.csfd.sk',
+  en: 'https://www.csfd.cz/en',
+  sk: 'https://www.csfd.cz/sk',
 };
 
 let BASE_URL = LANGUAGE_DOMAIN_MAP.cs;
