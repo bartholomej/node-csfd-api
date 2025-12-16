@@ -16,6 +16,7 @@ describe('Live: Fetch rating page', () => {
     const movies = await csfd.userRatings('912-bart');
     const movieSelected = movies.filter((x) => x.title === MOVIE_NAME)[0];
     expect(movies.map((x) => x.title)).toEqual(expect.arrayContaining([MOVIE_NAME]));
+    expect(movieSelected?.id).toEqual<number>(1563219);
     expect(movieSelected?.year).toEqual<number>(2025);
     expect(movieSelected?.type).toEqual<CSFDFilmTypes>('film');
     expect(movieSelected?.userDate).toContain<string>('2025');
@@ -249,7 +250,7 @@ describe('User page 404', () => {
 describe('Movie page 404', () => {
   test('Fetch error URL', async () => {
     try {
-      const url = movieUrl(badId);
+      const url = movieUrl(badId, {});
       const html = await fetchPage(url);
       expect(html).toBe('Error');
     } catch (e) {
