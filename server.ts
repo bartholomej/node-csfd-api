@@ -13,52 +13,29 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const packageJson = JSON.parse(readFileSync(join(__dirname, 'package.json'), 'utf-8'));
 
-type Severity = 'info' | 'warn' | 'error' | 'success';
+const LOG_COLORS = {
+  info: '\x1b[36m', // cyan
+  warn: '\x1b[33m', // yellow
+  error: '\x1b[31m', // red
+  success: '\x1b[32m', // green
+  reset: '\x1b[0m'
+} as const;
 
-function logMessage(severity: Severity, log: ErrorLog, req?: Request) {
-  const colors = {
-    info: '\x1b[36m', // cyan
-    warn: '\x1b[33m', // yellow
-    error: '\x1b[31m', // red
-    success: '\x1b[32m', // green
-    reset: '\x1b[0m'
-  };
+const LOG_SYMBOLS = {
+  info: 'ℹ️',
+  warn: '⚠️',
+  error: '❌',
+  success: '✅'
+} as const;
 
-  const symbols = {
-    info: 'ℹ️',
-    warn: '⚠️',
-    error: '❌',
-    success: '✅'
-  };
+const LOG_PADDED_SEVERITY = {
+  info: 'INFO   ',
+  warn: 'WARN   ',
+  error: 'ERROR  ',
+  success: 'SUCCESS'
+} as const;
 
-  const time = new Date().toISOString();
-  const reqInfo = req ? `${req.method}: ${req.originalUrl}` : '';
-  const reqIp = req
-    ? req.headers['x-forwarded-for'] || req.socket.remoteAddress || req.ip || req.ips
-    : '';
-
-  const paddedSeverity = {
-    info: 'INFO   ',
-    warn: 'WARN   ',
-    error: 'ERROR  ',
-    success: 'SUCCESS'
-  };
-
-  const msg = `${colors[severity]}[${paddedSeverity[severity]}]${colors.reset} ${time} | IP: ${reqIp} ${symbols[severity]} ${log.error ? log.error + ':' : ''} ${log.message} 🔗 ${reqInfo}`;
-  const logSuccessEnabled = process.env.VERBOSE === 'true';
-
-  if (severity === 'success') {
-    if (logSuccessEnabled) {
-      console.log(msg);
-    }
-  } else if (severity === 'error') {
-    console.error(msg);
-  } else if (severity === 'warn') {
-    console.warn(msg);
-  } else {
-    console.log(msg);
-  }
-}
+type Severity = keyof typeof LOG_COLORS;
 
 enum Errors {
   API_KEY_MISSING = 'API_KEY_MISSING',
@@ -74,6 +51,39 @@ enum Errors {
   TOO_MANY_REQUESTS = 'TOO_MANY_REQUESTS'
 }
 
+type ErrorLog = {
+  error: keyof typeof Errors | null;
+  message: string;
+};
+
+/**
+ * Optimized logging function.
+ * Uses global constants to avoid memory reallocation on every request.
+ */
+function logMessage(severity: Severity, log: ErrorLog, req?: Request) {
+  const time = new Date().toISOString();
+  const reqInfo = req ? `${req.method}: ${req.originalUrl}` : '';
+  const reqIp = req
+    ? req.headers['x-forwarded-for'] || req.socket.remoteAddress || req.ip || req.ips
+    : '';
+
+  const msg = `${LOG_COLORS[severity]}[${LOG_PADDED_SEVERITY[severity]}]${LOG_COLORS.reset} ${time} | IP: ${reqIp} ${LOG_SYMBOLS[severity]} ${log.error ? log.error + ':' : ''} ${log.message} 🔗 ${reqInfo}`;
+
+  const logSuccessEnabled = process.env.VERBOSE === 'true';
+
+  if (severity === 'success') {
+    if (logSuccessEnabled) {
+      console.log(msg);
+    }
+  } else if (severity === 'error') {
+    console.error(msg);
+  } else if (severity === 'warn') {
+    console.warn(msg);
+  } else {
+    console.log(msg);
+  }
+}
+
 enum Endpoint {
   MOVIE = '/movie/:id',
   CREATOR = '/creator/:id',
@@ -83,11 +93,6 @@ enum Endpoint {
   CINEMAS = '/cinemas'
 }
 
-type ErrorLog = {
-  error: keyof typeof Errors | null;
-  message: string;
-};
-
 const app = express();
 const port = process.env.PORT || 3000;
 
@@ -95,6 +100,7 @@ const port = process.env.PORT || 3000;
 const API_KEY_NAME = process.env.API_KEY_NAME || 'x-api-key';
 const API_KEY = process.env.API_KEY;
 const RAW_LANGUAGE = process.env.LANGUAGE;
+
 const isSupportedLanguage = (value: unknown): value is CSFDLanguage =>
   value === 'cs' || value === 'en' || value === 'sk';
 
@@ -111,8 +117,8 @@ if (BASE_LANGUAGE) {
   csfd.setOptions({ language: BASE_LANGUAGE });
 }
 
+// --- Rate Limiting (Commented out as in original) ---
 // const limiterMinutes = 15;
-
 // const LIMITER = rateLimit({
 //   windowMs: limiterMinutes * 60 * 1000,
 //   max: 300, // 300 requests / 15 minutes = average 1 req every 3 seconds
@@ -126,7 +132,7 @@ if (BASE_LANGUAGE) {
 
 // const SPEED_LIMITER = slowDown({
 //   windowMs: 5 * 60 * 1000, // 5 minutes
-//   delayAfter: 10,          // first 10 requests are free of delay
+//   delayAfter: 10,          // first 10 requests are free of delay   
 //   delayMs: (hits) => Math.min(hits * 150, 6000), // each subsequent request is delayed by 150 ms, max 5s delay
 // });
 
@@ -138,6 +144,7 @@ app.use((req: Request, res: Response, next: NextFunction): void => {
   // If API_KEY is set, it may contain one or more keys separated by comma/semicolon/whitespace.
   if (API_KEY) {
     const apiKey = (req.get(API_KEY_NAME) as string | undefined)?.trim();
+
     if (!apiKey) {
       const log: ErrorLog = {
         error: Errors.API_KEY_MISSING,
@@ -147,6 +154,7 @@ app.use((req: Request, res: Response, next: NextFunction): void => {
       res.status(401).json(log);
       return;
     }
+
     if (!API_KEYS_LIST.includes(apiKey)) {
       const log: ErrorLog = {
         error: Errors.API_KEY_INVALID,
@@ -185,9 +193,7 @@ app.get(Endpoint.MOVIE, async (req, res) => {
   const language = isSupportedLanguage(rawLanguage) ? rawLanguage : undefined;
 
   try {
-    const movie = await csfd.movie(+req.params.id, {
-      language
-    });
+    const movie = await csfd.movie(+req.params.id, { language });
     res.json(movie);
     logMessage('success', { error: null, message: `${Endpoint.MOVIE}: ${req.params.id}${language ? ` [${language}]` : ''}` }, req);
   } catch (error) {
@@ -203,10 +209,9 @@ app.get(Endpoint.MOVIE, async (req, res) => {
 app.get(Endpoint.CREATOR, async (req, res) => {
   const rawLanguage = req.query.language;
   const language = isSupportedLanguage(rawLanguage) ? rawLanguage : undefined;
+
   try {
-    const result = await csfd.creator(+req.params.id, {
-      language
-    });
+    const result = await csfd.creator(+req.params.id, { language });
     res.json(result);
     logMessage('success', { error: null, message: `${Endpoint.CREATOR}: ${req.params.id}${language ? ` [${language}]` : ''}` }, req);
   } catch (error) {
@@ -222,10 +227,9 @@ app.get(Endpoint.CREATOR, async (req, res) => {
 app.get(Endpoint.SEARCH, async (req, res) => {
   const rawLanguage = req.query.language;
   const language = isSupportedLanguage(rawLanguage) ? rawLanguage : undefined;
+
   try {
-    const result = await csfd.search(req.params.query, {
-      language
-    });
+    const result = await csfd.search(req.params.query, { language });
     res.json(result);
     logMessage('success', { error: null, message: `${Endpoint.SEARCH}: ${req.params.query}${language ? ` [${language}]` : ''}` }, req);
   } catch (error) {
@@ -309,9 +313,7 @@ app.get(Endpoint.CINEMAS, async (req, res) => {
   const language = isSupportedLanguage(rawLanguage) ? rawLanguage : undefined;
 
   try {
-    const result = await csfd.cinema(1, 'today', {
-      language
-    });
+    const result = await csfd.cinema(1, 'today', { language });
     logMessage('success', { error: null, message: `${Endpoint.CINEMAS}${language ? ` [${language}]` : ''}` }, req);
     res.json(result);
   } catch (error) {
