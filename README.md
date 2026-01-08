@@ -6,7 +6,7 @@
 
 <div align="center">
 
-# CSFD API 🎬 2025
+# CSFD API 🎬 2026
 
 #### Modern TypeScript NPM library for scraping **Czech Movie Database (csfd.cz)** _(unofficial)_
 
@@ -714,7 +714,7 @@ I physically can't. I have nowhere to store it. I don't even have a server datab
 
 ## 📝 License
 
-MIT © 2020 - 2025 [Lukas Bartak](http://bartweb.cz)
+MIT © 2020 - 2026 [Lukas Bartak](http://bartweb.cz)
 
 See [LICENSE](LICENSE) for full details.
 
