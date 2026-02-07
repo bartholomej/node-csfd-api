@@ -2,6 +2,7 @@ import { configDefaults, defineConfig } from 'vitest/config';
 
 export default defineConfig({
   test: {
+    testTimeout: 30000,
     coverage: {
       provider: 'istanbul',
       exclude: [...configDefaults.exclude, 'demo.ts', '**/*.polyfill.ts', 'vars.ts', 'server.ts']

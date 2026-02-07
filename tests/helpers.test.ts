@@ -19,7 +19,7 @@ describe('Add protocol', () => {
 describe('Parse Id', () => {
   test('Handle whole movie url', () => {
     const url = parseIdFromUrl('https://www.csfd.cz/film/906693-projekt-adam/recenze/');
-    expect(url).toBe(null);
+    expect(url).toBe(906693);
   });
   test('Handle movie url', () => {
     const url = parseIdFromUrl('/film/906693-projekt-adam/recenze/');

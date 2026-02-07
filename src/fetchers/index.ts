@@ -11,26 +11,56 @@ const defaultHeaders = {
   'User-Agent': USER_AGENTS[Math.floor(Math.random() * USER_AGENTS.length)],
 };
 
-export const fetchPage = async (url: string, optionsRequest?: RequestInit): Promise<string> => {
-  try {
-    const mergedHeaders = new Headers(defaultHeaders);
-    if (optionsRequest?.headers) {
-      const reqHeaders = new Headers(optionsRequest.headers);
-      reqHeaders.forEach((value, key) => mergedHeaders.set(key, value));
-    }
-    const { headers: _, ...restOptions } = optionsRequest || {};
-
-    const response = await fetchSafe(url, { credentials: 'omit', ...restOptions, headers: mergedHeaders });
-    if (response.status >= 400 && response.status < 600) {
-      throw new Error(`node-csfd-api: Bad response ${response.status} for url: ${url}`);
-    }
-    return await response.text();
-  } catch (e: unknown) {
-    if (e instanceof Error) {
-      console.error(e.message);
-    } else {
-      console.error(String(e));
-    }
-    return 'Error';
+export class CsfdError extends Error {
+  constructor(message: string, public status?: number) {
+    super(message);
+    this.name = 'CsfdError';
   }
+}
+
+const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+
+export const fetchPage = async (url: string, optionsRequest?: RequestInit): Promise<string> => {
+  const maxRetries = 3;
+  let lastError: Error | null = null;
+
+  for (let attempt = 1; attempt <= maxRetries; attempt++) {
+    try {
+      const mergedHeaders = new Headers(defaultHeaders);
+      if (optionsRequest?.headers) {
+        const reqHeaders = new Headers(optionsRequest.headers);
+        reqHeaders.forEach((value, key) => mergedHeaders.set(key, value));
+      }
+      const { headers: _, ...restOptions } = optionsRequest || {};
+
+      const response = await fetchSafe(url, { credentials: 'omit', ...restOptions, headers: mergedHeaders });
+
+      if (response.status >= 400 && response.status < 600) {
+        // Do not retry on 4xx errors (client errors)
+        if (response.status < 500) {
+          throw new CsfdError(`node-csfd-api: Bad response ${response.status} for url: ${url}`, response.status);
+        }
+        // Throw to trigger catch and retry for 5xx
+        throw new CsfdError(`node-csfd-api: Server error ${response.status} for url: ${url}`, response.status);
+      }
+      return await response.text();
+    } catch (e: unknown) {
+      const error = e instanceof Error ? e : new Error(String(e));
+      lastError = error;
+
+      // Don't retry if it is a 4xx error (which we threw as CsfdError)
+      if (error instanceof CsfdError && error.status && error.status >= 400 && error.status < 500) {
+        throw error;
+      }
+
+      if (attempt === maxRetries) {
+        throw error;
+      }
+
+      // Exponential backoff: 1s, 2s...
+      await sleep(1000 * Math.pow(2, attempt - 1));
+    }
+  }
+
+  throw lastError || new Error('Unknown error');
 };

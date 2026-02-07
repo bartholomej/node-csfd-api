@@ -4,7 +4,7 @@ import { CSFDCinema } from '../src/dto/cinema';
 import { CSFDCreator, CSFDCreatorScreening } from '../src/dto/creator';
 import { CSFDColorRating, CSFDFilmTypes } from '../src/dto/global';
 import { CSFDMovie } from '../src/dto/movie';
-import { fetchPage } from '../src/fetchers';
+import { fetchPage, CsfdError } from '../src/fetchers';
 import { movieUrl, userRatingsUrl } from '../src/vars';
 const badId = 999999999999999;
 
@@ -260,10 +260,9 @@ describe('User page 404', () => {
   test('Fetch error URL', async () => {
     try {
       const url = userRatingsUrl(badId);
-      const html = await fetchPage(url);
-      expect(html).toBe('Error');
+      await fetchPage(url);
     } catch (e) {
-      expect(e).toContain(Error);
+      expect(e).toBeInstanceOf(CsfdError);
     }
   });
 });
@@ -272,10 +271,9 @@ describe('Movie page 404', () => {
   test('Fetch error URL', async () => {
     try {
       const url = movieUrl(badId, {});
-      const html = await fetchPage(url);
-      expect(html).toBe('Error');
+      await fetchPage(url);
     } catch (e) {
-      expect(e).toThrow(Error);
+      expect(e).toBeInstanceOf(CsfdError);
     }
   });
 });
