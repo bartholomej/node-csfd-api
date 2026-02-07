@@ -1,7 +1,7 @@
 import { beforeAll, describe, expect, test } from 'vitest';
-import { csfd } from '../src';
+import { csfd, CSFDUserRatings } from '../src';
 import { CSFDCinema } from '../src/dto/cinema';
-import { CSFDCreatorScreening } from '../src/dto/creator';
+import { CSFDCreator, CSFDCreatorScreening } from '../src/dto/creator';
 import { CSFDColorRating, CSFDFilmTypes } from '../src/dto/global';
 import { CSFDMovie } from '../src/dto/movie';
 import { fetchPage } from '../src/fetchers';
@@ -10,10 +10,16 @@ const badId = 999999999999999;
 
 // User Ratings
 describe('Live: Fetch rating page', () => {
-  test('Fetch `912-bart` user and check some movie', async () => {
+  let movies: CSFDUserRatings[];
+  beforeAll(async () => {
+    movies = await csfd.userRatings('912-bart');
+  });
+  test('Check length', () => {
+    expect(movies.length).toEqual(50);
+  });
+  test('Fetch `912-bart` user and check some movie', () => {
     const MOVIE_NAME = 'Poslední Viking';
 
-    const movies = await csfd.userRatings('912-bart');
     const movieSelected = movies.filter((x) => x.title === MOVIE_NAME)[0];
     expect(movies.map((x) => x.title)).toEqual(expect.arrayContaining([MOVIE_NAME]));
     expect(movieSelected?.id).toEqual<number>(1563219);
@@ -216,18 +222,33 @@ describe('Live: Cinemas', () => {
 
 // Creator
 describe('Live: Creator page', () => {
-  test('Fetch `2018-jan-werich` creator', async () => {
-    const creator = await csfd.creator(2018);
+  let creator: CSFDCreator;
+  beforeAll(async () => {
+    creator = await csfd.creator(2018);
+  });
+  test('Name', () => {
     expect(creator.name).toEqual<string>('Jan Werich');
+  });
+  test('Birthday', () => {
     expect(creator.birthday).toEqual('06.02.1905');
+  });
+  test('Birthplace', () => {
     expect(creator.birthplace).toContain('Rakousko-Uhersko');
     expect(creator.birthplace).toContain('Praha');
+  });
+  test('Filmography', () => {
+    expect(creator.films.length).toBeGreaterThan(0);
+  });
+  test('Filmography: Hej-rup!', () => {
     expect(creator.films.find((film) => film.title === 'Hej-rup!')).toEqual<CSFDCreatorScreening>({
       id: 3106,
       title: 'Hej-rup!',
       year: 1934,
       colorRating: 'good'
     });
+  });
+  test('Biography', () => {
+    expect(creator.bio).toContain('Jan Werich se narodil');
   });
   test('Fetch not number', async () => {
     await expect(csfd.creator('test' as any)).rejects.toThrow(Error);
