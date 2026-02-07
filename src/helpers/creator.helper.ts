@@ -22,11 +22,10 @@ export const getCreatorName = (el: HTMLElement | null): string | null => {
 export const getCreatorBirthdayInfo = (
   el: HTMLElement | null
 ): { birthday: string; age: number; birthPlace: string } => {
-  const infoBlock = el.querySelector('h1 + p');
+  const infoBlock = el.querySelector('.creator-profile-details p');
   const text = infoBlock?.innerHTML.trim();
-
-  const birthPlaceRow = infoBlock?.querySelector('.info-place')?.innerHTML.trim();
-  const ageRow = infoBlock?.querySelector('.info')?.innerHTML.trim();
+  const birthPlaceRow = infoBlock?.querySelector('.info-place')?.innerText.trim();
+  const ageRow = infoBlock?.querySelector('.info')?.innerText.trim();
 
   let birthday: string = '';
 
@@ -38,7 +37,6 @@ export const getCreatorBirthdayInfo = (
 
   const age = ageRow ? +parseAge(ageRow) : null;
   const birthPlace = birthPlaceRow ? parseBirthPlace(birthPlaceRow) : '';
-
   return { birthday, age, birthPlace };
 };
 
@@ -60,13 +58,12 @@ const parseAge = (text: string): number | null => {
   return digits ? Number(digits) : null;
 };
 
-const parseBirthPlace = (text: string): string =>
-  text.trim().replace(/<br>/g, '').trim();
-
+const parseBirthPlace = (text: string): string => text.trim().replace(/<br>/g, '').trim();
 
 export const getCreatorFilms = (el: HTMLElement | null): CSFDCreatorScreening[] => {
-  const filmNodes = el?.querySelectorAll('.box')?.[0]?.querySelectorAll('table tr') ?? [];
+  const filmNodes = el?.querySelectorAll('.updated-box')?.[0]?.querySelectorAll('table tr') ?? [];
   let yearCache: number | null = null;
+
   const films = filmNodes.map((filmNode) => {
     const id = getCreatorId(filmNode.querySelector('td.name .film-title-name')?.attributes?.href);
     const title = filmNode.querySelector('.name')?.text?.trim();

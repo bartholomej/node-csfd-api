@@ -40,7 +40,7 @@ describe('Creator info', () => {
   test('Photo', () => {
     const creator = getCreatorPhoto(asideNode);
     expect(creator).toEqual<string>(
-      'https://image.pmgstatic.com/cache/resized/w100h132crop/files/images/creator/photos/164/502/164502788_119691.jpg'
+      'https://image.pmgstatic.com/cache/resized/w100h132crop/files/images/creator/photos/164/515/164515525_b98f8a.jpg'
     );
   });
 });
@@ -115,14 +115,14 @@ describe('Actor birthday info', () => {
 
   test('Age', () => {
     const creator = getCreatorBirthdayInfo(asideNodeActor)?.age;
-    expect(creator).toEqual<number>(59);
+    expect(creator).toEqual<number>(60);
   });
 });
 
 describe("Creator's films", () => {
   test('First film from first section', () => {
     const films = getCreatorFilms(filmsNodeActor) as CSFDCreatorScreening[];
-    expect(films[0].title).toEqual<string>('The Black Kaiser');
+    expect(films[0].title).toEqual<string>('Last Meals');
   });
 
   test('Last film from first section', () => {
@@ -132,7 +132,7 @@ describe("Creator's films", () => {
 
   test('Year second movie', () => {
     const films = getCreatorFilms(filmsNodeActor) as CSFDCreatorScreening[];
-    expect(films[1].year).toEqual<number>(2025);
+    expect(films[1].year).toEqual<number>(2027);
   });
 });
 
@@ -146,7 +146,7 @@ describe('Composer info', () => {
 
   test('Bio', () => {
     const creator = getCreatorBio(asideNodeComposer);
-    expect(creator).toEqual<string>('Tento tvůrce zatím nemá přidanou biografii.');
+    expect(creator).toEqual<string | null>(null);
   });
 
   test('Photo', () => {

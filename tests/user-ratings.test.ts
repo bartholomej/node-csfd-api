@@ -14,11 +14,11 @@ import {
 import { userRatingsMock } from './mocks/userRatings.html';
 
 const items = parse(userRatingsMock);
-const movies: HTMLElement[] = items.querySelectorAll('.box-user-rating .table-container tbody tr');
+const movies: HTMLElement[] = items.querySelectorAll('#snippet--ratings table tr');
 
 describe('Get Ratings', () => {
   test('First rating', () => {
-    const movie = getUserRating(movies[0]);
+    const movie = getUserRating(movies[1]);
     expect(movie).toEqual<CSFDStars>(2);
   });
   test('Last rating', () => {
@@ -35,11 +35,11 @@ describe('Get Ratings', () => {
 describe('Get ID', () => {
   test('First ID', () => {
     const movie = getUserRatingId(movies[0]);
-    expect(movie).toEqual<number>(1566168);
+    expect(movie).toEqual<number>(1664563);
   });
   test('Last ID', () => {
     const movie = getUserRatingId(movies[movies.length - 1]);
-    expect(movie).toEqual<number>(317563);
+    expect(movie).toEqual<number>(157850);
   });
 });
 
@@ -48,12 +48,12 @@ describe('Get type', () => {
     const movie = getUserRatingType(movies[0]);
     expect(movie).toEqual<CSFDFilmTypes>('film');
   });
-  // test('TV series', () => {
-  //   const movie = getType(movies[23]);
-  //   expect(movie).toEqual<CSFDFilmTypes>('seriál');
-  // });
+  test('TV series', () => {
+    const movie = getUserRatingType(movies[8]);
+    expect(movie).toEqual<CSFDFilmTypes>('seriál');
+  });
   test('Episode', () => {
-    const movie = getUserRatingType(movies[2]);
+    const movie = getUserRatingType(movies[10]);
     expect(movie).toEqual<CSFDFilmTypes>('epizoda');
   });
   // test('TV film', () => {
@@ -77,11 +77,11 @@ describe('Get type', () => {
 describe('Get title', () => {
   test('First title', () => {
     const movie = getUserRatingTitle(movies[0]);
-    expect(movie).toEqual<string>('100 litraa sahtia');
+    expect(movie).toEqual<string>('Exit 8');
   });
   test('Last title', () => {
     const movie = getUserRatingTitle(movies[movies.length - 1]);
-    expect(movie).toEqual<string>('Vejška');
+    expect(movie).toEqual<string>('Gå med mig hjem');
   });
 });
 
@@ -91,12 +91,12 @@ describe('Get year', () => {
     expect(movie).toEqual<number>(2025);
   });
   test('Some year', () => {
-    const movie = getUserRatingYear(movies[7]);
-    expect(movie).toEqual<number>(2024);
+    const movie = getUserRatingYear(movies[8]);
+    expect(movie).toEqual<number>(2025);
   });
   test('Almost last year', () => {
-    const movie = getUserRatingYear(movies[movies.length - 7]);
-    expect(movie).toEqual<number>(2005);
+    const movie = getUserRatingYear(movies[movies.length - 1]);
+    expect(movie).toEqual<number>(1941);
   });
 });
 
@@ -106,17 +106,17 @@ describe('Get color rating', () => {
   //   expect(movie).toEqual<CSFDColorRating>('bad');
   // });
   test('Gray', () => {
-    const movie = getUserRatingColorRating(movies[0]);
+    const movie = getUserRatingColorRating(movies[movies.length - 1]);
     expect(movie).toEqual<CSFDColorRating>('unknown');
   });
   test('Blue', () => {
-    const movie = getUserRatingColorRating(movies[4]);
+    const movie = getUserRatingColorRating(movies[0]);
     expect(movie).toEqual<CSFDColorRating>('average');
   });
   test('Red', () => {
     const movie = getUserRatingColorRating(movies[2]);
     expect(movie).toEqual<CSFDColorRating>('good');
-  })
+  });
   test('Grey color should return bad', () => {
     // Create a mock element with grey class
     const mockElement = parse(`
@@ -199,21 +199,21 @@ describe('Get color rating', () => {
 describe('Get date', () => {
   test('First date', () => {
     const movie = getUserRatingDate(movies[0]);
-    expect(movie).toEqual<string>('13.10.2025');
+    expect(movie).toEqual<string>('26.01.2026');
   });
   test('Last date', () => {
     const movie = getUserRatingDate(movies[movies.length - 1]);
-    expect(movie).toEqual<string>('19.06.2025');
+    expect(movie).toEqual<string>('24.08.2025');
   });
 });
 
 describe('Get Url', () => {
   test('First url', () => {
     const movie = getUserRatingUrl(movies[0]);
-    expect(movie).toEqual<string>('https://www.csfd.cz/film/1566168-100-litraa-sahtia/');
+    expect(movie).toEqual<string>('https://www.csfd.cz/film/1664563-exit-8/prehled/');
   });
   test('Last url', () => {
     const movie = getUserRatingUrl(movies[movies.length - 1]);
-    expect(movie).toEqual<string>('https://www.csfd.cz/film/317563-vejska/');
+    expect(movie).toEqual<string>('https://www.csfd.cz/film/157850-ga-med-mig-hjem/prehled/');
   });
 });

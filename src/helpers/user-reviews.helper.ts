@@ -32,13 +32,13 @@ export const getUserReviewYear = (el: HTMLElement): number => {
 };
 
 export const getUserReviewColorRating = (el: HTMLElement): CSFDColorRating => {
-  const icon = el.querySelector('.film-title-nooverflow .icon');
+  const icon = el.querySelector('.film-title-inline i.icon');
   const color = parseColor(icon?.classNames.split(' ').pop() as CSFDColors);
   return color;
 };
 
 export const getUserReviewDate = (el: HTMLElement): string => {
-  return el.querySelector('.header-right-info .info time').text.trim();
+  return el.querySelector('.article-header-date-content .info time').text.trim();
 };
 
 export const getUserReviewUrl = (el: HTMLElement): string => {
@@ -47,7 +47,7 @@ export const getUserReviewUrl = (el: HTMLElement): string => {
 };
 
 export const getUserReviewText = (el: HTMLElement): string => {
-  return el.querySelector('.user-reviews-text .comment').text.trim();
+  return el.querySelector('.comment').text.trim();
 };
 
 export const getUserReviewPoster = (el: HTMLElement): string => {

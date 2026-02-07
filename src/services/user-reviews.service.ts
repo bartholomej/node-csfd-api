@@ -26,10 +26,12 @@ export class UserReviewsScraper {
   ): Promise<CSFDUserReviews[]> {
     let allReviews: CSFDUserReviews[] = [];
     const pageToFetch = config?.page || 1;
-    const url = userReviewsUrl(user, pageToFetch > 1 ? pageToFetch : undefined, { language: options?.language });
+    const url = userReviewsUrl(user, pageToFetch > 1 ? pageToFetch : undefined, {
+      language: options?.language
+    });
     const response = await fetchPage(url, { ...options?.request });
     const items = parse(response);
-    const reviews = items.querySelectorAll('.user-reviews .article');
+    const reviews = items.querySelectorAll('.user-tab-reviews .article');
 
     // Get number of pages
     const pagesNode = items.querySelector('.pagination');
@@ -46,7 +48,7 @@ export class UserReviewsScraper {
         const response = await fetchPage(url, { ...options?.request });
 
         const items = parse(response);
-        const reviews = items.querySelectorAll('.user-reviews .article');
+        const reviews = items.querySelectorAll('.user-tab-reviews .article');
         allReviews = [...allReviews, ...this.getPage(config, reviews)];
 
         // Sleep
