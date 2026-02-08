@@ -95,14 +95,20 @@ export class UserReviewsScraper {
       }
 
       if (shouldProcess) {
-        const item = this.buildUserReviews(el);
-        const result = safeParse(CSFDUserReviewsSchema, item);
-        if (result.success) {
-          films.push(result.output as CSFDUserReviews);
-        } else {
+        try {
+          const item = this.buildUserReviews(el);
+          const result = safeParse(CSFDUserReviewsSchema, item);
+          if (result.success) {
+            films.push(result.output as CSFDUserReviews);
+          } else {
+            console.warn(
+              `Skipping invalid user review. Title: ${item.title}, ID: ${item.id}`,
+              JSON.stringify(flatten(result.issues))
+            );
+          }
+        } catch (e) {
           console.warn(
-            `Skipping invalid user review. Title: ${item.title}, ID: ${item.id}`,
-            JSON.stringify(flatten(result.issues))
+            `Skipping user review due to scraping error (DOM change?): ${(e as Error).message}`
           );
         }
       }

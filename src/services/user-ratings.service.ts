@@ -93,14 +93,20 @@ export class UserRatingsScraper {
       }
 
       if (shouldProcess) {
-        const item = this.buildUserRatings(el);
-        const result = safeParse(CSFDUserRatingsSchema, item);
-        if (result.success) {
-          films.push(result.output as CSFDUserRatings);
-        } else {
+        try {
+          const item = this.buildUserRatings(el);
+          const result = safeParse(CSFDUserRatingsSchema, item);
+          if (result.success) {
+            films.push(result.output as CSFDUserRatings);
+          } else {
+            console.warn(
+              `Skipping invalid user rating. Title: ${item.title}, ID: ${item.id}`,
+              JSON.stringify(flatten(result.issues))
+            );
+          }
+        } catch (e) {
           console.warn(
-            `Skipping invalid user rating. Title: ${item.title}, ID: ${item.id}`,
-            JSON.stringify(flatten(result.issues))
+            `Skipping user rating due to scraping error (DOM change?): ${(e as Error).message}`
           );
         }
       }
