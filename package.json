@@ -35,7 +35,8 @@
   },
   "dependencies": {
     "cross-fetch": "^4.1.0",
-    "node-html-parser": "^7.0.2"
+    "node-html-parser": "^7.0.2",
+    "valibot": "^1.2.0"
   },
   "devDependencies": {
     "@babel/preset-typescript": "^7.28.5",
@@ -98,8 +99,8 @@
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "require": "./dist/index.js",
-      "import": "./dist/index.mjs"
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
     },
     "./package.json": "./package.json"
   },
