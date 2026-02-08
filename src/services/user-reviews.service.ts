@@ -1,6 +1,8 @@
 import { HTMLElement, parse } from 'node-html-parser';
+import { flatten, safeParse } from 'valibot';
 import { CSFDColorRating, CSFDStars } from '../dto/global';
 import { CSFDUserReviews, CSFDUserReviewsConfig } from '../dto/user-reviews';
+import { CSFDUserReviewsSchema } from '../dto/user-reviews.schema';
 import { fetchPage } from '../fetchers';
 import { sleep } from '../helpers/global.helper';
 import {
@@ -78,19 +80,37 @@ export class UserReviewsScraper {
     for (const el of reviews) {
       const type = getUserReviewType(el);
 
+      let shouldProcess = true;
+
       // Filtering includesOnly
       if (config?.includesOnly?.length) {
-        if (config.includesOnly.some((include) => type === include)) {
-          films.push(this.buildUserReviews(el));
+        if (!config.includesOnly.some((include) => type === include)) {
+          shouldProcess = false;
         }
         // Filter excludes
       } else if (config?.excludes?.length) {
-        if (!config.excludes.some((exclude) => type === exclude)) {
-          films.push(this.buildUserReviews(el));
+        if (config.excludes.some((exclude) => type === exclude)) {
+          shouldProcess = false;
         }
-      } else {
-        // Without filtering
-        films.push(this.buildUserReviews(el));
+      }
+
+      if (shouldProcess) {
+        try {
+          const item = this.buildUserReviews(el);
+          const result = safeParse(CSFDUserReviewsSchema, item);
+          if (result.success) {
+            films.push(result.output as CSFDUserReviews);
+          } else {
+            console.warn(
+              `Skipping invalid user review. Title: ${item.title}, ID: ${item.id}`,
+              JSON.stringify(flatten(result.issues))
+            );
+          }
+        } catch (e) {
+          console.warn(
+            `Skipping user review due to scraping error (DOM change?): ${(e as Error).message}`
+          );
+        }
       }
     }
     return films;

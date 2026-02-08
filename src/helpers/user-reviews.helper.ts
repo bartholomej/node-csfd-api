@@ -19,7 +19,14 @@ export const getUserReviewType = (el: HTMLElement): CSFDFilmTypes => {
   // Type can be in the second .info span (e.g., "(seriál)") // TODO need more tests
   const typeText = el.querySelectorAll('.film-title-info .info');
 
-  return (typeText.length > 1 ? typeText[1].text.slice(1, -1) : 'film') as CSFDFilmTypes;
+  if (typeText.length > 1) {
+    const text = typeText[1].text.trim();
+    if (text.startsWith('(') && text.endsWith(')')) {
+      return text.slice(1, -1) as CSFDFilmTypes;
+    }
+    return text as CSFDFilmTypes;
+  }
+  return 'film';
 };
 
 export const getUserReviewTitle = (el: HTMLElement): string => {
