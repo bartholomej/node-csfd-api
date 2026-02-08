@@ -123,39 +123,39 @@ export const getMovieRatingCount = (el: HTMLElement): number => {
   }
 };
 
-export const getMovieYear = (el: string): number => {
-  try {
-    const jsonLd = JSON.parse(el);
+export const getMovieYear = (jsonLd: any): number => {
+  if (jsonLd && jsonLd.dateCreated) {
     return +jsonLd.dateCreated;
-  } catch (error) {
-    console.error('node-csfd-api: Error parsing JSON-LD', error);
-    return null;
   }
+  return null;
 };
 
-export const getMovieDuration = (jsonLdRaw: string, el: HTMLElement): number => {
+export const getMovieDuration = (jsonLd: any, el: HTMLElement): number => {
   let duration = null;
   try {
-    const jsonLd = JSON.parse(jsonLdRaw);
-    duration = jsonLd.duration;
-    return parseISO8601Duration(duration);
-  } catch (error) {
-    const origin = el.querySelector('.origin').innerText;
-    const timeString = origin.split(',');
-    if (timeString.length > 2) {
-      // Get last time elelment
-      const timeString2 = timeString.pop().trim();
-      // Clean it
-      const timeRaw = timeString2.split('(')[0].trim();
-      // Split by minutes and hours
-      const hoursMinsRaw = timeRaw.split('min')[0];
-      const hoursMins = hoursMinsRaw.split('h');
-      // Resolve hours + minutes format
-      duration = hoursMins.length > 1 ? +hoursMins[0] * 60 + +hoursMins[1] : +hoursMins[0];
-      return duration;
-    } else {
-      return null;
+    if (jsonLd && jsonLd.duration) {
+      duration = jsonLd.duration;
+      return parseISO8601Duration(duration);
     }
+  } catch (error) {
+    // ignore
+  }
+
+  const origin = el.querySelector('.origin').innerText;
+  const timeString = origin.split(',');
+  if (timeString.length > 2) {
+    // Get last time elelment
+    const timeString2 = timeString.pop().trim();
+    // Clean it
+    const timeRaw = timeString2.split('(')[0].trim();
+    // Split by minutes and hours
+    const hoursMinsRaw = timeRaw.split('min')[0];
+    const hoursMins = hoursMinsRaw.split('h');
+    // Resolve hours + minutes format
+    duration = hoursMins.length > 1 ? +hoursMins[0] * 60 + +hoursMins[1] : +hoursMins[0];
+    return duration;
+  } else {
+    return null;
   }
 };
 
