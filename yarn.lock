@@ -1934,19 +1934,12 @@ expect-type@^1.2.2:
   resolved "https://registry.yarnpkg.com/expect-type/-/expect-type-1.2.2.tgz#c030a329fb61184126c8447585bc75a7ec6fbff3"
   integrity sha512-JhFGDVJ7tmDJItKhYgJCGLOWjuK9vPxiXoUFLwLDc99NlmklilbiQJwoctZtt13+xMw91MCk/REan6MWHqDjyA==
 
-express-rate-limit@8, express-rate-limit@^8.2.1:
+express-rate-limit@^8.2.1:
   version "8.2.1"
   resolved "https://registry.yarnpkg.com/express-rate-limit/-/express-rate-limit-8.2.1.tgz#ec75fdfe280ecddd762b8da8784c61bae47d7f7f"
   integrity sha512-PCZEIEIxqwhzw4KF0n7QF4QqruVTcF73O5kFKUnGOyjbCCgizBBiFaYpd/fnBLUMPw/BWw9OsiN7GgrNYr7j6g==
   dependencies:
     ip-address "10.0.1"
-
-express-slow-down@^3.0.1:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/express-slow-down/-/express-slow-down-3.0.1.tgz#8d027066e64956e44ae4afbcf2049e3b3988abf2"
-  integrity sha512-Syl+K1o/z8zSTsMWbDpJEOF5WzSj923ktkv/WbNq6E3tmNwPoEcKIhqRxMLWq3a/4OudRciylEqEZvzMBdzn8w==
-  dependencies:
-    express-rate-limit "8"
 
 express@^5.2.1:
   version "5.2.1"

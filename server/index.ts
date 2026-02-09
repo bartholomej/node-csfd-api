@@ -1,7 +1,5 @@
 import 'dotenv/config';
 import express, { NextFunction, Request, Response } from 'express';
-// import rateLimit from 'express-rate-limit';
-// import slowDown from 'express-slow-down';
 import packageJson from '../package.json' with { type: 'json' };
 import { csfd } from '../src';
 import { CSFDFilmTypes } from '../src/dto/global';
