@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 
-const filePath = path.resolve('dist/server.mjs');
+const filePath = path.resolve('dist/mcp-server.mjs');
 
 let content = fs.readFileSync(filePath, 'utf-8');
 
