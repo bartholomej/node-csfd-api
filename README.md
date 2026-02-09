@@ -6,11 +6,11 @@
 
 <div align="center">
 
-# CSFD API 🎬 2026
+# CSFD API 🎬 + MCP Server 🤖
 
-#### Modern TypeScript NPM library for scraping **Czech Movie Database (csfd.cz)** _(unofficial)_
+#### Modern TypeScript NPM library for scraping **CSFD.CZ**. Scraper, API, and MCP Server in one package. _(unofficial)_
 
-[Features](#-features) • [Installation](#-installation) • [Quick Start](#-quick-start) • [API Reference](#-api-reference) • [Examples](#-usage-examples) • [Docker](#-docker-support)
+[Features](#-features) • [Installation](#-installation) • [Quick Start](#-quick-start) • [API Reference](#-api-reference) • [Examples](#-usage-examples) • [MCP Server](#-mcp-server-model-context-protocol) • [Docker](#-docker-support)
 
 </div>
 
@@ -22,14 +22,16 @@
 - 🧪 **Well-tested** - ~100% code coverage
 - 🚀 **Universal** - Works in Node.js, browsers, and serverless environments
 - 🐳 **Docker ready** - Pre-built Docker images available
+- 🤖 **MCP Server** - Use CSFD data directly within LLMs like Claude Desktop
 - 🔄 **Modern API** - Promise-based with async/await support
-- 📦 **One dependency** - Lightweight and efficient
+- 📦 **Few dependencies** - Lightweight and efficient
 
 ### Supported Platforms
 
 - Node.js (ESM & CommonJS)
 - Browsers (with CORS considerations)
 - Docker containers
+- MCP Server (Claude Desktop, etc.)
 - Serverless (Firebase Functions, AWS Lambda, CloudFlare Workers, etc.)
 - Chrome Extensions
 - React Native (Yes, with Expo too!)
@@ -75,6 +77,7 @@ console.log(reviews);
 - [Creators](#creators)
 - [User Ratings](#user-ratings)
 - [User Reviews](#user-reviews)
+- [MCP Server](#-mcp-server-model-context-protocol)
 - [Docker Support](#-docker-support)
 - [Development](#-development)
 
@@ -516,6 +519,39 @@ const filtered = await csfd.userReviews(195357, {
 #### UserReviewsOptions
 
 Same options as [UserRatingsOptions](#userrationsoptions).
+
+## 🤖 MCP Server (Model Context Protocol)
+
+This library includes a built-in [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) server. This allows you to use ČSFD data directly within LLMs like **Claude Desktop**.
+
+### Features
+
+- **Search**: Search for movies, TV series, and users.
+- **Details**: Get comprehensive details about movies, creators, and users.
+- **Reviews**: Read user reviews and ratings.
+
+### Usage with Claude Desktop
+
+Add the following configuration to your `claude_desktop_config.json`:
+
+```json
+{
+  "mcpServers": {
+    "csfd": {
+      "command": "npx",
+      "args": ["-y", "--package", "node-csfd-api", "csfd-mcp"]
+    }
+  }
+}
+```
+
+### Supported Tools
+
+- `search`: Search query (returns movies, series, users)
+- `movie_details`: Get movie details by ID
+- `creator_details`: Get creator details by ID
+- `user_ratings`: Get user ratings
+- `user_reviews`: Get user reviews
 
 ## 🐳 Docker Support
 
