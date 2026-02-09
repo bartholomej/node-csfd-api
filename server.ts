@@ -2,16 +2,10 @@ import 'dotenv/config';
 import express, { NextFunction, Request, Response } from 'express';
 // import rateLimit from 'express-rate-limit';
 // import slowDown from 'express-slow-down';
-import { readFileSync } from 'fs';
-import { dirname, join } from 'path';
-import { fileURLToPath } from 'url';
+import packageJson from './package.json' with { type: 'json' };
 import { csfd } from './src';
 import { CSFDFilmTypes } from './src/dto/global';
 import { CSFDLanguage } from './src/types';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-const packageJson = JSON.parse(readFileSync(join(__dirname, 'package.json'), 'utf-8'));
 
 const LOG_COLORS = {
   info: '\x1b[36m', // cyan
