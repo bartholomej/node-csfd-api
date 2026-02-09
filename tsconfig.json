@@ -7,6 +7,7 @@
     "esModuleInterop": true,
     "module": "esnext",
     "moduleResolution": "node",
+    "resolveJsonModule": true,
     "strictNullChecks": false, // will be more strict in future releases
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
@@ -20,6 +21,6 @@
     "noImplicitAny": true,
     "noImplicitReturns": true
   },
-  "include": ["src"],
+  "include": ["src", "server", "mcp-server"],
   "exclude": ["dist/**/*", "*/tests/**/*"]
 }

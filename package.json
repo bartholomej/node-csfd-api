@@ -6,11 +6,12 @@
   "scripts": {
     "dev": "tsc -w",
     "start": "yarn dev",
-    "server": "tsx server",
+    "server": "tsx server/index.ts",
+    "mcp": "tsx mcp-server/index.ts",
     "prebuild": "rimraf dist",
-    "build": "tsdown --config-loader unconfig && cp README.md dist/ && cp LICENSE dist/",
-    "build:server": "npx esbuild ./server.ts --outfile=dist/server.mjs --format=esm --sourcemap && node scripts/server-mod.js",
-    "build:mcp": "npx esbuild ./src/mcp-server.ts --outfile=dist/mcp-server.mjs --format=esm",
+    "build": "tsdown --config-loader unconfig && yarn build:server && yarn build:mcp && cp README.md dist/ && cp LICENSE dist/",
+    "build:server": "npx esbuild ./server/index.ts --bundle --platform=node --outfile=dist/server.mjs --format=esm --banner:js=\"import { createRequire } from 'module'; const require = createRequire(import.meta.url);\"",
+    "build:mcp": "npx esbuild ./mcp-server/index.ts --platform=node --outfile=dist/mcp-server.mjs --banner:js=\"#!/usr/bin/env node\"",
     "tsc": "tsc",
     "demo": "tsx demo",
     "example:cjs:ts": "cd examples/cjs && yarn build:ts",
@@ -107,7 +108,9 @@
     "./package.json": "./package.json"
   },
   "bin": {
-    "csfd-mcp": "./dist/mcp-server.mjs"
+    "csfd-mcp": "./dist/mcp-server.mjs",
+    "csfd-server": "./dist/server.mjs"
   },
+  "sideEffects": false,
   "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
 }

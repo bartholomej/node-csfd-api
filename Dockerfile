@@ -10,7 +10,7 @@ COPY . .
 
 RUN yarn --frozen-lockfile
 
-RUN yarn build && yarn build:server
+RUN yarn build
 
 # Production stage
 FROM node:24-alpine AS production
@@ -18,16 +18,12 @@ FROM node:24-alpine AS production
 WORKDIR /usr/src/app
 ENV NODE_ENV=production
 
-COPY --from=build /usr/src/app/dist ./
+COPY --from=build /usr/src/app/dist/server.mjs ./server.mjs
 
 # COPY .yarnrc.yml ./
 
 # RUN corepack enable \
 #     && corepack prepare yarn@4 --activate
-
-RUN yarn --frozen-lockfile --production  \
-    && yarn add express dotenv cors \
-    && yarn cache clean
 
 EXPOSE 3000
 

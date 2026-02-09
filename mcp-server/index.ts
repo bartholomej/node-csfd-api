@@ -1,15 +1,8 @@
-#!/usr/bin/env node
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
-import { readFileSync } from 'fs';
-import { dirname, join } from 'path';
-import { fileURLToPath } from 'url';
 import { z } from 'zod';
-import { csfd } from './index.js';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-const packageJson = JSON.parse(readFileSync(join(__dirname, 'package.json'), 'utf-8'));
+import packageJson from '../package.json' with { type: 'json' };
+import { csfd } from '../src/index.js';
 
 // Initialize the MCP server
 const server = new McpServer({
@@ -118,9 +111,18 @@ server.tool(
     user: z.union([z.string(), z.number()]).describe('CSFD User ID (numeric) or username'),
     page: z.number().optional().describe('Page number to fetch (default: 1)'),
     allPages: z.boolean().optional().describe('Fetch all pages at once (use wisely, may be slow)'),
-    allPagesDelay: z.number().optional().describe('Delay in ms between page requests when using allPages'),
-    excludes: z.array(z.string()).optional().describe('Film types to exclude (e.g. "seriál", "TV film")'),
-    includesOnly: z.array(z.string()).optional().describe('Only include these film types (e.g. "film")')
+    allPagesDelay: z
+      .number()
+      .optional()
+      .describe('Delay in ms between page requests when using allPages'),
+    excludes: z
+      .array(z.string())
+      .optional()
+      .describe('Film types to exclude (e.g. "seriál", "TV film")'),
+    includesOnly: z
+      .array(z.string())
+      .optional()
+      .describe('Only include these film types (e.g. "film")')
   },
   async ({ user, page, allPages, allPagesDelay, excludes, includesOnly }) => {
     try {
@@ -159,9 +161,18 @@ server.tool(
     user: z.union([z.string(), z.number()]).describe('CSFD User ID (numeric) or username'),
     page: z.number().optional().describe('Page number to fetch (default: 1)'),
     allPages: z.boolean().optional().describe('Fetch all pages at once (use wisely, may be slow)'),
-    allPagesDelay: z.number().optional().describe('Delay in ms between page requests when using allPages'),
-    excludes: z.array(z.string()).optional().describe('Film types to exclude (e.g. "seriál", "TV film")'),
-    includesOnly: z.array(z.string()).optional().describe('Only include these film types (e.g. "film")')
+    allPagesDelay: z
+      .number()
+      .optional()
+      .describe('Delay in ms between page requests when using allPages'),
+    excludes: z
+      .array(z.string())
+      .optional()
+      .describe('Film types to exclude (e.g. "seriál", "TV film")'),
+    includesOnly: z
+      .array(z.string())
+      .optional()
+      .describe('Only include these film types (e.g. "film")')
   },
   async ({ user, page, allPages, allPagesDelay, excludes, includesOnly }) => {
     try {
@@ -198,7 +209,9 @@ server.tool(
   'Retrieves cinema screenings for a given district in Czech Republic. Returns a list of cinemas with their current screenings, showtimes, and movie details.',
   {
     district: z.union([z.number(), z.string()]).describe('District ID (numeric) or name'),
-    period: z.enum(['today', 'tomorrow', 'weekend', 'week', 'month']).describe('Time period for screenings')
+    period: z
+      .enum(['today', 'tomorrow', 'weekend', 'week', 'month'])
+      .describe('Time period for screenings')
   },
   async ({ district, period }) => {
     try {
