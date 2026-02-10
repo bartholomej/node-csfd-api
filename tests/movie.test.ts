@@ -54,12 +54,12 @@ const getJsonLd = (node: HTMLElement): string => {
 
 const getMovie = (
   node: HTMLElement
-): { pClasses: string[]; aside: HTMLElement; pNode: HTMLElement; jsonLd: string } => {
+): { pClasses: string[]; aside: HTMLElement; pNode: HTMLElement; jsonLd: any } => {
   return {
     pClasses: getPageClasses(node),
     aside: getAsideNode(node),
     pNode: getNode(node),
-    jsonLd: getJsonLd(node)
+    jsonLd: JSON.parse(getJsonLd(node))
   };
 };
 
