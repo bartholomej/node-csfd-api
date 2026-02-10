@@ -1,0 +1,32 @@
+# Cursor Rules for node-csfd-api
+
+This file configures Cursor (and similar AI editors) to understand the project context immediately.
+
+# AI Context Sources
+Please read the following files to understand the project architecture and rules:
+
+1.  **Main Context**: `AGENTS.md` (Read this first!)
+2.  **Scraping Logic**: `.ai/SCRAPING.md` (Critical for selectors/parsing issues)
+3.  **MCP Guidelines**: `.ai/MCP_ARCH.md` (For adding new AI tools)
+
+# Quick Reference
+
+*   **Tech Stack**: Node.js, TypeScript, `node-html-parser`, Zod.
+*   **Key Directories**:
+    *   `src/services`: Business logic & Orchestration.
+    *   `src/helpers`: Pure parsing logic (CSS selectors live here).
+    *   `mcp-server`: AI Interface layer.
+*   **Build**: `npm run build` (builds server + mcp + api).
+*   **Testing**: `vitest` or `npm run demo`.
+
+# Style Guide
+
+*   Use `async/await`.
+*   Prefer `const` over `let`.
+*   Use specific types, avoid `any`.
+*   Follow the existing specific import style (e.g., usually explicit extensions in builds).
+
+# Workflow Specifics
+
+*   **When modifying parsers**: Always check `.ai/SCRAPING.md`.
+*   **When adding features**: Ensure it is exposed via MCP tools in `mcp-server/index.ts`.
