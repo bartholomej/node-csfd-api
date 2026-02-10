@@ -17,9 +17,6 @@ import { addProtocol, getColor, parseISO8601Duration, parseIdFromUrl } from './g
 
 /**
  * Maps language-specific movie creator group labels.
- * @param language - The language code (e.g., 'en', 'cs')
- * @param key - The key of the creator group (e.g., 'directors', 'writers')
- * @returns The localized label for the creator group
  */
 export const getLocalizedCreatorLabel = (
   language: string | undefined,
@@ -73,26 +70,27 @@ export const getLocalizedCreatorLabel = (
     }
   };
 
-  const lang = language || 'cs'; // Default to Czech
+  const lang = language || 'cs';
   return (labels[lang] || labels['cs'])[key];
 };
 
 export const getMovieId = (el: HTMLElement): number => {
-  const url = el.querySelector('.tabs .tab-nav-list a').attributes.href;
+  const url = el.querySelector('.tabs .tab-nav-list a')?.attributes.href;
   return parseIdFromUrl(url);
 };
 
 export const getMovieTitle = (el: HTMLElement): string => {
-  return el.querySelector('h1').innerText.split(`(`)[0].trim();
+  return el.querySelector('h1')?.innerText.split(`(`)[0].trim() || '';
 };
 
 export const getMovieGenres = (el: HTMLElement): CSFDGenres[] => {
-  const genresRaw = el.querySelector('.genres').textContent;
-  return genresRaw.split(' / ') as CSFDGenres[];
+  const genresRaw = el.querySelector('.genres')?.textContent;
+  return (genresRaw?.split(' / ') as CSFDGenres[]) || [];
 };
 
 export const getMovieOrigins = (el: HTMLElement): string[] => {
-  const originsRaw = el.querySelector('.origin').textContent;
+  const originsRaw = el.querySelector('.origin')?.textContent;
+  if (!originsRaw) return [];
   const origins = originsRaw.split(',')[0];
   return origins.split(' / ');
 };
@@ -101,154 +99,129 @@ export const getMovieColorRating = (bodyClasses: string[]): CSFDColorRating => {
   return getColor(bodyClasses[1]);
 };
 
-export const getMovieRating = (el: HTMLElement): number => {
-  const ratingRaw = el.querySelector('.film-rating-average').textContent;
-  const rating = ratingRaw?.replace(/%/g, '').trim();
-  const ratingInt = parseInt(rating);
-
-  if (Number.isInteger(ratingInt)) {
-    return ratingInt;
-  } else {
-    return null;
-  }
+export const getMovieRating = (el: HTMLElement): number | null => {
+  const ratingRaw = el.querySelector('.film-rating-average')?.textContent;
+  if (!ratingRaw) return null;
+  const rating = parseInt(ratingRaw.replace(/%/g, '').trim());
+  return isNaN(rating) ? null : rating;
 };
 
-export const getMovieRatingCount = (el: HTMLElement): number => {
+export const getMovieRatingCount = (el: HTMLElement): number | null => {
   const ratingCountRaw = el.querySelector('.box-rating-container .counter')?.textContent;
-  const ratingCount = +ratingCountRaw?.replace(/[(\s)]/g, '');
-  if (Number.isInteger(ratingCount)) {
-    return ratingCount;
-  } else {
-    return null;
-  }
+  if (!ratingCountRaw) return null;
+  const ratingCount = parseInt(ratingCountRaw.replace(/[(\s)]/g, ''));
+  return isNaN(ratingCount) ? null : ratingCount;
 };
 
-export const getMovieYear = (el: string): number => {
+export const getMovieYear = (el: string): number | null => {
   try {
     const jsonLd = JSON.parse(el);
-    return +jsonLd.dateCreated;
+    return +jsonLd.dateCreated || null;
   } catch (error) {
-    console.error('node-csfd-api: Error parsing JSON-LD', error);
     return null;
   }
 };
 
-export const getMovieDuration = (jsonLdRaw: string, el: HTMLElement): number => {
-  let duration = null;
+export const getMovieDuration = (jsonLdRaw: string, el: HTMLElement): number | null => {
   try {
     const jsonLd = JSON.parse(jsonLdRaw);
-    duration = jsonLd.duration;
-    return parseISO8601Duration(duration);
+    return parseISO8601Duration(jsonLd.duration);
   } catch (error) {
-    const origin = el.querySelector('.origin').innerText;
+    const origin = el.querySelector('.origin')?.innerText;
+    if (!origin) return null;
+
     const timeString = origin.split(',');
     if (timeString.length > 2) {
-      // Get last time elelment
       const timeString2 = timeString.pop().trim();
-      // Clean it
       const timeRaw = timeString2.split('(')[0].trim();
-      // Split by minutes and hours
       const hoursMinsRaw = timeRaw.split('min')[0];
       const hoursMins = hoursMinsRaw.split('h');
-      // Resolve hours + minutes format
-      duration = hoursMins.length > 1 ? +hoursMins[0] * 60 + +hoursMins[1] : +hoursMins[0];
-      return duration;
-    } else {
-      return null;
+
+      const hours = hoursMins.length > 1 ? +hoursMins[0] : 0;
+      const minutes = hoursMins.length > 1 ? +hoursMins[1] : +hoursMins[0];
+
+      return hours * 60 + minutes;
     }
+    return null;
   }
 };
 
 export const getMovieTitlesOther = (el: HTMLElement): CSFDTitlesOther[] => {
   const namesNode = el.querySelectorAll('.film-names li');
+  if (!namesNode.length) return [];
 
-  if (!namesNode.length) {
-    return [];
-  }
-
-  const titlesOther = namesNode.map((el) => {
-    const country = el.querySelector('img.flag').attributes.alt;
-    const title = el.textContent.trim().split('\n')[0];
-
-    if (country && title) {
-      return {
-        country,
-        title
-      };
-    } else {
+  return namesNode
+    .map((item) => {
+      const country = item.querySelector('img.flag')?.attributes.alt;
+      const title = item.textContent.trim().split('\n')[0];
+      if (country && title) {
+        return { country, title };
+      }
       return null;
-    }
-  });
-
-  return titlesOther.filter((x) => x);
+    })
+    .filter((x): x is CSFDTitlesOther => x !== null);
 };
 
-export const getMoviePoster = (el: HTMLElement | null): string => {
+export const getMoviePoster = (el: HTMLElement | null): string | null => {
+  if (!el) return null;
   const poster = el.querySelector('.film-posters img');
-  // Resolve empty image
-  if (poster) {
-    if (poster.classNames?.includes('empty-image')) {
-      return null;
-    } else {
-      // Full sized image (not thumb)
-      const imageThumb = poster.attributes.src.split('?')[0];
-      const image = imageThumb.replace(/\/w140\//, '/w1080/');
-      return addProtocol(image);
-    }
-  } else {
-    return null;
+
+  if (poster && !poster.classNames?.includes('empty-image')) {
+    const imageThumb = poster.attributes.src.split('?')[0];
+    const image = imageThumb.replace(/\/w140\//, '/w1080/');
+    return addProtocol(image);
   }
+  return null;
 };
 
-export const getMovieRandomPhoto = (el: HTMLElement | null): string => {
+export const getMovieRandomPhoto = (el: HTMLElement | null): string | null => {
+  if (!el) return null;
   const imageNode = el.querySelector('.gallery-item picture img');
   const image = imageNode?.attributes?.src;
   if (image) {
-    return image.replace(/\/w663\//, '/w1326/');
-  } else {
-    return null;
+    return addProtocol(image.replace(/\/w663\//, '/w1326/'));
   }
+  return null;
 };
 
-export const getMovieTrivia = (el: HTMLElement | null): string[] => {
+export const getMovieTrivia = (el: HTMLElement | null): string[] | null => {
+  if (!el) return null;
   const triviaNodes = el.querySelectorAll('.article-trivia ul li');
-  if (triviaNodes?.length) {
+  if (triviaNodes.length) {
     return triviaNodes.map((node) => node.textContent.trim().replace(/(\r\n|\n|\r|\t)/gm, ''));
-  } else {
-    return null;
   }
+  return null;
 };
 
 export const getMovieDescriptions = (el: HTMLElement): string[] => {
   return el
     .querySelectorAll('.body--plots .plot-full p, .body--plots .plots .plots-item p')
-    .map((movie) => movie.textContent?.trim().replace(/(\r\n|\n|\r|\t)/gm, ''));
+    .map((movie) => movie.textContent?.trim().replace(/(\r\n|\n|\r|\t)/gm, ''))
+    .filter(Boolean);
 };
 
 const parseMoviePeople = (el: HTMLElement): CSFDMovieCreator[] => {
   const people = el.querySelectorAll('a');
-  return (
-    people
-      // Filter out "more" links
-      .filter((x) => x.classNames.length === 0)
-      .map((person) => {
-        return {
-          id: parseIdFromUrl(person.attributes.href),
-          name: person.innerText.trim(),
-          url: `https://www.csfd.cz${person.attributes.href}`
-        };
-      })
-  );
+  return people
+    .filter((x) => x.classNames.length === 0)
+    .map((person) => ({
+      id: parseIdFromUrl(person.attributes.href) || 0,
+      name: person.innerText.trim(),
+      url: `https://www.csfd.cz${person.attributes.href}`
+    }));
 };
 
-export const getMovieGroup = (el: HTMLElement, group: CSFDCreatorGroups | CSFDCreatorGroupsEnglish | CSFDCreatorGroupsSlovak): CSFDMovieCreator[] => {
+export const getMovieGroup = (
+  el: HTMLElement,
+  group: CSFDCreatorGroups | CSFDCreatorGroupsEnglish | CSFDCreatorGroupsSlovak
+): CSFDMovieCreator[] => {
   const creators = el.querySelectorAll('.creators h4');
-  const element = creators.filter((elem) => elem.textContent.trim().includes(group))[0];
+  const element = creators.find((elem) => elem.textContent.trim().includes(group));
+
   if (element?.parentNode) {
     return parseMoviePeople(element.parentNode as HTMLElement);
-  } else {
-    return [];
   }
+  return [];
 };
 
 export const getMovieType = (el: HTMLElement): string => {
@@ -257,38 +230,37 @@ export const getMovieType = (el: HTMLElement): string => {
 };
 
 export const getMovieVods = (el: HTMLElement | null): CSFDVod[] => {
-  let vods: CSFDVod[] = [];
-  if (el) {
-    const buttons = el.querySelectorAll('.box-buttons .button');
-    const buttonsVod = buttons.filter((x) => !x.classNames.includes('button-social'));
-    vods = buttonsVod.map((btn) => {
-      return {
-        title: btn.textContent.trim() as CSFDVodService,
-        url: btn.attributes.href
-      };
-    });
-  }
-  return vods.length ? vods : [];
+  if (!el) return [];
+  const buttons = el.querySelectorAll('.box-buttons .button');
+  const buttonsVod = buttons.filter((x) => !x.classNames.includes('button-social'));
+
+  return buttonsVod.map((btn) => ({
+    title: btn.textContent.trim() as CSFDVodService,
+    url: btn.attributes.href
+  }));
 };
 
-// Get box content
-const getBoxContent = (el: HTMLElement, box: string): HTMLElement => {
+const getBoxContent = (el: HTMLElement, box: string): HTMLElement | undefined => {
   const headers = el.querySelectorAll('section.box .box-header');
   return headers.find((header) => header.querySelector('h3')?.textContent.trim().includes(box))
-    ?.parentNode;
+    ?.parentNode as HTMLElement;
 };
 
 export const getMovieBoxMovies = (el: HTMLElement, boxName: CSFDBoxContent): CSFDMovieListItem[] => {
   const movieListItem: CSFDMovieListItem[] = [];
   const box = getBoxContent(el, boxName);
+
   const movieTitleNodes = box?.querySelectorAll('.article-header .film-title-name');
   if (movieTitleNodes?.length) {
     for (const item of movieTitleNodes) {
-      movieListItem.push({
-        id: parseIdFromUrl(item.attributes.href),
-        title: item.textContent.trim(),
-        url: `https://www.csfd.cz${item.attributes.href}`
-      });
+      const id = parseIdFromUrl(item.attributes.href);
+      if (id) {
+        movieListItem.push({
+          id,
+          title: item.textContent.trim(),
+          url: `https://www.csfd.cz${item.attributes.href}`
+        });
+      }
     }
   }
   return movieListItem;
@@ -297,15 +269,15 @@ export const getMovieBoxMovies = (el: HTMLElement, boxName: CSFDBoxContent): CSF
 export const getMoviePremieres = (el: HTMLElement): CSFDPremiere[] => {
   const premiereNodes = el.querySelectorAll('.box-premieres li');
   const premiere: CSFDPremiere[] = [];
+
   for (const premiereNode of premiereNodes) {
-    const title = premiereNode.querySelector('p + span').attributes.title;
+    const title = premiereNode.querySelector('p + span')?.attributes.title;
 
     if (title) {
-      const [date, ...company] = title?.split(' ');
-
+      const [date, ...company] = title.split(' ');
       premiere.push({
         country: premiereNode.querySelector('.flag')?.attributes.title || null,
-        format: premiereNode.querySelector('p').textContent.trim()?.split(' od')[0],
+        format: premiereNode.querySelector('p')?.textContent.trim()?.split(' od')[0] || '',
         date,
         company: company.join(' ')
       });

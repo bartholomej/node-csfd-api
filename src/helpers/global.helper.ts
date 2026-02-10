@@ -1,60 +1,47 @@
 import { CSFDColorRating } from '../dto/global';
 import { CSFDColors } from '../dto/user-ratings';
 
-export const parseIdFromUrl = (url: string): number => {
-  if (url) {
-    const idSlug = url?.split('/')[2];
-    const id = idSlug?.split('-')[0];
-    return +id || null;
-  } else {
-    return null;
+export const parseIdFromUrl = (url: string | undefined | null): number | null => {
+  if (!url) return null;
+  // Match first sequence of digits
+  const match = url.match(/(\d+)/);
+  if (match && match[1]) {
+    return +match[1];
   }
+  return null;
+};
+
+const COLOR_MAP: Record<string, CSFDColorRating> = {
+  'lightgrey': 'unknown',
+  'page-lightgrey': 'unknown',
+  'red': 'good',
+  'page-red': 'good',
+  'blue': 'average',
+  'page-blue': 'average',
+  'grey': 'bad',
+  'page-grey': 'bad'
 };
 
 export const getColor = (cls: string): CSFDColorRating => {
-  switch (cls) {
-    case 'page-lightgrey':
-      return 'unknown';
-    case 'page-red':
-      return 'good';
-    case 'page-blue':
-      return 'average';
-    case 'page-grey':
-      return 'bad';
-    default:
-      return 'unknown';
-  }
+  return COLOR_MAP[cls] || 'unknown';
 };
 
 export const parseColor = (quality: CSFDColors): CSFDColorRating => {
-  switch (quality) {
-    case 'lightgrey':
-      return 'unknown';
-    case 'red':
-      return 'good';
-    case 'blue':
-      return 'average';
-    case 'grey':
-      return 'bad';
-    default:
-      return 'unknown';
-  }
+  return COLOR_MAP[quality] || 'unknown';
 };
 
 export const addProtocol = (url: string): string => {
   return url.startsWith('//') ? 'https:' + url : url;
 };
 
-export const getDuration = (matches: any[]) => {
+// Internal helper
+const getDuration = (matches: RegExpMatchArray | null) => {
+  if (!matches) {
+    return { hours: 0, minutes: 0 };
+  }
   return {
-    sign: matches[1] === undefined ? '+' : '-',
-    years: matches[2] === undefined ? 0 : matches[2],
-    months: matches[3] === undefined ? 0 : matches[3],
-    weeks: matches[4] === undefined ? 0 : matches[4],
-    days: matches[5] === undefined ? 0 : matches[5],
-    hours: matches[6] === undefined ? 0 : matches[6],
-    minutes: matches[7] === undefined ? 0 : matches[7],
-    seconds: matches[8] === undefined ? 0 : matches[8]
+    hours: matches[6] ? +matches[6] : 0,
+    minutes: matches[7] ? +matches[7] : 0
   };
 };
 
@@ -63,10 +50,9 @@ export const parseISO8601Duration = (iso: string): number => {
     /(-)?P(?:([.,\d]+)Y)?(?:([.,\d]+)M)?(?:([.,\d]+)W)?(?:([.,\d]+)D)?T(?:([.,\d]+)H)?(?:([.,\d]+)M)?(?:([.,\d]+)S)?/;
 
   const matches = iso.match(iso8601DurationRegex);
-
   const duration = getDuration(matches);
 
-  return +duration.minutes;
+  return duration.hours * 60 + duration.minutes;
 };
 
 // Sleep in loop
