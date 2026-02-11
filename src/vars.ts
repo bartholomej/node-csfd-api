@@ -9,7 +9,7 @@ type Options = {
 const LANGUAGE_DOMAIN_MAP: Record<CSFDLanguage, string> = {
   cs: 'https://www.csfd.cz',
   en: 'https://www.csfd.cz/en',
-  sk: 'https://www.csfd.cz/sk',
+  sk: 'https://www.csfd.cz/sk'
 };
 
 let BASE_URL = LANGUAGE_DOMAIN_MAP.cs;
@@ -30,10 +30,16 @@ export const getUrlByLanguage = (language?: CSFDLanguage): string => {
 export const userUrl = (user: string | number, options: Options): string =>
   `${getUrlByLanguage(options?.language)}/uzivatel/${encodeURIComponent(user)}`;
 
-export const userRatingsUrl = (user: string | number, page?: number, options: Options = {}): string =>
-  `${userUrl(user, options)}/hodnoceni/${page ? '?page=' + page : ''}`;
-export const userReviewsUrl = (user: string | number, page?: number, options: Options = {}): string =>
-  `${userUrl(user, options)}/recenze/${page ? '?page=' + page : ''}`;
+export const userRatingsUrl = (
+  user: string | number,
+  page?: number,
+  options: Options = {}
+): string => `${userUrl(user, options)}/hodnoceni/${page ? '?page=' + page : ''}`;
+export const userReviewsUrl = (
+  user: string | number,
+  page?: number,
+  options: Options = {}
+): string => `${userUrl(user, options)}/recenze/${page ? '?page=' + page : ''}`;
 
 // Movie URLs
 export const movieUrl = (movie: number, options: Options): string =>
@@ -43,8 +49,11 @@ export const creatorUrl = (creator: number | string, options: Options): string =
   `${getUrlByLanguage(options?.language)}/tvurce/${encodeURIComponent(creator)}`;
 
 // Cinema URLs
-export const cinemasUrl = (district: number | string, period: CSFDCinemaPeriod, options: Options): string =>
-  `${getUrlByLanguage(options?.language)}/kino/?period=${period}&district=${district}`;
+export const cinemasUrl = (
+  district: number | string,
+  period: CSFDCinemaPeriod,
+  options: Options
+): string => `${getUrlByLanguage(options?.language)}/kino/?period=${period}&district=${district}`;
 
 // Search URLs
 export const searchUrl = (text: string, options: Options): string =>

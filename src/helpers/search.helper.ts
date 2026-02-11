@@ -41,7 +41,10 @@ export const getSearchOrigins = (el: HTMLElement): string[] => {
   return originsAll?.split('/').map((country) => country.trim());
 };
 
-export const parseSearchPeople = (el: HTMLElement, type: 'directors' | 'actors'): CSFDMovieCreator[] => {
+export const parseSearchPeople = (
+  el: HTMLElement,
+  type: 'directors' | 'actors'
+): CSFDMovieCreator[] => {
   let who: Creator;
   if (type === 'directors') who = 'Režie:';
   if (type === 'actors') who = 'Hrají:';
