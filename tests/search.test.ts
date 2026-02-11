@@ -157,12 +157,12 @@ describe('Get Movie creators', () => {
       {
         id: 46,
         name: 'Keanu Reeves',
-        url: 'https://www.csfd.cz/tvurce/46-keanu-reeves/',
+        url: 'https://www.csfd.cz/tvurce/46-keanu-reeves/'
       },
       {
-        "id": 101,
-        "name": "Carrie-Anne Moss",
-        "url": "https://www.csfd.cz/tvurce/101-carrie-anne-moss/",
+        id: 101,
+        name: 'Carrie-Anne Moss',
+        url: 'https://www.csfd.cz/tvurce/101-carrie-anne-moss/'
       }
     ]);
   });
@@ -303,9 +303,9 @@ describe('Get TV series creators', () => {
     const movie = parseSearchPeople(tvSeriesNode[tvSeriesNode.length - 1], 'actors');
     expect(movie).toEqual<CSFDMovieCreator[]>([
       {
-        "id": 861510,
-        "name": "Donna Glaesener",
-        "url": "https://www.csfd.cz/tvurce/861510-donna-glaesener/",
+        id: 861510,
+        name: 'Donna Glaesener',
+        url: 'https://www.csfd.cz/tvurce/861510-donna-glaesener/'
       }
     ]);
   });
@@ -318,15 +318,15 @@ describe('Get TV series creators', () => {
     const movieDirectors = parseSearchPeople(tvSeriesNode[2], 'directors');
     expect(movie).toEqual<CSFDMovieCreator[]>([
       {
-        "id": 74751,
-        "name": "Takeru Sató",
-        "url": "https://www.csfd.cz/tvurce/74751-takeru-sato/",
+        id: 74751,
+        name: 'Takeru Sató',
+        url: 'https://www.csfd.cz/tvurce/74751-takeru-sato/'
       },
       {
-        "id": 604689,
-        "name": "Jú Mijazaki",
-        "url": "https://www.csfd.cz/tvurce/604689-ju-mijazaki/",
-      },
+        id: 604689,
+        name: 'Jú Mijazaki',
+        url: 'https://www.csfd.cz/tvurce/604689-ju-mijazaki/'
+      }
     ]);
     expect(movieDirectors).toEqual<CSFDMovieCreator[]>([]);
   });

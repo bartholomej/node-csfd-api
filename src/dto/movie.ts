@@ -145,7 +145,6 @@ export type CSFDCreatorGroups =
   | 'Scénografie'
   | 'Kostýmy';
 
-
 export type CSFDCreatorGroupsEnglish =
   | 'Directed by'
   | 'Screenplay'

@@ -8,7 +8,7 @@ const USER_AGENTS: string[] = [
 ];
 
 const defaultHeaders = {
-  'User-Agent': USER_AGENTS[Math.floor(Math.random() * USER_AGENTS.length)],
+  'User-Agent': USER_AGENTS[Math.floor(Math.random() * USER_AGENTS.length)]
 };
 
 export const fetchPage = async (url: string, optionsRequest?: RequestInit): Promise<string> => {
@@ -20,7 +20,11 @@ export const fetchPage = async (url: string, optionsRequest?: RequestInit): Prom
     }
     const { headers: _, ...restOptions } = optionsRequest || {};
 
-    const response = await fetchSafe(url, { credentials: 'omit', ...restOptions, headers: mergedHeaders });
+    const response = await fetchSafe(url, {
+      credentials: 'omit',
+      ...restOptions,
+      headers: mergedHeaders
+    });
     if (response.status >= 400 && response.status < 600) {
       throw new Error(`node-csfd-api: Bad response ${response.status} for url: ${url}`);
     }
