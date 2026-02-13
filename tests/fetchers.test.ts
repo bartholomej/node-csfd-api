@@ -5,6 +5,7 @@ import { CSFDCreator, CSFDCreatorScreening } from '../src/dto/creator';
 import { CSFDColorRating, CSFDFilmTypes } from '../src/dto/global';
 import { CSFDMovie } from '../src/dto/movie';
 import { fetchPage } from '../src/fetchers';
+import { sleep } from '../src/helpers/global.helper';
 import { movieUrl, userRatingsUrl } from '../src/vars';
 const badId = 999999999999999;
 
@@ -283,11 +284,18 @@ describe('Movie page 404', () => {
 describe('Fetch with custom headers', () => {
   test('Should fetch page with custom headers', async () => {
     const url = userRatingsUrl(912);
-    const html = await fetchPage(url, {
-      headers: {
-        'X-Custom-Header': 'test-value'
+    let html = 'Error';
+    for (let i = 0; i < 3; i++) {
+      html = await fetchPage(url, {
+        headers: {
+          'X-Custom-Header': 'test-value'
+        }
+      });
+      if (html !== 'Error') {
+        break;
       }
-    });
+      await sleep(1000);
+    }
     expect(html).toContain('BART!');
   });
 });

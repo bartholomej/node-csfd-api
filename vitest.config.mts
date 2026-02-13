@@ -5,6 +5,7 @@ export default defineConfig({
     coverage: {
       provider: 'istanbul',
       exclude: [...configDefaults.exclude, 'demo.ts', '**/*.polyfill.ts', 'vars.ts', 'server.ts']
-    }
+    },
+    testTimeout: 20000
   }
 });

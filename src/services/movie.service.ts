@@ -42,7 +42,13 @@ export class MovieScraper {
     const asideNode = movieHtml.querySelector('.aside-movie-profile');
     const movieNode = movieHtml.querySelector('.main-movie-profile');
     const jsonLd = movieHtml.querySelector('script[type="application/ld+json"]').innerText;
-    return this.buildMovie(+movieId, movieNode, asideNode, pageClasses, jsonLd, options);
+    let jsonLdObject = null;
+    try {
+      jsonLdObject = JSON.parse(jsonLd);
+    } catch (e) {
+      console.error('node-csfd-api: Error parsing JSON-LD', e);
+    }
+    return this.buildMovie(+movieId, movieNode, asideNode, pageClasses, jsonLdObject, options);
   }
 
   private buildMovie(
@@ -50,7 +56,7 @@ export class MovieScraper {
     el: HTMLElement,
     asideEl: HTMLElement,
     pageClasses: string[],
-    jsonLd: string,
+    jsonLd: any,
     options: CSFDOptions
   ): CSFDMovie {
     return {

@@ -213,19 +213,19 @@ describe('Get Movie trivia', () => {
 
 describe('Get Duration', () => {
   test('Duration', () => {
-    const movie = getMovieDuration(movieJsonLd, movieNode);
+    const movie = getMovieDuration(JSON.parse(movieJsonLd), movieNode);
     expect(movie).toEqual<number>(159);
   });
   test('Duration Blank', () => {
-    const movie = getMovieDuration(movieBlankJsonLd, movieNodeBlank);
+    const movie = getMovieDuration(JSON.parse(movieBlankJsonLd), movieNodeBlank);
     expect(movie).toEqual(null);
   });
   test('Duration Rich', () => {
-    const movie = getMovieDuration(movieRichJsonLd, movieNodeRich);
+    const movie = getMovieDuration(JSON.parse(movieRichJsonLd), movieNodeRich);
     expect(movie).toEqual<number>(172);
   });
   test('Duration Series', () => {
-    const movie = getMovieDuration(seriesJsonLd, seriesNode);
+    const movie = getMovieDuration(JSON.parse(seriesJsonLd), seriesNode);
     expect(movie).toEqual<number>(860);
   });
   // test('Empty node', () => {
@@ -383,15 +383,15 @@ describe('Get type', () => {
 
 describe('Get year', () => {
   test('Year', () => {
-    const movie = getMovieYear(movieJsonLd);
+    const movie = getMovieYear(JSON.parse(movieJsonLd));
     expect(movie).toEqual<number>(2018);
   });
   test('Year', () => {
-    const movie = getMovieYear(movieRichJsonLd);
+    const movie = getMovieYear(JSON.parse(movieRichJsonLd));
     expect(movie).toEqual<number>(2001);
   });
   test('Year Series', () => {
-    const movie = getMovieYear(seriesJsonLd);
+    const movie = getMovieYear(JSON.parse(seriesJsonLd));
     expect(movie).toEqual<number>(1994);
   });
   test('Wrong year', () => {
