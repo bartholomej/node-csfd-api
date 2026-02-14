@@ -18,6 +18,7 @@
     "example:esm:ts": "cd examples/server/esm && yarn build:ts",
     "example:cjs:js": "cd examples/server/cjs && yarn build",
     "example:esm:js": "cd examples/server/esm && yarn build",
+    "example:letterboxd": "tsx examples/letterboxd/export-my-ratings-letterboxd.ts",
     "examples": "yarn example:cjs:ts && yarn example:cjs:js && yarn example:esm:ts && yarn example:esm:js",
     "lint": "eslint ./src/**/**/* --fix",
     "test": "vitest",
