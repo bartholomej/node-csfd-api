@@ -1,5 +1,5 @@
 /*
- * Export ratings in various formats (JSON by default, Letterboxd CSV supported)
+ * Export ratings in various formats (CSV by default, JSON, Letterboxd CSV supported)
  */
 
 import { writeFile } from 'node:fs/promises';
@@ -7,7 +7,7 @@ import { csfd } from '../src';
 import { CSFDUserRatingConfig } from '../src/dto/user-ratings';
 
 export interface ExportRatingsOptions {
-  format: 'json' | 'letterboxd';
+  format: 'json' | 'csv' | 'letterboxd';
   userRatingsOptions: CSFDUserRatingConfig;
 }
 
@@ -34,13 +34,14 @@ export async function runRatingsExport(userId: number, options: ExportRatingsOpt
     let content = '';
     let fileName = '';
 
-    if (options.format === 'letterboxd') {
-      const escapeCsvField = (value: string) => {
-        const needsQuotes = /[",\n\r]/.test(value);
-        const escaped = value.replaceAll('"', '""');
-        return needsQuotes ? `"${escaped}"` : escaped;
-      };
+    const escapeCsvField = (value: string) => {
+      const needsQuotes = /[",\n\r]/.test(value);
+      const escaped = value.replaceAll('"', '""');
+      return needsQuotes ? `"${escaped}"` : escaped;
+    };
 
+    if (options.format === 'letterboxd') {
+      // Letterboxd Import Format
       content = [
         'Title,Year,Rating,WatchedDate',
         ...ratings.map((r) => {
@@ -52,10 +53,31 @@ export async function runRatingsExport(userId: number, options: ExportRatingsOpt
         })
       ].join('\n');
       fileName = `${userId}-for-letterboxd.csv`;
-    } else {
-      // JSON format (default)
+    } else if (options.format === 'json') {
+      // JSON format
       content = JSON.stringify(ratings, null, 2);
       fileName = `${userId}-ratings.json`;
+    } else {
+      // Generic CSV format (Default)
+      // Get all keys from the first object + typical known keys to ensure order
+      const headers = ['id', 'title', 'year', 'rating', 'date', 'type', 'url', 'colorRating'];
+
+      content = [
+        headers.join(','),
+        ...ratings.map((r) => {
+          return [
+            r.id,
+            escapeCsvField(r.title ?? ''),
+            r.year ?? '',
+            r.userRating ?? '',
+            escapeCsvField(r.userDate ?? ''),
+            escapeCsvField(r.type ?? ''),
+            escapeCsvField(r.url ?? ''),
+            escapeCsvField(r.colorRating ?? '')
+          ].join(',');
+        })
+      ].join('\n');
+      fileName = `${userId}-ratings.csv`;
     }
 
     await writeFile(fileName, content);

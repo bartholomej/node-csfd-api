@@ -47,13 +47,18 @@ async function main() {
         }
 
         // Parse simplified flags manually for now to avoid dependencies
-        // Check for --letterboxd flag
         const isLetterboxd = args.includes('--letterboxd');
-        const format = isLetterboxd ? 'letterboxd' : 'json';
+        const isJson = args.includes('--json');
+        const isCsv = args.includes('--csv');
 
-        // Future TODO: Parse other args like --lang=cs, --only=film
-        // const langArg = args.find(a => a.startsWith('--lang='));
-        // const language = langArg ? langArg.split('=')[1] : undefined;
+        let format: 'csv' | 'json' | 'letterboxd' = 'csv'; // Default to CSV
+        if (isLetterboxd) {
+          format = 'letterboxd';
+        } else if (isJson) {
+          format = 'json';
+        } else if (isCsv) {
+          format = 'csv';
+        }
 
         try {
           // Dynamic import of the built module
@@ -109,8 +114,10 @@ Usage: npx node-csfd-api <command> [options]
 Commands:
   server, api                Start the REST API server
   mcp                        Start the MCP (Model Context Protocol) server for AI agents
-  export ratings <userId>    Export user ratings to JSON (default) or CSV
+  export ratings <userId>    Export user ratings to CSV (default), JSON, or Letterboxd format
     Options:
+      --csv                  Export to CSV format (default)
+      --json                 Export to JSON format
       --letterboxd           Export to Letterboxd-compatible CSV format
   help                       Show this help message
 `);

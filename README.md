@@ -6,9 +6,9 @@
 
 <div align="center">
 
-# CSFD API 🎬 + MCP Server 🤖
+# CSFD API 🎬 + CSFD Export + MCP Server 🤖
 
-#### Modern TypeScript NPM library for scraping **CSFD.CZ**. Scraper, API, and MCP Server in one package. _(unofficial)_
+#### Modern TypeScript NPM library for scraping **CSFD.CZ**. Scraper, API, Export and MCP Server in one package. _(unofficial)_
 
 [Features](#-features) • [Installation](#-installation) • [Quick Start](#-quick-start) • [API Reference](#-api-reference) • [Examples](#-usage-examples) • [MCP Server](#-mcp-server-model-context-protocol) • [Docker](#-docker-support)
 
@@ -524,13 +524,16 @@ Same options as [UserRatingsOptions](#userrationsoptions).
 
 This library comes with a powerful CLI that exposes several tools.
 
-### 1. Export Ratings (JSON & Letterboxd)
+### 1. Export Ratings (CSV, JSON & Letterboxd)
 
-> Backup your personal user ratings to JSON or CSV format (compatible with Letterboxd). Use this tool just to keep a local copy of your data.
+> Backup your personal user ratings to CSV (default), JSON, or Letterboxd format. Use this tool just to keep a local copy of your data.
 
 ```bash
-# Export to JSON (default) -> saves as <userId>-ratings.json
+# Export to CSV (default) -> saves as <userId>-ratings.csv
 npx node-csfd-api export ratings 912
+
+# Export to JSON -> saves as <userId>-ratings.json
+npx node-csfd-api export ratings 912 --json
 
 # Export to Letterboxd CSV -> saves as <userId>-for-letterboxd.csv
 npx node-csfd-api export ratings 912 --letterboxd
