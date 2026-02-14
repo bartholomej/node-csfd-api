@@ -123,23 +123,23 @@ export const getMovieRatingCount = (el: HTMLElement): number => {
   }
 };
 
-export const getMovieYear = (el: string): number => {
-  try {
-    const jsonLd = JSON.parse(el);
+export const getMovieYear = (jsonLd: any): number => {
+  if (jsonLd && jsonLd.dateCreated) {
     return +jsonLd.dateCreated;
-  } catch (error) {
-    console.error('node-csfd-api: Error parsing JSON-LD', error);
-    return null;
   }
+  return null;
 };
 
-export const getMovieDuration = (jsonLdRaw: string, el: HTMLElement): number => {
-  let duration = null;
+export const getMovieDuration = (jsonLd: any, el: HTMLElement): number => {
+  if (jsonLd && jsonLd.duration) {
+    try {
+      return parseISO8601Duration(jsonLd.duration);
+    } catch (e) {
+      // ignore
+    }
+  }
+
   try {
-    const jsonLd = JSON.parse(jsonLdRaw);
-    duration = jsonLd.duration;
-    return parseISO8601Duration(duration);
-  } catch (error) {
     const origin = el.querySelector('.origin').innerText;
     const timeString = origin.split(',');
     if (timeString.length > 2) {
@@ -151,11 +151,12 @@ export const getMovieDuration = (jsonLdRaw: string, el: HTMLElement): number => 
       const hoursMinsRaw = timeRaw.split('min')[0];
       const hoursMins = hoursMinsRaw.split('h');
       // Resolve hours + minutes format
-      duration = hoursMins.length > 1 ? +hoursMins[0] * 60 + +hoursMins[1] : +hoursMins[0];
-      return duration;
+      return hoursMins.length > 1 ? +hoursMins[0] * 60 + +hoursMins[1] : +hoursMins[0];
     } else {
       return null;
     }
+  } catch (e) {
+    return null;
   }
 };
 

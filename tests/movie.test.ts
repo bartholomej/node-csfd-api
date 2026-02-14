@@ -48,13 +48,14 @@ const getNode = (node: HTMLElement): HTMLElement => {
   return node.querySelector('.main-movie-profile') as HTMLElement;
 };
 
-const getJsonLd = (node: HTMLElement): string => {
-  return node.querySelector('script[type="application/ld+json"]')?.innerText ?? '{}';
+const getJsonLd = (node: HTMLElement): any => {
+  const json = node.querySelector('script[type="application/ld+json"]')?.innerText ?? '{}';
+  return JSON.parse(json);
 };
 
 const getMovie = (
   node: HTMLElement
-): { pClasses: string[]; aside: HTMLElement; pNode: HTMLElement; jsonLd: string } => {
+): { pClasses: string[]; aside: HTMLElement; pNode: HTMLElement; jsonLd: any } => {
   return {
     pClasses: getPageClasses(node),
     aside: getAsideNode(node),
