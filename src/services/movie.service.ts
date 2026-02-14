@@ -3,13 +3,12 @@ import { CSFDFilmTypes } from '../dto/global';
 import { CSFDMovie } from '../dto/movie';
 import { fetchPage } from '../fetchers';
 import {
-  getLocalizedCreatorLabel,
   getMovieBoxMovies,
   getMovieColorRating,
+  getMovieCreators,
   getMovieDescriptions,
   getMovieDuration,
   getMovieGenres,
-  getMovieGroup,
   getMovieOrigins,
   getMoviePoster,
   getMoviePremieres,
@@ -70,18 +69,7 @@ export class MovieScraper {
       poster: getMoviePoster(el),
       photo: getMovieRandomPhoto(el),
       trivia: getMovieTrivia(el),
-      creators: {
-        directors: getMovieGroup(el, getLocalizedCreatorLabel(options?.language, 'directors')),
-        writers: getMovieGroup(el, getLocalizedCreatorLabel(options?.language, 'writers')),
-        cinematography: getMovieGroup(el, getLocalizedCreatorLabel(options?.language, 'cinematography')),
-        music: getMovieGroup(el, getLocalizedCreatorLabel(options?.language, 'music')),
-        actors: getMovieGroup(el, getLocalizedCreatorLabel(options?.language, 'actors')),
-        basedOn: getMovieGroup(el, getLocalizedCreatorLabel(options?.language, 'basedOn')),
-        producers: getMovieGroup(el, getLocalizedCreatorLabel(options?.language, 'producers')),
-        filmEditing: getMovieGroup(el, getLocalizedCreatorLabel(options?.language, 'filmEditing')),
-        costumeDesign: getMovieGroup(el, getLocalizedCreatorLabel(options?.language, 'costumeDesign')),
-        productionDesign: getMovieGroup(el, getLocalizedCreatorLabel(options?.language, 'productionDesign'))
-      },
+      creators: getMovieCreators(el, options),
       vod: getMovieVods(asideEl),
       tags: getMovieTags(asideEl),
       premieres: getMoviePremieres(asideEl),
