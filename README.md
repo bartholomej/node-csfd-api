@@ -520,29 +520,38 @@ const filtered = await csfd.userReviews(195357, {
 
 Same options as [UserRatingsOptions](#userrationsoptions).
 
-## 💡 Usage Examples
+## 💻 CLI Tools
 
-### Export to Letterboxd
+This library comes with a powerful CLI that exposes several tools.
 
-This script exports your ČSFD ratings to a CSV file that can be imported into [Letterboxd](https://letterboxd.com/).
+### 1. Export Ratings (JSON & Letterboxd)
 
-#### How to use
-
-1. Run the script with your User ID (you can find it in your profile URL):
+> Backup your personal user ratings to JSON or CSV format (compatible with Letterboxd). Use this tool just to keep a local copy of your data.
 
 ```bash
-npm run letterboxd <userId>
-# Example:
-npm run letterboxd 912
+# Export to JSON (default) -> saves as <userId>-ratings.json
+npx node-csfd-api export ratings 912
+
+# Export to Letterboxd CSV -> saves as <userId>-for-letterboxd.csv
+npx node-csfd-api export ratings 912 --letterboxd
 ```
 
-2. The script will generate a `<userId>.csv` file (e.g., `912.csv`).
+### 2. REST API Server
 
-#### Import to Letterboxd
+Run a standalone REST API server.
 
-1. Go to [Letterboxd Import](https://letterboxd.com/import/) page.
-2. Upload the generated CSV file.
-3. Review the matched films and confirm import.
+```bash
+npx node-csfd-api server
+# Server listening on port 3000
+```
+
+### 3. MCP Server
+
+Run the Model Context Protocol server for AI agents.
+
+```bash
+npx node-csfd-api mcp
+```
 
 ## 🤖 MCP Server (Model Context Protocol)
 
@@ -563,7 +572,7 @@ Add the following configuration to your `claude_desktop_config.json`:
   "mcpServers": {
     "csfd": {
       "command": "npx",
-      "args": ["-y", "--package", "node-csfd-api", "csfd-mcp"]
+      "args": ["-y", "node-csfd-api", "mcp"]
     }
   }
 }
