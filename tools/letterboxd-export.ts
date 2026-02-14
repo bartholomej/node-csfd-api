@@ -7,26 +7,27 @@
  * 4. Import to Letterboxd
  */
 
-import { writeFile } from 'node:fs';
+import { writeFile } from 'node:fs/promises';
 import { csfd } from '../src';
 
-const userId = process.argv[2] ? Number(process.argv[2]) : null;
+/**
+ * Runs the Letterboxd export process for a given user.
+ * @param userId - The CSFD user ID.
+ */
+export async function runLetterboxdExport(userId: number) {
+  try {
+    csfd.setOptions({ language: 'en' });
 
-if (!userId) {
-  console.error('Please provide a user ID as an argument.');
-  console.log('Usage: npx -p node-csfd-api letterboxd-export <userId>');
-  process.exit(1);
-}
+    console.log(`Fetching ratings for user ${userId}...`);
 
-csfd.setOptions({ language: 'en' });
+    const ratings = await csfd.userRatings(userId, {
+      includesOnly: ['film'],
+      allPages: true,
+      allPagesDelay: 1000
+    });
 
-csfd
-  .userRatings(userId, {
-    includesOnly: ['film'],
-    allPages: true,
-    allPagesDelay: 1000
-  })
-  .then((ratings) => {
+    console.log(`Fetched ${ratings.length} ratings.`);
+
     const escapeCsvField = (value: string) => {
       const needsQuotes = /[",\n\r]/.test(value);
       const escaped = value.replaceAll('"', '""');
@@ -44,8 +45,11 @@ csfd
       })
     ].join('\n');
 
-    console.log('Saved in file:', `./${userId}.csv`);
-    writeFile(`${userId}.csv`, csv, (err) => {
-      if (err) return console.log(err);
-    });
-  });
+    const fileName = `${userId}.csv`;
+    await writeFile(fileName, csv);
+    console.log('Saved in file:', `./${fileName}`);
+  } catch (error) {
+    console.error('Error exporting Letterboxd ratings:', error);
+    throw error;
+  }
+}
