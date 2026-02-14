@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 
-const filePath = path.resolve('dist/bin/mcp-server.mjs');
+const filePath = path.resolve('dist/bin/letterboxd-export.mjs');
 
 let content = fs.readFileSync(filePath, 'utf-8');
 

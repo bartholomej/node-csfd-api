@@ -8,13 +8,13 @@
  */
 
 import { writeFile } from 'node:fs';
-import { csfd } from '../../src';
+import { csfd } from '../src';
 
 const userId = process.argv[2] ? Number(process.argv[2]) : null;
 
 if (!userId) {
   console.error('Please provide a user ID as an argument.');
-  console.log('Usage: npm run letterboxd <userId>');
+  console.log('Usage: npx -p node-csfd-api letterboxd-export <userId>');
   process.exit(1);
 }
 
