@@ -520,6 +520,30 @@ const filtered = await csfd.userReviews(195357, {
 
 Same options as [UserRatingsOptions](#userrationsoptions).
 
+## 💡 Usage Examples
+
+### Export to Letterboxd
+
+This script exports your ČSFD ratings to a CSV file that can be imported into [Letterboxd](https://letterboxd.com/).
+
+#### How to use
+
+1. Run the script with your User ID (you can find it in your profile URL):
+
+```bash
+npm run letterboxd <userId>
+# Example:
+npm run letterboxd 912
+```
+
+2. The script will generate a `<userId>.csv` file (e.g., `912.csv`).
+
+#### Import to Letterboxd
+
+1. Go to [Letterboxd Import](https://letterboxd.com/import/) page.
+2. Upload the generated CSV file.
+3. Review the matched films and confirm import.
+
 ## 🤖 MCP Server (Model Context Protocol)
 
 This library includes a built-in [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) server. This allows you to use ČSFD data directly within LLMs like **Claude Desktop**.

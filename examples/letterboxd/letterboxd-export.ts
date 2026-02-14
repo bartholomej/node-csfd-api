@@ -10,12 +10,18 @@
 import { writeFile } from 'node:fs';
 import { csfd } from '../../src';
 
-const USER_ID = 912;
+const userId = process.argv[2] ? Number(process.argv[2]) : null;
+
+if (!userId) {
+  console.error('Please provide a user ID as an argument.');
+  console.log('Usage: npm run letterboxd <userId>');
+  process.exit(1);
+}
 
 csfd.setOptions({ language: 'en' });
 
 csfd
-  .userRatings(USER_ID, {
+  .userRatings(userId, {
     includesOnly: ['film'],
     allPages: true,
     allPagesDelay: 1000
@@ -38,8 +44,8 @@ csfd
       })
     ].join('\n');
 
-    console.log('Saved in file:', `./${USER_ID}.csv`);
-    writeFile(`${USER_ID}.csv`, csv, (err) => {
+    console.log('Saved in file:', `./${userId}.csv`);
+    writeFile(`${userId}.csv`, csv, (err) => {
       if (err) return console.log(err);
     });
   });
