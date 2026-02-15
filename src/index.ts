@@ -95,5 +95,7 @@ export const csfd = new Csfd(
   cinemaScraper
 );
 
+export { CsfdError } from './fetchers';
+export type { CSFDOptions } from './types';
 export type * from './dto';
 

@@ -165,7 +165,7 @@ describe('Get Movie photo', () => {
   test('Movie photo', () => {
     const movie = getMovieRandomPhoto(movieNode);
     expect(movie).toEqual<string>(
-      '//image.pmgstatic.com/cache/resized/w1326/files/images/film/photos/163/748/163748964_3f9a56.jpg'
+      'https://image.pmgstatic.com/cache/resized/w1326/files/images/film/photos/163/748/163748964_3f9a56.jpg'
     );
   });
   test('Movie Blank photo', () => {
@@ -175,7 +175,7 @@ describe('Get Movie photo', () => {
   test('Movie Series photo', () => {
     const movie = getMovieRandomPhoto(seriesNode);
     expect(movie).toEqual<string>(
-      '//image.pmgstatic.com/cache/resized/w1326/files/images/film/photos/166/598/166598545_663234.jpg'
+      'https://image.pmgstatic.com/cache/resized/w1326/files/images/film/photos/166/598/166598545_663234.jpg'
     );
   });
   test('Movie empty node', () => {
