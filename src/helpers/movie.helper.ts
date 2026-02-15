@@ -123,23 +123,27 @@ export const getMovieRatingCount = (el: HTMLElement): number => {
   }
 };
 
-export const getMovieYear = (el: string): number => {
-  try {
-    const jsonLd = JSON.parse(el);
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const getMovieYear = (jsonLd: any): number => {
+  if (jsonLd && jsonLd.dateCreated) {
     return +jsonLd.dateCreated;
-  } catch (error) {
-    console.error('node-csfd-api: Error parsing JSON-LD', error);
-    return null;
   }
+  return null;
 };
 
-export const getMovieDuration = (jsonLdRaw: string, el: HTMLElement): number => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const getMovieDuration = (jsonLd: any, el: HTMLElement): number => {
   let duration = null;
   try {
-    const jsonLd = JSON.parse(jsonLdRaw);
-    duration = jsonLd.duration;
-    return parseISO8601Duration(duration);
+    if (jsonLd && jsonLd.duration) {
+      duration = jsonLd.duration;
+      return parseISO8601Duration(duration);
+    }
   } catch (error) {
+    // Ignore error and try fallback
+  }
+
+  try {
     const origin = el.querySelector('.origin').innerText;
     const timeString = origin.split(',');
     if (timeString.length > 2) {
@@ -156,6 +160,8 @@ export const getMovieDuration = (jsonLdRaw: string, el: HTMLElement): number => 
     } else {
       return null;
     }
+  } catch (e) {
+    return null;
   }
 };
 

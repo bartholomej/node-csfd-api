@@ -42,7 +42,13 @@ export class MovieScraper {
     const asideNode = movieHtml.querySelector('.aside-movie-profile');
     const movieNode = movieHtml.querySelector('.main-movie-profile');
     const jsonLd = movieHtml.querySelector('script[type="application/ld+json"]').innerText;
-    return this.buildMovie(+movieId, movieNode, asideNode, pageClasses, jsonLd, options);
+    let movieJsonLd = null;
+    try {
+      movieJsonLd = JSON.parse(jsonLd);
+    } catch (e) {
+      console.error('node-csfd-api: Error parsing JSON-LD', e);
+    }
+    return this.buildMovie(+movieId, movieNode, asideNode, pageClasses, movieJsonLd, options);
   }
 
   private buildMovie(
@@ -50,7 +56,8 @@ export class MovieScraper {
     el: HTMLElement,
     asideEl: HTMLElement,
     pageClasses: string[],
-    jsonLd: string,
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    jsonLd: any,
     options: CSFDOptions
   ): CSFDMovie {
     return {
