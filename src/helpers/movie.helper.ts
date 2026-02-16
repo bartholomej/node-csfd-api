@@ -15,6 +15,12 @@ import {
 } from '../dto/movie';
 import { addProtocol, getColor, parseISO8601Duration, parseIdFromUrl } from './global.helper';
 
+export interface MovieJsonLd {
+  dateCreated?: string;
+  duration?: string;
+  [key: string]: any;
+}
+
 /**
  * Maps language-specific movie creator group labels.
  * @param language - The language code (e.g., 'en', 'cs')
@@ -23,9 +29,25 @@ import { addProtocol, getColor, parseISO8601Duration, parseIdFromUrl } from './g
  */
 export const getLocalizedCreatorLabel = (
   language: string | undefined,
-  key: 'directors' | 'writers' | 'cinematography' | 'music' | 'actors' | 'basedOn' | 'producers' | 'filmEditing' | 'costumeDesign' | 'productionDesign' | 'casting' | 'sound' | 'makeup'
+  key:
+    | 'directors'
+    | 'writers'
+    | 'cinematography'
+    | 'music'
+    | 'actors'
+    | 'basedOn'
+    | 'producers'
+    | 'filmEditing'
+    | 'costumeDesign'
+    | 'productionDesign'
+    | 'casting'
+    | 'sound'
+    | 'makeup'
 ): CSFDCreatorGroups | CSFDCreatorGroupsEnglish | CSFDCreatorGroupsSlovak => {
-  const labels: Record<string, Record<string, CSFDCreatorGroups | CSFDCreatorGroupsEnglish | CSFDCreatorGroupsSlovak>> = {
+  const labels: Record<
+    string,
+    Record<string, CSFDCreatorGroups | CSFDCreatorGroupsEnglish | CSFDCreatorGroupsSlovak>
+  > = {
     en: {
       directors: 'Directed by',
       writers: 'Screenplay',
@@ -123,23 +145,19 @@ export const getMovieRatingCount = (el: HTMLElement): number => {
   }
 };
 
-export const getMovieYear = (el: string): number => {
-  try {
-    const jsonLd = JSON.parse(el);
+export const getMovieYear = (jsonLd: MovieJsonLd | null): number => {
+  if (jsonLd && jsonLd.dateCreated) {
     return +jsonLd.dateCreated;
-  } catch (error) {
-    console.error('node-csfd-api: Error parsing JSON-LD', error);
-    return null;
   }
+  return null;
 };
 
-export const getMovieDuration = (jsonLdRaw: string, el: HTMLElement): number => {
-  let duration = null;
+export const getMovieDuration = (jsonLd: MovieJsonLd | null, el: HTMLElement): number => {
+  if (jsonLd && jsonLd.duration) {
+    return parseISO8601Duration(jsonLd.duration);
+  }
+
   try {
-    const jsonLd = JSON.parse(jsonLdRaw);
-    duration = jsonLd.duration;
-    return parseISO8601Duration(duration);
-  } catch (error) {
     const origin = el.querySelector('.origin').innerText;
     const timeString = origin.split(',');
     if (timeString.length > 2) {
@@ -151,11 +169,13 @@ export const getMovieDuration = (jsonLdRaw: string, el: HTMLElement): number => 
       const hoursMinsRaw = timeRaw.split('min')[0];
       const hoursMins = hoursMinsRaw.split('h');
       // Resolve hours + minutes format
-      duration = hoursMins.length > 1 ? +hoursMins[0] * 60 + +hoursMins[1] : +hoursMins[0];
+      const duration = hoursMins.length > 1 ? +hoursMins[0] * 60 + +hoursMins[1] : +hoursMins[0];
       return duration;
     } else {
       return null;
     }
+  } catch (error) {
+    return null;
   }
 };
 
@@ -241,7 +261,10 @@ const parseMoviePeople = (el: HTMLElement): CSFDMovieCreator[] => {
   );
 };
 
-export const getMovieGroup = (el: HTMLElement, group: CSFDCreatorGroups | CSFDCreatorGroupsEnglish | CSFDCreatorGroupsSlovak): CSFDMovieCreator[] => {
+export const getMovieGroup = (
+  el: HTMLElement,
+  group: CSFDCreatorGroups | CSFDCreatorGroupsEnglish | CSFDCreatorGroupsSlovak
+): CSFDMovieCreator[] => {
   const creators = el.querySelectorAll('.creators h4');
   const element = creators.filter((elem) => elem.textContent.trim().includes(group))[0];
   if (element?.parentNode) {
@@ -278,7 +301,10 @@ const getBoxContent = (el: HTMLElement, box: string): HTMLElement => {
     ?.parentNode;
 };
 
-export const getMovieBoxMovies = (el: HTMLElement, boxName: CSFDBoxContent): CSFDMovieListItem[] => {
+export const getMovieBoxMovies = (
+  el: HTMLElement,
+  boxName: CSFDBoxContent
+): CSFDMovieListItem[] => {
   const movieListItem: CSFDMovieListItem[] = [];
   const box = getBoxContent(el, boxName);
   const movieTitleNodes = box?.querySelectorAll('.article-header .film-title-name');

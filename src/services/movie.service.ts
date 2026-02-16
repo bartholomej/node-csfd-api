@@ -3,6 +3,7 @@ import { CSFDFilmTypes } from '../dto/global';
 import { CSFDMovie } from '../dto/movie';
 import { fetchPage } from '../fetchers';
 import {
+  MovieJsonLd,
   getLocalizedCreatorLabel,
   getMovieBoxMovies,
   getMovieColorRating,
@@ -42,7 +43,13 @@ export class MovieScraper {
     const asideNode = movieHtml.querySelector('.aside-movie-profile');
     const movieNode = movieHtml.querySelector('.main-movie-profile');
     const jsonLd = movieHtml.querySelector('script[type="application/ld+json"]').innerText;
-    return this.buildMovie(+movieId, movieNode, asideNode, pageClasses, jsonLd, options);
+    let movieJsonLd: MovieJsonLd | null = null;
+    try {
+      movieJsonLd = JSON.parse(jsonLd);
+    } catch (e) {
+      console.error('node-csfd-api: Error parsing JSON-LD', e);
+    }
+    return this.buildMovie(+movieId, movieNode, asideNode, pageClasses, movieJsonLd, options);
   }
 
   private buildMovie(
@@ -50,7 +57,7 @@ export class MovieScraper {
     el: HTMLElement,
     asideEl: HTMLElement,
     pageClasses: string[],
-    jsonLd: string,
+    jsonLd: MovieJsonLd | null,
     options: CSFDOptions
   ): CSFDMovie {
     return {
@@ -73,14 +80,23 @@ export class MovieScraper {
       creators: {
         directors: getMovieGroup(el, getLocalizedCreatorLabel(options?.language, 'directors')),
         writers: getMovieGroup(el, getLocalizedCreatorLabel(options?.language, 'writers')),
-        cinematography: getMovieGroup(el, getLocalizedCreatorLabel(options?.language, 'cinematography')),
+        cinematography: getMovieGroup(
+          el,
+          getLocalizedCreatorLabel(options?.language, 'cinematography')
+        ),
         music: getMovieGroup(el, getLocalizedCreatorLabel(options?.language, 'music')),
         actors: getMovieGroup(el, getLocalizedCreatorLabel(options?.language, 'actors')),
         basedOn: getMovieGroup(el, getLocalizedCreatorLabel(options?.language, 'basedOn')),
         producers: getMovieGroup(el, getLocalizedCreatorLabel(options?.language, 'producers')),
         filmEditing: getMovieGroup(el, getLocalizedCreatorLabel(options?.language, 'filmEditing')),
-        costumeDesign: getMovieGroup(el, getLocalizedCreatorLabel(options?.language, 'costumeDesign')),
-        productionDesign: getMovieGroup(el, getLocalizedCreatorLabel(options?.language, 'productionDesign'))
+        costumeDesign: getMovieGroup(
+          el,
+          getLocalizedCreatorLabel(options?.language, 'costumeDesign')
+        ),
+        productionDesign: getMovieGroup(
+          el,
+          getLocalizedCreatorLabel(options?.language, 'productionDesign')
+        )
       },
       vod: getMovieVods(asideEl),
       tags: getMovieTags(asideEl),
