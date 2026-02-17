@@ -1,6 +1,6 @@
 import { HTMLElement, parse } from 'node-html-parser';
 import { CSFDFilmTypes } from '../dto/global';
-import { CSFDMovie } from '../dto/movie';
+import { CSFDMovie, MovieJsonLd } from '../dto/movie';
 import { fetchPage } from '../fetchers';
 import {
   getLocalizedCreatorLabel,
@@ -41,7 +41,13 @@ export class MovieScraper {
     const pageClasses = movieHtml.querySelector('.page-content').classNames.split(' ');
     const asideNode = movieHtml.querySelector('.aside-movie-profile');
     const movieNode = movieHtml.querySelector('.main-movie-profile');
-    const jsonLd = movieHtml.querySelector('script[type="application/ld+json"]').innerText;
+    const jsonLdString = movieHtml.querySelector('script[type="application/ld+json"]').innerText;
+    let jsonLd: MovieJsonLd | null = null;
+    try {
+      jsonLd = JSON.parse(jsonLdString);
+    } catch (e) {
+      console.error('node-csfd-api: Error parsing JSON-LD', e);
+    }
     return this.buildMovie(+movieId, movieNode, asideNode, pageClasses, jsonLd, options);
   }
 
@@ -50,7 +56,7 @@ export class MovieScraper {
     el: HTMLElement,
     asideEl: HTMLElement,
     pageClasses: string[],
-    jsonLd: string,
+    jsonLd: MovieJsonLd | null,
     options: CSFDOptions
   ): CSFDMovie {
     return {

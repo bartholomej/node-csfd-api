@@ -19,6 +19,12 @@ export interface CSFDMovie extends CSFDScreening {
   similar: CSFDMovieListItem[];
 }
 
+export interface MovieJsonLd {
+  dateCreated?: string;
+  duration?: string;
+  [key: string]: any;
+}
+
 export type CSFDVodService =
   | 'Netflix'
   | 'hbogo'
