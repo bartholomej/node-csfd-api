@@ -6,7 +6,8 @@ import {
   CSFDMovieListItem,
   CSFDPremiere,
   CSFDTitlesOther,
-  CSFDVod
+  CSFDVod,
+  MovieJsonLd
 } from '../src/dto/movie';
 import { getColor } from '../src/helpers/global.helper';
 import {
@@ -48,13 +49,18 @@ const getNode = (node: HTMLElement): HTMLElement => {
   return node.querySelector('.main-movie-profile') as HTMLElement;
 };
 
-const getJsonLd = (node: HTMLElement): string => {
-  return node.querySelector('script[type="application/ld+json"]')?.innerText ?? '{}';
+const getJsonLd = (node: HTMLElement): MovieJsonLd | null => {
+  const json = node.querySelector('script[type="application/ld+json"]')?.innerText;
+  try {
+    return json ? JSON.parse(json) : null;
+  } catch (e) {
+    return null;
+  }
 };
 
 const getMovie = (
   node: HTMLElement
-): { pClasses: string[]; aside: HTMLElement; pNode: HTMLElement; jsonLd: string } => {
+): { pClasses: string[]; aside: HTMLElement; pNode: HTMLElement; jsonLd: MovieJsonLd | null } => {
   return {
     pClasses: getPageClasses(node),
     aside: getAsideNode(node),
