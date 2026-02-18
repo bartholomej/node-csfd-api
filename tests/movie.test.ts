@@ -10,6 +10,7 @@ import {
 } from '../src/dto/movie';
 import { getColor } from '../src/helpers/global.helper';
 import {
+  MovieJsonLd,
   getMovieBoxMovies,
   getMovieColorRating,
   getMovieDescriptions,
@@ -48,13 +49,14 @@ const getNode = (node: HTMLElement): HTMLElement => {
   return node.querySelector('.main-movie-profile') as HTMLElement;
 };
 
-const getJsonLd = (node: HTMLElement): string => {
-  return node.querySelector('script[type="application/ld+json"]')?.innerText ?? '{}';
+const getJsonLd = (node: HTMLElement): MovieJsonLd | null => {
+  const json = node.querySelector('script[type="application/ld+json"]')?.innerText;
+  return json ? JSON.parse(json) : null;
 };
 
 const getMovie = (
   node: HTMLElement
-): { pClasses: string[]; aside: HTMLElement; pNode: HTMLElement; jsonLd: string } => {
+): { pClasses: string[]; aside: HTMLElement; pNode: HTMLElement; jsonLd: MovieJsonLd | null } => {
   return {
     pClasses: getPageClasses(node),
     aside: getAsideNode(node),
@@ -190,7 +192,7 @@ describe('Get Movie trivia', () => {
     expect(movie).toEqual<string[]>([
       'Celosvětová premiéra proběhla 3. září 2018 na Mezinárodním filmovém festivalu v Benátkách.(BMW12)',
       'Natáčanie filmu prebiehalo v kanadskom meste Vancouver a začalo 17.7.2017.(MikaelSVK)',
-      'Ve filmu zazní píseň „A Better Place For Us“, kterou odehrál jako hudebník režisér S. Craig Zahler.(Rominator)',
+      'Ve filmu zazní píseň „A Better Place For Us“, kterou odehrál jako hudebník režisér S. Craig Zahler.(Rominator)'
     ]);
   });
   test('Movie Blank trivia', () => {
@@ -200,9 +202,9 @@ describe('Get Movie trivia', () => {
   test('Movie Series trivia', () => {
     const movie = getMovieTrivia(seriesNode);
     expect(movie).toEqual<string[]>([
-      "Ernst-Hugo Järegård (Stig Helmer) se právě díky roli v seriálu v Dánsku výrazně zviditelnil a byl dokonce považován za nový sexuální symbol.(TomikZlesa)",
-      "Plánovanú 3. sériu narušila predčasná smrť niektorých hlavných hercov, ale po 25 rokoch predsa len vznikla.(misterz)",
-      "Když nastane stav beztíže, jako hudební podkres hraje Bachovo „Preludium F moll“. Tento hudební motiv, spolu se záběrem na vznášejícího se Pontopidana (Lars Mikkelsen), je jednoznačným odkazem na podobnou scénu se stavem beztíže z filmu Solaris (1972).(Kaleidoskop)",
+      'Ernst-Hugo Järegård (Stig Helmer) se právě díky roli v seriálu v Dánsku výrazně zviditelnil a byl dokonce považován za nový sexuální symbol.(TomikZlesa)',
+      'Plánovanú 3. sériu narušila predčasná smrť niektorých hlavných hercov, ale po 25 rokoch predsa len vznikla.(misterz)',
+      'Když nastane stav beztíže, jako hudební podkres hraje Bachovo „Preludium F moll“. Tento hudební motiv, spolu se záběrem na vznášejícího se Pontopidana (Lars Mikkelsen), je jednoznačným odkazem na podobnou scénu se stavem beztíže z filmu Solaris (1972).(Kaleidoskop)'
     ]);
   });
   test('Movie empty node', () => {
@@ -263,12 +265,12 @@ describe('Get VOD', () => {
     expect(movie).toEqual<CSFDVod[]>([
       {
         title: 'Lepší.TV',
-        url: 'https://www.lepsi.tv/top_tv/serial/kralovstvi-cast-prvni-online?utm_source=csfd&utm_content=csfd',
+        url: 'https://www.lepsi.tv/top_tv/serial/kralovstvi-cast-prvni-online?utm_source=csfd&utm_content=csfd'
       },
       {
         title: 'KVIFF.TV',
         url: 'https://kviff.tv/katalog/kralovstvi-cast-druha-prijd-kralovstvi-tve'
-      },
+      }
     ]);
   });
   test('Get vods rich', () => {
@@ -395,7 +397,7 @@ describe('Get year', () => {
     expect(movie).toEqual<number>(1994);
   });
   test('Wrong year', () => {
-    const movie = getMovieYear(null as any);
+    const movie = getMovieYear(null);
     expect(movie).toEqual(null);
   });
 });
