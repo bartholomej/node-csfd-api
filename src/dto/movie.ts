@@ -181,3 +181,9 @@ export interface CSFDPremiere {
 }
 
 export type CSFDBoxContent = 'Související' | 'Podobné';
+
+export interface MovieJsonLd {
+  dateCreated: string;
+  duration: string;
+  [key: string]: any;
+}
