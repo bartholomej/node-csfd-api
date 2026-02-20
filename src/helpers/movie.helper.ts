@@ -11,7 +11,8 @@ import {
   CSFDPremiere,
   CSFDTitlesOther,
   CSFDVod,
-  CSFDVodService
+  CSFDVodService,
+  MovieJsonLd
 } from '../dto/movie';
 import { addProtocol, getColor, parseISO8601Duration, parseIdFromUrl } from './global.helper';
 
@@ -123,22 +124,28 @@ export const getMovieRatingCount = (el: HTMLElement): number => {
   }
 };
 
-export const getMovieYear = (el: string): number => {
+export const getMovieYear = (jsonLd: string | MovieJsonLd | null): number => {
+  if (jsonLd === null) {
+    return null;
+  }
   try {
-    const jsonLd = JSON.parse(el);
-    return +jsonLd.dateCreated;
+    const ld = typeof jsonLd === 'string' ? JSON.parse(jsonLd) : jsonLd;
+    return +ld.dateCreated;
   } catch (error) {
     console.error('node-csfd-api: Error parsing JSON-LD', error);
     return null;
   }
 };
 
-export const getMovieDuration = (jsonLdRaw: string, el: HTMLElement): number => {
+export const getMovieDuration = (jsonLd: string | MovieJsonLd | null, el: HTMLElement): number => {
   let duration = null;
   try {
-    const jsonLd = JSON.parse(jsonLdRaw);
-    duration = jsonLd.duration;
-    return parseISO8601Duration(duration);
+    const ld = typeof jsonLd === 'string' ? JSON.parse(jsonLd) : jsonLd;
+    if (ld && ld.duration) {
+      duration = ld.duration;
+      return parseISO8601Duration(duration);
+    }
+    throw new Error('Duration not found in JSON-LD');
   } catch (error) {
     const origin = el.querySelector('.origin').innerText;
     const timeString = origin.split(',');
