@@ -1,5 +1,11 @@
 import { CSFDScreening } from './global';
 
+export interface MovieJsonLd {
+  dateCreated?: string | number;
+  duration?: string;
+  [key: string]: any;
+}
+
 export interface CSFDMovie extends CSFDScreening {
   rating: number | null;
   poster: string;
