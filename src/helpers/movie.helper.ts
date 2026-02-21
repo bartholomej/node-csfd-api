@@ -23,9 +23,25 @@ import { addProtocol, getColor, parseISO8601Duration, parseIdFromUrl } from './g
  */
 export const getLocalizedCreatorLabel = (
   language: string | undefined,
-  key: 'directors' | 'writers' | 'cinematography' | 'music' | 'actors' | 'basedOn' | 'producers' | 'filmEditing' | 'costumeDesign' | 'productionDesign' | 'casting' | 'sound' | 'makeup'
+  key:
+    | 'directors'
+    | 'writers'
+    | 'cinematography'
+    | 'music'
+    | 'actors'
+    | 'basedOn'
+    | 'producers'
+    | 'filmEditing'
+    | 'costumeDesign'
+    | 'productionDesign'
+    | 'casting'
+    | 'sound'
+    | 'makeup'
 ): CSFDCreatorGroups | CSFDCreatorGroupsEnglish | CSFDCreatorGroupsSlovak => {
-  const labels: Record<string, Record<string, CSFDCreatorGroups | CSFDCreatorGroupsEnglish | CSFDCreatorGroupsSlovak>> = {
+  const labels: Record<
+    string,
+    Record<string, CSFDCreatorGroups | CSFDCreatorGroupsEnglish | CSFDCreatorGroupsSlovak>
+  > = {
     en: {
       directors: 'Directed by',
       writers: 'Screenplay',
@@ -123,21 +139,37 @@ export const getMovieRatingCount = (el: HTMLElement): number => {
   }
 };
 
-export const getMovieYear = (el: string): number => {
-  try {
-    const jsonLd = JSON.parse(el);
-    return +jsonLd.dateCreated;
-  } catch (error) {
-    console.error('node-csfd-api: Error parsing JSON-LD', error);
-    return null;
+export interface MovieJsonLd {
+  dateCreated?: string;
+  duration?: string;
+  [key: string]: any;
+}
+
+export const getMovieYear = (jsonLd: string | MovieJsonLd): number => {
+  if (typeof jsonLd === 'string') {
+    try {
+      const parsed = JSON.parse(jsonLd);
+      return +parsed.dateCreated;
+    } catch (error) {
+      console.error('node-csfd-api: Error parsing JSON-LD', error);
+      return null;
+    }
   }
+  return jsonLd?.dateCreated ? +jsonLd.dateCreated : null;
 };
 
-export const getMovieDuration = (jsonLdRaw: string, el: HTMLElement): number => {
+export const getMovieDuration = (jsonLdRaw: string | MovieJsonLd, el: HTMLElement): number => {
   let duration = null;
   try {
-    const jsonLd = JSON.parse(jsonLdRaw);
-    duration = jsonLd.duration;
+    if (typeof jsonLdRaw === 'string') {
+      const jsonLd = JSON.parse(jsonLdRaw);
+      duration = jsonLd.duration;
+    } else {
+      duration = jsonLdRaw?.duration;
+    }
+    if (!duration) {
+      throw new Error('Duration not found in JSON-LD');
+    }
     return parseISO8601Duration(duration);
   } catch (error) {
     const origin = el.querySelector('.origin').innerText;
@@ -241,7 +273,10 @@ const parseMoviePeople = (el: HTMLElement): CSFDMovieCreator[] => {
   );
 };
 
-export const getMovieGroup = (el: HTMLElement, group: CSFDCreatorGroups | CSFDCreatorGroupsEnglish | CSFDCreatorGroupsSlovak): CSFDMovieCreator[] => {
+export const getMovieGroup = (
+  el: HTMLElement,
+  group: CSFDCreatorGroups | CSFDCreatorGroupsEnglish | CSFDCreatorGroupsSlovak
+): CSFDMovieCreator[] => {
   const creators = el.querySelectorAll('.creators h4');
   const element = creators.filter((elem) => elem.textContent.trim().includes(group))[0];
   if (element?.parentNode) {
@@ -278,7 +313,10 @@ const getBoxContent = (el: HTMLElement, box: string): HTMLElement => {
     ?.parentNode;
 };
 
-export const getMovieBoxMovies = (el: HTMLElement, boxName: CSFDBoxContent): CSFDMovieListItem[] => {
+export const getMovieBoxMovies = (
+  el: HTMLElement,
+  boxName: CSFDBoxContent
+): CSFDMovieListItem[] => {
   const movieListItem: CSFDMovieListItem[] = [];
   const box = getBoxContent(el, boxName);
   const movieTitleNodes = box?.querySelectorAll('.article-header .film-title-name');
