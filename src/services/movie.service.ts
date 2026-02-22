@@ -22,7 +22,8 @@ import {
   getMovieTrivia,
   getMovieType,
   getMovieVods,
-  getMovieYear
+  getMovieYear,
+  MovieJsonLd
 } from '../helpers/movie.helper';
 import { CSFDOptions } from '../types';
 import { movieUrl } from '../vars';
@@ -41,8 +42,14 @@ export class MovieScraper {
     const pageClasses = movieHtml.querySelector('.page-content').classNames.split(' ');
     const asideNode = movieHtml.querySelector('.aside-movie-profile');
     const movieNode = movieHtml.querySelector('.main-movie-profile');
-    const jsonLd = movieHtml.querySelector('script[type="application/ld+json"]').innerText;
-    return this.buildMovie(+movieId, movieNode, asideNode, pageClasses, jsonLd, options);
+    const jsonLdString = movieHtml.querySelector('script[type="application/ld+json"]')?.innerText;
+    let jsonLd: MovieJsonLd = null;
+    try {
+      jsonLd = JSON.parse(jsonLdString);
+    } catch (e) {
+      // Error parsing JSON-LD
+    }
+    return this.buildMovie(+movieId, movieNode, asideNode, pageClasses, jsonLd || jsonLdString, options);
   }
 
   private buildMovie(
@@ -50,7 +57,7 @@ export class MovieScraper {
     el: HTMLElement,
     asideEl: HTMLElement,
     pageClasses: string[],
-    jsonLd: string,
+    jsonLd: string | MovieJsonLd,
     options: CSFDOptions
   ): CSFDMovie {
     return {

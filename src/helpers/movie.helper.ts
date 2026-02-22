@@ -15,6 +15,12 @@ import {
 } from '../dto/movie';
 import { addProtocol, getColor, parseISO8601Duration, parseIdFromUrl } from './global.helper';
 
+export interface MovieJsonLd {
+  dateCreated?: string;
+  duration?: string;
+  [key: string]: any;
+}
+
 /**
  * Maps language-specific movie creator group labels.
  * @param language - The language code (e.g., 'en', 'cs')
@@ -123,9 +129,14 @@ export const getMovieRatingCount = (el: HTMLElement): number => {
   }
 };
 
-export const getMovieYear = (el: string): number => {
+export const getMovieYear = (el: string | MovieJsonLd | null): number => {
+  let jsonLd: MovieJsonLd;
   try {
-    const jsonLd = JSON.parse(el);
+    if (typeof el === 'string') {
+      jsonLd = JSON.parse(el);
+    } else {
+      jsonLd = el;
+    }
     return +jsonLd.dateCreated;
   } catch (error) {
     console.error('node-csfd-api: Error parsing JSON-LD', error);
@@ -133,11 +144,19 @@ export const getMovieYear = (el: string): number => {
   }
 };
 
-export const getMovieDuration = (jsonLdRaw: string, el: HTMLElement): number => {
+export const getMovieDuration = (jsonLdRaw: string | MovieJsonLd | null, el: HTMLElement): number => {
   let duration = null;
   try {
-    const jsonLd = JSON.parse(jsonLdRaw);
+    let jsonLd: MovieJsonLd;
+    if (typeof jsonLdRaw === 'string') {
+      jsonLd = JSON.parse(jsonLdRaw);
+    } else {
+      jsonLd = jsonLdRaw;
+    }
     duration = jsonLd.duration;
+    if (!duration) {
+      throw new Error('Duration not found in JSON-LD');
+    }
     return parseISO8601Duration(duration);
   } catch (error) {
     const origin = el.querySelector('.origin').innerText;
