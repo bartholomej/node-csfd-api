@@ -30,4 +30,4 @@ RUN yarn --frozen-lockfile --production \
 
 EXPOSE 3000
 
-CMD ["node", "server.mjs"]
+CMD ["node", "bin/server.mjs"]
