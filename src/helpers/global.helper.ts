@@ -2,13 +2,14 @@ import { CSFDColorRating } from '../dto/global';
 import { CSFDColors } from '../dto/user-ratings';
 
 export const parseIdFromUrl = (url: string): number => {
-  if (url) {
-    const idSlug = url?.split('/')[2];
-    const id = idSlug?.split('-')[0];
-    return +id || null;
-  } else {
-    return null;
-  }
+  if (!url) return null;
+
+  const parts = url.split('/');
+  // Detect language prefix like /en/ or /sk/
+  const hasLangPrefix = /^[a-z]{2,3}$/.test(parts[1]);
+  const idSlug = parts[hasLangPrefix ? 3 : 2];
+  const id = idSlug?.split('-')[0];
+  return +id || null;
 };
 
 export const getColor = (cls: string): CSFDColorRating => {

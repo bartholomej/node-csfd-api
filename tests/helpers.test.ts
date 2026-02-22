@@ -25,6 +25,14 @@ describe('Parse Id', () => {
     const url = parseIdFromUrl('/film/906693-projekt-adam/recenze/');
     expect(url).toBe(906693);
   });
+  test('Handle movie url with language prefix', () => {
+    const url = parseIdFromUrl('/en/film/906693-projekt-adam/recenze/');
+    expect(url).toBe(906693);
+  });
+  test('Handle user url with language prefix', () => {
+    const url = parseIdFromUrl('/sk/uzivatel/912-bart/hodnoceni/');
+    expect(url).toBe(912);
+  });
   test('Handle bad url', () => {
     const url = parseIdFromUrl(null as any);
     expect(url).toBe(null);
