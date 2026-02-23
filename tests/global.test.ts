@@ -30,7 +30,7 @@ const result = {
 
 describe('Live: Fetch rating page', () => {
   test('Resolve duration', async () => {
-    const resolver = getDuration(durationInput);
+    const resolver = getDuration(durationInput as RegExpMatchArray);
     expect(resolver).toEqual(result);
   });
 });
