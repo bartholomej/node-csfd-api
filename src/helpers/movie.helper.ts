@@ -329,8 +329,7 @@ export const getMovieType = (el: HTMLElement): string => {
 export const getMovieVods = (el: HTMLElement | null): CSFDVod[] => {
   let vods: CSFDVod[] = [];
   if (el) {
-    const buttons = el.querySelectorAll('.box-buttons .button');
-    const buttonsVod = buttons.filter((x) => !x.classNames.includes('button-social'));
+    const buttonsVod = el.querySelectorAll('.box-buttons-vod .vod-badge a');
     vods = buttonsVod.map((btn) => {
       return {
         title: btn.textContent.trim() as CSFDVodService,
@@ -388,6 +387,8 @@ export const getMoviePremieres = (el: HTMLElement): CSFDPremiere[] => {
 };
 
 export const getMovieTags = (el: HTMLElement): string[] => {
-  const tagsRaw = el.querySelectorAll('.box-content a[href*="/tag/"], .box-content a[href*="tag="]');
+  const tagsRaw = el.querySelectorAll(
+    '.box-content a[href*="/tag/"], .box-content a[href*="tag="]'
+  );
   return tagsRaw.map((tag) => tag.textContent);
 };

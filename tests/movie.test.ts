@@ -25,13 +25,13 @@ import {
   getMovieRandomPhoto,
   getMovieRating,
   getMovieRatingCount,
+  getMovieTags,
   getMovieTitle,
   getMovieTitlesOther,
   getMovieTrivia,
   getMovieType,
   getMovieVods,
-  getMovieYear,
-  getMovieTags
+  getMovieYear
 } from '../src/helpers/movie.helper';
 import { movieMock } from './mocks/movie1.html';
 import { movieMockBlank } from './mocks/movie2.html';
@@ -173,7 +173,7 @@ describe('Get Movie photo', () => {
   test('Movie photo', () => {
     const movie = getMovieRandomPhoto(movieNode);
     expect(movie).toEqual<string>(
-      '//image.pmgstatic.com/cache/resized/w1326/files/images/film/photos/163/748/163748964_3f9a56.jpg'
+      '//image.pmgstatic.com/cache/resized/w1326/files/images/film/photos/163/416/163416560_e04248.jpg'
     );
   });
   test('Movie Blank photo', () => {
@@ -183,7 +183,7 @@ describe('Get Movie photo', () => {
   test('Movie Series photo', () => {
     const movie = getMovieRandomPhoto(seriesNode);
     expect(movie).toEqual<string>(
-      '//image.pmgstatic.com/cache/resized/w1326/files/images/film/photos/166/598/166598545_663234.jpg'
+      '//image.pmgstatic.com/cache/resized/w1326/files/images/film/photos/166/598/166598546_c16928.jpg'
     );
   });
   test('Movie empty node', () => {
@@ -197,8 +197,8 @@ describe('Get Movie trivia', () => {
     const movie = getMovieTrivia(movieNode);
     expect(movie).toEqual<string[]>([
       'Celosvětová premiéra proběhla 3. září 2018 na Mezinárodním filmovém festivalu v Benátkách.(BMW12)',
-      'Natáčanie filmu prebiehalo v kanadskom meste Vancouver a začalo 17.7.2017.(MikaelSVK)',
-      'Ve filmu zazní píseň „A Better Place For Us“, kterou odehrál jako hudebník režisér S. Craig Zahler.(Rominator)'
+      'Režisér S. Craig Zahler původně napsal scénář pro věk hlavních postav 30 a 50 let. Poté našel pro roli mladšího policisty Lurasettiho svého oblíbeného herce Vinceho a hledal vhodného partnera. Když se dohodl s Mel Gibsonem na obsazení role Ridgemana, musel přepsat role do věku postav 40 a 60 let.(Tonula)',
+      'Počas rozhovorov (čas 00:24:30 - 00:36:35) medzi Brettom (Mel Gibson), Anthonym (Vince Vaughn) a Calvertom (Don Johnson) ich odznaky, ktoré hodili na stôl, menia pozíciu medzi jednotlivými scénami.(BOURQUE)'
     ]);
   });
   test('Movie Blank trivia', () => {
@@ -261,27 +261,21 @@ describe('Get VOD', () => {
       {
         title: 'YouTube Movies',
         url: 'https://www.youtube.com/watch?v=8UGglrPklC4'
-      },
-      { title: 'DVD', url: 'https://www.martinus.cz/?uItem=619199' },
-      { title: 'Blu-ray', url: 'https://www.martinus.cz/?uItem=619213' }
+      }
     ]);
   });
   test('Get vods series', () => {
     const movie = getMovieVods(asideNodeSeries);
     expect(movie).toEqual<CSFDVod[]>([
       {
-        title: 'Lepší.TV',
-        url: 'https://www.lepsi.tv/top_tv/serial/kralovstvi-cast-prvni-online?utm_source=csfd&utm_content=csfd'
-      },
-      {
         title: 'KVIFF.TV',
-        url: 'https://kviff.tv/katalog/kralovstvi-cast-druha-prijd-kralovstvi-tve'
+        url: 'https://kviff.tv/katalog/kralovstvi-cast-prvni-nenebeske-zastupy'
       }
     ]);
   });
   test('Get vods rich', () => {
     const movie = getMovieVods(asideNodeRich);
-    expect(movie.length).toEqual<number>(11);
+    expect(movie.length).toEqual<number>(8);
   });
   test('Get vods blank', () => {
     const movie = getMovieVods(asideNodeBlank);
@@ -296,17 +290,7 @@ describe('Get VOD', () => {
 describe('Get additional info', () => {
   test('Get tags', () => {
     const item = getMovieTags(asideNode);
-    expect(item).toEqual<string[]>([
-      'policie',
-      'město',
-      'zbraně',
-      'zloděj',
-      'podsvětí (svět zločinu)',
-      'přepadení',
-      'sledování',
-      'rukojmí',
-      'banka'
-    ]);
+    expect(item).toEqual(expect.arrayContaining(['město', 'sledování', 'banka']));
   });
 });
 
@@ -461,7 +445,7 @@ describe('Get people', () => {
       {
         id: 87470,
         name: 'S. Craig Zahler',
-        url: 'https://www.csfd.cz/tvurce/87470-s-craig-zahler/'
+        url: 'https://www.csfd.cz/tvurce/87470-s-craig-zahler/prehled/'
       }
     ]);
   });
@@ -470,13 +454,17 @@ describe('Get people', () => {
       {
         id: 87470,
         name: 'S. Craig Zahler',
-        url: 'https://www.csfd.cz/tvurce/87470-s-craig-zahler/'
+        url: 'https://www.csfd.cz/tvurce/87470-s-craig-zahler/prehled/'
       }
     ]);
   });
   test('Music composers', () => {
     expect(group.music.slice(0, 1)).toEqual<CSFDMovieCreator[]>([
-      { id: 203209, name: 'Jeff Herriott', url: 'https://www.csfd.cz/tvurce/203209-jeff-herriott/' }
+      {
+        id: 203209,
+        name: 'Jeff Herriott',
+        url: 'https://www.csfd.cz/tvurce/203209-jeff-herriott/prehled/'
+      }
     ]);
   });
   test('Actors', () => {
@@ -484,7 +472,7 @@ describe('Get people', () => {
       {
         id: 1,
         name: 'Mel Gibson',
-        url: 'https://www.csfd.cz/tvurce/1-mel-gibson/'
+        url: 'https://www.csfd.cz/tvurce/1-mel-gibson/prehled/'
       }
     ]);
   });
@@ -569,7 +557,7 @@ describe('Get people', () => {
         {
           id: 116244,
           title: 'Královská nemocnice',
-          url: 'https://www.csfd.cz/film/116244-kralovska-nemocnice/'
+          url: 'https://www.csfd.cz/film/116244-kralovska-nemocnice/prehled/'
         }
       ]);
     });

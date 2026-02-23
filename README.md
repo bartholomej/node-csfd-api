@@ -176,7 +176,7 @@ csfd.movie(535121).then((movie) => console.log(movie));
       url: 'https://filmy.heureka.cz/na-spatne-strane-dvd/#utm_source=csfd.cz&utm_medium=cooperation&utm_campaign=csfd_movies_feed'
     }
   ],
-  tags: ['policie', 'zbraně', 'zloděj', 'město', 'sledování'],
+  tags: ['město', 'sledování'],
   premieres: [
    {
       country: 'Česko',
