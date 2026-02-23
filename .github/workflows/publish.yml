@@ -10,7 +10,7 @@ permissions:
   contents: read
 
 jobs:
-  build:
+  npm_publish:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     name: 🚀 Publish to NPM
@@ -56,19 +56,43 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/v') && contains(github.ref, 'beta') == true
         run: cd dist && npm publish --access public --tag beta
 
-      # - name: Set up package for GPR
-      #   run: yarn gpr:setup
+  docker_publish:
+    name: 🐳 Docker Multi-Arch Build
+    needs: npm_publish
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v6
 
-      # - name: Use GPR
-      #   uses: actions/setup-node@master
-      #   with:
-      #     node-version: 13
-      #     registry-url: https://npm.pkg.github.com/
-      #     scope: 'bartholomej'
+      - name: 🏷️ Docker Metadata extraction
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ github.repository_owner }}/${{ github.event.repository.name }}
+          tags: |
+            type=semver,pattern={{version}}
+            type=raw,value=latest,enable=${{ !contains(github.ref, 'beta') }}
+            type=raw,value=beta,enable=${{ contains(github.ref, 'beta') }}
 
-      # - name: Publish to GitHub Package Registry
-      #   run: |
-      #     cd dist
-      #     npm publish
-      #   env:
-      #     NODE_AUTH_TOKEN: ${{github.token}}
+      - name: 🏗️ Setup QEMU (for ARM support)
+        uses: docker/setup-qemu-action@v3
+
+      - name: 🛠️ Setup Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: 🔑 Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ github.repository_owner }} # Assuming Docker Hub username is same as GitHub username
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: 📦 Build and Push to Docker Hub
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: true
+          platforms: linux/amd64,linux/arm64
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
