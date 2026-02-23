@@ -60,6 +60,11 @@ describe('Creator birthday info', () => {
     const creator = getCreatorBirthdayInfo(asideNode)?.age;
     expect(creator).toEqual<number>(62);
   });
+
+  test('Handles null input gracefully', () => {
+    const creator = getCreatorBirthdayInfo(null);
+    expect(creator).toEqual({ birthday: '', age: null, birthPlace: '' });
+  });
 });
 
 describe("Creator's films", () => {

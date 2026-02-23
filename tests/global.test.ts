@@ -1,6 +1,6 @@
 import { describe, expect, test } from 'vitest';
 import { csfd } from '../src';
-import { getDuration } from '../src/helpers/global.helper';
+import { getDuration, parseISO8601Duration } from '../src/helpers/global.helper';
 
 export const durationInput = [
   'PT142M',
@@ -32,6 +32,28 @@ describe('Live: Fetch rating page', () => {
   test('Resolve duration', async () => {
     const resolver = getDuration(durationInput as RegExpMatchArray);
     expect(resolver).toEqual(result);
+  });
+});
+
+describe('ISO 8601 Duration Parsing', () => {
+  test('Parse PT142M (142 minutes)', () => {
+    const duration = parseISO8601Duration('PT142M');
+    expect(duration).toEqual(142);
+  });
+
+  test('Parse PT2H22M (2 hours 22 minutes)', () => {
+    const duration = parseISO8601Duration('PT2H22M');
+    expect(duration).toEqual(142); // 2 * 60 + 22 = 142
+  });
+
+  test('Parse PT1H (1 hour)', () => {
+    const duration = parseISO8601Duration('PT1H');
+    expect(duration).toEqual(60);
+  });
+
+  test('Parse PT1H30M (1 hour 30 minutes)', () => {
+    const duration = parseISO8601Duration('PT1H30M');
+    expect(duration).toEqual(90);
   });
 });
 

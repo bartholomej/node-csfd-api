@@ -67,7 +67,7 @@ export const parseISO8601Duration = (iso: string): number => {
 
   const duration = getDuration(matches);
 
-  return +duration.minutes;
+  return +duration.hours * 60 + +duration.minutes;
 };
 
 // Sleep in loop

@@ -22,7 +22,7 @@ export const getCreatorName = (el: HTMLElement | null): string | null => {
 export const getCreatorBirthdayInfo = (
   el: HTMLElement | null
 ): { birthday: string; age: number; birthPlace: string } => {
-  const infoBlock = el.querySelector('.creator-profile-details p');
+  const infoBlock = el?.querySelector('.creator-profile-details p');
   const text = infoBlock?.innerHTML.trim();
   const birthPlaceRow = infoBlock?.querySelector('.info-place')?.innerText.trim();
   const ageRow = infoBlock?.querySelector('.info')?.innerText.trim();

@@ -11,6 +11,7 @@ import {
 } from '../src/dto/movie';
 import { getColor } from '../src/helpers/global.helper';
 import {
+  getLocalizedCreatorLabel,
   getMovieBoxMovies,
   getMovieColorRating,
   getMovieCreators,
@@ -29,7 +30,8 @@ import {
   getMovieTrivia,
   getMovieType,
   getMovieVods,
-  getMovieYear
+  getMovieYear,
+  getMovieTags
 } from '../src/helpers/movie.helper';
 import { movieMock } from './mocks/movie1.html';
 import { movieMockBlank } from './mocks/movie2.html';
@@ -291,23 +293,22 @@ describe('Get VOD', () => {
   });
 });
 
-// TODO
-// describe('Get additional info', () => {
-//   test('Get tags', () => {
-//     const item = getMovieTags(movieNode);
-//     expect(item).toEqual<string[]>([
-//       'policie',
-//       'zbraně',
-//       'město',
-//       'zloděj',
-//       'rukojmí',
-//       'sledování',
-//       'podsvětí',
-//       'přepadení',
-//       'banka'
-//     ]);
-//   });
-// });
+describe('Get additional info', () => {
+  test('Get tags', () => {
+    const item = getMovieTags(asideNode);
+    expect(item).toEqual<string[]>([
+      'policie',
+      'město',
+      'zbraně',
+      'zloděj',
+      'podsvětí (svět zločinu)',
+      'přepadení',
+      'sledování',
+      'rukojmí',
+      'banka'
+    ]);
+  });
+});
 
 describe('Get titlesOther', () => {
   test('Titles Other', () => {
@@ -608,6 +609,27 @@ describe('Get people', () => {
     test('Wrong otherTitle', () => {
       const movie = getMovieTitlesOther(wrongHtml);
       expect(movie).toEqual([]);
+    });
+  });
+
+  describe('Localized Creator Label', () => {
+    test('Default (cs) labels', () => {
+      expect(getLocalizedCreatorLabel('cs', 'directors')).toEqual('Režie');
+      expect(getLocalizedCreatorLabel(undefined, 'actors')).toEqual('Hrají');
+    });
+
+    test('English (en) labels', () => {
+      expect(getLocalizedCreatorLabel('en', 'directors')).toEqual('Directed by');
+      expect(getLocalizedCreatorLabel('en', 'actors')).toEqual('Cast');
+    });
+
+    test('Slovak (sk) labels', () => {
+      expect(getLocalizedCreatorLabel('sk', 'directors')).toEqual('Réžia');
+      expect(getLocalizedCreatorLabel('sk', 'actors')).toEqual('Hrajú');
+    });
+
+    test('Fallback to CS for unknown lang', () => {
+      expect(getLocalizedCreatorLabel('fr', 'directors')).toEqual('Režie');
     });
   });
 });

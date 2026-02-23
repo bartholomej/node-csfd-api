@@ -25,11 +25,32 @@ describe('Get Ratings', () => {
     const movie = getUserRating(movies[movies.length - 1]);
     expect(movie).toEqual<CSFDStars>(3);
   });
-  // TODO
-  // test('Zero Rating', () => {
-  //   const movie = getUserRating(movies[5]);
-  //   expect(movie).toEqual<CSFDStars>(0);
-  // });
+
+  test('Trash (Odpad!) rating', () => {
+    // Create a mock element with trash rating (usually indicated by 'trash' class or lack of 'stars-X')
+    const mockElement = parse(`
+      <tr>
+        <td class="star-rating-only">
+          <span class="stars trash"></span>
+        </td>
+      </tr>
+    `);
+    const movie = getUserRating(mockElement as unknown as HTMLElement);
+    expect(movie).toEqual<CSFDStars>(0);
+  });
+
+  test('Garbage/Invalid class rating', () => {
+    // strict check for non-stars class
+    const mockElement = parse(`
+      <tr>
+        <td class="star-rating-only">
+          <span class="stars something-else"></span>
+        </td>
+      </tr>
+    `);
+    const movie = getUserRating(mockElement as unknown as HTMLElement);
+    expect(movie).toEqual<CSFDStars>(0);
+  });
 });
 
 describe('Get ID', () => {
@@ -126,7 +147,7 @@ describe('Get color rating', () => {
         </td>
       </tr>
     `);
-    const result = getUserRatingColorRating(mockElement);
+    const result = getUserRatingColorRating(mockElement as unknown as HTMLElement);
     expect(result).toEqual<CSFDColorRating>('bad');
   });
 
@@ -139,7 +160,7 @@ describe('Get color rating', () => {
         </td>
       </tr>
     `);
-    const result = getUserRatingColorRating(mockElement);
+    const result = getUserRatingColorRating(mockElement as unknown as HTMLElement);
     expect(result).toEqual<CSFDColorRating>('unknown');
   });
 
@@ -152,7 +173,7 @@ describe('Get color rating', () => {
         </td>
       </tr>
     `);
-    const result = getUserRatingColorRating(mockElement);
+    const result = getUserRatingColorRating(mockElement as unknown as HTMLElement);
     expect(result).toEqual<CSFDColorRating>('unknown');
   });
 
@@ -165,7 +186,7 @@ describe('Get color rating', () => {
         </td>
       </tr>
     `);
-    const result = getUserRatingColorRating(mockElement);
+    const result = getUserRatingColorRating(mockElement as unknown as HTMLElement);
     expect(result).toEqual<CSFDColorRating>('unknown');
   });
 
@@ -178,7 +199,7 @@ describe('Get color rating', () => {
         </td>
       </tr>
     `);
-    const result = getUserRatingColorRating(mockElement);
+    const result = getUserRatingColorRating(mockElement as unknown as HTMLElement);
     expect(result).toEqual<CSFDColorRating>('unknown');
   });
 
@@ -191,7 +212,7 @@ describe('Get color rating', () => {
         </td>
       </tr>
     `);
-    const result = getUserRatingColorRating(mockElement);
+    const result = getUserRatingColorRating(mockElement as unknown as HTMLElement);
     expect(result).toEqual<CSFDColorRating>('good');
   });
 });
