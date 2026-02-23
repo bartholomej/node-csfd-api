@@ -301,14 +301,19 @@ export const getMovieCreators = (el: HTMLElement, options?: CSFDOptions): CSFDCr
     'productionDesign'
   ] as const;
 
+  const localizedLabels = keys.map((key) => ({
+    key,
+    label: getLocalizedCreatorLabel(options?.language, key) as string
+  }));
+
   for (const group of groups) {
     const text = group.textContent.trim();
-    for (const key of keys) {
-      if (text.includes(getLocalizedCreatorLabel(options?.language, key) as string)) {
+    for (const { key, label } of localizedLabels) {
+      if (text.includes(label)) {
         if (group.parentNode) {
           creators[key] = parseMoviePeople(group.parentNode as HTMLElement);
         }
-        // Do not break here, as a single group might contain multiple roles
+        break;
       }
     }
   }

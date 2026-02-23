@@ -28,13 +28,14 @@ export class CreatorScraper {
   }
 
   private buildCreator(id: number, asideEl: HTMLElement, filmsNode: HTMLElement): CSFDCreator {
+    const birthdayInfo = getCreatorBirthdayInfo(asideEl);
     return {
       id,
       name: getCreatorName(asideEl),
-      birthday: getCreatorBirthdayInfo(asideEl)?.birthday,
-      birthplace: getCreatorBirthdayInfo(asideEl)?.birthPlace,
+      birthday: birthdayInfo?.birthday,
+      birthplace: birthdayInfo?.birthPlace,
       photo: getCreatorPhoto(asideEl),
-      age: getCreatorBirthdayInfo(asideEl)?.age || null,
+      age: birthdayInfo?.age || null,
       bio: getCreatorBio(asideEl),
       films: getCreatorFilms(filmsNode)
     };

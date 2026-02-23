@@ -1,5 +1,5 @@
 import { HTMLElement, parse } from 'node-html-parser';
-import { CSFDColorRating, CSFDStars } from '../dto/global';
+import { CSFDColorRating, CSFDFilmTypes, CSFDStars } from '../dto/global';
 import { CSFDUserRatingConfig, CSFDUserRatings } from '../dto/user-ratings';
 import { fetchPage } from '../fetchers';
 import { sleep } from '../helpers/global.helper';
@@ -79,27 +79,27 @@ export class UserRatingsScraper {
       // Filtering includesOnly
       if (config?.includesOnly?.length) {
         if (config.includesOnly.some((include) => type === include)) {
-          films.push(this.buildUserRatings(el));
+          films.push(this.buildUserRatings(el, type));
         }
         // Filter excludes
       } else if (config?.excludes?.length) {
         if (!config.excludes.some((exclude) => type === exclude)) {
-          films.push(this.buildUserRatings(el));
+          films.push(this.buildUserRatings(el, type));
         }
       } else {
         // Without filtering
-        films.push(this.buildUserRatings(el));
+        films.push(this.buildUserRatings(el, type));
       }
     }
     return films;
   }
 
-  private buildUserRatings(el: HTMLElement): CSFDUserRatings {
+  private buildUserRatings(el: HTMLElement, type: CSFDFilmTypes): CSFDUserRatings {
     return {
       id: getUserRatingId(el),
       title: getUserRatingTitle(el),
       year: getUserRatingYear(el),
-      type: getUserRatingType(el),
+      type,
       url: getUserRatingUrl(el),
       colorRating: getUserRatingColorRating(el) as CSFDColorRating,
       userDate: getUserRatingDate(el),

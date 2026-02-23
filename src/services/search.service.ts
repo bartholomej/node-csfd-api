@@ -35,15 +35,15 @@ export class SearchScraper {
     tvSeriesNode: HTMLElement[],
     language?: CSFDLanguage
   ) {
+    const baseUrl = getUrlByLanguage(language);
+
     const movies: CSFDSearchMovie[] = [];
     const users: CSFDSearchUser[] = [];
     const tvSeries: CSFDSearchMovie[] = [];
-    const baseUrl = getUrlByLanguage(language);
 
-    moviesNode.forEach((m) => {
+    const movieMapper = (m: HTMLElement): CSFDSearchMovie => {
       const url = getSearchUrl(m);
-
-      const movie: CSFDSearchMovie = {
+      return {
         id: parseIdFromUrl(url),
         title: getSearchTitle(m),
         year: getSearchYear(m),
@@ -57,41 +57,22 @@ export class SearchScraper {
           actors: parseSearchPeople(m, 'actors')
         }
       };
-      movies.push(movie);
-    });
+    };
 
-    usersNode.forEach((m) => {
+    const userMapper = (m: HTMLElement): CSFDSearchUser => {
       const url = getUserUrl(m);
-
-      const user: CSFDSearchUser = {
+      return {
         id: parseIdFromUrl(url),
         user: getUser(m),
         userRealName: getUserRealName(m),
         avatar: getAvatar(m),
         url: `${baseUrl}${url}`
       };
-      users.push(user);
-    });
+    };
 
-    tvSeriesNode.forEach((m) => {
-      const url = getSearchUrl(m);
-
-      const user: CSFDSearchMovie = {
-        id: parseIdFromUrl(url),
-        title: getSearchTitle(m),
-        year: getSearchYear(m),
-        url: `${baseUrl}${url}`,
-        type: getSearchType(m),
-        colorRating: getSearchColorRating(m),
-        poster: getSearchPoster(m),
-        origins: getSearchOrigins(m),
-        creators: {
-          directors: parseSearchPeople(m, 'directors'),
-          actors: parseSearchPeople(m, 'actors')
-        }
-      };
-      tvSeries.push(user);
-    });
+    movies.push(...moviesNode.map(movieMapper));
+    users.push(...usersNode.map(userMapper));
+    tvSeries.push(...tvSeriesNode.map(movieMapper));
 
     const search: CSFDSearch = {
       movies: movies,
