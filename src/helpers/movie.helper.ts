@@ -387,8 +387,6 @@ export const getMoviePremieres = (el: HTMLElement): CSFDPremiere[] => {
 };
 
 export const getMovieTags = (el: HTMLElement): string[] => {
-  const tagsRaw = el.querySelectorAll(
-    '.box-content a[href*="/tag/"], .box-content a[href*="tag="]'
-  );
+  const tagsRaw = el.querySelectorAll('.box-content a[href*="/tag/"]');
   return tagsRaw.map((tag) => tag.textContent);
 };
