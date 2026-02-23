@@ -13,10 +13,10 @@ import { getColor } from '../src/helpers/global.helper';
 import {
   getMovieBoxMovies,
   getMovieColorRating,
+  getMovieCreators,
   getMovieDescriptions,
   getMovieDuration,
   getMovieGenres,
-  getMovieGroup,
   getMovieId,
   getMovieOrigins,
   getMoviePoster,
@@ -196,7 +196,7 @@ describe('Get Movie trivia', () => {
     expect(movie).toEqual<string[]>([
       'Celosvětová premiéra proběhla 3. září 2018 na Mezinárodním filmovém festivalu v Benátkách.(BMW12)',
       'Natáčanie filmu prebiehalo v kanadskom meste Vancouver a začalo 17.7.2017.(MikaelSVK)',
-      'Ve filmu zazní píseň „A Better Place For Us“, kterou odehrál jako hudebník režisér S. Craig Zahler.(Rominator)',
+      'Ve filmu zazní píseň „A Better Place For Us“, kterou odehrál jako hudebník režisér S. Craig Zahler.(Rominator)'
     ]);
   });
   test('Movie Blank trivia', () => {
@@ -206,9 +206,9 @@ describe('Get Movie trivia', () => {
   test('Movie Series trivia', () => {
     const movie = getMovieTrivia(seriesNode);
     expect(movie).toEqual<string[]>([
-      "Ernst-Hugo Järegård (Stig Helmer) se právě díky roli v seriálu v Dánsku výrazně zviditelnil a byl dokonce považován za nový sexuální symbol.(TomikZlesa)",
-      "Plánovanú 3. sériu narušila predčasná smrť niektorých hlavných hercov, ale po 25 rokoch predsa len vznikla.(misterz)",
-      "Když nastane stav beztíže, jako hudební podkres hraje Bachovo „Preludium F moll“. Tento hudební motiv, spolu se záběrem na vznášejícího se Pontopidana (Lars Mikkelsen), je jednoznačným odkazem na podobnou scénu se stavem beztíže z filmu Solaris (1972).(Kaleidoskop)",
+      'Ernst-Hugo Järegård (Stig Helmer) se právě díky roli v seriálu v Dánsku výrazně zviditelnil a byl dokonce považován za nový sexuální symbol.(TomikZlesa)',
+      'Plánovanú 3. sériu narušila predčasná smrť niektorých hlavných hercov, ale po 25 rokoch predsa len vznikla.(misterz)',
+      'Když nastane stav beztíže, jako hudební podkres hraje Bachovo „Preludium F moll“. Tento hudební motiv, spolu se záběrem na vznášejícího se Pontopidana (Lars Mikkelsen), je jednoznačným odkazem na podobnou scénu se stavem beztíže z filmu Solaris (1972).(Kaleidoskop)'
     ]);
   });
   test('Movie empty node', () => {
@@ -269,12 +269,12 @@ describe('Get VOD', () => {
     expect(movie).toEqual<CSFDVod[]>([
       {
         title: 'Lepší.TV',
-        url: 'https://www.lepsi.tv/top_tv/serial/kralovstvi-cast-prvni-online?utm_source=csfd&utm_content=csfd',
+        url: 'https://www.lepsi.tv/top_tv/serial/kralovstvi-cast-prvni-online?utm_source=csfd&utm_content=csfd'
       },
       {
         title: 'KVIFF.TV',
         url: 'https://kviff.tv/katalog/kralovstvi-cast-druha-prijd-kralovstvi-tve'
-      },
+      }
     ]);
   });
   test('Get vods rich', () => {
@@ -454,9 +454,9 @@ describe('Get ratings', () => {
 });
 
 describe('Get people', () => {
+  const group = getMovieCreators(movieNode);
   test('directors', () => {
-    const movie = getMovieGroup(movieNode, 'Režie');
-    expect(movie).toEqual<CSFDMovieCreator[]>([
+    expect(group.directors.slice(0, 1)).toEqual<CSFDMovieCreator[]>([
       {
         id: 87470,
         name: 'S. Craig Zahler',
@@ -465,8 +465,7 @@ describe('Get people', () => {
     ]);
   });
   test('Screenwriters', () => {
-    const movie = getMovieGroup(movieNode, 'Scénář');
-    expect(movie.slice(0, 1)).toEqual<CSFDMovieCreator[]>([
+    expect(group.writers.slice(0, 1)).toEqual<CSFDMovieCreator[]>([
       {
         id: 87470,
         name: 'S. Craig Zahler',
@@ -475,14 +474,12 @@ describe('Get people', () => {
     ]);
   });
   test('Music composers', () => {
-    const movie = getMovieGroup(movieNode, 'Hudba');
-    expect(movie.slice(0, 1)).toEqual<CSFDMovieCreator[]>([
+    expect(group.music.slice(0, 1)).toEqual<CSFDMovieCreator[]>([
       { id: 203209, name: 'Jeff Herriott', url: 'https://www.csfd.cz/tvurce/203209-jeff-herriott/' }
     ]);
   });
   test('Actors', () => {
-    const movie = getMovieGroup(movieNode, 'Hrají');
-    expect(movie.slice(0, 1)).toEqual<CSFDMovieCreator[]>([
+    expect(group.actors.slice(0, 1)).toEqual<CSFDMovieCreator[]>([
       {
         id: 1,
         name: 'Mel Gibson',
@@ -491,8 +488,7 @@ describe('Get people', () => {
     ]);
   });
   test('Based on', () => {
-    const movie = getMovieGroup(movieNode, 'Předloha');
-    expect(movie.slice(0, 1)).toEqual<CSFDMovieCreator[]>([]);
+    expect(group.basedOn).toEqual<CSFDMovieCreator[]>([]);
   });
 
   describe('Get premieres', () => {

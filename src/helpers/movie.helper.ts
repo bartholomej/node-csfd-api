@@ -262,18 +262,15 @@ const parseMoviePeople = (el: HTMLElement): CSFDMovieCreator[] => {
   );
 };
 
-export const getMovieGroup = (
-  el: HTMLElement,
-  group: CSFDCreatorGroups | CSFDCreatorGroupsEnglish | CSFDCreatorGroupsSlovak
-): CSFDMovieCreator[] => {
-  const creators = el.querySelectorAll('.creators h4');
-  const element = creators.filter((elem) => elem.textContent.trim().includes(group))[0];
-  if (element?.parentNode) {
-    return parseMoviePeople(element.parentNode as HTMLElement);
-  } else {
-    return [];
-  }
-};
+// export const getMovieGroup = (el: HTMLElement, group: CSFDCreatorGroups | CSFDCreatorGroupsEnglish | CSFDCreatorGroupsSlovak): CSFDMovieCreator[] => {
+//   const creators = el.querySelectorAll('.creators h4');
+//   const element = creators.filter((elem) => elem.textContent.trim().includes(group))[0];
+//   if (element?.parentNode) {
+//     return parseMoviePeople(element.parentNode as HTMLElement);
+//   } else {
+//     return [];
+//   }
+// };
 
 export const getMovieCreators = (el: HTMLElement, options?: CSFDOptions): CSFDCreators => {
   const creators: CSFDCreators = {
@@ -289,9 +286,6 @@ export const getMovieCreators = (el: HTMLElement, options?: CSFDOptions): CSFDCr
     productionDesign: []
   };
 
-  // Optimize: Query all creators groups once instead of multiple times
-  // This reduces DOM traversal from O(N*M) to O(N) where N is number of groups and M is number of creator types.
-  // Benchmark showed ~3.8x performance improvement.
   const groups = el.querySelectorAll('.creators h4');
 
   const keys = [
