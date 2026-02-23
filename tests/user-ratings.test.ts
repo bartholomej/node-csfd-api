@@ -18,12 +18,12 @@ const movies: HTMLElement[] = items.querySelectorAll('#snippet--ratings table tr
 
 describe('Get Ratings', () => {
   test('First rating', () => {
-    const movie = getUserRating(movies[1]);
-    expect(movie).toEqual<CSFDStars>(2);
+    const movie = getUserRating(movies[0]);
+    expect(movie).toEqual<CSFDStars>(3);
   });
   test('Last rating', () => {
     const movie = getUserRating(movies[movies.length - 1]);
-    expect(movie).toEqual<CSFDStars>(3);
+    expect(movie).toEqual<CSFDStars>(5);
   });
 
   test('Trash (Odpad!) rating', () => {
@@ -56,25 +56,25 @@ describe('Get Ratings', () => {
 describe('Get ID', () => {
   test('First ID', () => {
     const movie = getUserRatingId(movies[0]);
-    expect(movie).toEqual<number>(1664563);
+    expect(movie).toEqual<number>(1301144);
   });
   test('Last ID', () => {
     const movie = getUserRatingId(movies[movies.length - 1]);
-    expect(movie).toEqual<number>(157850);
+    expect(movie).toEqual<number>(416621);
   });
 });
 
 describe('Get type', () => {
   test('Film', () => {
-    const movie = getUserRatingType(movies[0]);
+    const movie = getUserRatingType(movies[1]);
     expect(movie).toEqual<CSFDFilmTypes>('film');
   });
   test('TV series', () => {
-    const movie = getUserRatingType(movies[8]);
+    const movie = getUserRatingType(movies[2]);
     expect(movie).toEqual<CSFDFilmTypes>('seriál');
   });
   test('Episode', () => {
-    const movie = getUserRatingType(movies[10]);
+    const movie = getUserRatingType(movies[5]);
     expect(movie).toEqual<CSFDFilmTypes>('epizoda');
   });
   // test('TV film', () => {
@@ -98,18 +98,18 @@ describe('Get type', () => {
 describe('Get title', () => {
   test('First title', () => {
     const movie = getUserRatingTitle(movies[0]);
-    expect(movie).toEqual<string>('Exit 8');
+    expect(movie).toEqual<string>("Delivery Dancer's Sphere");
   });
   test('Last title', () => {
     const movie = getUserRatingTitle(movies[movies.length - 1]);
-    expect(movie).toEqual<string>('Gå med mig hjem');
+    expect(movie).toEqual<string>('The Disaster Artist: Úžasný propadák');
   });
 });
 
 describe('Get year', () => {
   test('First year', () => {
     const movie = getUserRatingYear(movies[0]);
-    expect(movie).toEqual<number>(2025);
+    expect(movie).toEqual<number>(2023);
   });
   test('Some year', () => {
     const movie = getUserRatingYear(movies[8]);
@@ -117,25 +117,25 @@ describe('Get year', () => {
   });
   test('Almost last year', () => {
     const movie = getUserRatingYear(movies[movies.length - 1]);
-    expect(movie).toEqual<number>(1941);
+    expect(movie).toEqual<number>(2017);
   });
 });
 
 describe('Get color rating', () => {
   // test('Black', () => {
-  //   const movie = getUserRatingColorRating(movies[7]);
+  //   const movie = getUserRatingColorRating(movies[10]);
   //   expect(movie).toEqual<CSFDColorRating>('bad');
   // });
   test('Gray', () => {
-    const movie = getUserRatingColorRating(movies[movies.length - 1]);
+    const movie = getUserRatingColorRating(movies[2]);
     expect(movie).toEqual<CSFDColorRating>('unknown');
   });
   test('Blue', () => {
-    const movie = getUserRatingColorRating(movies[0]);
+    const movie = getUserRatingColorRating(movies[3]);
     expect(movie).toEqual<CSFDColorRating>('average');
   });
   test('Red', () => {
-    const movie = getUserRatingColorRating(movies[2]);
+    const movie = getUserRatingColorRating(movies[1]);
     expect(movie).toEqual<CSFDColorRating>('good');
   });
   test('Grey color should return bad', () => {
@@ -220,21 +220,25 @@ describe('Get color rating', () => {
 describe('Get date', () => {
   test('First date', () => {
     const movie = getUserRatingDate(movies[0]);
-    expect(movie).toEqual<string>('26.01.2026');
+    expect(movie).toEqual<string>('14.02.2026');
   });
   test('Last date', () => {
     const movie = getUserRatingDate(movies[movies.length - 1]);
-    expect(movie).toEqual<string>('24.08.2025');
+    expect(movie).toEqual<string>('13.09.2025');
   });
 });
 
 describe('Get Url', () => {
   test('First url', () => {
     const movie = getUserRatingUrl(movies[0]);
-    expect(movie).toEqual<string>('https://www.csfd.cz/film/1664563-exit-8/prehled/');
+    expect(movie).toEqual<string>(
+      'https://www.csfd.cz/film/1301144-delivery-dancer-s-sphere/prehled/'
+    );
   });
   test('Last url', () => {
     const movie = getUserRatingUrl(movies[movies.length - 1]);
-    expect(movie).toEqual<string>('https://www.csfd.cz/film/157850-ga-med-mig-hjem/prehled/');
+    expect(movie).toEqual<string>(
+      'https://www.csfd.cz/film/416621-the-disaster-artist-uzasny-propadak/prehled/'
+    );
   });
 });
