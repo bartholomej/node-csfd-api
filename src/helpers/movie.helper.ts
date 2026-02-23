@@ -18,6 +18,57 @@ import {
 import { CSFDOptions } from '../types';
 import { addProtocol, getColor, parseISO8601Duration, parseIdFromUrl } from './global.helper';
 
+const CREATOR_LABELS: Record<
+  string,
+  Record<string, CSFDCreatorGroups | CSFDCreatorGroupsEnglish | CSFDCreatorGroupsSlovak>
+> = {
+  en: {
+    directors: 'Directed by',
+    writers: 'Screenplay',
+    cinematography: 'Cinematography',
+    music: 'Composer',
+    actors: 'Cast',
+    basedOn: 'Based on',
+    producers: 'Produced by',
+    filmEditing: 'Editing',
+    costumeDesign: 'Costumes',
+    productionDesign: 'Production design',
+    casting: 'Casting',
+    sound: 'Sound',
+    makeup: 'Make-up'
+  },
+  cs: {
+    directors: 'Režie',
+    writers: 'Scénář',
+    cinematography: 'Kamera',
+    music: 'Hudba',
+    actors: 'Hrají',
+    basedOn: 'Předloha',
+    producers: 'Produkce',
+    filmEditing: 'Střih',
+    costumeDesign: 'Kostýmy',
+    productionDesign: 'Scénografie',
+    casting: 'Casting',
+    sound: 'Zvuk',
+    makeup: 'Masky'
+  },
+  sk: {
+    directors: 'Réžia',
+    writers: 'Scenár',
+    cinematography: 'Kamera',
+    music: 'Hudba',
+    actors: 'Hrajú',
+    basedOn: 'Predloha',
+    producers: 'Produkcia',
+    filmEditing: 'Strih',
+    costumeDesign: 'Kostýmy',
+    productionDesign: 'Scénografia',
+    casting: 'Casting',
+    sound: 'Zvuk',
+    makeup: 'Masky'
+  }
+};
+
 /**
  * Maps language-specific movie creator group labels.
  * @param language - The language code (e.g., 'en', 'cs')
@@ -41,59 +92,8 @@ export const getLocalizedCreatorLabel = (
     | 'sound'
     | 'makeup'
 ): CSFDCreatorGroups | CSFDCreatorGroupsEnglish | CSFDCreatorGroupsSlovak => {
-  const labels: Record<
-    string,
-    Record<string, CSFDCreatorGroups | CSFDCreatorGroupsEnglish | CSFDCreatorGroupsSlovak>
-  > = {
-    en: {
-      directors: 'Directed by',
-      writers: 'Screenplay',
-      cinematography: 'Cinematography',
-      music: 'Composer',
-      actors: 'Cast',
-      basedOn: 'Based on',
-      producers: 'Produced by',
-      filmEditing: 'Editing',
-      costumeDesign: 'Costumes',
-      productionDesign: 'Production design',
-      casting: 'Casting',
-      sound: 'Sound',
-      makeup: 'Make-up'
-    },
-    cs: {
-      directors: 'Režie',
-      writers: 'Scénář',
-      cinematography: 'Kamera',
-      music: 'Hudba',
-      actors: 'Hrají',
-      basedOn: 'Předloha',
-      producers: 'Produkce',
-      filmEditing: 'Střih',
-      costumeDesign: 'Kostýmy',
-      productionDesign: 'Scénografie',
-      casting: 'Casting',
-      sound: 'Zvuk',
-      makeup: 'Masky'
-    },
-    sk: {
-      directors: 'Réžia',
-      writers: 'Scenár',
-      cinematography: 'Kamera',
-      music: 'Hudba',
-      actors: 'Hrajú',
-      basedOn: 'Predloha',
-      producers: 'Produkcia',
-      filmEditing: 'Strih',
-      costumeDesign: 'Kostýmy',
-      productionDesign: 'Scénografia',
-      casting: 'Casting',
-      sound: 'Zvuk',
-      makeup: 'Masky'
-    }
-  };
-
   const lang = language || 'cs'; // Default to Czech
-  return (labels[lang] || labels['cs'])[key];
+  return (CREATOR_LABELS[lang] || CREATOR_LABELS['cs'])[key];
 };
 
 export const getMovieId = (el: HTMLElement): number => {

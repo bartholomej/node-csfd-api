@@ -59,10 +59,10 @@ export const getDuration = (matches: RegExpMatchArray) => {
   };
 };
 
-export const parseISO8601Duration = (iso: string): number => {
-  const iso8601DurationRegex =
-    /(-)?P(?:([.,\d]+)Y)?(?:([.,\d]+)M)?(?:([.,\d]+)W)?(?:([.,\d]+)D)?T(?:([.,\d]+)H)?(?:([.,\d]+)M)?(?:([.,\d]+)S)?/;
+const iso8601DurationRegex =
+  /(-)?P(?:([.,\d]+)Y)?(?:([.,\d]+)M)?(?:([.,\d]+)W)?(?:([.,\d]+)D)?T(?:([.,\d]+)H)?(?:([.,\d]+)M)?(?:([.,\d]+)S)?/;
 
+export const parseISO8601Duration = (iso: string): number => {
   const matches = iso.match(iso8601DurationRegex);
 
   const duration = getDuration(matches);
