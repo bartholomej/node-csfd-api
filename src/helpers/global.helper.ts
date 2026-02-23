@@ -46,7 +46,7 @@ export const addProtocol = (url: string): string => {
   return url.startsWith('//') ? 'https:' + url : url;
 };
 
-export const getDuration = (matches: any[]) => {
+export const getDuration = (matches: RegExpMatchArray) => {
   return {
     sign: matches[1] === undefined ? '+' : '-',
     years: matches[2] === undefined ? 0 : matches[2],

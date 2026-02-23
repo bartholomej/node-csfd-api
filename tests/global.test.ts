@@ -11,10 +11,7 @@ export const durationInput = [
   undefined,
   undefined,
   '142',
-  undefined,
-  { index: 0 },
-  { input: 'PT142M' },
-  { groups: undefined }
+  undefined
 ];
 
 const result = {
@@ -30,7 +27,7 @@ const result = {
 
 describe('Live: Fetch rating page', () => {
   test('Resolve duration', async () => {
-    const resolver = getDuration(durationInput);
+    const resolver = getDuration(durationInput as RegExpMatchArray);
     expect(resolver).toEqual(result);
   });
 });
