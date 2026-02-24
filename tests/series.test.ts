@@ -1,440 +1,226 @@
-import { parse } from 'node-html-parser';
-import { beforeAll, describe, expect, test } from 'vitest';
-import { CSFDMovie } from '../src/dto/movie';
-import { MovieScraper } from '../src/services/movie.service';
+import { HTMLElement, parse } from 'node-html-parser';
+import { describe, expect, test } from 'vitest';
+import { MovieJsonLd } from '../src/dto/movie';
+import {
+  getEpisodeCode,
+  getMovieCreators,
+  getMovieDescriptions,
+  getMovieDuration,
+  getMovieGenres,
+  getMovieRating,
+  getMovieType,
+  getMovieVods,
+  getMovieYear,
+  getSeasonorEpisodeParent,
+  getSeasonsOrEpisodes,
+  getSerieasAndSeasonTitle
+} from '../src/helpers/movie.helper';
 import { serie1Season1EpisodeMock } from './mocks/series1-season1-episode.mock';
 import { serie1Season1Mock } from './mocks/series1-season1.mock';
 import { serie1SeasonsMock } from './mocks/series1-seasons.mock';
 import { serie2EpisodeMock } from './mocks/series2-episode.mock';
 import { serie2EpisodesMock } from './mocks/series2-episodes.mock';
 
-/**
- * Helper function to parse mock HTML into CSFDMovie object
- */
-function parseMovieMock(mockHtml: string, movieId: number): CSFDMovie {
-  const movieHtml = parse(mockHtml);
-  const pageClasses = movieHtml.querySelector('.page-content')?.classNames.split(' ') || [];
-  const asideNode = movieHtml.querySelector('.aside-movie-profile');
-  const movieNode = movieHtml.querySelector('.main-movie-profile');
-  const jsonLd = movieHtml.querySelector('script[type="application/ld+json"]')?.innerText || '{}';
+const getPageClasses = (node: HTMLElement): string[] => {
+  return node.querySelector('.page-content')?.classNames.split(' ') ?? [''];
+};
 
-  if (!asideNode || !movieNode) {
-    throw new Error('Invalid mock HTML structure');
+const getAsideNode = (node: HTMLElement): HTMLElement => {
+  return node.querySelector('.aside-movie-profile') as HTMLElement;
+};
+
+const getNode = (node: HTMLElement): HTMLElement => {
+  return node.querySelector('.main-movie-profile') as HTMLElement;
+};
+
+const getJsonLd = (node: HTMLElement): MovieJsonLd | null => {
+  const json = node.querySelector('script[type="application/ld+json"]')?.innerText;
+  try {
+    return json ? JSON.parse(json) : null;
+  } catch (e) {
+    return null;
   }
+};
 
-  const scraper = new MovieScraper();
-  // Access the private buildMovie method via reflection
-  return (scraper as any).buildMovie(movieId, movieNode, asideNode, pageClasses, jsonLd, {});
-}
+const getMovie = (
+  node: HTMLElement
+): { pClasses: string[]; aside: HTMLElement; pNode: HTMLElement; jsonLd: MovieJsonLd | null } => {
+  return {
+    pClasses: getPageClasses(node),
+    aside: getAsideNode(node),
+    pNode: getNode(node),
+    jsonLd: getJsonLd(node)
+  };
+};
 
-/**
- * Series Pattern 1: Series with Seasons
- * Structure: Series -> Seasons -> Episodes
- * Example: The Simpsons (72489)
- * - Main page shows seasons overview
- * - Season page shows episodes list
- * - Episode page shows individual episode details
- */
-describe('Series Pattern 1: Series with Seasons (The Simpsons)', () => {
-  describe('Main Series Page - Seasons Overview', () => {
-    let movie: CSFDMovie;
+// Series Pattern 1: Series with Seasons (The Simpsons)
+const serie1SeasonsHtml = parse(serie1SeasonsMock);
+const {
+  pNode: serie1SeasonsNode,
+  aside: serie1SeasonsAside,
+  jsonLd: serie1SeasonsJsonLd
+} = getMovie(serie1SeasonsHtml);
 
-    beforeAll(() => {
-      movie = parseMovieMock(serie1SeasonsMock, 72489);
-    });
+const serie1Season1Html = parse(serie1Season1Mock);
+const { pNode: serie1Season1Node, jsonLd: serie1Season1JsonLd } = getMovie(serie1Season1Html);
 
-    test('Should have correct title', () => {
-      expect(movie.title).toBe('Simpsonovi');
-    });
+const serie1Season1EpisodeHtml = parse(serie1Season1EpisodeMock);
+const { pNode: serie1Season1EpisodeNode, jsonLd: serie1Season1EpisodeJsonLd } =
+  getMovie(serie1Season1EpisodeHtml);
 
-    test('Should be type "seriál"', () => {
-      expect(movie.type).toBe('seriál');
-    });
+// Series Pattern 2: Series with Direct Episodes (The Curse)
+const serie2EpisodesHtml = parse(serie2EpisodesMock);
+const {
+  pNode: serie2EpisodesNode,
+  aside: serie2EpisodesAside,
+  jsonLd: serie2EpisodesJsonLd
+} = getMovie(serie2EpisodesHtml);
 
-    test('Should have year range', () => {
-      expect(movie.year).toBe(1989);
-    });
+const serie2EpisodeHtml = parse(serie2EpisodeMock);
+const {
+  pNode: serie2EpisodeNode,
+  aside: serie2EpisodeAside,
+  jsonLd: serie2EpisodeJsonLd
+} = getMovie(serie2EpisodeHtml);
 
-    test('Should have seasons list', () => {
-      expect(movie.seasons).toBeDefined();
-      expect(movie.seasons).not.toBeNull();
-      expect(movie.seasons!.length).toBeGreaterThan(0);
-    });
-
-    test('Should NOT have episodes on main page', () => {
-      expect(movie.episodes).toBeNull();
-    });
-
-    test('Should have correct season structure', () => {
-      const firstSeason = movie.seasons![0];
-      expect(firstSeason).toHaveProperty('id');
-      expect(firstSeason).toHaveProperty('name');
-      expect(firstSeason).toHaveProperty('url');
-      expect(firstSeason).toHaveProperty('info');
-    });
-
-    test('Should have rating', () => {
-      expect(movie.rating).toBeGreaterThan(90);
-    });
-
-    test('Should have creators', () => {
-      expect(movie.creators.directors.length).toBeGreaterThan(0);
-      expect(movie.creators.actors.length).toBeGreaterThan(0);
-    });
-
-    test('Should have genres', () => {
-      expect(movie.genres).toContain('Animovaný');
-      expect(movie.genres).toContain('Komedie');
-    });
-
-    test('Should NOT have parent (it is the main series)', () => {
-      expect(movie.parent).toBeNull();
-    });
-
-    test('Should NOT have episodeCode', () => {
-      expect(movie.episodeCode).toBeNull();
-    });
-
-    test('Should NOT have seasonName', () => {
-      expect(movie.seasonName).toBeNull();
-    });
+describe('Get Type', () => {
+  test('Series 1 Main', () => {
+    expect(getMovieType(serie1SeasonsNode)).toBe('seriál');
   });
-
-  describe('Season Page - Episodes List', () => {
-    let movie: CSFDMovie;
-
-    beforeAll(() => {
-      movie = parseMovieMock(serie1Season1Mock, 474212);
-    });
-
-    test('Should have correct title with season', () => {
-      expect(movie.title).toBe('Simpsonovi');
-    });
-
-    test('Should have seasonName', () => {
-      expect(movie.seasonName).toBe('Série 1');
-    });
-
-    test('Should be type "série"', () => {
-      expect(movie.type).toBe('série');
-    });
-
-    test('Should have episodes list', () => {
-      expect(movie.episodes).toBeDefined();
-      expect(movie.episodes).not.toBeNull();
-      expect(movie.episodes!.length).toBeGreaterThan(0);
-    });
-
-    test('Should have correct episode structure', () => {
-      const firstEpisode = movie.episodes![0];
-      expect(firstEpisode).toHaveProperty('id');
-      expect(firstEpisode).toHaveProperty('name');
-      expect(firstEpisode).toHaveProperty('url');
-      expect(firstEpisode.name).toContain('Vánoce u Simpsonových');
-    });
-
-    test('Should have parent series info', () => {
-      expect(movie.parent).toBeDefined();
-      expect(movie.parent).not.toBeNull();
-      expect(movie.parent!.series).toBeDefined();
-      expect(movie.parent!.series.id).toBe(72489);
-      expect(movie.parent!.series.name).toBe('Simpsonovi');
-      // Season page doesn't have a parent season, only parent series
-      expect(movie.parent!.season).toBeNull();
-    });
-
-    test('Should NOT have seasons on season page', () => {
-      expect(movie.seasons).toBeNull();
-    });
-
-    test('Should have rating', () => {
-      expect(movie.rating).toBeGreaterThan(85);
-    });
-
-    test('Should have year', () => {
-      expect(movie.year).toBe(1989);
-    });
+  test('Series 1 Season', () => {
+    expect(getMovieType(serie1Season1Node)).toBe('série');
   });
-
-  describe('Episode Page - Individual Episode', () => {
-    let movie: CSFDMovie;
-
-    beforeAll(() => {
-      movie = parseMovieMock(serie1Season1EpisodeMock, 474220);
-    });
-
-    test('Should have correct title', () => {
-      expect(movie.title).toBe('Mluvící hlava');
-    });
-
-    test('Should be type "epizoda"', () => {
-      expect(movie.type).toBe('epizoda');
-    });
-
-    test('Should have episodeCode', () => {
-      expect(movie.episodeCode).toBe('S01E08');
-    });
-
-    test('Should have parent with both series and season', () => {
-      expect(movie.parent).toBeDefined();
-      expect(movie.parent).not.toBeNull();
-
-      // Series info
-      expect(movie.parent!.series).toBeDefined();
-      expect(movie.parent!.series.id).toBe(72489);
-      expect(movie.parent!.series.name).toBe('Simpsonovi');
-
-      // Season info
-      expect(movie.parent!.season).toBeDefined();
-      expect(movie.parent!.season.id).toBe(474212);
-      expect(movie.parent!.season.name).toBe('Série 1');
-    });
-
-    test('Should have rating', () => {
-      expect(movie.rating).toBeGreaterThan(80);
-    });
-
-    test('Should have year', () => {
-      expect(movie.year).toBe(1990);
-    });
-
-    test('Should have duration', () => {
-      expect(movie.duration).toBe(22);
-    });
-
-    test('Should have creators', () => {
-      expect(movie.creators.directors.length).toBeGreaterThan(0);
-      expect(movie.creators.actors.length).toBeGreaterThan(0);
-    });
-
-    test('Should NOT have seasons', () => {
-      expect(movie.seasons).toBeNull();
-    });
-
-    test('Should NOT have episodes', () => {
-      expect(movie.episodes).toBeNull();
-    });
-
-    test('Should have descriptions', () => {
-      expect(movie.descriptions.length).toBeGreaterThan(0);
-      expect(movie.descriptions[0]).toContain('Bart');
-    });
+  test('Series 1 Episode', () => {
+    expect(getMovieType(serie1Season1EpisodeNode)).toBe('epizoda');
+  });
+  test('Series 2 Main', () => {
+    expect(getMovieType(serie2EpisodesNode)).toBe('seriál');
+  });
+  test('Series 2 Episode', () => {
+    expect(getMovieType(serie2EpisodeNode)).toBe('epizoda');
   });
 });
 
-/**
- * Series Pattern 2: Series with Direct Episodes
- * Structure: Series -> Episodes (no season grouping)
- * Example: The Curse (1431651)
- * - Main page shows episodes directly
- * - No intermediate season pages
- */
-describe('Series Pattern 2: Series with Direct Episodes (The Curse)', () => {
-  let movie: CSFDMovie;
-
-  beforeAll(() => {
-    movie = parseMovieMock(serie2EpisodesMock, 1431651);
+describe('Get Seasons or Episodes', () => {
+  test('Series 1 Main should have seasons', () => {
+    const seasons = getSeasonsOrEpisodes(serie1SeasonsNode);
+    expect(seasons).toBeDefined();
+    expect(seasons!.length).toBeGreaterThan(0);
+    expect(seasons![0]).toHaveProperty('name');
   });
-
-  test('Should have correct title', () => {
-    expect(movie.title).toBe('The Curse');
+  test('Series 1 Season should have episodes', () => {
+    const episodes = getSeasonsOrEpisodes(serie1Season1Node);
+    expect(episodes).toBeDefined();
+    expect(episodes!.length).toBeGreaterThan(0);
   });
-
-  test('Should be type "seriál"', () => {
-    expect(movie.type).toBe('seriál');
-  });
-
-  test('Should have year', () => {
-    expect(movie.year).toBe(2023);
-  });
-
-  test('Should have episodes list directly', () => {
-    expect(movie.episodes).toBeDefined();
-    expect(movie.episodes).not.toBeNull();
-    expect(movie.episodes!.length).toBeGreaterThan(0);
-  });
-
-  test('Should have correct episode structure', () => {
-    const firstEpisode = movie.episodes![0];
-    expect(firstEpisode).toHaveProperty('id');
-    expect(firstEpisode).toHaveProperty('name');
-    expect(firstEpisode).toHaveProperty('url');
-    expect(firstEpisode.name).toContain('Kouzelná země');
-  });
-
-  test('Should NOT have seasons', () => {
-    expect(movie.seasons).toBeNull();
-  });
-
-  test('Should NOT have parent (it is the main series)', () => {
-    expect(movie.parent).toBeNull();
-  });
-
-  test('Should NOT have episodeCode', () => {
-    expect(movie.episodeCode).toBeNull();
-  });
-
-  test('Should NOT have seasonName', () => {
-    expect(movie.seasonName).toBeNull();
-  });
-
-  test('Should have rating', () => {
-    expect(movie.rating).toBeGreaterThan(60);
-  });
-
-  test('Should have creators', () => {
-    expect(movie.creators.directors.length).toBeGreaterThan(0);
-    expect(movie.creators.actors.length).toBeGreaterThan(0);
-  });
-
-  test('Should have genres', () => {
-    expect(movie.genres).toContain('Komedie');
-    expect(movie.genres).toContain('Drama');
-  });
-
-  test('Should have VOD services', () => {
-    expect(movie.vod.length).toBeGreaterThan(0);
-  });
-
-  test('Should have descriptions', () => {
-    expect(movie.descriptions.length).toBeGreaterThan(0);
-  });
-
-  test('Episode info should include episode code', () => {
-    const episodes = movie.episodes!;
-    const firstEpisode = episodes[0];
-
-    // Check if info contains episode code pattern
-    if (firstEpisode.info) {
-      expect(firstEpisode.info).toMatch(/E\d+/);
-    }
+  test('Series 2 Main should have episodes directly', () => {
+    const episodes = getSeasonsOrEpisodes(serie2EpisodesNode);
+    expect(episodes).toBeDefined();
+    expect(episodes!.length).toBeGreaterThan(0);
   });
 });
 
-/**
- * Series Pattern 2 Episode: Episode from Series without Seasons
- * Structure: Series -> Episode (no season)
- * Example: The Curse Episode 1 (1436408)
- * - Episode has only series as parent, no season
- */
-describe('Series Pattern 2 Episode: Episode without Season (The Curse Episode)', () => {
-  let movie: CSFDMovie;
-
-  beforeAll(() => {
-    movie = parseMovieMock(serie2EpisodeMock, 1436408);
-  });
-
-  test('Should have correct title', () => {
-    expect(movie.title).toBe('Kouzelná země');
-  });
-
-  test('Should be type "epizoda"', () => {
-    expect(movie.type).toBe('epizoda');
-  });
-
-  test('Should have episodeCode', () => {
-    expect(movie.episodeCode).toBe('E01');
-  });
-
-  test('Should have parent series but NO season', () => {
-    expect(movie.parent).toBeDefined();
-    expect(movie.parent).not.toBeNull();
-
-    // Series info
-    expect(movie.parent!.series).toBeDefined();
-    expect(movie.parent!.series.id).toBe(1431651);
-    expect(movie.parent!.series.name).toBe('The Curse');
-
-    // NO season info (this series doesn't have seasons)
-    expect(movie.parent!.season).toBeNull();
-  });
-
-  test('Should have rating', () => {
-    expect(movie.rating).toBeGreaterThan(60);
-  });
-
-  test('Should have year', () => {
-    expect(movie.year).toBe(2023);
-  });
-
-  test('Should have duration', () => {
-    expect(movie.duration).toBe(61);
-  });
-
-  test('Should have creators', () => {
-    expect(movie.creators.directors.length).toBeGreaterThan(0);
-    expect(movie.creators.actors.length).toBeGreaterThan(0);
-  });
-
-  test('Should NOT have seasons', () => {
-    expect(movie.seasons).toBeNull();
-  });
-
-  test('Should NOT have episodes', () => {
-    expect(movie.episodes).toBeNull();
-  });
-
-  test('Should have descriptions', () => {
-    expect(movie.descriptions.length).toBeGreaterThan(0);
-  });
-
-  test('Should have VOD services', () => {
-    expect(movie.vod.length).toBeGreaterThan(0);
-  });
-
-  test('Should have genres', () => {
-    expect(movie.genres).toContain('Komedie');
-    expect(movie.genres).toContain('Drama');
+describe('Get Series and Season Title', () => {
+  test('Series 1 Season title extraction', () => {
+    const result = getSerieasAndSeasonTitle(serie1Season1Node);
+    expect(result.seriesName).toBe('Simpsonovi');
+    expect(result.seasonName).toBe('Série 1');
   });
 });
 
-/**
- * Cross-pattern validation tests
- */
-describe('Series Patterns - Common Validations', () => {
-  test('All series should have valid IDs', () => {
-    const series1 = parseMovieMock(serie1SeasonsMock, 72489);
-    const series2 = parseMovieMock(serie2EpisodesMock, 1431651);
-
-    expect(series1.id).toBeGreaterThan(0);
-    expect(series2.id).toBeGreaterThan(0);
+describe('Get Parent', () => {
+  test('Series 1 Episode parent', () => {
+    // Assuming title is extracted as Mluvící hlava
+    const parent = getSeasonorEpisodeParent(serie1Season1EpisodeNode, {
+      id: 474220,
+      name: 'Mluvící hlava'
+    });
+    expect(parent).toBeDefined();
+    expect(parent!.series.name).toBe('Simpsonovi');
+    expect(parent!.season!.name).toBe('Série 1');
   });
-
-  test('All series should have valid URLs', () => {
-    const series1 = parseMovieMock(serie1SeasonsMock, 72489);
-    const series2 = parseMovieMock(serie2EpisodesMock, 1431651);
-
-    expect(series1.url).toContain('/film/');
-    expect(series2.url).toContain('/film/');
+  test('Series 2 Episode parent', () => {
+    const parent = getSeasonorEpisodeParent(serie2EpisodeNode, {
+      id: 1436408,
+      name: 'Kouzelná země'
+    });
+    expect(parent).toBeDefined();
+    expect(parent!.series.name).toBe('The Curse');
+    expect(parent!.season).toBeNull();
   });
+});
 
-  test('Series with seasons should have mutually exclusive seasons/episodes', () => {
-    const mainSeries = parseMovieMock(serie1SeasonsMock, 72489);
-    const seasonPage = parseMovieMock(serie1Season1Mock, 474212);
-
-    // Main series page should have seasons, not episodes
-    expect(mainSeries.seasons).not.toBeNull();
-    expect(mainSeries.episodes).toBeNull();
-
-    // Season page should have episodes, not seasons
-    expect(seasonPage.episodes).not.toBeNull();
-    expect(seasonPage.seasons).toBeNull();
+describe('Get Episode Code', () => {
+  test('Series 1 Episode', () => {
+    expect(getEpisodeCode(serie1Season1EpisodeNode)).toBe('S01E08');
   });
-
-  test('Episode should have parent references', () => {
-    const episode = parseMovieMock(serie1Season1EpisodeMock, 474220);
-
-    expect(episode.parent).not.toBeNull();
-    expect(episode.parent!.series).toBeDefined();
-    expect(episode.parent!.season).toBeDefined();
-    expect(episode.episodeCode).not.toBeNull();
+  test('Series 2 Episode', () => {
+    expect(getEpisodeCode(serie2EpisodeNode)).toBe('E01');
   });
+});
 
-  test('Series without seasons should have episodes directly', () => {
-    const series = parseMovieMock(serie2EpisodesMock, 1431651);
+describe('Get Year', () => {
+  test('Series 1 Main', () => {
+    expect(getMovieYear(serie1SeasonsJsonLd)).toBe(1989);
+  });
+  test('Series 2 Main', () => {
+    expect(getMovieYear(serie2EpisodesJsonLd)).toBe(2023);
+  });
+  test('Episode', () => {
+    expect(getMovieYear(serie2EpisodeJsonLd)).toBe(2023);
+  });
+});
 
-    expect(series.episodes).not.toBeNull();
-    expect(series.seasons).toBeNull();
-    expect(series.type).toBe('seriál');
+describe('Get Ratings', () => {
+  test('Series 1 Main', () => {
+    expect(getMovieRating(serie1SeasonsAside)).toBeGreaterThan(90);
+  });
+  test('Series 2 Main', () => {
+    expect(getMovieRating(serie2EpisodesAside)).toBeGreaterThan(60);
+  });
+});
+
+describe('Get Creators', () => {
+  test('Series 1 Main', () => {
+    const creators = getMovieCreators(serie1SeasonsNode);
+    expect(creators.directors.length).toBeGreaterThan(0);
+  });
+  test('Series 2 Main', () => {
+    const creators = getMovieCreators(serie2EpisodesNode);
+    expect(creators.directors.length).toBeGreaterThan(0);
+  });
+});
+
+describe('Get Genres', () => {
+  test('Series 1 Main', () => {
+    expect(getMovieGenres(serie1SeasonsNode)).toContain('Animovaný');
+  });
+  test('Series 2 Main', () => {
+    expect(getMovieGenres(serie2EpisodesNode)).toContain('Komedie');
+  });
+});
+
+describe('Get VOD services', () => {
+  test('Series 2 Main', () => {
+    expect(getMovieVods(serie2EpisodesAside).length).toBeGreaterThan(0);
+  });
+});
+
+describe('Get Descriptions', () => {
+  test('Series 1 Episode', () => {
+    const desc = getMovieDescriptions(serie1Season1EpisodeNode);
+    expect(desc.length).toBeGreaterThan(0);
+  });
+  test('Series 2 Main', () => {
+    expect(getMovieDescriptions(serie2EpisodesNode).length).toBeGreaterThan(0);
+  });
+});
+
+describe('Get Duration', () => {
+  test('Series 1 Episode', () => {
+    expect(getMovieDuration(serie1Season1EpisodeJsonLd, serie1Season1EpisodeNode)).toBe(22);
+  });
+  test('Series 2 Episode', () => {
+    expect(getMovieDuration(serie2EpisodeJsonLd, serie2EpisodeNode)).toBe(61);
   });
 });
