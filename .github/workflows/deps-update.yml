@@ -1,0 +1,54 @@
+name: ⬆️ Weekly Dependency Update
+
+on:
+  schedule:
+    - cron: '0 9 * * 1'
+  workflow_dispatch:
+
+jobs:
+  update-dependencies:
+    name: 📦 Update and Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🚚 Checkout repository
+        uses: actions/checkout@v6
+
+      - name: 🟢 Setup Node.js 24
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: 'yarn'
+
+      # - name: 🛠️ Enable Corepack & Yarn 4
+      #   run: |
+      #     corepack enable
+      #     corepack prepare yarn@4 --activate
+
+      - name: 📥 Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: ⬆️ Update dependencies
+        run: yarn upgrade --latest
+
+      - name: 🏗️ Build application
+        run: yarn build
+
+      - name: 🏗️ Run demo
+        run: yarn demo
+
+      - name: 🧪 Run tests
+        run: yarn test --watch=false
+
+      - name: 🔀 Create Pull Request
+        uses: peter-evans/create-pull-request@v8
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: 'chore(deps): update all deps'
+          title: '⬆️ chore: Update all deps'
+          body: |
+            Automated Pull Request to update dependencies.
+            Executed using Node 24 and Yarn 1.22.
+
+            All tests passed successfully with the new versions.
+          branch: 'chore/auto-deps-update'
+          delete-branch: true
