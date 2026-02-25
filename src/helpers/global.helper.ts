@@ -1,12 +1,16 @@
 import { CSFDColorRating } from '../dto/global';
 import { CSFDColors } from '../dto/user-ratings';
 
+const LANG_PREFIX_REGEX = /^[a-z]{2,3}$/;
+const ISO8601_DURATION_REGEX =
+  /(-)?P(?:([.,\d]+)Y)?(?:([.,\d]+)M)?(?:([.,\d]+)W)?(?:([.,\d]+)D)?T(?:([.,\d]+)H)?(?:([.,\d]+)M)?(?:([.,\d]+)S)?/;
+
 export const parseIdFromUrl = (url: string): number => {
   if (!url) return null;
 
   const parts = url.split('/');
   // Detect language prefix like /en/ or /sk/
-  const hasLangPrefix = /^[a-z]{2,3}$/.test(parts[1]);
+  const hasLangPrefix = LANG_PREFIX_REGEX.test(parts[1]);
   const idSlug = parts[hasLangPrefix ? 3 : 2];
   const id = idSlug?.split('-')[0];
   return +id || null;
@@ -60,10 +64,7 @@ export const getDuration = (matches: RegExpMatchArray) => {
 };
 
 export const parseISO8601Duration = (iso: string): number => {
-  const iso8601DurationRegex =
-    /(-)?P(?:([.,\d]+)Y)?(?:([.,\d]+)M)?(?:([.,\d]+)W)?(?:([.,\d]+)D)?T(?:([.,\d]+)H)?(?:([.,\d]+)M)?(?:([.,\d]+)S)?/;
-
-  const matches = iso.match(iso8601DurationRegex);
+  const matches = iso.match(ISO8601_DURATION_REGEX);
 
   const duration = getDuration(matches);
 
