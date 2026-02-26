@@ -262,15 +262,31 @@ const parseMoviePeople = (el: HTMLElement): CSFDMovieCreator[] => {
   );
 };
 
-// export const getMovieGroup = (el: HTMLElement, group: CSFDCreatorGroups | CSFDCreatorGroupsEnglish | CSFDCreatorGroupsSlovak): CSFDMovieCreator[] => {
-//   const creators = el.querySelectorAll('.creators h4');
-//   const element = creators.filter((elem) => elem.textContent.trim().includes(group))[0];
-//   if (element?.parentNode) {
-//     return parseMoviePeople(element.parentNode as HTMLElement);
-//   } else {
-//     return [];
-//   }
-// };
+// Cache localized labels to avoid recomputing on every call
+const localizedLabelsCache: Record<string, { key: keyof CSFDCreators; label: string }[]> = {};
+
+const getCachedLocalizedLabels = (language: string = 'cs') => {
+  if (!localizedLabelsCache[language]) {
+    const keys = [
+      'directors',
+      'writers',
+      'cinematography',
+      'music',
+      'actors',
+      'basedOn',
+      'producers',
+      'filmEditing',
+      'costumeDesign',
+      'productionDesign'
+    ] as const;
+
+    localizedLabelsCache[language] = keys.map((key) => ({
+      key,
+      label: getLocalizedCreatorLabel(language, key) as string
+    }));
+  }
+  return localizedLabelsCache[language];
+};
 
 export const getMovieCreators = (el: HTMLElement, options?: CSFDOptions): CSFDCreators => {
   const creators: CSFDCreators = {
@@ -287,24 +303,7 @@ export const getMovieCreators = (el: HTMLElement, options?: CSFDOptions): CSFDCr
   };
 
   const groups = el.querySelectorAll('.creators h4');
-
-  const keys = [
-    'directors',
-    'writers',
-    'cinematography',
-    'music',
-    'actors',
-    'basedOn',
-    'producers',
-    'filmEditing',
-    'costumeDesign',
-    'productionDesign'
-  ] as const;
-
-  const localizedLabels = keys.map((key) => ({
-    key,
-    label: getLocalizedCreatorLabel(options?.language, key) as string
-  }));
+  const localizedLabels = getCachedLocalizedLabels(options?.language);
 
   for (const group of groups) {
     const text = group.textContent.trim();
