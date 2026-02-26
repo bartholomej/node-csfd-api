@@ -11,9 +11,9 @@ import {
   getMovieType,
   getMovieVods,
   getMovieYear,
-  getSeasonorEpisodeParent,
+  getSeasonOrEpisodeParent,
   getSeasonsOrEpisodes,
-  getSerieasAndSeasonTitle
+  getSeriesAndSeasonTitle
 } from '../src/helpers/movie.helper';
 import { serie1Season1EpisodeMock } from './mocks/series1-season1-episode.mock';
 import { serie1Season1Mock } from './mocks/series1-season1.mock';
@@ -122,7 +122,7 @@ describe('Get Seasons or Episodes', () => {
 
 describe('Get Series and Season Title', () => {
   test('Series 1 Season title extraction', () => {
-    const result = getSerieasAndSeasonTitle(serie1Season1Node);
+    const result = getSeriesAndSeasonTitle(serie1Season1Node);
     expect(result.seriesName).toBe('Simpsonovi');
     expect(result.seasonName).toBe('Série 1');
   });
@@ -131,7 +131,7 @@ describe('Get Series and Season Title', () => {
 describe('Get Parent', () => {
   test('Series 1 Episode parent', () => {
     // Assuming title is extracted as Mluvící hlava
-    const parent = getSeasonorEpisodeParent(serie1Season1EpisodeNode, {
+    const parent = getSeasonOrEpisodeParent(serie1Season1EpisodeNode, {
       id: 474220,
       name: 'Mluvící hlava'
     });
@@ -140,7 +140,7 @@ describe('Get Parent', () => {
     expect(parent!.season!.name).toBe('Série 1');
   });
   test('Series 2 Episode parent', () => {
-    const parent = getSeasonorEpisodeParent(serie2EpisodeNode, {
+    const parent = getSeasonOrEpisodeParent(serie2EpisodeNode, {
       id: 1436408,
       name: 'Kouzelná země'
     });
