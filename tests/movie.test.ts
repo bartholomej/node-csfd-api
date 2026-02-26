@@ -33,8 +33,8 @@ import {
   getMovieType,
   getMovieVods,
   getMovieYear,
-  getSeasonorEpisodeParent,
-  getSerieasAndSeasonTitle
+  getSeasonOrEpisodeParent,
+  getSeriesAndSeasonTitle
 } from '../src/helpers/movie.helper';
 import { movieMock } from './mocks/movie1.html';
 import { movieMockBlank } from './mocks/movie2.html';
@@ -628,19 +628,19 @@ describe('Get people', () => {
 describe('Get Series and Season Title', () => {
   test('With series and season', () => {
     const html = parse('<h1>Series Name - Season 1</h1>');
-    const result = getSerieasAndSeasonTitle(html as any);
+    const result = getSeriesAndSeasonTitle(html as any);
     expect(result).toEqual({ seriesName: 'Series Name', seasonName: 'Season 1' });
   });
 
   test('Only series name', () => {
     const html = parse('<h1>Movie Name</h1>');
-    const result = getSerieasAndSeasonTitle(html as any);
+    const result = getSeriesAndSeasonTitle(html as any);
     expect(result).toEqual({ seriesName: 'Movie Name', seasonName: null });
   });
 
   test('No title element', () => {
     const html = parse('<div></div>');
-    const result = getSerieasAndSeasonTitle(html as any);
+    const result = getSeriesAndSeasonTitle(html as any);
     expect(result).toEqual({ seriesName: null, seasonName: null });
   });
 });
@@ -669,13 +669,13 @@ describe('Get Season or Episode Parent', () => {
   test('No parents but serie provided', () => {
     const html = parse('<div></div>');
     const serie = { id: 123, name: 'Series' };
-    const result = getSeasonorEpisodeParent(html as any, serie);
+    const result = getSeasonOrEpisodeParent(html as any, serie);
     expect(result).toEqual({ series: serie, season: null });
   });
 
   test('No parents and no serie', () => {
     const html = parse('<div></div>');
-    const result = getSeasonorEpisodeParent(html as any);
+    const result = getSeasonOrEpisodeParent(html as any);
     expect(result).toBeNull();
   });
 });
