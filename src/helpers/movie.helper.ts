@@ -113,7 +113,7 @@ export const getMovieId = (el: HTMLElement): number => {
   return parseIdFromUrl(url);
 };
 
-export const getSerieasAndSeasonTitle = (
+export const getSeriesAndSeasonTitle = (
   el: HTMLElement
 ): { seriesName: string | null; seasonName: string | null } => {
   const titleElement = el.querySelector('h1');
@@ -395,7 +395,7 @@ export const detectSeasonOrEpisodeListType = (el: HTMLElement) => {
   return null;
 };
 
-export const getSeasonorEpisodeParent = (
+export const getSeasonOrEpisodeParent = (
   el: HTMLElement,
   serie?: { id: number; name: string }
 ): CSFDParent | null => {
