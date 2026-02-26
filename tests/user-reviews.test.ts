@@ -88,15 +88,15 @@ describe('Get Review Color Rating', () => {
 describe('Get Review Date', () => {
   test('First date', () => {
     const date = getUserReviewDate(reviews[0]);
-    expect(date).toEqual<string>('18.02.2026');
+    expect(date).toEqual<string>('2026-02-18');
   });
   test('Second date', () => {
     const date = getUserReviewDate(reviews[1]);
-    expect(date).toEqual<string>('11.02.2026');
+    expect(date).toEqual<string>('2026-02-11');
   });
   test('Third date', () => {
     const date = getUserReviewDate(reviews[2]);
-    expect(date).toEqual<string>('09.02.2026');
+    expect(date).toEqual<string>('2026-02-09');
   });
 });
 

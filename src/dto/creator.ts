@@ -3,7 +3,7 @@ import { CSFDScreening } from './global';
 export interface CSFDCreator {
   id: number;
   name: string;
-  birthday: string;
+  birthday: string | null;
   birthplace: string;
   photo: string;
   age: number | string;

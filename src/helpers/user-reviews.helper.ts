@@ -1,7 +1,7 @@
 import { HTMLElement } from 'node-html-parser';
 import { CSFDColorRating, CSFDFilmTypes, CSFDStars } from '../dto/global';
 import { CSFDColors } from '../dto/user-ratings';
-import { parseColor, parseIdFromUrl } from './global.helper';
+import { parseColor, parseDate, parseIdFromUrl } from './global.helper';
 
 export const getUserReviewId = (el: HTMLElement): number => {
   const url = el.querySelector('.film-title-name').attributes.href;
@@ -37,8 +37,9 @@ export const getUserReviewColorRating = (el: HTMLElement): CSFDColorRating => {
   return color;
 };
 
-export const getUserReviewDate = (el: HTMLElement): string => {
-  return el.querySelector('.article-header-date-content .info time').text.trim();
+export const getUserReviewDate = (el: HTMLElement): string | null => {
+  const dateRaw = el.querySelector('.article-header-date-content .info time').text.trim();
+  return parseDate(dateRaw);
 };
 
 export const getUserReviewUrl = (el: HTMLElement): string => {

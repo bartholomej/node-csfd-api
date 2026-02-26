@@ -16,7 +16,13 @@ import {
   MovieJsonLd
 } from '../dto/movie';
 import { CSFDOptions } from '../types';
-import { addProtocol, getColor, parseISO8601Duration, parseIdFromUrl } from './global.helper';
+import {
+  addProtocol,
+  getColor,
+  parseDate,
+  parseISO8601Duration,
+  parseIdFromUrl
+} from './global.helper';
 
 const CREATOR_LABELS: Record<
   string,
@@ -373,14 +379,17 @@ export const getMoviePremieres = (el: HTMLElement): CSFDPremiere[] => {
     const title = premiereNode.querySelector('p + span').attributes.title;
 
     if (title) {
-      const [date, ...company] = title?.split(' ');
+      const [dateRaw, ...company] = title?.split(' ');
+      const date = parseDate(dateRaw);
 
-      premiere.push({
-        country: premiereNode.querySelector('.flag')?.attributes.title || null,
-        format: premiereNode.querySelector('p').textContent.trim()?.split(' od')[0],
-        date,
-        company: company.join(' ')
-      });
+      if (date) {
+        premiere.push({
+          country: premiereNode.querySelector('.flag')?.attributes.title || null,
+          format: premiereNode.querySelector('p').textContent.trim()?.split(' od')[0],
+          date,
+          company: company.join(' ')
+        });
+      }
     }
   }
   return premiere;

@@ -230,7 +230,7 @@ describe('Live: Creator page', () => {
     expect(creator.name).toEqual<string>('Jan Werich');
   });
   test('Birthday', () => {
-    expect(creator.birthday).toEqual('06.02.1905');
+    expect(creator.birthday).toEqual('1905-02-06');
   });
   test('Birthplace', () => {
     expect(creator.birthplace).toContain('Rakousko-Uhersko');

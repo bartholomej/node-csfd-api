@@ -48,7 +48,7 @@ describe('Creator info', () => {
 describe('Creator birthday info', () => {
   test('Birthday', () => {
     const creator = getCreatorBirthdayInfo(asideNode)?.birthday;
-    expect(creator).toEqual<string>('27.03.1963');
+    expect(creator).toEqual<string>('1963-03-27');
   });
 
   test('Birthplace', () => {
@@ -63,7 +63,7 @@ describe('Creator birthday info', () => {
 
   test('Handles null input gracefully', () => {
     const creator = getCreatorBirthdayInfo(null);
-    expect(creator).toEqual({ birthday: '', age: null, birthPlace: '' });
+    expect(creator).toEqual({ birthday: null, age: null, birthPlace: '' });
   });
 });
 
@@ -110,7 +110,7 @@ describe('Actor info', () => {
 describe('Actor birthday info', () => {
   test('Birthday', () => {
     const creator = getCreatorBirthdayInfo(asideNodeActor)?.birthday;
-    expect(creator).toEqual<string>('22.11.1965');
+    expect(creator).toEqual<string>('1965-11-22');
   });
 
   test('Birthplace', () => {
@@ -165,7 +165,7 @@ describe('Composer info', () => {
 describe('Composer birthday info', () => {
   test('Birthday', () => {
     const creator = getCreatorBirthdayInfo(asideNodeComposer)?.birthday;
-    expect(creator).toEqual<string>('');
+    expect(creator).toEqual<string | null>(null);
   });
 
   test('Birthplace', () => {

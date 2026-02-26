@@ -2,7 +2,7 @@ import { HTMLElement } from 'node-html-parser';
 import { CSFDCreatorScreening } from '../dto/creator';
 import { CSFDColorRating } from '../dto/global';
 import { CSFDColors } from '../dto/user-ratings';
-import { addProtocol, parseColor, parseIdFromUrl } from './global.helper';
+import { addProtocol, parseColor, parseDate, parseIdFromUrl } from './global.helper';
 
 const getCreatorColorRating = (el: HTMLElement | null): CSFDColorRating => {
   const classes: string[] = el?.classNames.split(' ') ?? [];
@@ -21,18 +21,18 @@ export const getCreatorName = (el: HTMLElement | null): string | null => {
 
 export const getCreatorBirthdayInfo = (
   el: HTMLElement | null
-): { birthday: string; age: number; birthPlace: string } => {
+): { birthday: string | null; age: number; birthPlace: string } => {
   const infoBlock = el?.querySelector('.creator-profile-details p');
   const text = infoBlock?.innerHTML.trim();
   const birthPlaceRow = infoBlock?.querySelector('.info-place')?.innerText.trim();
   const ageRow = infoBlock?.querySelector('.info')?.innerText.trim();
 
-  let birthday: string = '';
+  let birthday: string | null = null;
 
   if (text) {
     const parts = text.split('\n');
     const birthdayRow = parts.find((x) => x.includes('nar.'));
-    birthday = birthdayRow ? parseBirthday(birthdayRow) : '';
+    birthday = birthdayRow ? parseDate(parseBirthday(birthdayRow)) : null;
   }
 
   const age = ageRow ? +parseAge(ageRow) : null;

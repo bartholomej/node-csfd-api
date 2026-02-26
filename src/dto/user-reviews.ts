@@ -2,7 +2,7 @@ import { CSFDFilmTypes, CSFDScreening, CSFDStars } from './global';
 
 export interface CSFDUserReviews extends CSFDScreening {
   userRating: CSFDStars;
-  userDate: string; // TODO datetime
+  userDate: string | null;
   text: string;
   poster: string;
 }

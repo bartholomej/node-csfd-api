@@ -71,5 +71,37 @@ export const parseISO8601Duration = (iso: string): number => {
   return +duration.hours * 60 + +duration.minutes;
 };
 
+/**
+ * Parses a date string into a standardized YYYY-MM-DD format.
+ * Supports:
+ * - D.M.YYYY
+ * - DD.MM.YYYY
+ * - D. M. YYYY
+ * - YYYY
+ */
+export const parseDate = (date: string): string | null => {
+  if (!date) return null;
+
+  // Clean the input
+  const cleanDate = date.trim();
+
+  // Try parsing DD.MM.YYYY or D.M.YYYY with optional spaces
+  const dateMatch = cleanDate.match(/^(\d{1,2})\.\s*(\d{1,2})\.\s*(\d{4})$/);
+  if (dateMatch) {
+    const day = dateMatch[1].padStart(2, '0');
+    const month = dateMatch[2].padStart(2, '0');
+    const year = dateMatch[3];
+    return `${year}-${month}-${day}`;
+  }
+
+  // Try parsing YYYY
+  const yearMatch = cleanDate.match(/^(\d{4})$/);
+  if (yearMatch) {
+    return `${yearMatch[1]}-01-01`;
+  }
+
+  return null;
+};
+
 // Sleep in loop
 export const sleep = (ms: number) => new Promise((res) => setTimeout(res, ms));

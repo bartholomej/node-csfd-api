@@ -484,9 +484,9 @@ describe('Get people', () => {
     test('Get movie premiere', () => {
       const movie = getMoviePremieres(asideNode);
       expect(movie).toEqual<CSFDPremiere[]>([
-        { company: 'Magic Box', country: 'Česko', date: '07.08.2019', format: 'Na DVD' },
-        { company: 'Magic Box', country: 'Česko', date: '07.08.2019', format: 'Na Blu-ray' },
-        { company: 'Lionsgate US', country: 'USA', date: '22.03.2019', format: 'V kinech' }
+        { company: 'Magic Box', country: 'Česko', date: '2019-08-07', format: 'Na DVD' },
+        { company: 'Magic Box', country: 'Česko', date: '2019-08-07', format: 'Na Blu-ray' },
+        { company: 'Lionsgate US', country: 'USA', date: '2019-03-22', format: 'V kinech' }
       ]);
     });
     test('Get series premiere', () => {
@@ -495,13 +495,13 @@ describe('Get people', () => {
         {
           company: 'Aerofilms',
           country: 'Česko',
-          date: '26.09.2022',
+          date: '2022-09-26',
           format: 'V kinech'
         },
-        { company: 'Levné knihy', country: 'Česko', date: '22.12.2010', format: 'Na DVD' },
-        { company: 'Danmarks Radio', country: 'Dánsko', date: '24.11.1994', format: 'V TV' },
-        { company: 'arte', country: 'Německo', date: '11.03.1995', format: 'V TV' },
-        { company: 'SVT', country: 'Švédsko', date: '04.03.1995', format: 'V TV' }
+        { company: 'Levné knihy', country: 'Česko', date: '2010-12-22', format: 'Na DVD' },
+        { company: 'Danmarks Radio', country: 'Dánsko', date: '1994-11-24', format: 'V TV' },
+        { company: 'arte', country: 'Německo', date: '1995-03-11', format: 'V TV' },
+        { company: 'SVT', country: 'Švédsko', date: '1995-03-04', format: 'V TV' }
       ]);
     });
     test('Get other movie premiere', () => {
@@ -510,31 +510,31 @@ describe('Get people', () => {
         {
           country: 'Česko',
           format: 'Na DVD',
-          date: '20.06.2013',
+          date: '2013-06-20',
           company: 'Bontonfilm'
         },
         {
           country: 'Česko',
           format: 'Na DVD',
-          date: '21.05.2010',
+          date: '2010-05-21',
           company: 'dvdcom'
         },
         {
           country: 'Česko',
           format: 'Na DVD',
-          date: '01.05.2004',
+          date: '2004-05-01',
           company: 'Bontonfilm'
         },
         {
           country: 'Česko',
           format: 'Na Blu-ray',
-          date: '07.12.2011',
+          date: '2011-12-07',
           company: 'Bontonfilm'
         },
         {
           country: 'USA',
           format: 'V kinech',
-          date: '27.07.2001',
+          date: '2001-07-27',
           company: '20th Century Fox'
         }
       ]);
