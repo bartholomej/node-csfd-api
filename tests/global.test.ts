@@ -1,6 +1,6 @@
 import { describe, expect, test } from 'vitest';
 import { csfd } from '../src';
-import { getDuration, parseISO8601Duration } from '../src/helpers/global.helper';
+import { getDuration, parseDate, parseISO8601Duration } from '../src/helpers/global.helper';
 
 export const durationInput = [
   'PT142M',
@@ -60,6 +60,37 @@ describe('ISO 8601 Duration Parsing', () => {
     const duration = parseISO8601Duration('-P1Y2M3W4DT5H6M7S');
     // Current parseISO8601Duration only considers hours and minutes
     expect(duration).toEqual(306);
+  });
+});
+
+describe('Date Parsing', () => {
+  test('Parse DD.MM.YYYY', () => {
+    expect(parseDate('01.02.2023')).toEqual('2023-02-01');
+    expect(parseDate('25.12.2022')).toEqual('2022-12-25');
+  });
+
+  test('Parse D.M.YYYY', () => {
+    expect(parseDate('1.2.2023')).toEqual('2023-02-01');
+    expect(parseDate('5.12.2022')).toEqual('2022-12-05');
+  });
+
+  test('Parse D. M. YYYY (spaces)', () => {
+    expect(parseDate('1. 2. 2023')).toEqual('2023-02-01');
+  });
+
+  test('Parse MM/DD/YYYY', () => {
+    expect(parseDate('02/25/2026')).toEqual('2026-02-25');
+    expect(parseDate('12/05/2022')).toEqual('2022-12-05');
+  });
+
+  test('Parse YYYY', () => {
+    expect(parseDate('2023')).toEqual('2023-01-01');
+  });
+
+  test('Handle invalid dates', () => {
+    expect(parseDate('invalid')).toBeNull();
+    expect(parseDate('')).toBeNull();
+    expect(parseDate(null)).toBeNull();
   });
 });
 

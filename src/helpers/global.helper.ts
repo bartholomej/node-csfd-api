@@ -77,6 +77,7 @@ export const parseISO8601Duration = (iso: string): number => {
  * - D.M.YYYY
  * - DD.MM.YYYY
  * - D. M. YYYY
+ * - MM/DD/YYYY
  * - YYYY
  */
 export const parseDate = (date: string): string | null => {
@@ -91,6 +92,15 @@ export const parseDate = (date: string): string | null => {
     const day = dateMatch[1].padStart(2, '0');
     const month = dateMatch[2].padStart(2, '0');
     const year = dateMatch[3];
+    return `${year}-${month}-${day}`;
+  }
+
+  // Try parsing MM/DD/YYYY
+  const slashMatch = cleanDate.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
+  if (slashMatch) {
+    const month = slashMatch[1].padStart(2, '0');
+    const day = slashMatch[2].padStart(2, '0');
+    const year = slashMatch[3];
     return `${year}-${month}-${day}`;
   }
 
