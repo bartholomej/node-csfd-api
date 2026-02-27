@@ -5,13 +5,13 @@ import { parseIdFromUrl } from '../helpers/global.helper';
 import { getAvatar, getUser, getUserRealName, getUserUrl } from '../helpers/search-user.helper';
 import {
   getSearchColorRating,
+  getSearchCreators,
   getSearchOrigins,
   getSearchPoster,
   getSearchTitle,
   getSearchType,
   getSearchUrl,
-  getSearchYear,
-  parseSearchPeople
+  getSearchYear
 } from '../helpers/search.helper';
 import { CSFDLanguage, CSFDOptions } from '../types';
 import { getUrlByLanguage, searchUrl } from '../vars';
@@ -52,10 +52,7 @@ export class SearchScraper {
         colorRating: getSearchColorRating(m),
         poster: getSearchPoster(m),
         origins: getSearchOrigins(m),
-        creators: {
-          directors: parseSearchPeople(m, 'directors'),
-          actors: parseSearchPeople(m, 'actors')
-        }
+        creators: getSearchCreators(m)
       };
     };
 
