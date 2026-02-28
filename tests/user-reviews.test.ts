@@ -140,4 +140,30 @@ describe('Get Review Poster', () => {
       'https://image.pmgstatic.com/cache/resized/w240h339/files/images/film/posters/'
     );
   });
+
+  test('Missing poster', () => {
+    const mockElement = parse(`
+      <div class="article"><div class="article-img"></div></div>
+    `);
+    const poster = getUserReviewPoster(mockElement);
+    expect(poster).toEqual(null);
+  });
+
+  test('Poster fallback to src', () => {
+    const mockElement = parse(`
+      <div class="article"><div class="article-img"><img src="//example.com/image.jpg"></div></div>
+    `);
+    const poster = getUserReviewPoster(mockElement);
+    expect(poster).toEqual('https://example.com/image.jpg');
+  });
+});
+
+describe('Get Review Year edge', () => {
+  test('Empty/missing year', () => {
+    const mockElement = parse(`
+      <div class="article"><div class="film-title-info"></div></div>
+    `);
+    const year = getUserReviewYear(mockElement);
+    expect(year).toEqual(null);
+  });
 });

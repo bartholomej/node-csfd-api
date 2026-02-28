@@ -1,6 +1,7 @@
 import { HTMLElement, parse } from 'node-html-parser';
 import { describe, expect, test } from 'vitest';
 import {
+  getCinemaColorRating,
   getCinemaCoords,
   getCinemaFilms,
   getCinemaId,
@@ -24,6 +25,13 @@ describe('Cinema info', () => {
     expect(item).toEqual<number>(110);
   });
 
+  test('getCinemaColorRating', () => {
+    const el = parse('<div class="icon red"></div>').querySelector('div');
+    expect(getCinemaColorRating(el)).toEqual('good');
+    expect(getCinemaColorRating(null)).toEqual('unknown');
+    expect(getCinemaColorRating(parse('<div></div>').querySelector('div'))).toEqual('unknown');
+  });
+
   test('getId returns correct id from url', () => {
     // /film/456 should return 456
     expect(getCinemaUrlId('/film/456')).toBe(456);
@@ -43,6 +51,10 @@ describe('Cinema info', () => {
     expect(item).toEqual<string>('http://www.cinestar.cz/cz/praha9/domu');
   });
 
+  test('cinemaUrl null', () => {
+    expect(getCinemaUrl(null)).toEqual<string>('');
+  });
+
   test('cinemaCoords', () => {
     const item = getCinemaCoords(contentNode[2]);
     expect(item).toEqual({
@@ -59,6 +71,11 @@ describe('Cinema info', () => {
 
   test('getCoords returns null if element is null', () => {
     expect(getCinemaCoords(null)).toBe(null);
+  });
+
+  test('getCoords returns null if coordinates are not two parts', () => {
+    const el = parse('<div><a href="https://maps.google.cz/maps?q=50.123">Just one part</a></div>');
+    expect(getCinemaCoords(el)).toBe(null);
   });
 
   test('getCoords returns null if coordinates are not finite - latitude is Infinity', () => {
@@ -174,6 +191,14 @@ describe('Cinema films by date', () => {
       expect(films[0]).toHaveProperty('showTimes');
       expect(films[0]).toHaveProperty('meta');
     }
+  });
+
+  test('getCinemaFilms without url', () => {
+    const table = parse(
+      '<table class="cinema-table"><tr><td class="name"><h3>No link</h3></td></tr></table>'
+    );
+    const films = getCinemaFilms('', table);
+    expect(films[0].id).toBeNull();
   });
 
   test('getSubtitles', () => {

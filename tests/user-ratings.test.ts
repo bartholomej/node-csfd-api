@@ -119,6 +119,13 @@ describe('Get year', () => {
     const movie = getUserRatingYear(movies[movies.length - 1]);
     expect(movie).toEqual<number>(2017);
   });
+  test('Empty year', () => {
+    const mockElement = parse(`
+      <tr><td class="name"><div class="film-title-info"></div></td></tr>
+    `);
+    const year = getUserRatingYear(mockElement);
+    expect(year).toEqual(null);
+  });
 });
 
 describe('Get color rating', () => {

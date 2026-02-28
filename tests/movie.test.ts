@@ -236,10 +236,10 @@ describe('Get Duration', () => {
     const movie = getMovieDuration(seriesJsonLd, seriesNode);
     expect(movie).toEqual<number>(860);
   });
-  // test('Empty node', () => {
-  //   const movie = getMovieDuration('bad json', emptyHtmlNode);
-  //   expect(movie).toEqual<number>(null);
-  // });
+  test('Empty node', () => {
+    const movie = getMovieDuration(null as any, emptyHtmlNode as any);
+    expect(movie).toEqual(null);
+  });
 });
 
 describe('Get VOD', () => {

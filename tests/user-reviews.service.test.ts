@@ -112,6 +112,22 @@ describe('User Reviews - AllPages with delay', () => {
   });
 });
 
+describe('User Reviews - AllPages multiple pages without delay', () => {
+  const userReviewsScraper = new UserReviewsScraper();
+  // Using user with less reviews (but >1 page)
+  const resAllPages: Promise<CSFDUserReviews[]> = userReviewsScraper.userReviews(
+    USER_WITH_LESS_REVIEWS,
+    {
+      allPages: true
+    }
+  );
+
+  test('Should handle user natively multiple without delay', async () => {
+    const results = await resAllPages;
+    expect(results.length).toBeGreaterThan(11);
+  });
+});
+
 describe('User Reviews - Exclude + includes together (warning)', () => {
   const userReviewsScraper = new UserReviewsScraper();
   const resBoth: Promise<CSFDUserReviews[]> = userReviewsScraper.userReviews(USER_WITH_REVIEWS, {

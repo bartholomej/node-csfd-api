@@ -32,6 +32,18 @@ describe('AllPages', async () => {
   });
 });
 
+describe('AllPages multi pages without delay', async () => {
+  const userRatingsScraper = new UserRatingsScraper();
+  const res: Promise<CSFDUserRatings[]> = userRatingsScraper.userRatings(USER2, {
+    allPages: true
+  });
+
+  test('Should run without delay', async () => {
+    const results = await res;
+    expect(results.length).toBeCloseTo(181);
+  });
+});
+
 describe('Filter out episodes, TV Series and Seasons', () => {
   // Fetch data with excludes
   const userRatingsScraper = new UserRatingsScraper();

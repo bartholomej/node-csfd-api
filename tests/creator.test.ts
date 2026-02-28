@@ -185,3 +185,33 @@ describe("Creator's films", () => {
     expect(films[0].title).toEqual<string>('Spolu');
   });
 });
+
+describe('Creator edge cases', () => {
+  test('getCreatorName null', () => {
+    expect(getCreatorName(null)).toBeNull();
+  });
+
+  test('getCreatorPhoto null', () => {
+    expect(getCreatorPhoto(null)).toBeNull();
+    const el = parse('<img></img>');
+    expect(getCreatorPhoto(el)).toBeNull();
+  });
+
+  test('getCreatorBirthdayInfo edge cases', () => {
+    const el = parse(
+      '<div class="creator-profile-details"><p><span class="info"></span><span class="info-place"></span>Some text without birthday</p></div>'
+    );
+    const info = getCreatorBirthdayInfo(el);
+    expect(info.birthday).toEqual('');
+    expect(info.age).toEqual(null);
+    expect(info.birthPlace).toEqual('');
+  });
+
+  test('getCreatorFilms edge cases', () => {
+    expect(getCreatorFilms(null)).toEqual([]);
+    const el = parse(
+      '<div class="updated-box"><table><tr><td class="name"><h3>No link</h3></td></tr></table></div>'
+    );
+    expect(getCreatorFilms(el)).toEqual([]);
+  });
+});

@@ -133,6 +133,10 @@ describe('Get Movie origins', () => {
     const movie = getSearchOrigins(moviesNode[3]);
     expect(movie).toEqual<string[]>(['Slovensko']);
   });
+  test('Empty origin', () => {
+    const movie = getSearchOrigins(parse('<div></div>'));
+    expect(movie).toEqual<string[]>([]);
+  });
 });
 
 describe('Get Movie creators', () => {
@@ -352,6 +356,10 @@ describe('Get Users real name', () => {
   });
   test('Empty name', () => {
     const movie = getUserRealName(usersNode[0]);
+    expect(movie).toEqual(null);
+  });
+  test('getUserRealName null', () => {
+    const movie = getUserRealName(parse('<div></div>'));
     expect(movie).toEqual(null);
   });
 });
