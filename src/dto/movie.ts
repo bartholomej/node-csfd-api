@@ -17,16 +17,16 @@ export interface CSFDMovie extends CSFDScreening {
   premieres: CSFDPremiere[];
   related: CSFDMovieListItem[];
   similar: CSFDMovieListItem[];
-  seasons: CSFDSeason[] | null;
-  episodes: CSFDSeason[] | null;
+  seasons: CSFDSeriesChild[] | null;
+  episodes: CSFDSeriesChild[] | null;
   parent: CSFDParent | null;
   episodeCode: string | null;
   seasonName: string | null;
 }
 
 export interface CSFDParent {
-  season: { id: number; name: string } | null;
-  series: { id: number; name: string } | null;
+  season: { id: number; title: string } | null;
+  series: { id: number; title: string } | null;
 }
 
 export interface MovieJsonLd {
@@ -197,9 +197,9 @@ export interface CSFDPremiere {
 
 export type CSFDBoxContent = 'Související' | 'Podobné';
 
-export interface CSFDSeason {
+export interface CSFDSeriesChild {
   id: number;
-  name: string;
+  title: string;
   url: string;
   info: string | null;
 }
