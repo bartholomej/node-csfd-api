@@ -106,7 +106,7 @@ describe('Get Seasons or Episodes', () => {
     const seasons = getSeasonsOrEpisodes(serie1SeasonsNode);
     expect(seasons).toBeDefined();
     expect(seasons!.length).toBeGreaterThan(0);
-    expect(seasons![0]).toHaveProperty('name');
+    expect(seasons![0]).toHaveProperty('title');
   });
   test('Series 1 Season should have episodes', () => {
     const episodes = getSeasonsOrEpisodes(serie1Season1Node);
@@ -133,19 +133,19 @@ describe('Get Parent', () => {
     // Assuming title is extracted as Mluvící hlava
     const parent = getSeasonOrEpisodeParent(serie1Season1EpisodeNode, {
       id: 474220,
-      name: 'Mluvící hlava'
+      title: 'Mluvící hlava'
     });
     expect(parent).toBeDefined();
-    expect(parent!.series.name).toBe('Simpsonovi');
-    expect(parent!.season!.name).toBe('Série 1');
+    expect(parent!.series.title).toBe('Simpsonovi');
+    expect(parent!.season!.title).toBe('Série 1');
   });
   test('Series 2 Episode parent', () => {
     const parent = getSeasonOrEpisodeParent(serie2EpisodeNode, {
       id: 1436408,
-      name: 'Kouzelná země'
+      title: 'Kouzelná země'
     });
     expect(parent).toBeDefined();
-    expect(parent!.series.name).toBe('The Curse');
+    expect(parent!.series.title).toBe('The Curse');
     expect(parent!.season).toBeNull();
   });
 });
