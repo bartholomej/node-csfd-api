@@ -168,7 +168,7 @@ describe('Live: Tv series', () => {
     expect(movie.year).toEqual<number>(1994);
   });
   test('Type', () => {
-    expect(movie.type).toEqual<CSFDFilmTypes>('seriál');
+    expect(movie.type).toEqual<CSFDFilmTypes>('series');
   });
   test('Title', () => {
     expect(movie.title).toEqual<string>('Království');

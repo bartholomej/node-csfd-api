@@ -118,7 +118,7 @@ server.tool(
     excludes: z
       .array(z.string())
       .optional()
-      .describe('Film types to exclude (e.g. "seriál", "TV film")'),
+      .describe('Film types to exclude (e.g. "series", "tv-film")'),
     includesOnly: z
       .array(z.string())
       .optional()
@@ -168,7 +168,7 @@ server.tool(
     excludes: z
       .array(z.string())
       .optional()
-      .describe('Film types to exclude (e.g. "seriál", "TV film")'),
+      .describe('Film types to exclude (e.g. "series", "tv-film")'),
     includesOnly: z
       .array(z.string())
       .optional()

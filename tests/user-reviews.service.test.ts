@@ -64,7 +64,7 @@ describe('User Reviews - Filter by type', () => {
 
   test('Should not have any TV series', async () => {
     const results = await resFilmsOnly;
-    const tvSeries = results.filter((item) => item.type === 'seriál');
+    const tvSeries = results.filter((item) => item.type === 'series');
     expect(tvSeries.length).toBe<number>(0);
   });
 });
@@ -74,13 +74,13 @@ describe('User Reviews - Exclude types', () => {
   const resExcluded: Promise<CSFDUserReviews[]> = userReviewsScraper.userReviews(
     USER_WITH_REVIEWS,
     {
-      excludes: ['seriál']
+      excludes: ['series']
     }
   );
 
   test('Should not have any TV series', async () => {
     const results = await resExcluded;
-    const tvSeries = results.filter((item) => item.type === 'seriál');
+    const tvSeries = results.filter((item) => item.type === 'series');
     expect(tvSeries.length).toBe<number>(0);
   });
 });
@@ -132,7 +132,7 @@ describe('User Reviews - Exclude + includes together (warning)', () => {
   const userReviewsScraper = new UserReviewsScraper();
   const resBoth: Promise<CSFDUserReviews[]> = userReviewsScraper.userReviews(USER_WITH_REVIEWS, {
     includesOnly: ['film'],
-    excludes: ['seriál']
+    excludes: ['series']
   });
 
   test('Should have warning', () => {

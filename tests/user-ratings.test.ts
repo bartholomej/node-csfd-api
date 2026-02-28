@@ -71,27 +71,27 @@ describe('Get type', () => {
   });
   test('TV series', () => {
     const movie = getUserRatingType(movies[2]);
-    expect(movie).toEqual<CSFDFilmTypes>('seriál');
+    expect(movie).toEqual<CSFDFilmTypes>('series');
   });
   test('Episode', () => {
     const movie = getUserRatingType(movies[5]);
-    expect(movie).toEqual<CSFDFilmTypes>('epizoda');
+    expect(movie).toEqual<CSFDFilmTypes>('episode');
   });
   // test('TV film', () => {
   //   const movie = getUserRatingType(movies[18]);
-  //   expect(movie).toEqual<CSFDFilmTypes>('TV film');
+  //   expect(movie).toEqual<CSFDFilmTypes>('tv-film');
   // });
   // test('Pořad', () => {
   //   const movie = getUserRatingType(movies[6]);
-  //   expect(movie).toEqual<CSFDFilmTypes>('pořad');
+  //   expect(movie).toEqual<CSFDFilmTypes>('tv-show');
   // });
   // test('Amateur film', () => {
   //   const movie = getUserRatingType(movies[31]);
-  //   expect(movie).toEqual<CSFDFilmTypes>('amatérský film');
+  //   expect(movie).toEqual<CSFDFilmTypes>('amateur-film');
   // });
   // test('Season', () => {
   //   const movie = getUserRatingType(movies[11]);
-  //   expect(movie).toEqual<CSFDFilmTypes>('série');
+  //   expect(movie).toEqual<CSFDFilmTypes>('season');
   // });
 });
 

@@ -2,13 +2,13 @@ import { HTMLElement } from 'node-html-parser';
 import { CSFDColorRating, CSFDFilmTypes } from '../dto/global';
 import { CSFDMovieCreator } from '../dto/movie';
 import { CSFDColors } from '../dto/user-ratings';
-import { addProtocol, parseColor, parseIdFromUrl } from './global.helper';
+import { addProtocol, parseColor, parseFilmType, parseIdFromUrl } from './global.helper';
 
 type Creator = 'Režie:' | 'Hrají:';
 
 export const getSearchType = (el: HTMLElement): CSFDFilmTypes => {
   const type = el.querySelectorAll('.film-title-info .info')[1];
-  return (type?.innerText?.replace(/[{()}]/g, '')?.trim() || 'film') as CSFDFilmTypes;
+  return parseFilmType(type?.innerText?.replace(/[{()}]/g, '')?.trim() || 'film');
 };
 
 export const getSearchTitle = (el: HTMLElement): string => {
@@ -41,7 +41,10 @@ export const getSearchOrigins = (el: HTMLElement): string[] => {
   return originsAll?.split('/').map((country) => country.trim());
 };
 
-export const parseSearchPeople = (el: HTMLElement, type: 'directors' | 'actors'): CSFDMovieCreator[] => {
+export const parseSearchPeople = (
+  el: HTMLElement,
+  type: 'directors' | 'actors'
+): CSFDMovieCreator[] => {
   let who: Creator;
   if (type === 'directors') who = 'Režie:';
   if (type === 'actors') who = 'Hrají:';

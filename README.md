@@ -223,7 +223,7 @@ console.log(results.users); // Array of users
     title: 'Black Bart',
     year: '1975',
     url: 'https://www.csfd.cz/film/19653-black-bart/',
-    type: 'TV film',
+    type: 'tv-film',
     colorRating: 'bad',
     poster: 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7',
     origins: ['USA'],
@@ -247,7 +247,7 @@ tvSeries: [
     title: 'Království',
     year: 1994,
     url: 'https://www.csfd.cz/film/71924-kralovstvi/',
-    type: 'seriál',
+    type: 'series',
     colorRating: 'good',
     poster: 'https://image.pmgstatic.com/cache/resized/w60h85/files/images/film/posters/166/708/166708064_2da697.jpg',
     origins: ['Dánsko'],
@@ -398,7 +398,7 @@ const onlyMovies = await csfd.userRatings('912-bart', {
 });
 
 const excludeEpisodes = await csfd.userRatings('912-bart', {
-  exclude: ['epizoda', 'série']
+  exclude: ['episode', 'season']
 });
 ```
 
@@ -434,13 +434,13 @@ const excludeEpisodes = await csfd.userRatings('912-bart', {
 
 #### UserRatingsOptions
 
-| Option          | Type              | Default | Description                                                      |
-| --------------- | ----------------- | ------- | ---------------------------------------------------------------- |
-| `includesOnly`  | `CSFDFilmTypes[]` | `null`  | Include only specific content types (e.g., `['film', 'seriál']`) |
-| `exclude`       | `CSFDFilmTypes[]` | `null`  | Exclude specific content types (e.g., `['epizoda']`)             |
-| `allPages`      | `boolean`         | `false` | Fetch all pages of ratings                                       |
-| `allPagesDelay` | `number`          | `0`     | Delay between page requests in milliseconds                      |
-| `page`          | `number`          | `1`     | Fetch specific page number                                       |
+| Option          | Type              | Default | Description                                                          |
+| --------------- | ----------------- | ------- | -------------------------------------------------------------------- |
+| `includesOnly`  | `CSFDFilmTypes[]` | `null`  | Include only specific content types (e.g., `['film', 'series']`) |
+| `exclude`       | `CSFDFilmTypes[]` | `null`  | Exclude specific content types (e.g., `['episode']`)                 |
+| `allPages`      | `boolean`         | `false` | Fetch all pages of ratings                                           |
+| `allPagesDelay` | `number`          | `0`     | Delay between page requests in milliseconds                          |
+| `page`          | `number`          | `1`     | Fetch specific page number                                           |
 
 > 📝 **Note**: `includesOnly` and `exclude` are mutually exclusive. If both are provided, `includesOnly` takes precedence.
 >
@@ -476,7 +476,7 @@ const allReviews = await csfd.userReviews(195357, {
 // Filter by content type
 const filtered = await csfd.userReviews(195357, {
   includesOnly: ['film'],
-  exclude: ['epizoda']
+  exclude: ['episode']
 });
 ```
 

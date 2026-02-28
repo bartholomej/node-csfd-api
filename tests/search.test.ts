@@ -226,15 +226,15 @@ describe('Get TV series url', () => {
 describe('Get TV series types', () => {
   test('First TV series', () => {
     const movie = getSearchType(tvSeriesNode[0]);
-    expect(movie).toEqual<CSFDFilmTypes>('seriál');
+    expect(movie).toEqual<CSFDFilmTypes>('series');
   });
   test('Last TV series', () => {
     const movie = getSearchType(tvSeriesNode[tvSeriesNode.length - 1]);
-    expect(movie).toEqual<CSFDFilmTypes>('epizoda');
+    expect(movie).toEqual<CSFDFilmTypes>('episode');
   });
   test('Some TV series', () => {
     const movie = getSearchType(tvSeriesNode[1]);
-    expect(movie).toEqual<CSFDFilmTypes>('seriál');
+    expect(movie).toEqual<CSFDFilmTypes>('series');
   });
 });
 

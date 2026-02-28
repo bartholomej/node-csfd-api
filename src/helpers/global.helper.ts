@@ -1,4 +1,4 @@
-import { CSFDColorRating } from '../dto/global';
+import { CSFDColorRating, CSFDFilmTypes } from '../dto/global';
 import { CSFDColors } from '../dto/user-ratings';
 
 const LANG_PREFIX_REGEX = /^[a-z]{2,3}$/;
@@ -44,6 +44,25 @@ export const parseColor = (quality: CSFDColors): CSFDColorRating => {
     default:
       return 'unknown';
   }
+};
+
+const filmTypeMap: Record<string, CSFDFilmTypes> = {
+  'TV film': 'tv-film',
+  pořad: 'tv-show',
+  seriál: 'series',
+  'divadelní záznam': 'theatrical',
+  koncert: 'concert',
+  série: 'season',
+  'studentský film': 'student-film',
+  'amatérský film': 'amateur-film',
+  'hudební videoklip': 'music-video',
+  epizoda: 'episode',
+  'video kompilace': 'video-compilation',
+  film: 'film'
+};
+
+export const parseFilmType = (type: string): CSFDFilmTypes => {
+  return filmTypeMap[type] || 'film';
 };
 
 export const addProtocol = (url: string): string => {

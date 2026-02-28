@@ -1,5 +1,5 @@
 import { HTMLElement } from 'node-html-parser';
-import { CSFDColorRating } from '../dto/global';
+import { CSFDColorRating, CSFDFilmTypes } from '../dto/global';
 import {
   CSFDBoxContent,
   CSFDCreatorGroups,
@@ -20,6 +20,7 @@ import {
   addProtocol,
   getColor,
   parseDate,
+  parseFilmType,
   parseISO8601Duration,
   parseIdFromUrl
 } from './global.helper';
@@ -327,9 +328,9 @@ export const getMovieCreators = (el: HTMLElement, options?: CSFDOptions): CSFDCr
   return creators;
 };
 
-export const getMovieType = (el: HTMLElement): string => {
+export const getMovieType = (el: HTMLElement): CSFDFilmTypes => {
   const type = el.querySelector('.film-header-name .type');
-  return type?.innerText?.replace(/[{()}]/g, '') || 'film';
+  return parseFilmType(type?.innerText?.replace(/[{()}]/g, '') || 'film');
 };
 
 export const getMovieVods = (el: HTMLElement | null): CSFDVod[] => {

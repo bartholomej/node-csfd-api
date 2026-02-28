@@ -24,13 +24,14 @@ export type CSFDStars = 0 | 1 | 2 | 3 | 4 | 5;
 
 export type CSFDFilmTypes =
   | 'film'
-  | 'TV film'
-  | 'pořad'
-  | 'seriál'
-  | 'divadelní záznam'
-  | 'koncert'
-  | 'série'
-  | 'studentský film'
-  | 'amatérský film'
-  | 'hudební videoklip'
-  | 'epizoda';
+  | 'tv-film'
+  | 'tv-show'
+  | 'series'
+  | 'theatrical'
+  | 'concert'
+  | 'season'
+  | 'student-film'
+  | 'amateur-film'
+  | 'music-video'
+  | 'episode'
+  | 'video-compilation';

@@ -1,6 +1,6 @@
 import { HTMLElement, parse } from 'node-html-parser';
 import { describe, expect, test } from 'vitest';
-import { CSFDColorRating } from '../src/dto/global';
+import { CSFDColorRating, CSFDFilmTypes } from '../src/dto/global';
 import {
   CSFDMovieCreator,
   CSFDMovieListItem,
@@ -360,15 +360,15 @@ describe('Get genres', () => {
 describe('Get type', () => {
   test('Type', () => {
     const movie = getMovieType(movieNode);
-    expect(movie).toEqual<string>('film');
+    expect(movie).toEqual<CSFDFilmTypes>('film');
   });
   test('Type Rich', () => {
     const movie = getMovieType(movieNodeRich);
-    expect(movie).toEqual<string>('film');
+    expect(movie).toEqual<CSFDFilmTypes>('film');
   });
   test('Type Series', () => {
     const movie = getMovieType(seriesNode);
-    expect(movie).toEqual<string>('seriál');
+    expect(movie).toEqual<CSFDFilmTypes>('series');
   });
 });
 
