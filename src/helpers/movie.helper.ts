@@ -11,7 +11,7 @@ import {
   CSFDMovieListItem,
   CSFDParent,
   CSFDPremiere,
-  CSFDSeason,
+  CSFDSeriesChild,
   CSFDTitlesOther,
   CSFDVod,
   CSFDVodService,
@@ -352,7 +352,7 @@ export const getMovieCreators = (el: HTMLElement, options?: CSFDOptions): CSFDCr
 export const getSeasonsOrEpisodes = (
   el: HTMLElement,
   serie?: { id: number; title: string }
-): CSFDSeason[] | null => {
+): CSFDSeriesChild[] | null => {
   const childrenList = el.querySelector('.film-episodes-list');
   if (!childrenList) return null;
 
@@ -368,7 +368,7 @@ export const getSeasonsOrEpisodes = (
 
     return {
       id: parseLastIdFromUrl(href || ''),
-      name: nameContainer?.textContent?.trim() || null,
+      title: nameContainer?.textContent?.trim() || null,
       url,
       info: infoContainer?.textContent?.replace(/[{()}]/g, '').trim() || null
     };
@@ -396,7 +396,7 @@ export const detectSeasonOrEpisodeListType = (el: HTMLElement) => {
 
 export const getSeasonOrEpisodeParent = (
   el: HTMLElement,
-  serie?: { id: number; name: string }
+  serie?: { id: number; title: string }
 ): CSFDParent | null => {
   // Try h2 first (for episodes), then h1 (for seasons)
   let parents = el.querySelectorAll('.film-header h2 a');
@@ -413,11 +413,11 @@ export const getSeasonOrEpisodeParent = (
 
   const seriesId = parseIdFromUrl(parentSeries?.getAttribute('href'));
   const seasonId = parseLastIdFromUrl(parentSeason?.getAttribute('href') || '');
-  const seriesName = parentSeries?.textContent?.trim() || null;
-  const seasonName = parentSeason?.textContent?.trim() || null;
+  const seriesTitle = parentSeries?.textContent?.trim() || null;
+  const seasonTitle = parentSeason?.textContent?.trim() || null;
 
-  const series = seriesId && seriesName ? { id: seriesId, name: seriesName } : null;
-  const season = seasonId && seasonName ? { id: seasonId, name: seasonName } : null;
+  const series = seriesId && seriesTitle ? { id: seriesId, title: seriesTitle } : null;
+  const season = seasonId && seasonTitle ? { id: seasonId, title: seasonTitle } : null;
 
   if (!series && !season) return null;
 
