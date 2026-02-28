@@ -1,5 +1,6 @@
-import { describe, expect, test } from 'vitest';
+import { describe, expect, test, vi } from 'vitest';
 import { CSFDUserRatings } from '../src/dto/user-ratings';
+import * as fetchers from '../src/fetchers';
 import { UserRatingsScraper } from '../src/services/user-ratings.service';
 
 // Live API tests
@@ -16,6 +17,19 @@ describe('Simple call', () => {
 
     const films = results.filter((item) => item.type === 'film');
     expect(films.length).toBeGreaterThan(10);
+  });
+
+  test('Should handle zero ratings gracefully using mock', async () => {
+    const originalFetch = fetchers.fetchPage;
+    const spy = vi.spyOn(fetchers, 'fetchPage').mockImplementation((...args) => {
+      if (String(args[0]).includes('12345678')) {
+        return Promise.resolve('<html><body>No table</body></html>');
+      }
+      return originalFetch(...args);
+    });
+    const resZero = await userRatingsScraper.userRatings(12345678, { allPages: true });
+    expect(resZero.length).toBe(0);
+    spy.mockRestore();
   });
 });
 

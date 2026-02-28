@@ -74,13 +74,13 @@ describe('User Reviews - Exclude types', () => {
   const resExcluded: Promise<CSFDUserReviews[]> = userReviewsScraper.userReviews(
     USER_WITH_REVIEWS,
     {
-      excludes: ['seriál']
+      excludes: ['film']
     }
   );
 
-  test('Should not have any TV series', async () => {
+  test('Should not have any film', async () => {
     const results = await resExcluded;
-    const tvSeries = results.filter((item) => item.type === 'seriál');
+    const tvSeries = results.filter((item) => item.type === 'film');
     expect(tvSeries.length).toBe<number>(0);
   });
 });
@@ -159,6 +159,13 @@ describe('User Reviews - User with zero reviews', () => {
   test('Should be an array', async () => {
     const results = await resZeroReviews;
     expect(Array.isArray(results)).toBe(true);
+  });
+
+  test('Should handle zero reviews with allPages gracefully', async () => {
+    const resZeroAllPages = await userReviewsScraper.userReviews(USER_WITH_ZERO_REVIEWS, {
+      allPages: true
+    });
+    expect(resZeroAllPages.length).toBe(0);
   });
 });
 
