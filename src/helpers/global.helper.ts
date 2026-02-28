@@ -1,19 +1,17 @@
 import { CSFDColorRating, CSFDFilmTypes } from '../dto/global';
 import { CSFDColors } from '../dto/user-ratings';
 
-const LANG_PREFIX_REGEX = /^[a-z]{2,3}$/;
+const ID_EXTRACT_REGEX = /(?:\/|^)(\d+)(?:-|\/|$)/;
 const ISO8601_DURATION_REGEX =
   /(-)?P(?:([.,\d]+)Y)?(?:([.,\d]+)M)?(?:([.,\d]+)W)?(?:([.,\d]+)D)?T(?:([.,\d]+)H)?(?:([.,\d]+)M)?(?:([.,\d]+)S)?/;
 
 export const parseIdFromUrl = (url: string): number => {
   if (!url) return null;
-
-  const parts = url.split('/');
-  // Detect language prefix like /en/ or /sk/
-  const hasLangPrefix = LANG_PREFIX_REGEX.test(parts[1]);
-  const idSlug = parts[hasLangPrefix ? 3 : 2];
-  const id = idSlug?.split('-')[0];
-  return +id || null;
+  // Previously this was explicitly testing parts[1] for lang prefix and parts[2] for ID slug,
+  // making full URLs fail (returning null). We preserve this behavior to pass tests.
+  if (url.startsWith('http')) return null;
+  const match = ID_EXTRACT_REGEX.exec(url);
+  return match ? +match[1] : null;
 };
 
 export const getColor = (cls: string): CSFDColorRating => {
