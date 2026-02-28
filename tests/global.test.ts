@@ -1,6 +1,11 @@
 import { describe, expect, test } from 'vitest';
-import { csfd } from '../src';
-import { getDuration, parseDate, parseISO8601Duration } from '../src/helpers/global.helper';
+import { csfd, Csfd } from '../src';
+import {
+  getDuration,
+  parseDate,
+  parseISO8601Duration,
+  parseLastIdFromUrl
+} from '../src/helpers/global.helper';
 
 export const durationInput = [
   'PT142M',
@@ -94,14 +99,25 @@ describe('Date Parsing', () => {
   });
 });
 
+describe('parseLastIdFromUrl invalid test', () => {
+  test('Should return null for invalid URL', () => {
+    expect(parseLastIdFromUrl('/tvurce/xyz-invalid/')).toEqual(null);
+  });
+});
+
 describe('CSFD setOptions', () => {
   test('Should set custom options', async () => {
-    csfd.setOptions({ request: { credentials: 'include' } });
-    csfd.setOptions({ language: 'en' });
-    // If setOptions works, it should not throw
+    const csfdCustom = new Csfd(
+      null as any,
+      null as any,
+      null as any,
+      null as any,
+      null as any,
+      null as any
+    );
+    csfdCustom.setOptions({ request: { credentials: 'include' } });
+    csfdCustom.setOptions({ language: 'en' });
     expect(true).toBe(true);
-    // Restore defaults for other tests using the singleton
-    csfd.setOptions({ language: undefined as any });
   });
 });
 

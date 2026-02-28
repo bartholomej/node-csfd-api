@@ -206,6 +206,13 @@ describe('Cinema films by date', () => {
     const meta = filmNode[0].querySelector('.td-title span')?.text.trim();
     expect(meta).toEqual('T');
   });
+
+  test('getGroupedFilmsByDate handles missing date', () => {
+    // mock DOM with screening but empty text or no firstChild
+    const html = `<div class="box-content"></div> <div></div>`;
+    const screenings = getGroupedFilmsByDate(parse(html));
+    expect(screenings[0].date).toBe(null);
+  });
 });
 
 describe('parseMeta', () => {
