@@ -122,6 +122,18 @@ describe('Actor birthday info', () => {
     const creator = getCreatorBirthdayInfo(asideNodeActor)?.age;
     expect(creator).toEqual<number>(60);
   });
+
+  test('Empty age text', () => {
+    const el = parse(`
+      <div class="creator-profile-content">
+        <div class="creator-profile-info">
+          <span><strong>Věk:</strong></span>
+        </div>
+      </div>
+    `);
+    const result = getCreatorBirthdayInfo(el);
+    expect(result.age).toEqual(null);
+  });
 });
 
 describe("Creator's films", () => {
