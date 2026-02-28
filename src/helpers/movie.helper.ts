@@ -363,10 +363,13 @@ export const getSeasonsOrEpisodes = (
     const nameContainer = season.querySelector('.film-title-name');
     const infoContainer = season.querySelector('.info');
 
+    const href = nameContainer?.getAttribute('href');
+    const url = href ? (href.startsWith('/') ? `https://www.csfd.cz${href}` : href) : null;
+
     return {
-      id: parseLastIdFromUrl(nameContainer?.getAttribute('href') || ''),
+      id: parseLastIdFromUrl(href || ''),
       name: nameContainer?.textContent?.trim() || null,
-      url: nameContainer?.getAttribute('href') || null,
+      url,
       info: infoContainer?.textContent?.replace(/[{()}]/g, '').trim() || null
     };
   });
