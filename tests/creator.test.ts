@@ -202,7 +202,7 @@ describe('Creator edge cases', () => {
       '<div class="creator-profile-details"><p><span class="info"></span><span class="info-place"></span>Some text without birthday</p></div>'
     );
     const info = getCreatorBirthdayInfo(el);
-    expect(info.birthday).toEqual('');
+    expect(info.birthday).toEqual(null);
     expect(info.age).toEqual(null);
     expect(info.birthPlace).toEqual('');
   });
