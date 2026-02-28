@@ -332,6 +332,13 @@ describe('Live: Creator page', () => {
   });
 });
 
+describe('Live: User Reviews page', () => {
+  test('Fetch reviews for user', async () => {
+    const reviews = await csfd.userReviews(195357);
+    expect(reviews.length).toBeGreaterThan(0);
+  });
+});
+
 // Edge cases
 describe('User page 404', () => {
   test('Fetch error URL', async () => {

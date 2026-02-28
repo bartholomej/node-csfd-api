@@ -19,6 +19,7 @@ import {
   getMovieDescriptions,
   getMovieDuration,
   getMovieGenres,
+  getMovieGroup,
   getMovieId,
   getMovieOrigins,
   getMoviePoster,
@@ -481,6 +482,11 @@ describe('Get people', () => {
   });
   test('Based on', () => {
     expect(group.basedOn).toEqual<CSFDMovieCreator[]>([]);
+  });
+
+  test('Group not found should return empty array', () => {
+    const creators = getMovieGroup(movieNode, 'NeexistujiciSkupina:' as any);
+    expect(creators).toEqual([]);
   });
 
   describe('Get premieres', () => {
