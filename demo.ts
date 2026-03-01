@@ -21,7 +21,7 @@ csfd.movie(621073).then((movie) => console.log(movie));
 
 // csfd
 //   .userRatings(userId, {
-//     excludes: ['epizoda', 'pořad', 'série'],
+//     excludes: ['episode', 'pořad', 'série'],
 //     allPages: false,
 //     allPagesDelay: 2000
 //   })
@@ -34,5 +34,5 @@ csfd.movie(621073).then((movie) => console.log(movie));
 
 // Only TV series
 // csfd
-//   .userRatings('912-bart', { includesOnly: ['seriál'] })
+//   .userRatings('912-bart', { includesOnly: ['series'] })
 //   .then((ratings) => console.log(ratings));

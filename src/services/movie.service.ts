@@ -65,10 +65,10 @@ export class MovieScraper {
   ) {
     const type = getMovieType(el) as CSFDFilmTypes;
     const { seriesName = null, seasonName = null } =
-      type === 'série' ? getSeriesAndSeasonTitle(el) : {};
+      type === 'season' ? getSeriesAndSeasonTitle(el) : {};
     const seasonOrEpisodeListType = detectSeasonOrEpisodeListType(el);
 
-    const title = type === 'série' && seriesName ? seriesName : getMovieTitle(el);
+    const title = type === 'season' && seriesName ? seriesName : getMovieTitle(el);
     return {
       id: movieId,
       title,
@@ -94,8 +94,8 @@ export class MovieScraper {
       similar: getMovieBoxMovies(asideEl, 'Podobné'),
       seasons: seasonOrEpisodeListType === 'seasons' ? getSeasonsOrEpisodes(el) : null,
       episodes: seasonOrEpisodeListType === 'episodes' ? getSeasonsOrEpisodes(el) : null,
-      parent: type === 'seriál' ? null : getSeasonOrEpisodeParent(el, { id: movieId, title }),
-      episodeCode: type === 'epizoda' ? getEpisodeCode(el) : null,
+      parent: type === 'series' ? null : getSeasonOrEpisodeParent(el, { id: movieId, title }),
+      episodeCode: type === 'episode' ? getEpisodeCode(el) : null,
       seasonName
     };
   }

@@ -85,19 +85,19 @@ const {
 
 describe('Get Type', () => {
   test('Series 1 Main', () => {
-    expect(getMovieType(serie1SeasonsNode)).toBe('seriál');
+    expect(getMovieType(serie1SeasonsNode)).toBe('series');
   });
   test('Series 1 Season', () => {
-    expect(getMovieType(serie1Season1Node)).toBe('série');
+    expect(getMovieType(serie1Season1Node)).toBe('season');
   });
   test('Series 1 Episode', () => {
-    expect(getMovieType(serie1Season1EpisodeNode)).toBe('epizoda');
+    expect(getMovieType(serie1Season1EpisodeNode)).toBe('episode');
   });
   test('Series 2 Main', () => {
-    expect(getMovieType(serie2EpisodesNode)).toBe('seriál');
+    expect(getMovieType(serie2EpisodesNode)).toBe('series');
   });
   test('Series 2 Episode', () => {
-    expect(getMovieType(serie2EpisodeNode)).toBe('epizoda');
+    expect(getMovieType(serie2EpisodeNode)).toBe('episode');
   });
 });
 

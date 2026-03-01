@@ -167,7 +167,7 @@ describe('Live: Series Patterns', () => {
       movie = await csfd.movie(72489);
     });
     test('Type and Title', () => {
-      expect(movie.type).toEqual<CSFDFilmTypes>('seriál');
+      expect(movie.type).toEqual<CSFDFilmTypes>('series');
       expect(movie.title).toEqual('Simpsonovi');
     });
     test('Seasons', () => {
@@ -186,7 +186,7 @@ describe('Live: Series Patterns', () => {
       movie = await csfd.movie(474212);
     });
     test('Type and Title', () => {
-      expect(movie.type).toEqual<CSFDFilmTypes>('série');
+      expect(movie.type).toEqual<CSFDFilmTypes>('season');
       expect(movie.title).toEqual('Simpsonovi');
       expect(movie.seasonName).toEqual('Série 1');
     });
@@ -207,7 +207,7 @@ describe('Live: Series Patterns', () => {
       movie = await csfd.movie(474220);
     });
     test('Type and Title', () => {
-      expect(movie.type).toEqual<CSFDFilmTypes>('epizoda');
+      expect(movie.type).toEqual<CSFDFilmTypes>('episode');
       expect(movie.title).toEqual('Mluvící hlava');
     });
     test('Episode Code', () => {
@@ -226,7 +226,7 @@ describe('Live: Series Patterns', () => {
       movie = await csfd.movie(1431651);
     });
     test('Type and Title', () => {
-      expect(movie.type).toEqual<CSFDFilmTypes>('seriál');
+      expect(movie.type).toEqual<CSFDFilmTypes>('series');
       expect(movie.title).toEqual('The Curse');
     });
     test('Episodes directly', () => {
@@ -245,7 +245,7 @@ describe('Live: Series Patterns', () => {
       movie = await csfd.movie(1436408);
     });
     test('Type and Title', () => {
-      expect(movie.type).toEqual<CSFDFilmTypes>('epizoda');
+      expect(movie.type).toEqual<CSFDFilmTypes>('episode');
       expect(movie.title).toEqual('Kouzelná země');
     });
     test('Episode Code', () => {
