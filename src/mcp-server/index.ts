@@ -233,6 +233,34 @@ server.tool(
   }
 );
 
+/**
+ * PROMPT: Actor's Top Rated Works
+ * Example: "Find movies starring Mads Mikkelsen and give me the top 5 sorted by rating."
+ */
+server.registerPrompt(
+  'actor-top-rated',
+  {
+    title: 'Actor Top Rated',
+    description: 'Finds and ranks the best movies of a specific actor or creator.',
+    argsSchema: {
+      actorName: z.string().describe('Name of the actor or director')
+    }
+  },
+  async ({ actorName }) => {
+    return {
+      messages: [
+        {
+          role: 'user',
+          content: {
+            type: 'text',
+            text: `First, search for the person "${actorName}" to get their ID. Then, retrieve their full profile to see their filmography. From the results, identify the top 5 highest-rated movies they acted in. Finally, provide a bulleted list with the movie titles, years, and their CSFD ratings.`
+          }
+        }
+      ]
+    };
+  }
+);
+
 // Start the server using stdio transport
 async function main() {
   const transport = new StdioServerTransport();
