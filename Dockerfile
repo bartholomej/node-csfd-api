@@ -1,33 +1,43 @@
-# Build stage
+# --- STAGE 1: Build & Prune ---
 FROM node:24-alpine AS build
 
 WORKDIR /usr/src/app
 
+# Enable Corepack for Yarn 4
+RUN corepack enable
+
+# Copy dependency files first for layer caching
+COPY package.json yarn.lock .yarnrc.yml ./
+COPY .yarn/ .yarn/
+
+# Install all dependencies (including devDependencies) needed for build
+RUN yarn install --immutable
+
+# Copy all source files
 COPY . .
 
-# RUN corepack enable \
-#     && corepack prepare yarn@4 --activate
-
-RUN yarn --frozen-lockfile
-
+# Build the application (compiles to /dist)
 RUN yarn build
 
-# Production stage
+# Install Yarn workspace-tools plugin and prune to strictly production dependencies
+RUN yarn workspaces focus --all --production
+
+# --- STAGE 2: Production (Ultra-lean) ---
 FROM node:24-alpine AS production
 
 WORKDIR /usr/src/app
 ENV NODE_ENV=production
 
-COPY --from=build /usr/src/app/dist ./
+# Copy ONLY the built application
+COPY --from=build /usr/src/app/dist ./dist
 
-# COPY .yarnrc.yml ./
+# Copy ONLY the production-ready node_modules
+COPY --from=build /usr/src/app/node_modules ./node_modules
 
-# RUN corepack enable \
-#     && corepack prepare yarn@4 --activate
-
-RUN yarn --frozen-lockfile --production \
-    && yarn cache clean
+# Copy package.json (often required by Node.js for ESM/module resolution)
+COPY package.json ./
 
 EXPOSE 3000
 
-CMD ["node", "bin/server.mjs"]
+# Start the application
+CMD ["node", "dist/bin/server.mjs"]
