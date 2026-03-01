@@ -10,23 +10,18 @@ jobs:
 
     steps:
       - uses: actions/checkout@v6
+
+      - name: 📦 Enable Corepack
+        run: corepack enable
+
       - name: Use Node.js
         uses: actions/setup-node@v6
         with:
           node-version: 24
-
-      - name: 💾 Cache node modules
-        uses: actions/cache@v5
-        with:
-          path: node_modules
-          key: ${{ runner.OS }}-build-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.OS }}-build-${{ env.cache-name }}-
-            ${{ runner.OS }}-build-
-            ${{ runner.OS }}-
+          cache: 'yarn'
 
       - name: 📦 Install dependencies
-        run: yarn
+        run: yarn install --immutable
 
       - name: 🏗️ Build app
         run: yarn build

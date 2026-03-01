@@ -13,22 +13,20 @@ jobs:
       - name: 🚚 Checkout repository
         uses: actions/checkout@v6
 
+      - name: 🛠️ Enable Corepack
+        run: corepack enable
+
       - name: 🟢 Setup Node.js 24
         uses: actions/setup-node@v4
         with:
           node-version: '24'
           cache: 'yarn'
 
-      # - name: 🛠️ Enable Corepack & Yarn 4
-      #   run: |
-      #     corepack enable
-      #     corepack prepare yarn@4 --activate
-
       - name: 📥 Install dependencies
-        run: yarn install --frozen-lockfile
+        run: yarn install --immutable
 
       - name: ⬆️ Update dependencies
-        run: yarn upgrade --latest
+        run: yarn up "*"
 
       - name: 🏗️ Build application
         run: yarn build
@@ -47,7 +45,7 @@ jobs:
           title: '⬆️ chore: Update all deps'
           body: |
             Automated Pull Request to update dependencies.
-            Executed using Node 24 and Yarn 1.22.
+            Executed using Node 24 and Yarn 4.
 
             All tests passed successfully with the new versions.
           branch: 'chore/auto-deps-update'
