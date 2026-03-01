@@ -14,15 +14,22 @@ const server = new McpServer({
  * TOOL 1: Search
  * Description: Essential first step to get IDs for movies or creators.
  */
-server.tool(
+server.registerTool(
   'search',
-  'Searches for a movie, TV series, or person on CSFD.cz. Returns a list of results with IDs. Use this tool FIRST to find the ID needed for other tools.',
   {
-    query: z.string().describe('Search query (movie title, series, or actor name)')
+    title: 'Search',
+    description:
+      'Searches for a movie, TV series, or person on CSFD.cz. Returns a list of results with IDs. Use this tool FIRST to find the ID needed for other tools.',
+    inputSchema: {
+      query: z
+        .string()
+        .describe('Search query (movie title, series, or actor, director, etc. name)')
+    }
   },
   async ({ query }) => {
     try {
       const results = await csfd.search(query);
+
       return {
         content: [
           {
@@ -44,11 +51,15 @@ server.tool(
  * TOOL 2: Movie Details
  * Description: Returns detailed info about a specific movie/series.
  */
-server.tool(
+server.registerTool(
   'get_movie',
-  'Retrieves detailed information about a specific movie or series, including rating, plot, genres, and actors. Requires a numeric CSFD ID.',
   {
-    id: z.number().describe("CSFD Movie ID (found using the 'search' tool)")
+    title: 'Get Movie',
+    description:
+      'Retrieves detailed information about a specific movie or series, including rating, plot, genres, and actors. Requires a numeric CSFD ID.',
+    inputSchema: {
+      id: z.number().describe("CSFD Movie ID (found using the 'search' tool)")
+    }
   },
   async ({ id }) => {
     try {
@@ -74,11 +85,15 @@ server.tool(
  * TOOL 3: Creator Details
  * Description: Returns detailed info about a person (actor, director).
  */
-server.tool(
+server.registerTool(
   'get_creator',
-  'Retrieves information about a specific creator (actor, director, etc.), including their biography and filmography. Requires a numeric CSFD ID.',
   {
-    id: z.number().describe("CSFD Creator ID (found using the 'search' tool)")
+    title: 'Get Creator',
+    description:
+      'Retrieves information about a specific creator (actor, director, etc.), including their biography and filmography. Requires a numeric CSFD ID.',
+    inputSchema: {
+      id: z.number().describe("CSFD Creator ID (found using the 'search' tool)")
+    }
   },
   async ({ id }) => {
     try {
@@ -104,25 +119,32 @@ server.tool(
  * TOOL 4: User Ratings
  * Description: Returns ratings from a specific CSFD user.
  */
-server.tool(
+server.registerTool(
   'get_user_ratings',
-  'Retrieves movie ratings from a specific CSFD user. Returns a list of movies with their user rating (0-5 stars). Supports pagination and filtering by film type.',
   {
-    user: z.union([z.string(), z.number()]).describe('CSFD User ID (numeric) or username'),
-    page: z.number().optional().describe('Page number to fetch (default: 1)'),
-    allPages: z.boolean().optional().describe('Fetch all pages at once (use wisely, may be slow)'),
-    allPagesDelay: z
-      .number()
-      .optional()
-      .describe('Delay in ms between page requests when using allPages'),
-    excludes: z
-      .array(z.string())
-      .optional()
-      .describe('Film types to exclude (e.g. "series", "tv-film")'),
-    includesOnly: z
-      .array(z.string())
-      .optional()
-      .describe('Only include these film types (e.g. "film")')
+    title: 'Get User Ratings',
+    description:
+      'Retrieves movie ratings from a specific CSFD user. Returns a list of movies with their user rating (0-5 stars). Supports pagination and filtering by film type.',
+    inputSchema: {
+      user: z.union([z.string(), z.number()]).describe('CSFD User ID (numeric) or username'),
+      page: z.number().optional().describe('Page number to fetch (default: 1)'),
+      allPages: z
+        .boolean()
+        .optional()
+        .describe('Fetch all pages at once (use wisely, may be slow)'),
+      allPagesDelay: z
+        .number()
+        .optional()
+        .describe('Delay in ms between page requests when using allPages'),
+      excludes: z
+        .array(z.string())
+        .optional()
+        .describe('Film types to exclude (e.g. "series", "tv-film")'),
+      includesOnly: z
+        .array(z.string())
+        .optional()
+        .describe('Only include these film types (e.g. "film")')
+    }
   },
   async ({ user, page, allPages, allPagesDelay, excludes, includesOnly }) => {
     try {
@@ -154,25 +176,32 @@ server.tool(
  * TOOL 5: User Reviews
  * Description: Returns reviews written by a specific CSFD user.
  */
-server.tool(
+server.registerTool(
   'get_user_reviews',
-  'Retrieves movie reviews written by a specific CSFD user. Returns a list of movies with their review text and rating. Supports pagination and filtering by film type.',
   {
-    user: z.union([z.string(), z.number()]).describe('CSFD User ID (numeric) or username'),
-    page: z.number().optional().describe('Page number to fetch (default: 1)'),
-    allPages: z.boolean().optional().describe('Fetch all pages at once (use wisely, may be slow)'),
-    allPagesDelay: z
-      .number()
-      .optional()
-      .describe('Delay in ms between page requests when using allPages'),
-    excludes: z
-      .array(z.string())
-      .optional()
-      .describe('Film types to exclude (e.g. "series", "tv-film")'),
-    includesOnly: z
-      .array(z.string())
-      .optional()
-      .describe('Only include these film types (e.g. "film")')
+    title: 'Get User Reviews',
+    description:
+      'Retrieves movie reviews written by a specific CSFD user. Returns a list of movies with their review text and rating. Supports pagination and filtering by film type.',
+    inputSchema: {
+      user: z.union([z.string(), z.number()]).describe('CSFD User ID (numeric) or username'),
+      page: z.number().optional().describe('Page number to fetch (default: 1)'),
+      allPages: z
+        .boolean()
+        .optional()
+        .describe('Fetch all pages at once (use wisely, may be slow)'),
+      allPagesDelay: z
+        .number()
+        .optional()
+        .describe('Delay in ms between page requests when using allPages'),
+      excludes: z
+        .array(z.string())
+        .optional()
+        .describe('Film types to exclude (e.g. "series", "tv-film")'),
+      includesOnly: z
+        .array(z.string())
+        .optional()
+        .describe('Only include these film types (e.g. "film")')
+    }
   },
   async ({ user, page, allPages, allPagesDelay, excludes, includesOnly }) => {
     try {
@@ -204,14 +233,18 @@ server.tool(
  * TOOL 6: Cinemas
  * Description: Returns cinema screenings for a given district and time period.
  */
-server.tool(
+server.registerTool(
   'get_cinemas',
-  'Retrieves cinema screenings for a given district in Czech Republic. Returns a list of cinemas with their current screenings, showtimes, and movie details.',
   {
-    district: z.union([z.number(), z.string()]).describe('District ID (numeric) or name'),
-    period: z
-      .enum(['today', 'tomorrow', 'weekend', 'week', 'month'])
-      .describe('Time period for screenings')
+    title: 'Get Cinemas',
+    description:
+      'Retrieves cinema screenings for a given district in Czech Republic. Returns a list of cinemas with their current screenings, showtimes, and movie details.',
+    inputSchema: {
+      district: z.union([z.number(), z.string()]).describe('District ID (numeric) or name'),
+      period: z
+        .enum(['today', 'tomorrow', 'weekend', 'week', 'month'])
+        .describe('Time period for screenings')
+    }
   },
   async ({ district, period }) => {
     try {
