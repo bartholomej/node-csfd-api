@@ -24,8 +24,6 @@ import {
   parseDate,
   parseFilmType,
   parseISO8601Duration,
-  parseIdFromUrl
-  parseISO8601Duration,
   parseIdFromUrl,
   parseLastIdFromUrl
 } from './global.helper';
