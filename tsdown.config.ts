@@ -25,10 +25,10 @@ export default defineConfig([
   // 2. Servers & CLI Configuration (Strictly ESM/MJS)
   {
     entry: {
-      'bin/server': './server/index.ts',
-      'bin/mcp-server': './mcp-server/index.ts',
-      'bin/export-ratings': './tools/export-ratings.ts',
-      cli: './cli.ts'
+      'bin/server': './src/server/index.ts',
+      'bin/mcp-server': './src/mcp-server/index.ts',
+      'bin/export-ratings': './src/tools/export-ratings.ts',
+      cli: './src/cli.ts'
     },
     format: ['esm'], // This will generate .mjs files
     outDir: outDir,

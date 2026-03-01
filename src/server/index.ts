@@ -1,9 +1,9 @@
 import 'dotenv/config';
 import express, { NextFunction, Request, Response } from 'express';
-import packageJson from '../package.json' with { type: 'json' };
-import { csfd } from '../src';
-import { CSFDFilmTypes } from '../src/dto/global';
-import { CSFDLanguage } from '../src/types';
+import { csfd } from '..';
+import packageJson from '../../package.json' with { type: 'json' };
+import { CSFDFilmTypes } from '../dto/global';
+import { CSFDLanguage } from '../types';
 
 const LOG_COLORS = {
   info: '\x1b[36m', // cyan

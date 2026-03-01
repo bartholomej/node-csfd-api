@@ -21,6 +21,6 @@
     "noImplicitAny": true,
     "noImplicitReturns": true
   },
-  "include": ["src", "server", "mcp-server"],
+  "include": ["src", "src/server", "src/mcp-server"],
   "exclude": ["dist/**/*", "*/tests/**/*"]
 }

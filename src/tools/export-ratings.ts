@@ -3,8 +3,8 @@
  */
 
 import { writeFile } from 'node:fs/promises';
-import { csfd } from '../src';
-import { CSFDUserRatingConfig } from '../src/dto/user-ratings';
+import { csfd } from '..';
+import { CSFDUserRatingConfig } from '../dto/user-ratings';
 
 export interface ExportRatingsOptions {
   format: 'json' | 'csv' | 'letterboxd';

@@ -1,8 +1,8 @@
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
 import { z } from 'zod';
-import packageJson from '../package.json' with { type: 'json' };
-import { csfd } from '../src/index.js';
+import packageJson from '../../package.json' with { type: 'json' };
+import { csfd } from '../index.js';
 
 // Initialize the MCP server
 const server = new McpServer({
