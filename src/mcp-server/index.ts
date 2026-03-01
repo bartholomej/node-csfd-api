@@ -24,6 +24,11 @@ server.registerTool(
       query: z
         .string()
         .describe('Search query (movie title, series, or actor, director, etc. name)')
+    },
+    annotations: {
+      readOnlyHint: true,
+      idempotentHint: true,
+      openWorldHint: false
     }
   },
   async ({ query }) => {
@@ -60,16 +65,22 @@ server.registerTool(
       'Retrieves detailed information about a specific movie or series, including rating, plot, genres, and actors. Requires a numeric CSFD ID.',
     inputSchema: {
       id: z.number().describe("CSFD Movie ID (found using the 'search' tool)")
+    },
+    annotations: {
+      readOnlyHint: true,
+      idempotentHint: true,
+      openWorldHint: false
     }
   },
   async ({ id }) => {
     try {
       const movie = await csfd.movie(id);
       return {
+        structuredContent: movie as unknown as Record<string, unknown>,
         content: [
           {
             type: 'text',
-            text: JSON.stringify(movie, null, 2)
+            text: `Movie ${movie.title} (${movie.year}) with rating ${movie.rating} retrieved successfully.`
           }
         ]
       };
@@ -93,17 +104,23 @@ server.registerTool(
     description:
       'Retrieves information about a specific creator (actor, director, etc.), including their biography and filmography. Requires a numeric CSFD ID.',
     inputSchema: {
-      id: z.number().describe("CSFD Creator ID (found using the 'search' tool)")
+      id: z.number().describe('CSFD Creator ID')
+    },
+    annotations: {
+      readOnlyHint: true,
+      idempotentHint: true,
+      openWorldHint: false
     }
   },
   async ({ id }) => {
     try {
       const creator = await csfd.creator(id);
       return {
+        structuredContent: creator as unknown as Record<string, unknown>,
         content: [
           {
             type: 'text',
-            text: JSON.stringify(creator, null, 2)
+            text: `Creator ${creator.name} retrieved successfully.`
           }
         ]
       };
@@ -145,6 +162,11 @@ server.registerTool(
         .array(z.string())
         .optional()
         .describe('Only include these film types (e.g. "film")')
+    },
+    annotations: {
+      readOnlyHint: true,
+      idempotentHint: true,
+      openWorldHint: false
     }
   },
   async ({ user, page, allPages, allPagesDelay, excludes, includesOnly }) => {
@@ -157,10 +179,11 @@ server.registerTool(
         includesOnly: includesOnly as any
       });
       return {
+        structuredContent: { results },
         content: [
           {
             type: 'text',
-            text: JSON.stringify(results, null, 2)
+            text: `Retrieved ${results.length} user ratings successfully.`
           }
         ]
       };
@@ -182,7 +205,7 @@ server.registerTool(
   {
     title: 'Get User Reviews',
     description:
-      'Retrieves movie reviews written by a specific CSFD user. Returns a list of movies with their review text and rating. Supports pagination and filtering by film type.',
+      'Retrieves movie reviews written by a specific CSFD user. Returns a list of movies with their review text and rating.',
     inputSchema: {
       user: z.union([z.string(), z.number()]).describe('CSFD User ID (numeric) or username'),
       page: z.number().optional().describe('Page number to fetch (default: 1)'),
@@ -202,6 +225,11 @@ server.registerTool(
         .array(z.string())
         .optional()
         .describe('Only include these film types (e.g. "film")')
+    },
+    annotations: {
+      readOnlyHint: true,
+      idempotentHint: true,
+      openWorldHint: false
     }
   },
   async ({ user, page, allPages, allPagesDelay, excludes, includesOnly }) => {
@@ -214,10 +242,11 @@ server.registerTool(
         includesOnly: includesOnly as any
       });
       return {
+        structuredContent: { results },
         content: [
           {
             type: 'text',
-            text: JSON.stringify(results, null, 2)
+            text: `Retrieved ${results.length} user reviews successfully.`
           }
         ]
       };
@@ -239,22 +268,28 @@ server.registerTool(
   {
     title: 'Get Cinemas',
     description:
-      'Retrieves cinema screenings for a given district in Czech Republic. Returns a list of cinemas with their current screenings, showtimes, and movie details.',
+      'Retrieves cinema screenings for a given district in Czech Republic. Returns a list of cinemas with their current screenings, showtimes, and movie names and ids.',
     inputSchema: {
       district: z.union([z.number(), z.string()]).describe('District ID (numeric) or name'),
       period: z
         .enum(['today', 'tomorrow', 'weekend', 'week', 'month'])
         .describe('Time period for screenings')
+    },
+    annotations: {
+      readOnlyHint: true,
+      idempotentHint: true,
+      openWorldHint: false
     }
   },
   async ({ district, period }) => {
     try {
       const results = await csfd.cinema(district, period);
       return {
+        structuredContent: { results },
         content: [
           {
             type: 'text',
-            text: JSON.stringify(results, null, 2)
+            text: `Retrieved ${results.length} cinema screenings successfully.`
           }
         ]
       };
