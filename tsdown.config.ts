@@ -3,20 +3,44 @@ import { copyAndFixPackageJson } from './package-json-fix.rolldown';
 
 const outDir = 'dist';
 
-export default defineConfig({
-  entry: ['src/index.ts'],
-  format: ['esm', 'cjs'],
-  dts: true,
-  clean: true,
-  outDir: outDir,
-  sourcemap: true,
-  exports: true,
-  unbundle: true,
-  fixedExtension: false,
-  plugins: [
-    copyAndFixPackageJson({
-      outDir,
-      removeFields: ['packageManager', 'lint-staged', 'devDependencies', 'scripts']
-    })
-  ]
-});
+export default defineConfig([
+  // 1. Main Library Configuration (ESM + CJS + DTS)
+  {
+    entry: ['src/index.ts'],
+    format: ['esm', 'cjs'],
+    dts: true,
+    clean: true,
+    outDir: outDir,
+    sourcemap: true,
+    exports: true,
+    unbundle: true,
+    fixedExtension: false,
+    plugins: [
+      copyAndFixPackageJson({
+        outDir,
+        removeFields: ['packageManager', 'lint-staged', 'devDependencies', 'scripts']
+      })
+    ]
+  },
+  // 2. Servers & CLI Configuration (Strictly ESM/MJS)
+  {
+    entry: {
+      'bin/server': './server/index.ts',
+      'bin/mcp-server': './mcp-server/index.ts',
+      'bin/export-ratings': './tools/export-ratings.ts',
+      cli: './cli.ts'
+    },
+    format: ['esm'], // This will generate .mjs files
+    outDir: outDir,
+    clean: false, // Don't clean, otherwise it would delete the library build
+    unbundle: true,
+    platform: 'node',
+    target: 'node18',
+    minify: false,
+    sourcemap: false,
+    dts: false,
+    banner: {
+      js: '#!/usr/bin/env node'
+    }
+  }
+]);

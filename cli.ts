@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 /**
  * Main CLI entry point for node-csfd-api.
  */

@@ -61,3 +61,11 @@ typings/
 .next
 /dist
 .DS_Store
+
+# Yarn Modern
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
