@@ -5,15 +5,13 @@ const LANG_PREFIX_REGEX = /^[a-z]{2,3}$/;
 const ISO8601_DURATION_REGEX =
   /(-)?P(?:([.,\d]+)Y)?(?:([.,\d]+)M)?(?:([.,\d]+)W)?(?:([.,\d]+)D)?T(?:([.,\d]+)H)?(?:([.,\d]+)M)?(?:([.,\d]+)S)?/;
 
-export const parseIdFromUrl = (url: string): number => {
-  if (!url) return null;
+const PARSE_ID_REGEX = /(?:\/|^)(\d+)(?:-|\/|$)/;
 
-  const parts = url.split('/');
-  // Detect language prefix like /en/ or /sk/
-  const hasLangPrefix = LANG_PREFIX_REGEX.test(parts[1]);
-  const idSlug = parts[hasLangPrefix ? 3 : 2];
-  const id = idSlug?.split('-')[0];
-  return +id || null;
+export const parseIdFromUrl = (url: string): number => {
+  if (!url || url.startsWith('http')) return null;
+
+  const match = url.match(PARSE_ID_REGEX);
+  return match ? +match[1] : null;
 };
 
 export const parseLastIdFromUrl = (url: string): number => {

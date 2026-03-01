@@ -431,7 +431,7 @@ export const getMovieGroup = (
   group: CSFDCreatorGroups | CSFDCreatorGroupsEnglish | CSFDCreatorGroupsSlovak
 ): CSFDMovieCreator[] => {
   const creators = el.querySelectorAll('.creators h4');
-  const element = creators.filter((elem) => elem.textContent.trim().includes(group))[0];
+  const element = creators.find((elem) => elem.textContent.trim().includes(group));
   if (element?.parentNode) {
     return parseMoviePeople(element.parentNode as HTMLElement);
   } else {
