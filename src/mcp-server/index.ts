@@ -31,10 +31,11 @@ server.registerTool(
       const results = await csfd.search(query);
 
       return {
+        structuredContent: results as unknown as Record<string, unknown>,
         content: [
           {
             type: 'text',
-            text: JSON.stringify(results, null, 2)
+            text: `Found ${results.movies.length} movies, ${results.tvSeries.length} TV series, and ${results.users.length} users.`
           }
         ]
       };
