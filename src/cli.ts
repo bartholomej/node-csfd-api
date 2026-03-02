@@ -2,12 +2,6 @@
  * Main CLI entry point for node-csfd-api.
  */
 
-import path from 'node:path';
-import { fileURLToPath } from 'node:url';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
 async function main() {
   const args = process.argv.slice(2);
   const command = args[0];
@@ -16,7 +10,8 @@ async function main() {
     case 'server':
     case 'api':
       try {
-        await import(path.join(__dirname, 'bin/server.mjs'));
+        // Use a static string literal for the path so bundlers can analyze it
+        await import('./bin/server.mjs');
       } catch (error) {
         console.error('Failed to start server:', error);
         process.exit(1);
@@ -25,7 +20,8 @@ async function main() {
 
     case 'mcp':
       try {
-        await import(path.join(__dirname, 'bin/mcp-server.mjs'));
+        // Use a static string literal here as well
+        await import('./bin/mcp-server.mjs');
       } catch (error) {
         console.error('Failed to start MCP server:', error);
         process.exit(1);
@@ -44,12 +40,11 @@ async function main() {
           process.exit(1);
         }
 
-        // Parse simplified flags manually for now to avoid dependencies
         const isLetterboxd = args.includes('--letterboxd');
         const isJson = args.includes('--json');
         const isCsv = args.includes('--csv');
 
-        let format: 'csv' | 'json' | 'letterboxd' = 'csv'; // Default to CSV
+        let format = 'csv'; // Default to CSV
         if (isLetterboxd) {
           format = 'letterboxd';
         } else if (isJson) {
@@ -59,10 +54,8 @@ async function main() {
         }
 
         try {
-          // Dynamic import of the built module
-          // Note: The build script will output to dist/bin/export-ratings.mjs
-          const modulePath = path.join(__dirname, 'bin/export-ratings.mjs');
-          const { runRatingsExport } = await import(modulePath);
+          // Dynamic import using a static string literal
+          const { runRatingsExport } = await import('./bin/export-ratings.mjs');
 
           await runRatingsExport(userId, {
             format,
@@ -77,16 +70,10 @@ async function main() {
           console.error('Failed to run export:', error);
           process.exit(1);
         }
-      }
-      // Legacy support or specific command for letterboxd if desired,
-      // but 'export ratings ... --letterboxd' is the new standard.
-      else if (args[1] === 'letterboxd') {
-        // Deprecated or alias handling
+      } else if (args[1] === 'letterboxd') {
         console.warn(
           'Deprecation Warning: "export letterboxd" is deprecated. Please use "export ratings <id> --letterboxd" instead.'
         );
-        // Redirect to new logic...
-        // For now, just exit with instruction
         console.log('Usage: npx node-csfd-api export ratings <userId> --letterboxd');
         process.exit(1);
       } else {
