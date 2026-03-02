@@ -1,0 +1,12 @@
+{
+  "entryPoints": ["src/index.ts"],
+  "out": "docs",
+  "name": "node-csfd-api documentation",
+  "readme": "README.md",
+  "excludePrivate": true,
+  "plugin": [],
+  "compilerOptions": {
+    "target": "es2021",
+    "lib": ["es2021"]
+  }
+}

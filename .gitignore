@@ -60,6 +60,7 @@ typings/
 # next.js build output
 .next
 /dist
+/docs
 .DS_Store
 
 # Yarn Modern
