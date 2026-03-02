@@ -11,7 +11,7 @@ async function main() {
     case 'api':
       try {
         // Use a static string literal for the path so bundlers can analyze it
-        await import('./bin/server.mjs');
+        await import('./bin/server');
       } catch (error) {
         console.error('Failed to start server:', error);
         process.exit(1);
@@ -21,7 +21,7 @@ async function main() {
     case 'mcp':
       try {
         // Use a static string literal here as well
-        await import('./bin/mcp-server.mjs');
+        await import('./bin/mcp-server');
       } catch (error) {
         console.error('Failed to start MCP server:', error);
         process.exit(1);
@@ -44,7 +44,7 @@ async function main() {
         const isJson = args.includes('--json');
         const isCsv = args.includes('--csv');
 
-        let format = 'csv'; // Default to CSV
+        let format: 'csv' | 'json' | 'letterboxd' = 'csv'; // Default to CSV
         if (isLetterboxd) {
           format = 'letterboxd';
         } else if (isJson) {
@@ -55,7 +55,7 @@ async function main() {
 
         try {
           // Dynamic import using a static string literal
-          const { runRatingsExport } = await import('./bin/export-ratings.mjs');
+          const { runRatingsExport } = await import('./bin/export-ratings');
 
           await runRatingsExport(userId, {
             format,

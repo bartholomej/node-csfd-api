@@ -27,7 +27,7 @@ const LOG_PADDED_SEVERITY = {
   success: 'SUCCESS'
 } as const;
 
-type Severity = keyof typeof LOG_COLORS;
+type Severity = Exclude<keyof typeof LOG_COLORS, 'reset'>;
 
 enum Errors {
   API_KEY_MISSING = 'API_KEY_MISSING',
