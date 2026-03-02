@@ -3,7 +3,7 @@ name: 📖 Deploy TypeDoc to GitHub Pages
 on:
   push:
     branches:
-      - master
+      - feat/docs
   workflow_dispatch:
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
