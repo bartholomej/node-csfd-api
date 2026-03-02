@@ -6,9 +6,9 @@
 
 <div align="center">
 
-# CSFD API 🎬 + CSFD Export + MCP Server 🤖
+# CSFD API 🎬 + CSFD Export 💾 + CSFD MCP 🤖
 
-#### Modern TypeScript NPM library for scraping **CSFD.CZ**. Scraper, API, Export and MCP Server in one package. _(unofficial)_
+#### Modern TypeScript NPM library for scraping **CSFD.CZ**. Scraper, API Rest Server, Exporter and MCP Server in one package. _(unofficial)_
 
 [Features](#-features) • [Installation](#-installation) • [Quick Start](#-quick-start) • [API Reference](#-api-reference) • [Examples](#-usage-examples) • [MCP Server](#-mcp-server-model-context-protocol) • [Docker](#-docker-support)
 
@@ -22,6 +22,7 @@
 - 🧪 **Well-tested** - ~100% code coverage
 - 🚀 **Universal** - Works in Node.js, browsers, and serverless environments
 - 🐳 **Docker ready** - Pre-built Docker images available
+- 🍺 **Homebrew support** - Easy globally installed CLI via Homebrew tap
 - 🤖 **MCP Server** - Use CSFD data directly within LLMs like Claude Desktop
 - 🔄 **Modern API** - Promise-based with async/await support
 - 📦 **Few dependencies** - Lightweight and efficient
@@ -31,6 +32,7 @@
 - Node.js (ESM & CommonJS)
 - Browsers (with CORS considerations)
 - Docker containers
+- macOS/Linux CLI (via Homebrew)
 - MCP Server (Claude Desktop, etc.)
 - Serverless (Firebase Functions, AWS Lambda, CloudFlare Workers, etc.)
 - Chrome Extensions
@@ -434,13 +436,13 @@ const excludeEpisodes = await csfd.userRatings('912-bart', {
 
 #### UserRatingsOptions
 
-| Option          | Type              | Default | Description                                                          |
-| --------------- | ----------------- | ------- | -------------------------------------------------------------------- |
+| Option          | Type              | Default | Description                                                      |
+| --------------- | ----------------- | ------- | ---------------------------------------------------------------- |
 | `includesOnly`  | `CSFDFilmTypes[]` | `null`  | Include only specific content types (e.g., `['film', 'series']`) |
-| `exclude`       | `CSFDFilmTypes[]` | `null`  | Exclude specific content types (e.g., `['episode']`)                 |
-| `allPages`      | `boolean`         | `false` | Fetch all pages of ratings                                           |
-| `allPagesDelay` | `number`          | `0`     | Delay between page requests in milliseconds                          |
-| `page`          | `number`          | `1`     | Fetch specific page number                                           |
+| `exclude`       | `CSFDFilmTypes[]` | `null`  | Exclude specific content types (e.g., `['episode']`)             |
+| `allPages`      | `boolean`         | `false` | Fetch all pages of ratings                                       |
+| `allPagesDelay` | `number`          | `0`     | Delay between page requests in milliseconds                      |
+| `page`          | `number`          | `1`     | Fetch specific page number                                       |
 
 > 📝 **Note**: `includesOnly` and `exclude` are mutually exclusive. If both are provided, `includesOnly` takes precedence.
 >
@@ -522,7 +524,27 @@ Same options as [UserRatingsOptions](#userrationsoptions).
 
 ## 💻 CLI Tools
 
-This library comes with a powerful CLI that exposes several tools.
+This library comes with a powerful CLI that exposes several tools. You can run the CLI either via `npx` (without installation) or by installing it globally via Homebrew (macOS/Linux).
+
+### Installation / Usage
+
+**Option A: NPX (No installation required)**
+
+```bash
+npx node-csfd-api <command>
+```
+
+**Option B: Homebrew for macOS/Linux (Global installation)**
+
+```bash
+brew install bartholomej/tap/csfd
+
+csfd <command>
+```
+
+> 💡 _Note: The examples below use `npx node-csfd-api`, but if you installed via Homebrew, simply replace it with `csfd` (e.g., `csfd export ratings 912`)._
+
+---
 
 ### 1. Export Ratings (CSV, JSON & Letterboxd)
 
@@ -548,7 +570,7 @@ npx node-csfd-api server
 # Server listening on port 3000
 ```
 
-### 3. MCP Server
+### 3. MCP Server for AI Agents
 
 Run the Model Context Protocol server for AI agents.
 
