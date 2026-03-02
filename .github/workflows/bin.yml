@@ -1,0 +1,60 @@
+name: 🚀 Release Binaries
+
+on: push
+# on:
+#   release:
+#     types: [created]
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: 📦 Enable Corepack
+        run: corepack enable
+
+      - name: Use Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: 'yarn'
+
+      - name: 🥟 Setup Bun
+        uses: oven-sh/setup-bun@v2
+
+      - name: 📦 Install dependencies
+        run: yarn install --immutable
+
+      - name: 🏗️ Build app
+        # This generates the ./dist/cli.mjs file only once
+        run: yarn build
+
+      - name: 🔨 Compile binaries (Cross-Compilation)
+        # Bun can compile for macOS right from this Ubuntu runner
+        run: |
+          bun build ./dist/cli.mjs --compile --target=bun-darwin-arm64 --outfile=csfd-macos-arm64
+          bun build ./dist/cli.mjs --compile --target=bun-darwin-x64 --outfile=csfd-macos-x64
+          bun build ./dist/cli.mjs --compile --target=bun-linux-x64 --outfile=csfd-linux-x64
+
+      - name: 🗜️ Create tarballs
+        # Compress all generated executables into archives
+        run: |
+          tar -czvf csfd-macos-arm64.tar.gz csfd-macos-arm64
+          tar -czvf csfd-macos-x64.tar.gz csfd-macos-x64
+          tar -czvf csfd-linux-x64.tar.gz csfd-linux-x64
+
+      - name: 💾 Upload Artifacts to Pipeline
+        # This makes the files available to download directly from the Actions run summary
+        uses: actions/upload-artifact@v4
+        with:
+          name: compiled-binaries
+          # Matches all generated tar.gz files
+          path: csfd-*.tar.gz
+          retention-days: 1
+
+      # - name: 📤 Upload to Release
+      #   # Attaches the files to the actual GitHub Release page
+      #   uses: softprops/action-gh-release@v1
+      #   with:
+      #     files: csfd-*.tar.gz
