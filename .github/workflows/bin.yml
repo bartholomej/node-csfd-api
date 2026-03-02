@@ -1,9 +1,8 @@
 name: 🚀 Release Binaries
 
-on: push
-# on:
-#   release:
-#     types: [created]
+on:
+  release:
+    types: [created]
 
 jobs:
   build-and-release:
@@ -27,34 +26,84 @@ jobs:
         run: yarn install --immutable
 
       - name: 🏗️ Build app
-        # This generates the ./dist/cli.mjs file only once
         run: yarn build
 
       - name: 🔨 Compile binaries (Cross-Compilation)
-        # Bun can compile for macOS right from this Ubuntu runner
         run: |
           bun build ./dist/cli.mjs --compile --target=bun-darwin-arm64 --outfile=csfd-macos-arm64
           bun build ./dist/cli.mjs --compile --target=bun-darwin-x64 --outfile=csfd-macos-x64
           bun build ./dist/cli.mjs --compile --target=bun-linux-x64 --outfile=csfd-linux-x64
 
       - name: 🗜️ Create tarballs
-        # Compress all generated executables into archives
         run: |
           tar -czvf csfd-macos-arm64.tar.gz csfd-macos-arm64
           tar -czvf csfd-macos-x64.tar.gz csfd-macos-x64
           tar -czvf csfd-linux-x64.tar.gz csfd-linux-x64
 
       - name: 💾 Upload Artifacts to Pipeline
-        # This makes the files available to download directly from the Actions run summary
         uses: actions/upload-artifact@v4
         with:
           name: compiled-binaries
-          # Matches all generated tar.gz files
           path: csfd-*.tar.gz
           retention-days: 1
 
-      # - name: 📤 Upload to Release
-      #   # Attaches the files to the actual GitHub Release page
-      #   uses: softprops/action-gh-release@v1
-      #   with:
-      #     files: csfd-*.tar.gz
+      - name: 📤 Upload to Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: csfd-*.tar.gz
+
+      - name: 🧮 Calculate Hashes
+        id: hashes
+        run: |
+          # Calculate SHA256 hashes and save them to GitHub environment variables
+          echo "MAC_ARM_HASH=$(sha256sum csfd-macos-arm64.tar.gz | awk '{ print $1 }')" >> $GITHUB_ENV
+          echo "MAC_INTEL_HASH=$(sha256sum csfd-macos-x64.tar.gz | awk '{ print $1 }')" >> $GITHUB_ENV
+          echo "LINUX_HASH=$(sha256sum csfd-linux-x64.tar.gz | awk '{ print $1 }')" >> $GITHUB_ENV
+
+      - name: 🚀 Update Homebrew Tap
+        env:
+          TAP_GITHUB_TOKEN: ${{ secrets.TAP_GITHUB_TOKEN }}
+        run: |
+          # Clone the external tap repository
+          git clone https://x-access-token:${TAP_GITHUB_TOKEN}@github.com/bartholomej/homebrew-tap.git tap-repo
+          cd tap-repo
+
+          # Extract the version number from the GitHub tag (e.g., refs/tags/v1.0.0 -> 1.0.0)
+          VERSION=${GITHUB_REF#refs/tags/}
+          VERSION=${VERSION#v}
+
+          # Generate the Homebrew formula file dynamically
+          cat << EOF > csfd.rb
+          class Csfd < Formula
+            desc "CSFD CLI tool and MCP server"
+            homepage "https://github.com/bartholomej/node-csfd-api"
+            version "${VERSION}"
+
+            on_macos do
+              on_arm do
+                url "https://github.com/bartholomej/node-csfd-api/releases/download/v${VERSION}/csfd-macos-arm64.tar.gz"
+                sha256 "${MAC_ARM_HASH}"
+              end
+              on_intel do
+                url "https://github.com/bartholomej/node-csfd-api/releases/download/v${VERSION}/csfd-macos-x64.tar.gz"
+                sha256 "${MAC_INTEL_HASH}"
+              end
+            end
+
+            on_linux do
+              url "https://github.com/bartholomej/node-csfd-api/releases/download/v${VERSION}/csfd-linux-x64.tar.gz"
+              sha256 "${LINUX_HASH}"
+            end
+
+            def install
+              bin.install "csfd"
+            end
+          end
+          EOF
+
+          # Commit and push the updated formula to the tap repository
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add csfd.rb
+          git commit -m "Update csfd formula to version ${VERSION}"
+          git push
