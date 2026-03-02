@@ -42,19 +42,6 @@ jobs:
           bun build ./dist/cli.mjs --compile --target=bun-linux-x64 --outfile=csfd
           tar -czvf csfd-linux-x64.tar.gz csfd
 
-      # - name: 🗜️ Create tarballs
-      #   run: |
-      #     tar -czvf csfd-macos-arm64.tar.gz csfd-macos-arm64
-      #     tar -czvf csfd-macos-x64.tar.gz csfd-macos-x64
-      #     tar -czvf csfd-linux-x64.tar.gz csfd-linux-x64
-
-      # - name: 💾 Upload Artifacts to Pipeline
-      #   uses: actions/upload-artifact@v4
-      #   with:
-      #     name: compiled-binaries
-      #     path: csfd-*.tar.gz
-      #     retention-days: 1
-
       - name: 📤 Upload to Release
         uses: softprops/action-gh-release@v2
         with:
@@ -73,33 +60,33 @@ jobs:
           TAP_GITHUB_TOKEN: ${{ secrets.TAP_GITHUB_TOKEN }}
         run: |
           # Clone the external tap repository
-          git clone https://x-access-token:${TAP_GITHUB_TOKEN}@github.com/bartholomej/homebrew-tap.git tap-repo
+          git clone https://x-access-token:${TAP_GITHUB_TOKEN}@github.com/${{ github.repository_owner }}/homebrew-tap.git tap-repo
           cd tap-repo
 
-          # Extract the version number from the GitHub tag (e.g., refs/tags/v1.0.0 -> 1.0.0)
-          VERSION=${GITHUB_REF#refs/tags/}
-          VERSION=${VERSION#v}
+          # Extract the version number without the 'v' prefix
+          VERSION="${{ github.ref_name }}"
+          VERSION="${VERSION#v}"
 
           # Generate the Homebrew formula file dynamically
           cat << EOF > csfd.rb
           class Csfd < Formula
             desc "CSFD CLI tool and MCP server"
-            homepage "https://github.com/bartholomej/node-csfd-api"
+            homepage "${{ github.server_url }}/${{ github.repository }}"
             version "${VERSION}"
 
             on_macos do
               on_arm do
-                url "https://github.com/bartholomej/node-csfd-api/releases/download/v${VERSION}/csfd-macos-arm64.tar.gz"
+                url "${{ github.server_url }}/${{ github.repository }}/releases/download/${{ github.ref_name }}/csfd-macos-arm64.tar.gz"
                 sha256 "${MAC_ARM_HASH}"
               end
               on_intel do
-                url "https://github.com/bartholomej/node-csfd-api/releases/download/v${VERSION}/csfd-macos-x64.tar.gz"
+                url "${{ github.server_url }}/${{ github.repository }}/releases/download/${{ github.ref_name }}/csfd-macos-x64.tar.gz"
                 sha256 "${MAC_INTEL_HASH}"
               end
             end
 
             on_linux do
-              url "https://github.com/bartholomej/node-csfd-api/releases/download/v${VERSION}/csfd-linux-x64.tar.gz"
+              url "${{ github.server_url }}/${{ github.repository }}/releases/download/${{ github.ref_name }}/csfd-linux-x64.tar.gz"
               sha256 "${LINUX_HASH}"
             end
 
@@ -110,8 +97,11 @@ jobs:
           EOF
 
           # Commit and push the updated formula to the tap repository
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "BART!"
+          git config user.email "bartholomej@users.noreply.github.com"
           git add csfd.rb
-          git commit -m "Update csfd formula to version ${VERSION}"
+
+          # Create a commit and add GitHub Actions bot as a co-author
+          git commit -m "chore(csfd): Update CSFD formula v${VERSION}" -m "Co-authored-by: github-actions[bot] <github-actions[bot]@users.noreply.github.com>"
+
           git push
