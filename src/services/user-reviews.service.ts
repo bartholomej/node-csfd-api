@@ -75,17 +75,21 @@ export class UserReviewsScraper {
       }
     }
 
+    // Performance Optimization: Pre-calculate Set objects for O(1) membership checks
+    const includesOnlySet = config?.includesOnly?.length ? new Set(config.includesOnly) : null;
+    const excludesSet = config?.excludes?.length ? new Set(config.excludes) : null;
+
     for (const el of reviews) {
       const type = getUserReviewType(el);
 
       // Filtering includesOnly
-      if (config?.includesOnly?.length) {
-        if (config.includesOnly.some((include) => type === include)) {
+      if (includesOnlySet) {
+        if (includesOnlySet.has(type)) {
           films.push(this.buildUserReviews(el, type));
         }
         // Filter excludes
-      } else if (config?.excludes?.length) {
-        if (!config.excludes.some((exclude) => type === exclude)) {
+      } else if (excludesSet) {
+        if (!excludesSet.has(type)) {
           films.push(this.buildUserReviews(el, type));
         }
       } else {
