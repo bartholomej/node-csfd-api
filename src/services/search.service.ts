@@ -1,7 +1,8 @@
 import { HTMLElement, parse } from 'node-html-parser';
-import { CSFDSearch, CSFDSearchMovie, CSFDSearchUser } from '../dto/search';
+import { CSFDSearch, CSFDSearchCreator, CSFDSearchMovie, CSFDSearchUser } from '../dto/search';
 import { fetchPage } from '../fetchers';
 import { parseIdFromUrl } from '../helpers/global.helper';
+import { getCreatorImage, getCreatorName, getCreatorUrl } from '../helpers/search-creator.helper';
 import { getAvatar, getUser, getUserRealName, getUserUrl } from '../helpers/search-user.helper';
 import {
   getSearchColorRating,
@@ -25,14 +26,16 @@ export class SearchScraper {
     const moviesNode = html.querySelectorAll('.main-movies article');
     const usersNode = html.querySelectorAll('.main-users article');
     const tvSeriesNode = html.querySelectorAll('.main-series article');
+    const creatorsNode = html.querySelectorAll('.main-authors article');
 
-    return this.parseSearch(moviesNode, usersNode, tvSeriesNode, options?.language);
+    return this.parseSearch(moviesNode, usersNode, tvSeriesNode, creatorsNode, options?.language);
   }
 
   private parseSearch(
     moviesNode: HTMLElement[],
     usersNode: HTMLElement[],
     tvSeriesNode: HTMLElement[],
+    creatorsNode: HTMLElement[],
     language?: CSFDLanguage
   ) {
     const baseUrl = getUrlByLanguage(language);
@@ -40,6 +43,7 @@ export class SearchScraper {
     const movies: CSFDSearchMovie[] = [];
     const users: CSFDSearchUser[] = [];
     const tvSeries: CSFDSearchMovie[] = [];
+    const creators: CSFDSearchCreator[] = [];
 
     const movieMapper = (m: HTMLElement): CSFDSearchMovie => {
       const url = getSearchUrl(m);
@@ -70,15 +74,26 @@ export class SearchScraper {
       };
     };
 
+    const creatorMapper = (m: HTMLElement): CSFDSearchCreator => {
+      const url = getCreatorUrl(m);
+      return {
+        id: parseIdFromUrl(url),
+        name: getCreatorName(m),
+        image: getCreatorImage(m),
+        url: `${baseUrl}${url}`
+      };
+    };
+
     movies.push(...moviesNode.map(movieMapper));
     users.push(...usersNode.map(userMapper));
     tvSeries.push(...tvSeriesNode.map(movieMapper));
+    creators.push(...creatorsNode.map(creatorMapper));
 
     const search: CSFDSearch = {
-      movies: movies,
-      users: users,
-      tvSeries: tvSeries,
-      creators: []
+      movies,
+      users,
+      tvSeries,
+      creators
     };
     return search;
   }

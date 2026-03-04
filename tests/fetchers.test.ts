@@ -268,6 +268,13 @@ describe('Live: Search', () => {
       expect.arrayContaining(['Lilly Wachowski'])
     );
   });
+  test('Search quentin', async () => {
+    const search = await csfd.search('quentin');
+    const quentin = search.creators.find((x) => x.name === 'Quentin Tarantino');
+    expect(quentin?.name).toEqual<string>('Quentin Tarantino');
+    expect(quentin?.id).toEqual<number>(2120);
+    expect(quentin?.image).toContain('.jpg');
+  });
 });
 
 // Search

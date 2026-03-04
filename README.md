@@ -678,7 +678,7 @@ This library powers several production applications:
   - Related content (similar movies, trivia)
   - Alternative titles, premieres, tags
 - **Search**
-  - Movies, TV series, and users
+  - Movies, TV series, Creators and users
 - **Creators**
   - Biography and filmography
 - **User Data**
@@ -687,9 +687,9 @@ This library powers several production applications:
 
 ### Planned Features 🚧
 
+- [x] Search: Creator search functionality
 - [ ] Movie: reviews from movie detail page
 - [ ] Movie: Original soundtracks (OST) information
-- [ ] Search: Creator search functionality
 - [ ] Server: Caching layer for improved performance
 - [ ] Server: Rate limiting helpers
 

@@ -2,6 +2,11 @@ import { parse } from 'node-html-parser';
 import { describe, expect, test } from 'vitest';
 import { CSFDColorRating, CSFDFilmTypes } from '../src/dto/global';
 import { CSFDMovieCreator } from '../src/dto/movie';
+import {
+  getCreatorImage,
+  getCreatorName,
+  getCreatorUrl
+} from '../src/helpers/search-creator.helper';
 import { getAvatar, getUser, getUserRealName, getUserUrl } from '../src/helpers/search-user.helper';
 import {
   getSearchColorRating,
@@ -19,6 +24,7 @@ const html = parse(searchMock);
 const moviesNode = html.querySelectorAll('.main-movies article');
 const usersNode = html.querySelectorAll('.main-users article');
 const tvSeriesNode = html.querySelectorAll('.main-series article');
+const creatorsNode = html.querySelectorAll('.main-authors article');
 
 describe('Get Movie titles', () => {
   test('First movie', () => {
@@ -383,5 +389,36 @@ describe('Get Users url', () => {
   test('First user', () => {
     const movie = getUserUrl(usersNode[0]);
     expect(movie).toEqual<string>('/uzivatel/914271-matrix/prehled/');
+  });
+});
+
+// CREATORS
+
+describe('Get Creators name', () => {
+  test('First creator', () => {
+    const creator = getCreatorName(creatorsNode[0]);
+    expect(creator).toEqual<string>('Martin Kubíček');
+  });
+});
+
+describe('Get Creators image', () => {
+  test('First creator image', () => {
+    const creator = getCreatorImage(creatorsNode[0]);
+    expect(creator).toEqual<string>(
+      'https://image.pmgstatic.com/cache/resized/w45h60crop/files/images/creator/photos/158/381/158381769_57dfe6.jpg'
+    );
+  });
+  test('Empty creator image', () => {
+    const creator = getCreatorImage(creatorsNode[1]);
+    expect(creator).toEqual<string>(
+      'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'
+    );
+  });
+});
+
+describe('Get Creators url', () => {
+  test('First creator', () => {
+    const creator = getCreatorUrl(creatorsNode[0]);
+    expect(creator).toEqual<string>('/tvurce/91360-martin-kubicek/prehled/');
   });
 });
