@@ -9,10 +9,15 @@ export const getUserRealName = (el: HTMLElement): string => {
   const p = el.querySelector('.article-content p');
   if (!p) return null;
 
-  const textNodes = p.childNodes.filter(n => n.nodeType === NodeType.TEXT_NODE && n.rawText.trim() !== '');
-  const name = textNodes.length ? textNodes[0].rawText.trim() : null;
+  for (let i = 0; i < p.childNodes.length; i++) {
+    const n = p.childNodes[i];
+    if (n.nodeType === NodeType.TEXT_NODE) {
+      const text = n.rawText.trim();
+      if (text !== '') return text;
+    }
+  }
 
-  return name;
+  return null;
 };
 
 export const getAvatar = (el: HTMLElement): string => {
