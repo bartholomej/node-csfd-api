@@ -20,7 +20,7 @@
     "examples": "yarn example:cjs:ts && yarn example:cjs:js && yarn example:esm:ts && yarn example:esm:js",
     "lint": "eslint ./src/**/**/* --fix",
     "docs": "typedoc",
-    "test": "vitest",
+    "test": "vitest --watch=false",
     "test:coverage": "yarn test run --coverage",
     "publish:next": "yarn && yarn build && yarn test:coverage && cd dist && npm publish --tag next",
     "postversion": "git push && git push --follow-tags",
