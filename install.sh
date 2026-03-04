@@ -1,0 +1,84 @@
+#!/bin/bash
+set -e
+
+# Define repository details
+REPO="bartholomej/node-csfd-api"
+INSTALL_DIR="$HOME/.local/bin"
+EXE_NAME="csfd"
+
+# Detect operating system
+OS="$(uname -s)"
+ARCH="$(uname -m)"
+
+# Map OS and architecture to the release targets
+if [ "$OS" = "Darwin" ]; then
+  if [ "$ARCH" = "arm64" ] || [ "$ARCH" = "aarch64" ]; then
+    TARGET="macos-arm64"
+  else
+    TARGET="macos-x64"
+  fi
+elif [ "$OS" = "Linux" ]; then
+  if [ "$ARCH" = "x86_64" ]; then
+    TARGET="linux-x64"
+  else
+    echo "Error: Unsupported architecture ($ARCH) on Linux. Currently only x64 is supported."
+    exit 1
+  fi
+else
+  echo "Error: Unsupported operating system ($OS)."
+  exit 1
+fi
+
+echo "Detected platform: $OS ($ARCH) -> Target: $TARGET"
+
+# Fetch the latest version tag from GitHub API
+echo "Fetching latest release version..."
+LATEST_RELEASE=$(curl -s "https://api.github.com/repos/$REPO/releases/latest")
+VERSION=$(echo "$LATEST_RELEASE" | grep '"tag_name":' | sed -E 's/.*"v?([^"]+)".*/\1/')
+
+if [ -z "$VERSION" ]; then
+  echo "Error: Could not determine the latest version."
+  exit 1
+fi
+
+echo "Latest version is $VERSION."
+
+# Construct the download URL
+DOWNLOAD_URL="https://github.com/$REPO/releases/download/v$VERSION/csfd-$TARGET.tar.gz"
+TMP_DIR=$(mktemp -d)
+ARCHIVE_PATH="$TMP_DIR/csfd.tar.gz"
+
+# Download the release archive
+echo "Downloading $DOWNLOAD_URL..."
+curl -fsSL "$DOWNLOAD_URL" -o "$ARCHIVE_PATH"
+
+# Extract the archive
+echo "Extracting archive..."
+tar -xzf "$ARCHIVE_PATH" -C "$TMP_DIR"
+
+# Ensure the installation directory exists
+mkdir -p "$INSTALL_DIR"
+
+# Move the binary and make it executable
+mv "$TMP_DIR/$EXE_NAME" "$INSTALL_DIR/$EXE_NAME"
+chmod +x "$INSTALL_DIR/$EXE_NAME"
+
+# Clean up temporary files
+rm -rf "$TMP_DIR"
+
+echo "================================================="
+echo "✅ $EXE_NAME has been installed to $INSTALL_DIR/$EXE_NAME"
+echo "================================================="
+
+# Check if the installation directory is in the user's PATH
+if [[ ":$PATH:" != *":$INSTALL_DIR:"* ]]; then
+  echo ""
+  echo "⚠️  WARNING: $INSTALL_DIR is not in your PATH."
+  echo "To use the '$EXE_NAME' command globally, add the following line to your ~/.bashrc, ~/.zshrc, or ~/.config/fish/config.fish:"
+  echo ""
+  echo "  export PATH=\"\$HOME/.local/bin:\$PATH\""
+  echo ""
+  echo "Then restart your terminal or run 'source ~/.bashrc'."
+fi
+
+echo "You can now run '$EXE_NAME help' to get started."
