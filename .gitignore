@@ -56,7 +56,6 @@ typings/
 
 # dotenv environment variables file
 .env
-.jules/*.md
 
 # next.js build output
 .next
