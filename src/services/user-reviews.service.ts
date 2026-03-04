@@ -40,7 +40,10 @@ export class UserReviewsScraper {
     allReviews = this.getPage(config, reviews);
 
     if (config?.allPages) {
+      console.log('User', user, url);
+      console.log('Fetching all pages', pages);
       for (let i = 2; i <= pages; i++) {
+        console.log('Fetching page', i, 'out of', pages, '...');
         const url = userReviewsUrl(user, i, { language: options?.language });
         const response = await fetchPage(url, { ...options?.request });
 
