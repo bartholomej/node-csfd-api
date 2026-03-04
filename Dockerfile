@@ -8,7 +8,7 @@ RUN corepack enable
 
 # Copy dependency files first for layer caching
 COPY package.json yarn.lock .yarnrc.yml ./
-COPY .yarn/ .yarn/
+COPY .yarn[s]/ .yarn/
 
 # Install all dependencies (including devDependencies) needed for build
 RUN yarn install --immutable

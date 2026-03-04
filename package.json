@@ -21,7 +21,7 @@
     "lint": "eslint ./src/**/**/* --fix",
     "docs": "typedoc",
     "test": "vitest --watch=false",
-    "test:coverage": "yarn test run --coverage",
+    "test:coverage": "yarn test --coverage",
     "publish:next": "yarn && yarn build && yarn test:coverage && cd dist && npm publish --tag next",
     "postversion": "git push && git push --follow-tags",
     "release:beta": "npm version preminor --preid=beta -m \"chore(update): prelease %s β\"",
