@@ -19,11 +19,17 @@ describe('Add protocol', () => {
 describe('Parse Id', () => {
   test('Handle whole movie url', () => {
     const url = parseIdFromUrl('https://www.csfd.cz/film/906693-projekt-adam/recenze/');
-    expect(url).toBe(null);
+    expect(url).toBe(906693);
   });
   test('Handle movie url', () => {
     const url = parseIdFromUrl('/film/906693-projekt-adam/recenze/');
     expect(url).toBe(906693);
+  });
+  test('Handle episode or season url', () => {
+    const url = parseIdFromUrl(
+      'https://www.csfd.cz/film/1513493-pluribus/1710077-my-jsme-my/prehled/'
+    );
+    expect(url).toBe(1710077);
   });
   test('Handle movie url with language prefix', () => {
     const url = parseIdFromUrl('/en/film/906693-projekt-adam/recenze/');

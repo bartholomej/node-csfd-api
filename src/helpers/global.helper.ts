@@ -9,7 +9,13 @@ export const parseIdFromUrl = (url: string): number => {
   if (!url) return null;
 
   const parts = url.split('/');
-  // Detect language prefix like /en/ or /sk/
+  const idParts = parts.filter((p) => /^\d+-/.test(p));
+  if (idParts.length > 0) {
+    const idSlug = idParts[idParts.length - 1];
+    return +idSlug.split('-')[0] || null;
+  }
+
+  // Fallback
   const hasLangPrefix = LANG_PREFIX_REGEX.test(parts[1]);
   const idSlug = parts[hasLangPrefix ? 3 : 2];
   const id = idSlug?.split('-')[0];
