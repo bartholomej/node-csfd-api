@@ -16,9 +16,9 @@ export const getUserRating = (el: HTMLElement): CSFDStars => {
 };
 
 export const getUserRatingType = (el: HTMLElement): CSFDFilmTypes => {
-  const typeText = el.querySelectorAll('td.name .film-title-info .info');
+  const typeNode = el.querySelector('td.name .film-title-info .info ~ .info');
 
-  return parseFilmType(typeText.length > 1 ? typeText[1].text : 'film');
+  return parseFilmType(typeNode ? typeNode.text : 'film');
 };
 
 export const getUserRatingTitle = (el: HTMLElement): string => {
@@ -26,7 +26,7 @@ export const getUserRatingTitle = (el: HTMLElement): string => {
 };
 
 export const getUserRatingYear = (el: HTMLElement): number => {
-  return +el.querySelectorAll('td.name .film-title-info .info')[0]?.text || null;
+  return +el.querySelector('td.name .film-title-info .info')?.text || null;
 };
 
 export const getUserRatingColorRating = (el: HTMLElement): CSFDColorRating => {

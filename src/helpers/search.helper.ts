@@ -7,8 +7,8 @@ import { addProtocol, parseColor, parseFilmType, parseIdFromUrl } from './global
 type Creator = 'Režie:' | 'Hrají:';
 
 export const getSearchType = (el: HTMLElement): CSFDFilmTypes => {
-  const type = el.querySelectorAll('.film-title-info .info')[1];
-  return parseFilmType(type?.innerText?.replace(/[{()}]/g, '')?.trim() || 'film');
+  const typeNode = el.querySelector('.film-title-info .info ~ .info');
+  return parseFilmType(typeNode?.innerText?.replace(/[{()}]/g, '')?.trim() || 'film');
 };
 
 export const getSearchTitle = (el: HTMLElement): string => {
@@ -16,7 +16,7 @@ export const getSearchTitle = (el: HTMLElement): string => {
 };
 
 export const getSearchYear = (el: HTMLElement): number => {
-  return +el.querySelectorAll('.film-title-info .info')[0]?.innerText.replace(/[{()}]/g, '');
+  return +el.querySelector('.film-title-info .info')?.innerText.replace(/[{()}]/g, '');
 };
 
 export const getSearchUrl = (el: HTMLElement): string => {
