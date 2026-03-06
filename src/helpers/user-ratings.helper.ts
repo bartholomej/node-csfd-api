@@ -26,7 +26,8 @@ export const getUserRatingTitle = (el: HTMLElement): string => {
 };
 
 export const getUserRatingYear = (el: HTMLElement): number => {
-  return +el.querySelectorAll('td.name .film-title-info .info')[0]?.text || null;
+  // Optimization: use querySelector instead of querySelectorAll[0]
+  return +el.querySelector('td.name .film-title-info .info')?.text || null;
 };
 
 export const getUserRatingColorRating = (el: HTMLElement): CSFDColorRating => {
