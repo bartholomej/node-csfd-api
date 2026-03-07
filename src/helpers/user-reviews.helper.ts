@@ -17,9 +17,8 @@ export const getUserReviewRating = (el: HTMLElement): CSFDStars => {
 
 export const getUserReviewType = (el: HTMLElement): CSFDFilmTypes => {
   // Type can be in the second .info span (e.g., "(seriál)") // TODO need more tests
-  const typeText = el.querySelectorAll('.film-title-info .info');
-
-  return parseFilmType(typeText.length > 1 ? typeText[1].text.slice(1, -1) : 'film');
+  const typeNode = el.querySelector('.film-title-info .info ~ .info');
+  return parseFilmType(typeNode ? typeNode.text.slice(1, -1) : 'film');
 };
 
 export const getUserReviewTitle = (el: HTMLElement): string => {
@@ -28,7 +27,7 @@ export const getUserReviewTitle = (el: HTMLElement): string => {
 
 export const getUserReviewYear = (el: HTMLElement): number => {
   const infoSpan = el.querySelector('.film-title-info .info');
-  return infoSpan ? +infoSpan.text.replace(/[()]/g, '') : null;
+  return infoSpan ? +infoSpan.text.replace(/[()]/g, '') || null : null;
 };
 
 export const getUserReviewColorRating = (el: HTMLElement): CSFDColorRating => {
