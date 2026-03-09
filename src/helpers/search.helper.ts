@@ -16,7 +16,8 @@ export const getSearchTitle = (el: HTMLElement): string => {
 };
 
 export const getSearchYear = (el: HTMLElement): number => {
-  return +el.querySelectorAll('.film-title-info .info')[0]?.innerText.replace(/[{()}]/g, '');
+  // Optimization: Use querySelector instead of querySelectorAll[0] to prevent full DOM traversal
+  return +(el.querySelector('.film-title-info .info')?.innerText.replace(/[{()}]/g, '') as string);
 };
 
 export const getSearchUrl = (el: HTMLElement): string => {
