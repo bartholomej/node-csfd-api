@@ -32,37 +32,29 @@ export const parseLastIdFromUrl = (url: string): number => {
   }
 };
 
+const PAGE_COLORS: Record<string, CSFDColorRating> = {
+  'page-lightgrey': 'unknown',
+  'page-red': 'good',
+  'page-blue': 'average',
+  'page-grey': 'bad'
+};
+
 export const getColor = (cls: string): CSFDColorRating => {
-  switch (cls) {
-    case 'page-lightgrey':
-      return 'unknown';
-    case 'page-red':
-      return 'good';
-    case 'page-blue':
-      return 'average';
-    case 'page-grey':
-      return 'bad';
-    default:
-      return 'unknown';
-  }
+  return PAGE_COLORS[cls] || 'unknown';
+};
+
+const RATING_COLORS: Record<CSFDColors, CSFDColorRating> = {
+  lightgrey: 'unknown',
+  red: 'good',
+  blue: 'average',
+  grey: 'bad'
 };
 
 export const parseColor = (quality: CSFDColors): CSFDColorRating => {
-  switch (quality) {
-    case 'lightgrey':
-      return 'unknown';
-    case 'red':
-      return 'good';
-    case 'blue':
-      return 'average';
-    case 'grey':
-      return 'bad';
-    default:
-      return 'unknown';
-  }
+  return RATING_COLORS[quality] || 'unknown';
 };
 
-const filmTypeMap: Record<string, CSFDFilmTypes> = {
+const FILM_TYPES: Record<string, CSFDFilmTypes> = {
   'TV film': 'tv-film',
   pořad: 'tv-show',
   seriál: 'series',
@@ -78,7 +70,7 @@ const filmTypeMap: Record<string, CSFDFilmTypes> = {
 };
 
 export const parseFilmType = (type: string): CSFDFilmTypes => {
-  return filmTypeMap[type] || 'film';
+  return FILM_TYPES[type] || 'film';
 };
 
 export const addProtocol = (url: string): string => {

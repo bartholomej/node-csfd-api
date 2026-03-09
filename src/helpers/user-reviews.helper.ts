@@ -25,7 +25,7 @@ export const getUserReviewTitle = (el: HTMLElement): string => {
   return el.querySelector('.film-title-name').text;
 };
 
-export const getUserReviewYear = (el: HTMLElement): number => {
+export const getUserReviewYear = (el: HTMLElement): number | null => {
   const infoSpan = el.querySelector('.film-title-info .info');
   return infoSpan ? +infoSpan.text.replace(/[()]/g, '') || null : null;
 };

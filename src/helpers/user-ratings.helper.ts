@@ -24,7 +24,7 @@ export const getUserRatingTitle = (el: HTMLElement): string => {
   return el.querySelector('td.name .film-title-name').text;
 };
 
-export const getUserRatingYear = (el: HTMLElement): number => {
+export const getUserRatingYear = (el: HTMLElement): number | null => {
   const yearNode = el.querySelector('td.name .film-title-info .info');
   return yearNode ? +yearNode.text || null : null;
 };
