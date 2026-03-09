@@ -16,12 +16,12 @@ csfd.movie(621073).then((movie) => console.log(movie));
  * USER RATINGS
  */
 
-// Save all pages in json file
+// // Save all pages in json file
 // const userId = 912;
 
 // csfd
 //   .userRatings(userId, {
-//     excludes: ['episode', 'pořad', 'série'],
+//     excludes: ['episode', 'series', 'season'],
 //     allPages: false,
 //     allPagesDelay: 2000
 //   })

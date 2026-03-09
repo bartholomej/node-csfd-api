@@ -94,7 +94,7 @@ export class MovieScraper {
       similar: getMovieBoxMovies(asideEl, 'Podobné'),
       seasons: seasonOrEpisodeListType === 'seasons' ? getSeasonsOrEpisodes(el) : null,
       episodes: seasonOrEpisodeListType === 'episodes' ? getSeasonsOrEpisodes(el) : null,
-      parent: type === 'series' ? null : getSeasonOrEpisodeParent(el, { id: movieId, title }),
+      parent: type === 'season' || type === 'episode' ? getSeasonOrEpisodeParent(el) : null,
       episodeCode: type === 'episode' ? getEpisodeCode(el) : null,
       seasonName
     };

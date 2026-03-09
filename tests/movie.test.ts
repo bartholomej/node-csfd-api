@@ -4,6 +4,7 @@ import { CSFDColorRating, CSFDFilmTypes } from '../src/dto/global';
 import {
   CSFDMovieCreator,
   CSFDMovieListItem,
+  CSFDParent,
   CSFDPremiere,
   CSFDTitlesOther,
   CSFDVod,
@@ -414,6 +415,55 @@ describe('Get rating count', () => {
     expect(movie).toEqual(null);
   });
 });
+describe('Get parent', () => {
+  test('For movie returns null (no parent links in HTML)', () => {
+    const parent = getSeasonOrEpisodeParent(movieNode);
+    expect(parent).toBeNull();
+  });
+
+  test('For series returns null (no parent links in HTML)', () => {
+    const parent = getSeasonOrEpisodeParent(seriesNode);
+    expect(parent).toBeNull();
+  });
+
+  test('Season HTML with parent links returns series parent', () => {
+    const html = parse(`
+      <div class="film-header">
+        <h1>
+          <a href="/film/12345-some-series/prehled/">Some Series</a>
+           - Season 1
+        </h1>
+      </div>
+    `);
+    const parent = getSeasonOrEpisodeParent(html as any);
+    expect(parent).toEqual<CSFDParent>({
+      series: { id: 12345, title: 'Some Series' },
+      season: null
+    });
+  });
+
+  test('Episode HTML with series and season parent links', () => {
+    const html = parse(`
+      <div class="film-header">
+        <h2>
+          <a href="/film/12345-some-series/prehled/">Some Series</a>
+          <a href="/film/12345-some-series/67890-season-1/prehled/">Season 1</a>
+        </h2>
+      </div>
+    `);
+    const parent = getSeasonOrEpisodeParent(html as any);
+    expect(parent).toEqual<CSFDParent>({
+      series: { id: 12345, title: 'Some Series' },
+      season: { id: 67890, title: 'Season 1' }
+    });
+  });
+
+  test('No parent links returns null', () => {
+    const html = parse('<div></div>');
+    const result = getSeasonOrEpisodeParent(html as any);
+    expect(result).toBeNull();
+  });
+});
 
 describe('Get ratings', () => {
   test('Rating', () => {
@@ -488,7 +538,6 @@ describe('Get people', () => {
     const creators = getMovieGroup(movieNode, 'NeexistujiciSkupina:' as any);
     expect(creators).toEqual([]);
   });
-
   describe('Get premieres', () => {
     test('Get movie premiere', () => {
       const movie = getMoviePremieres(asideNode);
@@ -667,21 +716,6 @@ describe('Get Episode Code', () => {
   test('No header', () => {
     const html = parse('<div></div>');
     const result = getEpisodeCode(html as any);
-    expect(result).toBeNull();
-  });
-});
-
-describe('Get Season or Episode Parent', () => {
-  test('No parents but serie provided', () => {
-    const html = parse('<div></div>');
-    const serie = { id: 123, name: 'Series' };
-    const result = getSeasonOrEpisodeParent(html as any, serie);
-    expect(result).toEqual({ series: serie, season: null });
-  });
-
-  test('No parents and no serie', () => {
-    const html = parse('<div></div>');
-    const result = getSeasonOrEpisodeParent(html as any);
     expect(result).toBeNull();
   });
 });

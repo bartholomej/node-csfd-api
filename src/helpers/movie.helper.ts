@@ -1,6 +1,6 @@
 import { HTMLElement } from 'node-html-parser';
-import { CSFDColorRating, CSFDFilmTypes } from '../dto/global';
-import {
+import type { CSFDColorRating, CSFDFilmTypes } from '../dto/global';
+import type {
   CSFDBoxContent,
   CSFDCreatorGroups,
   CSFDCreatorGroupsEnglish,
@@ -17,7 +17,7 @@ import {
   CSFDVodService,
   MovieJsonLd
 } from '../dto/movie';
-import { CSFDOptions } from '../types';
+import type { CSFDOptions } from '../types';
 import {
   addProtocol,
   getColor,
@@ -351,10 +351,7 @@ export const getMovieCreators = (el: HTMLElement, options?: CSFDOptions): CSFDCr
   return creators;
 };
 
-export const getSeasonsOrEpisodes = (
-  el: HTMLElement,
-  serie?: { id: number; title: string }
-): CSFDSeriesChild[] | null => {
+export const getSeasonsOrEpisodes = (el: HTMLElement): CSFDSeriesChild[] | null => {
   const childrenList = el.querySelector('.film-episodes-list');
   if (!childrenList) return null;
 
@@ -396,20 +393,14 @@ export const detectSeasonOrEpisodeListType = (el: HTMLElement) => {
   return null;
 };
 
-export const getSeasonOrEpisodeParent = (
-  el: HTMLElement,
-  serie?: { id: number; title: string }
-): CSFDParent | null => {
+export const getSeasonOrEpisodeParent = (el: HTMLElement): CSFDParent | null => {
   // Try h2 first (for episodes), then h1 (for seasons)
   let parents = el.querySelectorAll('.film-header h2 a');
   if (parents.length === 0) {
     parents = el.querySelectorAll('.film-header h1 a');
   }
 
-  if (parents.length === 0) {
-    if (!serie) return null;
-    return { series: serie, season: null };
-  }
+  if (parents.length === 0) return null;
 
   const [parentSeries, parentSeason] = parents;
 

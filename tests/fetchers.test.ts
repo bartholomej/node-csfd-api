@@ -157,6 +157,26 @@ describe('Live: Movie page. Fetch `10135-forrest-gump`', () => {
       expect(group.length).toBeGreaterThan(0);
     }
   });
+  test('Parent is null for film', () => {
+    expect(movie.parent).toBeNull();
+  });
+});
+
+describe('Live: Film parent must be null', () => {
+  test('Fitzcarraldo (4270) - parent is null', async () => {
+    const movie = await csfd.movie(4270);
+    expect(movie.type).toEqual<CSFDFilmTypes>('film');
+    expect(movie.title).toEqual('Fitzcarraldo');
+    expect(movie.parent).toBeNull();
+  });
+});
+
+describe('Live: Series parent must be null', () => {
+  test('Simpsonovi (72489) - parent is null', async () => {
+    const movie = await csfd.movie(72489);
+    expect(movie.type).toEqual<CSFDFilmTypes>('series');
+    expect(movie.parent).toBeNull();
+  });
 });
 
 describe('Live: Series Patterns', () => {
@@ -215,7 +235,9 @@ describe('Live: Series Patterns', () => {
     });
     test('Parents', () => {
       expect(movie.parent?.series?.id).toEqual(72489);
+      expect(movie.parent?.series?.title).toEqual('Simpsonovi');
       expect(movie.parent?.season?.id).toEqual(474212);
+      expect(movie.parent?.season?.title).toEqual('Série 1');
     });
   });
 
