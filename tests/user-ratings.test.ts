@@ -227,11 +227,11 @@ describe('Get color rating', () => {
 describe('Get date', () => {
   test('First date', () => {
     const movie = getUserRatingDate(movies[0]);
-    expect(movie).toEqual<string>('14.02.2026');
+    expect(movie).toEqual<string>('2026-02-14');
   });
   test('Last date', () => {
     const movie = getUserRatingDate(movies[movies.length - 1]);
-    expect(movie).toEqual<string>('13.09.2025');
+    expect(movie).toEqual<string>('2025-09-13');
   });
 });
 

@@ -1,7 +1,7 @@
 import { HTMLElement } from 'node-html-parser';
 import { CSFDColorRating, CSFDFilmTypes, CSFDStars } from '../dto/global';
 import { CSFDColors } from '../dto/user-ratings';
-import { parseColor, parseFilmType, parseIdFromUrl } from './global.helper';
+import { parseColor, parseDate, parseFilmType, parseIdFromUrl } from './global.helper';
 
 export const getUserRatingId = (el: HTMLElement): number => {
   const url = el.querySelector('td.name .film-title-name').attributes.href;
@@ -37,7 +37,8 @@ export const getUserRatingColorRating = (el: HTMLElement): CSFDColorRating => {
 };
 
 export const getUserRatingDate = (el: HTMLElement): string => {
-  return el.querySelector('td.date-only').text.trim();
+  const date = el.querySelector('td.date-only').text.trim();
+  return parseDate(date);
 };
 
 export const getUserRatingUrl = (el: HTMLElement): string => {
