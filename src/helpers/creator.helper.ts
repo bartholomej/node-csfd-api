@@ -61,7 +61,9 @@ const parseAge = (text: string): number | null => {
 const parseBirthPlace = (text: string): string => text.trim().replace(/<br>/g, '').trim();
 
 export const getCreatorFilms = (el: HTMLElement | null): CSFDCreatorScreening[] => {
-  const filmNodes = el?.querySelectorAll('.updated-box')?.[0]?.querySelectorAll('table tr') ?? [];
+  // Performance optimization: Using querySelector instead of querySelectorAll(...)[0]
+  // to prevent node-html-parser from traversing the entire DOM subtree
+  const filmNodes = el?.querySelector('.updated-box')?.querySelectorAll('table tr') ?? [];
   let yearCache: number | null = null;
 
   const films = filmNodes.map((filmNode) => {
