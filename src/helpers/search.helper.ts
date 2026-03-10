@@ -7,7 +7,9 @@ import { addProtocol, parseColor, parseFilmType, parseIdFromUrl } from './global
 type Creator = 'Režie:' | 'Hrají:';
 
 export const getSearchType = (el: HTMLElement): CSFDFilmTypes => {
-  const type = el.querySelectorAll('.film-title-info .info')[1];
+  // Performance optimization: Using querySelector with general sibling combinator
+  // instead of querySelectorAll(...)[1] to prevent node-html-parser from traversing the entire DOM subtree
+  const type = el.querySelector('.film-title-info .info ~ .info');
   return parseFilmType(type?.innerText?.replace(/[{()}]/g, '')?.trim() || 'film');
 };
 
@@ -16,7 +18,9 @@ export const getSearchTitle = (el: HTMLElement): string => {
 };
 
 export const getSearchYear = (el: HTMLElement): number => {
-  return +el.querySelectorAll('.film-title-info .info')[0]?.innerText.replace(/[{()}]/g, '');
+  // Performance optimization: Using querySelector instead of querySelectorAll(...)[0]
+  // to prevent node-html-parser from traversing the entire DOM subtree
+  return +el.querySelector('.film-title-info .info')?.innerText.replace(/[{()}]/g, '');
 };
 
 export const getSearchUrl = (el: HTMLElement): string => {
