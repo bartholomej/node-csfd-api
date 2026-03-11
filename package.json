@@ -40,6 +40,7 @@
     "cross-fetch": "^4.1.0",
     "dotenv": "^17.3.1",
     "express": "^5.2.1",
+    "got-scraping": "^4.2.1",
     "node-html-parser": "^7.1.0",
     "zod": "^4.3.6"
   },
@@ -68,6 +69,7 @@
     "typescript": "^5.9.3",
     "vitest": "^4.0.18"
   },
+  "type": "module",
   "repository": {
     "url": "git+https://github.com/bartholomej/node-csfd-api.git",
     "type": "git"
@@ -96,13 +98,13 @@
   "lint-staged": {
     "*.ts": "eslint --cache --fix"
   },
-  "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.cts",
   "exports": {
     ".": {
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.js"
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
     },
     "./package.json": "./package.json"
   },
