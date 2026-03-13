@@ -3634,7 +3634,7 @@ __metadata:
     vitest: "npm:^4.1.0"
     zod: "npm:^4.3.6"
   bin:
-    node-csfd-api: ./dist/cli.mjs
+    node-csfd-api: ./dist/cli.js
   languageName: unknown
   linkType: soft
 

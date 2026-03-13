@@ -31,15 +31,15 @@ jobs:
       - name: 🔨 Compile and Create tarballs
         run: |
           # 1. macOS ARM
-          bun build ./dist/cli.mjs --compile --target=bun-darwin-arm64 --outfile=csfd
+          bun build ./dist/cli.js --compile --target=bun-darwin-arm64 --outfile=csfd
           tar -czvf csfd-macos-arm64.tar.gz csfd
 
           # 2. macOS Intel
-          bun build ./dist/cli.mjs --compile --target=bun-darwin-x64 --outfile=csfd
+          bun build ./dist/cli.js --compile --target=bun-darwin-x64 --outfile=csfd
           tar -czvf csfd-macos-x64.tar.gz csfd
 
           # 3. Linux x64
-          bun build ./dist/cli.mjs --compile --target=bun-linux-x64 --outfile=csfd
+          bun build ./dist/cli.js --compile --target=bun-linux-x64 --outfile=csfd
           tar -czvf csfd-linux-x64.tar.gz csfd
 
       - name: 📤 Upload to Release

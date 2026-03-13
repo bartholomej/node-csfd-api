@@ -1,12 +1,9 @@
 import fs from 'fs';
 import { csfd } from 'node-csfd-api';
-
-const TYPE = 'JavaScript ESM';
-
+const TYPE = 'TypeScript ESM';
 try {
-  const res = await csfd.movie(2);
-
-  const html = `
+    const res = await csfd.movie(2);
+    const html = `
   <!DOCTYPE html>
   <html lang="en">
   <head>
@@ -26,9 +23,9 @@ try {
   </body>
   </html>
   `;
-
-  fs.writeFileSync('index.html', html);
-  console.log(`${TYPE}: ✅ index.html has been created with title: ${res.title}`);
-} catch (error) {
-  console.error(`${TYPE}: ❌ Error:`, error);
+    fs.writeFileSync('index.html', html);
+    console.log(`${TYPE}: ✅ index.html has been created with title: ${res.title}`);
+}
+catch (error) {
+    console.error(`${TYPE}: ❌ Error:`, error);
 }

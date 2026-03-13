@@ -95,17 +95,24 @@
   "lint-staged": {
     "*.ts": "eslint --cache --fix"
   },
-  "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.js"
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
     },
     "./package.json": "./package.json"
   },
-  "bin": "./dist/cli.mjs",
+  "bin": "./dist/cli.js",
   "sideEffects": false,
   "packageManager": "yarn@4.12.0"
 }

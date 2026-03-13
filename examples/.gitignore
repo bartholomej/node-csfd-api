@@ -1,6 +1,5 @@
 index.html
 *.csv
-*.json
 
 # Yarn Modern
 **/.yarn/*
