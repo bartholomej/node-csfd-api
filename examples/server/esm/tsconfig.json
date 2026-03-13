@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    // Enable top-level await support
+    "target": "ES2022",
+    "module": "NodeNext",
+    // Ensure Node.js module resolution is used
+    "moduleResolution": "NodeNext",
+    "esModuleInterop": true
+  }
+}

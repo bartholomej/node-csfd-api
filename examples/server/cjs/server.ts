@@ -1,4 +1,4 @@
-import fs from 'fs';
+import * as fs from 'fs';
 import { csfd, CSFDMovie } from 'node-csfd-api';
 
 const TYPE = 'TypeScript CJS';
@@ -24,7 +24,7 @@ try {
         </head>
         <body>
           <h1>${res.title}</h1>
-          <p>${res.descriptions[0]}</p>              
+          <p>${res.descriptions[0]}</p>
           <h3>${TYPE}</h3>
           <p><a href="${res.url}" target="_blank">Open</a></p>
         </body>
