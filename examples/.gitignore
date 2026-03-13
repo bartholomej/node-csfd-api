@@ -1,3 +1,11 @@
 index.html
 *.csv
 *.json
+
+# Yarn Modern
+**/.yarn/*
+**/!.yarn/patches
+**/!.yarn/plugins
+**/!.yarn/releases
+**/!.yarn/sdks
+**/!.yarn/versions
