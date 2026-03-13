@@ -1,0 +1,17 @@
+{
+  "name": "example-esm",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:ts": "tsc",
+    "build": "node server.js"
+  },
+  "dependencies": {
+    "node-csfd-api": "file:../../../dist"
+  },
+  "devDependencies": {
+    "@types/node": "^25.5.0",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  }
+}
