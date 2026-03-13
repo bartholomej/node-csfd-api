@@ -1,12 +1,12 @@
 {
   "compilerOptions": {
-    "target": "es2015",
-    "lib": ["dom"],
+    "target": "ES2022",
+    "lib": ["ES2022", "DOM"],
     "types": ["node"],
     "baseUrl": "./src",
     "esModuleInterop": true,
-    "module": "esnext",
-    "moduleResolution": "node",
+    "module": "Preserve",
+    "moduleResolution": "Bundler",
     "resolveJsonModule": true,
     "strictNullChecks": false, // will be more strict in future releases
     "allowSyntheticDefaultImports": true,
