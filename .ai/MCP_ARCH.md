@@ -5,7 +5,7 @@ This explains how the Model Context Protocol (MCP) is implemented in `node-csfd-
 ## 📂 Location
 
 - Entry point: `src/mcp-server/index.ts`
-- Build output: `dist/bin/mcp-server.mjs`
+- Build output: `dist/bin/mcp-server.js`
 
 ## 🤖 Philosophy
 
@@ -55,4 +55,4 @@ The MCP server wrappers exist to make `node-csfd-api` usable by LLMs (Claude, Cu
 You can test the MCP server without a full client using the inspector.
 
 1.  Build: `yarn build:mcp`
-2.  Run: `npx @modelcontextprotocol/inspector node dist/bin/mcp-server.mjs`
+2.  Run: `npx @modelcontextprotocol/inspector node dist/bin/mcp-server.js`

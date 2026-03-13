@@ -48,5 +48,5 @@ If you modified `mcp-server/`, verify it builds and starts.
 yarn build:mcp
 
 # Try to run it (it handles stdio, so it will just wait for input, but shouldn't crash immediately)
-node dist/mcp-server.mjs
+node dist/bin/mcp-server.js
 ```

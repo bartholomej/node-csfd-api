@@ -40,4 +40,4 @@ COPY package.json ./
 EXPOSE 3000
 
 # Start the application
-CMD ["node", "dist/bin/server.mjs"]
+CMD ["node", "dist/bin/server.js"]
