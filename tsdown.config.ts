@@ -12,7 +12,6 @@ export default defineConfig([
     clean: true,
     outDir: outDir,
     sourcemap: true,
-    exports: true,
     unbundle: true,
     fixedExtension: false,
     plugins: [
