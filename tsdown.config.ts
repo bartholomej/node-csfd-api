@@ -21,7 +21,7 @@ export default defineConfig([
       })
     ]
   },
-  // 2. Servers & CLI Configuration (Strictly ESM/MJS)
+  // 2. Servers & CLI Configuration (ESM, bundled)
   {
     entry: {
       'bin/server': './src/bin/server.ts',
@@ -29,12 +29,13 @@ export default defineConfig([
       'bin/export-ratings': './src/bin/export-ratings.ts',
       cli: './src/cli.ts'
     },
-    format: ['esm'], // This will generate .mjs files
+    format: ['esm'],
     outDir: outDir,
     clean: false, // Don't clean, otherwise it would delete the library build
     unbundle: true,
     platform: 'node',
-    target: 'node18',
+    target: 'node22',
+    fixedExtension: false,
     minify: false,
     sourcemap: false,
     dts: false,
