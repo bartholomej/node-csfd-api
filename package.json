@@ -86,10 +86,17 @@
     "typescript",
     "scraper",
     "parser",
-    "api"
+    "api",
+    "mcp",
+    "ai",
+    "docker",
+    "server",
+    "cli",
+    "claude",
+    "letterboxd"
   ],
   "engines": {
-    "node": ">= 18"
+    "node": ">= 20"
   },
   "license": "MIT",
   "lint-staged": {
