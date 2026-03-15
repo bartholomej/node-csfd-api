@@ -3592,6 +3592,7 @@ __metadata:
     node-html-parser: "npm:^7.1.0"
     prettier: "npm:^3.8.1"
     rimraf: "npm:^6.1.3"
+    rolldown-plugin-dist-package: "npm:^0.1.0"
     tsdown: "npm:^0.21.2"
     tsx: "npm:^4.21.0"
     typedoc: "npm:^0.28.17"
@@ -3985,6 +3986,21 @@ __metadata:
   bin:
     rimraf: dist/esm/bin.mjs
   checksum: 10c0/4a56537850102e20ba5d5eb49f366b4b7b2435389734b4b8480cf0e0eb0f6f5d0c44120a171aeb0d8f9ab40312a10d2262f3f50acbad803e32caef61b6cf86fc
+  languageName: node
+  linkType: hard
+
+"rolldown-plugin-dist-package@npm:^0.1.0":
+  version: 0.1.0
+  resolution: "rolldown-plugin-dist-package@npm:0.1.0"
+  peerDependencies:
+    rolldown: ^1.0.0
+    rollup: ^3.0.0 || ^4.0.0
+  peerDependenciesMeta:
+    rolldown:
+      optional: true
+    rollup:
+      optional: true
+  checksum: 10c0/1eb5f0280e21ac6cbdc285f5b180d7b6a100a5082984319379cd7d476174eabff43322f5ec8455bc8aecc09dfeef401407ee3f0cda8236b5be569cad0eb6eae6
   languageName: node
   linkType: hard
 
