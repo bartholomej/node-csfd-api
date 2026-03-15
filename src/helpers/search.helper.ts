@@ -43,28 +43,42 @@ export const getSearchOrigins = (el: HTMLElement): string[] => {
 };
 
 export const parseSearchPeople = (
-  el: HTMLElement,
-  type: 'directors' | 'actors'
-): CSFDMovieCreator[] => {
-  let who: Creator;
-  if (type === 'directors') who = 'Režie:';
-  if (type === 'actors') who = 'Hrají:';
+  el: HTMLElement
+): { directors: CSFDMovieCreator[]; actors: CSFDMovieCreator[] } => {
+  const result = {
+    directors: [] as CSFDMovieCreator[],
+    actors: [] as CSFDMovieCreator[]
+  };
 
-  const peopleNode = Array.from(el && el.querySelectorAll('.article-content p')).find((el) =>
-    el.textContent.includes(who)
-  );
+  if (!el) return result;
 
-  if (peopleNode) {
-    const people = Array.from(peopleNode.querySelectorAll('a')) as unknown as HTMLElement[];
+  // Optimization: Traverse `.article-content p` once to find both directors and actors
+  const articleContent = el.querySelector('.article-content');
+  if (!articleContent) return result;
 
-    return people.map((person) => {
-      return {
-        id: parseIdFromUrl(person.attributes.href),
-        name: person.innerText.trim(),
-        url: `https://www.csfd.cz${person.attributes.href}`
-      };
-    });
-  } else {
-    return [];
+  const pNodes = articleContent.querySelectorAll('p');
+
+  for (const node of pNodes) {
+    const text = node.textContent;
+    let targetGroup: CSFDMovieCreator[] | null = null;
+
+    if (text.includes('Režie:')) {
+      targetGroup = result.directors;
+    } else if (text.includes('Hrají:')) {
+      targetGroup = result.actors;
+    }
+
+    if (targetGroup) {
+      const people = node.querySelectorAll('a');
+      for (const person of people) {
+        targetGroup.push({
+          id: parseIdFromUrl(person.attributes.href),
+          name: person.innerText.trim(),
+          url: `https://www.csfd.cz${person.attributes.href}`
+        });
+      }
+    }
   }
+
+  return result;
 };

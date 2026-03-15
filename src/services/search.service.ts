@@ -56,10 +56,7 @@ export class SearchScraper {
         colorRating: getSearchColorRating(m),
         poster: getSearchPoster(m),
         origins: getSearchOrigins(m),
-        creators: {
-          directors: parseSearchPeople(m, 'directors'),
-          actors: parseSearchPeople(m, 'actors')
-        }
+        creators: parseSearchPeople(m)
       };
     };
 
