@@ -2,15 +2,22 @@ import fs from 'fs';
 import path from 'path';
 import { Plugin } from 'rolldown';
 
+interface PackageJsonFixOptions {
+  outDir: string;
+  removeFields?: string[];
+  noPrefix?: string[];
+}
+
+type JsonValue = string | number | boolean | JsonObject | JsonValue[];
+interface JsonObject {
+  [key: string]: JsonValue;
+}
+
 export function copyAndFixPackageJson({
   outDir,
   removeFields,
   noPrefix
-}: {
-  outDir: string;
-  removeFields?: string[];
-  noPrefix?: string[];
-}): Plugin {
+}: PackageJsonFixOptions): Plugin {
   return {
     name: 'copy-and-fix-package-json',
     // Runs at the very end, after all outputs
@@ -41,11 +48,6 @@ export function copyAndFixPackageJson({
       console.log('✅ package.json copied and cleaned in dist/');
     }
   };
-}
-
-type JsonValue = string | number | boolean | JsonObject | JsonValue[];
-interface JsonObject {
-  [key: string]: JsonValue;
 }
 
 function removeOutDir(
