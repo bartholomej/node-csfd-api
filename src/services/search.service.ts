@@ -12,7 +12,7 @@ import {
   getSearchType,
   getSearchUrl,
   getSearchYear,
-  parseSearchPeople
+  parseSearchCreators
 } from '../helpers/search.helper';
 import { CSFDLanguage, CSFDOptions } from '../types';
 import { getUrlByLanguage, searchUrl } from '../vars';
@@ -47,6 +47,7 @@ export class SearchScraper {
 
     const movieMapper = (m: HTMLElement): CSFDSearchMovie => {
       const url = getSearchUrl(m);
+      const parsedCreators = parseSearchCreators(m);
       return {
         id: parseIdFromUrl(url),
         title: getSearchTitle(m),
@@ -57,8 +58,8 @@ export class SearchScraper {
         poster: getSearchPoster(m),
         origins: getSearchOrigins(m),
         creators: {
-          directors: parseSearchPeople(m, 'directors'),
-          actors: parseSearchPeople(m, 'actors')
+          directors: parsedCreators.directors,
+          actors: parsedCreators.actors
         }
       };
     };
