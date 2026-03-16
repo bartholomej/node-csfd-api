@@ -4,8 +4,6 @@ import { CSFDMovieCreator } from '../dto/movie';
 import { CSFDColors } from '../dto/user-ratings';
 import { addProtocol, parseColor, parseFilmType, parseIdFromUrl } from './global.helper';
 
-type Creator = 'Režie:' | 'Hrají:';
-
 export const getSearchType = (el: HTMLElement): CSFDFilmTypes => {
   const type = el.querySelectorAll('.film-title-info .info')[1];
   return parseFilmType(type?.innerText?.replace(/[{()}]/g, '')?.trim() || 'film');
@@ -42,29 +40,36 @@ export const getSearchOrigins = (el: HTMLElement): string[] => {
   return originsAll?.split('/').map((country) => country.trim());
 };
 
-export const parseSearchPeople = (
-  el: HTMLElement,
-  type: 'directors' | 'actors'
-): CSFDMovieCreator[] => {
-  let who: Creator;
-  if (type === 'directors') who = 'Režie:';
-  if (type === 'actors') who = 'Hrají:';
+export const parseSearchCreators = (
+  el: HTMLElement
+): { directors: CSFDMovieCreator[]; actors: CSFDMovieCreator[] } => {
+  const creators = {
+    directors: [] as CSFDMovieCreator[],
+    actors: [] as CSFDMovieCreator[]
+  };
 
-  const peopleNode = Array.from(el && el.querySelectorAll('.article-content p')).find((el) =>
-    el.textContent.includes(who)
-  );
+  // Optimization: Consolidate repeated DOM traversals for directors and actors into a single pass
+  const peopleNodes = el?.querySelectorAll('.article-content p');
+  if (!peopleNodes || !peopleNodes.length) return creators;
 
-  if (peopleNode) {
-    const people = Array.from(peopleNode.querySelectorAll('a')) as unknown as HTMLElement[];
-
-    return people.map((person) => {
-      return {
+  for (const node of peopleNodes) {
+    const text = node.textContent;
+    if (text.includes('Režie:')) {
+      const people = node.querySelectorAll('a');
+      creators.directors = people.map((person) => ({
         id: parseIdFromUrl(person.attributes.href),
         name: person.innerText.trim(),
         url: `https://www.csfd.cz${person.attributes.href}`
-      };
-    });
-  } else {
-    return [];
+      }));
+    } else if (text.includes('Hrají:')) {
+      const people = node.querySelectorAll('a');
+      creators.actors = people.map((person) => ({
+        id: parseIdFromUrl(person.attributes.href),
+        name: person.innerText.trim(),
+        url: `https://www.csfd.cz${person.attributes.href}`
+      }));
+    }
   }
+
+  return creators;
 };
