@@ -16,7 +16,7 @@ import {
   getSearchType,
   getSearchUrl,
   getSearchYear,
-  parseSearchPeople
+  getSearchCreators
 } from '../src/helpers/search.helper';
 import { searchMock } from './mocks/search.html';
 
@@ -147,7 +147,7 @@ describe('Get Movie origins', () => {
 
 describe('Get Movie creators', () => {
   test('First movie directors', () => {
-    const movie = parseSearchPeople(moviesNode[0], 'directors');
+    const movie = getSearchCreators(moviesNode[0]).directors;
     expect(movie).toEqual<CSFDMovieCreator[]>([
       {
         id: 3112,
@@ -162,7 +162,7 @@ describe('Get Movie creators', () => {
     ]);
   });
   test('Last movie actors', () => {
-    const movie = parseSearchPeople(moviesNode[moviesNode.length - 1], 'actors');
+    const movie = getSearchCreators(moviesNode[moviesNode.length - 1]).actors;
     expect(movie).toEqual<CSFDMovieCreator[]>([
       {
         id: 101,
@@ -177,7 +177,7 @@ describe('Get Movie creators', () => {
     ]);
   });
   // test('Empty actors', () => {
-  //   const movie = parseSearchPeople(moviesNode[5], 'actors');
+  //   const movie = getSearchCreators(moviesNode[5]).actors;
   //   expect(movie).toEqual<CSFDCreator[]>([]);
   // });
 });
@@ -295,7 +295,7 @@ describe('Get TV series origins', () => {
 
 describe('Get TV series creators', () => {
   test('First TV series directors', () => {
-    const movie = parseSearchPeople(tvSeriesNode[0], 'directors');
+    const movie = getSearchCreators(tvSeriesNode[0]).directors;
     expect(movie).toEqual<CSFDMovieCreator[]>([
       {
         id: 8877,
@@ -310,7 +310,7 @@ describe('Get TV series creators', () => {
     ]);
   });
   test('Last TV series actors', () => {
-    const movie = parseSearchPeople(tvSeriesNode[tvSeriesNode.length - 1], 'actors');
+    const movie = getSearchCreators(tvSeriesNode[tvSeriesNode.length - 1]).actors;
     expect(movie).toEqual<CSFDMovieCreator[]>([
       {
         id: 74751,
@@ -325,12 +325,12 @@ describe('Get TV series creators', () => {
     ]);
   });
   test('Empty directors', () => {
-    const movie = parseSearchPeople(tvSeriesNode[3], 'directors');
+    const movie = getSearchCreators(tvSeriesNode[3]).directors;
     expect(movie).toEqual<CSFDMovieCreator[]>([]);
   });
   test('Empty directors + some actors', () => {
-    const movie = parseSearchPeople(tvSeriesNode[3], 'actors');
-    const movieDirectors = parseSearchPeople(tvSeriesNode[3], 'directors');
+    const movie = getSearchCreators(tvSeriesNode[3]).actors;
+    const movieDirectors = getSearchCreators(tvSeriesNode[3]).directors;
     expect(movie).toEqual<CSFDMovieCreator[]>([
       {
         id: 61834,

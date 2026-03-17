@@ -42,29 +42,44 @@ export const getSearchOrigins = (el: HTMLElement): string[] => {
   return originsAll?.split('/').map((country) => country.trim());
 };
 
-export const parseSearchPeople = (
-  el: HTMLElement,
-  type: 'directors' | 'actors'
-): CSFDMovieCreator[] => {
-  let who: Creator;
-  if (type === 'directors') who = 'Režie:';
-  if (type === 'actors') who = 'Hrají:';
+export const getSearchCreators = (
+  el: HTMLElement
+): { directors: CSFDMovieCreator[]; actors: CSFDMovieCreator[] } => {
+  const result = { directors: [] as CSFDMovieCreator[], actors: [] as CSFDMovieCreator[] };
 
-  const peopleNode = Array.from(el && el.querySelectorAll('.article-content p')).find((el) =>
-    el.textContent.includes(who)
-  );
+  const pNodes = el ? el.querySelectorAll('.article-content p') : [];
 
-  if (peopleNode) {
-    const people = Array.from(peopleNode.querySelectorAll('a')) as unknown as HTMLElement[];
+  let foundDirectors = false;
+  let foundActors = false;
 
-    return people.map((person) => {
-      return {
-        id: parseIdFromUrl(person.attributes.href),
-        name: person.innerText.trim(),
-        url: `https://www.csfd.cz${person.attributes.href}`
-      };
-    });
-  } else {
-    return [];
+  for (const node of pNodes) {
+    if (foundDirectors && foundActors) break;
+
+    const text = node.textContent;
+    if (!foundDirectors && text.includes('Režie:')) {
+      result.directors = (Array.from(node.querySelectorAll('a')) as unknown as HTMLElement[]).map(
+        (person) => {
+          return {
+            id: parseIdFromUrl(person.attributes.href),
+            name: person.innerText.trim(),
+            url: `https://www.csfd.cz${person.attributes.href}`
+          };
+        }
+      );
+      foundDirectors = true;
+    } else if (!foundActors && text.includes('Hrají:')) {
+      result.actors = (Array.from(node.querySelectorAll('a')) as unknown as HTMLElement[]).map(
+        (person) => {
+          return {
+            id: parseIdFromUrl(person.attributes.href),
+            name: person.innerText.trim(),
+            url: `https://www.csfd.cz${person.attributes.href}`
+          };
+        }
+      );
+      foundActors = true;
+    }
   }
+
+  return result;
 };
