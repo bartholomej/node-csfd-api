@@ -42,18 +42,21 @@ jobs:
           bun build ./dist/cli.js --compile --target=bun-linux-x64 --outfile=csfd
           tar -czvf csfd-linux-x64.tar.gz csfd
 
+          sha256sum csfd-macos-arm64.tar.gz csfd-macos-x64.tar.gz csfd-linux-x64.tar.gz > sha256sums.txt
+
       - name: 📤 Upload to Release
         uses: softprops/action-gh-release@v2
         with:
-          files: csfd-*.tar.gz
+          files: |
+            csfd-*.tar.gz
+            sha256sums.txt
 
       - name: 🧮 Calculate Hashes
         id: hashes
         run: |
-          # Calculate SHA256 hashes and save them to GitHub environment variables
-          echo "MAC_ARM_HASH=$(sha256sum csfd-macos-arm64.tar.gz | awk '{ print $1 }')" >> $GITHUB_ENV
-          echo "MAC_INTEL_HASH=$(sha256sum csfd-macos-x64.tar.gz | awk '{ print $1 }')" >> $GITHUB_ENV
-          echo "LINUX_HASH=$(sha256sum csfd-linux-x64.tar.gz | awk '{ print $1 }')" >> $GITHUB_ENV
+          echo "MAC_ARM_HASH=$(grep 'csfd-macos-arm64' sha256sums.txt | awk '{print $1}')" >> $GITHUB_ENV
+          echo "MAC_INTEL_HASH=$(grep 'csfd-macos-x64' sha256sums.txt | awk '{print $1}')" >> $GITHUB_ENV
+          echo "LINUX_HASH=$(grep 'csfd-linux-x64' sha256sums.txt | awk '{print $1}')" >> $GITHUB_ENV
 
       - name: 🚀 Update Homebrew Tap
         env:

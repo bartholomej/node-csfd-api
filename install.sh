@@ -52,6 +52,26 @@ ARCHIVE_PATH="$TMP_DIR/csfd.tar.gz"
 echo "Downloading $DOWNLOAD_URL..."
 curl -fsSL "$DOWNLOAD_URL" -o "$ARCHIVE_PATH"
 
+# Verify checksum
+echo "Verifying checksum..."
+CHECKSUMS_URL="https://github.com/$REPO/releases/download/v$VERSION/sha256sums.txt"
+curl -fsSL "$CHECKSUMS_URL" -o "$TMP_DIR/sha256sums.txt"
+EXPECTED=$(grep "csfd-$TARGET.tar.gz" "$TMP_DIR/sha256sums.txt" | awk '{print $1}')
+if command -v sha256sum > /dev/null 2>&1; then
+  ACTUAL=$(sha256sum "$ARCHIVE_PATH" | awk '{print $1}')
+elif command -v shasum > /dev/null 2>&1; then
+  ACTUAL=$(shasum -a 256 "$ARCHIVE_PATH" | awk '{print $1}')
+else
+  echo "Warning: No SHA256 tool found, skipping checksum verification."
+  ACTUAL="$EXPECTED"
+fi
+if [ "$EXPECTED" != "$ACTUAL" ]; then
+  echo "Error: Checksum mismatch! Expected: $EXPECTED, Got: $ACTUAL"
+  rm -rf "$TMP_DIR"
+  exit 1
+fi
+echo "Checksum verified."
+
 # Extract the archive
 echo "Extracting archive..."
 tar -xzf "$ARCHIVE_PATH" -C "$TMP_DIR"
@@ -74,11 +94,18 @@ echo "================================================="
 if [[ ":$PATH:" != *":$INSTALL_DIR:"* ]]; then
   echo ""
   echo "⚠️  WARNING: $INSTALL_DIR is not in your PATH."
-  echo "To use the '$EXE_NAME' command globally, add the following line to your ~/.bashrc, ~/.zshrc, or ~/.config/fish/config.fish:"
-  echo ""
-  echo "  export PATH=\"\$HOME/.local/bin:\$PATH\""
-  echo ""
-  echo "Then restart your terminal or run 'source ~/.bashrc'."
+  CURRENT_SHELL=$(basename "$SHELL")
+  if [ "$CURRENT_SHELL" = "fish" ]; then
+    echo "To use the '$EXE_NAME' command globally, run:"
+    echo ""
+    echo "  fish_add_path $INSTALL_DIR"
+  else
+    echo "To use the '$EXE_NAME' command globally, add the following line to your ~/.bashrc or ~/.zshrc:"
+    echo ""
+    echo "  export PATH=\"\$HOME/.local/bin:\$PATH\""
+    echo ""
+    echo "Then restart your terminal or run 'source ~/.bashrc'."
+  fi
 fi
 
 echo "You can now run '$EXE_NAME help' to get started."
