@@ -20,8 +20,10 @@ if [ "$OS" = "Darwin" ]; then
 elif [ "$OS" = "Linux" ]; then
   if [ "$ARCH" = "x86_64" ]; then
     TARGET="linux-x64"
+  elif [ "$ARCH" = "aarch64" ] || [ "$ARCH" = "arm64" ]; then
+    TARGET="linux-arm64"
   else
-    echo "Error: Unsupported architecture ($ARCH) on Linux. Currently only x64 is supported."
+    echo "Error: Unsupported architecture ($ARCH) on Linux. Supported: x64, arm64."
     exit 1
   fi
 else
