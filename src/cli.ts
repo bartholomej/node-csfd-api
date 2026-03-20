@@ -98,12 +98,57 @@ async function main() {
       console.log(__VERSION__);
       break;
 
+    case 'update':
+      await runUpdate();
+      break;
+
     case 'help':
     case '--help':
     case '-h':
     default:
       printUsage();
       break;
+  }
+}
+
+async function runUpdate() {
+  console.log(`Current version: ${__VERSION__}`);
+  console.log('Checking for updates...');
+
+  let latest: string;
+  try {
+    const res = await fetch('https://api.github.com/repos/bartholomej/node-csfd-api/releases/latest');
+    const data = await res.json() as { tag_name?: string };
+    latest = data.tag_name?.replace(/^v/, '') ?? '';
+  } catch {
+    console.error('Error: Could not reach GitHub API.');
+    process.exit(1);
+  }
+
+  if (!latest) {
+    console.error('Error: Could not determine latest version.');
+    process.exit(1);
+  }
+
+  if (latest === __VERSION__) {
+    console.log(`Already up to date.`);
+    return;
+  }
+
+  console.log(`New version available: ${latest}`);
+
+  const execPath = process.argv[1] ?? '';
+  const isHomebrew = execPath.includes('/homebrew/') || execPath.includes('/Cellar/');
+
+  if (isHomebrew) {
+    console.log('\nInstalled via Homebrew. Run:');
+    console.log('  brew upgrade csfd');
+  } else if (process.platform === 'win32') {
+    console.log('\nDownload the latest release from:');
+    console.log('  https://github.com/bartholomej/node-csfd-api/releases/latest');
+  } else {
+    console.log('\nRun:');
+    console.log('  curl -fsSL https://raw.githubusercontent.com/bartholomej/node-csfd-api/master/install.sh | bash');
   }
 }
 
@@ -120,6 +165,7 @@ Commands:
       --csv                  Export to CSV format (default)
       --json                 Export to JSON format
       --letterboxd           Export to Letterboxd-compatible CSV format
+  update                     Check for updates and show upgrade instructions
   help                       Show this help message
 
 Flags:

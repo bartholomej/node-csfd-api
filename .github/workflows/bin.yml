@@ -42,13 +42,18 @@ jobs:
           bun build ./dist/cli.js --compile --target=bun-linux-x64 --outfile=csfd
           tar -czvf csfd-linux-x64.tar.gz csfd
 
-          sha256sum csfd-macos-arm64.tar.gz csfd-macos-x64.tar.gz csfd-linux-x64.tar.gz > sha256sums.txt
+          # 4. Windows x64
+          bun build ./dist/cli.js --compile --target=bun-windows-x64 --outfile=csfd.exe
+          zip csfd-windows-x64.zip csfd.exe
+
+          sha256sum csfd-macos-arm64.tar.gz csfd-macos-x64.tar.gz csfd-linux-x64.tar.gz csfd-windows-x64.zip > sha256sums.txt
 
       - name: 📤 Upload to Release
         uses: softprops/action-gh-release@v2
         with:
           files: |
             csfd-*.tar.gz
+            csfd-*.zip
             sha256sums.txt
 
       - name: 🧮 Calculate Hashes

@@ -542,7 +542,7 @@ npx node-csfd-api <command>
 brew install bartholomej/tap/csfd
 ```
 
-**Option C: Install script** _(Linux & macOS)_
+**Option C: Install script** _(macOS & Linux)_
 
 > Installs the latest stable release as a standalone binary to `~/.local/bin/csfd`.
 
@@ -552,11 +552,17 @@ curl -fsSL https://raw.githubusercontent.com/bartholomej/node-csfd-api/master/in
 # curl -fsSL https://raw.githubusercontent.com/bartholomej/node-csfd-api/master/install.sh | CSFD_VERSION=5.5.0 bash
 ```
 
+**Option D: Windows** _(manual download)_
+
+Download `csfd-windows-x64.zip` from the [latest release](https://github.com/bartholomej/node-csfd-api/releases/latest), extract `csfd.exe`, and add it to your `PATH`.
+
+> ⚠️ Windows may show a SmartScreen warning ("Windows protected your PC") because the binary is not code-signed. To proceed: click **More info** → **Run anyway**. Alternatively, right-click the `.exe` → Properties → check **Unblock**.
+
 ---
 
 ### CLI Examples
 
-> 💡 The examples below use `csfd` (Options B & C). If you use npx, replace it with `npx node-csfd-api` — e.g. `npx node-csfd-api export ratings 912`.
+> 💡 The examples below use `csfd` (Options B, C & D). If you use npx, replace it with `npx node-csfd-api` — e.g. `npx node-csfd-api export ratings 912`.
 
 #### 1. Export Ratings (CSV, JSON & Letterboxd)
 
