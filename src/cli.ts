@@ -2,6 +2,8 @@
  * Main CLI entry point for node-csfd-api.
  */
 
+import type { CSFDMovie } from './dto/movie';
+
 declare const __VERSION__: string;
 
 // ─── Constants ────────────────────────────────────────────────────────────────
@@ -145,6 +147,29 @@ async function main() {
         process.exit(1);
       }
       break;
+
+    case 'movie': {
+      const movieIdRaw = args[1];
+      const movieId = Number(movieIdRaw);
+      if (!movieIdRaw || isNaN(movieId)) {
+        console.error(err('Please provide a valid numeric movie ID.'));
+        console.log(c.dim(`  Usage: ${getCommandName()} movie <id> [--json]`));
+        process.exit(1);
+      }
+      try {
+        const { csfd } = await import('.');
+        const movie = await csfd.movie(movieId);
+        if (args.includes('--json')) {
+          console.log(JSON.stringify(movie, null, 2));
+        } else {
+          printMovie(movie);
+        }
+      } catch (error) {
+        console.error(err('Failed to fetch movie:'), error);
+        process.exit(1);
+      }
+      break;
+    }
 
     case '--version':
     case '-v':
@@ -327,6 +352,58 @@ async function runUpdate() {
   printUpgradeInstructions(latest);
 }
 
+function printMovie(movie: CSFDMovie) {
+  const ratingColor =
+    movie.colorRating === 'good'
+      ? c.green
+      : movie.colorRating === 'average'
+        ? c.yellow
+        : movie.colorRating === 'bad'
+          ? c.red
+          : c.dim;
+
+  const row = (label: string, value: string) =>
+    value ? `  ${c.dim(label.padEnd(11))} ${value}` : '';
+
+  const names = (arr: { name: string }[], max = 5) =>
+    arr
+      .slice(0, max)
+      .map((x) => x.name)
+      .join(', ');
+
+  const description = movie.descriptions?.[0]
+    ? movie.descriptions[0].length > 160
+      ? movie.descriptions[0].slice(0, 157) + '...'
+      : movie.descriptions[0]
+    : '';
+
+  const vod = movie.vod?.map((v) => v.title).join(', ') ?? '';
+
+  const lines = [
+    '',
+    c.bold(movie.title) + c.dim(` (${movie.year ?? '?'})`) + '  ·  ' + c.dim(movie.type ?? ''),
+    c.dim('─'.repeat(52)),
+    row(
+      'Rating',
+      movie.rating != null
+        ? ratingColor(c.bold(movie.rating + '%')) +
+            c.dim(`  (${movie.ratingCount?.toLocaleString()} ratings)`)
+        : c.dim('no rating')
+    ),
+    row('Genres', movie.genres?.join(', ') ?? ''),
+    row('Origins', movie.origins?.join(', ') ?? ''),
+    row('Duration', movie.duration ? movie.duration + ' min' : ''),
+    row('Directors', names(movie.creators?.directors ?? [])),
+    row('Cast', names(movie.creators?.actors ?? [])),
+    description ? '\n  ' + c.dim(description) : '',
+    vod ? '\n' + row('VOD', vod) : '',
+    row('URL', c.dim(movie.url ?? '')),
+    ''
+  ].filter((l) => l !== undefined);
+
+  console.log(lines.join('\n'));
+}
+
 function printUsage() {
   const cmd = getCommandName();
   const header = c.bold(c.cyan('csfd')) + ' ' + c.dim(`v${__VERSION__}`);
@@ -353,6 +430,8 @@ ${sub_('--letterboxd')}              ${desc('Letterboxd-compatible CSV')}
 ${cmd_('export reviews <userId>')}   ${desc('Export user reviews')}
 ${sub_('--csv')}                     ${desc('CSV format (default)')}
 ${sub_('--json')}                    ${desc('JSON format')}
+${cmd_('movie <id>')}                ${desc('Show movie details')}
+${sub_('--json')}                    ${desc('Output raw JSON')}
 ${cmd_('update')}                    ${desc('Check for updates')}
 ${cmd_('help')}                      ${desc('Show this help')}
 
