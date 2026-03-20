@@ -436,14 +436,14 @@ const excludeEpisodes = await csfd.userRatings('912-bart', {
 
 #### UserRatingsOptions
 
-| Option          | Type              | Default | Description                                                      |
-| --------------- | ----------------- | ------- | ---------------------------------------------------------------- |
-| `includesOnly`  | `CSFDFilmTypes[]` | `null`  | Include only specific content types (e.g., `['film', 'series']`) |
-| `exclude`       | `CSFDFilmTypes[]` | `null`  | Exclude specific content types (e.g., `['episode']`)             |
-| `allPages`      | `boolean`                          | `false`     | Fetch all pages of ratings                                       |
-| `allPagesDelay` | `number`                          | `0`         | Delay between page requests in milliseconds                      |
-| `page`          | `number`                          | `1`         | Fetch specific page number                                       |
-| `onProgress`    | `(page: number, total: number) => void` | `undefined` | Called on each page fetch — use for progress bars or logging |
+| Option          | Type                                    | Default     | Description                                                      |
+| --------------- | --------------------------------------- | ----------- | ---------------------------------------------------------------- |
+| `includesOnly`  | `CSFDFilmTypes[]`                       | `null`      | Include only specific content types (e.g., `['film', 'series']`) |
+| `exclude`       | `CSFDFilmTypes[]`                       | `null`      | Exclude specific content types (e.g., `['episode']`)             |
+| `allPages`      | `boolean`                               | `false`     | Fetch all pages of ratings                                       |
+| `allPagesDelay` | `number`                                | `0`         | Delay between page requests in milliseconds                      |
+| `page`          | `number`                                | `1`         | Fetch specific page number                                       |
+| `onProgress`    | `(page: number, total: number) => void` | `undefined` | Called on each page fetch — use for progress bars or logging     |
 
 > 📝 **Note**: `includesOnly` and `exclude` are mutually exclusive. If both are provided, `includesOnly` takes precedence.
 >
@@ -565,36 +565,45 @@ Download `csfd-windows-x64.zip` from the [latest release](https://github.com/bar
 
 > 💡 The examples below use `csfd` (Options B, C & D). If you use npx, replace it with `npx node-csfd-api` — e.g. `npx node-csfd-api export ratings 912`.
 
-#### 1. Export Ratings (CSV, JSON & Letterboxd)
-
-> Backup your personal user ratings to CSV (default), JSON, or Letterboxd format. _Use this tool just to keep a local copy of your data._
+#### 1. Movie Details
 
 ```bash
-## Export to CSV (default) -> saves as <userId>-ratings.csv
-csfd export ratings 912
+csfd movie 535121
+# npx node-csfd-api movie 535121
+csfd movie 535121 --json   # raw JSON output, pipe-friendly
+# npx node-csfd-api movie 535121 --json
+```
+
+#### 2. Export Ratings (CSV, JSON & Letterboxd)
+
+> Backup your personal user ratings. _Use this tool just to keep a local copy of your data._
+
+```bash
+csfd export ratings 912            # CSV (default) -> <userId>-ratings.csv
 # npx node-csfd-api export ratings 912
-
-## Export to JSON -> saves as <userId>-ratings.json
-csfd export ratings 912 --json
+csfd export ratings 912 --json     # JSON -> <userId>-ratings.json
 # npx node-csfd-api export ratings 912 --json
-
-## Export to Letterboxd CSV -> saves as <userId>-for-letterboxd.csv
-csfd export ratings 912 --letterboxd
+csfd export ratings 912 --letterboxd  # Letterboxd CSV -> <userId>-for-letterboxd.csv
 # npx node-csfd-api export ratings 912 --letterboxd
 ```
 
-#### 2. REST API Server
+#### 3. Export Reviews (CSV & JSON)
 
-Run a standalone REST API server.
+```bash
+csfd export reviews 912            # CSV (default) -> <userId>-reviews.csv
+# npx node-csfd-api export reviews 912
+csfd export reviews 912 --json     # JSON -> <userId>-reviews.json
+# npx node-csfd-api export reviews 912 --json
+```
+
+#### 4. REST API Server
 
 ```bash
 csfd server
 # npx node-csfd-api server
 ```
 
-#### 3. MCP Server for AI Agents
-
-Run the Model Context Protocol server for AI agents.
+#### 5. MCP Server for AI Agents
 
 ```bash
 csfd mcp
