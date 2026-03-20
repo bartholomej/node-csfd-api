@@ -55,22 +55,25 @@ curl -fsSL "$DOWNLOAD_URL" -o "$ARCHIVE_PATH"
 # Verify checksum
 echo "Verifying checksum..."
 CHECKSUMS_URL="https://github.com/$REPO/releases/download/v$VERSION/sha256sums.txt"
-curl -fsSL "$CHECKSUMS_URL" -o "$TMP_DIR/sha256sums.txt"
-EXPECTED=$(grep "csfd-$TARGET.tar.gz" "$TMP_DIR/sha256sums.txt" | awk '{print $1}')
-if command -v sha256sum > /dev/null 2>&1; then
-  ACTUAL=$(sha256sum "$ARCHIVE_PATH" | awk '{print $1}')
-elif command -v shasum > /dev/null 2>&1; then
-  ACTUAL=$(shasum -a 256 "$ARCHIVE_PATH" | awk '{print $1}')
+if curl -fsSL "$CHECKSUMS_URL" -o "$TMP_DIR/sha256sums.txt" 2>/dev/null; then
+  EXPECTED=$(grep "csfd-$TARGET.tar.gz" "$TMP_DIR/sha256sums.txt" | awk '{print $1}')
+  if command -v sha256sum > /dev/null 2>&1; then
+    ACTUAL=$(sha256sum "$ARCHIVE_PATH" | awk '{print $1}')
+  elif command -v shasum > /dev/null 2>&1; then
+    ACTUAL=$(shasum -a 256 "$ARCHIVE_PATH" | awk '{print $1}')
+  else
+    echo "Warning: No SHA256 tool found, skipping checksum verification."
+    ACTUAL="$EXPECTED"
+  fi
+  if [ "$EXPECTED" != "$ACTUAL" ]; then
+    echo "Error: Checksum mismatch! Expected: $EXPECTED, Got: $ACTUAL"
+    rm -rf "$TMP_DIR"
+    exit 1
+  fi
+  echo "Checksum verified."
 else
-  echo "Warning: No SHA256 tool found, skipping checksum verification."
-  ACTUAL="$EXPECTED"
+  echo "Warning: sha256sums.txt not available for this release, skipping verification."
 fi
-if [ "$EXPECTED" != "$ACTUAL" ]; then
-  echo "Error: Checksum mismatch! Expected: $EXPECTED, Got: $ACTUAL"
-  rm -rf "$TMP_DIR"
-  exit 1
-fi
-echo "Checksum verified."
 
 # Extract the archive
 echo "Extracting archive..."
