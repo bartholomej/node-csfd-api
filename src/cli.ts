@@ -111,14 +111,27 @@ async function main() {
   }
 }
 
+function isRunningViaNpx(): boolean {
+  const exec = process.execPath ?? '';
+  const base = exec.split('/').pop() ?? '';
+  return base === 'node' || base === 'node.exe' || base === 'bun';
+}
+
+function isRunningViaHomebrew(): boolean {
+  const exec = process.execPath ?? '';
+  return exec.includes('/homebrew/') || exec.includes('/Cellar/');
+}
+
 async function runUpdate() {
   console.log(`Current version: ${__VERSION__}`);
   console.log('Checking for updates...');
 
   let latest: string;
   try {
-    const res = await fetch('https://api.github.com/repos/bartholomej/node-csfd-api/releases/latest');
-    const data = await res.json() as { tag_name?: string };
+    const res = await fetch(
+      'https://api.github.com/repos/bartholomej/node-csfd-api/releases/latest'
+    );
+    const data = (await res.json()) as { tag_name?: string };
     latest = data.tag_name?.replace(/^v/, '') ?? '';
   } catch {
     console.error('Error: Could not reach GitHub API.');
@@ -131,24 +144,26 @@ async function runUpdate() {
   }
 
   if (latest === __VERSION__) {
-    console.log(`Already up to date.`);
+    console.log('Already up to date.');
     return;
   }
 
   console.log(`New version available: ${latest}`);
 
-  const execPath = process.argv[1] ?? '';
-  const isHomebrew = execPath.includes('/homebrew/') || execPath.includes('/Cellar/');
-
-  if (isHomebrew) {
-    console.log('\nInstalled via Homebrew. Run:');
+  if (isRunningViaNpx()) {
+    console.log('\nRun:');
+    console.log('  npx node-csfd-api@latest <command>');
+  } else if (isRunningViaHomebrew()) {
+    console.log('\nRun:');
     console.log('  brew upgrade csfd');
   } else if (process.platform === 'win32') {
-    console.log('\nDownload the latest release from:');
+    console.log('\nDownload the latest release manually from:');
     console.log('  https://github.com/bartholomej/node-csfd-api/releases/latest');
   } else {
     console.log('\nRun:');
-    console.log('  curl -fsSL https://raw.githubusercontent.com/bartholomej/node-csfd-api/master/install.sh | bash');
+    console.log(
+      '  curl -fsSL https://raw.githubusercontent.com/bartholomej/node-csfd-api/master/install.sh | bash'
+    );
   }
 }
 
