@@ -16,7 +16,7 @@ import {
   getUserReviewYear
 } from '../helpers/user-reviews.helper';
 import { CSFDOptions } from '../types';
-import { userReviewsUrl } from '../vars';
+import { LIB_PREFIX, userReviewsUrl } from '../vars';
 
 export class UserReviewsScraper {
   public async userReviews(
@@ -64,12 +64,7 @@ export class UserReviewsScraper {
     const films: CSFDUserReviews[] = [];
     if (config) {
       if (config.includesOnly?.length && config.excludes?.length) {
-        console.warn(
-          `node-csfd-api:
-        You can not use both parameters 'includesOnly' and 'excludes'.
-        Parameter 'includesOnly' will be used now:`,
-          config.includesOnly
-        );
+        console.warn(`${LIB_PREFIX} Both 'includesOnly' and 'excludes' were provided. 'includesOnly' takes precedence:`, config.includesOnly);
       }
     }
 

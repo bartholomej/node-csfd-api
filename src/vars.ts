@@ -1,6 +1,8 @@
 import { CSFDCinemaPeriod } from './dto/cinema';
 import { CSFDLanguage } from './types';
 
+export const LIB_PREFIX = '[node-csfd-api]';
+
 type Options = {
   language?: CSFDLanguage;
 };

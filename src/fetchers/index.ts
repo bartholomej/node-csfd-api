@@ -1,4 +1,5 @@
 import { fetchSafe } from './fetch.polyfill';
+import { LIB_PREFIX } from '../vars';
 
 interface BrowserProfile {
   'User-Agent': string;
@@ -95,15 +96,15 @@ export const fetchPage = async (url: string, optionsRequest?: RequestInit): Prom
 
     // Quickly check if we hit the trap
     if (html.includes("Making sure you're not a bot!")) {
-      console.warn('node-csfd-api: Trap detected.');
+      console.warn('[node-csfd-api] Trap detected. You may be rate-limited or blocked by ČSFD.');
     }
 
     return html;
   } catch (e: unknown) {
     if (e instanceof Error) {
-      console.error(e.message);
+      console.error(LIB_PREFIX, e.message);
     } else {
-      console.error(String(e));
+      console.error(LIB_PREFIX, String(e));
     }
     return 'Error';
   }

@@ -29,7 +29,7 @@ import {
   getSeriesAndSeasonTitle
 } from '../helpers/movie.helper';
 import { CSFDOptions } from '../types';
-import { movieUrl } from '../vars';
+import { LIB_PREFIX, movieUrl } from '../vars';
 
 export class MovieScraper {
   public async movie(movieId: number, options?: CSFDOptions): Promise<CSFDMovie> {
@@ -50,7 +50,7 @@ export class MovieScraper {
     try {
       jsonLd = JSON.parse(jsonLdString);
     } catch (e) {
-      console.error('node-csfd-api: Error parsing JSON-LD', e);
+      console.error(LIB_PREFIX + ' Error parsing JSON-LD', e);
     }
     return this.buildMovie(+movieId, movieNode, asideNode, pageClasses, jsonLd, options);
   }
