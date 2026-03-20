@@ -107,6 +107,31 @@ async function main() {
           console.error(err('Failed to run export:'), error);
           process.exit(1);
         }
+      } else if (args[1] === 'reviews') {
+        const userIdRaw = args[2];
+        const userId = Number(userIdRaw);
+
+        if (!userIdRaw || isNaN(userId)) {
+          console.error(err('Please provide a valid numeric User ID.'));
+          console.log(c.dim(`  Usage: ${getCommandName()} export reviews <userId> [options]`));
+          process.exit(1);
+        }
+
+        const format: 'csv' | 'json' = args.includes('--json') ? 'json' : 'csv';
+
+        try {
+          const { runReviewsExport } = await import('./bin/export-reviews');
+          await runReviewsExport(userId, {
+            format,
+            userReviewsOptions: {
+              allPages: true,
+              allPagesDelay: 1000
+            }
+          });
+        } catch (error) {
+          console.error(err('Failed to run export:'), error);
+          process.exit(1);
+        }
       } else if (args[1] === 'letterboxd') {
         console.warn(
           c.yellow(c.bold('⚠ Deprecated:')) +
@@ -325,6 +350,9 @@ ${cmd_('export ratings <userId>')}   ${desc('Export user ratings')}
 ${sub_('--csv')}                     ${desc('CSV format (default)')}
 ${sub_('--json')}                    ${desc('JSON format')}
 ${sub_('--letterboxd')}              ${desc('Letterboxd-compatible CSV')}
+${cmd_('export reviews <userId>')}   ${desc('Export user reviews')}
+${sub_('--csv')}                     ${desc('CSV format (default)')}
+${sub_('--json')}                    ${desc('JSON format')}
 ${cmd_('update')}                    ${desc('Check for updates')}
 ${cmd_('help')}                      ${desc('Show this help')}
 
