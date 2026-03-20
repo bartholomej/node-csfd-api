@@ -2,6 +2,16 @@
  * Main CLI entry point for node-csfd-api.
  */
 
+declare const __VERSION__: string;
+
+function getCommandName(): string {
+  const scriptPath = process.argv[1] ?? '';
+  const basename = scriptPath.split('/').pop() ?? '';
+  if (basename === 'csfd' || basename === 'node-csfd-api') return basename;
+  if (scriptPath.includes('node-csfd-api')) return 'npx node-csfd-api';
+  return 'csfd';
+}
+
 async function main() {
   const args = process.argv.slice(2);
   const command = args[0];
@@ -36,7 +46,7 @@ async function main() {
 
         if (!userIdRaw || isNaN(userId)) {
           console.error('Error: Please provide a valid numeric User ID.');
-          console.log('Usage: npx node-csfd-api export ratings <userId> [options]');
+          console.log(`Usage: ${getCommandName()} export ratings <userId> [options]`);
           process.exit(1);
         }
 
@@ -74,13 +84,18 @@ async function main() {
         console.warn(
           'Deprecation Warning: "export letterboxd" is deprecated. Please use "export ratings <id> --letterboxd" instead.'
         );
-        console.log('Usage: npx node-csfd-api export ratings <userId> --letterboxd');
+        console.log(`Usage: ${getCommandName()} export ratings <userId> --letterboxd`);
         process.exit(1);
       } else {
         console.error(`Unknown export target: ${args[1]}`);
         printUsage();
         process.exit(1);
       }
+      break;
+
+    case '--version':
+    case '-v':
+      console.log(__VERSION__);
       break;
 
     case 'help':
@@ -93,8 +108,9 @@ async function main() {
 }
 
 function printUsage() {
+  const cmd = getCommandName();
   console.log(`
-Usage: npx node-csfd-api <command> [options]
+Usage: ${cmd} <command> [options]
 
 Commands:
   server, api                Start the REST API server
@@ -105,6 +121,10 @@ Commands:
       --json                 Export to JSON format
       --letterboxd           Export to Letterboxd-compatible CSV format
   help                       Show this help message
+
+Flags:
+  --version, -v              Show version
+  --help, -h                 Show this help message
 `);
 }
 

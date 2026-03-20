@@ -1,5 +1,8 @@
+import { readFileSync } from 'fs';
 import { distPackage } from 'rolldown-plugin-dist-package';
 import { defineConfig } from 'tsdown';
+
+const { version } = JSON.parse(readFileSync('./package.json', 'utf-8')) as { version: string };
 
 const outDir = 'dist';
 
@@ -29,6 +32,9 @@ export default defineConfig([
       'bin/mcp-server': './src/bin/mcp-server.ts',
       'bin/export-ratings': './src/bin/export-ratings.ts',
       cli: './src/cli.ts'
+    },
+    define: {
+      __VERSION__: JSON.stringify(version)
     },
     format: ['esm'],
     outDir: outDir,
