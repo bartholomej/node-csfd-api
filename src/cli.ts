@@ -111,6 +111,23 @@ async function main() {
       }
       break;
 
+    case 'search': {
+      const query = args.slice(1).filter((a) => !a.startsWith('--')).join(' ');
+      if (!query) {
+        console.error(err('Please provide a search query.'));
+        console.log(c.dim(`  Usage: ${getCommandName()} search <query> [--json]`));
+        process.exit(1);
+      }
+      try {
+        const { runSearch } = await import('./bin/search');
+        await runSearch(query, args.includes('--json'));
+      } catch (error) {
+        console.error(err('Search failed:'), error);
+        process.exit(1);
+      }
+      break;
+    }
+
     case 'movie': {
       const movieId = parseNumericArg(args[1], `${getCommandName()} movie <id> [--json]`);
       try {
@@ -330,6 +347,7 @@ ${sub_('--letterboxd')}              ${desc('Letterboxd-compatible CSV')}
 ${cmd_('export reviews <userId>')}   ${desc('Export user reviews')}
 ${sub_('--csv')}                     ${desc('CSV format (default)')}
 ${sub_('--json')}                    ${desc('JSON format')}
+${cmd_('search <query>')}             ${desc('Search movies, series, creators and users')}
 ${cmd_('movie <id>')}                ${desc('Show movie details')}
 ${sub_('--json')}                    ${desc('Output raw JSON')}
 ${cmd_('update')}                    ${desc('Check for updates')}

@@ -565,7 +565,16 @@ Download `csfd-windows-x64.zip` from the [latest release](https://github.com/bar
 
 > 💡 The examples below use `csfd` (Options B, C & D). If you use npx, replace it with `npx node-csfd-api` — e.g. `npx node-csfd-api export ratings 912`.
 
-#### 1. Movie Details
+#### 1. Search
+
+```bash
+csfd search tarantino
+# npx node-csfd-api search tarantino
+csfd search "blade runner" --json   # raw JSON output
+# npx node-csfd-api search "blade runner" --json
+```
+
+#### 2. Movie Details
 
 ```bash
 csfd movie 535121
@@ -574,7 +583,7 @@ csfd movie 535121 --json   # raw JSON output, pipe-friendly
 # npx node-csfd-api movie 535121 --json
 ```
 
-#### 2. Export Ratings (CSV, JSON & Letterboxd)
+#### 3. Export Ratings (CSV, JSON & Letterboxd)
 
 > Backup your personal user ratings. _Use this tool just to keep a local copy of your data._
 
