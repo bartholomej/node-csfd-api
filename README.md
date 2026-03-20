@@ -524,58 +524,74 @@ Same options as [UserRatingsOptions](#userrationsoptions).
 
 ## 💻 CLI Tools
 
-This library comes with a powerful CLI that exposes several tools. You can run the CLI either via `npx` (without installation) or by installing it globally via Homebrew (macOS/Linux).
+This library ships with a CLI exposing several tools. Choose the installation method that fits your workflow.
 
-### Installation / Usage
+### Installation
 
-**Option A: NPX (No installation required)**
+**Option A: npx** _(no installation required)_
+
+> Runs directly via Node.js
 
 ```bash
 npx node-csfd-api <command>
 ```
 
-**Option B: Homebrew for macOS/Linux (Global installation)**
+**Option B: Homebrew** _(macOS)_
 
 ```bash
 brew install bartholomej/tap/csfd
-
-csfd <command>
 ```
 
-> 💡 _Note: The examples below use `npx node-csfd-api`, but if you installed via Homebrew, simply replace it with `csfd` (e.g., `csfd export ratings 912`)._
+**Option C: Install script** _(Linux & macOS)_
+
+> Installs the latest stable release as a standalone binary to `~/.local/bin/csfd`.
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/bartholomej/node-csfd-api/master/install.sh | bash
+## Install specific version
+# curl -fsSL https://raw.githubusercontent.com/bartholomej/node-csfd-api/master/install.sh | CSFD_VERSION=5.5.0 bash
+```
 
 ---
 
-### 1. Export Ratings (CSV, JSON & Letterboxd)
+### CLI Examples
 
-> Backup your personal user ratings to CSV (default), JSON, or Letterboxd format. Use this tool just to keep a local copy of your data.
+> 💡 The examples below use `csfd` (Options B & C). If you use npx, replace it with `npx node-csfd-api` — e.g. `npx node-csfd-api export ratings 912`.
+
+#### 1. Export Ratings (CSV, JSON & Letterboxd)
+
+> Backup your personal user ratings to CSV (default), JSON, or Letterboxd format. _Use this tool just to keep a local copy of your data._
 
 ```bash
-# Export to CSV (default) -> saves as <userId>-ratings.csv
-npx node-csfd-api export ratings 912
+## Export to CSV (default) -> saves as <userId>-ratings.csv
+csfd export ratings 912
+# npx node-csfd-api export ratings 912
 
-# Export to JSON -> saves as <userId>-ratings.json
-npx node-csfd-api export ratings 912 --json
+## Export to JSON -> saves as <userId>-ratings.json
+csfd export ratings 912 --json
+# npx node-csfd-api export ratings 912 --json
 
-# Export to Letterboxd CSV -> saves as <userId>-for-letterboxd.csv
-npx node-csfd-api export ratings 912 --letterboxd
+## Export to Letterboxd CSV -> saves as <userId>-for-letterboxd.csv
+csfd export ratings 912 --letterboxd
+# npx node-csfd-api export ratings 912 --letterboxd
 ```
 
-### 2. REST API Server
+#### 2. REST API Server
 
 Run a standalone REST API server.
 
 ```bash
-npx node-csfd-api server
-# Server listening on port 3000
+csfd server
+# npx node-csfd-api server
 ```
 
-### 3. MCP Server for AI Agents
+#### 3. MCP Server for AI Agents
 
 Run the Model Context Protocol server for AI agents.
 
 ```bash
-npx node-csfd-api mcp
+csfd mcp
+# npx node-csfd-api mcp
 ```
 
 ## 🤖 MCP Server (Model Context Protocol)
