@@ -440,9 +440,10 @@ const excludeEpisodes = await csfd.userRatings('912-bart', {
 | --------------- | ----------------- | ------- | ---------------------------------------------------------------- |
 | `includesOnly`  | `CSFDFilmTypes[]` | `null`  | Include only specific content types (e.g., `['film', 'series']`) |
 | `exclude`       | `CSFDFilmTypes[]` | `null`  | Exclude specific content types (e.g., `['episode']`)             |
-| `allPages`      | `boolean`         | `false` | Fetch all pages of ratings                                       |
-| `allPagesDelay` | `number`          | `0`     | Delay between page requests in milliseconds                      |
-| `page`          | `number`          | `1`     | Fetch specific page number                                       |
+| `allPages`      | `boolean`                          | `false`     | Fetch all pages of ratings                                       |
+| `allPagesDelay` | `number`                          | `0`         | Delay between page requests in milliseconds                      |
+| `page`          | `number`                          | `1`         | Fetch specific page number                                       |
+| `onProgress`    | `(page: number, total: number) => void` | `undefined` | Called on each page fetch — use for progress bars or logging |
 
 > 📝 **Note**: `includesOnly` and `exclude` are mutually exclusive. If both are provided, `includesOnly` takes precedence.
 >

@@ -22,8 +22,11 @@ csfd.movie(621073).then((movie) => console.log(movie));
 // csfd
 //   .userRatings(userId, {
 //     excludes: ['episode', 'series', 'season'],
-//     allPages: false,
-//     allPagesDelay: 2000
+//     allPages: true,
+//     allPagesDelay: 2000,
+//     onProgress: (page, total) => {
+//       console.log('Fetching rating page', page, 'out of', total, '...');
+//     }
 //   })
 //   .then((ratings) => {
 //     console.log('Saved in file:', `./${userId}.json`);
