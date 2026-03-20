@@ -4,6 +4,21 @@
 
 declare const __VERSION__: string;
 
+// ─── Color helpers ────────────────────────────────────────────────────────────
+
+const useColor = process.stdout.isTTY && !process.env['NO_COLOR'];
+
+const c = {
+  bold:   (s: string) => useColor ? `\x1b[1m${s}\x1b[22m` : s,
+  dim:    (s: string) => useColor ? `\x1b[2m${s}\x1b[22m` : s,
+  cyan:   (s: string) => useColor ? `\x1b[36m${s}\x1b[39m` : s,
+  green:  (s: string) => useColor ? `\x1b[32m${s}\x1b[39m` : s,
+  yellow: (s: string) => useColor ? `\x1b[33m${s}\x1b[39m` : s,
+  red:    (s: string) => useColor ? `\x1b[31m${s}\x1b[39m` : s,
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
+
 function getCommandName(): string {
   const scriptPath = process.argv[1] ?? '';
   const basename = scriptPath.split('/').pop() ?? '';
@@ -45,8 +60,8 @@ async function main() {
         const userId = Number(userIdRaw);
 
         if (!userIdRaw || isNaN(userId)) {
-          console.error('Error: Please provide a valid numeric User ID.');
-          console.log(`Usage: ${getCommandName()} export ratings <userId> [options]`);
+          console.error(c.red(c.bold('✖ Error:')) + ' Please provide a valid numeric User ID.');
+          console.log(c.dim(`  Usage: ${getCommandName()} export ratings <userId> [options]`));
           process.exit(1);
         }
 
@@ -77,17 +92,15 @@ async function main() {
             }
           });
         } catch (error) {
-          console.error('Failed to run export:', error);
+          console.error(c.red(c.bold('✖ Error:')) + ' Failed to run export:', error);
           process.exit(1);
         }
       } else if (args[1] === 'letterboxd') {
-        console.warn(
-          'Deprecation Warning: "export letterboxd" is deprecated. Please use "export ratings <id> --letterboxd" instead.'
-        );
-        console.log(`Usage: ${getCommandName()} export ratings <userId> --letterboxd`);
+        console.warn(c.yellow(c.bold('⚠ Deprecated:')) + ' "export letterboxd" is removed. Use "export ratings <id> --letterboxd" instead.');
+        console.log(c.dim(`  Usage: ${getCommandName()} export ratings <userId> --letterboxd`));
         process.exit(1);
       } else {
-        console.error(`Unknown export target: ${args[1]}`);
+        console.error(c.red(c.bold('✖ Error:')) + ` Unknown export target: ${c.bold(String(args[1]))}`);
         printUsage();
         process.exit(1);
       }
@@ -95,7 +108,7 @@ async function main() {
 
     case '--version':
     case '-v':
-      console.log(__VERSION__);
+      console.log(c.bold(__VERSION__));
       break;
 
     case 'update':
@@ -140,8 +153,8 @@ function compareSemver(a: string, b: string): number {
 }
 
 async function runUpdate() {
-  console.log(`Current version: ${__VERSION__}`);
-  console.log('Checking for updates...');
+  console.log(c.dim('Current version: ') + c.bold(__VERSION__));
+  console.log(c.dim('Checking for updates...'));
 
   let latest: string;
   try {
@@ -151,72 +164,77 @@ async function runUpdate() {
     const data = (await res.json()) as { tag_name?: string };
     latest = data.tag_name?.replace(/^v/, '') ?? '';
   } catch {
-    console.error('Error: Could not reach GitHub API.');
+    console.error(c.red(c.bold('✖ Error:')) + ' Could not reach GitHub API.');
     process.exit(1);
   }
 
   if (!latest) {
-    console.error('Error: Could not determine latest version.');
+    console.error(c.red(c.bold('✖ Error:')) + ' Could not determine latest version.');
     process.exit(1);
   }
 
   const cmp = compareSemver(__VERSION__, latest);
 
   if (cmp === 0) {
-    console.log('Already up to date.');
+    console.log(c.green('✔ Already up to date.'));
     return;
   }
 
   if (cmp > 0) {
-    // current is ahead of latest stable — running a pre-release
-    console.log(
-      `You are running a pre-release version which is probably newer than the latest stable release: ${latest}`
-    );
+    console.log(c.yellow('⚠ You are running a pre-release version.') + c.dim(` Latest stable: ${latest}`));
     return;
   }
 
-  console.log(`New version available: ${latest}`);
+  console.log(c.green(c.bold('↑ New version available: ')) + c.bold(latest));
 
   if (isRunningViaNpx()) {
-    console.log('\nRun:');
-    console.log('  npx node-csfd-api@latest <command>');
+    console.log('\n' + c.bold('Run:'));
+    console.log('  ' + c.cyan('npx node-csfd-api@latest <command>'));
   } else if (isRunningViaHomebrew()) {
-    console.log('\nRun:');
-    console.log('  brew upgrade csfd');
+    console.log('\n' + c.bold('Run:'));
+    console.log('  ' + c.cyan('brew upgrade csfd'));
   } else if (process.platform === 'win32') {
-    console.log('\nDownload the latest release manually from:');
-    console.log('  https://github.com/bartholomej/node-csfd-api/releases/latest');
+    console.log('\n' + c.bold('Download the latest release from:'));
+    console.log('  ' + c.cyan('https://github.com/bartholomej/node-csfd-api/releases/latest'));
   } else {
-    console.log('\nRun:');
-    console.log(
-      '  curl -fsSL https://raw.githubusercontent.com/bartholomej/node-csfd-api/master/install.sh | bash'
-    );
+    console.log('\n' + c.bold('Run:'));
+    console.log('  ' + c.cyan('curl -fsSL https://raw.githubusercontent.com/bartholomej/node-csfd-api/master/install.sh | bash'));
   }
 }
 
 function printUsage() {
   const cmd = getCommandName();
+  const header = c.bold(c.cyan('csfd')) + ' ' + c.dim(`v${__VERSION__}`);
+  const usage  = c.bold('Usage:') + `  ${c.cyan(cmd)} ${c.dim('<command> [options]')}`;
+
+  const section = (title: string) => c.bold(title);
+  const cmd_    = (name: string)  => '  ' + c.cyan(name);
+  const flag_   = (name: string)  => '  ' + c.dim(name);
+  const desc    = (text: string)  => c.dim(text);
+  const sub_    = (name: string)  => '    ' + c.dim(name);
+
   console.log(`
-Usage: ${cmd} <command> [options]
+${header}
 
-Commands:
-  server, api                Start the REST API server
-  mcp                        Start the MCP (Model Context Protocol) server for AI agents
-  export ratings <userId>    Export user ratings to CSV (default), JSON, or Letterboxd format
-    Options:
-      --csv                  Export to CSV format (default)
-      --json                 Export to JSON format
-      --letterboxd           Export to Letterboxd-compatible CSV format
-  update                     Check for updates and show upgrade instructions
-  help                       Show this help message
+${usage}
 
-Flags:
-  --version, -v              Show version
-  --help, -h                 Show this help message
+${section('Commands:')}
+${cmd_('server, api')}               ${desc('Start the REST API server')}
+${cmd_('mcp')}                       ${desc('Start the MCP server for AI agents')}
+${cmd_('export ratings <userId>')}   ${desc('Export user ratings')}
+${sub_('--csv')}                     ${desc('CSV format (default)')}
+${sub_('--json')}                    ${desc('JSON format')}
+${sub_('--letterboxd')}              ${desc('Letterboxd-compatible CSV')}
+${cmd_('update')}                    ${desc('Check for updates')}
+${cmd_('help')}                      ${desc('Show this help')}
+
+${section('Flags:')}
+${flag_('-v, --version')}            ${desc('Show version')}
+${flag_('-h, --help')}               ${desc('Show this help')}
 `);
 }
 
 main().catch((error) => {
-  console.error('Fatal error:', error);
+  console.error(c.red(c.bold('✖ Fatal error:')) + ' ' + String(error));
   process.exit(1);
 });
