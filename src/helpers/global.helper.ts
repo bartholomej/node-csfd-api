@@ -8,18 +8,23 @@ const ISO8601_DURATION_REGEX =
 export const parseIdFromUrl = (url: string): number => {
   if (!url) return null;
 
+  // Optimization: avoid intermediate array allocations (.filter, .map)
+  // and traverse backwards since the ID slug is typically at the end.
   const parts = url.split('/');
-  const idParts = parts.filter((p) => /^\d+-/.test(p));
-  if (idParts.length > 0) {
-    const idSlug = idParts[idParts.length - 1];
-    return +idSlug.split('-')[0] || null;
+  for (let i = parts.length - 1; i >= 0; i--) {
+    const p = parts[i];
+    if (/^\d+-/.test(p)) {
+      return parseInt(p, 10) || null; // parseInt ignores the trailing '-slug' part
+    }
   }
 
   // Fallback
   const hasLangPrefix = LANG_PREFIX_REGEX.test(parts[1]);
   const idSlug = parts[hasLangPrefix ? 3 : 2];
-  const id = idSlug?.split('-')[0];
-  return +id || null;
+  if (idSlug) {
+    return parseInt(idSlug, 10) || null;
+  }
+  return null;
 };
 
 export const parseLastIdFromUrl = (url: string): number => {
