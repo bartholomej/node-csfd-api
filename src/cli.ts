@@ -122,6 +122,23 @@ function isRunningViaHomebrew(): boolean {
   return exec.includes('/homebrew/') || exec.includes('/Cellar/');
 }
 
+function compareSemver(a: string, b: string): number {
+  const parse = (v: string) => {
+    const [main, pre = ''] = v.split('-');
+    const [major, minor, patch] = main.split('.').map(Number);
+    return { major, minor, patch, pre };
+  };
+  const va = parse(a);
+  const vb = parse(b);
+  if (va.major !== vb.major) return va.major - vb.major;
+  if (va.minor !== vb.minor) return va.minor - vb.minor;
+  if (va.patch !== vb.patch) return va.patch - vb.patch;
+  // pre-release < stable: 5.6.0-next.0 < 5.6.0
+  if (va.pre && !vb.pre) return -1;
+  if (!va.pre && vb.pre) return 1;
+  return va.pre.localeCompare(vb.pre);
+}
+
 async function runUpdate() {
   console.log(`Current version: ${__VERSION__}`);
   console.log('Checking for updates...');
@@ -143,8 +160,18 @@ async function runUpdate() {
     process.exit(1);
   }
 
-  if (latest === __VERSION__) {
+  const cmp = compareSemver(__VERSION__, latest);
+
+  if (cmp === 0) {
     console.log('Already up to date.');
+    return;
+  }
+
+  if (cmp > 0) {
+    // current is ahead of latest stable — running a pre-release
+    console.log(
+      `You are running a pre-release version which is probably newer than the latest stable release: ${latest}`
+    );
     return;
   }
 
