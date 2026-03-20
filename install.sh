@@ -31,17 +31,23 @@ fi
 
 echo "Detected platform: $OS ($ARCH) -> Target: $TARGET"
 
-# Fetch the latest version tag from GitHub API
-echo "Fetching latest release version..."
-LATEST_RELEASE=$(curl -s "https://api.github.com/repos/$REPO/releases/latest")
-VERSION=$(echo "$LATEST_RELEASE" | grep '"tag_name":' | sed -E 's/.*"v?([^"]+)".*/\1/')
-
-if [ -z "$VERSION" ]; then
-  echo "Error: Could not determine the latest version."
-  exit 1
+# Resolve version: env variable > positional argument > latest release
+if [ -n "$CSFD_VERSION" ]; then
+  VERSION="${CSFD_VERSION#v}"
+  echo "Using requested version: $VERSION"
+elif [ -n "$1" ]; then
+  VERSION="${1#v}"
+  echo "Using requested version: $VERSION"
+else
+  echo "Fetching latest release version..."
+  LATEST_RELEASE=$(curl -s "https://api.github.com/repos/$REPO/releases/latest")
+  VERSION=$(echo "$LATEST_RELEASE" | grep '"tag_name":' | sed -E 's/.*"v?([^"]+)".*/\1/')
+  if [ -z "$VERSION" ]; then
+    echo "Error: Could not determine the latest version."
+    exit 1
+  fi
+  echo "Latest version is $VERSION."
 fi
-
-echo "Latest version is $VERSION."
 
 # Construct the download URL
 DOWNLOAD_URL="https://github.com/$REPO/releases/download/v$VERSION/csfd-$TARGET.tar.gz"
