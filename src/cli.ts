@@ -4,18 +4,27 @@
 
 declare const __VERSION__: string;
 
+// ─── Constants ────────────────────────────────────────────────────────────────
+
+const GITHUB_REPO = 'bartholomej/node-csfd-api';
+const GITHUB_API_LATEST = `https://api.github.com/repos/${GITHUB_REPO}/releases/latest`;
+const GITHUB_RELEASES_URL = `https://github.com/${GITHUB_REPO}/releases/latest`;
+const INSTALL_SH_URL = `https://raw.githubusercontent.com/${GITHUB_REPO}/master/install.sh`;
+
 // ─── Color helpers ────────────────────────────────────────────────────────────
 
 const useColor = process.stdout.isTTY && !process.env['NO_COLOR'];
 
 const c = {
-  bold:   (s: string) => useColor ? `\x1b[1m${s}\x1b[22m` : s,
-  dim:    (s: string) => useColor ? `\x1b[2m${s}\x1b[22m` : s,
-  cyan:   (s: string) => useColor ? `\x1b[36m${s}\x1b[39m` : s,
-  green:  (s: string) => useColor ? `\x1b[32m${s}\x1b[39m` : s,
-  yellow: (s: string) => useColor ? `\x1b[33m${s}\x1b[39m` : s,
-  red:    (s: string) => useColor ? `\x1b[31m${s}\x1b[39m` : s,
+  bold: (s: string) => (useColor ? `\x1b[1m${s}\x1b[22m` : s),
+  dim: (s: string) => (useColor ? `\x1b[2m${s}\x1b[22m` : s),
+  cyan: (s: string) => (useColor ? `\x1b[36m${s}\x1b[39m` : s),
+  green: (s: string) => (useColor ? `\x1b[32m${s}\x1b[39m` : s),
+  yellow: (s: string) => (useColor ? `\x1b[33m${s}\x1b[39m` : s),
+  red: (s: string) => (useColor ? `\x1b[31m${s}\x1b[39m` : s)
 };
+
+const err = (msg: string) => c.red(c.bold('✖ Error:')) + ' ' + msg;
 
 // ─────────────────────────────────────────────────────────────────────────────
 
@@ -30,6 +39,9 @@ function getCommandName(): string {
 async function main() {
   const args = process.argv.slice(2);
   const command = args[0];
+
+  const noUpdateHintFor = new Set(['update']);
+  const updateHint = noUpdateHintFor.has(command) ? null : checkForUpdateInBackground();
 
   switch (command) {
     case 'server':
@@ -60,7 +72,7 @@ async function main() {
         const userId = Number(userIdRaw);
 
         if (!userIdRaw || isNaN(userId)) {
-          console.error(c.red(c.bold('✖ Error:')) + ' Please provide a valid numeric User ID.');
+          console.error(err('Please provide a valid numeric User ID.'));
           console.log(c.dim(`  Usage: ${getCommandName()} export ratings <userId> [options]`));
           process.exit(1);
         }
@@ -92,15 +104,18 @@ async function main() {
             }
           });
         } catch (error) {
-          console.error(c.red(c.bold('✖ Error:')) + ' Failed to run export:', error);
+          console.error(err('Failed to run export:'), error);
           process.exit(1);
         }
       } else if (args[1] === 'letterboxd') {
-        console.warn(c.yellow(c.bold('⚠ Deprecated:')) + ' "export letterboxd" is removed. Use "export ratings <id> --letterboxd" instead.');
+        console.warn(
+          c.yellow(c.bold('⚠ Deprecated:')) +
+            ' "export letterboxd" is removed. Use "export ratings <id> --letterboxd" instead.'
+        );
         console.log(c.dim(`  Usage: ${getCommandName()} export ratings <userId> --letterboxd`));
         process.exit(1);
       } else {
-        console.error(c.red(c.bold('✖ Error:')) + ` Unknown export target: ${c.bold(String(args[1]))}`);
+        console.error(err(`Unknown export target: ${c.bold(String(args[1]))}`));
         printUsage();
         process.exit(1);
       }
@@ -122,6 +137,8 @@ async function main() {
       printUsage();
       break;
   }
+
+  if (updateHint) await updateHint;
 }
 
 function isRunningViaNpx(): boolean {
@@ -152,24 +169,119 @@ function compareSemver(a: string, b: string): number {
   return va.pre.localeCompare(vb.pre);
 }
 
+// ─── Shared update helpers ────────────────────────────────────────────────────
+
+async function fetchLatestVersion(timeoutMs = 5000): Promise<string> {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), timeoutMs);
+  try {
+    const res = await fetch(GITHUB_API_LATEST, { signal: controller.signal });
+    const data = (await res.json()) as { tag_name?: string };
+    return data.tag_name?.replace(/^v/, '') ?? '';
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
+function printUpgradeInstructions(latest: string) {
+  console.log(c.green(c.bold('↑ New version available: ')) + c.bold(latest));
+  if (isRunningViaNpx()) {
+    console.log('\n' + c.bold('Run:'));
+    console.log('  ' + c.cyan('npx node-csfd-api@latest <command>'));
+  } else if (isRunningViaHomebrew()) {
+    console.log('\n' + c.bold('Run:'));
+    console.log('  ' + c.cyan('brew upgrade csfd'));
+  } else if (process.platform === 'win32') {
+    console.log('\n' + c.bold('Download the latest release from:'));
+    console.log('  ' + c.cyan(GITHUB_RELEASES_URL));
+  } else {
+    console.log('\n' + c.bold('Run:'));
+    console.log('  ' + c.cyan(`curl -fsSL ${INSTALL_SH_URL} | bash`));
+  }
+}
+
+// ─── Update cache ─────────────────────────────────────────────────────────────
+
+interface UpdateCache {
+  lastCheck: number;
+  latestVersion: string;
+}
+
+const UPDATE_CACHE_TTL = 24 * 60 * 60 * 1000; // 24h
+
+function getUpdateCachePath(): string {
+  const home = process.env['HOME'] || process.env['USERPROFILE'] || '';
+  const configBase =
+    process.platform === 'win32'
+      ? process.env['APPDATA'] || home
+      : process.env['XDG_CONFIG_HOME'] || `${home}/.config`;
+  return `${configBase}/csfd/update-check.json`;
+}
+
+async function checkForUpdateInBackground(): Promise<void> {
+  try {
+    const { readFileSync, writeFileSync, mkdirSync } = await import('node:fs');
+    const { dirname } = await import('node:path');
+    const cachePath = getUpdateCachePath();
+
+    let cache: UpdateCache | null = null;
+    try {
+      cache = JSON.parse(readFileSync(cachePath, 'utf-8')) as UpdateCache;
+    } catch {
+      /* no cache yet */
+    }
+
+    const now = Date.now();
+    let latestVersion = cache?.latestVersion ?? '';
+
+    if (!cache || now - cache.lastCheck > UPDATE_CACHE_TTL) {
+      try {
+        const fetched = await fetchLatestVersion(3000);
+        if (fetched) {
+          latestVersion = fetched;
+          try {
+            mkdirSync(dirname(cachePath), { recursive: true });
+            writeFileSync(cachePath, JSON.stringify({ lastCheck: now, latestVersion }));
+          } catch {
+            /* ignore write errors */
+          }
+        }
+      } catch {
+        /* network error — use cached value */
+      }
+    }
+
+    if (!latestVersion || compareSemver(__VERSION__, latestVersion) >= 0) return;
+
+    console.log('');
+    console.log(c.dim('  ' + '─'.repeat(44)));
+    console.log(
+      `  ${c.yellow(c.bold('↑ Update available:'))} ${c.dim(__VERSION__)} → ${c.bold(c.green(latestVersion))}`
+    );
+    console.log(
+      `  ${c.dim('Run')} ${c.cyan(getCommandName() + ' update')} ${c.dim('for upgrade instructions.')}`
+    );
+  } catch {
+    /* silently ignore */
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+
 async function runUpdate() {
   console.log(c.dim('Current version: ') + c.bold(__VERSION__));
   console.log(c.dim('Checking for updates...'));
 
   let latest: string;
   try {
-    const res = await fetch(
-      'https://api.github.com/repos/bartholomej/node-csfd-api/releases/latest'
-    );
-    const data = (await res.json()) as { tag_name?: string };
-    latest = data.tag_name?.replace(/^v/, '') ?? '';
+    latest = await fetchLatestVersion();
   } catch {
-    console.error(c.red(c.bold('✖ Error:')) + ' Could not reach GitHub API.');
+    console.error(err('Could not reach GitHub API.'));
     process.exit(1);
   }
 
   if (!latest) {
-    console.error(c.red(c.bold('✖ Error:')) + ' Could not determine latest version.');
+    console.error(err('Could not determine latest version.'));
     process.exit(1);
   }
 
@@ -181,37 +293,25 @@ async function runUpdate() {
   }
 
   if (cmp > 0) {
-    console.log(c.yellow('⚠ You are running a pre-release version.') + c.dim(` Latest stable: ${latest}`));
+    console.log(
+      c.yellow('⚠ You are running a pre-release version.') + c.dim(` Latest stable: ${latest}`)
+    );
     return;
   }
 
-  console.log(c.green(c.bold('↑ New version available: ')) + c.bold(latest));
-
-  if (isRunningViaNpx()) {
-    console.log('\n' + c.bold('Run:'));
-    console.log('  ' + c.cyan('npx node-csfd-api@latest <command>'));
-  } else if (isRunningViaHomebrew()) {
-    console.log('\n' + c.bold('Run:'));
-    console.log('  ' + c.cyan('brew upgrade csfd'));
-  } else if (process.platform === 'win32') {
-    console.log('\n' + c.bold('Download the latest release from:'));
-    console.log('  ' + c.cyan('https://github.com/bartholomej/node-csfd-api/releases/latest'));
-  } else {
-    console.log('\n' + c.bold('Run:'));
-    console.log('  ' + c.cyan('curl -fsSL https://raw.githubusercontent.com/bartholomej/node-csfd-api/master/install.sh | bash'));
-  }
+  printUpgradeInstructions(latest);
 }
 
 function printUsage() {
   const cmd = getCommandName();
   const header = c.bold(c.cyan('csfd')) + ' ' + c.dim(`v${__VERSION__}`);
-  const usage  = c.bold('Usage:') + `  ${c.cyan(cmd)} ${c.dim('<command> [options]')}`;
+  const usage = c.bold('Usage:') + `  ${c.cyan(cmd)} ${c.dim('<command> [options]')}`;
 
   const section = (title: string) => c.bold(title);
-  const cmd_    = (name: string)  => '  ' + c.cyan(name);
-  const flag_   = (name: string)  => '  ' + c.dim(name);
-  const desc    = (text: string)  => c.dim(text);
-  const sub_    = (name: string)  => '    ' + c.dim(name);
+  const cmd_ = (name: string) => '  ' + c.cyan(name);
+  const flag_ = (name: string) => '  ' + c.dim(name);
+  const desc = (text: string) => c.dim(text);
+  const sub_ = (name: string) => '    ' + c.dim(name);
 
   console.log(`
 ${header}
@@ -235,6 +335,6 @@ ${flag_('-h, --help')}               ${desc('Show this help')}
 }
 
 main().catch((error) => {
-  console.error(c.red(c.bold('✖ Fatal error:')) + ' ' + String(error));
+  console.error(err('Fatal: ' + String(error)));
   process.exit(1);
 });
