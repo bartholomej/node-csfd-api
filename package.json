@@ -120,7 +120,10 @@
     },
     "./package.json": "./package.json"
   },
-  "bin": "./dist/cli.js",
+  "bin": {
+    "csfd": "./dist/cli.js",
+    "node-csfd-api": "./dist/cli.js"
+  },
   "sideEffects": false,
   "packageManager": "yarn@4.12.0"
 }
