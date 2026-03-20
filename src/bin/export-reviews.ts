@@ -5,6 +5,7 @@
 import { writeFile } from 'node:fs/promises';
 import { csfd } from '..';
 import { CSFDUserReviewsConfig } from '../dto/user-reviews';
+import { escapeCsvField, renderProgress } from './utils';
 
 export interface ExportReviewsOptions {
   format: 'json' | 'csv';
@@ -17,22 +18,10 @@ export async function runReviewsExport(userId: number, options: ExportReviewsOpt
 
     const reviews = await csfd.userReviews(userId, {
       ...options.userReviewsOptions,
-      onProgress: (page, total) => {
-        const pct = Math.round((page / total) * 100);
-        const filled = Math.round((page / total) * 20);
-        const bar = '█'.repeat(filled) + '░'.repeat(20 - filled);
-        process.stdout.write(`\r  [${bar}]  ${page}/${total} pages  ${pct}%`);
-        if (page === total) process.stdout.write('\n');
-      }
+      onProgress: renderProgress
     });
 
     console.log(`Fetched ${reviews.length} reviews.`);
-
-    const escapeCsvField = (value: string) => {
-      const needsQuotes = /[",\n\r]/.test(value);
-      const escaped = value.replaceAll('"', '""');
-      return needsQuotes ? `"${escaped}"` : escaped;
-    };
 
     let content = '';
     let fileName = '';

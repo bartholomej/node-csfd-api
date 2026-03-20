@@ -5,6 +5,7 @@
 import { writeFile } from 'node:fs/promises';
 import { csfd } from '..';
 import { CSFDUserRatingConfig } from '../dto/user-ratings';
+import { escapeCsvField, renderProgress } from './utils';
 
 export interface ExportRatingsOptions {
   format: 'json' | 'csv' | 'letterboxd';
@@ -29,25 +30,13 @@ export async function runRatingsExport(userId: number, options: ExportRatingsOpt
 
     const ratings = await csfd.userRatings(userId, {
       ...options.userRatingsOptions,
-      onProgress: (page, total) => {
-        const pct = Math.round((page / total) * 100);
-        const filled = Math.round((page / total) * 20);
-        const bar = '█'.repeat(filled) + '░'.repeat(20 - filled);
-        process.stdout.write(`\r  [${bar}]  ${page}/${total} pages  ${pct}%`);
-        if (page === total) process.stdout.write('\n');
-      }
+      onProgress: renderProgress
     });
 
     console.log(`Fetched ${ratings.length} ratings.`);
 
     let content = '';
     let fileName = '';
-
-    const escapeCsvField = (value: string) => {
-      const needsQuotes = /[",\n\r]/.test(value);
-      const escaped = value.replaceAll('"', '""');
-      return needsQuotes ? `"${escaped}"` : escaped;
-    };
 
     if (options.format === 'letterboxd') {
       // Letterboxd Import Format

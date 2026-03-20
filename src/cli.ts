@@ -2,7 +2,7 @@
  * Main CLI entry point for node-csfd-api.
  */
 
-import type { CSFDMovie } from './dto/movie';
+import { c, err } from './bin/utils';
 
 declare const __VERSION__: string;
 
@@ -13,21 +13,6 @@ const GITHUB_API_LATEST = `https://api.github.com/repos/${GITHUB_REPO}/releases/
 const GITHUB_RELEASES_URL = `https://github.com/${GITHUB_REPO}/releases/latest`;
 const INSTALL_SH_URL = `https://raw.githubusercontent.com/${GITHUB_REPO}/master/install.sh`;
 
-// ─── Color helpers ────────────────────────────────────────────────────────────
-
-const useColor = process.stdout.isTTY && !process.env['NO_COLOR'];
-
-const c = {
-  bold: (s: string) => (useColor ? `\x1b[1m${s}\x1b[22m` : s),
-  dim: (s: string) => (useColor ? `\x1b[2m${s}\x1b[22m` : s),
-  cyan: (s: string) => (useColor ? `\x1b[36m${s}\x1b[39m` : s),
-  green: (s: string) => (useColor ? `\x1b[32m${s}\x1b[39m` : s),
-  yellow: (s: string) => (useColor ? `\x1b[33m${s}\x1b[39m` : s),
-  red: (s: string) => (useColor ? `\x1b[31m${s}\x1b[39m` : s)
-};
-
-const err = (msg: string) => c.red(c.bold('✖ Error:')) + ' ' + msg;
-
 // ─────────────────────────────────────────────────────────────────────────────
 
 function getCommandName(): string {
@@ -36,6 +21,20 @@ function getCommandName(): string {
   if (basename === 'csfd' || basename === 'node-csfd-api') return basename;
   if (scriptPath.includes('node-csfd-api')) return 'npx node-csfd-api';
   return 'csfd';
+}
+
+function parseNumericArg(raw: string | undefined, usage: string): number {
+  const n = Number(raw);
+  if (!raw || isNaN(n)) {
+    console.error(err('Please provide a valid numeric ID.'));
+    console.log(c.dim(`  Usage: ${usage}`));
+    process.exit(1);
+  }
+  return n;
+}
+
+function parseFormat(args: string[]): 'csv' | 'json' {
+  return args.includes('--json') ? 'json' : 'csv';
 }
 
 async function main() {
@@ -68,38 +67,15 @@ async function main() {
       break;
 
     case 'export':
-      // Sub-command: ratings
       if (args[1] === 'ratings') {
-        const userIdRaw = args[2];
-        const userId = Number(userIdRaw);
-
-        if (!userIdRaw || isNaN(userId)) {
-          console.error(err('Please provide a valid numeric User ID.'));
-          console.log(c.dim(`  Usage: ${getCommandName()} export ratings <userId> [options]`));
-          process.exit(1);
-        }
-
+        const userId = parseNumericArg(args[2], `${getCommandName()} export ratings <userId> [options]`);
         const isLetterboxd = args.includes('--letterboxd');
-        const isJson = args.includes('--json');
-        const isCsv = args.includes('--csv');
-
-        let format: 'csv' | 'json' | 'letterboxd' = 'csv'; // Default to CSV
-        if (isLetterboxd) {
-          format = 'letterboxd';
-        } else if (isJson) {
-          format = 'json';
-        } else if (isCsv) {
-          format = 'csv';
-        }
-
+        const format: 'csv' | 'json' | 'letterboxd' = isLetterboxd ? 'letterboxd' : parseFormat(args);
         try {
-          // Dynamic import using a static string literal
           const { runRatingsExport } = await import('./bin/export-ratings');
-
           await runRatingsExport(userId, {
             format,
             userRatingsOptions: {
-              // Default behavior for Letterboxd (films only) if not overridden
               includesOnly: isLetterboxd ? ['film'] : undefined,
               allPages: true,
               allPagesDelay: 1000
@@ -110,25 +86,12 @@ async function main() {
           process.exit(1);
         }
       } else if (args[1] === 'reviews') {
-        const userIdRaw = args[2];
-        const userId = Number(userIdRaw);
-
-        if (!userIdRaw || isNaN(userId)) {
-          console.error(err('Please provide a valid numeric User ID.'));
-          console.log(c.dim(`  Usage: ${getCommandName()} export reviews <userId> [options]`));
-          process.exit(1);
-        }
-
-        const format: 'csv' | 'json' = args.includes('--json') ? 'json' : 'csv';
-
+        const userId = parseNumericArg(args[2], `${getCommandName()} export reviews <userId> [options]`);
         try {
           const { runReviewsExport } = await import('./bin/export-reviews');
           await runReviewsExport(userId, {
-            format,
-            userReviewsOptions: {
-              allPages: true,
-              allPagesDelay: 1000
-            }
+            format: parseFormat(args),
+            userReviewsOptions: { allPages: true, allPagesDelay: 1000 }
           });
         } catch (error) {
           console.error(err('Failed to run export:'), error);
@@ -149,21 +112,10 @@ async function main() {
       break;
 
     case 'movie': {
-      const movieIdRaw = args[1];
-      const movieId = Number(movieIdRaw);
-      if (!movieIdRaw || isNaN(movieId)) {
-        console.error(err('Please provide a valid numeric movie ID.'));
-        console.log(c.dim(`  Usage: ${getCommandName()} movie <id> [--json]`));
-        process.exit(1);
-      }
+      const movieId = parseNumericArg(args[1], `${getCommandName()} movie <id> [--json]`);
       try {
-        const { csfd } = await import('.');
-        const movie = await csfd.movie(movieId);
-        if (args.includes('--json')) {
-          console.log(JSON.stringify(movie, null, 2));
-        } else {
-          printMovie(movie);
-        }
+        const { runMovieLookup } = await import('./bin/lookup-movie');
+        await runMovieLookup(movieId, args.includes('--json'));
       } catch (error) {
         console.error(err('Failed to fetch movie:'), error);
         process.exit(1);
@@ -350,58 +302,6 @@ async function runUpdate() {
   }
 
   printUpgradeInstructions(latest);
-}
-
-function printMovie(movie: CSFDMovie) {
-  const ratingColor =
-    movie.colorRating === 'good'
-      ? c.green
-      : movie.colorRating === 'average'
-        ? c.yellow
-        : movie.colorRating === 'bad'
-          ? c.red
-          : c.dim;
-
-  const row = (label: string, value: string) =>
-    value ? `  ${c.dim(label.padEnd(11))} ${value}` : '';
-
-  const names = (arr: { name: string }[], max = 5) =>
-    arr
-      .slice(0, max)
-      .map((x) => x.name)
-      .join(', ');
-
-  const description = movie.descriptions?.[0]
-    ? movie.descriptions[0].length > 160
-      ? movie.descriptions[0].slice(0, 157) + '...'
-      : movie.descriptions[0]
-    : '';
-
-  const vod = movie.vod?.map((v) => v.title).join(', ') ?? '';
-
-  const lines = [
-    '',
-    c.bold(movie.title) + c.dim(` (${movie.year ?? '?'})`) + '  ·  ' + c.dim(movie.type ?? ''),
-    c.dim('─'.repeat(52)),
-    row(
-      'Rating',
-      movie.rating != null
-        ? ratingColor(c.bold(movie.rating + '%')) +
-            c.dim(`  (${movie.ratingCount?.toLocaleString()} ratings)`)
-        : c.dim('no rating')
-    ),
-    row('Genres', movie.genres?.join(', ') ?? ''),
-    row('Origins', movie.origins?.join(', ') ?? ''),
-    row('Duration', movie.duration ? movie.duration + ' min' : ''),
-    row('Directors', names(movie.creators?.directors ?? [])),
-    row('Cast', names(movie.creators?.actors ?? [])),
-    description ? '\n  ' + c.dim(description) : '',
-    vod ? '\n' + row('VOD', vod) : '',
-    row('URL', c.dim(movie.url ?? '')),
-    ''
-  ].filter((l) => l !== undefined);
-
-  console.log(lines.join('\n'));
 }
 
 function printUsage() {
