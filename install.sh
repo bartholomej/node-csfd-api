@@ -43,7 +43,7 @@ elif [ -n "$1" ]; then
 else
   echo "Fetching latest release version..."
   LATEST_RELEASE=$(curl -s "https://api.github.com/repos/$REPO/releases/latest")
-  VERSION=$(echo "$LATEST_RELEASE" | grep '"tag_name":' | sed -E 's/.*"v?([^"]+)".*/\1/')
+  VERSION=$(echo "$LATEST_RELEASE" | grep -o '"tag_name" *: *"[^"]*"' | grep -o '"[^"]*"$' | tr -d '"v')
   if [ -z "$VERSION" ]; then
     echo "Error: Could not determine the latest version."
     exit 1
