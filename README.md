@@ -577,9 +577,11 @@ csfd search "blade runner" --json   # raw JSON output
 #### 2. Movie Details
 
 ```bash
-csfd movie 535121
+csfd movie 535121             # by ID
 # npx node-csfd-api movie 535121
-csfd movie 535121 --json   # raw JSON output, pipe-friendly
+csfd movie "blade runner"     # by title — searches and shows the top result
+# npx node-csfd-api movie "blade runner"
+csfd movie 535121 --json      # raw JSON output, pipe-friendly
 # npx node-csfd-api movie 535121 --json
 ```
 

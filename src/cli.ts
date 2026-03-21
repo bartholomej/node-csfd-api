@@ -68,9 +68,14 @@ async function main() {
 
     case 'export':
       if (args[1] === 'ratings') {
-        const userId = parseNumericArg(args[2], `${getCommandName()} export ratings <userId> [options]`);
+        const userId = parseNumericArg(
+          args[2],
+          `${getCommandName()} export ratings <userId> [options]`
+        );
         const isLetterboxd = args.includes('--letterboxd');
-        const format: 'csv' | 'json' | 'letterboxd' = isLetterboxd ? 'letterboxd' : parseFormat(args);
+        const format: 'csv' | 'json' | 'letterboxd' = isLetterboxd
+          ? 'letterboxd'
+          : parseFormat(args);
         try {
           const { runRatingsExport } = await import('./bin/export-ratings');
           await runRatingsExport(userId, {
@@ -86,7 +91,10 @@ async function main() {
           process.exit(1);
         }
       } else if (args[1] === 'reviews') {
-        const userId = parseNumericArg(args[2], `${getCommandName()} export reviews <userId> [options]`);
+        const userId = parseNumericArg(
+          args[2],
+          `${getCommandName()} export reviews <userId> [options]`
+        );
         try {
           const { runReviewsExport } = await import('./bin/export-reviews');
           await runReviewsExport(userId, {
@@ -112,7 +120,10 @@ async function main() {
       break;
 
     case 'search': {
-      const query = args.slice(1).filter((a) => !a.startsWith('--')).join(' ');
+      const query = args
+        .slice(1)
+        .filter((a) => !a.startsWith('--'))
+        .join(' ');
       if (!query) {
         console.error(err('Please provide a search query.'));
         console.log(c.dim(`  Usage: ${getCommandName()} search <query> [--json]`));
@@ -129,10 +140,32 @@ async function main() {
     }
 
     case 'movie': {
-      const movieId = parseNumericArg(args[1], `${getCommandName()} movie <id> [--json]`);
+      const input = args
+        .slice(1)
+        .filter((a) => !a.startsWith('--'))
+        .join(' ');
+      if (!input) {
+        console.error(err('Please provide a movie ID or title.'));
+        console.log(c.dim(`  Usage: ${getCommandName()} movie <id|title> [--json]`));
+        process.exit(1);
+      }
+      const json = args.includes('--json');
       try {
         const { runMovieLookup } = await import('./bin/lookup-movie');
-        await runMovieLookup(movieId, args.includes('--json'));
+        const numericId = /^\d+$/.test(input) ? Number(input) : null;
+        if (numericId !== null) {
+          await runMovieLookup(numericId, json);
+        } else {
+          const { csfd } = await import('.');
+          const results = await csfd.search(input);
+          const first = results.movies[0] ?? results.tvSeries[0];
+          if (!first) {
+            console.error(err(`No movies found for "${input}".`));
+            process.exit(1);
+          }
+          console.log(c.dim(`  → ${first.title}${first.year ? ` (${first.year})` : ''}`));
+          await runMovieLookup(first.id, json);
+        }
       } catch (error) {
         console.error(err('Failed to fetch movie:'), error);
         process.exit(1);
@@ -347,8 +380,8 @@ ${sub_('--letterboxd')}              ${desc('Letterboxd-compatible CSV')}
 ${cmd_('export reviews <userId>')}   ${desc('Export user reviews')}
 ${sub_('--csv')}                     ${desc('CSV format (default)')}
 ${sub_('--json')}                    ${desc('JSON format')}
-${cmd_('search <query>')}             ${desc('Search movies, series, creators and users')}
-${cmd_('movie <id>')}                ${desc('Show movie details')}
+${cmd_('search <query>')}            ${desc('Search movies, series, creators and users')}
+${cmd_('movie <id|title>')}          ${desc('Show movie details (ID or film name)')}
 ${sub_('--json')}                    ${desc('Output raw JSON')}
 ${cmd_('update')}                    ${desc('Check for updates')}
 ${cmd_('help')}                      ${desc('Show this help')}
