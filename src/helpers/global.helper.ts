@@ -9,17 +9,24 @@ export const parseIdFromUrl = (url: string): number => {
   if (!url) return null;
 
   const parts = url.split('/');
-  const idParts = parts.filter((p) => /^\d+-/.test(p));
-  if (idParts.length > 0) {
-    const idSlug = idParts[idParts.length - 1];
-    return +idSlug.split('-')[0] || null;
+  // Bolt: Optimize to avoid intermediate array allocations (.filter) and string splits for performance
+  for (let i = parts.length - 1; i >= 0; i--) {
+    const p = parts[i];
+    // Fast path: check if first character is a digit (charCode 48-57) before regex
+    if (p.length > 0 && p.charCodeAt(0) >= 48 && p.charCodeAt(0) <= 57) {
+      if (/^\d+-/.test(p)) {
+        return parseInt(p, 10) || null; // parseInt ignores trailing non-numeric characters natively
+      }
+    }
   }
 
   // Fallback
   const hasLangPrefix = LANG_PREFIX_REGEX.test(parts[1]);
   const idSlug = parts[hasLangPrefix ? 3 : 2];
-  const id = idSlug?.split('-')[0];
-  return +id || null;
+  if (idSlug) {
+    return parseInt(idSlug, 10) || null;
+  }
+  return null;
 };
 
 export const parseLastIdFromUrl = (url: string): number => {
