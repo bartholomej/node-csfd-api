@@ -313,7 +313,8 @@ export const getMovieCreators = (el: HTMLElement, options?: CSFDOptions): CSFDCr
     producers: [],
     filmEditing: [],
     costumeDesign: [],
-    productionDesign: []
+    productionDesign: [],
+    sound: []
   };
 
   const groups = el.querySelectorAll('.creators h4');
@@ -328,7 +329,8 @@ export const getMovieCreators = (el: HTMLElement, options?: CSFDOptions): CSFDCr
     'producers',
     'filmEditing',
     'costumeDesign',
-    'productionDesign'
+    'productionDesign',
+    'sound'
   ] as const;
 
   const localizedLabels = keys.map((key) => ({

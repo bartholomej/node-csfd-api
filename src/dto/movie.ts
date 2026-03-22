@@ -76,6 +76,7 @@ export interface CSFDCreators {
   filmEditing: CSFDMovieCreator[];
   costumeDesign: CSFDMovieCreator[];
   productionDesign: CSFDMovieCreator[];
+  sound: CSFDMovieCreator[];
 }
 
 export interface CSFDTitlesOther {
@@ -159,7 +160,8 @@ export type CSFDCreatorGroups =
   | 'Masky'
   | 'Předloha'
   | 'Scénografie'
-  | 'Kostýmy';
+  | 'Kostýmy'
+  | 'Zvuk';
 
 export type CSFDCreatorGroupsEnglish =
   | 'Directed by'
@@ -174,7 +176,8 @@ export type CSFDCreatorGroupsEnglish =
   | 'Make-up'
   | 'Production design'
   | 'Based on'
-  | 'Costumes';
+  | 'Costumes'
+  | 'Sound';
 
 export type CSFDCreatorGroupsSlovak =
   | 'Réžia'
@@ -186,7 +189,8 @@ export type CSFDCreatorGroupsSlovak =
   | 'Produkcia'
   | 'Strih'
   | 'Kostýmy'
-  | 'Scénografia';
+  | 'Scénografia'
+  | 'Zvuk';
 
 export interface CSFDPremiere {
   country: string;

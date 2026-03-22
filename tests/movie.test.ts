@@ -534,6 +534,16 @@ describe('Get people', () => {
     expect(group.basedOn).toEqual<CSFDMovieCreator[]>([]);
   });
 
+  test('Sound', () => {
+    expect(group.sound.slice(0, 1)).toEqual<CSFDMovieCreator[]>([
+      {
+        id: 905286,
+        name: 'Daniel Brennan',
+        url: 'https://www.csfd.cz/tvurce/905286-daniel-brennan/prehled/'
+      }
+    ]);
+  });
+
   test('Group not found should return empty array', () => {
     const creators = getMovieGroup(movieNode, 'NeexistujiciSkupina:' as any);
     expect(creators).toEqual([]);
