@@ -9,27 +9,34 @@ export const parseIdFromUrl = (url: string): number => {
   if (!url) return null;
 
   const parts = url.split('/');
-  const idParts = parts.filter((p) => /^\d+-/.test(p));
-  if (idParts.length > 0) {
-    const idSlug = idParts[idParts.length - 1];
-    return +idSlug.split('-')[0] || null;
+
+  // Performance Optimization: Iterate backwards to find the last slug with an ID.
+  // Using parseInt avoids intermediate string array allocations from .split('-')[0]
+  for (let i = parts.length - 1; i >= 0; i--) {
+    const p = parts[i];
+    if (/^\d+-/.test(p)) {
+      return parseInt(p, 10) || null;
+    }
   }
 
   // Fallback
   const hasLangPrefix = LANG_PREFIX_REGEX.test(parts[1]);
   const idSlug = parts[hasLangPrefix ? 3 : 2];
-  const id = idSlug?.split('-')[0];
-  return +id || null;
+  if (idSlug) {
+    return parseInt(idSlug, 10) || null;
+  }
+  return null;
 };
 
 export const parseLastIdFromUrl = (url: string): number => {
   if (url) {
-    const idSlug = url?.split('/')[3];
-    const id = idSlug?.split('-')[0];
-    return +id || null;
-  } else {
-    return null;
+    const idSlug = url.split('/')[3];
+    if (idSlug) {
+      // Performance Optimization: Use parseInt instead of +idSlug.split('-')[0]
+      return parseInt(idSlug, 10) || null;
+    }
   }
+  return null;
 };
 
 const PAGE_COLORS: Record<string, CSFDColorRating> = {
