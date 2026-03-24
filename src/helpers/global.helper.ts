@@ -9,17 +9,24 @@ export const parseIdFromUrl = (url: string): number => {
   if (!url) return null;
 
   const parts = url.split('/');
-  const idParts = parts.filter((p) => /^\d+-/.test(p));
-  if (idParts.length > 0) {
-    const idSlug = idParts[idParts.length - 1];
-    return +idSlug.split('-')[0] || null;
+
+  // Performance Optimization: Use a reverse loop with early return to avoid intermediate array
+  // allocations from `.filter(...)` and `.map(...)`. This reduces array allocations per URL parse
+  // while preserving the exact numerical casting semantics of `+idSlug.split('-')[0]` (e.g.
+  // preventing false positives like '3d-printers' from resolving to 3).
+  for (let i = parts.length - 1; i >= 0; i--) {
+    const p = parts[i];
+    if (/^\d+-/.test(p)) {
+      const id = +p.split('-')[0];
+      return id || null;
+    }
   }
 
   // Fallback
   const hasLangPrefix = LANG_PREFIX_REGEX.test(parts[1]);
   const idSlug = parts[hasLangPrefix ? 3 : 2];
-  const id = idSlug?.split('-')[0];
-  return +id || null;
+  const id = idSlug ? +idSlug.split('-')[0] : null;
+  return id || null;
 };
 
 export const parseLastIdFromUrl = (url: string): number => {
