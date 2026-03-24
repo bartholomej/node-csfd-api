@@ -1,6 +1,4 @@
 export const cinemaMock = `
-
-
 <!DOCTYPE html>
 <html lang="cs-CZ">
 	<head>
@@ -13,7 +11,7 @@ export const cinemaMock = `
 </script>
 <script src="/nativeads.js"></script>
 <script>
-	function gtag(){window.dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("consent","default",{ad_storage:"denied",ad_user_data:"denied",ad_personalization:"denied",analytics_storage:"denied",functionality_storage:"denied",personalization_storage:"denied",security_storage:"denied"}),window.didomiOnReady=window.didomiOnReady||[],window.didomiOnReady.push(function(){var a=!1,e={};Didomi.getUserConsentStatusForPurpose("publishers-Kqq3iPge")&&(e.analytics_storage="granted",a=!0),Didomi.getUserConsentStatusForVendor("google")&&(e.ad_storage="granted",e.ad_user_data="granted",e.ad_personalization="granted",e.functionality_storage="granted",e.personalization_storage="granted",e.security_storage="granted",a=!0),a&&(gtag("consent","update",e),window.dataLayer.push({event:"consent_init",consent:e}))});var googleAnalyticsPageViewData={"event":"page_view","site":"www.csfd.cz","platform":"web","environment":"production","language":"cs","device":"desktop","user":{"id":null,"adblock":false},"page":{"id":1,"type":"Cinema","title":null,"url":"https:\/\/www.csfd.cz\/kino\/1-praha\/","path":"\/kino\/1-praha\/","section":"Cinema","dark_mode":false},"_clear":true};if(null!==googleAnalyticsPageViewData){googleAnalyticsPageViewData.page.title="Kino | Program | Praha | ČSFD.cz",googleAnalyticsPageViewData.user.adblock=!!window[ab_detection];var sp=null;if(null!==window.localStorage){var i=window.localStorage.getItem("sp");"1"===i||"2"===i?sp=parseInt(i,10):(sp=Math.floor(2*Math.random())+1,window.localStorage.setItem("sp",sp))}googleAnalyticsPageViewData.status_pair=null===sp?Math.floor(2*Math.random())+1:sp,window.dataLayer.push(googleAnalyticsPageViewData)}
+	function gtag(){window.dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("consent","default",{ad_storage:"denied",ad_user_data:"denied",ad_personalization:"denied",analytics_storage:"denied",functionality_storage:"denied",personalization_storage:"denied",security_storage:"denied"}),window.didomiOnReady=window.didomiOnReady||[],window.didomiOnReady.push(function(){var a=!1,e={};Didomi.getUserConsentStatusForPurpose("publishers-Kqq3iPge")&&(e.analytics_storage="granted",a=!0),Didomi.getUserConsentStatusForVendor("google")&&(e.ad_storage="granted",e.ad_user_data="granted",e.ad_personalization="granted",e.functionality_storage="granted",e.personalization_storage="granted",e.security_storage="granted",a=!0),a&&(gtag("consent","update",e),window.dataLayer.push({event:"consent_init",consent:e}))});var googleAnalyticsPageViewData={"event":"page_view","site":"www.csfd.cz","platform":"web","environment":"production","language":"cs","device":"desktop","user":{"id":null,"adblock":false},"page":{"id":1,"type":"Cinema","title":null,"url":"https:\\/\\/www.csfd.cz\\/kino\\/1-praha\\/","path":"\\/kino\\/1-praha\\/","section":"Cinema","dark_mode":false},"_clear":true};if(null!==googleAnalyticsPageViewData){googleAnalyticsPageViewData.page.title="Kino | Program | Praha | ČSFD.cz",googleAnalyticsPageViewData.user.adblock=!!window[ab_detection];var sp=null;if(null!==window.localStorage){var i=window.localStorage.getItem("sp");"1"===i||"2"===i?sp=parseInt(i,10):(sp=Math.floor(2*Math.random())+1,window.localStorage.setItem("sp",sp))}googleAnalyticsPageViewData.status_pair=null===sp?Math.floor(2*Math.random())+1:sp,window.dataLayer.push(googleAnalyticsPageViewData)}
 </script>
 <script>
 window.didomiConfig = {
@@ -41,14 +39,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	//--><!]]>
 </script>
 
-<meta name="description" content="Praha - 24 kino programů. Vyber si film dle hodnocení ČSFD a vyraž do kina.">
+<meta name="description" content="Praha - 28 kino programů. Vyber si film dle hodnocení ČSFD a vyraž do kina.">
 
 
 <link rel="canonical" href="https://www.csfd.cz/kino/1-praha/">
 
 <meta property="og:site_name" content="ČSFD.cz">
-<meta property="og:image" content="https://static.pmgstatic.com/assets/images/2b5f1f1793f6881e6e9326d2c21f9445/logo-social.png">
-<meta property="og:description" content="Praha - 24 kino programů. Vyber si film dle hodnocení ČSFD a vyraž do kina.">
+<meta property="og:image" content="https://static.pmgstatic.com/assets/images/6aeb8871e0052a62b04d591a3f85e733/logo-social.png">
+<meta property="og:description" content="Praha - 28 kino programů. Vyber si film dle hodnocení ČSFD a vyraž do kina.">
 <meta property="og:title" content="Kino | Program | Praha | ČSFD.cz">
 <meta property="og:url" content="https://www.csfd.cz/kino/1-praha/">
 <meta property="fb:app_id" content="260163667481043">
@@ -56,16 +54,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="https://www.csfd.cz/kino/1-praha/">
 <meta name="twitter:title" content="Kino | Program | Praha | ČSFD.cz">
-<meta name="twitter:description" content="Praha - 24 kino programů. Vyber si film dle hodnocení ČSFD a vyraž do kina.">
-<meta property="twitter:image" content="https://static.pmgstatic.com/assets/images/2b5f1f1793f6881e6e9326d2c21f9445/logo-social.png">
+<meta name="twitter:description" content="Praha - 28 kino programů. Vyber si film dle hodnocení ČSFD a vyraž do kina.">
+<meta property="twitter:image" content="https://static.pmgstatic.com/assets/images/6aeb8871e0052a62b04d591a3f85e733/logo-social.png">
 		<meta name="theme-color" content="#ba0305">
 		<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ba0305">
 		<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#ba0305">
-		<link rel="stylesheet" href="//static.pmgstatic.com/assets/web-css/5e349933e1358275e5dbfccce0a335bf/styles.min.css">
-		<link rel="shortcut icon" href="//static.pmgstatic.com/assets/images/2b5f1f1793f6881e6e9326d2c21f9445/favicon.ico">
-		<link rel="apple-touch-icon" href="//static.pmgstatic.com/assets/images/2b5f1f1793f6881e6e9326d2c21f9445/apple-touch-icon.png">
-		<script src="//static.pmgstatic.com/assets/vendor/4c4b0b91e77c007ce5325f7e57bb5384/jquery.min.js"></script>
-		<script src="//static.pmgstatic.com/assets/web-js/de8b64f92d0e41c829cda8b30a9fbe17/scripts.min.js" defer></script>
+		<link rel="stylesheet" href="//static.pmgstatic.com/assets/web-css/58bd7f3ed81bd9d84a6905e0711f1007/styles.min.css">
+		<link rel="shortcut icon" href="//static.pmgstatic.com/assets/images/6aeb8871e0052a62b04d591a3f85e733/favicon.ico">
+		<link rel="apple-touch-icon" href="//static.pmgstatic.com/assets/images/6aeb8871e0052a62b04d591a3f85e733/apple-touch-icon.png">
+		<script src="//static.pmgstatic.com/assets/vendor/efb570e5cd44fe9a1272efc8cc7f5b66/jquery.min.js"></script>
+		<script src="//static.pmgstatic.com/assets/web-js/460dfd2da94a6a3c5789376d716cee42/scripts.min.js" defer></script>
 
 <script type="text/javascript">
 	window.adsTranslations = {
@@ -90,6 +88,61 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	</head>
 
 	<body id="top" data-lang="cs" class="csfd-cz lang-1" data-page="cinema">
+<div id="slide_up" class="ad-pmg"></div>
+<div id="interstitial" class="ad-pmg"></div>
+
+<div id="switch-tld-modal">
+	<div data-mfp-to-close class="mfp-bg mfp-ready"></div>
+	<div data-mfp-to-close class="mfp-wrap mfp-close-btn-in mfp-auto-cursor mfp-ready modal-small">
+		<div class="mfp-container mfp-s-ready mfp-inline-holder">
+			<div class="mfp-content">
+				<div id="panelModal" class="modal" role="dialog">
+					<span id="mfp-modalWindow">
+						<div class="modal--hp">
+							<div class="switch-lang">
+								<h2>
+									ČSFD nanovo aj v slovenčine
+								</h2>
+								<p>
+									Všimli sme si, že prichádzaš zo slovenskej IP adresy. Vieš o tom, že existuje slovenská verzia CSFD.sk?
+								</p>
+							</div>
+							<footer>
+								<span class="left">
+									<a href="javascript:void(0)" data-mfp-close class="">
+											zostať
+									</a>
+								</span>
+								<a href="https://www.csfd.sk/kino/1-praha/" class="button right">
+									prejsť na CSFD.sk
+								</a>
+							</footer>
+						</div>
+					</span>
+					<a href="javascript:void(0)" data-mfp-close class="close-modal mfp-close" title="Close (Esc)">
+						<i class="mfp-close icon icon-close-round"></i>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		var modal = document.getElementById('switch-tld-modal');
+		var closeElements = modal.querySelectorAll('[data-mfp-close]');
+		for (var i = 0; i < closeElements.length; ++i) {
+			closeElements[i].addEventListener(
+					'click',
+					function () {
+						var toCloseElements = modal.querySelectorAll('[data-mfp-to-close]');
+						for (var i = 0; i < toCloseElements.length; ++i) {
+							toCloseElements[i].remove();
+						}
+					}
+			)
+		}
+	</script>
+</div>
 		<div class="body">
 			<div class="ad-wrapper">
 				<div id="leaderboard-wrapper">
@@ -99,35 +152,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			</div>
 
 			<div id="page-wrapper">
-				<div id="suggest-switch-locale-panel" class="lang-info-panel-content" data-cookie-name="_ls_ns">
-					<div class="lang-info-panel">
-						<p>
-							Change website language <a href="#secureHandle-frm-switchLocale-form=Zt" class="btn-second"><img src="//image.pmgstatic.com/files/svg/flags/162/751/162751395/162751395_38cf6e.svg"><i class="icon icon-arrow-right"></i></a>
-						</p>
-						<p>
-							<a href="javascript:void(0);" class="btn btn-close" data-close-button>
-								<i class="icon icon-close"></i><span>Do not switch</span>
-							</a>
-						</p>
-					</div>
-				</div>
 
-				<div class="top-info top-info-language-switch top-info-user-not-logged top-info-only-projection">
-					<div class="top-info-content">
-						<p class="top-info-community-event">
-								<a href="/akce/536-projekce-drobna-nehoda/" class="link-with-icons">
-									<svg width="119" height="93" viewBox="0 0 119 93" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-										<path fill-rule="evenodd" clip-rule="evenodd" d="M63.0255 24.0791C54.0281 24.0791 45.3834 31.4353 43.7172 40.5099C42.0516 49.5841 47.9946 56.9401 56.9923 56.9401C65.9889 56.9401 74.6337 49.5841 76.3001 40.5099C77.9655 31.4353 72.0227 24.0791 63.0255 24.0791Z"></path>
-										<path fill-rule="evenodd" clip-rule="evenodd" d="M25.4185 80.1819H77.7067C77.6211 66.7115 67.9229 56.3457 54.5975 56.3457C41.2723 56.3459 28.9347 66.7117 25.4185 80.1819Z"></path>
-										<path fill-rule="evenodd" clip-rule="evenodd" d="M100.612 0.0336914L98.6975 8.23869C98.5319 8.94589 97.8249 9.51909 97.1179 9.51909H37.9319C37.2249 9.51909 36.7853 8.94589 36.9503 8.23869L38.8645 0.0336914H21.7031L0.459091 91.0949H0.490292L0.104492 92.7483H17.1399L18.8861 85.2607C19.0511 84.5535 19.7581 83.9809 20.4653 83.9809H79.6519C80.3589 83.9809 80.7985 84.5535 80.6329 85.2607L79.2727 91.0949H79.2917L78.9143 92.7133H78.9361L78.9315 92.7359H96.3537L96.7367 91.0949H96.7687L118.013 0.0336914H100.612V0.0336914ZM23.2341 9.99969L24.3083 5.39529C24.4733 4.68829 25.1803 4.11489 25.8875 4.11489H32.1603C32.8673 4.11489 33.3069 4.68829 33.1421 5.39529L32.0677 9.99969C31.9027 10.7069 31.1957 11.2801 30.4885 11.2801H24.2157C23.5087 11.2801 23.0691 10.7069 23.2341 9.99969ZM19.6467 25.3761L19.9601 24.0333C19.9653 23.9689 19.9705 23.9047 19.9861 23.8381L20.7021 20.7679C20.8671 20.0607 21.5741 19.4875 22.2815 19.4875H28.5241C28.8937 19.4875 29.1871 19.6469 29.3625 19.8979C29.5633 20.1317 29.6485 20.4649 29.5609 20.8389L28.5027 25.3763C28.3377 26.0833 27.6307 26.6565 26.9231 26.6565H20.6285C19.9213 26.6563 19.4817 26.0831 19.6467 25.3761ZM16.0075 41.0327L17.0823 36.4259C17.2473 35.7189 17.9543 35.1457 18.6615 35.1457H24.8847C25.5919 35.1457 26.0313 35.7189 25.8663 36.4259L24.7915 41.0327C24.6265 41.7403 23.9195 42.3135 23.2123 42.3135H16.9891C16.2821 42.3135 15.8425 41.7401 16.0075 41.0327ZM14.9775 83.2539L13.9055 87.8479C13.7405 88.5559 13.0335 89.1287 12.3265 89.1287H6.05929C5.35209 89.1287 4.91269 88.5559 5.07769 87.8479L6.14949 83.2539C6.31449 82.5459 7.02149 81.9731 7.72869 81.9731H13.9959C14.7029 81.9729 15.1425 82.5457 14.9775 83.2539ZM18.6409 67.7617L17.5633 72.3805C17.3983 73.0885 16.6913 73.6611 15.9841 73.6611H9.66789C8.96069 73.6611 8.5213 73.0885 8.6863 72.3805L9.7639 67.7617C9.9287 67.0539 10.6359 66.4809 11.3429 66.4809H17.6593C18.3665 66.4807 18.8059 67.0539 18.6409 67.7617ZM19.5839 58.0215H13.3167C12.6091 58.0215 12.1697 57.4477 12.3345 56.7407L13.4065 52.1457C13.5715 51.4385 14.2789 50.8657 14.9861 50.8657H21.2531C21.9603 50.8657 22.3997 51.4385 22.2347 52.1457L21.1629 56.7407C20.9981 57.4477 20.2909 58.0215 19.5839 58.0215ZM81.1405 78.0045H21.8595C21.1525 78.0045 20.7129 77.4319 20.8779 76.7239L34.7971 17.0599C34.9619 16.3529 35.6691 15.7797 36.3763 15.7797H95.6573C96.3643 15.7797 96.8037 16.3529 96.6393 17.0599L82.7199 76.7239C82.5547 77.4319 81.8477 78.0045 81.1405 78.0045ZM94.2101 83.2539L93.1323 87.8735C92.9669 88.5805 92.2599 89.1533 91.5529 89.1533H85.3103C84.6033 89.1533 84.1637 88.5805 84.3281 87.8735L85.4059 83.2539C85.5713 82.5459 86.2783 81.9731 86.9853 81.9731H93.2279C93.9349 81.9729 94.3745 82.5457 94.2101 83.2539ZM97.8729 67.7617L96.7951 72.3805C96.6297 73.0885 95.9227 73.6611 95.2159 73.6611H88.9241C88.2169 73.6611 87.7775 73.0885 87.9429 72.3805L89.0205 67.7617C89.1849 67.0539 89.8921 66.4809 90.5993 66.4809H96.8919C97.5987 66.4807 98.0383 67.0539 97.8729 67.7617ZM101.516 52.1457L100.45 56.7161C100.284 57.4231 99.5773 57.9969 98.8703 57.9969H92.5785C91.8715 57.9969 91.4319 57.4231 91.5975 56.7161L92.6627 52.1457C92.8281 51.4385 93.5351 50.8657 94.2421 50.8657H100.534C101.241 50.8659 101.68 51.4387 101.516 52.1457ZM105.193 36.3833L104.116 41.0029C103.95 41.7101 103.244 42.2833 102.536 42.2833H96.2443C95.5371 42.2833 95.0977 41.7101 95.2631 41.0029L96.3409 36.3833C96.5051 35.6763 97.2123 35.1029 97.9195 35.1029H104.211C104.918 35.1029 105.359 35.6763 105.193 36.3833ZM108.842 20.7437L107.764 25.3629C107.599 26.0705 106.892 26.6431 106.185 26.6431H99.8929C99.1859 26.6431 98.7465 26.0703 98.9119 25.3629L99.9895 20.7437C100.154 20.0361 100.861 19.4629 101.568 19.4629H107.86C108.567 19.4629 109.007 20.0361 108.842 20.7437ZM111.35 9.99349C111.184 10.7007 110.477 11.2739 109.77 11.2739H103.479C102.772 11.2739 102.332 10.7005 102.497 9.99349L103.575 5.37389C103.74 4.66689 104.447 4.09349 105.154 4.09349H111.446C112.153 4.09349 112.592 4.66689 112.428 5.37389L111.35 9.99349Z"></path>
-									</svg>
-									Projekce <em>Drobná nehoda</em>
-								</a>
-						</p>
-					</div>
-				</div>
 
-				<header class="page-header page-header-csfd-cz user-not-logged projection-on language-switch-on header-user-language-switch">
+				<header class="page-header page-header-csfd-cz user-not-logged header-user-language-switch">
 					<div class="header-main">
 						<div class="logo">
 							<a href="/" class="csfd-cz">ČSFD.cz</a>
@@ -416,104 +443,104 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 		<h2>Dnes nejžhavější v kinech</h2>
 		<div class="poster-slider" data-slider>
 			<div class="poster-slider-item">
-				<a href="/film/1558529-neporazitelni/prehled/" title="Neporazitelní" class="poster-slider-link">
+				<a href="/film/1018007-spasitel/prehled/" title="Spasitel" class="poster-slider-link">
 					<span class="position">1.</span>
 					<figure>
-						<img class="img" src="//image.pmgstatic.com/cache/resized/w140/files/images/film/posters/170/532/170532439_bw0kj9.jpg" loading="lazy" width="140" height="198" srcset="//image.pmgstatic.com/cache/resized/w140/files/images/film/posters/170/532/170532439_bw0kj9.jpg 1x, //image.pmgstatic.com/cache/resized/w280/files/images/film/posters/170/532/170532439_bw0kj9.jpg 2x, //image.pmgstatic.com/cache/resized/w420/files/images/film/posters/170/532/170532439_bw0kj9.jpg 3x" alt="Neporazitelní">
+						<img class="img" src="//image.pmgstatic.com/cache/resized/w140/files/images/film/posters/171/076/171076562_9kmk0f.jpg" loading="lazy" width="140" height="198" srcset="//image.pmgstatic.com/cache/resized/w140/files/images/film/posters/171/076/171076562_9kmk0f.jpg 1x, //image.pmgstatic.com/cache/resized/w280/files/images/film/posters/171/076/171076562_9kmk0f.jpg 2x, //image.pmgstatic.com/cache/resized/w420/files/images/film/posters/171/076/171076562_9kmk0f.jpg 3x" alt="Spasitel">
 					</figure>
-
+					
 				</a>
-				<div class="cinema-button"><a href="/kino/1-praha/?films%5B0%5D=1558529&amp;period=all" class="button-play-cinema">V kinech</a></div>
+				<div class="cinema-button"><a href="/kino/1-praha/?films%5B0%5D=1018007&amp;period=all" class="btn-play-cinema">V kinech</a></div>
 			</div>
 			<div class="poster-slider-item">
-				<a href="/film/1611153-28-let-pote-chram-z-kosti/prehled/" title="28 let poté: Chrám z kostí" class="poster-slider-link">
+				<a href="/film/1663029-zlom-vaz-bav-se-neumri/prehled/" title="Zlom vaz, bav se, neumři" class="poster-slider-link">
 					<span class="position">2.</span>
 					<figure>
-						<img class="img" src="//image.pmgstatic.com/cache/resized/w140/files/images/film/posters/170/891/170891988_wvu4cd.jpg" loading="lazy" width="140" height="248" srcset="//image.pmgstatic.com/cache/resized/w140/files/images/film/posters/170/891/170891988_wvu4cd.jpg 1x, //image.pmgstatic.com/cache/resized/w280/files/images/film/posters/170/891/170891988_wvu4cd.jpg 2x, //image.pmgstatic.com/cache/resized/w420/files/images/film/posters/170/891/170891988_wvu4cd.jpg 3x" alt="28 let poté: Chrám z kostí">
+						<img class="img" src="//image.pmgstatic.com/cache/resized/w140/files/images/film/posters/171/011/171011332_579yss.png" loading="lazy" width="140" height="198" srcset="//image.pmgstatic.com/cache/resized/w140/files/images/film/posters/171/011/171011332_579yss.png 1x, //image.pmgstatic.com/cache/resized/w280/files/images/film/posters/171/011/171011332_579yss.png 2x, //image.pmgstatic.com/cache/resized/w420/files/images/film/posters/171/011/171011332_579yss.png 3x" alt="Zlom vaz, bav se, neumři">
 					</figure>
-
+					
 				</a>
-				<div class="cinema-button"><a href="/kino/1-praha/?films%5B0%5D=1611153&amp;period=all" class="button-play-cinema">V kinech</a></div>
+				<div class="cinema-button"><a href="/kino/1-praha/?films%5B0%5D=1663029&amp;period=all" class="btn-play-cinema">V kinech</a></div>
 			</div>
 			<div class="poster-slider-item">
-				<a href="/film/1596124-bourlive-vysiny/prehled/" title="Bouřlivé výšiny" class="poster-slider-link">
+				<a href="/film/1606307-pan-nikdo-proti-putinovi/prehled/" title="Pan Nikdo proti Putinovi" class="poster-slider-link">
 					<span class="position">3.</span>
 					<figure>
-						<img class="img" src="//image.pmgstatic.com/cache/resized/w140/files/images/film/posters/170/508/170508748_isegly.jpg" loading="lazy" width="140" height="207" srcset="//image.pmgstatic.com/cache/resized/w140/files/images/film/posters/170/508/170508748_isegly.jpg 1x, //image.pmgstatic.com/cache/resized/w280/files/images/film/posters/170/508/170508748_isegly.jpg 2x, //image.pmgstatic.com/cache/resized/w420/files/images/film/posters/170/508/170508748_isegly.jpg 3x" alt="Bouřlivé výšiny">
+						<img class="img" src="//image.pmgstatic.com/cache/resized/w140/files/images/film/posters/170/578/170578464_itiksx.jpg" loading="lazy" width="140" height="198" srcset="//image.pmgstatic.com/cache/resized/w140/files/images/film/posters/170/578/170578464_itiksx.jpg 1x, //image.pmgstatic.com/cache/resized/w280/files/images/film/posters/170/578/170578464_itiksx.jpg 2x, //image.pmgstatic.com/cache/resized/w420/files/images/film/posters/170/578/170578464_itiksx.jpg 3x" alt="Pan Nikdo proti Putinovi">
 					</figure>
-
+					
 				</a>
-				<div class="cinema-button"><a href="/kino/1-praha/?films%5B0%5D=1596124&amp;period=all" class="button-play-cinema">V kinech</a></div>
+				<div class="cinema-button"><a href="/kino/1-praha/?films%5B0%5D=1606307&amp;period=all" class="btn-play-cinema">V kinech</a></div>
 			</div>
 			<div class="poster-slider-item">
-				<a href="/film/1539639-cukrkandl/prehled/" title="Cukrkandl" class="poster-slider-link">
+				<a href="/film/1579476-sos/prehled/" title="SOS" class="poster-slider-link">
 					<span class="position">4.</span>
 					<figure>
-						<img class="img" src="//image.pmgstatic.com/cache/resized/w140/files/images/film/posters/170/345/170345827_hws52e.jpg" loading="lazy" width="140" height="198" srcset="//image.pmgstatic.com/cache/resized/w140/files/images/film/posters/170/345/170345827_hws52e.jpg 1x, //image.pmgstatic.com/cache/resized/w280/files/images/film/posters/170/345/170345827_hws52e.jpg 2x, //image.pmgstatic.com/cache/resized/w420/files/images/film/posters/170/345/170345827_hws52e.jpg 3x" alt="Cukrkandl">
+						<img class="img" src="//image.pmgstatic.com/cache/resized/w140/files/images/film/posters/170/862/170862629_esbehs.jpg" loading="lazy" width="140" height="199" srcset="//image.pmgstatic.com/cache/resized/w140/files/images/film/posters/170/862/170862629_esbehs.jpg 1x, //image.pmgstatic.com/cache/resized/w280/files/images/film/posters/170/862/170862629_esbehs.jpg 2x, //image.pmgstatic.com/cache/resized/w420/files/images/film/posters/170/862/170862629_esbehs.jpg 3x" alt="SOS">
 					</figure>
-
+					
 				</a>
-				<div class="cinema-button"><a href="/kino/1-praha/?films%5B0%5D=1539639&amp;period=all" class="button-play-cinema">V kinech</a></div>
-			</div>
-			<div class="poster-slider-item">
-				<a href="/film/1513456-dukaz-viny/prehled/" title="Důkaz viny" class="poster-slider-link">
-					<span class="position">5.</span>
-					<figure>
-						<img class="img" src="//image.pmgstatic.com/cache/resized/w140/files/images/film/posters/170/939/170939594_7kqab3.jpg" loading="lazy" width="140" height="198" srcset="//image.pmgstatic.com/cache/resized/w140/files/images/film/posters/170/939/170939594_7kqab3.jpg 1x, //image.pmgstatic.com/cache/resized/w280/files/images/film/posters/170/939/170939594_7kqab3.jpg 2x, //image.pmgstatic.com/cache/resized/w420/files/images/film/posters/170/939/170939594_7kqab3.jpg 3x" alt="Důkaz viny">
-					</figure>
-
-				</a>
-				<div class="cinema-button"><a href="/kino/1-praha/?films%5B0%5D=1513456&amp;period=all" class="button-play-cinema">V kinech</a></div>
-			</div>
-			<div class="poster-slider-item">
-				<a href="/film/1513998-otec-matka-sestra-bratr/prehled/" title="Otec Matka Sestra Bratr" class="poster-slider-link">
-					<span class="position">6.</span>
-					<figure>
-						<img class="img" src="//image.pmgstatic.com/cache/resized/w140/files/images/film/posters/170/927/170927851_9sj9tx.jpg" loading="lazy" width="140" height="198" srcset="//image.pmgstatic.com/cache/resized/w140/files/images/film/posters/170/927/170927851_9sj9tx.jpg 1x, //image.pmgstatic.com/cache/resized/w280/files/images/film/posters/170/927/170927851_9sj9tx.jpg 2x, //image.pmgstatic.com/cache/resized/w420/files/images/film/posters/170/927/170927851_9sj9tx.jpg 3x" alt="Otec Matka Sestra Bratr">
-					</figure>
-
-				</a>
-				<div class="cinema-button"><a href="/kino/1-praha/?films%5B0%5D=1513998&amp;period=all" class="button-play-cinema">V kinech</a></div>
+				<div class="cinema-button"><a href="/kino/1-praha/?films%5B0%5D=1579476&amp;period=all" class="btn-play-cinema">V kinech</a></div>
 			</div>
 			<div class="poster-slider-item">
 				<a href="/film/1580030-velky-marty/prehled/" title="Velký Marty" class="poster-slider-link">
-					<span class="position">7.</span>
+					<span class="position">5.</span>
 					<figure>
 						<img class="img" src="//image.pmgstatic.com/cache/resized/w140/files/images/film/posters/170/876/170876288_x9kr9f.png" loading="lazy" width="140" height="197" srcset="//image.pmgstatic.com/cache/resized/w140/files/images/film/posters/170/876/170876288_x9kr9f.png 1x, //image.pmgstatic.com/cache/resized/w280/files/images/film/posters/170/876/170876288_x9kr9f.png 2x, //image.pmgstatic.com/cache/resized/w420/files/images/film/posters/170/876/170876288_x9kr9f.png 3x" alt="Velký Marty">
 					</figure>
-
+					
 				</a>
-				<div class="cinema-button"><a href="/kino/1-praha/?films%5B0%5D=1580030&amp;period=all" class="button-play-cinema">V kinech</a></div>
-			</div>
-			<div class="poster-slider-item">
-				<a href="/film/1395444-parazit-z-chladaku/prehled/" title="Parazit z chlaďáku" class="poster-slider-link">
-					<span class="position">8.</span>
-					<figure>
-						<img class="img" src="//image.pmgstatic.com/cache/resized/w140/files/images/film/posters/170/948/170948536_5dpvuy.jpg" loading="lazy" width="140" height="198" srcset="//image.pmgstatic.com/cache/resized/w140/files/images/film/posters/170/948/170948536_5dpvuy.jpg 1x, //image.pmgstatic.com/cache/resized/w280/files/images/film/posters/170/948/170948536_5dpvuy.jpg 2x, //image.pmgstatic.com/cache/resized/w420/files/images/film/posters/170/948/170948536_5dpvuy.jpg 3x" alt="Parazit z chlaďáku">
-					</figure>
-
-				</a>
-				<div class="cinema-button"><a href="/kino/1-praha/?films%5B0%5D=1395444&amp;period=all" class="button-play-cinema">V kinech</a></div>
-			</div>
-			<div class="poster-slider-item">
-				<a href="/film/1615728-pomocnice/prehled/" title="Pomocnice" class="poster-slider-link">
-					<span class="position">9.</span>
-					<figure>
-						<img class="img" src="//image.pmgstatic.com/cache/resized/w140/files/images/film/posters/170/772/170772428_f8i63s.jpg" loading="lazy" width="140" height="198" srcset="//image.pmgstatic.com/cache/resized/w140/files/images/film/posters/170/772/170772428_f8i63s.jpg 1x, //image.pmgstatic.com/cache/resized/w280/files/images/film/posters/170/772/170772428_f8i63s.jpg 2x, //image.pmgstatic.com/cache/resized/w420/files/images/film/posters/170/772/170772428_f8i63s.jpg 3x" alt="Pomocnice">
-					</figure>
-
-				</a>
-				<div class="cinema-button"><a href="/kino/1-praha/?films%5B0%5D=1615728&amp;period=all" class="button-play-cinema">V kinech</a></div>
+				<div class="cinema-button"><a href="/kino/1-praha/?films%5B0%5D=1580030&amp;period=all" class="btn-play-cinema">V kinech</a></div>
 			</div>
 			<div class="poster-slider-item">
 				<a href="/film/1580032-cesta-zlocinu/prehled/" title="Cesta zločinu" class="poster-slider-link">
-					<span class="position">10.</span>
+					<span class="position">6.</span>
 					<figure>
 						<img class="img" src="//image.pmgstatic.com/cache/resized/w140/files/images/film/posters/170/960/170960863_4y2tms.jpg" loading="lazy" width="140" height="198" srcset="//image.pmgstatic.com/cache/resized/w140/files/images/film/posters/170/960/170960863_4y2tms.jpg 1x, //image.pmgstatic.com/cache/resized/w280/files/images/film/posters/170/960/170960863_4y2tms.jpg 2x, //image.pmgstatic.com/cache/resized/w420/files/images/film/posters/170/960/170960863_4y2tms.jpg 3x" alt="Cesta zločinu">
 					</figure>
-
+					
 				</a>
-				<div class="cinema-button"><a href="/kino/1-praha/?films%5B0%5D=1580032&amp;period=all" class="button-play-cinema">V kinech</a></div>
+				<div class="cinema-button"><a href="/kino/1-praha/?films%5B0%5D=1580032&amp;period=all" class="btn-play-cinema">V kinech</a></div>
+			</div>
+			<div class="poster-slider-item">
+				<a href="/film/1664553-pillion/prehled/" title="Pillion" class="poster-slider-link">
+					<span class="position">7.</span>
+					<figure>
+						<img class="img" src="//image.pmgstatic.com/cache/resized/w140/files/images/film/posters/171/115/171115601_js2ffj.jpg" loading="lazy" width="140" height="198" srcset="//image.pmgstatic.com/cache/resized/w140/files/images/film/posters/171/115/171115601_js2ffj.jpg 1x, //image.pmgstatic.com/cache/resized/w280/files/images/film/posters/171/115/171115601_js2ffj.jpg 2x, //image.pmgstatic.com/cache/resized/w420/files/images/film/posters/171/115/171115601_js2ffj.jpg 3x" alt="Pillion">
+					</figure>
+					
+				</a>
+				<div class="cinema-button"><a href="/kino/1-praha/?films%5B0%5D=1664553&amp;period=all" class="btn-play-cinema">V kinech</a></div>
+			</div>
+			<div class="poster-slider-item">
+				<a href="/film/1615728-pomocnice/prehled/" title="Pomocnice" class="poster-slider-link">
+					<span class="position">8.</span>
+					<figure>
+						<img class="img" src="//image.pmgstatic.com/cache/resized/w140/files/images/film/posters/170/772/170772428_f8i63s.jpg" loading="lazy" width="140" height="198" srcset="//image.pmgstatic.com/cache/resized/w140/files/images/film/posters/170/772/170772428_f8i63s.jpg 1x, //image.pmgstatic.com/cache/resized/w280/files/images/film/posters/170/772/170772428_f8i63s.jpg 2x, //image.pmgstatic.com/cache/resized/w420/files/images/film/posters/170/772/170772428_f8i63s.jpg 3x" alt="Pomocnice">
+					</figure>
+					
+				</a>
+				<div class="cinema-button"><a href="/kino/1-praha/?films%5B0%5D=1615728&amp;period=all" class="btn-play-cinema">V kinech</a></div>
+			</div>
+			<div class="poster-slider-item">
+				<a href="/film/1504570-hrisnici/prehled/" title="Hříšníci" class="poster-slider-link">
+					<span class="position">9.</span>
+					<figure>
+						<img class="img" src="//image.pmgstatic.com/cache/resized/w140/files/images/film/posters/169/835/169835208_iblxcr.jpg" loading="lazy" width="140" height="207" srcset="//image.pmgstatic.com/cache/resized/w140/files/images/film/posters/169/835/169835208_iblxcr.jpg 1x, //image.pmgstatic.com/cache/resized/w280/files/images/film/posters/169/835/169835208_iblxcr.jpg 2x, //image.pmgstatic.com/cache/resized/w420/files/images/film/posters/169/835/169835208_iblxcr.jpg 3x" alt="Hříšníci">
+					</figure>
+					
+				</a>
+				<div class="cinema-button"><a href="/kino/1-praha/?films%5B0%5D=1504570&amp;period=all" class="btn-play-cinema">V kinech</a></div>
+			</div>
+			<div class="poster-slider-item">
+				<a href="/film/1596124-bourlive-vysiny/prehled/" title="Bouřlivé výšiny" class="poster-slider-link">
+					<span class="position">10.</span>
+					<figure>
+						<img class="img" src="//image.pmgstatic.com/cache/resized/w140/files/images/film/posters/170/508/170508748_isegly.jpg" loading="lazy" width="140" height="207" srcset="//image.pmgstatic.com/cache/resized/w140/files/images/film/posters/170/508/170508748_isegly.jpg 1x, //image.pmgstatic.com/cache/resized/w280/files/images/film/posters/170/508/170508748_isegly.jpg 2x, //image.pmgstatic.com/cache/resized/w420/files/images/film/posters/170/508/170508748_isegly.jpg 3x" alt="Bouřlivé výšiny">
+					</figure>
+					
+				</a>
+				<div class="cinema-button"><a href="/kino/1-praha/?films%5B0%5D=1596124&amp;period=all" class="btn-play-cinema">V kinech</a></div>
 			</div>
 		</div>
 	</div>
@@ -537,7 +564,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 					<div id="snippet--placeFilterForm">
 						<form action="" method="get" data-form="get" data-allow-auto-submit-preloader>
 							<div class="item-content">
-								<select name="district" data-empty-value="1" id="frm-placeFilterForm-placeFilterForm-district" class="updated-select"><option value="5" data-url="/kino/5-beroun/">Beroun</option><option value="54" data-url="/kino/54-blansko/">Blansko</option><option value="55" data-url="/kino/55-brno/">Brno</option><option value="69" data-url="/kino/69-bruntal/">Bruntál</option><option value="36" data-url="/kino/36-ceska-lipa/">Česká Lípa</option><option value="14" data-url="/kino/14-ceske-budejovice/">České Budějovice</option><option value="29" data-url="/kino/29-decin/">Děčín</option><option value="70" data-url="/kino/70-frydek-mistek/">Frýdek-Místek</option><option value="49" data-url="/kino/49-havlickuv-brod/">Havlíčkův Brod</option><option value="40" data-url="/kino/40-hradec-kralove/">Hradec Králové</option><option value="26" data-url="/kino/26-cheb/">Cheb</option><option value="30" data-url="/kino/30-chomutov/">Chomutov</option><option value="37" data-url="/kino/37-jablonec-nad-nisou/">Jablonec nad Nisou</option><option value="41" data-url="/kino/41-jicin/">Jičín</option><option value="50" data-url="/kino/50-jihlava/">Jihlava</option><option value="16" data-url="/kino/16-jindrichuv-hradec/">Jindřichův Hradec</option><option value="27" data-url="/kino/27-karlovy-vary/">Karlovy Vary</option><option value="71" data-url="/kino/71-karvina/">Karviná</option><option value="6" data-url="/kino/6-kladno/">Kladno</option><option value="22" data-url="/kino/22-klatovy/">Klatovy</option><option value="7" data-url="/kino/7-kolin/">Kolín</option><option value="65" data-url="/kino/65-kromeriz/">Kroměříž</option><option value="38" data-url="/kino/38-liberec/">Liberec</option><option value="31" data-url="/kino/31-litomerice/">Litoměřice</option><option value="32" data-url="/kino/32-louny/">Louny</option><option value="10" data-url="/kino/10-mlada-boleslav/">Mladá Boleslav</option><option value="33" data-url="/kino/33-most/">Most</option><option value="42" data-url="/kino/42-nachod/">Náchod</option><option value="72" data-url="/kino/72-novy-jicin/">Nový Jičín</option><option value="11" data-url="/kino/11-nymburk/">Nymburk</option><option value="61" data-url="/kino/61-olomouc/">Olomouc</option><option value="73" data-url="/kino/73-opava/">Opava</option><option value="74" data-url="/kino/74-ostrava/">Ostrava</option><option value="46" data-url="/kino/46-pardubice/">Pardubice</option><option value="51" data-url="/kino/51-pelhrimov/">Pelhřimov</option><option value="17" data-url="/kino/17-pisek/">Písek</option><option value="23" data-url="/kino/23-plzen/">Plzeň</option><option value="1" data-url="/kino/1-praha/" selected>Praha</option><option value="3" data-url="/kino/3-praha-vychod/">Praha-východ</option><option value="62" data-url="/kino/62-prostejov/">Prostějov</option><option value="63" data-url="/kino/63-prerov/">Přerov</option><option value="28" data-url="/kino/28-sokolov/">Sokolov</option><option value="19" data-url="/kino/19-strakonice/">Strakonice</option><option value="47" data-url="/kino/47-svitavy/">Svitavy</option><option value="64" data-url="/kino/64-sumperk/">Šumperk</option><option value="20" data-url="/kino/20-tabor/">Tábor</option><option value="25" data-url="/kino/25-tachov/">Tachov</option><option value="34" data-url="/kino/34-teplice/">Teplice</option><option value="44" data-url="/kino/44-trutnov/">Trutnov</option><option value="66" data-url="/kino/66-uherske-hradiste/">Uherské Hradiště</option><option value="35" data-url="/kino/35-usti-nad-labem/">Ústí nad Labem</option><option value="48" data-url="/kino/48-usti-nad-orlici/">Ústí nad Orlicí</option><option value="67" data-url="/kino/67-vsetin/">Vsetín</option><option value="68" data-url="/kino/68-zlin/">Zlín</option><option value="59" data-url="/kino/59-znojmo/">Znojmo</option></select>
+								<select name="district" data-empty-value="1" id="frm-placeFilterForm-placeFilterForm-district" class="updated-select"><option value="5" data-url="/kino/5-beroun/">Beroun</option><option value="54" data-url="/kino/54-blansko/">Blansko</option><option value="55" data-url="/kino/55-brno/">Brno</option><option value="154" data-url="/kino/154-brno-venkov/">Brno-venkov</option><option value="69" data-url="/kino/69-bruntal/">Bruntál</option><option value="36" data-url="/kino/36-ceska-lipa/">Česká Lípa</option><option value="14" data-url="/kino/14-ceske-budejovice/">České Budějovice</option><option value="15" data-url="/kino/15-cesky-krumlov/">Český Krumlov</option><option value="29" data-url="/kino/29-decin/">Děčín</option><option value="70" data-url="/kino/70-frydek-mistek/">Frýdek-Místek</option><option value="49" data-url="/kino/49-havlickuv-brod/">Havlíčkův Brod</option><option value="57" data-url="/kino/57-hodonin/">Hodonín</option><option value="40" data-url="/kino/40-hradec-kralove/">Hradec Králové</option><option value="26" data-url="/kino/26-cheb/">Cheb</option><option value="30" data-url="/kino/30-chomutov/">Chomutov</option><option value="45" data-url="/kino/45-chrudim/">Chrudim</option><option value="37" data-url="/kino/37-jablonec-nad-nisou/">Jablonec nad Nisou</option><option value="60" data-url="/kino/60-jesenik/">Jeseník</option><option value="41" data-url="/kino/41-jicin/">Jičín</option><option value="50" data-url="/kino/50-jihlava/">Jihlava</option><option value="16" data-url="/kino/16-jindrichuv-hradec/">Jindřichův Hradec</option><option value="27" data-url="/kino/27-karlovy-vary/">Karlovy Vary</option><option value="71" data-url="/kino/71-karvina/">Karviná</option><option value="6" data-url="/kino/6-kladno/">Kladno</option><option value="22" data-url="/kino/22-klatovy/">Klatovy</option><option value="7" data-url="/kino/7-kolin/">Kolín</option><option value="38" data-url="/kino/38-liberec/">Liberec</option><option value="31" data-url="/kino/31-litomerice/">Litoměřice</option><option value="32" data-url="/kino/32-louny/">Louny</option><option value="9" data-url="/kino/9-melnik/">Mělník</option><option value="10" data-url="/kino/10-mlada-boleslav/">Mladá Boleslav</option><option value="33" data-url="/kino/33-most/">Most</option><option value="42" data-url="/kino/42-nachod/">Náchod</option><option value="72" data-url="/kino/72-novy-jicin/">Nový Jičín</option><option value="11" data-url="/kino/11-nymburk/">Nymburk</option><option value="61" data-url="/kino/61-olomouc/">Olomouc</option><option value="73" data-url="/kino/73-opava/">Opava</option><option value="74" data-url="/kino/74-ostrava/">Ostrava</option><option value="46" data-url="/kino/46-pardubice/">Pardubice</option><option value="51" data-url="/kino/51-pelhrimov/">Pelhřimov</option><option value="17" data-url="/kino/17-pisek/">Písek</option><option value="23" data-url="/kino/23-plzen/">Plzeň</option><option value="1" data-url="/kino/1-praha/" selected>Praha</option><option value="3" data-url="/kino/3-praha-vychod/">Praha-východ</option><option value="18" data-url="/kino/18-prachatice/">Prachatice</option><option value="62" data-url="/kino/62-prostejov/">Prostějov</option><option value="63" data-url="/kino/63-prerov/">Přerov</option><option value="12" data-url="/kino/12-pribram/">Příbram</option><option value="43" data-url="/kino/43-rychnov-nad-kneznou/">Rychnov nad Kněžnou</option><option value="39" data-url="/kino/39-semily/">Semily</option><option value="28" data-url="/kino/28-sokolov/">Sokolov</option><option value="19" data-url="/kino/19-strakonice/">Strakonice</option><option value="47" data-url="/kino/47-svitavy/">Svitavy</option><option value="64" data-url="/kino/64-sumperk/">Šumperk</option><option value="20" data-url="/kino/20-tabor/">Tábor</option><option value="25" data-url="/kino/25-tachov/">Tachov</option><option value="34" data-url="/kino/34-teplice/">Teplice</option><option value="44" data-url="/kino/44-trutnov/">Trutnov</option><option value="52" data-url="/kino/52-trebic/">Třebíč</option><option value="66" data-url="/kino/66-uherske-hradiste/">Uherské Hradiště</option><option value="35" data-url="/kino/35-usti-nad-labem/">Ústí nad Labem</option><option value="48" data-url="/kino/48-usti-nad-orlici/">Ústí nad Orlicí</option><option value="67" data-url="/kino/67-vsetin/">Vsetín</option><option value="58" data-url="/kino/58-vyskov/">Vyškov</option><option value="68" data-url="/kino/68-zlin/">Zlín</option><option value="59" data-url="/kino/59-znojmo/">Znojmo</option></select>
 							</div>
 						<input type="hidden" name="latitude" value=""><input type="hidden" name="longitude" value=""></form>
 					</div>
@@ -593,6 +620,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 										</a>
 									</li>
 									<li>
+										<a rel="scroller" href="#cinema-1659">
+											Divadlo Horní Počernice
+										</a>
+									</li>
+									<li>
 										<a rel="scroller" href="#cinema-2123">
 											Dlabačov
 										</a>
@@ -610,6 +642,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 									<li>
 										<a rel="scroller" href="#cinema-78">
 											Kino Atlas
+										</a>
+									</li>
+									<li>
+										<a rel="scroller" href="#cinema-3192">
+											Kino Balt
 										</a>
 									</li>
 									<li>
@@ -643,13 +680,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 										</a>
 									</li>
 									<li>
-										<a rel="scroller" href="#cinema-243">
-											Kino 35
+										<a rel="scroller" href="#cinema-86">
+											Komorní kino Evald
 										</a>
 									</li>
 									<li>
-										<a rel="scroller" href="#cinema-86">
-											Komorní kino Evald
+										<a rel="scroller" href="#cinema-3213">
+											Městská knihovna v Praze - Petřiny
+										</a>
+									</li>
+									<li>
+										<a rel="scroller" href="#cinema-205">
+											Městská knihovna v Praze - Ústřední knihovna
 										</a>
 									</li>
 									<li>
@@ -665,6 +707,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 									<li>
 										<a rel="scroller" href="#cinema-2779">
 											Přítomnost Boutique Cinema
+										</a>
+									</li>
+									<li>
+										<a rel="scroller" href="#cinema-2660">
+											Rest.Art
 										</a>
 									</li>
 								</ul>
@@ -694,7 +741,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 									<div class="box-content box-content-padding">
 										<label for="frm-scheduleFilterForm-scheduleFilterForm-films">
 											<span class="single-line">Hledané filmy:</span>
-											<input type="text" name="films" data-autocomplete="true" autocomplete="off" id="frm-scheduleFilterForm-scheduleFilterForm-films" data-data="[]" data-autocomplete-options='{"type":"text","maxItems":5,"rendered":true,"url":"https:\/\/www.csfd.cz\/api\/autocomplete\/?s=film"}' data-focus="10" class="fullwidth">
+											<input type="text" name="films" data-autocomplete="true" autocomplete="off" id="frm-scheduleFilterForm-scheduleFilterForm-films" data-data="[]" data-autocomplete-options='{"type":"text","maxItems":5,"rendered":true,"url":"https:\\/\\/www.csfd.cz\\/api\\/autocomplete\\/?s=film"}' data-focus="10" class="fullwidth">
 										</label>
 									</div>
 								</section>
@@ -723,7 +770,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 			<div class="cinema-logo hide-mobile">
 				<a href="http://www.cinestar.cz/cz/praha5/domu">
-					<img src=&#47;&#47;static.pmgstatic.com&#47;assets&#47;images&#47;2b5f1f1793f6881e6e9326d2c21f9445&#47;cinestar-logo-black.svg width="56" height="26" alt="Cinestar" />
+					<img src=&#47;&#47;static.pmgstatic.com&#47;assets&#47;images&#47;6aeb8871e0052a62b04d591a3f85e733&#47;cinestar-logo-black.svg width="56" height="26" alt="Cinestar" />
 				</a>
 			</div>
 
@@ -737,7 +784,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			</div>
 		</header>
 				<div class="update-box-sub-header">
-					pondělí 23.02.2026
+					úterý 24.03.2026
 							<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads class="btn-favorite blue">
 								<i class="icon icon-heart-outline"></i> přidat do oblíbených
 							</a>
@@ -748,22 +795,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			<tbody>
 						<tr>
 							<td class="name with-icon">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1580032-cesta-zlocinu/prehled/" class="film-title-name">Cesta zločinu</a></h3>								<span class="cinema-icon tooltip cinema-icon-csfd" data-tippy-content="ČSFD Sál">ČSFD Sál</span>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/34301-andelske-vejce/prehled/" class="film-title-name">Andělské vejce</a></h3>								<span class="cinema-icon tooltip cinema-icon-csfd" data-tippy-content="ČSFD Sál">ČSFD Sál</span>
 							</td>
 							<td class="td-title">
 								<span title="Titulky">T</span>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
 							</td>
 							<td>
 							</td>
 							<td class="td-time td-time-old">
-									15:20
+									12:50
 
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
 							</td>
 							<td>
 							</td>
@@ -782,145 +829,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						</tr>
 						<tr>
 							<td class="name with-icon">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1558529-neporazitelni/prehled/" class="film-title-name">Neporazitelní</a></h3>								<span class="cinema-icon tooltip cinema-icon-csfd" data-tippy-content="ČSFD Sál">ČSFD Sál</span>
-							</td>
-							<td class="td-title">
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-time-old">
-									13:00
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://websale.cinestar.cz/?eventid=1673467&amp;site=praha5&amp;ref=https%3A%2F%2Fwww.csfd.cz%2Fkino%2F1-praha%2F"data-no-ads target="_blank" data-ga-event="cinema-cinestar_cz|cinema|external">20:50</a>
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name with-icon">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1580030-velky-marty/prehled/" class="film-title-name">Velký Marty</a></h3>								<span class="cinema-icon tooltip cinema-icon-csfd" data-tippy-content="ČSFD Sál">ČSFD Sál</span>
-							</td>
-							<td class="td-title">
-								<span title="Titulky">T</span>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://websale.cinestar.cz/?eventid=1673453&amp;site=praha5&amp;ref=https%3A%2F%2Fwww.csfd.cz%2Fkino%2F1-praha%2F"data-no-ads target="_blank" data-ga-event="cinema-cinestar_cz|cinema|external">18:00</a>
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name with-icon">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/286594-avatar-ohen-a-popel/prehled/" class="film-title-name">Avatar: Oheň a popel</a></h3>								<span class="cinema-icon tooltip cinema-icon-gold-class" data-tippy-content="Gold Class">Gold Class</span>
-							</td>
-							<td class="td-title">
-								<span title="Dabing">D, </span>
-								<span title="3D projekce">3D</span>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://websale.cinestar.cz/?eventid=1673255&amp;site=praha5&amp;ref=https%3A%2F%2Fwww.csfd.cz%2Fkino%2F1-praha%2F"data-no-ads target="_blank" data-ga-event="cinema-cinestar_cz|cinema|external">19:00</a>
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name with-icon">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1596124-bourlive-vysiny/prehled/" class="film-title-name">Bouřlivé výšiny</a></h3>								<span class="cinema-icon tooltip cinema-icon-gold-class" data-tippy-content="Gold Class">Gold Class</span>
-							</td>
-							<td class="td-title">
-								<span title="Titulky">T</span>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://websale.cinestar.cz/?eventid=1673238&amp;site=praha5&amp;ref=https%3A%2F%2Fwww.csfd.cz%2Fkino%2F1-praha%2F"data-no-ads target="_blank" data-ga-event="cinema-cinestar_cz|cinema|external">20:00</a>
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name with-icon">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1574711-norimberk/prehled/" class="film-title-name">Norimberk</a></h3>								<span class="cinema-icon tooltip cinema-icon-gold-class" data-tippy-content="Gold Class">Gold Class</span>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1708356-hlas-hind-radzab/prehled/" class="film-title-name">Hlas Hind Radžab</a></h3>								<span class="cinema-icon tooltip cinema-icon-csfd" data-tippy-content="ČSFD Sál">ČSFD Sál</span>
 							</td>
 							<td class="td-title">
 								<span title="Titulky">T</span>
@@ -936,30 +845,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							<td>
 							</td>
 							<td class="td-time td-time-old">
-									16:15
+									16:30
 
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name with-icon">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1615728-pomocnice/prehled/" class="film-title-name">Pomocnice</a></h3>								<span class="cinema-icon tooltip cinema-icon-gold-class" data-tippy-content="Gold Class">Gold Class</span>
-							</td>
-							<td class="td-title">
-								<span title="Titulky">T</span>
-							</td>
-							<td>
 							</td>
 							<td>
 							</td>
@@ -968,7 +855,28 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							<td>
 							</td>
 							<td class="td-time td-time-old">
-									15:30
+									20:30
+
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td class="name with-icon">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1620024-tanec-s-medvedem/prehled/" class="film-title-name">Tanec s medvědem</a></h3>								<span class="cinema-icon tooltip cinema-icon-csfd" data-tippy-content="ČSFD Sál">ČSFD Sál</span>
+							</td>
+							<td class="td-title">
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									14:20
 
 							</td>
 							<td>
@@ -976,6 +884,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							<td>
 							</td>
 							<td>
+							</td>
+							<td class="td-time td-time-old">
+									18:20
+
 							</td>
 							<td>
 							</td>
@@ -995,40 +907,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
-							<td class="td-time td-time-old">
-									12:00
-
-							</td>
 							<td>
 							</td>
 							<td>
-							</td>
-							<td class="td-time td-time-old">
-									15:45
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://websale.cinestar.cz/?eventid=1673506&amp;site=praha5&amp;ref=https%3A%2F%2Fwww.csfd.cz%2Fkino%2F1-praha%2F"data-no-ads target="_blank" data-ga-event="cinema-cinestar_cz|cinema|external">19:30</a>
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1551219-blaznivy-marsupilami/prehled/" class="film-title-name">Bláznivý Marsupilami</a></h3>							</td>
-							<td class="td-title">
-								<span title="Dabing">D</span>
 							</td>
 							<td>
 							</td>
@@ -1039,16 +920,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							<td>
 							</td>
 							<td class="td-time td-time-old">
-									15:00
+									18:30
 
-							</td>
-							<td class="td-time td-time-old">
-									16:40
-
-							</td>
-							<td>
-							</td>
-							<td>
 							</td>
 							<td>
 							</td>
@@ -1067,66 +940,25 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
-							<td class="td-time td-time-old">
-									12:45
-
-							</td>
 							<td>
 							</td>
 							<td>
 							</td>
 							<td class="td-time td-time-old">
-									15:30
+									14:45
 
 							</td>
 							<td>
 							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://websale.cinestar.cz/?eventid=1673601&amp;site=praha5&amp;ref=https%3A%2F%2Fwww.csfd.cz%2Fkino%2F1-praha%2F"data-no-ads target="_blank" data-ga-event="cinema-cinestar_cz|cinema|external">17:15</a>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									19:30
 
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://websale.cinestar.cz/?eventid=1673279&amp;site=praha5&amp;ref=https%3A%2F%2Fwww.csfd.cz%2Fkino%2F1-praha%2F"data-no-ads target="_blank" data-ga-event="cinema-cinestar_cz|cinema|external">18:15</a>
-
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://websale.cinestar.cz/?eventid=1673608&amp;site=praha5&amp;ref=https%3A%2F%2Fwww.csfd.cz%2Fkino%2F1-praha%2F"data-no-ads target="_blank" data-ga-event="cinema-cinestar_cz|cinema|external">20:00</a>
-
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://websale.cinestar.cz/?eventid=1673285&amp;site=praha5&amp;ref=https%3A%2F%2Fwww.csfd.cz%2Fkino%2F1-praha%2F"data-no-ads target="_blank" data-ga-event="cinema-cinestar_cz|cinema|external">21:00</a>
-
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1486569-byl-jsem-cizincem/prehled/" class="film-title-name">Byl jsem cizincem</a></h3>							</td>
-							<td class="td-title">
-								<span title="Titulky">T</span>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://websale.cinestar.cz/?eventid=1673587&amp;site=praha5&amp;ref=https%3A%2F%2Fwww.csfd.cz%2Fkino%2F1-praha%2F"data-no-ads target="_blank" data-ga-event="cinema-cinestar_cz|cinema|external">18:50</a>
-
-							</td>
-							<td>
 							</td>
 							<td>
 							</td>
@@ -1143,72 +975,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://websale.cinestar.cz/?eventid=1673403&amp;site=praha5&amp;ref=https%3A%2F%2Fwww.csfd.cz%2Fkino%2F1-praha%2F"data-no-ads target="_blank" data-ga-event="cinema-cinestar_cz|cinema|external">21:15</a>
-
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1675070-dream-team/prehled/" class="film-title-name">Dream Team</a></h3>							</td>
-							<td class="td-title">
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-time-old">
-									14:00
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://websale.cinestar.cz/?eventid=1673324&amp;site=praha5&amp;ref=https%3A%2F%2Fwww.csfd.cz%2Fkino%2F1-praha%2F"data-no-ads target="_blank" data-ga-event="cinema-cinestar_cz|cinema|external">21:15</a>
-
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1636787-kdyz-se-zhasne/prehled/" class="film-title-name">Když se zhasne</a></h3>							</td>
-							<td class="td-title">
-							</td>
-							<td>
-							</td>
 							<td class="td-time td-time-old">
 									12:00
 
@@ -1219,20 +985,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
 							<td class="td-time td-time-old">
-									16:40
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://websale.cinestar.cz/?eventid=1673573&amp;site=praha5&amp;ref=https%3A%2F%2Fwww.csfd.cz%2Fkino%2F1-praha%2F"data-no-ads target="_blank" data-ga-event="cinema-cinestar_cz|cinema|external">21:00</a>
+									21:15
 
 							</td>
 							<td>
@@ -1240,257 +1004,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						</tr>
 						<tr>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1638669-nejlepsi-z-nejlepsich-goat/prehled/" class="film-title-name">Nejlepší z nejlepších: GOAT</a></h3>							</td>
-							<td class="td-title">
-								<span title="Dabing">D</span>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-time-old">
-									12:20
-
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-time-old">
-									14:30
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://websale.cinestar.cz/?eventid=1673435&amp;site=praha5&amp;ref=https%3A%2F%2Fwww.csfd.cz%2Fkino%2F1-praha%2F"data-no-ads target="_blank" data-ga-event="cinema-cinestar_cz|cinema|external">18:50</a>
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1574711-norimberk/prehled/" class="film-title-name">Norimberk</a></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1700848-carodej-z-kremlu/prehled/" class="film-title-name">Čaroděj z Kremlu</a></h3>							</td>
 							<td class="td-title">
 								<span title="Titulky">T</span>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-time-old">
-									13:30
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-time-old">
-									16:30
-
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://websale.cinestar.cz/?eventid=1673548&amp;site=praha5&amp;ref=https%3A%2F%2Fwww.csfd.cz%2Fkino%2F1-praha%2F"data-no-ads target="_blank" data-ga-event="cinema-cinestar_cz|cinema|external">18:20</a>
-
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://websale.cinestar.cz/?eventid=1673365&amp;site=praha5&amp;ref=https%3A%2F%2Fwww.csfd.cz%2Fkino%2F1-praha%2F"data-no-ads target="_blank" data-ga-event="cinema-cinestar_cz|cinema|external">19:30</a>
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1513998-otec-matka-sestra-bratr/prehled/" class="film-title-name">Otec Matka Sestra Bratr</a></h3>							</td>
-							<td class="td-title">
-								<span title="Titulky">T</span>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://websale.cinestar.cz/?eventid=1673489&amp;site=praha5&amp;ref=https%3A%2F%2Fwww.csfd.cz%2Fkino%2F1-praha%2F"data-no-ads target="_blank" data-ga-event="cinema-cinestar_cz|cinema|external">17:30</a>
-
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://websale.cinestar.cz/?eventid=1673495&amp;site=praha5&amp;ref=https%3A%2F%2Fwww.csfd.cz%2Fkino%2F1-praha%2F"data-no-ads target="_blank" data-ga-event="cinema-cinestar_cz|cinema|external">19:50</a>
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1395444-parazit-z-chladaku/prehled/" class="film-title-name">Parazit z chlaďáku</a></h3>							</td>
-							<td class="td-title">
-								<span title="Titulky">T</span>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://websale.cinestar.cz/?eventid=1673389&amp;site=praha5&amp;ref=https%3A%2F%2Fwww.csfd.cz%2Fkino%2F1-praha%2F"data-no-ads target="_blank" data-ga-event="cinema-cinestar_cz|cinema|external">17:00</a>
-
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://websale.cinestar.cz/?eventid=1673396&amp;site=praha5&amp;ref=https%3A%2F%2Fwww.csfd.cz%2Fkino%2F1-praha%2F"data-no-ads target="_blank" data-ga-event="cinema-cinestar_cz|cinema|external">19:10</a>
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1615728-pomocnice/prehled/" class="film-title-name">Pomocnice</a></h3>							</td>
-							<td class="td-title">
-								<span title="Titulky">T</span>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-time-old">
-									16:00
-
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://websale.cinestar.cz/?eventid=1673310&amp;site=praha5&amp;ref=https%3A%2F%2Fwww.csfd.cz%2Fkino%2F1-praha%2F"data-no-ads target="_blank" data-ga-event="cinema-cinestar_cz|cinema|external">18:40</a>
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://websale.cinestar.cz/?eventid=1673317&amp;site=praha5&amp;ref=https%3A%2F%2Fwww.csfd.cz%2Fkino%2F1-praha%2F"data-no-ads target="_blank" data-ga-event="cinema-cinestar_cz|cinema|external">21:20</a>
-
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1706145-princezna-stokrat-jinak/prehled/" class="film-title-name">Princezna stokrát jinak</a></h3>							</td>
-							<td class="td-title">
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-time-old">
-									13:30
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1579476-sos/prehled/" class="film-title-name">SOS</a></h3>							</td>
-							<td class="td-title">
-								<span title="Titulky">T</span>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://websale.cinestar.cz/?eventid=1673410&amp;site=praha5&amp;ref=https%3A%2F%2Fwww.csfd.cz%2Fkino%2F1-praha%2F"data-no-ads target="_blank" data-ga-event="cinema-cinestar_cz|cinema|external">21:00</a>
-
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1399440-spongebob-piratske-dobrodruzstvi/prehled/" class="film-title-name">SpongeBob: Pirátské dobrodružství</a></h3>							</td>
-							<td class="td-title">
-								<span title="Dabing">D</span>
 							</td>
 							<td>
 							</td>
@@ -1521,16 +1037,225 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						</tr>
 						<tr>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1737190-velrybi-pisen/prehled/" class="film-title-name">Velrybí píseň</a></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/1810726-jenicek-a-marenka-strazci-kouzel/prehled/" class="film-title-name">Jeníček a Mařenka: Strážci kouzel</a></h3>							</td>
 							<td class="td-title">
+								<span title="Dabing">D</span>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									12:10
+
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									14:20
+
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									16:30
+
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1636787-kdyz-se-zhasne/prehled/" class="film-title-name">Když se zhasne</a></h3>							</td>
+							<td class="td-title">
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									12:45
+
+							</td>
+							<td>
+							</td>
+							<td>
 							</td>
 							<td>
 							</td>
 							<td>
 							</td>
 							<td class="td-time td-time-old">
-									13:30
+									17:30
 
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1558319-na-skok-do-divociny/prehled/" class="film-title-name">Na skok do divočiny</a></h3>							</td>
+							<td class="td-title">
+								<span title="Dabing">D</span>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									12:15
+
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									14:30
+
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									16:45
+
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1558319-na-skok-do-divociny/prehled/" class="film-title-name">Na skok do divočiny</a></h3>							</td>
+							<td class="td-title">
+								<span title="Dabing">D, </span>
+								<span title="3D projekce">3D</span>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									13:15
+
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1558319-na-skok-do-divociny/prehled/" class="film-title-name">Na skok do divočiny</a></h3>							</td>
+							<td class="td-title">
+								<span title="Titulky">T</span>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									17:30
+
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									19:00
+
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1618341-nerikejte-mi-dedo/prehled/" class="film-title-name">Neříkejte mi dědo</a></h3>							</td>
+							<td class="td-title">
+								<span title="Titulky">T</span>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									19:45
+
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1574711-norimberk/prehled/" class="film-title-name">Norimberk</a></h3>							</td>
+							<td class="td-title">
+								<span title="Titulky">T</span>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
 							</td>
 							<td>
 							</td>
@@ -1555,7 +1280,223 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						</tr>
 						<tr>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1692040-v-ukrytu/prehled/" class="film-title-name">V úkrytu</a></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1773198-poberta/prehled/" class="film-title-name">Poberta</a></h3>							</td>
+							<td class="td-title">
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									12:30
+
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									17:30
+
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1615728-pomocnice/prehled/" class="film-title-name">Pomocnice</a></h3>							</td>
+							<td class="td-title">
+								<span title="Titulky">T</span>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									18:40
+
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									21:20
+
+							</td>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1717489-prani-k-narozeninam-krtiny/prehled/" class="film-title-name">Přání k narozeninám: Křtiny</a></h3>							</td>
+							<td class="td-title">
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									13:40
+
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									15:50
+
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									18:00
+
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1018007-spasitel/prehled/" class="film-title-name">Spasitel</a></h3>							</td>
+							<td class="td-title">
+								<span title="Dabing">D</span>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									13:40
+
+							</td>
+							<td class="td-time td-time-old">
+									14:50
+
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									18:00
+
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									20:40
+
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1448507-vriskot-7/prehled/" class="film-title-name">Vřískot 7</a></h3>							</td>
+							<td class="td-title">
+								<span title="Titulky">T</span>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									15:50
+
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									18:15
+
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									20:45
+
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1692086-vzpominky-na-nej/prehled/" class="film-title-name">Vzpomínky na něj</a></h3>							</td>
+							<td class="td-title">
+								<span title="Titulky">T</span>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									15:00
+
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									20:00
+
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1663029-zlom-vaz-bav-se-neumri/prehled/" class="film-title-name">Zlom vaz, bav se, neumři</a></h3>							</td>
 							<td class="td-title">
 								<span title="Titulky">T</span>
 							</td>
@@ -1579,8 +1520,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://websale.cinestar.cz/?eventid=1673543&amp;site=praha5&amp;ref=https%3A%2F%2Fwww.csfd.cz%2Fkino%2F1-praha%2F"data-no-ads target="_blank" data-ga-event="cinema-cinestar_cz|cinema|external">21:20</a>
+							<td class="td-time td-time-old">
+									21:10
 
 							</td>
 							<td>
@@ -1595,22 +1536,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							<td>
 							</td>
 							<td class="td-time td-time-old">
-									12:20
-
-							</td>
-							<td class="td-time td-time-old">
-									13:40
-
-							</td>
-							<td class="td-time td-time-old">
-									14:40
+									12:50
 
 							</td>
 							<td>
 							</td>
+							<td>
+							</td>
 							<td class="td-time td-time-old">
-									16:00
+									15:10
 
+							</td>
+							<td>
 							</td>
 							<td>
 							</td>
@@ -1627,18 +1564,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						</tr>
 						<tr>
 							<td class="name with-icon">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/286594-avatar-ohen-a-popel/prehled/" class="film-title-name">Avatar: Oheň a popel</a></h3>								<span class="cinema-icon tooltip cinema-icon-dolby-atmos" data-tippy-content="Dolby Atmos sál">Dolby Atmos sál</span>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1018007-spasitel/prehled/" class="film-title-name">Spasitel</a></h3>								<span class="cinema-icon tooltip cinema-icon-dolby-atmos" data-tippy-content="Dolby Atmos sál">Dolby Atmos sál</span>
 							</td>
 							<td class="td-title">
-								<span title="Titulky">T, </span>
-								<span title="3D projekce">3D</span>
+								<span title="Titulky">T</span>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									12:40
+
 							</td>
 							<td>
 							</td>
 							<td>
 							</td>
 							<td class="td-time td-time-old">
-									13:45
+									15:50
 
 							</td>
 							<td>
@@ -1647,13 +1589,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://websale.cinestar.cz/?eventid=1673342&amp;site=praha5&amp;ref=https%3A%2F%2Fwww.csfd.cz%2Fkino%2F1-praha%2F"data-no-ads target="_blank" data-ga-event="cinema-cinestar_cz|cinema|external">17:30</a>
+							<td class="td-time td-time-old">
+									19:00
 
-							</td>
-							<td>
-							</td>
-							<td>
 							</td>
 							<td>
 							</td>
@@ -1678,7 +1616,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 			<div class="cinema-logo hide-mobile">
 				<a href="http://www.cinestar.cz/cz/praha9/domu">
-					<img src=&#47;&#47;static.pmgstatic.com&#47;assets&#47;images&#47;2b5f1f1793f6881e6e9326d2c21f9445&#47;cinestar-logo-black.svg width="56" height="26" alt="Cinestar" />
+					<img src=&#47;&#47;static.pmgstatic.com&#47;assets&#47;images&#47;6aeb8871e0052a62b04d591a3f85e733&#47;cinestar-logo-black.svg width="56" height="26" alt="Cinestar" />
 				</a>
 			</div>
 
@@ -1692,7 +1630,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			</div>
 		</header>
 				<div class="update-box-sub-header">
-					pondělí 23.02.2026
+					úterý 24.03.2026
 							<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads class="btn-favorite blue">
 								<i class="icon icon-heart-outline"></i> přidat do oblíbených
 							</a>
@@ -1715,71 +1653,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
-							<td class="td-time td-time-old">
-									14:00
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://websale.cinestar.cz/?eventid=1675404&amp;site=praha9&amp;ref=https%3A%2F%2Fwww.csfd.cz%2Fkino%2F1-praha%2F"data-no-ads target="_blank" data-ga-event="cinema-cinestar_cz|cinema|external">18:20</a>
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name with-icon">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1596124-bourlive-vysiny/prehled/" class="film-title-name">Bouřlivé výšiny</a></h3>								<span class="cinema-icon tooltip cinema-icon-gold-class" data-tippy-content="Gold Class">Gold Class</span>
-							</td>
-							<td class="td-title">
-								<span title="Titulky">T</span>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://websale.cinestar.cz/?eventid=1675300&amp;site=praha9&amp;ref=https%3A%2F%2Fwww.csfd.cz%2Fkino%2F1-praha%2F"data-no-ads target="_blank" data-ga-event="cinema-cinestar_cz|cinema|external">20:20</a>
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name with-icon">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1675070-dream-team/prehled/" class="film-title-name">Dream Team</a></h3>								<span class="cinema-icon tooltip cinema-icon-gold-class" data-tippy-content="Gold Class">Gold Class</span>
-							</td>
-							<td class="td-title">
-							</td>
-							<td>
-							</td>
 							<td>
 							</td>
 							<td>
@@ -1789,12 +1662,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							<td>
 							</td>
 							<td class="td-time td-time-old">
-									16:20
+									18:20
 
-							</td>
-							<td>
-							</td>
-							<td>
 							</td>
 							<td>
 							</td>
@@ -1807,40 +1676,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						</tr>
 						<tr>
 							<td class="name with-icon">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1636787-kdyz-se-zhasne/prehled/" class="film-title-name">Když se zhasne</a></h3>								<span class="cinema-icon tooltip cinema-icon-gold-class" data-tippy-content="Gold Class">Gold Class</span>
-							</td>
-							<td class="td-title">
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://websale.cinestar.cz/?eventid=1675313&amp;site=praha9&amp;ref=https%3A%2F%2Fwww.csfd.cz%2Fkino%2F1-praha%2F"data-no-ads target="_blank" data-ga-event="cinema-cinestar_cz|cinema|external">17:40</a>
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name with-icon">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1638669-nejlepsi-z-nejlepsich-goat/prehled/" class="film-title-name">Nejlepší z nejlepších: GOAT</a></h3>								<span class="cinema-icon tooltip cinema-icon-gold-class" data-tippy-content="Gold Class">Gold Class</span>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1558319-na-skok-do-divociny/prehled/" class="film-title-name">Na skok do divočiny</a></h3>								<span class="cinema-icon tooltip cinema-icon-gold-class" data-tippy-content="Gold Class">Gold Class</span>
 							</td>
 							<td class="td-title">
 								<span title="Dabing">D</span>
@@ -1849,11 +1685,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
-							<td class="td-time td-time-old">
-									13:20
-
-							</td>
 							<td>
+							</td>
+							<td class="td-time td-time-old">
+									14:20
+
 							</td>
 							<td>
 							</td>
@@ -1874,7 +1710,76 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						</tr>
 						<tr>
 							<td class="name with-icon">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1574711-norimberk/prehled/" class="film-title-name">Norimberk</a></h3>								<span class="cinema-icon tooltip cinema-icon-gold-class" data-tippy-content="Gold Class">Gold Class</span>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1717489-prani-k-narozeninam-krtiny/prehled/" class="film-title-name">Přání k narozeninám: Křtiny</a></h3>								<span class="cinema-icon tooltip cinema-icon-gold-class" data-tippy-content="Gold Class">Gold Class</span>
+							</td>
+							<td class="td-title">
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									15:10
+
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td class="name with-icon">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1018007-spasitel/prehled/" class="film-title-name">Spasitel</a></h3>								<span class="cinema-icon tooltip cinema-icon-gold-class" data-tippy-content="Gold Class">Gold Class</span>
+							</td>
+							<td class="td-title">
+								<span title="Dabing">D</span>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									15:50
+
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									19:20
+
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td class="name with-icon">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1018007-spasitel/prehled/" class="film-title-name">Spasitel</a></h3>								<span class="cinema-icon tooltip cinema-icon-gold-class" data-tippy-content="Gold Class">Gold Class</span>
 							</td>
 							<td class="td-title">
 								<span title="Titulky">T</span>
@@ -1889,17 +1794,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://websale.cinestar.cz/?eventid=1675368&amp;site=praha9&amp;ref=https%3A%2F%2Fwww.csfd.cz%2Fkino%2F1-praha%2F"data-no-ads target="_blank" data-ga-event="cinema-cinestar_cz|cinema|external">19:20</a>
+							<td class="td-time td-time-old">
+									16:50
 
 							</td>
 							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									20:20
+
 							</td>
 							<td>
 							</td>
@@ -1915,14 +1822,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
-							<td class="td-time td-time-old">
-									12:00
-
-							</td>
 							<td>
 							</td>
 							<td class="td-time td-time-old">
-									14:40
+									13:10
 
 							</td>
 							<td>
@@ -1938,75 +1841,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							<td>
 							</td>
 							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name with-icon">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/286594-avatar-ohen-a-popel/prehled/" class="film-title-name">Avatar: Oheň a popel</a></h3>								<span class="cinema-icon tooltip cinema-icon-theatre-deluxe" data-tippy-content="Theatre Deluxe">Theatre Deluxe</span>
-							</td>
-							<td class="td-title">
-								<span title="Dabing">D, </span>
-								<span title="3D projekce">3D</span>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-time-old">
-									12:10
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-time-old">
-									16:10
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name with-icon">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1574711-norimberk/prehled/" class="film-title-name">Norimberk</a></h3>								<span class="cinema-icon tooltip cinema-icon-theatre-deluxe" data-tippy-content="Theatre Deluxe">Theatre Deluxe</span>
-							</td>
-							<td class="td-title">
-								<span title="Titulky">T</span>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://websale.cinestar.cz/?eventid=1676099&amp;site=praha9&amp;ref=https%3A%2F%2Fwww.csfd.cz%2Fkino%2F1-praha%2F"data-no-ads target="_blank" data-ga-event="cinema-cinestar_cz|cinema|external">20:00</a>
-
 							</td>
 							<td>
 							</td>
@@ -2028,17 +1862,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://websale.cinestar.cz/?eventid=1675278&amp;site=praha9&amp;ref=https%3A%2F%2Fwww.csfd.cz%2Fkino%2F1-praha%2F"data-no-ads target="_blank" data-ga-event="cinema-cinestar_cz|cinema|external">19:10</a>
+							<td class="td-time td-time-old">
+									15:45
 
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
 							</td>
 							<td>
 							</td>
@@ -2055,21 +1889,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
-							<td class="td-time td-time-old">
-									12:00
-
+							<td>
 							</td>
 							<td>
 							</td>
 							<td class="td-time td-time-old">
-									14:10
+									14:00
 
 							</td>
 							<td>
 							</td>
-							<td class="td-time td-time-old">
-									16:20
-
+							<td>
 							</td>
 							<td>
 							</td>
@@ -2102,83 +1932,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://websale.cinestar.cz/?eventid=1674927&amp;site=praha9&amp;ref=https%3A%2F%2Fwww.csfd.cz%2Fkino%2F1-praha%2F"data-no-ads target="_blank" data-ga-event="cinema-cinestar_cz|cinema|external">17:40</a>
-
-							</td>
 							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://websale.cinestar.cz/?eventid=1674934&amp;site=praha9&amp;ref=https%3A%2F%2Fwww.csfd.cz%2Fkino%2F1-praha%2F"data-no-ads target="_blank" data-ga-event="cinema-cinestar_cz|cinema|external">20:30</a>
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1580032-cesta-zlocinu/prehled/" class="film-title-name">Cesta zločinu</a></h3>							</td>
-							<td class="td-title">
-								<span title="Titulky">T</span>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://websale.cinestar.cz/?eventid=1675663&amp;site=praha9&amp;ref=https%3A%2F%2Fwww.csfd.cz%2Fkino%2F1-praha%2F"data-no-ads target="_blank" data-ga-event="cinema-cinestar_cz|cinema|external">20:00</a>
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1631189-divka-momo-a-zlodeji-casu/prehled/" class="film-title-name">Dívka Momo a zloději času</a></h3>							</td>
-							<td class="td-title">
-								<span title="Dabing">D</span>
 							</td>
 							<td>
 							</td>
 							<td>
 							</td>
 							<td class="td-time td-time-old">
-									13:10
+									20:15
 
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
 							</td>
 							<td>
 							</td>
@@ -2196,23 +1958,56 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://websale.cinestar.cz/?eventid=1674844&amp;site=praha9&amp;ref=https%3A%2F%2Fwww.csfd.cz%2Fkino%2F1-praha%2F"data-no-ads target="_blank" data-ga-event="cinema-cinestar_cz|cinema|external">17:30</a>
+							<td class="td-time td-time-old">
+									14:00
 
 							</td>
 							<td>
 							</td>
 							<td>
 							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://websale.cinestar.cz/?eventid=1674851&amp;site=praha9&amp;ref=https%3A%2F%2Fwww.csfd.cz%2Fkino%2F1-praha%2F"data-no-ads target="_blank" data-ga-event="cinema-cinestar_cz|cinema|external">20:10</a>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/1810726-jenicek-a-marenka-strazci-kouzel/prehled/" class="film-title-name">Jeníček a Mařenka: Strážci kouzel</a></h3>							</td>
+							<td class="td-title">
+								<span title="Dabing">D</span>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									13:30
 
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									15:40
+
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
 							</td>
 							<td>
 							</td>
@@ -2234,18 +2029,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://websale.cinestar.cz/?eventid=1674695&amp;site=praha9&amp;ref=https%3A%2F%2Fwww.csfd.cz%2Fkino%2F1-praha%2F"data-no-ads target="_blank" data-ga-event="cinema-cinestar_cz|cinema|external">16:50</a>
-
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://websale.cinestar.cz/?eventid=1675031&amp;site=praha9&amp;ref=https%3A%2F%2Fwww.csfd.cz%2Fkino%2F1-praha%2F"data-no-ads target="_blank" data-ga-event="cinema-cinestar_cz|cinema|external">17:50</a>
-
+							<td>
 							</td>
 							<td>
 							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://websale.cinestar.cz/?eventid=1674702&amp;site=praha9&amp;ref=https%3A%2F%2Fwww.csfd.cz%2Fkino%2F1-praha%2F"data-no-ads target="_blank" data-ga-event="cinema-cinestar_cz|cinema|external">19:00</a>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									19:40
 
 							</td>
 							<td>
@@ -2257,23 +2048,57 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						</tr>
 						<tr>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1669709-mazlicci-v-prusvihu/prehled/" class="film-title-name">Mazlíčci v průšvihu</a></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1558319-na-skok-do-divociny/prehled/" class="film-title-name">Na skok do divočiny</a></h3>							</td>
 							<td class="td-title">
 								<span title="Dabing">D</span>
 							</td>
 							<td>
 							</td>
+							<td>
+							</td>
+							<td>
+							</td>
 							<td class="td-time td-time-old">
-									12:50
+									14:00
 
 							</td>
 							<td>
 							</td>
 							<td class="td-time td-time-old">
-									14:50
+									16:20
 
 							</td>
 							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1558319-na-skok-do-divociny/prehled/" class="film-title-name">Na skok do divočiny</a></h3>							</td>
+							<td class="td-title">
+								<span title="Dabing">D, </span>
+								<span title="3D projekce">3D</span>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									15:20
+
 							</td>
 							<td>
 							</td>
@@ -2296,25 +2121,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							<td class="td-title">
 								<span title="Dabing">D</span>
 							</td>
-							<td class="td-time td-time-old">
-									11:00
-
+							<td>
 							</td>
 							<td>
 							</td>
 							<td class="td-time td-time-old">
-									13:10
+									13:20
 
 							</td>
 							<td>
 							</td>
-							<td class="td-time td-time-old">
-									15:20
-
+							<td>
 							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://websale.cinestar.cz/?eventid=1675677&amp;site=praha9&amp;ref=https%3A%2F%2Fwww.csfd.cz%2Fkino%2F1-praha%2F"data-no-ads target="_blank" data-ga-event="cinema-cinestar_cz|cinema|external">16:50</a>
-
+							<td>
 							</td>
 							<td>
 							</td>
@@ -2331,9 +2150,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						</tr>
 						<tr>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1574711-norimberk/prehled/" class="film-title-name">Norimberk</a></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1773198-poberta/prehled/" class="film-title-name">Poberta</a></h3>							</td>
 							<td class="td-title">
-								<span title="Titulky">T</span>
+							</td>
+							<td>
 							</td>
 							<td>
 							</td>
@@ -2344,7 +2164,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							<td>
 							</td>
 							<td class="td-time td-time-old">
-									15:00
+									16:10
 
 							</td>
 							<td>
@@ -2355,18 +2175,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
-							<td>
-							</td>
-							<td>
+							<td class="td-time td-time-old">
+									21:00
+
 							</td>
 							<td>
 							</td>
 						</tr>
 						<tr>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1681106-ozvena/prehled/" class="film-title-name">Ozvěna</a></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1717489-prani-k-narozeninam-krtiny/prehled/" class="film-title-name">Přání k narozeninám: Křtiny</a></h3>							</td>
 							<td class="td-title">
-								<span title="Titulky">T</span>
 							</td>
 							<td>
 							</td>
@@ -2376,53 +2195,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://websale.cinestar.cz/?eventid=1674717&amp;site=praha9&amp;ref=https%3A%2F%2Fwww.csfd.cz%2Fkino%2F1-praha%2F"data-no-ads target="_blank" data-ga-event="cinema-cinestar_cz|cinema|external">21:10</a>
+							<td class="td-time td-time-old">
+									15:30
 
 							</td>
 							<td>
 							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1395444-parazit-z-chladaku/prehled/" class="film-title-name">Parazit z chlaďáku</a></h3>							</td>
-							<td class="td-title">
-								<span title="Titulky">T</span>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://websale.cinestar.cz/?eventid=1674807&amp;site=praha9&amp;ref=https%3A%2F%2Fwww.csfd.cz%2Fkino%2F1-praha%2F"data-no-ads target="_blank" data-ga-event="cinema-cinestar_cz|cinema|external">18:30</a>
+							<td class="td-time td-time-old">
+									17:45
 
 							</td>
 							<td>
 							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://websale.cinestar.cz/?eventid=1674814&amp;site=praha9&amp;ref=https%3A%2F%2Fwww.csfd.cz%2Fkino%2F1-praha%2F"data-no-ads target="_blank" data-ga-event="cinema-cinestar_cz|cinema|external">20:40</a>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									20:00
 
 							</td>
 							<td>
@@ -2432,76 +2220,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						</tr>
 						<tr>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1508539-pet-noci-u-freddyho-2/prehled/" class="film-title-name">Pět nocí u Freddyho 2</a></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1018007-spasitel/prehled/" class="film-title-name">Spasitel</a></h3>							</td>
 							<td class="td-title">
 								<span title="Dabing">D</span>
 							</td>
-							<td class="td-time td-time-old">
-									11:50
-
-							</td>
 							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1615728-pomocnice/prehled/" class="film-title-name">Pomocnice</a></h3>							</td>
-							<td class="td-title">
-								<span title="Titulky">T</span>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-time-old">
-									14:10
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://websale.cinestar.cz/?eventid=1674869&amp;site=praha9&amp;ref=https%3A%2F%2Fwww.csfd.cz%2Fkino%2F1-praha%2F"data-no-ads target="_blank" data-ga-event="cinema-cinestar_cz|cinema|external">18:00</a>
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1706145-princezna-stokrat-jinak/prehled/" class="film-title-name">Princezna stokrát jinak</a></h3>							</td>
-							<td class="td-title">
 							</td>
 							<td>
 							</td>
@@ -2512,27 +2235,33 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							<td>
 							</td>
 							<td class="td-time td-time-old">
-									15:20
+									16:40
 
 							</td>
 							<td>
 							</td>
-							<td>
+							<td class="td-time td-time-old">
+									18:00
+									<span class="br"></span>
+									18:40
+
 							</td>
 							<td>
 							</td>
-							<td>
+							<td class="td-time td-time-old">
+									20:00
+
 							</td>
-							<td>
-							</td>
-							<td>
+							<td class="td-time td-time-old">
+									21:00
+
 							</td>
 							<td>
 							</td>
 						</tr>
 						<tr>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1390510-silent-hill-nocni-mury/prehled/" class="film-title-name">Silent Hill: Noční můry</a></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1018007-spasitel/prehled/" class="film-title-name">Spasitel</a></h3>							</td>
 							<td class="td-title">
 								<span title="Titulky">T</span>
 							</td>
@@ -2548,48 +2277,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://websale.cinestar.cz/?eventid=1675112&amp;site=praha9&amp;ref=https%3A%2F%2Fwww.csfd.cz%2Fkino%2F1-praha%2F"data-no-ads target="_blank" data-ga-event="cinema-cinestar_cz|cinema|external">21:10</a>
+							<td class="td-time td-time-old">
+									17:40
 
 							</td>
 							<td>
 							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1579476-sos/prehled/" class="film-title-name">SOS</a></h3>							</td>
-							<td class="td-title">
-								<span title="Titulky">T</span>
-							</td>
 							<td>
 							</td>
 							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://websale.cinestar.cz/?eventid=1674888&amp;site=praha9&amp;ref=https%3A%2F%2Fwww.csfd.cz%2Fkino%2F1-praha%2F"data-no-ads target="_blank" data-ga-event="cinema-cinestar_cz|cinema|external">20:50</a>
-
 							</td>
 							<td>
 							</td>
@@ -2602,13 +2298,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							<td class="td-title">
 								<span title="Dabing">D</span>
 							</td>
+							<td>
+							</td>
+							<td>
+							</td>
 							<td class="td-time td-time-old">
-									11:00
+									13:30
 
-							</td>
-							<td>
-							</td>
-							<td>
 							</td>
 							<td>
 							</td>
@@ -2631,61 +2327,28 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						</tr>
 						<tr>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1598948-superpes-karlik/prehled/" class="film-title-name">Superpes Karlík</a></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1620024-tanec-s-medvedem/prehled/" class="film-title-name">Tanec s medvědem</a></h3>							</td>
 							<td class="td-title">
-								<span title="Dabing">D</span>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
 							</td>
 							<td>
 							</td>
 							<td class="td-time td-time-old">
-									12:45
+									18:40
 
 							</td>
 							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1684812-svihaci/prehled/" class="film-title-name">Šviháci</a></h3>							</td>
-							<td class="td-title">
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://websale.cinestar.cz/?eventid=1675127&amp;site=praha9&amp;ref=https%3A%2F%2Fwww.csfd.cz%2Fkino%2F1-praha%2F"data-no-ads target="_blank" data-ga-event="cinema-cinestar_cz|cinema|external">19:00</a>
-
 							</td>
 							<td>
 							</td>
@@ -2699,21 +2362,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1737190-velrybi-pisen/prehled/" class="film-title-name">Velrybí píseň</a></h3>							</td>
 							<td class="td-title">
 							</td>
-							<td class="td-time td-time-old">
-									11:10
-
+							<td>
 							</td>
 							<td>
 							</td>
 							<td class="td-time td-time-old">
-									13:20
+									13:10
 
 							</td>
 							<td>
 							</td>
-							<td class="td-time td-time-old">
-									15:30
-
+							<td>
 							</td>
 							<td>
 							</td>
@@ -2732,27 +2391,130 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						</tr>
 						<tr>
 							<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1448507-vriskot-7/prehled/" class="film-title-name">Vřískot 7</a></h3>							</td>
+							<td class="td-title">
+								<span title="Titulky">T</span>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									17:50
+
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									21:10
+
+							</td>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td class="name">
 <h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1487258-zootropolis-mesto-zvirat-2/prehled/" class="film-title-name">Zootropolis: Město zvířat 2</a></h3>							</td>
 							<td class="td-title">
 								<span title="Dabing">D</span>
 							</td>
+							<td>
+							</td>
+							<td>
+							</td>
 							<td class="td-time td-time-old">
-									11:50
+									13:20
+
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									15:40
 
 							</td>
 							<td>
 							</td>
 							<td>
 							</td>
-							<td class="td-time td-time-old">
-									14:20
-
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td class="name with-icon">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1018007-spasitel/prehled/" class="film-title-name">Spasitel</a></h3>								<span class="cinema-icon tooltip cinema-icon-theatre-deluxe" data-tippy-content="Theatre Deluxe">Theatre Deluxe</span>
+							</td>
+							<td class="td-title">
+								<span title="Titulky">T</span>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
 							</td>
 							<td>
 							</td>
 							<td class="td-time td-time-old">
-									16:45
+									15:40
 
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									19:00
+
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td class="name with-icon">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1448507-vriskot-7/prehled/" class="film-title-name">Vřískot 7</a></h3>								<span class="cinema-icon tooltip cinema-icon-theatre-deluxe" data-tippy-content="Theatre Deluxe">Theatre Deluxe</span>
+							</td>
+							<td class="td-title">
+								<span title="Titulky">T</span>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									13:10
+
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
 							</td>
 							<td>
 							</td>
@@ -2793,7 +2555,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			</div>
 		</header>
 				<div class="update-box-sub-header">
-					pondělí 23.02.2026
+					úterý 24.03.2026
 							<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads class="btn-favorite blue">
 								<i class="icon icon-heart-outline"></i> přidat do oblíbených
 							</a>
@@ -2804,7 +2566,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			<tbody>
 						<tr>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1596124-bourlive-vysiny/prehled/" class="film-title-name">Bouřlivé výšiny</a></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/99416-muz-s-kinoaparatem/prehled/" class="film-title-name">Muž s kinoaparátem</a></h3>							</td>
 							<td class="td-title">
 								<span title="Titulky">T</span>
 							</td>
@@ -2822,41 +2584,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time">
-									20:30
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1539639-cukrkandl/prehled/" class="film-title-name">Cukrkandl</a></h3>							</td>
-							<td class="td-title">
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
 							<td class="td-time td-time-old">
-									15:00
+									18:00
 
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
 							</td>
 							<td>
 							</td>
@@ -2877,23 +2607,121 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time">
-									18:00
+							<td class="td-time td-time-old">
+									13:00
 
 							</td>
 							<td>
 							</td>
 							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1773198-poberta/prehled/" class="film-title-name">Poberta</a></h3>							</td>
+							<td class="td-title">
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									15:30
+
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1563219-posledni-viking/prehled/" class="film-title-name">Poslední Viking</a></h3>							</td>
+							<td class="td-title">
+								<span title="Titulky">T</span>
+							</td>
+							<td class="td-time td-time-old">
+									10:00
+
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1663025-tajny-agent/prehled/" class="film-title-name">Tajný agent</a></h3>							</td>
+							<td class="td-title">
+								<span title="Titulky">T</span>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									20:30
+
 							</td>
 							<td>
 							</td>
@@ -2926,7 +2754,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			</div>
 		</header>
 				<div class="update-box-sub-header">
-					pondělí 23.02.2026
+					úterý 24.03.2026
 							<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads class="btn-favorite blue">
 								<i class="icon icon-heart-outline"></i> přidat do oblíbených
 							</a>
@@ -2935,143 +2763,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	<div class="table-container">
 		<table class="cinema-table striped">
 			<tbody>
-						<tr>
-							<td class="name with-icon">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/286594-avatar-ohen-a-popel/prehled/" class="film-title-name">Avatar: Oheň a popel</a></h3>								<span class="cinema-icon tooltip cinema-icon-imax" data-tippy-content="IMAX">IMAX</span>
-							</td>
-							<td class="td-title">
-								<span title="Dabing">D, </span>
-								<span title="3D projekce">3D</span>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-time-old">
-									13:40
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name with-icon">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1596124-bourlive-vysiny/prehled/" class="film-title-name">Bouřlivé výšiny</a></h3>								<span class="cinema-icon tooltip cinema-icon-imax" data-tippy-content="IMAX">IMAX</span>
-							</td>
-							<td class="td-title">
-								<span title="Titulky">T</span>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/132225?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">17:30</a>
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name with-icon">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1707523-epic-elvis-presley-in-concert/prehled/" class="film-title-name">EPiC: Elvis Presley in Concert</a></h3>								<span class="cinema-icon tooltip cinema-icon-imax" data-tippy-content="IMAX">IMAX</span>
-							</td>
-							<td class="td-title">
-								<span title="Titulky">T</span>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/132226?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">20:20</a>
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/286594-avatar-ohen-a-popel/prehled/" class="film-title-name">Avatar: Oheň a popel</a></h3>							</td>
-							<td class="td-title">
-								<span title="Dabing">D, </span>
-								<span title="3D projekce">3D</span>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-time-old">
-									15:20
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
 						<tr>
 							<td class="name">
 <h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/286594-avatar-ohen-a-popel/prehled/" class="film-title-name">Avatar: Oheň a popel</a></h3>							</td>
@@ -3095,48 +2786,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/132221?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">19:10</a>
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1551219-blaznivy-marsupilami/prehled/" class="film-title-name">Bláznivý Marsupilami</a></h3>							</td>
-							<td class="td-title">
-								<span title="Dabing">D</span>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
 							<td>
 							</td>
 							<td class="td-time td-time-old">
-									14:10
+									20:40
 
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-time-old">
-									16:20
-
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/132236?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">18:30</a>
-
-							</td>
-							<td>
-							</td>
-							<td>
 							</td>
 							<td>
 							</td>
@@ -3155,22 +2809,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
 							<td class="td-time td-time-old">
-									14:00
-
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/132254?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">16:50</a>
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/132228?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">19:40</a>
+									19:00
 
 							</td>
 							<td>
@@ -3182,7 +2832,40 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						</tr>
 						<tr>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1486569-byl-jsem-cizincem/prehled/" class="film-title-name">Byl jsem cizincem</a></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1618341-nerikejte-mi-dedo/prehled/" class="film-title-name">Neříkejte mi dědo</a></h3>							</td>
+							<td class="td-title">
+								<span title="Titulky">T</span>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									18:40
+
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1481329-nevesta/prehled/" class="film-title-name">Nevěsta!</a></h3>							</td>
 							<td class="td-title">
 								<span title="Titulky">T</span>
 							</td>
@@ -3204,178 +2887,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/132238?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">20:40</a>
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1580032-cesta-zlocinu/prehled/" class="film-title-name">Cesta zločinu</a></h3>							</td>
-							<td class="td-title">
-								<span title="Titulky">T</span>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/132272?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">20:40</a>
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1675070-dream-team/prehled/" class="film-title-name">Dream Team</a></h3>							</td>
-							<td class="td-title">
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/132244?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">18:10</a>
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1636787-kdyz-se-zhasne/prehled/" class="film-title-name">Když se zhasne</a></h3>							</td>
-							<td class="td-title">
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
 							<td>
 							</td>
 							<td class="td-time td-time-old">
-									16:10
+									21:40
 
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/132266?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">18:20</a>
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1669709-mazlicci-v-prusvihu/prehled/" class="film-title-name">Mazlíčci v průšvihu</a></h3>							</td>
-							<td class="td-title">
-								<span title="Dabing">D</span>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-time-old">
-									14:10
-
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-time-old">
-									16:10
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1638669-nejlepsi-z-nejlepsich-goat/prehled/" class="film-title-name">Nejlepší z nejlepších: GOAT</a></h3>							</td>
-							<td class="td-title">
-								<span title="Dabing">D</span>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-time-old">
-									15:20
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
 							</td>
 							<td>
 							</td>
@@ -3396,86 +2912,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
 							<td class="td-time td-time-old">
-									16:00
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1681106-ozvena/prehled/" class="film-title-name">Ozvěna</a></h3>							</td>
-							<td class="td-title">
-								<span title="Titulky">T</span>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/132264?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">20:30</a>
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1395444-parazit-z-chladaku/prehled/" class="film-title-name">Parazit z chlaďáku</a></h3>							</td>
-							<td class="td-title">
-								<span title="Titulky">T</span>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/132252?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">19:00</a>
-
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/132230?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">21:10</a>
+									21:10
 
 							</td>
 							<td>
@@ -3499,17 +2947,47 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/132260?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">17:30</a>
-
+							<td>
+							</td>
+							<td>
 							</td>
 							<td>
 							</td>
 							<td>
 							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/132258?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">20:10</a>
+							<td class="td-time td-time-old">
+									21:10
 
+							</td>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1717489-prani-k-narozeninam-krtiny/prehled/" class="film-title-name">Přání k narozeninám: Křtiny</a></h3>							</td>
+							<td class="td-title">
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									19:30
+
+							</td>
+							<td>
 							</td>
 							<td>
 							</td>
@@ -3518,7 +2996,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						</tr>
 						<tr>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1390510-silent-hill-nocni-mury/prehled/" class="film-title-name">Silent Hill: Noční můry</a></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1018007-spasitel/prehled/" class="film-title-name">Spasitel</a></h3>							</td>
 							<td class="td-title">
 								<span title="Titulky">T</span>
 							</td>
@@ -3540,8 +3018,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/132246?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">20:50</a>
+							<td class="td-time td-time-old">
+									20:00
 
 							</td>
 							<td>
@@ -3551,7 +3029,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						</tr>
 						<tr>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1399440-spongebob-piratske-dobrodruzstvi/prehled/" class="film-title-name">SpongeBob: Pirátské dobrodružství</a></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1018007-spasitel/prehled/" class="film-title-name">Spasitel</a></h3>							</td>
 							<td class="td-title">
 								<span title="Dabing">D</span>
 							</td>
@@ -3559,8 +3037,83 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
 							<td class="td-time td-time-old">
-									13:50
+									20:30
+
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1663025-tajny-agent/prehled/" class="film-title-name">Tajný agent</a></h3>							</td>
+							<td class="td-title">
+								<span title="Titulky">T</span>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									20:00
+
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1620024-tanec-s-medvedem/prehled/" class="film-title-name">Tanec s medvědem</a></h3>							</td>
+							<td class="td-title">
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									18:50
 
 							</td>
 							<td>
@@ -3570,6 +3123,62 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							<td>
 							</td>
 							<td>
+							</td>
+						</tr>
+						<tr>
+							<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1448507-vriskot-7/prehled/" class="film-title-name">Vřískot 7</a></h3>							</td>
+							<td class="td-title">
+								<span title="Titulky">T</span>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									21:50
+
+							</td>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1692086-vzpominky-na-nej/prehled/" class="film-title-name">Vzpomínky na něj</a></h3>							</td>
+							<td class="td-title">
+								<span title="Titulky">T</span>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									17:30
+
 							</td>
 							<td>
 							</td>
@@ -3583,9 +3192,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 						</tr>
 						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1737190-velrybi-pisen/prehled/" class="film-title-name">Velrybí píseň</a></h3>							</td>
+							<td class="name with-icon">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1018007-spasitel/prehled/" class="film-title-name">Spasitel</a></h3>								<span class="cinema-icon tooltip cinema-icon-imax" data-tippy-content="IMAX">IMAX</span>
+							</td>
 							<td class="td-title">
+								<span title="Titulky">T</span>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
 							</td>
 							<td>
 							</td>
@@ -3594,38 +3213,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							<td>
 							</td>
 							<td class="td-time td-time-old">
-									14:00
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1487258-zootropolis-mesto-zvirat-2/prehled/" class="film-title-name">Zootropolis: Město zvířat 2</a></h3>							</td>
-							<td class="td-title">
-								<span title="Dabing">D</span>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-time-old">
-									13:40
+									18:00
 
 							</td>
 							<td>
@@ -3633,20 +3221,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							<td>
 							</td>
 							<td class="td-time td-time-old">
-									16:00
+									21:10
 
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/132274?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">18:20</a>
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
 							</td>
 							<td>
 							</td>
@@ -3677,7 +3253,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			</div>
 		</header>
 				<div class="update-box-sub-header">
-					pondělí 23.02.2026
+					úterý 24.03.2026
 							<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads class="btn-favorite blue">
 								<i class="icon icon-heart-outline"></i> přidat do oblíbených
 							</a>
@@ -3686,39 +3262,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	<div class="table-container">
 		<table class="cinema-table striped">
 			<tbody>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1559919-anakonda/prehled/" class="film-title-name">Anakonda</a></h3>							</td>
-							<td class="td-title">
-								<span title="Dabing">D</span>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-time-old">
-									12:40
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
 						<tr>
 							<td class="name">
 <h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/286594-avatar-ohen-a-popel/prehled/" class="film-title-name">Avatar: Oheň a popel</a></h3>							</td>
@@ -3732,34 +3275,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
-							<td class="td-time td-time-old">
-									14:50
-
-							</td>
 							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/131551?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">18:40</a>
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/286594-avatar-ohen-a-popel/prehled/" class="film-title-name">Avatar: Oheň a popel</a></h3>							</td>
-							<td class="td-title">
-								<span title="Dabing">D</span>
 							</td>
 							<td>
 							</td>
@@ -3772,84 +3288,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							<td>
 							</td>
 							<td class="td-time td-time-old">
-									16:00
+									20:00
 
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/286594-avatar-ohen-a-popel/prehled/" class="film-title-name">Avatar: Oheň a popel</a></h3>							</td>
-							<td class="td-title">
-								<span title="Titulky">T</span>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/131634?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">19:50</a>
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1551219-blaznivy-marsupilami/prehled/" class="film-title-name">Bláznivý Marsupilami</a></h3>							</td>
-							<td class="td-title">
-								<span title="Dabing">D</span>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-time-old">
-									16:10
-
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/132020?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">18:30</a>
-
-							</td>
-							<td>
-							</td>
-							<td>
 							</td>
 							<td>
 							</td>
@@ -3874,72 +3314,35 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/131675?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">18:10</a>
+							<td class="td-time td-time-old">
+									17:40
 
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1486569-byl-jsem-cizincem/prehled/" class="film-title-name">Byl jsem cizincem</a></h3>							</td>
-							<td class="td-title">
-								<span title="Titulky">T</span>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/131794?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">20:30</a>
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1580032-cesta-zlocinu/prehled/" class="film-title-name">Cesta zločinu</a></h3>							</td>
-							<td class="td-title">
-								<span title="Titulky">T</span>
 							</td>
 							<td>
 							</td>
 							<td>
 							</td>
 							<td class="td-time td-time-old">
-									13:20
+									20:30
 
 							</td>
 							<td>
 							</td>
 							<td>
 							</td>
+						</tr>
+						<tr>
+							<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/1819807-dhurandhar-the-revenge/prehled/" class="film-title-name">Dhurandhar: The Revenge</a></h3>							</td>
+							<td class="td-title">
+								<span title="Titulky">T</span>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
 							<td>
 							</td>
 							<td>
@@ -3948,9 +3351,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/132008?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">20:40</a>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									19:50
 
+							</td>
+							<td>
 							</td>
 							<td>
 							</td>
@@ -3970,17 +3377,50 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
+							<td>
+							</td>
+							<td>
+							</td>
 							<td class="td-time td-time-old">
-									15:10
+									17:40
 
 							</td>
 							<td>
 							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/131788?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">17:50</a>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									20:20
 
 							</td>
 							<td>
+							</td>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1558319-na-skok-do-divociny/prehled/" class="film-title-name">Na skok do divočiny</a></h3>							</td>
+							<td class="td-title">
+								<span title="Dabing">D</span>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									18:00
+
 							</td>
 							<td>
 							</td>
@@ -3993,7 +3433,40 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						</tr>
 						<tr>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1513456-dukaz-viny/prehled/" class="film-title-name">Důkaz viny</a></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1618341-nerikejte-mi-dedo/prehled/" class="film-title-name">Neříkejte mi dědo</a></h3>							</td>
+							<td class="td-title">
+								<span title="Titulky">T</span>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									20:40
+
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1481329-nevesta/prehled/" class="film-title-name">Nevěsta!</a></h3>							</td>
 							<td class="td-title">
 								<span title="Titulky">T</span>
 							</td>
@@ -4017,181 +3490,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/131734?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">21:00</a>
-
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1636787-kdyz-se-zhasne/prehled/" class="film-title-name">Když se zhasne</a></h3>							</td>
-							<td class="td-title">
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
 							<td class="td-time td-time-old">
-									13:40
+									21:10
 
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-time-old">
-									15:50
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/131710?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">18:00</a>
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1669709-mazlicci-v-prusvihu/prehled/" class="film-title-name">Mazlíčci v průšvihu</a></h3>							</td>
-							<td class="td-title">
-								<span title="Dabing">D</span>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-time-old">
-									14:00
-
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-time-old">
-									16:00
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1591965-na-horach/prehled/" class="film-title-name">Na horách</a></h3>							</td>
-							<td class="td-title">
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-time-old">
-									16:00
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1638669-nejlepsi-z-nejlepsich-goat/prehled/" class="film-title-name">Nejlepší z nejlepších: GOAT</a></h3>							</td>
-							<td class="td-title">
-								<span title="Dabing">D</span>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-time-old">
-									13:10
-
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-time-old">
-									15:30
-
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/131680?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">17:50</a>
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1558529-neporazitelni/prehled/" class="film-title-name">Neporazitelní</a></h3>							</td>
-							<td class="td-title">
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-time-old">
-									15:00
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
 							</td>
 							<td>
 							</td>
@@ -4214,28 +3515,25 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/131902?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">17:30</a>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									21:10
 
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/131896?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">20:30</a>
-
-							</td>
-							<td>
 							</td>
 							<td>
 							</td>
 						</tr>
 						<tr>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1513998-otec-matka-sestra-bratr/prehled/" class="film-title-name">Otec Matka Sestra Bratr</a></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1773198-poberta/prehled/" class="film-title-name">Poberta</a></h3>							</td>
 							<td class="td-title">
-								<span title="Titulky">T</span>
 							</td>
 							<td>
 							</td>
@@ -4251,8 +3549,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/131979?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">18:00</a>
+							<td class="td-time td-time-old">
+									18:10
 
 							</td>
 							<td>
@@ -4260,74 +3558,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							<td>
 							</td>
 							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1681106-ozvena/prehled/" class="film-title-name">Ozvěna</a></h3>							</td>
-							<td class="td-title">
-								<span title="Titulky">T</span>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/131812?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">19:00</a>
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1395444-parazit-z-chladaku/prehled/" class="film-title-name">Parazit z chlaďáku</a></h3>							</td>
-							<td class="td-title">
-								<span title="Titulky">T</span>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/131830?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">18:50</a>
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/131824?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">21:00</a>
-
 							</td>
 							<td>
 							</td>
@@ -4352,28 +3582,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/131758?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">18:30</a>
+							<td class="td-time td-time-old">
+									18:30
 
 							</td>
 							<td>
 							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/131704?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">20:10</a>
-
+							<td>
 							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/132697?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">21:10</a>
-
+							<td>
 							</td>
 							<td>
 							</td>
 						</tr>
 						<tr>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1651654-primat/prehled/" class="film-title-name">Primát</a></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1717489-prani-k-narozeninam-krtiny/prehled/" class="film-title-name">Přání k narozeninám: Křtiny</a></h3>							</td>
 							<td class="td-title">
-								<span title="Titulky">T</span>
 							</td>
 							<td>
 							</td>
@@ -4388,44 +3613,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							<td>
 							</td>
 							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/131937?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">21:40</a>
-
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1706145-princezna-stokrat-jinak/prehled/" class="film-title-name">Princezna stokrát jinak</a></h3>							</td>
-							<td class="td-title">
 							</td>
 							<td>
 							</td>
 							<td class="td-time td-time-old">
-									12:40
+									19:00
 
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
 							</td>
 							<td>
 							</td>
@@ -4460,8 +3653,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/131860?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">21:10</a>
+							<td class="td-time td-time-old">
+									21:10
 
 							</td>
 							<td>
@@ -4469,7 +3662,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						</tr>
 						<tr>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1399440-spongebob-piratske-dobrodruzstvi/prehled/" class="film-title-name">SpongeBob: Pirátské dobrodružství</a></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1018007-spasitel/prehled/" class="film-title-name">Spasitel</a></h3>							</td>
 							<td class="td-title">
 								<span title="Dabing">D</span>
 							</td>
@@ -4477,23 +3670,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
 							<td class="td-time td-time-old">
-									13:20
+									19:30
 
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-time-old">
-									15:40
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
 							</td>
 							<td>
 							</td>
@@ -4504,7 +3695,40 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						</tr>
 						<tr>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1684812-svihaci/prehled/" class="film-title-name">Šviháci</a></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1663025-tajny-agent/prehled/" class="film-title-name">Tajný agent</a></h3>							</td>
+							<td class="td-title">
+								<span title="Titulky">T</span>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									19:50
+
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1620024-tanec-s-medvedem/prehled/" class="film-title-name">Tanec s medvědem</a></h3>							</td>
 							<td class="td-title">
 							</td>
 							<td>
@@ -4521,12 +3745,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
-							<td>
+							<td class="td-time td-time-old">
+									18:10
+
 							</td>
 							<td>
 							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/131920?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">20:20</a>
+							<td class="td-time td-time-old">
+									20:30
 
 							</td>
 							<td>
@@ -4536,7 +3762,42 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						</tr>
 						<tr>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1580030-velky-marty/prehled/" class="film-title-name">Velký Marty</a></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1448507-vriskot-7/prehled/" class="film-title-name">Vřískot 7</a></h3>							</td>
+							<td class="td-title">
+								<span title="Titulky">T</span>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									19:30
+
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									22:00
+
+							</td>
+						</tr>
+						<tr>
+							<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/1815122-vune-pho/prehled/" class="film-title-name">Vůně pho</a></h3>							</td>
 							<td class="td-title">
 								<span title="Titulky">T</span>
 							</td>
@@ -4558,8 +3819,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/131669?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">20:00</a>
+							<td class="td-time td-time-old">
+									20:20
 
 							</td>
 							<td>
@@ -4569,41 +3830,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						</tr>
 						<tr>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1737190-velrybi-pisen/prehled/" class="film-title-name">Velrybí píseň</a></h3>							</td>
-							<td class="td-title">
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-time-old">
-									14:30
-
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-time-old">
-									16:40
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1692040-v-ukrytu/prehled/" class="film-title-name">V úkrytu</a></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1692086-vzpominky-na-nej/prehled/" class="film-title-name">Vzpomínky na něj</a></h3>							</td>
 							<td class="td-title">
 								<span title="Titulky">T</span>
 							</td>
@@ -4617,13 +3844,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
+							<td>
+							</td>
+							<td>
+							</td>
 							<td class="td-time td-time-old">
-									16:40
+									18:40
 
-							</td>
-							<td>
-							</td>
-							<td>
 							</td>
 							<td>
 							</td>
@@ -4638,41 +3865,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							<td class="name">
 <h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1487258-zootropolis-mesto-zvirat-2/prehled/" class="film-title-name">Zootropolis: Město zvířat 2</a></h3>							</td>
 							<td class="td-title">
-								<span title="Titulky">T</span>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-time-old">
-									13:40
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/131800?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">19:20</a>
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1487258-zootropolis-mesto-zvirat-2/prehled/" class="film-title-name">Zootropolis: Město zvířat 2</a></h3>							</td>
-							<td class="td-title">
 								<span title="Dabing">D</span>
 							</td>
 							<td>
@@ -4681,35 +3873,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
-							<td class="td-time td-time-old">
-									14:40
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/131949?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">17:00</a>
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1611153-28-let-pote-chram-z-kosti/prehled/" class="film-title-name">28 let poté: Chrám z kostí</a></h3>							</td>
-							<td class="td-title">
-								<span title="Titulky">T</span>
-							</td>
 							<td>
 							</td>
 							<td>
@@ -4717,14 +3880,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							<td>
 							</td>
 							<td class="td-time td-time-old">
-									14:20
+									17:30
 
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
 							</td>
 							<td>
 							</td>
@@ -4739,42 +3896,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						</tr>
 						<tr>
 							<td class="name with-icon">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/286594-avatar-ohen-a-popel/prehled/" class="film-title-name">Avatar: Oheň a popel</a></h3>								<span class="cinema-icon tooltip cinema-icon-vip" data-tippy-content="VIP">VIP</span>
-							</td>
-							<td class="td-title">
-								<span title="Dabing">D, </span>
-								<span title="3D projekce">3D</span>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-time-old">
-									16:20
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name with-icon">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/286594-avatar-ohen-a-popel/prehled/" class="film-title-name">Avatar: Oheň a popel</a></h3>								<span class="cinema-icon tooltip cinema-icon-vip" data-tippy-content="VIP">VIP</span>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1018007-spasitel/prehled/" class="film-title-name">Spasitel</a></h3>								<span class="cinema-icon tooltip cinema-icon-vip" data-tippy-content="VIP">VIP</span>
 							</td>
 							<td class="td-title">
 								<span title="Dabing">D</span>
@@ -4791,116 +3913,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/131557?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">17:40</a>
+							<td class="td-time td-time-old">
+									17:40
 
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name with-icon">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/286594-avatar-ohen-a-popel/prehled/" class="film-title-name">Avatar: Oheň a popel</a></h3>								<span class="cinema-icon tooltip cinema-icon-vip" data-tippy-content="VIP">VIP</span>
-							</td>
-							<td class="td-title">
-								<span title="Titulky">T, </span>
-								<span title="3D projekce">3D</span>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/131562?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">20:30</a>
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name with-icon">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1596124-bourlive-vysiny/prehled/" class="film-title-name">Bouřlivé výšiny</a></h3>								<span class="cinema-icon tooltip cinema-icon-vip" data-tippy-content="VIP">VIP</span>
-							</td>
-							<td class="td-title">
-								<span title="Titulky">T</span>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/131663?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">17:00</a>
-
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/131586?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">19:50</a>
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name with-icon">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1638669-nejlepsi-z-nejlepsich-goat/prehled/" class="film-title-name">Nejlepší z nejlepších: GOAT</a></h3>								<span class="cinema-icon tooltip cinema-icon-vip" data-tippy-content="VIP">VIP</span>
-							</td>
-							<td class="td-title">
-								<span title="Dabing">D</span>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
 							</td>
 							<td class="td-time td-time-old">
-									15:10
+									18:30
 
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
 							</td>
 							<td>
 							</td>
@@ -4913,7 +3932,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						</tr>
 						<tr>
 							<td class="name with-icon">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1615728-pomocnice/prehled/" class="film-title-name">Pomocnice</a></h3>								<span class="cinema-icon tooltip cinema-icon-vip" data-tippy-content="VIP">VIP</span>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1018007-spasitel/prehled/" class="film-title-name">Spasitel</a></h3>								<span class="cinema-icon tooltip cinema-icon-vip" data-tippy-content="VIP">VIP</span>
 							</td>
 							<td class="td-title">
 								<span title="Titulky">T</span>
@@ -4923,103 +3942,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							<td>
 							</td>
 							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/131658?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">21:30</a>
-
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name with-icon">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/286594-avatar-ohen-a-popel/prehled/" class="film-title-name">Avatar: Oheň a popel</a></h3>								<span class="cinema-icon tooltip cinema-icon-4dx" data-tippy-content="4DX sál">4DX sál</span>
-							</td>
-							<td class="td-title">
-								<span title="Dabing">D, </span>
-								<span title="3D projekce">3D</span>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/131574?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">18:10</a>
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name with-icon">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1580032-cesta-zlocinu/prehled/" class="film-title-name">Cesta zločinu</a></h3>								<span class="cinema-icon tooltip cinema-icon-4dx" data-tippy-content="4DX sál">4DX sál</span>
-							</td>
-							<td class="td-title">
-								<span title="Titulky">T</span>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/131592?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">22:00</a>
-
-							</td>
-						</tr>
-						<tr>
-							<td class="name with-icon">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1638669-nejlepsi-z-nejlepsich-goat/prehled/" class="film-title-name">Nejlepší z nejlepších: GOAT</a></h3>								<span class="cinema-icon tooltip cinema-icon-4dx" data-tippy-content="4DX sál">4DX sál</span>
-							</td>
-							<td class="td-title">
-								<span title="Dabing">D</span>
 							</td>
 							<td>
 							</td>
@@ -5032,16 +3954,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							<td>
 							</td>
 							<td class="td-time td-time-old">
-									16:00
+									19:30
 
 							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
+							<td class="td-time td-time-old">
+									20:50
+
 							</td>
 							<td>
 							</td>
@@ -5050,7 +3968,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						</tr>
 						<tr>
 							<td class="name with-icon">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1596124-bourlive-vysiny/prehled/" class="film-title-name">Bouřlivé výšiny</a></h3>								<span class="cinema-icon tooltip cinema-icon-dolby-atmos" data-tippy-content="Dolby Atmos sál">Dolby Atmos sál</span>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1448507-vriskot-7/prehled/" class="film-title-name">Vřískot 7</a></h3>								<span class="cinema-icon tooltip cinema-icon-vip" data-tippy-content="VIP">VIP</span>
 							</td>
 							<td class="td-title">
 								<span title="Titulky">T</span>
@@ -5061,24 +3979,88 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
 							<td class="td-time td-time-old">
-									14:30
+									21:40
+
+							</td>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td class="name with-icon">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1018007-spasitel/prehled/" class="film-title-name">Spasitel</a></h3>								<span class="cinema-icon tooltip cinema-icon-4dx" data-tippy-content="4DX sál">4DX sál</span>
+							</td>
+							<td class="td-title">
+								<span title="Titulky">T</span>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									20:10
 
 							</td>
 							<td>
 							</td>
 							<td>
 							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/131652?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">17:20</a>
-
+						</tr>
+						<tr>
+							<td class="name with-icon">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1018007-spasitel/prehled/" class="film-title-name">Spasitel</a></h3>								<span class="cinema-icon tooltip cinema-icon-dolby-atmos" data-tippy-content="Dolby Atmos sál">Dolby Atmos sál</span>
+							</td>
+							<td class="td-title">
+								<span title="Titulky">T</span>
 							</td>
 							<td>
 							</td>
 							<td>
 							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/131610?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">20:10</a>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									20:30
 
 							</td>
 							<td>
@@ -5112,7 +4094,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			</div>
 		</header>
 				<div class="update-box-sub-header">
-					pondělí 23.02.2026
+					úterý 24.03.2026
 							<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads class="btn-favorite blue">
 								<i class="icon icon-heart-outline"></i> přidat do oblíbených
 							</a>
@@ -5130,111 +4112,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
-							<td class="td-time td-time-old">
-									12:40
-
-							</td>
 							<td>
-							</td>
-							<td class="td-time td-time-old">
-									14:00
-
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-time-old">
-									16:30
-
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/134241?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">18:00</a>
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/286594-avatar-ohen-a-popel/prehled/" class="film-title-name">Avatar: Oheň a popel</a></h3>							</td>
-							<td class="td-title">
-								<span title="Dabing">D</span>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-time-old">
-									14:40
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/134309?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">19:10</a>
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/286594-avatar-ohen-a-popel/prehled/" class="film-title-name">Avatar: Oheň a popel</a></h3>							</td>
-							<td class="td-title">
-								<span title="Titulky">T, </span>
-								<span title="3D projekce">3D</span>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/134301?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">20:20</a>
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1551219-blaznivy-marsupilami/prehled/" class="film-title-name">Bláznivý Marsupilami</a></h3>							</td>
-							<td class="td-title">
-								<span title="Dabing">D</span>
 							</td>
 							<td>
 							</td>
@@ -5247,13 +4125,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							<td>
 							</td>
 							<td class="td-time td-time-old">
-									16:45
-
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/134401?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">18:50</a>
+									18:40
 
 							</td>
 							<td>
@@ -5275,27 +4147,25 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
-							<td class="td-time td-time-old">
-									13:40
-
+							<td>
+							</td>
+							<td>
 							</td>
 							<td>
 							</td>
 							<td>
 							</td>
 							<td class="td-time td-time-old">
-									16:40
+									17:30
 
 							</td>
 							<td>
 							</td>
 							<td>
 							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/134449?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">19:30</a>
+							<td class="td-time td-time-old">
+									20:20
 
-							</td>
-							<td>
 							</td>
 							<td>
 							</td>
@@ -5322,16 +4192,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/134389?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">18:40</a>
-
-							</td>
 							<td>
 							</td>
 							<td>
 							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/134437?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">21:30</a>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									21:10
 
 							</td>
 							<td>
@@ -5356,53 +4224,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/134357?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">18:00</a>
-
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/134353?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">20:40</a>
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1636787-kdyz-se-zhasne/prehled/" class="film-title-name">Když se zhasne</a></h3>							</td>
-							<td class="td-title">
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
 							<td>
 							</td>
 							<td class="td-time td-time-old">
-									14:00
+									19:40
 
 							</td>
 							<td>
-							</td>
-							<td class="td-time td-time-old">
-									16:10
-
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/134425?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">18:20</a>
-
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/134421?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">20:30</a>
-
 							</td>
 							<td>
 							</td>
@@ -5421,25 +4249,56 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
 							<td class="td-time td-time-old">
-									14:20
+									17:30
 
 							</td>
 							<td>
 							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1481329-nevesta/prehled/" class="film-title-name">Nevěsta!</a></h3>							</td>
+							<td class="td-title">
+								<span title="Titulky">T</span>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
 							<td class="td-time td-time-old">
-									16:30
+									21:10
 
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
 							</td>
 							<td>
 							</td>
@@ -5456,21 +4315,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
 							<td class="td-time td-time-old">
-									14:00
+									19:20
 
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/134285?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">17:50</a>
-
-							</td>
-							<td>
-							</td>
-							<td>
 							</td>
 							<td>
 							</td>
@@ -5505,18 +4362,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/134397?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">21:00</a>
-
-							</td>
 							<td>
+							</td>
+							<td class="td-time td-time-old">
+									22:10
+
 							</td>
 						</tr>
 						<tr>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1395444-parazit-z-chladaku/prehled/" class="film-title-name">Parazit z chlaďáku</a></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1773198-poberta/prehled/" class="film-title-name">Poberta</a></h3>							</td>
 							<td class="td-title">
-								<span title="Titulky">T</span>
 							</td>
 							<td>
 							</td>
@@ -5532,48 +4388,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/134413?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">18:30</a>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									19:40
 
 							</td>
 							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/134409?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">20:40</a>
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1508539-pet-noci-u-freddyho-2/prehled/" class="film-title-name">Pět nocí u Freddyho 2</a></h3>							</td>
-							<td class="td-title">
-								<span title="Dabing">D</span>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/134281?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">20:50</a>
-
 							</td>
 							<td>
 							</td>
@@ -5598,15 +4419,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/134465?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">17:00</a>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									18:20
 
 							</td>
 							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/134461?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">19:50</a>
-
 							</td>
 							<td>
 							</td>
@@ -5617,7 +4436,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						</tr>
 						<tr>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1706145-princezna-stokrat-jinak/prehled/" class="film-title-name">Princezna stokrát jinak</a></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1717489-prani-k-narozeninam-krtiny/prehled/" class="film-title-name">Přání k narozeninám: Křtiny</a></h3>							</td>
 							<td class="td-title">
 							</td>
 							<td>
@@ -5626,19 +4445,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
 							<td class="td-time td-time-old">
-									14:20
+									19:00
 
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
 							</td>
 							<td>
 							</td>
@@ -5649,7 +4468,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						</tr>
 						<tr>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1399440-spongebob-piratske-dobrodruzstvi/prehled/" class="film-title-name">SpongeBob: Pirátské dobrodružství</a></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1018007-spasitel/prehled/" class="film-title-name">Spasitel</a></h3>							</td>
 							<td class="td-title">
 								<span title="Dabing">D</span>
 							</td>
@@ -5659,21 +4478,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
 							<td class="td-time td-time-old">
-									14:30
+									17:40
 
 							</td>
 							<td>
 							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/134305?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">16:50</a>
+							<td class="td-time td-time-old">
+									19:30
 
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
 							</td>
 							<td>
 							</td>
@@ -5684,7 +4503,44 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						</tr>
 						<tr>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1737190-velrybi-pisen/prehled/" class="film-title-name">Velrybí píseň</a></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1018007-spasitel/prehled/" class="film-title-name">Spasitel</a></h3>							</td>
+							<td class="td-title">
+								<span title="Titulky">T</span>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									18:30
+
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									20:50
+
+							</td>
+							<td class="td-time td-time-old">
+									21:40
+
+							</td>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1620024-tanec-s-medvedem/prehled/" class="film-title-name">Tanec s medvědem</a></h3>							</td>
 							<td class="td-title">
 							</td>
 							<td>
@@ -5693,23 +4549,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
 							<td class="td-time td-time-old">
-									14:00
+									18:30
 
 							</td>
 							<td>
 							</td>
 							<td class="td-time td-time-old">
-									16:00
+									20:50
 
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
 							</td>
 							<td>
 							</td>
@@ -5718,7 +4574,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						</tr>
 						<tr>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1692040-v-ukrytu/prehled/" class="film-title-name">V úkrytu</a></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1448507-vriskot-7/prehled/" class="film-title-name">Vřískot 7</a></h3>							</td>
 							<td class="td-title">
 								<span title="Titulky">T</span>
 							</td>
@@ -5738,89 +4594,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/134293?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">21:10</a>
+							<td class="td-time td-time-old">
+									19:30
 
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1487258-zootropolis-mesto-zvirat-2/prehled/" class="film-title-name">Zootropolis: Město zvířat 2</a></h3>							</td>
-							<td class="td-title">
-								<span title="Dabing">D</span>
 							</td>
 							<td>
 							</td>
 							<td>
 							</td>
 							<td class="td-time td-time-old">
-									13:00
+									22:00
 
-							</td>
-							<td class="td-time td-time-old">
-									14:10
-
-							</td>
-							<td class="td-time td-time-old">
-									15:30
-
-							</td>
-							<td class="td-time td-time-old">
-									16:30
-
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/134297?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">18:50</a>
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1611153-28-let-pote-chram-z-kosti/prehled/" class="film-title-name">28 let poté: Chrám z kostí</a></h3>							</td>
-							<td class="td-title">
-								<span title="Titulky">T</span>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/135064?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">21:50</a>
-
-							</td>
-							<td>
 							</td>
 						</tr>
 			</tbody>
@@ -5849,7 +4633,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			</div>
 		</header>
 				<div class="update-box-sub-header">
-					pondělí 23.02.2026
+					úterý 24.03.2026
 							<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads class="btn-favorite blue">
 								<i class="icon icon-heart-outline"></i> přidat do oblíbených
 							</a>
@@ -5858,79 +4642,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	<div class="table-container">
 		<table class="cinema-table striped">
 			<tbody>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/286594-avatar-ohen-a-popel/prehled/" class="film-title-name">Avatar: Oheň a popel</a></h3>							</td>
-							<td class="td-title">
-								<span title="Dabing">D, </span>
-								<span title="3D projekce">3D</span>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-time-old">
-									12:40
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-time-old">
-									16:30
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/134481?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">20:20</a>
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1551219-blaznivy-marsupilami/prehled/" class="film-title-name">Bláznivý Marsupilami</a></h3>							</td>
-							<td class="td-title">
-								<span title="Dabing">D</span>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-time-old">
-									13:00
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/134586?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">18:00</a>
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
 						<tr>
 							<td class="name">
 <h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1596124-bourlive-vysiny/prehled/" class="film-title-name">Bouřlivé výšiny</a></h3>							</td>
@@ -5945,57 +4656,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
 							<td class="td-time td-time-old">
-									15:10
+									18:00
 
 							</td>
 							<td>
 							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/134604?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">18:00</a>
-
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/134544?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">19:00</a>
-
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/134607?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">20:50</a>
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1486569-byl-jsem-cizincem/prehled/" class="film-title-name">Byl jsem cizincem</a></h3>							</td>
-							<td class="td-title">
-								<span title="Titulky">T</span>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/134598?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">20:40</a>
+							<td class="td-time td-time-old">
+									20:50
 
 							</td>
 							<td>
@@ -6017,20 +4691,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
 							<td class="td-time td-time-old">
-									15:10
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/134592?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">20:10</a>
+									20:40
 
 							</td>
 							<td>
@@ -6040,180 +4712,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						</tr>
 						<tr>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1631189-divka-momo-a-zlodeji-casu/prehled/" class="film-title-name">Dívka Momo a zloději času</a></h3>							</td>
-							<td class="td-title">
-								<span title="Dabing">D</span>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-time-old">
-									13:00
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1675070-dream-team/prehled/" class="film-title-name">Dream Team</a></h3>							</td>
-							<td class="td-title">
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-time-old">
-									16:00
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1636787-kdyz-se-zhasne/prehled/" class="film-title-name">Když se zhasne</a></h3>							</td>
-							<td class="td-title">
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-time-old">
-									14:10
-
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-time-old">
-									16:20
-
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/134736?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">18:30</a>
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1669709-mazlicci-v-prusvihu/prehled/" class="film-title-name">Mazlíčci v průšvihu</a></h3>							</td>
-							<td class="td-title">
-								<span title="Dabing">D</span>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-time-old">
-									12:30
-
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-time-old">
-									14:30
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1638669-nejlepsi-z-nejlepsich-goat/prehled/" class="film-title-name">Nejlepší z nejlepších: GOAT</a></h3>							</td>
-							<td class="td-title">
-								<span title="Dabing">D</span>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-time-old">
-									12:50
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-time-old">
-									15:00
-
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/134900?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">17:10</a>
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1574711-norimberk/prehled/" class="film-title-name">Norimberk</a></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1700848-carodej-z-kremlu/prehled/" class="film-title-name">Čaroděj z Kremlu</a></h3>							</td>
 							<td class="td-title">
 								<span title="Titulky">T</span>
 							</td>
@@ -6223,21 +4722,85 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
 							<td class="td-time td-time-old">
-									14:40
+									20:20
 
 							</td>
 							<td>
 							</td>
 							<td>
 							</td>
+						</tr>
+						<tr>
+							<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/1819807-dhurandhar-the-revenge/prehled/" class="film-title-name">Dhurandhar: The Revenge</a></h3>							</td>
+							<td class="td-title">
+								<span title="Titulky">T</span>
+							</td>
+							<td>
+							</td>
 							<td>
 							</td>
 							<td>
 							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/134499?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">19:40</a>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									20:10
 
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1558319-na-skok-do-divociny/prehled/" class="film-title-name">Na skok do divočiny</a></h3>							</td>
+							<td class="td-title">
+								<span title="Dabing">D</span>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									18:20
+
+							</td>
+							<td>
 							</td>
 							<td>
 							</td>
@@ -6248,7 +4811,40 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						</tr>
 						<tr>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1681106-ozvena/prehled/" class="film-title-name">Ozvěna</a></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1618341-nerikejte-mi-dedo/prehled/" class="film-title-name">Neříkejte mi dědo</a></h3>							</td>
+							<td class="td-title">
+								<span title="Titulky">T</span>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									18:40
+
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1481329-nevesta/prehled/" class="film-title-name">Nevěsta!</a></h3>							</td>
 							<td class="td-title">
 								<span title="Titulky">T</span>
 							</td>
@@ -6272,45 +4868,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/134760?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">21:20</a>
-
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1395444-parazit-z-chladaku/prehled/" class="film-title-name">Parazit z chlaďáku</a></h3>							</td>
-							<td class="td-title">
-								<span title="Titulky">T</span>
-							</td>
-							<td>
-							</td>
 							<td class="td-time td-time-old">
-									12:50
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/134859?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">19:10</a>
-
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/134861?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">21:20</a>
+									21:20
 
 							</td>
 							<td>
@@ -6334,29 +4893,27 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/134562?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">17:40</a>
-
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/134758?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">18:40</a>
-
+							<td>
 							</td>
 							<td>
 							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/134559?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">20:20</a>
-
+							<td>
 							</td>
 							<td>
+							</td>
+							<td class="td-time td-time-old">
+									21:40
+
 							</td>
 							<td>
 							</td>
 						</tr>
 						<tr>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1706145-princezna-stokrat-jinak/prehled/" class="film-title-name">Princezna stokrát jinak</a></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1717489-prani-k-narozeninam-krtiny/prehled/" class="film-title-name">Přání k narozeninám: Křtiny</a></h3>							</td>
 							<td class="td-title">
+							</td>
+							<td>
 							</td>
 							<td>
 							</td>
@@ -6369,7 +4926,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							<td>
 							</td>
 							<td class="td-time td-time-old">
-									16:30
+									17:50
 
 							</td>
 							<td>
@@ -6379,43 +4936,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							<td>
 							</td>
 							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1390510-silent-hill-nocni-mury/prehled/" class="film-title-name">Silent Hill: Noční můry</a></h3>							</td>
-							<td class="td-title">
-								<span title="Titulky">T</span>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/134902?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">19:30</a>
-
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/134574?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">21:10</a>
-
 							</td>
 							<td>
 							</td>
@@ -6446,16 +4966,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/134547?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">21:50</a>
-
-							</td>
 							<td>
+							</td>
+							<td class="td-time td-time-old">
+									22:00
+
 							</td>
 						</tr>
 						<tr>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1580030-velky-marty/prehled/" class="film-title-name">Velký Marty</a></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1018007-spasitel/prehled/" class="film-title-name">Spasitel</a></h3>							</td>
 							<td class="td-title">
 								<span title="Titulky">T</span>
 							</td>
@@ -6467,34 +4987,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
-							<td class="td-time td-time-old">
-									15:10
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/134577?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">18:10</a>
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1737190-velrybi-pisen/prehled/" class="film-title-name">Velrybí píseň</a></h3>							</td>
-							<td class="td-title">
-							</td>
-							<td>
-							</td>
 							<td>
 							</td>
 							<td>
@@ -6502,55 +4994,45 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							<td>
 							</td>
 							<td class="td-time td-time-old">
-									15:00
+									18:10
+
+							</td>
+							<td class="td-time td-time-old">
+									19:40
 
 							</td>
 							<td>
 							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/134857?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">17:00</a>
+							<td class="td-time td-time-old">
+									21:20
 
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
 							</td>
 							<td>
 							</td>
 						</tr>
 						<tr>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1487258-zootropolis-mesto-zvirat-2/prehled/" class="film-title-name">Zootropolis: Město zvířat 2</a></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1018007-spasitel/prehled/" class="film-title-name">Spasitel</a></h3>							</td>
 							<td class="td-title">
 								<span title="Dabing">D</span>
 							</td>
 							<td>
 							</td>
-							<td class="td-time td-time-old">
-									12:40
-
+							<td>
 							</td>
-							<td class="td-time td-time-old">
-									13:30
-
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
 							</td>
 							<td>
 							</td>
 							<td class="td-time td-time-old">
-									15:00
+									18:50
 
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/134514?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">17:20</a>
-
-							</td>
-							<td>
 							</td>
 							<td>
 							</td>
@@ -6563,9 +5045,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						</tr>
 						<tr>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1611153-28-let-pote-chram-z-kosti/prehled/" class="film-title-name">28 let poté: Chrám z kostí</a></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1620024-tanec-s-medvedem/prehled/" class="film-title-name">Tanec s medvědem</a></h3>							</td>
 							<td class="td-title">
-								<span title="Titulky">T</span>
 							</td>
 							<td>
 							</td>
@@ -6576,31 +5057,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							<td>
 							</td>
 							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/134905?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">21:50</a>
-
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name with-icon">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/286594-avatar-ohen-a-popel/prehled/" class="film-title-name">Avatar: Oheň a popel</a></h3>								<span class="cinema-icon tooltip cinema-icon-4dx" data-tippy-content="4DX sál">4DX sál</span>
-							</td>
-							<td class="td-title">
-								<span title="Dabing">D, </span>
-								<span title="3D projekce">3D</span>
 							</td>
 							<td>
 							</td>
@@ -6609,18 +5065,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							<td>
 							</td>
 							<td class="td-time td-time-old">
-									14:20
+									19:00
 
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
 							</td>
 							<td>
 							</td>
@@ -6630,12 +5076,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 						</tr>
 						<tr>
-							<td class="name with-icon">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/286594-avatar-ohen-a-popel/prehled/" class="film-title-name">Avatar: Oheň a popel</a></h3>								<span class="cinema-icon tooltip cinema-icon-4dx" data-tippy-content="4DX sál">4DX sál</span>
-							</td>
+							<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1448507-vriskot-7/prehled/" class="film-title-name">Vřískot 7</a></h3>							</td>
 							<td class="td-title">
-								<span title="Titulky">T, </span>
-								<span title="3D projekce">3D</span>
+								<span title="Titulky">T</span>
 							</td>
 							<td>
 							</td>
@@ -6651,11 +5095,46 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/134475?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">18:10</a>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									19:10
 
 							</td>
 							<td>
+							</td>
+							<td class="td-time td-time-old">
+									21:40
+
+							</td>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1692086-vzpominky-na-nej/prehled/" class="film-title-name">Vzpomínky na něj</a></h3>							</td>
+							<td class="td-title">
+								<span title="Titulky">T</span>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									19:10
+
 							</td>
 							<td>
 							</td>
@@ -6665,9 +5144,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 						</tr>
 						<tr>
-							<td class="name with-icon">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1580032-cesta-zlocinu/prehled/" class="film-title-name">Cesta zločinu</a></h3>								<span class="cinema-icon tooltip cinema-icon-4dx" data-tippy-content="4DX sál">4DX sál</span>
-							</td>
+							<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1663029-zlom-vaz-bav-se-neumri/prehled/" class="film-title-name">Zlom vaz, bav se, neumři</a></h3>							</td>
 							<td class="td-title">
 								<span title="Titulky">T</span>
 							</td>
@@ -6691,11 +5169,79 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
+							<td class="td-time td-time-old">
+									21:10
+
+							</td>
 							<td>
 							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/134490?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">22:00</a>
+						</tr>
+						<tr>
+							<td class="name with-icon">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1018007-spasitel/prehled/" class="film-title-name">Spasitel</a></h3>								<span class="cinema-icon tooltip cinema-icon-4dx" data-tippy-content="4DX sál">4DX sál</span>
+							</td>
+							<td class="td-title">
+								<span title="Dabing">D</span>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									17:40
 
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td class="name with-icon">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1018007-spasitel/prehled/" class="film-title-name">Spasitel</a></h3>								<span class="cinema-icon tooltip cinema-icon-4dx" data-tippy-content="4DX sál">4DX sál</span>
+							</td>
+							<td class="td-title">
+								<span title="Titulky">T</span>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									20:50
+
+							</td>
+							<td>
+							</td>
+							<td>
 							</td>
 						</tr>
 			</tbody>
@@ -6724,7 +5270,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			</div>
 		</header>
 				<div class="update-box-sub-header">
-					pondělí 23.02.2026
+					úterý 24.03.2026
 							<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads class="btn-favorite blue">
 								<i class="icon icon-heart-outline"></i> přidat do oblíbených
 							</a>
@@ -6733,75 +5279,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	<div class="table-container">
 		<table class="cinema-table striped">
 			<tbody>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/286594-avatar-ohen-a-popel/prehled/" class="film-title-name">Avatar: Oheň a popel</a></h3>							</td>
-							<td class="td-title">
-								<span title="Titulky">T, </span>
-								<span title="3D projekce">3D</span>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-time-old">
-									16:30
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1551219-blaznivy-marsupilami/prehled/" class="film-title-name">Bláznivý Marsupilami</a></h3>							</td>
-							<td class="td-title">
-								<span title="Dabing">D</span>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-time-old">
-									13:20
-
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-time-old">
-									15:30
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
 						<tr>
 							<td class="name">
 <h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1596124-bourlive-vysiny/prehled/" class="film-title-name">Bouřlivé výšiny</a></h3>							</td>
@@ -6816,36 +5293,63 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
+							<td>
+							</td>
+							<td>
+							</td>
 							<td class="td-time td-time-old">
-									15:20
+									17:30
 
 							</td>
 							<td>
 							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/132070?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">17:20</a>
-
+							<td>
 							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/131454?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">18:10</a>
+							<td class="td-time td-time-old">
+									20:20
 
 							</td>
 							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/132071?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">20:10</a>
-
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/131460?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">21:00</a>
-
 							</td>
 							<td>
 							</td>
 						</tr>
 						<tr>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1486569-byl-jsem-cizincem/prehled/" class="film-title-name">Byl jsem cizincem</a></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/1819807-dhurandhar-the-revenge/prehled/" class="film-title-name">Dhurandhar: The Revenge</a></h3>							</td>
+							<td class="td-title">
+								<span title="Titulky">T</span>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									19:50
+
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1664500-dva-prokuratori/prehled/" class="film-title-name">Dva prokurátoři</a></h3>							</td>
 							<td class="td-title">
 								<span title="Titulky">T</span>
 							</td>
@@ -6867,47 +5371,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/131360?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">20:40</a>
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1580032-cesta-zlocinu/prehled/" class="film-title-name">Cesta zločinu</a></h3>							</td>
-							<td class="td-title">
-								<span title="Titulky">T</span>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
 							<td>
 							</td>
 							<td class="td-time td-time-old">
-									15:50
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/131502?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">18:40</a>
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/131508?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">21:30</a>
+									21:30
 
 							</td>
 							<td>
@@ -6931,15 +5398,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/131424?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">17:00</a>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									20:50
 
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
 							</td>
 							<td>
 							</td>
@@ -6948,179 +5415,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						</tr>
 						<tr>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1636787-kdyz-se-zhasne/prehled/" class="film-title-name">Když se zhasne</a></h3>							</td>
-							<td class="td-title">
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-time-old">
-									14:20
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/131430?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">19:40</a>
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1669709-mazlicci-v-prusvihu/prehled/" class="film-title-name">Mazlíčci v průšvihu</a></h3>							</td>
-							<td class="td-title">
-								<span title="Dabing">D</span>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-time-old">
-									13:00
-
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-time-old">
-									15:00
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1638669-nejlepsi-z-nejlepsich-goat/prehled/" class="film-title-name">Nejlepší z nejlepších: GOAT</a></h3>							</td>
-							<td class="td-title">
-								<span title="Titulky">T</span>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-time-old">
-									13:10
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/131526?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">18:20</a>
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1638669-nejlepsi-z-nejlepsich-goat/prehled/" class="film-title-name">Nejlepší z nejlepších: GOAT</a></h3>							</td>
-							<td class="td-title">
-								<span title="Dabing">D</span>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-time-old">
-									14:00
-
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-time-old">
-									16:10
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1574711-norimberk/prehled/" class="film-title-name">Norimberk</a></h3>							</td>
-							<td class="td-title">
-								<span title="Titulky">T</span>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/131354?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">17:40</a>
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1513998-otec-matka-sestra-bratr/prehled/" class="film-title-name">Otec Matka Sestra Bratr</a></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1708356-hlas-hind-radzab/prehled/" class="film-title-name">Hlas Hind Radžab</a></h3>							</td>
 							<td class="td-title">
 								<span title="Titulky">T</span>
 							</td>
@@ -7142,8 +5437,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/131531?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">20:30</a>
+							<td class="td-time td-time-old">
+									20:00
 
 							</td>
 							<td>
@@ -7153,7 +5448,241 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						</tr>
 						<tr>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1681106-ozvena/prehled/" class="film-title-name">Ozvěna</a></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square grey"></i><a href="/film/1816327-livia/prehled/" class="film-title-name">Livia</a></h3>							</td>
+							<td class="td-title">
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									17:50
+
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1558319-na-skok-do-divociny/prehled/" class="film-title-name">Na skok do divočiny</a></h3>							</td>
+							<td class="td-title">
+								<span title="Titulky">T</span>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									17:40
+
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1618341-nerikejte-mi-dedo/prehled/" class="film-title-name">Neříkejte mi dědo</a></h3>							</td>
+							<td class="td-title">
+								<span title="Titulky">T</span>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									19:00
+
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1717489-prani-k-narozeninam-krtiny/prehled/" class="film-title-name">Přání k narozeninám: Křtiny</a></h3>							</td>
+							<td class="td-title">
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									18:40
+
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1018007-spasitel/prehled/" class="film-title-name">Spasitel</a></h3>							</td>
+							<td class="td-title">
+								<span title="Titulky">T</span>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									18:10
+
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									20:00
+									<span class="br"></span>
+									20:30
+
+							</td>
+							<td class="td-time td-time-old">
+									21:20
+
+							</td>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1663025-tajny-agent/prehled/" class="film-title-name">Tajný agent</a></h3>							</td>
+							<td class="td-title">
+								<span title="Titulky">T</span>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									19:40
+
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1620024-tanec-s-medvedem/prehled/" class="film-title-name">Tanec s medvědem</a></h3>							</td>
+							<td class="td-title">
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									17:40
+
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1448507-vriskot-7/prehled/" class="film-title-name">Vřískot 7</a></h3>							</td>
 							<td class="td-title">
 								<span title="Titulky">T</span>
 							</td>
@@ -7175,20 +5704,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/132374?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">20:20</a>
-
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/131348?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">21:50</a>
-
-							</td>
 							<td>
+							</td>
+							<td class="td-time td-time-old">
+									21:40
+
+							</td>
+							<td class="td-time td-time-old">
+									22:00
+
 							</td>
 						</tr>
 						<tr>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1395444-parazit-z-chladaku/prehled/" class="film-title-name">Parazit z chlaďáku</a></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1692086-vzpominky-na-nej/prehled/" class="film-title-name">Vzpomínky na něj</a></h3>							</td>
 							<td class="td-title">
 								<span title="Titulky">T</span>
 							</td>
@@ -7206,284 +5735,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/131400?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">18:20</a>
-
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/131406?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">20:30</a>
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1615728-pomocnice/prehled/" class="film-title-name">Pomocnice</a></h3>							</td>
-							<td class="td-title">
-								<span title="Titulky">T</span>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/131378?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">17:10</a>
-
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/131383?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">19:50</a>
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1563219-posledni-viking/prehled/" class="film-title-name">Poslední Viking</a></h3>							</td>
-							<td class="td-title">
-								<span title="Titulky">T</span>
-							</td>
-							<td>
-							</td>
 							<td>
 							</td>
 							<td class="td-time td-time-old">
-									13:40
+									19:15
 
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1702701-rodina-k-pronajmu/prehled/" class="film-title-name">Rodina k pronájmu</a></h3>							</td>
-							<td class="td-title">
-								<span title="Titulky">T</span>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-time-old">
-									16:00
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1399440-spongebob-piratske-dobrodruzstvi/prehled/" class="film-title-name">SpongeBob: Pirátské dobrodružství</a></h3>							</td>
-							<td class="td-title">
-								<span title="Dabing">D</span>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-time-old">
-									13:30
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1580030-velky-marty/prehled/" class="film-title-name">Velký Marty</a></h3>							</td>
-							<td class="td-title">
-								<span title="Titulky">T</span>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-time-old">
-									14:10
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/132031?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">20:20</a>
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1737190-velrybi-pisen/prehled/" class="film-title-name">Velrybí píseň</a></h3>							</td>
-							<td class="td-title">
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-time-old">
-									13:00
-
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-time-old">
-									15:00
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1487258-zootropolis-mesto-zvirat-2/prehled/" class="film-title-name">Zootropolis: Město zvířat 2</a></h3>							</td>
-							<td class="td-title">
-								<span title="Dabing">D</span>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-time-old">
-									13:20
-
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-time-old">
-									15:40
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1487258-zootropolis-mesto-zvirat-2/prehled/" class="film-title-name">Zootropolis: Město zvířat 2</a></h3>							</td>
-							<td class="td-title">
-								<span title="Titulky">T</span>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/131478?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">18:00</a>
-
-							</td>
-							<td>
 							</td>
 							<td>
 							</td>
@@ -7518,7 +5774,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			</div>
 		</header>
 				<div class="update-box-sub-header">
-					pondělí 23.02.2026
+					úterý 24.03.2026
 							<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads class="btn-favorite blue">
 								<i class="icon icon-heart-outline"></i> přidat do oblíbených
 							</a>
@@ -7527,72 +5783,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	<div class="table-container">
 		<table class="cinema-table striped">
 			<tbody>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1559919-anakonda/prehled/" class="film-title-name">Anakonda</a></h3>							</td>
-							<td class="td-title">
-								<span title="Dabing">D</span>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-time-old">
-									14:20
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/286594-avatar-ohen-a-popel/prehled/" class="film-title-name">Avatar: Oheň a popel</a></h3>							</td>
-							<td class="td-title">
-								<span title="Dabing">D</span>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-time-old">
-									14:50
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
 						<tr>
 							<td class="name">
 <h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/286594-avatar-ohen-a-popel/prehled/" class="film-title-name">Avatar: Oheň a popel</a></h3>							</td>
@@ -7614,46 +5804,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/132745?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">18:50</a>
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1551219-blaznivy-marsupilami/prehled/" class="film-title-name">Bláznivý Marsupilami</a></h3>							</td>
-							<td class="td-title">
-								<span title="Dabing">D</span>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
 							<td>
 							</td>
 							<td class="td-time td-time-old">
-									15:20
+									19:50
 
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/132865?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">17:30</a>
-
-							</td>
-							<td>
-							</td>
-							<td>
 							</td>
 							<td>
 							</td>
@@ -7676,59 +5831,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
 							<td class="td-time td-time-old">
-									15:10
+									18:20
 
 							</td>
 							<td>
 							</td>
 							<td>
 							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/133021?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">18:00</a>
-
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/133027?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">20:50</a>
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1580032-cesta-zlocinu/prehled/" class="film-title-name">Cesta zločinu</a></h3>							</td>
-							<td class="td-title">
-								<span title="Titulky">T</span>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/132913?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">18:20</a>
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/132997?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">21:10</a>
+							<td class="td-time td-time-old">
+									21:10
 
 							</td>
 							<td>
@@ -7749,86 +5867,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
-							<td class="td-time td-time-old">
-									16:30
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/132937?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">19:10</a>
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1636787-kdyz-se-zhasne/prehled/" class="film-title-name">Když se zhasne</a></h3>							</td>
-							<td class="td-title">
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
 							<td>
 							</td>
 							<td class="td-time td-time-old">
-									14:30
+									17:30
 
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-time-old">
-									16:40
-
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/133057?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">18:50</a>
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/133063?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">21:00</a>
-
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1669709-mazlicci-v-prusvihu/prehled/" class="film-title-name">Mazlíčci v průšvihu</a></h3>							</td>
-							<td class="td-title">
-								<span title="Dabing">D</span>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-time-old">
-									14:20
-
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-time-old">
-									16:20
-
-							</td>
-							<td>
 							</td>
 							<td>
 							</td>
@@ -7843,77 +5886,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						</tr>
 						<tr>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1638669-nejlepsi-z-nejlepsich-goat/prehled/" class="film-title-name">Nejlepší z nejlepších: GOAT</a></h3>							</td>
-							<td class="td-title">
-								<span title="Dabing">D</span>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-time-old">
-									14:10
-
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-time-old">
-									16:30
-
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/132901?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">18:40</a>
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1574711-norimberk/prehled/" class="film-title-name">Norimberk</a></h3>							</td>
-							<td class="td-title">
-								<span title="Titulky">T</span>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/132871?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">19:40</a>
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1681106-ozvena/prehled/" class="film-title-name">Ozvěna</a></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1481329-nevesta/prehled/" class="film-title-name">Nevěsta!</a></h3>							</td>
 							<td class="td-title">
 								<span title="Titulky">T</span>
 							</td>
@@ -7937,8 +5910,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/132775?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">21:10</a>
+							<td class="td-time td-time-old">
+									21:10
 
 							</td>
 							<td>
@@ -7946,9 +5919,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						</tr>
 						<tr>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1395444-parazit-z-chladaku/prehled/" class="film-title-name">Parazit z chlaďáku</a></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1773198-poberta/prehled/" class="film-title-name">Poberta</a></h3>							</td>
 							<td class="td-title">
-								<span title="Titulky">T</span>
 							</td>
 							<td>
 							</td>
@@ -7964,50 +5936,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/132751?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">18:20</a>
-
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/132841?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">20:30</a>
+							<td class="td-time td-time-old">
+									18:20
 
 							</td>
 							<td>
 							</td>
 							<td>
 							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/460431-podfukari-3/prehled/" class="film-title-name">Podfukáři 3</a></h3>							</td>
-							<td class="td-title">
-								<span title="Dabing">D</span>
-							</td>
 							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/132943?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">21:50</a>
-
 							</td>
 							<td>
 							</td>
@@ -8030,16 +5967,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/132799?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">17:20</a>
-
-							</td>
 							<td>
 							</td>
 							<td>
 							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/132805?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">20:00</a>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									20:50
 
 							</td>
 							<td>
@@ -8049,7 +5984,178 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						</tr>
 						<tr>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1390510-silent-hill-nocni-mury/prehled/" class="film-title-name">Silent Hill: Noční můry</a></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1717489-prani-k-narozeninam-krtiny/prehled/" class="film-title-name">Přání k narozeninám: Křtiny</a></h3>							</td>
+							<td class="td-title">
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									19:00
+
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1018007-spasitel/prehled/" class="film-title-name">Spasitel</a></h3>							</td>
+							<td class="td-title">
+								<span title="Dabing">D</span>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									17:40
+
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									19:50
+
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1018007-spasitel/prehled/" class="film-title-name">Spasitel</a></h3>							</td>
+							<td class="td-title">
+								<span title="Titulky">T</span>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									19:30
+
+							</td>
+							<td class="td-time td-time-old">
+									20:50
+
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1620024-tanec-s-medvedem/prehled/" class="film-title-name">Tanec s medvědem</a></h3>							</td>
+							<td class="td-title">
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									18:30
+
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									20:50
+
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1448507-vriskot-7/prehled/" class="film-title-name">Vřískot 7</a></h3>							</td>
+							<td class="td-title">
+								<span title="Titulky">T</span>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									18:50
+
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									21:20
+
+							</td>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1692086-vzpominky-na-nej/prehled/" class="film-title-name">Vzpomínky na něj</a></h3>							</td>
 							<td class="td-title">
 								<span title="Titulky">T</span>
 							</td>
@@ -8071,8 +6177,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/132907?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">20:50</a>
+							<td class="td-time td-time-old">
+									20:10
 
 							</td>
 							<td>
@@ -8080,42 +6186,44 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							<td>
 							</td>
 						</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+	</section>
+
+	<section id="cinema-1659" class="updated-box updated-box-cinema">
+		<header class="updated-box-header">
+			<h2>
+					<a href="/kino/1-praha/1659-divadlo-horni-pocernice/">Praha - Divadlo Horní Počernice</a>
+			</h2>
+
+
+			<div class="updated-box-header-action updated-box-header-action-cinema">
+				<a href="tel: 281 920 326" class="btn-phone" title="tel.">
+					281 920 326
+				</a>
+				<a href="https://maps.google.cz/maps?rls=cs&q=50.11635,14.6219107" title="Navigovat na adresu kina" class="btn-web">
+					<svg width="12" height="15" viewBox="0 0 12 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M9.24776 3.0084C8.38614 2.1486 7.21845 1.666 6.00122 1.66665C4.78399 1.66729 3.61681 2.15113 2.7561 3.01184C1.8954 3.87256 1.41156 5.03975 1.41093 6.25698C1.41029 7.47421 1.89292 8.64191 2.75273 9.50352L2.75667 9.50745L2.75724 9.50804L6.00024 12.751L9.24776 9.50352C9.67425 9.07705 10.0126 8.57075 10.2434 8.01353C10.4742 7.45631 10.593 6.85909 10.593 6.25596C10.593 5.65283 10.4742 5.05561 10.2434 4.49839C10.0126 3.94118 9.67425 3.43487 9.24776 3.0084V3.0084ZM1.8099 2.06559C2.36001 1.51451 3.01335 1.07725 3.73254 0.778789C4.45174 0.480329 5.22268 0.326518 6.00134 0.326172C6.78001 0.325827 7.55113 0.478953 8.27059 0.776775C8.99005 1.0746 9.64374 1.51127 10.1943 2.06187C10.7449 2.61247 11.1816 3.26618 11.4795 3.98564C11.7773 4.70509 11.9304 5.4762 11.9301 6.25486C11.9297 7.03353 11.7759 7.80449 11.4775 8.52368C11.179 9.24288 10.7417 9.8962 10.1906 10.4463L10.1861 10.4508L10.1855 10.4514L6.7074 13.9296C6.51985 14.1171 6.26549 14.2224 6.00029 14.2224C5.73508 14.2224 5.48072 14.1171 5.29317 13.9296L1.81498 10.4514L1.81445 10.4508L1.8099 10.4463C0.698546 9.33496 0.0742188 7.82765 0.0742188 6.25596C0.0742188 4.68427 0.698546 3.17695 1.8099 2.06559ZM6.00024 4.92721C5.73654 4.92721 5.47875 5.00539 5.25948 5.1519C5.04022 5.29841 4.86931 5.50665 4.76839 5.75029C4.66748 5.99392 4.6411 6.26201 4.69255 6.52065C4.74399 6.77929 4.87098 7.01688 5.05745 7.20335C5.24392 7.38982 5.48147 7.51679 5.74011 7.56824C5.99875 7.61969 6.26686 7.59329 6.5105 7.49237C6.75413 7.39145 6.96238 7.22055 7.10889 7.00128C7.2554 6.78202 7.33358 6.52425 7.33358 6.26054C7.33358 6.08544 7.2991 5.91205 7.2321 5.75029C7.16509 5.58852 7.06689 5.44152 6.94307 5.31771C6.81926 5.1939 6.67227 5.09569 6.5105 5.02869C6.34873 4.96168 6.17534 4.92719 6.00024 4.92719V4.92721ZM3.33358 6.26054C3.33358 5.73312 3.48998 5.21754 3.783 4.77901C4.07602 4.34048 4.49251 3.99869 4.97978 3.79686C5.46705 3.59502 6.00323 3.54221 6.52051 3.6451C7.03779 3.748 7.51292 4.00198 7.88586 4.37492C8.2588 4.74786 8.51279 5.22301 8.61568 5.7403C8.71858 6.25758 8.66574 6.79376 8.46391 7.28103C8.26207 7.7683 7.9203 8.18477 7.48177 8.47778C7.04324 8.7708 6.52766 8.92721 6.00024 8.92721C5.65005 8.9272 5.30331 8.85822 4.97978 8.7242C4.65624 8.59019 4.36225 8.39376 4.11462 8.14614C3.867 7.89851 3.67059 7.60454 3.53658 7.28101C3.40257 6.95747 3.33362 6.61071 3.33362 6.26052L3.33358 6.26054Z"></path>
+					</svg>
+					Votuzská 379/11, Praha
+				</a>
+			</div>
+		</header>
+				<div class="update-box-sub-header">
+					úterý 24.03.2026
+							<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads class="btn-favorite blue">
+								<i class="icon icon-heart-outline"></i> přidat do oblíbených
+							</a>
+				</div>
+<div class="box-content-table-cinema">
+	<div class="table-container">
+		<table class="cinema-table striped">
+			<tbody>
 						<tr>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1399440-spongebob-piratske-dobrodruzstvi/prehled/" class="film-title-name">SpongeBob: Pirátské dobrodružství</a></h3>							</td>
-							<td class="td-title">
-								<span title="Dabing">D</span>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-time-old">
-									15:10
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1737190-velrybi-pisen/prehled/" class="film-title-name">Velrybí píseň</a></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1620024-tanec-s-medvedem/prehled/" class="film-title-name">Tanec s medvědem</a></h3>							</td>
 							<td class="td-title">
 							</td>
 							<td>
@@ -8124,34 +6232,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
-							<td class="td-time td-time-old">
-									14:10
-
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-time-old">
-									16:10
-
-							</td>
 							<td>
 							</td>
 							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1487258-zootropolis-mesto-zvirat-2/prehled/" class="film-title-name">Zootropolis: Město zvířat 2</a></h3>							</td>
-							<td class="td-title">
-								<span title="Dabing">D</span>
 							</td>
 							<td>
 							</td>
@@ -8160,22 +6243,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							<td>
 							</td>
 							<td class="td-time td-time-old">
-									14:00
+									19:30
 
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-time-old">
-									16:20
-
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="https://tickets.cinemacity.cz/order/132769?lang=cs"data-no-ads target="_blank" data-ga-event="cinema-cinemacity_cz|cinema|external">18:40</a>
-
-							</td>
-							<td>
 							</td>
 							<td>
 							</td>
@@ -8210,7 +6279,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			</div>
 		</header>
 				<div class="update-box-sub-header">
-					pondělí 23.02.2026
+					úterý 24.03.2026
 							<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads class="btn-favorite blue">
 								<i class="icon icon-heart-outline"></i> přidat do oblíbených
 							</a>
@@ -8221,8 +6290,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			<tbody>
 						<tr>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1636787-kdyz-se-zhasne/prehled/" class="film-title-name">Když se zhasne</a></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/72032-stvoreni-pro-lasku/prehled/" class="film-title-name">Stvořeni pro lásku</a></h3>							</td>
 							<td class="td-title">
+								<span title="Titulky">T</span>
 							</td>
 							<td>
 							</td>
@@ -8242,7 +6312,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
-							<td class="td-time">
+							<td class="td-time td-time-old">
 									20:00
 
 							</td>
@@ -8253,8 +6323,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						</tr>
 						<tr>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1767223-stur/prehled/" class="film-title-name">Štúr</a></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1809122-80-rozlicenych-novinaru/prehled/" class="film-title-name">80 rozlícených novinářů</a></h3>							</td>
 							<td class="td-title">
+								<span title="Titulky">T</span>
 							</td>
 							<td>
 							</td>
@@ -8270,7 +6341,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
-							<td class="td-time">
+							<td class="td-time td-time-old">
 									18:00
 
 							</td>
@@ -8306,7 +6377,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			</div>
 		</header>
 				<div class="update-box-sub-header">
-					pondělí 23.02.2026
+					úterý 24.03.2026
 							<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads class="btn-favorite blue">
 								<i class="icon icon-heart-outline"></i> přidat do oblíbených
 							</a>
@@ -8317,40 +6388,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			<tbody>
 						<tr>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1513998-otec-matka-sestra-bratr/prehled/" class="film-title-name">Otec Matka Sestra Bratr</a></h3>							</td>
-							<td class="td-title">
-								<span title="Titulky">T</span>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time">
-									19:00
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1731626-potopa/prehled/" class="film-title-name">Potopa</a></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1625310-modrou-stezkou/prehled/" class="film-title-name">Modrou stezkou</a></h3>							</td>
 							<td class="td-title">
 								<span title="Titulky">T</span>
 							</td>
@@ -8383,7 +6421,40 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						</tr>
 						<tr>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1580030-velky-marty/prehled/" class="film-title-name">Velký Marty</a></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/970112-ninjababy/prehled/" class="film-title-name">Ninjababy</a></h3>							</td>
+							<td class="td-title">
+								<span title="Titulky">T</span>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									19:00
+
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1563219-posledni-viking/prehled/" class="film-title-name">Poslední Viking</a></h3>							</td>
 							<td class="td-title">
 								<span title="Titulky">T</span>
 							</td>
@@ -8398,7 +6469,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							<td>
 							</td>
 							<td class="td-time td-time-old">
-									16:00
+									16:30
 
 							</td>
 							<td>
@@ -8440,7 +6511,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			</div>
 		</header>
 				<div class="update-box-sub-header">
-					pondělí 23.02.2026
+					úterý 24.03.2026
 							<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads class="btn-favorite blue">
 								<i class="icon icon-heart-outline"></i> přidat do oblíbených
 							</a>
@@ -8451,7 +6522,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			<tbody>
 						<tr>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/5122-frigo-obet-krevni-msty/prehled/" class="film-title-name">Frigo, oběť krevní msty</a></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/31523-jester-v-kuzi-zeny/prehled/" class="film-title-name">Ještěr v kůži ženy</a></h3>							</td>
 							<td class="td-title">
 								<span title="Titulky">T</span>
 							</td>
@@ -8469,13 +6540,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time">
-									20:30
+							<td class="td-time td-time-old">
+									18:00
 
+							</td>
+							<td>
+							</td>
+							<td>
 							</td>
 							<td>
 							</td>
@@ -8484,7 +6555,40 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						</tr>
 						<tr>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1580027-hamnet/prehled/" class="film-title-name">Hamnet</a></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1563219-posledni-viking/prehled/" class="film-title-name">Poslední Viking</a></h3>							</td>
+							<td class="td-title">
+								<span title="Titulky">T</span>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									15:00
+
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/1723370-vosoustej-mi-synka/prehled/" class="film-title-name">Vošoustej mi synka!</a></h3>							</td>
 							<td class="td-title">
 								<span title="Titulky">T</span>
 							</td>
@@ -8502,13 +6606,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
-							<td class="td-time">
-									18:00
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									20:30
 
-							</td>
-							<td>
-							</td>
-							<td>
 							</td>
 							<td>
 							</td>
@@ -8541,7 +6645,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			</div>
 		</header>
 				<div class="update-box-sub-header">
-					pondělí 23.02.2026
+					úterý 24.03.2026
 							<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads class="btn-favorite blue">
 								<i class="icon icon-heart-outline"></i> přidat do oblíbených
 							</a>
@@ -8552,7 +6656,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			<tbody>
 						<tr>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/930951-holosec/prehled/" class="film-title-name">Holoseč!</a></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1525058-architektura-cssr-58-89/prehled/" class="film-title-name">Architektura ČSSR 58-89</a></h3>							</td>
 							<td class="td-title">
 							</td>
 							<td>
@@ -8571,11 +6675,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
-							<td class="td-time">
-									19:45
-
-							</td>
 							<td>
+							</td>
+							<td class="td-time td-time-old">
+									20:00
+
 							</td>
 							<td>
 							</td>
@@ -8584,7 +6688,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						</tr>
 						<tr>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1540732-hory-paola-cognettiho/prehled/" class="film-title-name">Hory Paola Cognettiho</a></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1556980-citova-hodnota/prehled/" class="film-title-name">Citová hodnota</a></h3>							</td>
 							<td class="td-title">
 								<span title="Titulky">T</span>
 							</td>
@@ -8600,17 +6704,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
-							<td class="td-time">
-									17:00
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									21:00
 
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
 							</td>
 							<td>
 							</td>
@@ -8632,7 +6736,106 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
-							<td class="td-time">
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									19:30
+
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1481329-nevesta/prehled/" class="film-title-name">Nevěsta!</a></h3>							</td>
+							<td class="td-title">
+								<span title="Titulky">T</span>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									21:15
+
+							</td>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/43558-padli-andele/prehled/" class="film-title-name">Padlí andělé</a></h3>							</td>
+							<td class="td-title">
+								<span title="Titulky">T</span>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									19:15
+
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1543764-riefenstahl/prehled/" class="film-title-name">Riefenstahl</a></h3>							</td>
+							<td class="td-title">
+								<span title="Titulky">T</span>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
 									17:15
 
 							</td>
@@ -8649,8 +6852,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						</tr>
 						<tr>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1747001-kralovstvi-mydlovych-bublin/prehled/" class="film-title-name">Království mýdlových bublin</a></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1620024-tanec-s-medvedem/prehled/" class="film-title-name">Tanec s medvědem</a></h3>							</td>
 							<td class="td-title">
+							</td>
+							<td>
+							</td>
+							<td>
 							</td>
 							<td>
 							</td>
@@ -8661,174 +6868,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							<td>
 							</td>
 							<td class="td-time td-time-old">
-									15:30
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1511501-lisejniky/prehled/" class="film-title-name">Lišejníky</a></h3>							</td>
-							<td class="td-title">
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time">
-									19:45
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1700845-milost/prehled/" class="film-title-name">Milost</a></h3>							</td>
-							<td class="td-title">
-								<span title="Titulky">T</span>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time">
-									20:45
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1618405-od-zakladu/prehled/" class="film-title-name">Od základu</a></h3>							</td>
-							<td class="td-title">
-								<span title="Titulky">T</span>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time">
-									18:45
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1513998-otec-matka-sestra-bratr/prehled/" class="film-title-name">Otec Matka Sestra Bratr</a></h3>							</td>
-							<td class="td-title">
-								<span title="Titulky">T</span>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time">
-									21:30
-
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1703386-velky-vlastenecky-vylet/prehled/" class="film-title-name">Velký vlastenecký výlet</a></h3>							</td>
-							<td class="td-title">
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time">
-									17:30
+									17:00
 
 							</td>
 							<td>
@@ -8844,9 +6884,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						</tr>
 						<tr>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1487258-zootropolis-mesto-zvirat-2/prehled/" class="film-title-name">Zootropolis: Město zvířat 2</a></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1632286-verejne-prospesne-prace/prehled/" class="film-title-name">Veřejně prospěšné práce</a></h3>							</td>
 							<td class="td-title">
-								<span title="Dabing">D</span>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
 							</td>
 							<td>
 							</td>
@@ -8857,7 +6902,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							<td>
 							</td>
 							<td class="td-time td-time-old">
-									15:00
+									18:00
 
 							</td>
 							<td>
@@ -8867,6 +6912,133 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							<td>
 							</td>
 							<td>
+							</td>
+						</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+	</section>
+
+	<section id="cinema-3192" class="updated-box updated-box-cinema">
+		<header class="updated-box-header">
+			<h2>
+					<a href="/kino/1-praha/3192-kino-balt/">Praha - Kino Balt</a>
+			</h2>
+
+
+			<div class="updated-box-header-action updated-box-header-action-cinema">
+				<a href="tel: 720 166 431" class="btn-phone" title="tel.">
+					720 166 431
+				</a>
+				<a href="https://maps.google.cz/maps?rls=cs&q=50.08393,14.41418" title="Navigovat na adresu kina" class="btn-web">
+					<svg width="12" height="15" viewBox="0 0 12 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M9.24776 3.0084C8.38614 2.1486 7.21845 1.666 6.00122 1.66665C4.78399 1.66729 3.61681 2.15113 2.7561 3.01184C1.8954 3.87256 1.41156 5.03975 1.41093 6.25698C1.41029 7.47421 1.89292 8.64191 2.75273 9.50352L2.75667 9.50745L2.75724 9.50804L6.00024 12.751L9.24776 9.50352C9.67425 9.07705 10.0126 8.57075 10.2434 8.01353C10.4742 7.45631 10.593 6.85909 10.593 6.25596C10.593 5.65283 10.4742 5.05561 10.2434 4.49839C10.0126 3.94118 9.67425 3.43487 9.24776 3.0084V3.0084ZM1.8099 2.06559C2.36001 1.51451 3.01335 1.07725 3.73254 0.778789C4.45174 0.480329 5.22268 0.326518 6.00134 0.326172C6.78001 0.325827 7.55113 0.478953 8.27059 0.776775C8.99005 1.0746 9.64374 1.51127 10.1943 2.06187C10.7449 2.61247 11.1816 3.26618 11.4795 3.98564C11.7773 4.70509 11.9304 5.4762 11.9301 6.25486C11.9297 7.03353 11.7759 7.80449 11.4775 8.52368C11.179 9.24288 10.7417 9.8962 10.1906 10.4463L10.1861 10.4508L10.1855 10.4514L6.7074 13.9296C6.51985 14.1171 6.26549 14.2224 6.00029 14.2224C5.73508 14.2224 5.48072 14.1171 5.29317 13.9296L1.81498 10.4514L1.81445 10.4508L1.8099 10.4463C0.698546 9.33496 0.0742188 7.82765 0.0742188 6.25596C0.0742188 4.68427 0.698546 3.17695 1.8099 2.06559ZM6.00024 4.92721C5.73654 4.92721 5.47875 5.00539 5.25948 5.1519C5.04022 5.29841 4.86931 5.50665 4.76839 5.75029C4.66748 5.99392 4.6411 6.26201 4.69255 6.52065C4.74399 6.77929 4.87098 7.01688 5.05745 7.20335C5.24392 7.38982 5.48147 7.51679 5.74011 7.56824C5.99875 7.61969 6.26686 7.59329 6.5105 7.49237C6.75413 7.39145 6.96238 7.22055 7.10889 7.00128C7.2554 6.78202 7.33358 6.52425 7.33358 6.26054C7.33358 6.08544 7.2991 5.91205 7.2321 5.75029C7.16509 5.58852 7.06689 5.44152 6.94307 5.31771C6.81926 5.1939 6.67227 5.09569 6.5105 5.02869C6.34873 4.96168 6.17534 4.92719 6.00024 4.92719V4.92721ZM3.33358 6.26054C3.33358 5.73312 3.48998 5.21754 3.783 4.77901C4.07602 4.34048 4.49251 3.99869 4.97978 3.79686C5.46705 3.59502 6.00323 3.54221 6.52051 3.6451C7.03779 3.748 7.51292 4.00198 7.88586 4.37492C8.2588 4.74786 8.51279 5.22301 8.61568 5.7403C8.71858 6.25758 8.66574 6.79376 8.46391 7.28103C8.26207 7.7683 7.9203 8.18477 7.48177 8.47778C7.04324 8.7708 6.52766 8.92721 6.00024 8.92721C5.65005 8.9272 5.30331 8.85822 4.97978 8.7242C4.65624 8.59019 4.36225 8.39376 4.11462 8.14614C3.867 7.89851 3.67059 7.60454 3.53658 7.28101C3.40257 6.95747 3.33362 6.61071 3.33362 6.26052L3.33358 6.26054Z"></path>
+					</svg>
+					Karoliny Světlé 325/31, Praha 1
+				</a>
+			</div>
+		</header>
+				<div class="update-box-sub-header">
+					úterý 24.03.2026
+							<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads class="btn-favorite blue">
+								<i class="icon icon-heart-outline"></i> přidat do oblíbených
+							</a>
+				</div>
+<div class="box-content-table-cinema">
+	<div class="table-container">
+		<table class="cinema-table striped">
+			<tbody>
+						<tr>
+							<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/505790-parazit/prehled/" class="film-title-name">Parazit</a></h3>							</td>
+							<td class="td-title">
+								<span title="Titulky">T</span>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									17:45
+
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1773198-poberta/prehled/" class="film-title-name">Poberta</a></h3>							</td>
+							<td class="td-title">
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									18:30
+
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/8852-pulp-fiction-historky-z-podsveti/prehled/" class="film-title-name">Pulp Fiction: Historky z podsvětí</a></h3>							</td>
+							<td class="td-title">
+								<span title="Titulky">T</span>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									19:00
+
 							</td>
 							<td>
 							</td>
@@ -8898,7 +7070,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			</div>
 		</header>
 				<div class="update-box-sub-header">
-					pondělí 23.02.2026
+					úterý 24.03.2026
 							<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads class="btn-favorite blue">
 								<i class="icon icon-heart-outline"></i> přidat do oblíbených
 							</a>
@@ -8909,8 +7081,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			<tbody>
 						<tr>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1747001-kralovstvi-mydlovych-bublin/prehled/" class="film-title-name">Království mýdlových bublin</a></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1606307-pan-nikdo-proti-putinovi/prehled/" class="film-title-name">Pan Nikdo proti Putinovi</a></h3>							</td>
 							<td class="td-title">
+								<span title="Titulky">T</span>
 							</td>
 							<td>
 							</td>
@@ -8926,7 +7099,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
-							<td class="td-time">
+							<td class="td-time td-time-old">
 									18:00
 
 							</td>
@@ -8963,7 +7136,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
-							<td class="td-time">
+							<td class="td-time td-time-old">
 									20:00
 
 							</td>
@@ -8998,7 +7171,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			</div>
 		</header>
 				<div class="update-box-sub-header">
-					pondělí 23.02.2026
+					úterý 24.03.2026
 							<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads class="btn-favorite blue">
 								<i class="icon icon-heart-outline"></i> přidat do oblíbených
 							</a>
@@ -9009,7 +7182,105 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			<tbody>
 						<tr>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1596124-bourlive-vysiny/prehled/" class="film-title-name">Bouřlivé výšiny</a></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1664500-dva-prokuratori/prehled/" class="film-title-name">Dva prokurátoři</a></h3>							</td>
+							<td class="td-title">
+								<span title="Titulky">T</span>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									20:30
+
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1717489-prani-k-narozeninam-krtiny/prehled/" class="film-title-name">Přání k narozeninám: Křtiny</a></h3>							</td>
+							<td class="td-title">
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									18:45
+
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1018007-spasitel/prehled/" class="film-title-name">Spasitel</a></h3>							</td>
+							<td class="td-title">
+								<span title="Titulky">T</span>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									14:45
+
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1663025-tajny-agent/prehled/" class="film-title-name">Tajný agent</a></h3>							</td>
 							<td class="td-title">
 								<span title="Titulky">T</span>
 							</td>
@@ -9033,9 +7304,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
-							<td class="td-time">
-									20:45
-
+							<td>
 							</td>
 							<td>
 							</td>
@@ -9044,9 +7313,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						</tr>
 						<tr>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1556980-citova-hodnota/prehled/" class="film-title-name">Citová hodnota</a></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1620024-tanec-s-medvedem/prehled/" class="film-title-name">Tanec s medvědem</a></h3>							</td>
 							<td class="td-title">
-								<span title="Titulky">T</span>
 							</td>
 							<td>
 							</td>
@@ -9057,117 +7325,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							<td>
 							</td>
 							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time">
-									20:30
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1700845-milost/prehled/" class="film-title-name">Milost</a></h3>							</td>
-							<td class="td-title">
-								<span title="Titulky">T</span>
 							</td>
 							<td>
 							</td>
 							<td>
 							</td>
 							<td class="td-time td-time-old">
-									13:00
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time">
-									17:45
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1513998-otec-matka-sestra-bratr/prehled/" class="film-title-name">Otec Matka Sestra Bratr</a></h3>							</td>
-							<td class="td-title">
-								<span title="Titulky">T</span>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-time-old">
-									12:30
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time">
 									18:00
 
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1606307-pan-nikdo-proti-putinovi/prehled/" class="film-title-name">Pan Nikdo proti Putinovi</a></h3>							</td>
-							<td class="td-title">
-								<span title="Titulky">T</span>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-time-old">
-									15:45
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
 							</td>
 							<td>
 							</td>
@@ -9204,7 +7369,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			</div>
 		</header>
 				<div class="update-box-sub-header">
-					pondělí 23.02.2026
+					úterý 24.03.2026
 							<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads class="btn-favorite blue">
 								<i class="icon icon-heart-outline"></i> přidat do oblíbených
 							</a>
@@ -9215,7 +7380,39 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			<tbody>
 						<tr>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1580027-hamnet/prehled/" class="film-title-name">Hamnet</a></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1636787-kdyz-se-zhasne/prehled/" class="film-title-name">Když se zhasne</a></h3>							</td>
+							<td class="td-title">
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									14:00
+
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/4386-okno-do-dvora/prehled/" class="film-title-name">Okno do dvora</a></h3>							</td>
 							<td class="td-title">
 								<span title="Titulky">T</span>
 							</td>
@@ -9229,8 +7426,40 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
 							<td class="td-time td-time-old">
-									16:00
+									20:15
+
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1717489-prani-k-narozeninam-krtiny/prehled/" class="film-title-name">Přání k narozeninám: Křtiny</a></h3>							</td>
+							<td class="td-title">
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									16:15
 
 							</td>
 							<td>
@@ -9272,7 +7501,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			</div>
 		</header>
 				<div class="update-box-sub-header">
-					pondělí 23.02.2026
+					úterý 24.03.2026
 							<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads class="btn-favorite blue">
 								<i class="icon icon-heart-outline"></i> přidat do oblíbených
 							</a>
@@ -9305,42 +7534,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
-							<td class="td-time">
-									20:15
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1556980-citova-hodnota/prehled/" class="film-title-name">Citová hodnota</a></h3>							</td>
-							<td class="td-title">
-								<span title="Titulky">T</span>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
 							<td class="td-time td-time-old">
-									15:30
+									20:50
 
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
 							</td>
 							<td>
 							</td>
@@ -9371,9 +7567,42 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
-							<td class="td-time">
-									20:45
+							<td class="td-time td-time-old">
+									20:30
 
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1664535-drobna-nehoda/prehled/" class="film-title-name">Drobná nehoda</a></h3>							</td>
+							<td class="td-title">
+								<span title="Titulky">T</span>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									18:20
+
+							</td>
+							<td>
+							</td>
+							<td>
 							</td>
 							<td>
 							</td>
@@ -9398,107 +7627,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
-							<td class="td-time">
-									17:50
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1755579-kapralova/prehled/" class="film-title-name">Kaprálová</a></h3>							</td>
-							<td class="td-title">
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
 							<td class="td-time td-time-old">
-									15:20
+									17:00
 
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1514842-medvedi-princ/prehled/" class="film-title-name">Medvědí princ</a></h3>							</td>
-							<td class="td-title">
-								<span title="Dabing">D</span>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-time-old">
-									13:30
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1574711-norimberk/prehled/" class="film-title-name">Norimberk</a></h3>							</td>
-							<td class="td-title">
-								<span title="Titulky">T</span>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-time-old">
-									15:00
-
-							</td>
-							<td>
-							</td>
-							<td>
 							</td>
 							<td>
 							</td>
@@ -9531,8 +7662,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
-							<td class="td-time">
-									18:15
+							<td class="td-time td-time-old">
+									18:00
 
 							</td>
 							<td>
@@ -9546,7 +7677,40 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						</tr>
 						<tr>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/43558-padli-andele/prehled/" class="film-title-name">Padlí andělé</a></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1563219-posledni-viking/prehled/" class="film-title-name">Poslední Viking</a></h3>							</td>
+							<td class="td-title">
+								<span title="Titulky">T</span>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									16:00
+
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1018007-spasitel/prehled/" class="film-title-name">Spasitel</a></h3>							</td>
 							<td class="td-title">
 								<span title="Titulky">T</span>
 							</td>
@@ -9568,8 +7732,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
-							<td class="td-time">
-									20:30
+							<td class="td-time td-time-old">
+									20:00
 
 							</td>
 							<td>
@@ -9579,7 +7743,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						</tr>
 						<tr>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1606307-pan-nikdo-proti-putinovi/prehled/" class="film-title-name">Pan Nikdo proti Putinovi</a></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1663025-tajny-agent/prehled/" class="film-title-name">Tajný agent</a></h3>							</td>
 							<td class="td-title">
 								<span title="Titulky">T</span>
 							</td>
@@ -9591,107 +7755,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time">
-									18:45
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1687605-radeji-zesilet-v-divocine/prehled/" class="film-title-name">Raději zešílet v divočině</a></h3>							</td>
-							<td class="td-title">
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time">
-									17:00
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1737190-velrybi-pisen/prehled/" class="film-title-name">Velrybí píseň</a></h3>							</td>
-							<td class="td-title">
-								<span title="Dabing">D</span>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
 							<td class="td-time td-time-old">
-									13:00
+									15:00
 
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1487258-zootropolis-mesto-zvirat-2/prehled/" class="film-title-name">Zootropolis: Město zvířat 2</a></h3>							</td>
-							<td class="td-title">
-								<span title="Dabing">D</span>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-time-old">
-									13:15
-
-							</td>
-							<td>
-							</td>
-							<td>
 							</td>
 							<td>
 							</td>
@@ -9734,7 +7800,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			</div>
 		</header>
 				<div class="update-box-sub-header">
-					pondělí 23.02.2026
+					úterý 24.03.2026
 							<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads class="btn-favorite blue">
 								<i class="icon icon-heart-outline"></i> přidat do oblíbených
 							</a>
@@ -9745,9 +7811,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			<tbody>
 						<tr>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/717869-mlady-ahmed/prehled/" class="film-title-name">Mladý Ahmed</a></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/7038-co-je-vam-doktore/prehled/" class="film-title-name">Co je vám, doktore?</a></h3>							</td>
 							<td class="td-title">
-								<span title="Titulky">T</span>
 							</td>
 							<td>
 							</td>
@@ -9763,7 +7828,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
-							<td class="td-time">
+							<td class="td-time td-time-old">
 									18:00
 
 							</td>
@@ -9778,7 +7843,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						</tr>
 						<tr>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/40731-valka-svetu-pristi-stoleti/prehled/" class="film-title-name">Válka světů - příští století</a></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/35299-ctyri-noci-jednoho-snilka/prehled/" class="film-title-name">Čtyři noci jednoho snílka</a></h3>							</td>
 							<td class="td-title">
 								<span title="Titulky">T</span>
 							</td>
@@ -9800,9 +7865,41 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
-							<td class="td-time">
+							<td class="td-time td-time-old">
 									20:30
 
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/118418-rohy/prehled/" class="film-title-name">Rohy</a></h3>							</td>
+							<td class="td-title">
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									18:00
+
+							</td>
+							<td>
+							</td>
+							<td>
 							</td>
 							<td>
 							</td>
@@ -9835,7 +7932,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			</div>
 		</header>
 				<div class="update-box-sub-header">
-					pondělí 23.02.2026
+					úterý 24.03.2026
 							<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads class="btn-favorite blue">
 								<i class="icon icon-heart-outline"></i> přidat do oblíbených
 							</a>
@@ -9844,39 +7941,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	<div class="table-container">
 		<table class="cinema-table striped">
 			<tbody>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1596124-bourlive-vysiny/prehled/" class="film-title-name">Bouřlivé výšiny</a></h3>							</td>
-							<td class="td-title">
-								<span title="Titulky">T</span>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time">
-									17:45
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
 						<tr>
 							<td class="name">
 <h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1556980-citova-hodnota/prehled/" class="film-title-name">Citová hodnota</a></h3>							</td>
@@ -9892,12 +7956,45 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							<td>
 							</td>
 							<td class="td-time td-time-old">
-									15:15
+									15:00
 
 							</td>
 							<td>
 							</td>
 							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1664500-dva-prokuratori/prehled/" class="film-title-name">Dva prokurátoři</a></h3>							</td>
+							<td class="td-title">
+								<span title="Titulky">T</span>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									17:45
+
 							</td>
 							<td>
 							</td>
@@ -9922,10 +8019,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
-							<td>
-							</td>
 							<td class="td-time td-time-old">
-									15:00
+									14:45
 
 							</td>
 							<td>
@@ -9936,8 +8031,41 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
-							<td class="td-time">
-									20:15
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1504570-hrisnici/prehled/" class="film-title-name">Hříšníci</a></h3>							</td>
+							<td class="td-title">
+								<span title="Titulky">T</span>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									20:30
 
 							</td>
 							<td>
@@ -9963,15 +8091,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time">
-									20:45
+							<td class="td-time td-time-old">
+									17:45
 
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
 							</td>
 							<td>
 							</td>
@@ -9990,81 +8118,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
+							<td>
+							</td>
 							<td class="td-time td-time-old">
-									14:45
+									15:00
 
 							</td>
 							<td>
 							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time">
-									20:30
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/1815342-sila-lasky/prehled/" class="film-title-name">Síla lásky</a></h3>							</td>
-							<td class="td-title">
-								<span title="Titulky">T</span>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time">
-									18:00
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1580030-velky-marty/prehled/" class="film-title-name">Velký Marty</a></h3>							</td>
-							<td class="td-title">
-								<span title="Titulky">T</span>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time">
+							<td class="td-time td-time-old">
 									17:30
 
 							</td>
@@ -10079,45 +8141,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							<td>
 							</td>
 						</tr>
-			</tbody>
-		</table>
-	</div>
-</div>
-	</section>
-
-	<section id="cinema-243" class="updated-box updated-box-cinema">
-		<header class="updated-box-header">
-			<h2>
-					<a href="/kino/1-praha/243-kino-35/">Praha - Kino 35</a>
-			</h2>
-
-
-			<div class="updated-box-header-action updated-box-header-action-cinema">
-				<a href="tel: 221 401 011" class="btn-phone" title="tel.">
-					221 401 011
-				</a>
-				<a href="https://maps.google.cz/maps?rls=cs&q=50.0788473,14.4251247" title="Navigovat na adresu kina" class="btn-web">
-					<svg width="12" height="15" viewBox="0 0 12 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-						<path fill-rule="evenodd" clip-rule="evenodd" d="M9.24776 3.0084C8.38614 2.1486 7.21845 1.666 6.00122 1.66665C4.78399 1.66729 3.61681 2.15113 2.7561 3.01184C1.8954 3.87256 1.41156 5.03975 1.41093 6.25698C1.41029 7.47421 1.89292 8.64191 2.75273 9.50352L2.75667 9.50745L2.75724 9.50804L6.00024 12.751L9.24776 9.50352C9.67425 9.07705 10.0126 8.57075 10.2434 8.01353C10.4742 7.45631 10.593 6.85909 10.593 6.25596C10.593 5.65283 10.4742 5.05561 10.2434 4.49839C10.0126 3.94118 9.67425 3.43487 9.24776 3.0084V3.0084ZM1.8099 2.06559C2.36001 1.51451 3.01335 1.07725 3.73254 0.778789C4.45174 0.480329 5.22268 0.326518 6.00134 0.326172C6.78001 0.325827 7.55113 0.478953 8.27059 0.776775C8.99005 1.0746 9.64374 1.51127 10.1943 2.06187C10.7449 2.61247 11.1816 3.26618 11.4795 3.98564C11.7773 4.70509 11.9304 5.4762 11.9301 6.25486C11.9297 7.03353 11.7759 7.80449 11.4775 8.52368C11.179 9.24288 10.7417 9.8962 10.1906 10.4463L10.1861 10.4508L10.1855 10.4514L6.7074 13.9296C6.51985 14.1171 6.26549 14.2224 6.00029 14.2224C5.73508 14.2224 5.48072 14.1171 5.29317 13.9296L1.81498 10.4514L1.81445 10.4508L1.8099 10.4463C0.698546 9.33496 0.0742188 7.82765 0.0742188 6.25596C0.0742188 4.68427 0.698546 3.17695 1.8099 2.06559ZM6.00024 4.92721C5.73654 4.92721 5.47875 5.00539 5.25948 5.1519C5.04022 5.29841 4.86931 5.50665 4.76839 5.75029C4.66748 5.99392 4.6411 6.26201 4.69255 6.52065C4.74399 6.77929 4.87098 7.01688 5.05745 7.20335C5.24392 7.38982 5.48147 7.51679 5.74011 7.56824C5.99875 7.61969 6.26686 7.59329 6.5105 7.49237C6.75413 7.39145 6.96238 7.22055 7.10889 7.00128C7.2554 6.78202 7.33358 6.52425 7.33358 6.26054C7.33358 6.08544 7.2991 5.91205 7.2321 5.75029C7.16509 5.58852 7.06689 5.44152 6.94307 5.31771C6.81926 5.1939 6.67227 5.09569 6.5105 5.02869C6.34873 4.96168 6.17534 4.92719 6.00024 4.92719V4.92721ZM3.33358 6.26054C3.33358 5.73312 3.48998 5.21754 3.783 4.77901C4.07602 4.34048 4.49251 3.99869 4.97978 3.79686C5.46705 3.59502 6.00323 3.54221 6.52051 3.6451C7.03779 3.748 7.51292 4.00198 7.88586 4.37492C8.2588 4.74786 8.51279 5.22301 8.61568 5.7403C8.71858 6.25758 8.66574 6.79376 8.46391 7.28103C8.26207 7.7683 7.9203 8.18477 7.48177 8.47778C7.04324 8.7708 6.52766 8.92721 6.00024 8.92721C5.65005 8.9272 5.30331 8.85822 4.97978 8.7242C4.65624 8.59019 4.36225 8.39376 4.11462 8.14614C3.867 7.89851 3.67059 7.60454 3.53658 7.28101C3.40257 6.95747 3.33362 6.61071 3.33362 6.26052L3.33358 6.26054Z"></path>
-					</svg>
-					Štěpánská 644/35, Praha
-				</a>
-			</div>
-		</header>
-				<div class="update-box-sub-header">
-					pondělí 23.02.2026
-							<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads class="btn-favorite blue">
-								<i class="icon icon-heart-outline"></i> přidat do oblíbených
-							</a>
-				</div>
-<div class="box-content-table-cinema">
-	<div class="table-container">
-		<table class="cinema-table striped">
-			<tbody>
 						<tr>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1741250-amiriny-deti/prehled/" class="film-title-name">Amiřiny děti</a></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1664553-pillion/prehled/" class="film-title-name">Pillion</a></h3>							</td>
 							<td class="td-title">
+								<span title="Titulky">T</span>
 							</td>
 							<td>
 							</td>
@@ -10137,8 +8165,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
-							<td class="td-time">
-									20:30
+							<td class="td-time td-time-old">
+									20:00
 
 							</td>
 							<td>
@@ -10148,8 +8176,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						</tr>
 						<tr>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/737777-dcera/prehled/" class="film-title-name">Dcera</a></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1018007-spasitel/prehled/" class="film-title-name">Spasitel</a></h3>							</td>
 							<td class="td-title">
+								<span title="Titulky">T</span>
 							</td>
 							<td>
 							</td>
@@ -10165,173 +8194,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
-							<td class="td-time">
-									18:00
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									20:15
 
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1364077-electra/prehled/" class="film-title-name">Electra</a></h3>							</td>
-							<td class="td-title">
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time">
-									18:00
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1492555-ludstvo/prehled/" class="film-title-name">Humanity</a></h3>							</td>
-							<td class="td-title">
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time">
-									18:00
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1530042-hurikan/prehled/" class="film-title-name">Hurikán</a></h3>							</td>
-							<td class="td-title">
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time">
-									18:00
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1518975-plevel/prehled/" class="film-title-name">Plevel</a></h3>							</td>
-							<td class="td-title">
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time">
-									18:00
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1043433-rude-boty/prehled/" class="film-title-name">Rudé boty</a></h3>							</td>
-							<td class="td-title">
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time">
-									18:00
-
-							</td>
-							<td>
-							</td>
-							<td>
 							</td>
 							<td>
 							</td>
@@ -10364,7 +8233,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			</div>
 		</header>
 				<div class="update-box-sub-header">
-					pondělí 23.02.2026
+					úterý 24.03.2026
 							<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads class="btn-favorite blue">
 								<i class="icon icon-heart-outline"></i> přidat do oblíbených
 							</a>
@@ -10375,7 +8244,73 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			<tbody>
 						<tr>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1556980-citova-hodnota/prehled/" class="film-title-name">Citová hodnota</a></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1723088-made-in-eu/prehled/" class="film-title-name">Made in EU</a></h3>							</td>
+							<td class="td-title">
+								<span title="Titulky">T</span>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									17:30
+
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1743746-pravda-a-zrada/prehled/" class="film-title-name">Pravda a zrada</a></h3>							</td>
+							<td class="td-title">
+								<span title="Titulky">T</span>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									19:45
+
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1559962-stezka-zivota/prehled/" class="film-title-name">Stezka života</a></h3>							</td>
 							<td class="td-title">
 								<span title="Titulky">T</span>
 							</td>
@@ -10406,9 +8341,44 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							<td>
 							</td>
 						</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+	</section>
+
+	<section id="cinema-3213" class="updated-box updated-box-cinema">
+		<header class="updated-box-header">
+			<h2>
+					<a href="/kino/1-praha/3213-mestska-knihovna-v-praze-petriny/">Praha - Městská knihovna v Praze - Petřiny</a>
+			</h2>
+
+
+			<div class="updated-box-header-action updated-box-header-action-cinema">
+				<a href="tel: 770 130 242" class="btn-phone" title="tel.">
+					770 130 242
+				</a>
+				<a href="https://maps.google.cz/maps?rls=cs&q=50.08571,14.3415" title="Navigovat na adresu kina" class="btn-web">
+					<svg width="12" height="15" viewBox="0 0 12 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M9.24776 3.0084C8.38614 2.1486 7.21845 1.666 6.00122 1.66665C4.78399 1.66729 3.61681 2.15113 2.7561 3.01184C1.8954 3.87256 1.41156 5.03975 1.41093 6.25698C1.41029 7.47421 1.89292 8.64191 2.75273 9.50352L2.75667 9.50745L2.75724 9.50804L6.00024 12.751L9.24776 9.50352C9.67425 9.07705 10.0126 8.57075 10.2434 8.01353C10.4742 7.45631 10.593 6.85909 10.593 6.25596C10.593 5.65283 10.4742 5.05561 10.2434 4.49839C10.0126 3.94118 9.67425 3.43487 9.24776 3.0084V3.0084ZM1.8099 2.06559C2.36001 1.51451 3.01335 1.07725 3.73254 0.778789C4.45174 0.480329 5.22268 0.326518 6.00134 0.326172C6.78001 0.325827 7.55113 0.478953 8.27059 0.776775C8.99005 1.0746 9.64374 1.51127 10.1943 2.06187C10.7449 2.61247 11.1816 3.26618 11.4795 3.98564C11.7773 4.70509 11.9304 5.4762 11.9301 6.25486C11.9297 7.03353 11.7759 7.80449 11.4775 8.52368C11.179 9.24288 10.7417 9.8962 10.1906 10.4463L10.1861 10.4508L10.1855 10.4514L6.7074 13.9296C6.51985 14.1171 6.26549 14.2224 6.00029 14.2224C5.73508 14.2224 5.48072 14.1171 5.29317 13.9296L1.81498 10.4514L1.81445 10.4508L1.8099 10.4463C0.698546 9.33496 0.0742188 7.82765 0.0742188 6.25596C0.0742188 4.68427 0.698546 3.17695 1.8099 2.06559ZM6.00024 4.92721C5.73654 4.92721 5.47875 5.00539 5.25948 5.1519C5.04022 5.29841 4.86931 5.50665 4.76839 5.75029C4.66748 5.99392 4.6411 6.26201 4.69255 6.52065C4.74399 6.77929 4.87098 7.01688 5.05745 7.20335C5.24392 7.38982 5.48147 7.51679 5.74011 7.56824C5.99875 7.61969 6.26686 7.59329 6.5105 7.49237C6.75413 7.39145 6.96238 7.22055 7.10889 7.00128C7.2554 6.78202 7.33358 6.52425 7.33358 6.26054C7.33358 6.08544 7.2991 5.91205 7.2321 5.75029C7.16509 5.58852 7.06689 5.44152 6.94307 5.31771C6.81926 5.1939 6.67227 5.09569 6.5105 5.02869C6.34873 4.96168 6.17534 4.92719 6.00024 4.92719V4.92721ZM3.33358 6.26054C3.33358 5.73312 3.48998 5.21754 3.783 4.77901C4.07602 4.34048 4.49251 3.99869 4.97978 3.79686C5.46705 3.59502 6.00323 3.54221 6.52051 3.6451C7.03779 3.748 7.51292 4.00198 7.88586 4.37492C8.2588 4.74786 8.51279 5.22301 8.61568 5.7403C8.71858 6.25758 8.66574 6.79376 8.46391 7.28103C8.26207 7.7683 7.9203 8.18477 7.48177 8.47778C7.04324 8.7708 6.52766 8.92721 6.00024 8.92721C5.65005 8.9272 5.30331 8.85822 4.97978 8.7242C4.65624 8.59019 4.36225 8.39376 4.11462 8.14614C3.867 7.89851 3.67059 7.60454 3.53658 7.28101C3.40257 6.95747 3.33362 6.61071 3.33362 6.26052L3.33358 6.26054Z"></path>
+					</svg>
+					U Petřin 2511/1, Praha 6
+				</a>
+			</div>
+		</header>
+				<div class="update-box-sub-header">
+					úterý 24.03.2026
+							<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads class="btn-favorite blue">
+								<i class="icon icon-heart-outline"></i> přidat do oblíbených
+							</a>
+				</div>
+<div class="box-content-table-cinema">
+	<div class="table-container">
+		<table class="cinema-table striped">
+			<tbody>
 						<tr>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1615728-pomocnice/prehled/" class="film-title-name">Pomocnice</a></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1513998-otec-matka-sestra-bratr/prehled/" class="film-title-name">Otec Matka Sestra Bratr</a></h3>							</td>
 							<td class="td-title">
 								<span title="Titulky">T</span>
 							</td>
@@ -10424,9 +8394,77 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
-							<td class="td-time">
-									17:30
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									18:30
 
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+						</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+	</section>
+
+	<section id="cinema-205" class="updated-box updated-box-cinema">
+		<header class="updated-box-header">
+			<h2>
+					<a href="/kino/1-praha/205-mestska-knihovna-v-praze-ustredni-knihovna/">Praha - Městská knihovna v Praze - Ústřední knihovna</a>
+			</h2>
+
+
+			<div class="updated-box-header-action updated-box-header-action-cinema">
+				<a href="tel: 222 113 555" class="btn-phone" title="tel.">
+					222 113 555
+				</a>
+				<a href="https://maps.google.cz/maps?rls=cs&q=50.0873831,14.4173879" title="Navigovat na adresu kina" class="btn-web">
+					<svg width="12" height="15" viewBox="0 0 12 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M9.24776 3.0084C8.38614 2.1486 7.21845 1.666 6.00122 1.66665C4.78399 1.66729 3.61681 2.15113 2.7561 3.01184C1.8954 3.87256 1.41156 5.03975 1.41093 6.25698C1.41029 7.47421 1.89292 8.64191 2.75273 9.50352L2.75667 9.50745L2.75724 9.50804L6.00024 12.751L9.24776 9.50352C9.67425 9.07705 10.0126 8.57075 10.2434 8.01353C10.4742 7.45631 10.593 6.85909 10.593 6.25596C10.593 5.65283 10.4742 5.05561 10.2434 4.49839C10.0126 3.94118 9.67425 3.43487 9.24776 3.0084V3.0084ZM1.8099 2.06559C2.36001 1.51451 3.01335 1.07725 3.73254 0.778789C4.45174 0.480329 5.22268 0.326518 6.00134 0.326172C6.78001 0.325827 7.55113 0.478953 8.27059 0.776775C8.99005 1.0746 9.64374 1.51127 10.1943 2.06187C10.7449 2.61247 11.1816 3.26618 11.4795 3.98564C11.7773 4.70509 11.9304 5.4762 11.9301 6.25486C11.9297 7.03353 11.7759 7.80449 11.4775 8.52368C11.179 9.24288 10.7417 9.8962 10.1906 10.4463L10.1861 10.4508L10.1855 10.4514L6.7074 13.9296C6.51985 14.1171 6.26549 14.2224 6.00029 14.2224C5.73508 14.2224 5.48072 14.1171 5.29317 13.9296L1.81498 10.4514L1.81445 10.4508L1.8099 10.4463C0.698546 9.33496 0.0742188 7.82765 0.0742188 6.25596C0.0742188 4.68427 0.698546 3.17695 1.8099 2.06559ZM6.00024 4.92721C5.73654 4.92721 5.47875 5.00539 5.25948 5.1519C5.04022 5.29841 4.86931 5.50665 4.76839 5.75029C4.66748 5.99392 4.6411 6.26201 4.69255 6.52065C4.74399 6.77929 4.87098 7.01688 5.05745 7.20335C5.24392 7.38982 5.48147 7.51679 5.74011 7.56824C5.99875 7.61969 6.26686 7.59329 6.5105 7.49237C6.75413 7.39145 6.96238 7.22055 7.10889 7.00128C7.2554 6.78202 7.33358 6.52425 7.33358 6.26054C7.33358 6.08544 7.2991 5.91205 7.2321 5.75029C7.16509 5.58852 7.06689 5.44152 6.94307 5.31771C6.81926 5.1939 6.67227 5.09569 6.5105 5.02869C6.34873 4.96168 6.17534 4.92719 6.00024 4.92719V4.92721ZM3.33358 6.26054C3.33358 5.73312 3.48998 5.21754 3.783 4.77901C4.07602 4.34048 4.49251 3.99869 4.97978 3.79686C5.46705 3.59502 6.00323 3.54221 6.52051 3.6451C7.03779 3.748 7.51292 4.00198 7.88586 4.37492C8.2588 4.74786 8.51279 5.22301 8.61568 5.7403C8.71858 6.25758 8.66574 6.79376 8.46391 7.28103C8.26207 7.7683 7.9203 8.18477 7.48177 8.47778C7.04324 8.7708 6.52766 8.92721 6.00024 8.92721C5.65005 8.9272 5.30331 8.85822 4.97978 8.7242C4.65624 8.59019 4.36225 8.39376 4.11462 8.14614C3.867 7.89851 3.67059 7.60454 3.53658 7.28101C3.40257 6.95747 3.33362 6.61071 3.33362 6.26052L3.33358 6.26054Z"></path>
+					</svg>
+					Mariánské nám. 98/1, Praha 1
+				</a>
+			</div>
+		</header>
+				<div class="update-box-sub-header">
+					úterý 24.03.2026
+							<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads class="btn-favorite blue">
+								<i class="icon icon-heart-outline"></i> přidat do oblíbených
+							</a>
+				</div>
+<div class="box-content-table-cinema">
+	<div class="table-container">
+		<table class="cinema-table striped">
+			<tbody>
+						<tr>
+							<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1565316-ctyri-matky/prehled/" class="film-title-name">Čtyři matky</a></h3>							</td>
+							<td class="td-title">
+								<span title="Titulky">T</span>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									16:00
+
+							</td>
+							<td>
 							</td>
 							<td>
 							</td>
@@ -10441,8 +8479,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						</tr>
 						<tr>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1767223-stur/prehled/" class="film-title-name">Štúr</a></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1580027-hamnet/prehled/" class="film-title-name">Hamnet</a></h3>							</td>
 							<td class="td-title">
+								<span title="Titulky">T</span>
 							</td>
 							<td>
 							</td>
@@ -10460,11 +8499,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
-							<td>
-							</td>
-							<td class="td-time">
-									20:00
+							<td class="td-time td-time-old">
+									19:00
 
+							</td>
+							<td>
 							</td>
 							<td>
 							</td>
@@ -10497,7 +8536,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			</div>
 		</header>
 				<div class="update-box-sub-header">
-					pondělí 23.02.2026
+					úterý 24.03.2026
 							<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads class="btn-favorite blue">
 								<i class="icon icon-heart-outline"></i> přidat do oblíbených
 							</a>
@@ -10508,39 +8547,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			<tbody>
 						<tr>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1558529-neporazitelni/prehled/" class="film-title-name">Neporazitelní</a></h3>							</td>
-							<td class="td-title">
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time">
-									19:30
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1513998-otec-matka-sestra-bratr/prehled/" class="film-title-name">Otec Matka Sestra Bratr</a></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1536818-otec/prehled/" class="film-title-name">Otec</a></h3>							</td>
 							<td class="td-title">
 								<span title="Titulky">T</span>
 							</td>
@@ -10556,11 +8563,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
-							<td class="td-time">
-									17:30
-
-							</td>
 							<td>
+							</td>
+							<td class="td-time td-time-old">
+									18:00
+
 							</td>
 							<td>
 							</td>
@@ -10573,7 +8580,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						</tr>
 						<tr>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1684812-svihaci/prehled/" class="film-title-name">Šviháci</a></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1773198-poberta/prehled/" class="film-title-name">Poberta</a></h3>							</td>
 							<td class="td-title">
 							</td>
 							<td>
@@ -10584,19 +8591,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
 							<td class="td-time td-time-old">
-									15:00
+									20:00
 
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
 							</td>
 							<td>
 							</td>
@@ -10629,7 +8636,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			</div>
 		</header>
 				<div class="update-box-sub-header">
-					pondělí 23.02.2026
+					úterý 24.03.2026
 							<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads class="btn-favorite blue">
 								<i class="icon icon-heart-outline"></i> přidat do oblíbených
 							</a>
@@ -10639,65 +8646,26 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 		<table class="cinema-table striped">
 			<tbody>
 						<tr>
-							<td class="name with-icon">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/286594-avatar-ohen-a-popel/prehled/" class="film-title-name">Avatar: Oheň a popel</a></h3>								<span class="cinema-icon tooltip cinema-icon-dolby-atmos" data-tippy-content="Dolby Atmos sál">Dolby Atmos sál</span>
-							</td>
+							<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/286594-avatar-ohen-a-popel/prehled/" class="film-title-name">Avatar: Oheň a popel</a></h3>							</td>
 							<td class="td-title">
 								<span title="Dabing">D, </span>
 								<span title="3D projekce">3D</span>
 							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
 							<td class="td-time td-time-old">
-									10:00
-
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-time-old">
-									13:45
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="http://www.premierecinemas.cz/vstupenky/151565/"data-no-ads target="_blank" data-ga-event="cinema-premierecinemas_cz|cinema|external">20:15</a>
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name with-icon">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1596124-bourlive-vysiny/prehled/" class="film-title-name">Bouřlivé výšiny</a></h3>								<span class="cinema-icon tooltip cinema-icon-dolby-atmos" data-tippy-content="Dolby Atmos sál">Dolby Atmos sál</span>
-							</td>
-							<td class="td-title">
-								<span title="Titulky">T</span>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="http://www.premierecinemas.cz/vstupenky/151558/"data-no-ads target="_blank" data-ga-event="cinema-premierecinemas_cz|cinema|external">17:30</a>
+									17:30
 
 							</td>
 							<td>
@@ -10713,46 +8681,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						</tr>
 						<tr>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1551219-blaznivy-marsupilami/prehled/" class="film-title-name">Bláznivý Marsupilami</a></h3>							</td>
-							<td class="td-title">
-								<span title="Dabing">D</span>
-							</td>
-							<td class="td-time td-time-old">
-									11:20
-
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-time-old">
-									13:20
-
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-time-old">
-									15:20
-
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="http://www.premierecinemas.cz/vstupenky/151557/"data-no-ads target="_blank" data-ga-event="cinema-premierecinemas_cz|cinema|external">17:20</a>
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1675070-dream-team/prehled/" class="film-title-name">Dream Team</a></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/1810726-jenicek-a-marenka-strazci-kouzel/prehled/" class="film-title-name">Jeníček a Mařenka: Strážci kouzel</a></h3>							</td>
 							<td class="td-title">
 								<span title="Dabing">D</span>
 							</td>
@@ -10764,111 +8693,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="http://www.premierecinemas.cz/vstupenky/151563/"data-no-ads target="_blank" data-ga-event="cinema-premierecinemas_cz|cinema|external">19:30</a>
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1636787-kdyz-se-zhasne/prehled/" class="film-title-name">Když se zhasne</a></h3>							</td>
-							<td class="td-title">
-								<span title="Dabing">D</span>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="http://www.premierecinemas.cz/vstupenky/151559/"data-no-ads target="_blank" data-ga-event="cinema-premierecinemas_cz|cinema|external">17:50</a>
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="http://www.premierecinemas.cz/vstupenky/151564/"data-no-ads target="_blank" data-ga-event="cinema-premierecinemas_cz|cinema|external">20:00</a>
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1669709-mazlicci-v-prusvihu/prehled/" class="film-title-name">Mazlíčci v průšvihu</a></h3>							</td>
-							<td class="td-title">
-								<span title="Dabing">D</span>
-							</td>
 							<td class="td-time td-time-old">
-									10:10
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1638669-nejlepsi-z-nejlepsich-goat/prehled/" class="film-title-name">Nejlepší z nejlepších: GOAT</a></h3>							</td>
-							<td class="td-title">
-								<span title="Dabing">D</span>
-							</td>
-							<td class="td-time td-time-old">
-									10:40
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-time-old">
-									15:40
+									15:10
 
 							</td>
 							<td>
@@ -10888,42 +8714,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						</tr>
 						<tr>
 							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1395444-parazit-z-chladaku/prehled/" class="film-title-name">Parazit z chlaďáku</a></h3>							</td>
-							<td class="td-title">
-								<span title="Titulky">T</span>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="http://www.premierecinemas.cz/vstupenky/151560/"data-no-ads target="_blank" data-ga-event="cinema-premierecinemas_cz|cinema|external">18:10</a>
-
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="http://www.premierecinemas.cz/vstupenky/151566/"data-no-ads target="_blank" data-ga-event="cinema-premierecinemas_cz|cinema|external">20:20</a>
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1706145-princezna-stokrat-jinak/prehled/" class="film-title-name">Princezna stokrát jinak</a></h3>							</td>
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1558319-na-skok-do-divociny/prehled/" class="film-title-name">Na skok do divočiny</a></h3>							</td>
 							<td class="td-title">
 								<span title="Dabing">D</span>
 							</td>
@@ -10932,39 +8723,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							<td>
 							</td>
 							<td class="td-time td-time-old">
-									13:10
+									13:50
 
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1399440-spongebob-piratske-dobrodruzstvi/prehled/" class="film-title-name">SpongeBob: Pirátské dobrodružství</a></h3>							</td>
-							<td class="td-title">
-								<span title="Dabing">D</span>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
 							</td>
 							<td>
 							</td>
@@ -10974,6 +8734,33 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 									16:00
 
 							</td>
+							<td class="td-time td-time-old">
+									17:20
+
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1773198-poberta/prehled/" class="film-title-name">Poberta</a></h3>							</td>
+							<td class="td-title">
+								<span title="Dabing">D</span>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
 							<td>
 							</td>
 							<td>
@@ -10983,6 +8770,51 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							<td>
 							</td>
 							<td>
+							</td>
+							<td class="td-time td-time-old">
+									19:40
+
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									21:20
+
+							</td>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1717489-prani-k-narozeninam-krtiny/prehled/" class="film-title-name">Přání k narozeninám: Křtiny</a></h3>							</td>
+							<td class="td-title">
+								<span title="Dabing">D</span>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									18:50
+
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									21:00
+
 							</td>
 							<td>
 							</td>
@@ -10993,20 +8825,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							<td class="td-title">
 								<span title="Dabing">D</span>
 							</td>
-							<td class="td-time td-time-old">
-									11:00
-
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
 							</td>
 							<td>
 							</td>
 							<td class="td-time td-time-old">
-									13:00
-
-							</td>
-							<td>
-							</td>
-							<td class="td-time td-time-old">
-									15:00
+									15:30
 
 							</td>
 							<td>
@@ -11026,30 +8854,59 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						</tr>
 						<tr>
 							<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1448507-vriskot-7/prehled/" class="film-title-name">Vřískot 7</a></h3>							</td>
+							<td class="td-title">
+								<span title="Titulky">T</span>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									21:30
+
+							</td>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td class="name">
 <h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1487258-zootropolis-mesto-zvirat-2/prehled/" class="film-title-name">Zootropolis: Město zvířat 2</a></h3>							</td>
 							<td class="td-title">
 								<span title="Dabing">D</span>
 							</td>
-							<td class="td-time td-time-old">
-									10:10
-
+							<td>
 							</td>
-							<td class="td-time td-time-old">
-									12:30
-
+							<td>
 							</td>
 							<td>
 							</td>
 							<td class="td-time td-time-old">
-									14:50
+									14:40
 
 							</td>
 							<td>
 							</td>
 							<td>
 							</td>
-							<td class="td-time td-buy-ticket">
-									<a href="http://www.premierecinemas.cz/vstupenky/151556/"data-no-ads target="_blank" data-ga-event="cinema-premierecinemas_cz|cinema|external">17:10</a>
+							<td class="td-time td-time-old">
+									17:00
 
 							</td>
 							<td>
@@ -11089,7 +8946,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			</div>
 		</header>
 				<div class="update-box-sub-header">
-					pondělí 23.02.2026
+					úterý 24.03.2026
 							<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads class="btn-favorite blue">
 								<i class="icon icon-heart-outline"></i> přidat do oblíbených
 							</a>
@@ -11098,39 +8955,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	<div class="table-container">
 		<table class="cinema-table striped">
 			<tbody>
-						<tr>
-							<td class="name">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1556980-citova-hodnota/prehled/" class="film-title-name">Citová hodnota</a></h3>							</td>
-							<td class="td-title">
-								<span title="Titulky">T</span>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td class="td-time">
-									17:00
-
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
 						<tr>
 							<td class="name">
 <h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1513998-otec-matka-sestra-bratr/prehled/" class="film-title-name">Otec Matka Sestra Bratr</a></h3>							</td>
@@ -11149,15 +8973,115 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</td>
 							<td>
 							</td>
+							<td class="td-time td-time-old">
+									17:30
+
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
 							<td>
 							</td>
 							<td>
 							</td>
 							<td>
 							</td>
-							<td class="td-time">
+						</tr>
+						<tr>
+							<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1018007-spasitel/prehled/" class="film-title-name">Spasitel</a></h3>							</td>
+							<td class="td-title">
+								<span title="Titulky">T</span>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
 									20:30
 
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+						</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+	</section>
+
+	<section id="cinema-2660" class="updated-box updated-box-cinema">
+		<header class="updated-box-header">
+			<h2>
+					<a href="/kino/1-praha/2660-rest-art/">Praha - Rest.Art</a>
+			</h2>
+
+
+			<div class="updated-box-header-action updated-box-header-action-cinema">
+				<a href="tel: 777 102 645" class="btn-phone" title="tel.">
+					777 102 645
+				</a>
+				<a href="https://maps.google.cz/maps?rls=cs&q=50.0591057,14.4198335" title="Navigovat na adresu kina" class="btn-web">
+					<svg width="12" height="15" viewBox="0 0 12 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M9.24776 3.0084C8.38614 2.1486 7.21845 1.666 6.00122 1.66665C4.78399 1.66729 3.61681 2.15113 2.7561 3.01184C1.8954 3.87256 1.41156 5.03975 1.41093 6.25698C1.41029 7.47421 1.89292 8.64191 2.75273 9.50352L2.75667 9.50745L2.75724 9.50804L6.00024 12.751L9.24776 9.50352C9.67425 9.07705 10.0126 8.57075 10.2434 8.01353C10.4742 7.45631 10.593 6.85909 10.593 6.25596C10.593 5.65283 10.4742 5.05561 10.2434 4.49839C10.0126 3.94118 9.67425 3.43487 9.24776 3.0084V3.0084ZM1.8099 2.06559C2.36001 1.51451 3.01335 1.07725 3.73254 0.778789C4.45174 0.480329 5.22268 0.326518 6.00134 0.326172C6.78001 0.325827 7.55113 0.478953 8.27059 0.776775C8.99005 1.0746 9.64374 1.51127 10.1943 2.06187C10.7449 2.61247 11.1816 3.26618 11.4795 3.98564C11.7773 4.70509 11.9304 5.4762 11.9301 6.25486C11.9297 7.03353 11.7759 7.80449 11.4775 8.52368C11.179 9.24288 10.7417 9.8962 10.1906 10.4463L10.1861 10.4508L10.1855 10.4514L6.7074 13.9296C6.51985 14.1171 6.26549 14.2224 6.00029 14.2224C5.73508 14.2224 5.48072 14.1171 5.29317 13.9296L1.81498 10.4514L1.81445 10.4508L1.8099 10.4463C0.698546 9.33496 0.0742188 7.82765 0.0742188 6.25596C0.0742188 4.68427 0.698546 3.17695 1.8099 2.06559ZM6.00024 4.92721C5.73654 4.92721 5.47875 5.00539 5.25948 5.1519C5.04022 5.29841 4.86931 5.50665 4.76839 5.75029C4.66748 5.99392 4.6411 6.26201 4.69255 6.52065C4.74399 6.77929 4.87098 7.01688 5.05745 7.20335C5.24392 7.38982 5.48147 7.51679 5.74011 7.56824C5.99875 7.61969 6.26686 7.59329 6.5105 7.49237C6.75413 7.39145 6.96238 7.22055 7.10889 7.00128C7.2554 6.78202 7.33358 6.52425 7.33358 6.26054C7.33358 6.08544 7.2991 5.91205 7.2321 5.75029C7.16509 5.58852 7.06689 5.44152 6.94307 5.31771C6.81926 5.1939 6.67227 5.09569 6.5105 5.02869C6.34873 4.96168 6.17534 4.92719 6.00024 4.92719V4.92721ZM3.33358 6.26054C3.33358 5.73312 3.48998 5.21754 3.783 4.77901C4.07602 4.34048 4.49251 3.99869 4.97978 3.79686C5.46705 3.59502 6.00323 3.54221 6.52051 3.6451C7.03779 3.748 7.51292 4.00198 7.88586 4.37492C8.2588 4.74786 8.51279 5.22301 8.61568 5.7403C8.71858 6.25758 8.66574 6.79376 8.46391 7.28103C8.26207 7.7683 7.9203 8.18477 7.48177 8.47778C7.04324 8.7708 6.52766 8.92721 6.00024 8.92721C5.65005 8.9272 5.30331 8.85822 4.97978 8.7242C4.65624 8.59019 4.36225 8.39376 4.11462 8.14614C3.867 7.89851 3.67059 7.60454 3.53658 7.28101C3.40257 6.95747 3.33362 6.61071 3.33362 6.26052L3.33358 6.26054Z"></path>
+					</svg>
+					Podolská 158/33, Praha 4 - Podolí
+				</a>
+			</div>
+		</header>
+				<div class="update-box-sub-header">
+					úterý 24.03.2026
+							<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads class="btn-favorite blue">
+								<i class="icon icon-heart-outline"></i> přidat do oblíbených
+							</a>
+				</div>
+<div class="box-content-table-cinema">
+	<div class="table-container">
+		<table class="cinema-table striped">
+			<tbody>
+						<tr>
+							<td class="name">
+<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/1755579-kapralova/prehled/" class="film-title-name">Kaprálová</a></h3>							</td>
+							<td class="td-title">
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td class="td-time td-time-old">
+									19:00
+
+							</td>
+							<td>
 							</td>
 							<td>
 							</td>
@@ -11197,8 +9121,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						<div class="footer-boxes">
 								<div class="footer-box-apps">
 									<h3>Download App</h3>
-									<a href="https://apps.apple.com/cz/app/id6755365206"><img src=&#47;&#47;static.pmgstatic.com&#47;assets&#47;images&#47;2b5f1f1793f6881e6e9326d2c21f9445&#47;appstore-cz.png width="114" height="38" alt=""></a>
-									<a href="https://play.google.com/store/apps/details?id=cz.csfd.csfdroid"><img src=&#47;&#47;static.pmgstatic.com&#47;assets&#47;images&#47;2b5f1f1793f6881e6e9326d2c21f9445&#47;googleplay-cz.png width="128" height="38" alt=""></a>
+									<a href="https://apps.apple.com/cz/app/id6755365206"><img src=&#47;&#47;static.pmgstatic.com&#47;assets&#47;images&#47;6aeb8871e0052a62b04d591a3f85e733&#47;appstore-cz.png width="114" height="38" alt=""></a>
+									<a href="https://play.google.com/store/apps/details?id=cz.csfd.csfdroid"><img src=&#47;&#47;static.pmgstatic.com&#47;assets&#47;images&#47;6aeb8871e0052a62b04d591a3f85e733&#47;googleplay-cz.png width="128" height="38" alt=""></a>
 								</div>
 
 							<div class="footer-box-social">
@@ -11224,9 +9148,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						<div class="footer-action-timezones">
 							<h3>Výběr časového pásma</h3>
 							<form action="/kino/1-praha/" method="post" id="frm-timezoneForm">
-								<select name="timezone" data-auto-submit-form="true" id="frm-timezoneForm-timezone" class="updated-select"><option value="africa/abidjan">Africa/Abidjan</option><option value="africa/accra">Africa/Accra</option><option value="africa/addis_ababa">Africa/Addis Ababa</option><option value="africa/algiers">Africa/Algiers</option><option value="africa/asmara">Africa/Asmara</option><option value="africa/bamako">Africa/Bamako</option><option value="africa/bangui">Africa/Bangui</option><option value="africa/banjul">Africa/Banjul</option><option value="africa/bissau">Africa/Bissau</option><option value="africa/blantyre">Africa/Blantyre</option><option value="africa/brazzaville">Africa/Brazzaville</option><option value="africa/bujumbura">Africa/Bujumbura</option><option value="africa/cairo">Africa/Cairo</option><option value="africa/casablanca">Africa/Casablanca</option><option value="africa/ceuta">Africa/Ceuta</option><option value="africa/conakry">Africa/Conakry</option><option value="africa/dakar">Africa/Dakar</option><option value="africa/dar_es_salaam">Africa/Dar es Salaam</option><option value="africa/djibouti">Africa/Djibouti</option><option value="africa/douala">Africa/Douala</option><option value="africa/el_aaiun">Africa/El Aaiun</option><option value="africa/freetown">Africa/Freetown</option><option value="africa/gaborone">Africa/Gaborone</option><option value="africa/harare">Africa/Harare</option><option value="africa/johannesburg">Africa/Johannesburg</option><option value="africa/juba">Africa/Juba</option><option value="africa/kampala">Africa/Kampala</option><option value="africa/khartoum">Africa/Khartoum</option><option value="africa/kigali">Africa/Kigali</option><option value="africa/kinshasa">Africa/Kinshasa</option><option value="africa/lagos">Africa/Lagos</option><option value="africa/libreville">Africa/Libreville</option><option value="africa/lome">Africa/Lome</option><option value="africa/luanda">Africa/Luanda</option><option value="africa/lubumbashi">Africa/Lubumbashi</option><option value="africa/lusaka">Africa/Lusaka</option><option value="africa/malabo">Africa/Malabo</option><option value="africa/maputo">Africa/Maputo</option><option value="africa/maseru">Africa/Maseru</option><option value="africa/mbabane">Africa/Mbabane</option><option value="africa/mogadishu">Africa/Mogadishu</option><option value="africa/monrovia">Africa/Monrovia</option><option value="africa/nairobi">Africa/Nairobi</option><option value="africa/ndjamena">Africa/Ndjamena</option><option value="africa/niamey">Africa/Niamey</option><option value="africa/nouakchott">Africa/Nouakchott</option><option value="africa/ouagadougou">Africa/Ouagadougou</option><option value="africa/porto-novo">Africa/Porto-Novo</option><option value="africa/sao_tome">Africa/Sao Tome</option><option value="africa/tripoli">Africa/Tripoli</option><option value="africa/tunis">Africa/Tunis</option><option value="africa/windhoek">Africa/Windhoek</option><option value="america/adak">America/Adak</option><option value="america/anchorage">America/Anchorage</option><option value="america/anguilla">America/Anguilla</option><option value="america/antigua">America/Antigua</option><option value="america/araguaina">America/Araguaina</option><option value="america/argentina/buenos_aires">America/Argentina/Buenos Aires</option><option value="america/argentina/catamarca">America/Argentina/Catamarca</option><option value="america/argentina/cordoba">America/Argentina/Cordoba</option><option value="america/argentina/jujuy">America/Argentina/Jujuy</option><option value="america/argentina/la_rioja">America/Argentina/La Rioja</option><option value="america/argentina/mendoza">America/Argentina/Mendoza</option><option value="america/argentina/rio_gallegos">America/Argentina/Rio Gallegos</option><option value="america/argentina/salta">America/Argentina/Salta</option><option value="america/argentina/san_juan">America/Argentina/San Juan</option><option value="america/argentina/san_luis">America/Argentina/San Luis</option><option value="america/argentina/tucuman">America/Argentina/Tucuman</option><option value="america/argentina/ushuaia">America/Argentina/Ushuaia</option><option value="america/aruba">America/Aruba</option><option value="america/asuncion">America/Asuncion</option><option value="america/atikokan">America/Atikokan</option><option value="america/bahia">America/Bahia</option><option value="america/bahia_banderas">America/Bahia Banderas</option><option value="america/barbados">America/Barbados</option><option value="america/belem">America/Belem</option><option value="america/belize">America/Belize</option><option value="america/blanc-sablon">America/Blanc-Sablon</option><option value="america/boa_vista">America/Boa Vista</option><option value="america/bogota">America/Bogota</option><option value="america/boise">America/Boise</option><option value="america/cambridge_bay">America/Cambridge Bay</option><option value="america/campo_grande">America/Campo Grande</option><option value="america/cancun">America/Cancun</option><option value="america/caracas">America/Caracas</option><option value="america/cayenne">America/Cayenne</option><option value="america/cayman">America/Cayman</option><option value="america/chicago">America/Chicago</option><option value="america/chihuahua">America/Chihuahua</option><option value="america/ciudad_juarez">America/Ciudad Juarez</option><option value="america/costa_rica">America/Costa Rica</option><option value="america/creston">America/Creston</option><option value="america/cuiaba">America/Cuiaba</option><option value="america/curacao">America/Curacao</option><option value="america/dawson">America/Dawson</option><option value="america/dawson_creek">America/Dawson Creek</option><option value="america/denver">America/Denver</option><option value="america/detroit">America/Detroit</option><option value="america/dominica">America/Dominica</option><option value="america/edmonton">America/Edmonton</option><option value="america/eirunepe">America/Eirunepe</option><option value="america/el_salvador">America/El Salvador</option><option value="america/fort_nelson">America/Fort Nelson</option><option value="america/fortaleza">America/Fortaleza</option><option value="america/glace_bay">America/Glace Bay</option><option value="america/goose_bay">America/Goose Bay</option><option value="america/grand_turk">America/Grand Turk</option><option value="america/grenada">America/Grenada</option><option value="america/guadeloupe">America/Guadeloupe</option><option value="america/guatemala">America/Guatemala</option><option value="america/guayaquil">America/Guayaquil</option><option value="america/guyana">America/Guyana</option><option value="america/halifax">America/Halifax</option><option value="america/havana">America/Havana</option><option value="america/hermosillo">America/Hermosillo</option><option value="america/indiana/indianapolis">America/Indiana/Indianapolis</option><option value="america/indiana/knox">America/Indiana/Knox</option><option value="america/indiana/marengo">America/Indiana/Marengo</option><option value="america/indiana/petersburg">America/Indiana/Petersburg</option><option value="america/indiana/tell_city">America/Indiana/Tell City</option><option value="america/indiana/vevay">America/Indiana/Vevay</option><option value="america/indiana/vincennes">America/Indiana/Vincennes</option><option value="america/indiana/winamac">America/Indiana/Winamac</option><option value="america/inuvik">America/Inuvik</option><option value="america/iqaluit">America/Iqaluit</option><option value="america/jamaica">America/Jamaica</option><option value="america/juneau">America/Juneau</option><option value="america/kentucky/louisville">America/Kentucky/Louisville</option><option value="america/kentucky/monticello">America/Kentucky/Monticello</option><option value="america/kralendijk">America/Kralendijk</option><option value="america/la_paz">America/La Paz</option><option value="america/lima">America/Lima</option><option value="america/los_angeles">America/Los Angeles</option><option value="america/lower_princes">America/Lower Princes</option><option value="america/maceio">America/Maceio</option><option value="america/managua">America/Managua</option><option value="america/manaus">America/Manaus</option><option value="america/marigot">America/Marigot</option><option value="america/martinique">America/Martinique</option><option value="america/matamoros">America/Matamoros</option><option value="america/mazatlan">America/Mazatlan</option><option value="america/menominee">America/Menominee</option><option value="america/merida">America/Merida</option><option value="america/metlakatla">America/Metlakatla</option><option value="america/mexico_city">America/Mexico City</option><option value="america/miquelon">America/Miquelon</option><option value="america/moncton">America/Moncton</option><option value="america/monterrey">America/Monterrey</option><option value="america/montevideo">America/Montevideo</option><option value="america/montserrat">America/Montserrat</option><option value="america/nassau">America/Nassau</option><option value="america/new_york">America/New York</option><option value="america/nome">America/Nome</option><option value="america/north_dakota/beulah">America/North Dakota/Beulah</option><option value="america/north_dakota/center">America/North Dakota/Center</option><option value="america/north_dakota/new_salem">America/North Dakota/New Salem</option><option value="america/nuuk">America/Nuuk</option><option value="america/ojinaga">America/Ojinaga</option><option value="america/panama">America/Panama</option><option value="america/paramaribo">America/Paramaribo</option><option value="america/phoenix">America/Phoenix</option><option value="america/port-au-prince">America/Port-au-Prince</option><option value="america/port_of_spain">America/Port of Spain</option><option value="america/porto_velho">America/Porto Velho</option><option value="america/puerto_rico">America/Puerto Rico</option><option value="america/punta_arenas">America/Punta Arenas</option><option value="america/rankin_inlet">America/Rankin Inlet</option><option value="america/recife">America/Recife</option><option value="america/regina">America/Regina</option><option value="america/resolute">America/Resolute</option><option value="america/rio_branco">America/Rio Branco</option><option value="america/santarem">America/Santarem</option><option value="america/santiago">America/Santiago</option><option value="america/santo_domingo">America/Santo Domingo</option><option value="america/sao_paulo">America/Sao Paulo</option><option value="america/scoresbysund">America/Scoresbysund</option><option value="america/sitka">America/Sitka</option><option value="america/st_barthelemy">America/St Barthelemy</option><option value="america/st_johns">America/St. John's</option><option value="america/st_kitts">America/St. Kitts</option><option value="america/st_lucia">America/St. Lucia</option><option value="america/st_thomas">America/St. Thomas</option><option value="america/st_vincent">America/St. Vincent</option><option value="america/swift_current">America/Swift Current</option><option value="america/tegucigalpa">America/Tegucigalpa</option><option value="america/thule">America/Thule</option><option value="america/tijuana">America/Tijuana</option><option value="america/toronto">America/Toronto</option><option value="america/tortola">America/Tortola</option><option value="america/vancouver">America/Vancouver</option><option value="america/whitehorse">America/Whitehorse</option><option value="america/winnipeg">America/Winnipeg</option><option value="america/yakutat">America/Yakutat</option><option value="america/yellowknife">America/Yellowknife</option><option value="antarctica/syowa">Antarctica/Syowa</option><option value="arctic/longyearbyen">Arctic/Longyearbyen</option><option value="asia/aden">Asia/Aden</option><option value="asia/almaty">Asia/Almaty</option><option value="asia/amman">Asia/Amman</option><option value="asia/anadyr">Asia/Anadyr</option><option value="asia/aqtau">Asia/Aqtau</option><option value="asia/aqtobe">Asia/Aqtobe</option><option value="asia/ashgabat">Asia/Ashgabat</option><option value="asia/atyrau">Asia/Atyrau</option><option value="asia/baghdad">Asia/Baghdad</option><option value="asia/bahrain">Asia/Bahrain</option><option value="asia/baku">Asia/Baku</option><option value="asia/bangkok">Asia/Bangkok</option><option value="asia/barnaul">Asia/Barnaul</option><option value="asia/beirut">Asia/Beirut</option><option value="asia/bishkek">Asia/Bishkek</option><option value="asia/brunei">Asia/Brunei</option><option value="asia/chita">Asia/Chita</option><option value="asia/choibalsan">Asia/Choibalsan</option><option value="asia/colombo">Asia/Colombo</option><option value="asia/damascus">Asia/Damascus</option><option value="asia/dhaka">Asia/Dhaka</option><option value="asia/dili">Asia/Dili</option><option value="asia/dubai">Asia/Dubai</option><option value="asia/dushanbe">Asia/Dushanbe</option><option value="asia/famagusta">Asia/Famagusta</option><option value="asia/gaza">Asia/Gaza</option><option value="asia/hebron">Asia/Hebron</option><option value="asia/ho_chi_minh">Asia/Ho Chi Minh</option><option value="asia/hong_kong">Asia/Hong Kong</option><option value="asia/hovd">Asia/Hovd</option><option value="asia/irkutsk">Asia/Irkutsk</option><option value="asia/jakarta">Asia/Jakarta</option><option value="asia/jayapura">Asia/Jayapura</option><option value="asia/jerusalem">Asia/Jerusalem</option><option value="asia/kabul">Asia/Kabul</option><option value="asia/kamchatka">Asia/Kamchatka</option><option value="asia/karachi">Asia/Karachi</option><option value="asia/kathmandu">Asia/Kathmandu</option><option value="asia/kolkata">Asia/Kolkata</option><option value="asia/krasnoyarsk">Asia/Krasnoyarsk</option><option value="asia/kuala_lumpur">Asia/Kuala Lumpur</option><option value="asia/kuching">Asia/Kuching</option><option value="asia/kuwait">Asia/Kuwait</option><option value="asia/macau">Asia/Macau</option><option value="asia/magadan">Asia/Magadan</option><option value="asia/makassar">Asia/Makassar</option><option value="asia/manila">Asia/Manila</option><option value="asia/muscat">Asia/Muscat</option><option value="asia/nicosia">Asia/Nicosia</option><option value="asia/novokuznetsk">Asia/Novokuznetsk</option><option value="asia/novosibirsk">Asia/Novosibirsk</option><option value="asia/omsk">Asia/Omsk</option><option value="asia/oral">Asia/Oral</option><option value="asia/phnom_penh">Asia/Phnom Penh</option><option value="asia/pontianak">Asia/Pontianak</option><option value="asia/pyongyang">Asia/Pyongyang</option><option value="asia/qatar">Asia/Qatar</option><option value="asia/qostanay">Asia/Qostanay</option><option value="asia/qyzylorda">Asia/Qyzylorda</option><option value="asia/riyadh">Asia/Riyadh</option><option value="asia/sakhalin">Asia/Sakhalin</option><option value="asia/samarkand">Asia/Samarkand</option><option value="asia/seoul">Asia/Seoul</option><option value="asia/shanghai">Asia/Shanghai</option><option value="asia/singapore">Asia/Singapore</option><option value="asia/taipei">Asia/Taipei</option><option value="asia/tashkent">Asia/Tashkent</option><option value="asia/tbilisi">Asia/Tbilisi</option><option value="asia/tehran">Asia/Tehran</option><option value="asia/thimphu">Asia/Thimphu</option><option value="asia/tokyo">Asia/Tokyo</option><option value="asia/tomsk">Asia/Tomsk</option><option value="asia/ulaanbaatar">Asia/Ulaanbaatar</option><option value="asia/urumqi">Asia/Urumqi</option><option value="asia/vientiane">Asia/Vientiane</option><option value="asia/vladivostok">Asia/Vladivostok</option><option value="asia/yakutsk">Asia/Yakutsk</option><option value="asia/yangon">Asia/Yangon</option><option value="asia/yekaterinburg">Asia/Yekaterinburg</option><option value="asia/yerevan">Asia/Yerevan</option><option value="atlantic/azores">Atlantic/Azores</option><option value="atlantic/bermuda">Atlantic/Bermuda</option><option value="atlantic/canary">Atlantic/Canary</option><option value="atlantic/cape_verde">Atlantic/Cape Verde</option><option value="atlantic/faroe">Atlantic/Faroe</option><option value="atlantic/madeira">Atlantic/Madeira</option><option value="atlantic/reykjavik">Atlantic/Reykjavik</option><option value="atlantic/south_georgia">Atlantic/South Georgia</option><option value="atlantic/st_helena">Atlantic/St Helena</option><option value="atlantic/stanley">Atlantic/Stanley</option><option value="australia/adelaide">Australia/Adelaide</option><option value="australia/brisbane">Australia/Brisbane</option><option value="australia/broken_hill">Australia/Broken Hill</option><option value="australia/darwin">Australia/Darwin</option><option value="australia/eucla">Australia/Eucla</option><option value="australia/hobart">Australia/Hobart</option><option value="australia/lindeman">Australia/Lindeman</option><option value="australia/lord_howe">Australia/Lord Howe</option><option value="australia/melbourne">Australia/Melbourne</option><option value="australia/perth">Australia/Perth</option><option value="australia/sydney">Australia/Sydney</option><option value="europe/amsterdam">Europe/Amsterdam</option><option value="europe/andorra">Europe/Andorra</option><option value="europe/astrakhan">Europe/Astrakhan</option><option value="europe/athens">Europe/Athens</option><option value="europe/belgrade">Europe/Belgrade</option><option value="europe/berlin">Europe/Berlin</option><option value="europe/bratislava">Europe/Bratislava</option><option value="europe/brussels">Europe/Brussels</option><option value="europe/bucharest">Europe/Bucharest</option><option value="europe/budapest">Europe/Budapest</option><option value="europe/chisinau">Europe/Chisinau</option><option value="europe/copenhagen">Europe/Copenhagen</option><option value="europe/dublin">Europe/Dublin</option><option value="europe/gibraltar">Europe/Gibraltar</option><option value="europe/guernsey">Europe/Guernsey</option><option value="europe/helsinki">Europe/Helsinki</option><option value="europe/isle_of_man">Europe/Isle of Man</option><option value="europe/istanbul">Europe/Istanbul</option><option value="europe/jersey">Europe/Jersey</option><option value="europe/kaliningrad">Europe/Kaliningrad</option><option value="europe/kirov">Europe/Kirov</option><option value="europe/kyiv">Europe/Kyiv</option><option value="europe/lisbon">Europe/Lisbon</option><option value="europe/ljubljana">Europe/Ljubljana</option><option value="europe/london">Europe/London</option><option value="europe/luxembourg">Europe/Luxembourg</option><option value="europe/madrid">Europe/Madrid</option><option value="europe/malta">Europe/Malta</option><option value="europe/mariehamn">Europe/Mariehamn</option><option value="europe/minsk">Europe/Minsk</option><option value="europe/monaco">Europe/Monaco</option><option value="europe/moscow">Europe/Moscow</option><option value="europe/oslo">Europe/Oslo</option><option value="europe/paris">Europe/Paris</option><option value="europe/podgorica">Europe/Podgorica</option><option value="europe/prague" selected>Europe/Prague</option><option value="europe/riga">Europe/Riga</option><option value="europe/rome">Europe/Rome</option><option value="europe/samara">Europe/Samara</option><option value="europe/san_marino">Europe/San Marino</option><option value="europe/sarajevo">Europe/Sarajevo</option><option value="europe/saratov">Europe/Saratov</option><option value="europe/simferopol">Europe/Simferopol</option><option value="europe/skopje">Europe/Skopje</option><option value="europe/sofia">Europe/Sofia</option><option value="europe/stockholm">Europe/Stockholm</option><option value="europe/tallinn">Europe/Tallinn</option><option value="europe/tirane">Europe/Tirane</option><option value="europe/ulyanovsk">Europe/Ulyanovsk</option><option value="europe/vaduz">Europe/Vaduz</option><option value="europe/vatican">Europe/Vatican</option><option value="europe/vienna">Europe/Vienna</option><option value="europe/vilnius">Europe/Vilnius</option><option value="europe/volgograd">Europe/Volgograd</option><option value="europe/warsaw">Europe/Warsaw</option><option value="europe/zagreb">Europe/Zagreb</option><option value="europe/zurich">Europe/Zurich</option><option value="indian/antananarivo">Indian/Antananarivo</option><option value="indian/chagos">Indian/Chagos</option><option value="indian/christmas">Indian/Christmas</option><option value="indian/cocos">Indian/Cocos</option><option value="indian/comoro">Indian/Comoro</option><option value="indian/kerguelen">Indian/Kerguelen</option><option value="indian/mahe">Indian/Mahe</option><option value="indian/maldives">Indian/Maldives</option><option value="indian/mauritius">Indian/Mauritius</option><option value="indian/mayotte">Indian/Mayotte</option><option value="indian/reunion">Indian/Reunion</option><option value="pacific/apia">Pacific/Apia</option><option value="pacific/auckland">Pacific/Auckland</option><option value="pacific/bougainville">Pacific/Bougainville</option><option value="pacific/chatham">Pacific/Chatham</option><option value="pacific/chuuk">Pacific/Chuuk</option><option value="pacific/easter">Pacific/Easter</option><option value="pacific/efate">Pacific/Efate</option><option value="pacific/fakaofo">Pacific/Fakaofo</option><option value="pacific/fiji">Pacific/Fiji</option><option value="pacific/funafuti">Pacific/Funafuti</option><option value="pacific/galapagos">Pacific/Galapagos</option><option value="pacific/gambier">Pacific/Gambier</option><option value="pacific/guadalcanal">Pacific/Guadalcanal</option><option value="pacific/guam">Pacific/Guam</option><option value="pacific/honolulu">Pacific/Honolulu</option><option value="pacific/kanton">Pacific/Kanton</option><option value="pacific/kiritimati">Pacific/Kiritimati</option><option value="pacific/kosrae">Pacific/Kosrae</option><option value="pacific/kwajalein">Pacific/Kwajalein</option><option value="pacific/majuro">Pacific/Majuro</option><option value="pacific/marquesas">Pacific/Marquesas</option><option value="pacific/midway">Pacific/Midway</option><option value="pacific/nauru">Pacific/Nauru</option><option value="pacific/niue">Pacific/Niue</option><option value="pacific/norfolk">Pacific/Norfolk</option><option value="pacific/noumea">Pacific/Noumea</option><option value="pacific/pago_pago">Pacific/Pago Pago</option><option value="pacific/palau">Pacific/Palau</option><option value="pacific/pitcairn">Pacific/Pitcairn</option><option value="pacific/pohnpei">Pacific/Pohnpei</option><option value="pacific/port_moresby">Pacific/Port Moresby</option><option value="pacific/rarotonga">Pacific/Rarotonga</option><option value="pacific/saipan">Pacific/Saipan</option><option value="pacific/tahiti">Pacific/Tahiti</option><option value="pacific/tarawa">Pacific/Tarawa</option><option value="pacific/tongatapu">Pacific/Tongatapu</option><option value="pacific/wake">Pacific/Wake</option><option value="pacific/wallis">Pacific/Wallis</option></select>
+								<select name="timezone" data-auto-submit-form="true" id="frm-timezoneForm-timezone" class="updated-select"><option value="africa/abidjan">Africa/Abidjan</option><option value="africa/accra">Africa/Accra</option><option value="africa/addis_ababa">Africa/Addis Ababa</option><option value="africa/algiers">Africa/Algiers</option><option value="africa/asmara">Africa/Asmara</option><option value="africa/bamako">Africa/Bamako</option><option value="africa/bangui">Africa/Bangui</option><option value="africa/banjul">Africa/Banjul</option><option value="africa/bissau">Africa/Bissau</option><option value="africa/blantyre">Africa/Blantyre</option><option value="africa/brazzaville">Africa/Brazzaville</option><option value="africa/bujumbura">Africa/Bujumbura</option><option value="africa/cairo">Africa/Cairo</option><option value="africa/casablanca">Africa/Casablanca</option><option value="africa/ceuta">Africa/Ceuta</option><option value="africa/conakry">Africa/Conakry</option><option value="africa/dakar">Africa/Dakar</option><option value="africa/dar_es_salaam">Africa/Dar es Salaam</option><option value="africa/djibouti">Africa/Djibouti</option><option value="africa/douala">Africa/Douala</option><option value="africa/el_aaiun">Africa/El Aaiun</option><option value="africa/freetown">Africa/Freetown</option><option value="africa/gaborone">Africa/Gaborone</option><option value="africa/harare">Africa/Harare</option><option value="africa/johannesburg">Africa/Johannesburg</option><option value="africa/juba">Africa/Juba</option><option value="africa/kampala">Africa/Kampala</option><option value="africa/khartoum">Africa/Khartoum</option><option value="africa/kigali">Africa/Kigali</option><option value="africa/kinshasa">Africa/Kinshasa</option><option value="africa/lagos">Africa/Lagos</option><option value="africa/libreville">Africa/Libreville</option><option value="africa/lome">Africa/Lome</option><option value="africa/luanda">Africa/Luanda</option><option value="africa/lubumbashi">Africa/Lubumbashi</option><option value="africa/lusaka">Africa/Lusaka</option><option value="africa/malabo">Africa/Malabo</option><option value="africa/maputo">Africa/Maputo</option><option value="africa/maseru">Africa/Maseru</option><option value="africa/mbabane">Africa/Mbabane</option><option value="africa/mogadishu">Africa/Mogadishu</option><option value="africa/monrovia">Africa/Monrovia</option><option value="africa/nairobi">Africa/Nairobi</option><option value="africa/ndjamena">Africa/Ndjamena</option><option value="africa/niamey">Africa/Niamey</option><option value="africa/nouakchott">Africa/Nouakchott</option><option value="africa/ouagadougou">Africa/Ouagadougou</option><option value="africa/porto-novo">Africa/Porto-Novo</option><option value="africa/sao_tome">Africa/Sao Tome</option><option value="africa/tripoli">Africa/Tripoli</option><option value="africa/tunis">Africa/Tunis</option><option value="africa/windhoek">Africa/Windhoek</option><option value="america/adak">America/Adak</option><option value="america/anchorage">America/Anchorage</option><option value="america/anguilla">America/Anguilla</option><option value="america/antigua">America/Antigua</option><option value="america/araguaina">America/Araguaina</option><option value="america/argentina/buenos_aires">America/Argentina/Buenos Aires</option><option value="america/argentina/catamarca">America/Argentina/Catamarca</option><option value="america/argentina/cordoba">America/Argentina/Cordoba</option><option value="america/argentina/jujuy">America/Argentina/Jujuy</option><option value="america/argentina/la_rioja">America/Argentina/La Rioja</option><option value="america/argentina/mendoza">America/Argentina/Mendoza</option><option value="america/argentina/rio_gallegos">America/Argentina/Rio Gallegos</option><option value="america/argentina/salta">America/Argentina/Salta</option><option value="america/argentina/san_juan">America/Argentina/San Juan</option><option value="america/argentina/san_luis">America/Argentina/San Luis</option><option value="america/argentina/tucuman">America/Argentina/Tucuman</option><option value="america/argentina/ushuaia">America/Argentina/Ushuaia</option><option value="america/aruba">America/Aruba</option><option value="america/asuncion">America/Asuncion</option><option value="america/atikokan">America/Atikokan</option><option value="america/bahia">America/Bahia</option><option value="america/bahia_banderas">America/Bahia Banderas</option><option value="america/barbados">America/Barbados</option><option value="america/belem">America/Belem</option><option value="america/belize">America/Belize</option><option value="america/blanc-sablon">America/Blanc-Sablon</option><option value="america/boa_vista">America/Boa Vista</option><option value="america/bogota">America/Bogota</option><option value="america/boise">America/Boise</option><option value="america/cambridge_bay">America/Cambridge Bay</option><option value="america/campo_grande">America/Campo Grande</option><option value="america/cancun">America/Cancun</option><option value="america/caracas">America/Caracas</option><option value="america/cayenne">America/Cayenne</option><option value="america/cayman">America/Cayman</option><option value="america/chicago">America/Chicago</option><option value="america/chihuahua">America/Chihuahua</option><option value="america/ciudad_juarez">America/Ciudad Juarez</option><option value="america/costa_rica">America/Costa Rica</option><option value="america/creston">America/Creston</option><option value="america/cuiaba">America/Cuiaba</option><option value="america/curacao">America/Curacao</option><option value="america/dawson">America/Dawson</option><option value="america/dawson_creek">America/Dawson Creek</option><option value="america/denver">America/Denver</option><option value="america/detroit">America/Detroit</option><option value="america/dominica">America/Dominica</option><option value="america/edmonton">America/Edmonton</option><option value="america/eirunepe">America/Eirunepe</option><option value="america/el_salvador">America/El Salvador</option><option value="america/fort_nelson">America/Fort Nelson</option><option value="america/fortaleza">America/Fortaleza</option><option value="america/glace_bay">America/Glace Bay</option><option value="america/goose_bay">America/Goose Bay</option><option value="america/grand_turk">America/Grand Turk</option><option value="america/grenada">America/Grenada</option><option value="america/guadeloupe">America/Guadeloupe</option><option value="america/guatemala">America/Guatemala</option><option value="america/guayaquil">America/Guayaquil</option><option value="america/guyana">America/Guyana</option><option value="america/halifax">America/Halifax</option><option value="america/havana">America/Havana</option><option value="america/hermosillo">America/Hermosillo</option><option value="america/indiana/indianapolis">America/Indiana/Indianapolis</option><option value="america/indiana/knox">America/Indiana/Knox</option><option value="america/indiana/marengo">America/Indiana/Marengo</option><option value="america/indiana/petersburg">America/Indiana/Petersburg</option><option value="america/indiana/tell_city">America/Indiana/Tell City</option><option value="america/indiana/vevay">America/Indiana/Vevay</option><option value="america/indiana/vincennes">America/Indiana/Vincennes</option><option value="america/indiana/winamac">America/Indiana/Winamac</option><option value="america/inuvik">America/Inuvik</option><option value="america/iqaluit">America/Iqaluit</option><option value="america/jamaica">America/Jamaica</option><option value="america/juneau">America/Juneau</option><option value="america/kentucky/louisville">America/Kentucky/Louisville</option><option value="america/kentucky/monticello">America/Kentucky/Monticello</option><option value="america/kralendijk">America/Kralendijk</option><option value="america/la_paz">America/La Paz</option><option value="america/lima">America/Lima</option><option value="america/los_angeles">America/Los Angeles</option><option value="america/lower_princes">America/Lower Princes</option><option value="america/maceio">America/Maceio</option><option value="america/managua">America/Managua</option><option value="america/manaus">America/Manaus</option><option value="america/marigot">America/Marigot</option><option value="america/martinique">America/Martinique</option><option value="america/matamoros">America/Matamoros</option><option value="america/mazatlan">America/Mazatlan</option><option value="america/menominee">America/Menominee</option><option value="america/merida">America/Merida</option><option value="america/metlakatla">America/Metlakatla</option><option value="america/mexico_city">America/Mexico City</option><option value="america/miquelon">America/Miquelon</option><option value="america/moncton">America/Moncton</option><option value="america/monterrey">America/Monterrey</option><option value="america/montevideo">America/Montevideo</option><option value="america/montserrat">America/Montserrat</option><option value="america/nassau">America/Nassau</option><option value="america/new_york">America/New York</option><option value="america/nome">America/Nome</option><option value="america/north_dakota/beulah">America/North Dakota/Beulah</option><option value="america/north_dakota/center">America/North Dakota/Center</option><option value="america/north_dakota/new_salem">America/North Dakota/New Salem</option><option value="america/nuuk">America/Nuuk</option><option value="america/ojinaga">America/Ojinaga</option><option value="america/panama">America/Panama</option><option value="america/paramaribo">America/Paramaribo</option><option value="america/phoenix">America/Phoenix</option><option value="america/port-au-prince">America/Port-au-Prince</option><option value="america/port_of_spain">America/Port of Spain</option><option value="america/porto_velho">America/Porto Velho</option><option value="america/puerto_rico">America/Puerto Rico</option><option value="america/punta_arenas">America/Punta Arenas</option><option value="america/rankin_inlet">America/Rankin Inlet</option><option value="america/recife">America/Recife</option><option value="america/regina">America/Regina</option><option value="america/resolute">America/Resolute</option><option value="america/rio_branco">America/Rio Branco</option><option value="america/santarem">America/Santarem</option><option value="america/santiago">America/Santiago</option><option value="america/santo_domingo">America/Santo Domingo</option><option value="america/sao_paulo">America/Sao Paulo</option><option value="america/scoresbysund">America/Scoresbysund</option><option value="america/sitka">America/Sitka</option><option value="america/st_barthelemy">America/St Barthelemy</option><option value="america/st_johns">America/St. John's</option><option value="america/st_kitts">America/St. Kitts</option><option value="america/st_lucia">America/St. Lucia</option><option value="america/st_thomas">America/St. Thomas</option><option value="america/st_vincent">America/St. Vincent</option><option value="america/swift_current">America/Swift Current</option><option value="america/tegucigalpa">America/Tegucigalpa</option><option value="america/thule">America/Thule</option><option value="america/tijuana">America/Tijuana</option><option value="america/toronto">America/Toronto</option><option value="america/tortola">America/Tortola</option><option value="america/vancouver">America/Vancouver</option><option value="america/whitehorse">America/Whitehorse</option><option value="america/winnipeg">America/Winnipeg</option><option value="america/yakutat">America/Yakutat</option><option value="america/yellowknife">America/Yellowknife</option><option value="antarctica/syowa">Antarctica/Syowa</option><option value="arctic/longyearbyen">Arctic/Longyearbyen</option><option value="asia/aden">Asia/Aden</option><option value="asia/almaty">Asia/Almaty</option><option value="asia/amman">Asia/Amman</option><option value="asia/anadyr">Asia/Anadyr</option><option value="asia/aqtau">Asia/Aqtau</option><option value="asia/aqtobe">Asia/Aqtobe</option><option value="asia/ashgabat">Asia/Ashgabat</option><option value="asia/atyrau">Asia/Atyrau</option><option value="asia/baghdad">Asia/Baghdad</option><option value="asia/bahrain">Asia/Bahrain</option><option value="asia/baku">Asia/Baku</option><option value="asia/bangkok">Asia/Bangkok</option><option value="asia/barnaul">Asia/Barnaul</option><option value="asia/beirut">Asia/Beirut</option><option value="asia/bishkek">Asia/Bishkek</option><option value="asia/brunei">Asia/Brunei</option><option value="asia/chita">Asia/Chita</option><option value="asia/colombo">Asia/Colombo</option><option value="asia/damascus">Asia/Damascus</option><option value="asia/dhaka">Asia/Dhaka</option><option value="asia/dili">Asia/Dili</option><option value="asia/dubai">Asia/Dubai</option><option value="asia/dushanbe">Asia/Dushanbe</option><option value="asia/famagusta">Asia/Famagusta</option><option value="asia/gaza">Asia/Gaza</option><option value="asia/hebron">Asia/Hebron</option><option value="asia/ho_chi_minh">Asia/Ho Chi Minh</option><option value="asia/hong_kong">Asia/Hong Kong</option><option value="asia/hovd">Asia/Hovd</option><option value="asia/irkutsk">Asia/Irkutsk</option><option value="asia/jakarta">Asia/Jakarta</option><option value="asia/jayapura">Asia/Jayapura</option><option value="asia/jerusalem">Asia/Jerusalem</option><option value="asia/kabul">Asia/Kabul</option><option value="asia/kamchatka">Asia/Kamchatka</option><option value="asia/karachi">Asia/Karachi</option><option value="asia/kathmandu">Asia/Kathmandu</option><option value="asia/kolkata">Asia/Kolkata</option><option value="asia/krasnoyarsk">Asia/Krasnoyarsk</option><option value="asia/kuala_lumpur">Asia/Kuala Lumpur</option><option value="asia/kuching">Asia/Kuching</option><option value="asia/kuwait">Asia/Kuwait</option><option value="asia/macau">Asia/Macau</option><option value="asia/magadan">Asia/Magadan</option><option value="asia/makassar">Asia/Makassar</option><option value="asia/manila">Asia/Manila</option><option value="asia/muscat">Asia/Muscat</option><option value="asia/nicosia">Asia/Nicosia</option><option value="asia/novokuznetsk">Asia/Novokuznetsk</option><option value="asia/novosibirsk">Asia/Novosibirsk</option><option value="asia/omsk">Asia/Omsk</option><option value="asia/oral">Asia/Oral</option><option value="asia/phnom_penh">Asia/Phnom Penh</option><option value="asia/pontianak">Asia/Pontianak</option><option value="asia/pyongyang">Asia/Pyongyang</option><option value="asia/qatar">Asia/Qatar</option><option value="asia/qostanay">Asia/Qostanay</option><option value="asia/qyzylorda">Asia/Qyzylorda</option><option value="asia/riyadh">Asia/Riyadh</option><option value="asia/sakhalin">Asia/Sakhalin</option><option value="asia/samarkand">Asia/Samarkand</option><option value="asia/seoul">Asia/Seoul</option><option value="asia/shanghai">Asia/Shanghai</option><option value="asia/singapore">Asia/Singapore</option><option value="asia/taipei">Asia/Taipei</option><option value="asia/tashkent">Asia/Tashkent</option><option value="asia/tbilisi">Asia/Tbilisi</option><option value="asia/tehran">Asia/Tehran</option><option value="asia/thimphu">Asia/Thimphu</option><option value="asia/tokyo">Asia/Tokyo</option><option value="asia/tomsk">Asia/Tomsk</option><option value="asia/ulaanbaatar">Asia/Ulaanbaatar</option><option value="asia/urumqi">Asia/Urumqi</option><option value="asia/vientiane">Asia/Vientiane</option><option value="asia/vladivostok">Asia/Vladivostok</option><option value="asia/yakutsk">Asia/Yakutsk</option><option value="asia/yangon">Asia/Yangon</option><option value="asia/yekaterinburg">Asia/Yekaterinburg</option><option value="asia/yerevan">Asia/Yerevan</option><option value="atlantic/azores">Atlantic/Azores</option><option value="atlantic/bermuda">Atlantic/Bermuda</option><option value="atlantic/canary">Atlantic/Canary</option><option value="atlantic/cape_verde">Atlantic/Cape Verde</option><option value="atlantic/faroe">Atlantic/Faroe</option><option value="atlantic/madeira">Atlantic/Madeira</option><option value="atlantic/reykjavik">Atlantic/Reykjavik</option><option value="atlantic/south_georgia">Atlantic/South Georgia</option><option value="atlantic/st_helena">Atlantic/St Helena</option><option value="atlantic/stanley">Atlantic/Stanley</option><option value="australia/adelaide">Australia/Adelaide</option><option value="australia/brisbane">Australia/Brisbane</option><option value="australia/broken_hill">Australia/Broken Hill</option><option value="australia/darwin">Australia/Darwin</option><option value="australia/eucla">Australia/Eucla</option><option value="australia/hobart">Australia/Hobart</option><option value="australia/lindeman">Australia/Lindeman</option><option value="australia/lord_howe">Australia/Lord Howe</option><option value="australia/melbourne">Australia/Melbourne</option><option value="australia/perth">Australia/Perth</option><option value="australia/sydney">Australia/Sydney</option><option value="europe/amsterdam">Europe/Amsterdam</option><option value="europe/andorra">Europe/Andorra</option><option value="europe/astrakhan">Europe/Astrakhan</option><option value="europe/athens">Europe/Athens</option><option value="europe/belgrade">Europe/Belgrade</option><option value="europe/berlin">Europe/Berlin</option><option value="europe/bratislava">Europe/Bratislava</option><option value="europe/brussels">Europe/Brussels</option><option value="europe/bucharest">Europe/Bucharest</option><option value="europe/budapest">Europe/Budapest</option><option value="europe/chisinau">Europe/Chisinau</option><option value="europe/copenhagen">Europe/Copenhagen</option><option value="europe/dublin">Europe/Dublin</option><option value="europe/gibraltar">Europe/Gibraltar</option><option value="europe/guernsey">Europe/Guernsey</option><option value="europe/helsinki">Europe/Helsinki</option><option value="europe/isle_of_man">Europe/Isle of Man</option><option value="europe/istanbul">Europe/Istanbul</option><option value="europe/jersey">Europe/Jersey</option><option value="europe/kaliningrad">Europe/Kaliningrad</option><option value="europe/kirov">Europe/Kirov</option><option value="europe/kyiv">Europe/Kyiv</option><option value="europe/lisbon">Europe/Lisbon</option><option value="europe/ljubljana">Europe/Ljubljana</option><option value="europe/london">Europe/London</option><option value="europe/luxembourg">Europe/Luxembourg</option><option value="europe/madrid">Europe/Madrid</option><option value="europe/malta">Europe/Malta</option><option value="europe/mariehamn">Europe/Mariehamn</option><option value="europe/minsk">Europe/Minsk</option><option value="europe/monaco">Europe/Monaco</option><option value="europe/moscow">Europe/Moscow</option><option value="europe/oslo">Europe/Oslo</option><option value="europe/paris">Europe/Paris</option><option value="europe/podgorica">Europe/Podgorica</option><option value="europe/prague" selected>Europe/Prague</option><option value="europe/riga">Europe/Riga</option><option value="europe/rome">Europe/Rome</option><option value="europe/samara">Europe/Samara</option><option value="europe/san_marino">Europe/San Marino</option><option value="europe/sarajevo">Europe/Sarajevo</option><option value="europe/saratov">Europe/Saratov</option><option value="europe/simferopol">Europe/Simferopol</option><option value="europe/skopje">Europe/Skopje</option><option value="europe/sofia">Europe/Sofia</option><option value="europe/stockholm">Europe/Stockholm</option><option value="europe/tallinn">Europe/Tallinn</option><option value="europe/tirane">Europe/Tirane</option><option value="europe/ulyanovsk">Europe/Ulyanovsk</option><option value="europe/vaduz">Europe/Vaduz</option><option value="europe/vatican">Europe/Vatican</option><option value="europe/vienna">Europe/Vienna</option><option value="europe/vilnius">Europe/Vilnius</option><option value="europe/volgograd">Europe/Volgograd</option><option value="europe/warsaw">Europe/Warsaw</option><option value="europe/zagreb">Europe/Zagreb</option><option value="europe/zurich">Europe/Zurich</option><option value="indian/antananarivo">Indian/Antananarivo</option><option value="indian/chagos">Indian/Chagos</option><option value="indian/christmas">Indian/Christmas</option><option value="indian/cocos">Indian/Cocos</option><option value="indian/comoro">Indian/Comoro</option><option value="indian/kerguelen">Indian/Kerguelen</option><option value="indian/mahe">Indian/Mahe</option><option value="indian/maldives">Indian/Maldives</option><option value="indian/mauritius">Indian/Mauritius</option><option value="indian/mayotte">Indian/Mayotte</option><option value="indian/reunion">Indian/Reunion</option><option value="pacific/apia">Pacific/Apia</option><option value="pacific/auckland">Pacific/Auckland</option><option value="pacific/bougainville">Pacific/Bougainville</option><option value="pacific/chatham">Pacific/Chatham</option><option value="pacific/chuuk">Pacific/Chuuk</option><option value="pacific/easter">Pacific/Easter</option><option value="pacific/efate">Pacific/Efate</option><option value="pacific/fakaofo">Pacific/Fakaofo</option><option value="pacific/fiji">Pacific/Fiji</option><option value="pacific/funafuti">Pacific/Funafuti</option><option value="pacific/galapagos">Pacific/Galapagos</option><option value="pacific/gambier">Pacific/Gambier</option><option value="pacific/guadalcanal">Pacific/Guadalcanal</option><option value="pacific/guam">Pacific/Guam</option><option value="pacific/honolulu">Pacific/Honolulu</option><option value="pacific/kanton">Pacific/Kanton</option><option value="pacific/kiritimati">Pacific/Kiritimati</option><option value="pacific/kosrae">Pacific/Kosrae</option><option value="pacific/kwajalein">Pacific/Kwajalein</option><option value="pacific/majuro">Pacific/Majuro</option><option value="pacific/marquesas">Pacific/Marquesas</option><option value="pacific/midway">Pacific/Midway</option><option value="pacific/nauru">Pacific/Nauru</option><option value="pacific/niue">Pacific/Niue</option><option value="pacific/norfolk">Pacific/Norfolk</option><option value="pacific/noumea">Pacific/Noumea</option><option value="pacific/pago_pago">Pacific/Pago Pago</option><option value="pacific/palau">Pacific/Palau</option><option value="pacific/pitcairn">Pacific/Pitcairn</option><option value="pacific/pohnpei">Pacific/Pohnpei</option><option value="pacific/port_moresby">Pacific/Port Moresby</option><option value="pacific/rarotonga">Pacific/Rarotonga</option><option value="pacific/saipan">Pacific/Saipan</option><option value="pacific/tahiti">Pacific/Tahiti</option><option value="pacific/tarawa">Pacific/Tarawa</option><option value="pacific/tongatapu">Pacific/Tongatapu</option><option value="pacific/wake">Pacific/Wake</option><option value="pacific/wallis">Pacific/Wallis</option></select>
 							<input type="hidden" name="_do" value="timezoneForm-submit"></form>
-								<p>Detekovali jsme, že jsi v časové zóně Europe/Berlin. <a href="/kino/1-praha/?value=Europe%2FBerlin&do=changeHomeTimezone">Změnit časovou zónu</a></p>
+								<p>Detekovali jsme, že jsi v časové zóně Europe/Bratislava. <a href="/kino/1-praha/?value=Europe%2FBratislava&do=changeHomeTimezone">Změnit časovou zónu</a></p>
 						</div>
 
 						<div class="footer-action-languages" id="language-switch">
@@ -11288,17 +9212,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 		</div>
 
-<div id="slide_up" class="ad-pmg"></div>
-<div id="interstitial" class="ad-pmg"></div>
 
-
-<script type="text/json" id="js-common-config">{"country":1,"domain":"csfd.cz","host":"www.csfd.cz","userLanguageId":1,"translations":{"web.ajax.default.error.message":"Omlouváme se, ale nastala chyba při zpracování.","web.ajax.resend.button":"Odeslat znovu","web.autocomplete.creator.header":"Tvůrci","web.autocomplete.film.header":"Filmy","web.autocomplete.noservice":"Služba vyhledávání není momentálně dostupná.","web.autocomplete.searching":"Vyhledávám...","web.autocomplete.search.select":"Vyplň název filmu / jméno tvůrce nebo uživatele","web.autocomplete.series.header":"Seriály","web.autocomplete.user.header":"Uživatelé","web.layout.more":"více","web.check.all":"zaškrtnout vše","web.fileupload.preloader":"Načítám knihovnu, prosím o strpení...","web.modal.confirm.close":"Opravdu chceš zavřít okno? Možná máš neuložené změny.","web.preloader.loading":"Načítání...","web.search.creator.notfound":"Nenalezeni žádní tvůrci","web.search.film.notfound":"Nenalezeny žádné filmy","web.search.series.notfound":"Nenalezeny žádné seriály","web.search.user.notfound":"Nenalezeni žádní uživatelé","web.selectize.plugin.remove.button.remove":"Odebrat","web.sortable.error.move":"Při přesunu pozic došlo k chybě. Stránka bude obnovena. Pokračovat?"},"route":":Web:Cinema:default","isLoggedIn":false,"userId":null,"hooks":["FormGet","AutoSubmitForm","Autocomplete","Confirm","SecureHandle"]}</script>
-<script src="//static.pmgstatic.com/assets/utils-js/c8258f86692083bd0b360e2ab40d666b/scripts.min.js"></script>
-<script type="text/javascript">CSFDAds.setServer('https://a.csfd.cz/csfd');CSFDAds.complete({"ball":{"site":"csfd.cz","czaidc":0,"page":6,"login":2,"viewId":48447786},"0":{"area":"leaderboard","size":"2000x1400,1800x1000,1000x210,970x210,998x200,930x180,970x90,750x100,728x90,750x200,branding_web"},"1":{"area":"wide_skyscraper_sticky","size":"180x600,120x600,160x600"},"2":{"area":"billboard","size":"1000x310,970x310,950x300,980x250,970x250,750x300,1000x210,970x210,998x200,930x180,750x200,970x90,728x90"},"3":{"area":"slide_up","size":"1000x310,970x310,970x250,970x210,500x200,336x280,300x300,300x250,728x90,250x250,320x100,300x100,320x50,300x50,slide_up"},"4":{"area":"interstitial","size":"interstitial"},"5":{"area":"mobile_billboard","size":"300x300,300x250,250x250,336x280"}}, false);</script>
+<script type="text/json" id="js-common-config">{"country":1,"domain":"csfd.cz","host":"www.csfd.cz","userLanguageId":1,"translations":{"web.ajax.default.error.message":"Omlouváme se, ale nastala chyba při zpracování.","web.ajax.resend.button":"Odeslat znovu","web.autocomplete.creator.header":"Tvůrci","web.autocomplete.film.header":"Filmy","web.autocomplete.noservice":"Služba vyhledávání není momentálně dostupná.","web.autocomplete.searching":"Vyhledávám...","web.autocomplete.search.select":"Vyplň název filmu / jméno tvůrce nebo uživatele","web.autocomplete.series.header":"Seriály","web.autocomplete.user.header":"Uživatelé","web.layout.more":"více","web.check.all":"zaškrtnout vše","web.fileupload.preloader":"Načítám knihovnu, prosím o strpení...","web.modal.confirm.close":"Opravdu chceš zavřít okno? Možná máš neuložené změny.","web.preloader.loading":"Načítání...","web.search.creator.notfound":"Nenalezeni žádní tvůrci","web.search.film.notfound":"Nenalezeny žádné filmy","web.search.series.notfound":"Nenalezeny žádné seriály","web.search.user.notfound":"Nenalezeni žádní uživatelé","web.selectize.plugin.remove.button.remove":"Odebrat","web.sortable.error.move":"Při přesunu pozic došlo k chybě. Stránka bude obnovena. Pokračovat?"},"route":":Web:Cinema:default","isLoggedIn":false,"userId":null,"hooks":["FormGet","AutoSubmitForm","Autocomplete","SlickSlider","Confirm","SecureHandle"]}</script>
+<script src="//static.pmgstatic.com/assets/utils-js/fad8ad03ad30d313dac66de1cc69ef73/scripts.min.js"></script>
+<script type="text/javascript">CSFDAds.setServer('https://a.csfd.cz/csfd');CSFDAds.complete({"ball":{"site":"csfd.cz","czaidc":0,"page":6,"login":2,"viewId":85661353},"0":{"area":"leaderboard","size":"2000x1400,1800x1000,1000x210,970x210,998x200,930x180,970x90,750x100,728x90,750x200,branding_web"},"1":{"area":"wide_skyscraper_sticky","size":"180x600,120x600,160x600"},"2":{"area":"billboard","size":"1000x310,970x310,950x300,980x250,970x250,750x300,1000x210,970x210,998x200,930x180,750x200,970x90,728x90"},"3":{"area":"slide_up","size":"1000x310,970x310,970x250,970x210,500x200,336x280,300x300,300x250,728x90,250x250,320x100,300x100,320x50,300x50,slide_up"},"4":{"area":"interstitial","size":"interstitial"},"5":{"area":"mobile_billboard","size":"300x300,300x250,250x250,336x280"}}, false);</script>
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TM3S526" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	</body>
 
 	<a href="#top" title="Zpět nahoru" id="back-to-top"><i class="icon icon-arrow-up" aria-hidden="true"></i></a>
 </html>
-
 `;

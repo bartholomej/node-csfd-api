@@ -1,6 +1,4 @@
 export const movieMockRich = `
-
-
 <!DOCTYPE html>
 <html lang="cs-CZ">
 	<head>
@@ -13,7 +11,7 @@ export const movieMockRich = `
 </script>
 <script src="/nativeads.js"></script>
 <script>
-	function gtag(){window.dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("consent","default",{ad_storage:"denied",ad_user_data:"denied",ad_personalization:"denied",analytics_storage:"denied",functionality_storage:"denied",personalization_storage:"denied",security_storage:"denied"}),window.didomiOnReady=window.didomiOnReady||[],window.didomiOnReady.push(function(){var a=!1,e={};Didomi.getUserConsentStatusForPurpose("publishers-Kqq3iPge")&&(e.analytics_storage="granted",a=!0),Didomi.getUserConsentStatusForVendor("google")&&(e.ad_storage="granted",e.ad_user_data="granted",e.ad_personalization="granted",e.functionality_storage="granted",e.personalization_storage="granted",e.security_storage="granted",a=!0),a&&(gtag("consent","update",e),window.dataLayer.push({event:"consent_init",consent:e}))});var googleAnalyticsPageViewData={"event":"page_view","site":"www.csfd.cz","platform":"web","environment":"production","language":"cs","device":"desktop","user":{"id":null,"adblock":false},"page":{"id":4711,"type":"Film","title":null,"url":"https:\/\/www.csfd.cz\/film\/4711-pan-prstenu-spolecenstvo-prstenu\/prehled\/","path":"\/film\/4711-pan-prstenu-spolecenstvo-prstenu\/prehled\/","section":"Film","dark_mode":false},"_clear":true};if(null!==googleAnalyticsPageViewData){googleAnalyticsPageViewData.page.title="Pán prstenů: Společenstvo Prstenu (2001) | ČSFD.cz",googleAnalyticsPageViewData.user.adblock=!!window[ab_detection];var sp=null;if(null!==window.localStorage){var i=window.localStorage.getItem("sp");"1"===i||"2"===i?sp=parseInt(i,10):(sp=Math.floor(2*Math.random())+1,window.localStorage.setItem("sp",sp))}googleAnalyticsPageViewData.status_pair=null===sp?Math.floor(2*Math.random())+1:sp,window.dataLayer.push(googleAnalyticsPageViewData)}
+	function gtag(){window.dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("consent","default",{ad_storage:"denied",ad_user_data:"denied",ad_personalization:"denied",analytics_storage:"denied",functionality_storage:"denied",personalization_storage:"denied",security_storage:"denied"}),window.didomiOnReady=window.didomiOnReady||[],window.didomiOnReady.push(function(){var a=!1,e={};Didomi.getUserConsentStatusForPurpose("publishers-Kqq3iPge")&&(e.analytics_storage="granted",a=!0),Didomi.getUserConsentStatusForVendor("google")&&(e.ad_storage="granted",e.ad_user_data="granted",e.ad_personalization="granted",e.functionality_storage="granted",e.personalization_storage="granted",e.security_storage="granted",a=!0),a&&(gtag("consent","update",e),window.dataLayer.push({event:"consent_init",consent:e}))});var googleAnalyticsPageViewData={"event":"page_view","site":"www.csfd.cz","platform":"web","environment":"production","language":"cs","device":"desktop","user":{"id":null,"adblock":false},"page":{"id":4711,"type":"Film","title":null,"url":"https:\\/\\/www.csfd.cz\\/film\\/4711-pan-prstenu-spolecenstvo-prstenu\\/prehled\\/","path":"\\/film\\/4711-pan-prstenu-spolecenstvo-prstenu\\/prehled\\/","section":"Film","dark_mode":false},"_clear":true};if(null!==googleAnalyticsPageViewData){googleAnalyticsPageViewData.page.title="Pán prstenů: Společenstvo Prstenu (2001) | ČSFD.cz",googleAnalyticsPageViewData.user.adblock=!!window[ab_detection];var sp=null;if(null!==window.localStorage){var i=window.localStorage.getItem("sp");"1"===i||"2"===i?sp=parseInt(i,10):(sp=Math.floor(2*Math.random())+1,window.localStorage.setItem("sp",sp))}googleAnalyticsPageViewData.status_pair=null===sp?Math.floor(2*Math.random())+1:sp,window.dataLayer.push(googleAnalyticsPageViewData)}
 </script>
 <script>
 window.didomiConfig = {
@@ -79,11 +77,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 		<meta name="theme-color" content="#ba0305">
 		<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ba0305">
 		<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#ba0305">
-		<link rel="stylesheet" href="//static.pmgstatic.com/assets/web-css/5e349933e1358275e5dbfccce0a335bf/styles.min.css">
-		<link rel="shortcut icon" href="//static.pmgstatic.com/assets/images/2b5f1f1793f6881e6e9326d2c21f9445/favicon.ico">
-		<link rel="apple-touch-icon" href="//static.pmgstatic.com/assets/images/2b5f1f1793f6881e6e9326d2c21f9445/apple-touch-icon.png">
-		<script src="//static.pmgstatic.com/assets/vendor/4c4b0b91e77c007ce5325f7e57bb5384/jquery.min.js"></script>
-		<script src="//static.pmgstatic.com/assets/web-js/de8b64f92d0e41c829cda8b30a9fbe17/scripts.min.js" defer></script>
+		<link rel="stylesheet" href="//static.pmgstatic.com/assets/web-css/58bd7f3ed81bd9d84a6905e0711f1007/styles.min.css">
+		<link rel="shortcut icon" href="//static.pmgstatic.com/assets/images/6aeb8871e0052a62b04d591a3f85e733/favicon.ico">
+		<link rel="apple-touch-icon" href="//static.pmgstatic.com/assets/images/6aeb8871e0052a62b04d591a3f85e733/apple-touch-icon.png">
+		<script src="//static.pmgstatic.com/assets/vendor/efb570e5cd44fe9a1272efc8cc7f5b66/jquery.min.js"></script>
+		<script src="//static.pmgstatic.com/assets/web-js/460dfd2da94a6a3c5789376d716cee42/scripts.min.js" defer></script>
 
 		<script async src="https://srv.tunefindforfans.com/fruits/mangos.js"></script>
 		<script type="text/javascript">
@@ -120,12 +118,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	</script>
 
 
-<script id="videojs-vendor" src="//static.pmgstatic.com/assets/vendor/4c4b0b91e77c007ce5325f7e57bb5384/videojs/video.min.js" async defer></script>
+<script id="videojs-vendor" src="//static.pmgstatic.com/assets/vendor/efb570e5cd44fe9a1272efc8cc7f5b66/videojs/video.min.js" async defer></script>
 <script type="text/javascript" src="https://www.gstatic.com/cv/js/sender/v1/cast_sender.js?loadCastFramework=1" async defer></script>
-<link rel="stylesheet" href="//static.pmgstatic.com/assets/vendor/4c4b0b91e77c007ce5325f7e57bb5384/videojs/video-js.min.css">
+<link rel="stylesheet" href="//static.pmgstatic.com/assets/vendor/efb570e5cd44fe9a1272efc8cc7f5b66/videojs/video-js.min.css">
 	</head>
 
 	<body id="top" data-lang="cs" class="csfd-cz lang-1" data-page="film">
+<div id="slide_up" class="ad-pmg"></div>
+<div id="interstitial" class="ad-pmg"></div>
+
 <div id="switch-tld-modal">
 	<div data-mfp-to-close class="mfp-bg mfp-ready"></div>
 	<div data-mfp-to-close class="mfp-wrap mfp-close-btn-in mfp-auto-cursor mfp-ready modal-small">
@@ -136,20 +137,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						<div class="modal--hp">
 							<div class="switch-lang">
 								<h2>
-									FilmBooster auf Deutsch
+									ČSFD nanovo aj v slovenčine
 								</h2>
 								<p>
-									Wir haben festgestellt, dass du von einer deutschen IP-Adresse kommst. Weißt du, dass es die deutsche Version von FilmBooster gibt?
+									Všimli sme si, že prichádzaš zo slovenskej IP adresy. Vieš o tom, že existuje slovenská verzia CSFD.sk?
 								</p>
 							</div>
 							<footer>
 								<span class="left">
 									<a href="javascript:void(0)" data-mfp-close class="">
-											bleiben
+											zostať
 									</a>
 								</span>
-								<a href="https://www.filmbooster.de/film/4711-pan-prstenu-spolecenstvo-prstenu/ubersicht/" class="button right">
-									zu FilmBooster.de wechseln
+								<a href="https://www.csfd.sk/film/4711-pan-prstenu-spolecenstvo-prstenu/prehlad/" class="button right">
+									prejsť na CSFD.sk
 								</a>
 							</footer>
 						</div>
@@ -187,35 +188,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			</div>
 
 			<div id="page-wrapper">
-				<div id="suggest-switch-locale-panel" class="lang-info-panel-content" data-cookie-name="_ls_ns">
-					<div class="lang-info-panel">
-						<p>
-							Change website language <a href="#secureHandle-frm-switchLocale-form=Zt" class="btn-second"><img src="//image.pmgstatic.com/files/svg/flags/162/751/162751395/162751395_38cf6e.svg"><i class="icon icon-arrow-right"></i></a>
-						</p>
-						<p>
-							<a href="javascript:void(0);" class="btn btn-close" data-close-button>
-								<i class="icon icon-close"></i><span>Do not switch</span>
-							</a>
-						</p>
-					</div>
-				</div>
 
-				<div class="top-info top-info-language-switch top-info-user-not-logged top-info-only-projection">
-					<div class="top-info-content">
-						<p class="top-info-community-event">
-								<a href="/akce/536-projekce-drobna-nehoda/" class="link-with-icons">
-									<svg width="119" height="93" viewBox="0 0 119 93" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-										<path fill-rule="evenodd" clip-rule="evenodd" d="M63.0255 24.0791C54.0281 24.0791 45.3834 31.4353 43.7172 40.5099C42.0516 49.5841 47.9946 56.9401 56.9923 56.9401C65.9889 56.9401 74.6337 49.5841 76.3001 40.5099C77.9655 31.4353 72.0227 24.0791 63.0255 24.0791Z"></path>
-										<path fill-rule="evenodd" clip-rule="evenodd" d="M25.4185 80.1819H77.7067C77.6211 66.7115 67.9229 56.3457 54.5975 56.3457C41.2723 56.3459 28.9347 66.7117 25.4185 80.1819Z"></path>
-										<path fill-rule="evenodd" clip-rule="evenodd" d="M100.612 0.0336914L98.6975 8.23869C98.5319 8.94589 97.8249 9.51909 97.1179 9.51909H37.9319C37.2249 9.51909 36.7853 8.94589 36.9503 8.23869L38.8645 0.0336914H21.7031L0.459091 91.0949H0.490292L0.104492 92.7483H17.1399L18.8861 85.2607C19.0511 84.5535 19.7581 83.9809 20.4653 83.9809H79.6519C80.3589 83.9809 80.7985 84.5535 80.6329 85.2607L79.2727 91.0949H79.2917L78.9143 92.7133H78.9361L78.9315 92.7359H96.3537L96.7367 91.0949H96.7687L118.013 0.0336914H100.612V0.0336914ZM23.2341 9.99969L24.3083 5.39529C24.4733 4.68829 25.1803 4.11489 25.8875 4.11489H32.1603C32.8673 4.11489 33.3069 4.68829 33.1421 5.39529L32.0677 9.99969C31.9027 10.7069 31.1957 11.2801 30.4885 11.2801H24.2157C23.5087 11.2801 23.0691 10.7069 23.2341 9.99969ZM19.6467 25.3761L19.9601 24.0333C19.9653 23.9689 19.9705 23.9047 19.9861 23.8381L20.7021 20.7679C20.8671 20.0607 21.5741 19.4875 22.2815 19.4875H28.5241C28.8937 19.4875 29.1871 19.6469 29.3625 19.8979C29.5633 20.1317 29.6485 20.4649 29.5609 20.8389L28.5027 25.3763C28.3377 26.0833 27.6307 26.6565 26.9231 26.6565H20.6285C19.9213 26.6563 19.4817 26.0831 19.6467 25.3761ZM16.0075 41.0327L17.0823 36.4259C17.2473 35.7189 17.9543 35.1457 18.6615 35.1457H24.8847C25.5919 35.1457 26.0313 35.7189 25.8663 36.4259L24.7915 41.0327C24.6265 41.7403 23.9195 42.3135 23.2123 42.3135H16.9891C16.2821 42.3135 15.8425 41.7401 16.0075 41.0327ZM14.9775 83.2539L13.9055 87.8479C13.7405 88.5559 13.0335 89.1287 12.3265 89.1287H6.05929C5.35209 89.1287 4.91269 88.5559 5.07769 87.8479L6.14949 83.2539C6.31449 82.5459 7.02149 81.9731 7.72869 81.9731H13.9959C14.7029 81.9729 15.1425 82.5457 14.9775 83.2539ZM18.6409 67.7617L17.5633 72.3805C17.3983 73.0885 16.6913 73.6611 15.9841 73.6611H9.66789C8.96069 73.6611 8.5213 73.0885 8.6863 72.3805L9.7639 67.7617C9.9287 67.0539 10.6359 66.4809 11.3429 66.4809H17.6593C18.3665 66.4807 18.8059 67.0539 18.6409 67.7617ZM19.5839 58.0215H13.3167C12.6091 58.0215 12.1697 57.4477 12.3345 56.7407L13.4065 52.1457C13.5715 51.4385 14.2789 50.8657 14.9861 50.8657H21.2531C21.9603 50.8657 22.3997 51.4385 22.2347 52.1457L21.1629 56.7407C20.9981 57.4477 20.2909 58.0215 19.5839 58.0215ZM81.1405 78.0045H21.8595C21.1525 78.0045 20.7129 77.4319 20.8779 76.7239L34.7971 17.0599C34.9619 16.3529 35.6691 15.7797 36.3763 15.7797H95.6573C96.3643 15.7797 96.8037 16.3529 96.6393 17.0599L82.7199 76.7239C82.5547 77.4319 81.8477 78.0045 81.1405 78.0045ZM94.2101 83.2539L93.1323 87.8735C92.9669 88.5805 92.2599 89.1533 91.5529 89.1533H85.3103C84.6033 89.1533 84.1637 88.5805 84.3281 87.8735L85.4059 83.2539C85.5713 82.5459 86.2783 81.9731 86.9853 81.9731H93.2279C93.9349 81.9729 94.3745 82.5457 94.2101 83.2539ZM97.8729 67.7617L96.7951 72.3805C96.6297 73.0885 95.9227 73.6611 95.2159 73.6611H88.9241C88.2169 73.6611 87.7775 73.0885 87.9429 72.3805L89.0205 67.7617C89.1849 67.0539 89.8921 66.4809 90.5993 66.4809H96.8919C97.5987 66.4807 98.0383 67.0539 97.8729 67.7617ZM101.516 52.1457L100.45 56.7161C100.284 57.4231 99.5773 57.9969 98.8703 57.9969H92.5785C91.8715 57.9969 91.4319 57.4231 91.5975 56.7161L92.6627 52.1457C92.8281 51.4385 93.5351 50.8657 94.2421 50.8657H100.534C101.241 50.8659 101.68 51.4387 101.516 52.1457ZM105.193 36.3833L104.116 41.0029C103.95 41.7101 103.244 42.2833 102.536 42.2833H96.2443C95.5371 42.2833 95.0977 41.7101 95.2631 41.0029L96.3409 36.3833C96.5051 35.6763 97.2123 35.1029 97.9195 35.1029H104.211C104.918 35.1029 105.359 35.6763 105.193 36.3833ZM108.842 20.7437L107.764 25.3629C107.599 26.0705 106.892 26.6431 106.185 26.6431H99.8929C99.1859 26.6431 98.7465 26.0703 98.9119 25.3629L99.9895 20.7437C100.154 20.0361 100.861 19.4629 101.568 19.4629H107.86C108.567 19.4629 109.007 20.0361 108.842 20.7437ZM111.35 9.99349C111.184 10.7007 110.477 11.2739 109.77 11.2739H103.479C102.772 11.2739 102.332 10.7005 102.497 9.99349L103.575 5.37389C103.74 4.66689 104.447 4.09349 105.154 4.09349H111.446C112.153 4.09349 112.592 4.66689 112.428 5.37389L111.35 9.99349Z"></path>
-									</svg>
-									Projekce <em>Drobná nehoda</em>
-								</a>
-						</p>
-					</div>
-				</div>
 
-				<header class="page-header page-header-csfd-cz user-not-logged projection-on language-switch-on header-user-language-switch">
+				<header class="page-header page-header-csfd-cz user-not-logged header-user-language-switch">
 					<div class="header-main">
 						<div class="logo">
 							<a href="/" class="csfd-cz">ČSFD.cz</a>
@@ -445,44 +420,27 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
 <div class="main-movie">
-<script type="application/ld+json">{"@context":"https://schema.org/","@type":"Movie","duration":"PT172M","name":"Pán prstenů: Společenstvo Prstenu","dateCreated":"2001","director":[{"@type":"Person","name":"Peter Jackson"}],"actor":[{"@type":"Person","name":"Elijah Wood"},{"@type":"Person","name":"Ian McKellen"},{"@type":"Person","name":"Viggo Mortensen"},{"@type":"Person","name":"Sean Astin"},{"@type":"Person","name":"Cate Blanchett"},{"@type":"Person","name":"Sean Bean"},{"@type":"Person","name":"Liv Tyler"},{"@type":"Person","name":"John Rhys-Davies"},{"@type":"Person","name":"Billy Boyd"},{"@type":"Person","name":"Dominic Monaghan"}],"author":[{"@type":"Person","name":"J.R.R. Tolkien"}],"aggregateRating":{"@type":"AggregateRating","worstRating":0,"bestRating":100,"ratingValue":90.75416873903825,"ratingCount":114603,"reviewCount":2044},"image":"https://image.pmgstatic.com/cache/resized/w420/files/images/film/posters/158/600/158600806_7b6c15.jpg"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org/","@type":"Movie","duration":"PT172M","name":"Pán prstenů: Společenstvo Prstenu","dateCreated":"2001","director":[{"@type":"Person","name":"Peter Jackson"}],"actor":[{"@type":"Person","name":"Elijah Wood"},{"@type":"Person","name":"Ian McKellen"},{"@type":"Person","name":"Viggo Mortensen"},{"@type":"Person","name":"Sean Astin"},{"@type":"Person","name":"Cate Blanchett"},{"@type":"Person","name":"Sean Bean"},{"@type":"Person","name":"Liv Tyler"},{"@type":"Person","name":"John Rhys-Davies"},{"@type":"Person","name":"Billy Boyd"},{"@type":"Person","name":"Dominic Monaghan"}],"author":[{"@type":"Person","name":"J.R.R. Tolkien"}],"aggregateRating":{"@type":"AggregateRating","worstRating":0,"bestRating":100,"ratingValue":90.7565749342071,"ratingCount":114754,"reviewCount":2044},"image":"https://image.pmgstatic.com/cache/resized/w420/files/images/film/posters/158/600/158600806_7b6c15.jpg"}</script>
 	<div class="main-movie-profile">
-		<div class="box box-film">
-			<div id="profile-header-info" class="hidden box-header">
-				<div class="controls-left">
-					<div id="snippet--boxButtonWatchlist" class="hidden snippet-box" data-auto-show-hide-parent>
-					</div>
-					<div id="snippet--boxButtonCollection" class="hidden snippet-box" data-auto-show-hide-parent>
-					</div>
-					<div id="snippet--boxButtonFanclub" class="hidden snippet-box" data-auto-show-hide-parent>
-					</div>
+		<div class="movie-profile">
+			<div class="updated-box updated-box-nooverflow">
+				<div class="film-info"> 
 
-
-				</div>
-			</div>
-			<div class="box-content">
-				<div class="film-info">
-
-					<header class="film-header film-header-min-height">
-						<div class="film-header-name">
+					<header class="film-header">
+						<div class="film-header-name" data-onboarding-step-1="false">
 							<h1>
 
 								Pán prstenů: Společenstvo Prstenu
-
+								
 							</h1>
 
 
-
-							<a href="javascript:void(0);" data-dropdown="#dropdown-control-panel" data-position="absolute" data-position-right-offset="15" data-position-anchor="right" class="button button-control-panel small">
-								<i class="icon icon-menu"></i>
-
-							</a>
 
 							<ul class="film-names">
 								<li >
 <img src="//image.pmgstatic.com/files/svg/flags/162/751/162751232/162751232_6f9adb.svg" class="flag" title="USA" alt="USA"/>									The Lord of the Rings: The Fellowship of the Ring
 									<span class="normal more-name-link">
-										<span class="span-more-small">(<a href="#" class="more" data-parent=".more-name-link" data-show=".more-names, .less-name-link">více</a>)</span>
+										<span class="span-more-small"><a href="javascript:void(0);" class="more" data-parent=".more-name-link" data-show=".more-names, .less-name-link">více</a></span>
 									</span>
 								</li>
 								<li class="more-names hidden">
@@ -500,7 +458,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 								<li class="more-names hidden">
 <img src="//image.pmgstatic.com/files/svg/flags/162/751/162751395/162751395_38cf6e.svg" class="flag" title="Velká Británie" alt="Velká Británie"/>									The Lord of the Rings: The Fellowship of the Ring
 									<span class="normal less-name-link">
-										<span class="span-more-small">(<a href="#" class="more" data-parent=".less-name-link" data-show=".more-name-link" data-hide=".more-names">méně</a>)</span>
+										<span class="span-more-small"><a href="javascript:void(0);" class="more" data-parent=".less-name-link" data-show=".more-name-link" data-hide=".more-names">méně</a></span>
 									</span>
 								</li>
 							</ul>
@@ -535,12 +493,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			playsinline
 			width="637"
 			height="360"
-
+			
 			data-video-url="/api/video-player/?data=__data__"
-			data-videos="[&#123;&quot;duration&quot;:113,&quot;copyright&quot;:&quot;New Line Cinema&quot;,&quot;request_data&quot;:&quot;rlW2nJEyo0yxVwbkAGp3BGN4AwZfVaA1LaEcqTkyGTShM3IuM2IWMUZvByfkYQWqYPW0o2gyovV6VwZlA2SyZGtmLzWwBTLjMJMxAGp0AGxmMJH5ZzAzZGx3ZJH0AQZ5L2RvsD&quot;},&#123;&quot;duration&quot;:121,&quot;copyright&quot;:&quot;2001 New Line Cinema&quot;,&quot;request_data&quot;:&quot;rlW2nJEyo0yxVwbmZGR2AQpfVaA1LaEcqTkyGTShM3IuM2IWMUZvByfkYQWqYPW0o2gyovV6VwOxZQp5AzLkMGqvAGx2ZTV1ZwuwLmx3MJLlZQHjMwp1MwZ1AwywZmVvsD&quot;},&#123;&quot;duration&quot;:167,&quot;copyright&quot;:&quot;2001 New Line Cinema&quot;,&quot;request_data&quot;:&quot;rlW2nJEyo0yxVwbmZQHjZmNfVaA1LaEcqTkyGTShM3IuM2IWMUZvByfkYQWqYPW0o2gyovV6VzIvAJV3MQx2BTEvBQOxLmyyBQLkLJIuZ2MvZzR5ZwH5BQH4LJWxLGVvsD&quot;}]"
+			data-videos="[&#123;&quot;duration&quot;:113,&quot;copyright&quot;:&quot;New Line Cinema&quot;,&quot;request_data&quot;:&quot;rlW2nJEyo0yxVwbkAGp3BGN4AwZfVaA1LaEcqTkyGTShM3IuM2IWMUZvByfkYQWqYPW0o2gyovV6VzZ3AmL4ZzHjLmyxAQtlBTR1BTWuZmuzZ2D3L2H2ZzH4Zmp3ZzL5AQVvsD&quot;},&#123;&quot;duration&quot;:121,&quot;copyright&quot;:&quot;2001 New Line Cinema&quot;,&quot;request_data&quot;:&quot;rlW2nJEyo0yxVwbmZGR2AQpfVaA1LaEcqTkyGTShM3IuM2IWMUZvByfkYQWqYPW0o2gyovV6VwuyLmOzZQyxZwuvAJSvZmIwAGZjL2MuAzHjMTMyZQp0ZTL0ZmpjMGxvsD&quot;},&#123;&quot;duration&quot;:167,&quot;copyright&quot;:&quot;2001 New Line Cinema&quot;,&quot;request_data&quot;:&quot;rlW2nJEyo0yxVwbmZQHjZmNfVaA1LaEcqTkyGTShM3IuM2IWMUZvByfkYQWqYPW0o2gyovV6Vwp4MQV1MGN1L2RkMTSvAmSwZGEwAmZ4MGOxLzAuLwywLGV4BGVmLGVvsD&quot;}]"
 			data-recommended-videos-url="/api/video-player/recommended-videos/?videoId=305030"
 			data-recommended-autoplay
-
+			
 		>
 			<p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
 		</video>
@@ -553,39 +511,201 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 					</div>
 					<div class="film-info-content">
-						<div class="mobile-film-rating">
-							<div class="box-rating has-fans">
-								<div class="film-rating-average">
-										91%
+						<div class="genres"><a href="/zanry/4-fantasy/">Fantasy</a> <span class="bullet"></span> <a href="/zanry/11-dobrodruzny/">Dobrodružný</a> <span class="bullet"></span> <a href="/zanry/1-akcni/">Akční</a></div>
+						<div class="origin">USA / Nový Zéland <span class="bullet"></span> 
+							<span>2001 <span class="bullet"></span> </span>172 min (Special Edition: 208 min, Director's Cut: 228 min, Alternativní 219 min)
 
+						</div>
+
+						<div class="mobile-film-rating"> 
+							<div class="film-rating-average" data-onboarding-step-2="false" data-onboarding-step-3="false">
+									91%
+
+							</div>
+
+							<div class="film-ranking">
+								<a href="/zebricky/filmy/nejlepsi/#highlight-4711">
+									<svg class="icon-thumb-up" width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+										<path fill-rule="evenodd" clip-rule="evenodd" d="M7.49739 2.65383C7.49739 2.10883 7.93923 1.66699 8.48423 1.66699H9.99739C11.6082 1.66699 12.914 2.97283 12.914 4.58366V7.50033H15.7894C17.63 7.50033 19.0104 9.18419 18.6495 10.989L17.5482 16.4955C17.4313 17.0798 16.9183 17.5003 16.3224 17.5003H7.08073C6.39031 17.5003 5.83073 16.9407 5.83073 16.2503V8.44632C5.83073 8.22499 5.88948 8.00766 6.00098 7.81649L6.18864 7.49474C7.04573 6.02541 7.49739 4.35491 7.49739 2.65383ZM9.14356 3.33366C9.03723 5.09308 8.51956 6.80658 7.62823 8.33458L7.49739 8.55891V15.8337H15.9809L17.0152 10.6621C17.1699 9.88865 16.5782 9.16699 15.7894 9.16699H12.4974C11.807 9.16699 11.2474 8.60733 11.2474 7.91699V4.58366C11.2474 3.89333 10.6877 3.33366 9.99739 3.33366H9.14356Z"></path>
+										<path d="M1.66406 8.75033C1.66406 8.52024 1.85056 8.33366 2.08073 8.33366H3.7474C3.97748 8.33366 4.16406 8.52024 4.16406 8.75033V17.0837C4.16406 17.3138 3.97748 17.5003 3.7474 17.5003H2.08073C1.85056 17.5003 1.66406 17.3138 1.66406 17.0837V8.75033Z"></path>
+									</svg>
+									<strong>13.</strong> <span>nejlepší</span>
+								</a>
+							</div>
+							<div class="film-ranking">
+								<a href="/zebricky/filmy/nejoblibenejsi/#highlight-4711">
+									<svg class="icon-thumb-up" width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+										<path fill-rule="evenodd" clip-rule="evenodd" d="M7.49739 2.65383C7.49739 2.10883 7.93923 1.66699 8.48423 1.66699H9.99739C11.6082 1.66699 12.914 2.97283 12.914 4.58366V7.50033H15.7894C17.63 7.50033 19.0104 9.18419 18.6495 10.989L17.5482 16.4955C17.4313 17.0798 16.9183 17.5003 16.3224 17.5003H7.08073C6.39031 17.5003 5.83073 16.9407 5.83073 16.2503V8.44632C5.83073 8.22499 5.88948 8.00766 6.00098 7.81649L6.18864 7.49474C7.04573 6.02541 7.49739 4.35491 7.49739 2.65383ZM9.14356 3.33366C9.03723 5.09308 8.51956 6.80658 7.62823 8.33458L7.49739 8.55891V15.8337H15.9809L17.0152 10.6621C17.1699 9.88865 16.5782 9.16699 15.7894 9.16699H12.4974C11.807 9.16699 11.2474 8.60733 11.2474 7.91699V4.58366C11.2474 3.89333 10.6877 3.33366 9.99739 3.33366H9.14356Z"></path>
+										<path d="M1.66406 8.75033C1.66406 8.52024 1.85056 8.33366 2.08073 8.33366H3.7474C3.97748 8.33366 4.16406 8.52024 4.16406 8.75033V17.0837C4.16406 17.3138 3.97748 17.5003 3.7474 17.5003H2.08073C1.85056 17.5003 1.66406 17.3138 1.66406 17.0837V8.75033Z"></path>
+									</svg>
+									<strong>5.</strong> <span>nejoblíbenější</span>
+								</a>
+							</div>
+
+	<div class="mobile-film-rating-detail">
+		<h3>Klikni a hodnoť</h3>
+		<a href="/registration-motivation/?title=VyOlolOjKUHjZGH5nJEpqGNjMGShKUHjZTIxVTuiMT5iL2IhKUHjZTIxVUAyVUOlo3ApqGNjMJEgVT5ynzEpqGNkAGypqGNjMJE2VUOpqGNkAGycnTkupl4v" rel="registrationMotivation" data-no-ads>
+			<span class="star-rating">
+				<span class="star-rating"><span class="stars stars-0-withtrash"></span></span>
+			</span>
+		</a>
+	</div>
+
+							<div class="mobile-film-count">
+								<a href="/film/4711-pan-prstenu-spolecenstvo-prstenu/prehled/?modal=ratingAndFanclub" data-no-ads rel="contentModal" class="more more-modal-ratings-fanclub" data-modal-class="modal-ratings-fanclub">
+									Hodnocení
+									<strong>114 754</strong>
+								</a>
+								<a href="/film/4711-pan-prstenu-spolecenstvo-prstenu/recenze/">
+									Recenze
+									<strong>2 044</strong>
+								</a>
+								<a href="/film/4711-pan-prstenu-spolecenstvo-prstenu/prehled/?modal=ratingAndFanclub" data-no-ads rel="contentModal" class="more more-modal-ratings-fanclub" data-modal-class="modal-ratings-fanclub">
+									Fanklub
+									<strong>10 150</strong>
+								</a>
+							</div>
+
+						</div>
+
+						<div class="action-panel">
+							<div class="action-panel-list">
+								<div class="action-panel-item">
+											<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads class="btn-profile-action">
+												<svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+													<path fill-rule="evenodd" clip-rule="evenodd" d="M12.9832 2.04084C12.072 1.12962 10.5946 1.12962 9.68342 2.04084L2.29289 9.43136C2.10536 9.6189 2 9.87325 2 10.1385V13.0004C2 13.5527 2.44772 14.0004 3 14.0004H5.86193C6.12715 14.0004 6.3815 13.895 6.56904 13.7075L13.9596 6.31698C14.8708 5.40576 14.8708 3.92838 13.9596 3.01715L12.9832 2.04084ZM10.6262 2.98365C11.0168 2.59312 11.6499 2.59312 12.0404 2.98365L13.0168 3.95996C13.4073 4.35048 13.4073 4.98365 13.0168 5.37417L12.3334 6.05757L9.94283 3.66705L10.6262 2.98365ZM9.00002 4.60986L3.33333 10.2765V12.6671H5.72386L11.3905 7.00038L9.00002 4.60986Z"></path>
+												</svg>
+												Recenze
+											</a>
 								</div>
 
-								<div class="film-ranking">
-									<span><i class="icon icon-thumb-up"></i></span>
-									<a href="/zebricky/filmy/nejlepsi/#highlight-4711">
-										13. nejlepší
+								<div id="snippet--actionLinkWatchlist" class="action-panel-item">
+									<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads class="btn-profile-action">
+											<svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+												<path d="M11.9974 3.3335C11.9974 3.15669 11.9271 2.98717 11.8021 2.86214C11.6771 2.73712 11.5075 2.66683 11.3307 2.66683H4.66406C4.48725 2.66683 4.31773 2.73712 4.19271 2.86214C4.06768 2.98717 3.9974 3.15668 3.9974 3.3335V12.7046L7.61003 10.1245L7.70052 10.0698C7.91852 9.96133 8.18203 9.9797 8.38477 10.1245L11.9974 12.7046V3.3335ZM13.3307 14.0002C13.3307 14.2499 13.1914 14.479 12.9694 14.5933C12.7474 14.7075 12.4799 14.6876 12.2767 14.5425L7.9974 11.4858L3.7181 14.5425C3.51489 14.6876 3.24744 14.7075 3.02539 14.5933C2.8034 14.479 2.66406 14.2499 2.66406 14.0002V3.3335C2.66406 2.80306 2.87493 2.29451 3.25 1.91943C3.62507 1.54436 4.13363 1.3335 4.66406 1.3335H11.3307C11.8612 1.3335 12.3697 1.54436 12.7448 1.91943C13.1199 2.29451 13.3307 2.80306 13.3307 3.3335V14.0002Z"></path>
+											</svg>
+											Chci vidět
 									</a>
 								</div>
-								<div class="film-ranking">
-									<span><i class="icon icon-thumb-up"></i></span>
-									<a href="/zebricky/filmy/nejoblibenejsi/#highlight-4711">
-										5. nejoblíbenější
+
+								<div id="snippet--actionLinkFanclub" class="action-panel-item">
+										<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads class="btn-profile-action">
+											<svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+												<path fill-rule="evenodd" clip-rule="evenodd" d="M6.31657 4.01676C6.0999 3.80009 5.84266 3.62823 5.55957 3.51097C5.27648 3.39371 4.97304 3.33335 4.66663 3.33335C4.36021 3.33335 4.05682 3.3937 3.77372 3.51097C3.49063 3.62823 3.23339 3.80011 3.01672 4.01678C2.80005 4.23346 2.62821 4.49067 2.51095 4.77376C2.39369 5.05686 2.33333 5.36029 2.33333 5.66671C2.33333 5.97313 2.39368 6.27654 2.51095 6.55963C2.62821 6.84272 2.80005 7.09994 3.01672 7.31661L8 12.2998L12.9832 7.31661C13.4208 6.87902 13.6667 6.28553 13.6667 5.66669C13.6667 5.04784 13.4208 4.45435 12.9832 4.01676C12.5456 3.57918 11.9521 3.33333 11.3333 3.33333C10.7144 3.33334 10.121 3.57917 9.68339 4.01676L8.70711 4.99308C8.51957 5.18062 8.26522 5.28597 8 5.28597C7.73478 5.28597 7.48039 5.18062 7.29285 4.99308L6.31657 4.01676ZM7.2594 3.07395L8 3.81455L8.7406 3.07395C9.42824 2.38632 10.3609 2 11.3333 2C12.3058 2 13.2384 2.38632 13.9261 3.07395C14.6137 3.76159 15 4.69422 15 5.66669C15 6.63915 14.6137 7.57178 13.9261 8.25942L8.70711 13.4784C8.51957 13.6659 8.26523 13.7712 8 13.7712C7.73477 13.7712 7.48039 13.6659 7.29285 13.4784L2.07393 8.25942C1.73345 7.91894 1.46336 7.51473 1.27909 7.06987C1.09483 6.625 1 6.1482 1 5.66669C1 5.18517 1.09483 4.70837 1.27909 4.26351C1.46336 3.81865 1.73345 3.41444 2.07393 3.07395C2.41442 2.73347 2.81861 2.46338 3.26347 2.27911C3.70833 2.09485 4.18515 2.00002 4.66667 2.00002C5.14818 2.00002 5.62496 2.09485 6.06982 2.27911C6.51469 2.46338 6.91892 2.73347 7.2594 3.07395V3.07395Z"></path>
+											</svg>
+											Oblíbené
+										</a>
+								</div>
+
+								<div class="action-panel-item">
+										<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads class="btn-profile-action">
+											<svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
+												<path d="M2.66667 8.66634C3.03486 8.66634 3.33333 8.36786 3.33333 7.99967C3.33333 7.63148 3.03486 7.33301 2.66667 7.33301C2.29848 7.33301 2 7.63148 2 7.99967C2 8.36786 2.29848 8.66634 2.66667 8.66634Z"></path>
+												<path d="M2.66667 4.66634C3.03486 4.66634 3.33333 4.36786 3.33333 3.99967C3.33333 3.63148 3.03486 3.33301 2.66667 3.33301C2.29848 3.33301 2 3.63148 2 3.99967C2 4.36786 2.29848 4.66634 2.66667 4.66634Z"></path>
+												<path d="M2.66667 12.6663C3.03486 12.6663 3.33333 12.3679 3.33333 11.9997C3.33333 11.6315 3.03486 11.333 2.66667 11.333C2.29848 11.333 2 11.6315 2 11.9997C2 12.3679 2.29848 12.6663 2.66667 12.6663Z"></path>
+												<path d="M14 7.99967L6 7.99967M14 3.99968L6 3.99967M14 11.9997L6 11.9997M3.33333 7.99967C3.33333 8.36786 3.03486 8.66634 2.66667 8.66634C2.29848 8.66634 2 8.36786 2 7.99967C2 7.63148 2.29848 7.33301 2.66667 7.33301C3.03486 7.33301 3.33333 7.63148 3.33333 7.99967ZM3.33333 3.99967C3.33333 4.36786 3.03486 4.66634 2.66667 4.66634C2.29848 4.66634 2 4.36786 2 3.99967C2 3.63148 2.29848 3.33301 2.66667 3.33301C3.03486 3.33301 3.33333 3.63148 3.33333 3.99967ZM3.33333 11.9997C3.33333 12.3679 3.03486 12.6663 2.66667 12.6663C2.29848 12.6663 2 12.3679 2 11.9997C2 11.6315 2.29848 11.333 2.66667 11.333C3.03486 11.333 3.33333 11.6315 3.33333 11.9997Z" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"></path>
+											</svg>
+											Seznamy
+										</a>
+								</div>
+
+								<div id="snippet--actionLinkCollection" class="action-panel-item">
+									<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads class="btn-profile-action">
+											<svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+												<path d="M11.2735 2.7786L13.0641 13.3373L14.3786 13.1144L12.588 2.55566L11.2735 2.7786Z"></path>
+												<path d="M2 2.66713V13.3338H3.33333V2.66713H2Z"></path>
+												<path d="M6.66667 4.00046V13.3338H5.33333V4.00046H6.66667Z"></path>
+												<path d="M8.66667 13.3338V2.66713H10V13.3338H8.66667Z"></path>
+											</svg>
+											Filmotéka
+									</a>
+								</div>
+
+								<div class="action-panel-item">
+									<a title="Ovládací panel" href="javascript:void(0);" data-dropdown="#dropdown-control-panel" data-parent-class="box-rating-container" class="button-control-panel" data-onboarding-step-9="false">
+										<svg width="24" height="24" viewBox="0 0 24 24" stroke="currentColor" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M11.9974 12.6663C12.3656 12.6663 12.6641 12.3679 12.6641 11.9997C12.6641 11.6315 12.3656 11.333 11.9974 11.333C11.6292 11.333 11.3307 11.6315 11.3307 11.9997C11.3307 12.3679 11.6292 12.6663 11.9974 12.6663Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+											<path d="M16.6641 12.6663C17.0323 12.6663 17.3307 12.3679 17.3307 11.9997C17.3307 11.6315 17.0323 11.333 16.6641 11.333C16.2959 11.333 15.9974 11.6315 15.9974 11.9997C15.9974 12.3679 16.2959 12.6663 16.6641 12.6663Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+											<path d="M7.33073 12.6663C7.69892 12.6663 7.9974 12.3679 7.9974 11.9997C7.9974 11.6315 7.69892 11.333 7.33073 11.333C6.96254 11.333 6.66406 11.6315 6.66406 11.9997C6.66406 12.3679 6.96254 12.6663 7.33073 12.6663Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+										</svg>
+										
 									</a>
 								</div>
 							</div>
 
+							<div id="dropdown-control-panel" class="dropdown-content control-panel">
 
-							<a href="/film/4711-pan-prstenu-spolecenstvo-prstenu/prehled/?modal=ratingAndFanclub" data-no-ads rel="contentModal" class="more more-modal-ratings-fanclub" data-modal-class="modal-ratings-fanclub">
-								Hodnocení a fanklub
-							</a>
+								<ul class="blue">
+											<li>
+												<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads>
+													Přidat recenzi
+												</a>
+											</li>
+									<li id="snippet--publicControlMenuWatchlist">
+										<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads>
+												Přidat do Chci vidět
+										</a>
+									</li>
+									<li id="snippet--publicControlMenuFanclub">
+											<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads>Přidat do oblíbených</a>
+									</li>
+									<li>
+										<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads>
+												Přidat do seznamů
+										</a>
+									</li>
+									<li id="snippet--publicControlMenuCollection">
+										<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads>
+												Přidat do filmotéky
+										</a>
+									</li>
+								</ul>
 
-						</div>
+								<hr>
 
-						<div class="genres"><a href="/zanry/4-fantasy/">Fantasy</a> / <a href="/zanry/11-dobrodruzny/">Dobrodružný</a> / <a href="/zanry/1-akcni/">Akční</a></div>
-						<div class="origin">USA / Nový Zéland,
-							<span>2001, </span>172 min
-							(Special Edition: 208 min, Director's Cut: 228 min, Alternativní 219 min)
-
+								<ul class="blue">
+								<li>
+									<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads>
+										Přidat obsah
+									</a>
+								</li>
+								<li>
+									<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads>
+										Přidat zajímavost
+									</a>
+								</li>
+								<li>
+									<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads>
+										Přidat obrázky
+									</a>
+								</li>
+								<li>
+									<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads>
+										Přidat podobné filmy
+									</a>
+								</li>
+								<li>
+									<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads>
+										Přidat související filmy
+									</a>
+								</li>
+								<li>
+									<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads>
+										Přidat externí recenzi
+									</a>
+								</li>
+								<li>
+									<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads>
+										Přidat tagy
+									</a>
+								</li>
+								<li>
+									<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads>
+										Přidat web
+									</a>
+								</li>
+								</ul>
+							</div>
 						</div>
 
 						<div class="creators" id="creators">
@@ -611,14 +731,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</div>
 							<div>
 								<h4>Hrají:</h4>
-<a href="/tvurce/165-elijah-wood/prehled/">Elijah Wood</a>, <a href="/tvurce/74-ian-mckellen/prehled/">Ian McKellen</a>, <a href="/tvurce/166-viggo-mortensen/prehled/">Viggo Mortensen</a>, <a href="/tvurce/167-sean-astin/prehled/">Sean Astin</a>, <a href="/tvurce/62-cate-blanchett/prehled/">Cate Blanchett</a>, <a href="/tvurce/170-sean-bean/prehled/">Sean Bean</a>, <a href="/tvurce/97-liv-tyler/prehled/">Liv Tyler</a>, <a href="/tvurce/76-john-rhys-davies/prehled/">John Rhys-Davies</a>, <a href="/tvurce/168-billy-boyd/prehled/">Billy Boyd</a>, <a href="/tvurce/169-dominic-monaghan/prehled/">Dominic Monaghan</a>, <a href="/tvurce/60-orlando-bloom/prehled/">Orlando Bloom</a><span class="more-member-1 hidden">, <a href="/tvurce/81-christopher-lee/prehled/">Christopher Lee</a>, <a href="/tvurce/102-hugo-weaving/prehled/">Hugo Weaving</a>, <a href="/tvurce/171-ian-holm/prehled/">Ian Holm</a>, <a href="/tvurce/69116-noel-appleby/prehled/">Noel Appleby</a>, <a href="/tvurce/11781-marton-csokas/prehled/">Márton Csókás</a>, <a href="/tvurce/4356-craig-parker/prehled/">Craig Parker</a>, <a href="/tvurce/13883-andy-serkis/prehled/">Andy Serkis</a>, <a href="/tvurce/9563-ian-mune/prehled/">Ian Mune</a>, <a href="/tvurce/64124-lawrence-makoare/prehled/">Lawrence Makoare</a>, <a href="/tvurce/3829-harry-sinclair/prehled/">Harry Sinclair</a>, <a href="/tvurce/207-elizabeth-moody/prehled/">Elizabeth Moody</a>, <a href="/tvurce/11-peter-jackson/prehled/">Peter Jackson</a>, <a href="/tvurce/23296-bill-johnson/prehled/">Bill Johnson</a>, <a href="/tvurce/33786-billy-jackson/prehled/">Billy Jackson</a>, <a href="/tvurce/47731-bret-mckenzie/prehled/">Bret McKenzie</a>, <a href="/tvurce/50740-sala-baker/prehled/">Sala Baker</a>, <a href="/tvurce/52339-alan-howard/prehled/">Alan Howard</a>, <a href="/tvurce/74156-shane-rangi/prehled/">Shane Rangi</a>, <a href="/tvurce/93207-sabine-crossen/prehled/">Sabine Crossen</a>, <a href="/tvurce/285042-mark-ferguson/prehled/">Mark Ferguson</a>, <a href="/tvurce/289024-martyn-sanderson/prehled/">Martyn Sanderson</a>, <a href="/tvurce/384226-jono-manks/prehled/">Jono Manks</a>, <a href="/tvurce/392127-lori-dungey/prehled/">Lori Dungey</a>, <a href="/tvurce/526543-sam-kelly/prehled/">Sam Kelly</a>, <a href="/tvurce/603214-peter-mckenzie/prehled/">Peter McKenzie</a>, <a href="/tvurce/631715-gino-acevedo/prehled/">Gino Acevedo</a>, <a href="/tvurce/668564-tim-kano/prehled/">Tim Kano</a>, <a href="/tvurce/712653-thomas-robins/prehled/">Thomas Robins</a>, <a href="/tvurce/779337-cameron-rhodes/prehled/">Cameron Rhodes</a>, <a href="/tvurce/894086-katherine-jackson/prehled/">Katherine Jackson</a>, <a href="/tvurce/902141-sarah-mcleod/prehled/">Sarah McLeod</a>, <a href="/tvurce/630856-david-weatherley/prehled/">David Weatherley</a>, <a href="/tvurce/920866-tim-wong/prehled/">Tim Wong</a>, <a href="/tvurce/921005-zo-hartley/prehled/">Zo Hartley</a>, <a href="/tvurce/922315-norman-forsey/prehled/">Norman Forsey</a>, <a href="/tvurce/923290-shane-dawson/prehled/">Shane Dawson</a>, <a href="/tvurce/923947-ray-henwood/prehled/">Ray Henwood</a></span>&nbsp;<span class="span-more-small">(<a href="#" class="more" data-text="méně" data-show=".more-member-1">více</a>)</span>
+<a href="/tvurce/165-elijah-wood/prehled/">Elijah Wood</a>, <a href="/tvurce/74-ian-mckellen/prehled/">Ian McKellen</a>, <a href="/tvurce/166-viggo-mortensen/prehled/">Viggo Mortensen</a>, <a href="/tvurce/167-sean-astin/prehled/">Sean Astin</a>, <a href="/tvurce/62-cate-blanchett/prehled/">Cate Blanchett</a>, <a href="/tvurce/170-sean-bean/prehled/">Sean Bean</a>, <a href="/tvurce/97-liv-tyler/prehled/">Liv Tyler</a>, <a href="/tvurce/76-john-rhys-davies/prehled/">John Rhys-Davies</a>, <a href="/tvurce/168-billy-boyd/prehled/">Billy Boyd</a>, <a href="/tvurce/169-dominic-monaghan/prehled/">Dominic Monaghan</a>, <a href="/tvurce/60-orlando-bloom/prehled/">Orlando Bloom</a><span class="more-member-1 hidden">, <a href="/tvurce/81-christopher-lee/prehled/">Christopher Lee</a>, <a href="/tvurce/102-hugo-weaving/prehled/">Hugo Weaving</a>, <a href="/tvurce/171-ian-holm/prehled/">Ian Holm</a>, <a href="/tvurce/69116-noel-appleby/prehled/">Noel Appleby</a>, <a href="/tvurce/11781-marton-csokas/prehled/">Márton Csókás</a>, <a href="/tvurce/4356-craig-parker/prehled/">Craig Parker</a>, <a href="/tvurce/13883-andy-serkis/prehled/">Andy Serkis</a>, <a href="/tvurce/9563-ian-mune/prehled/">Ian Mune</a>, <a href="/tvurce/64124-lawrence-makoare/prehled/">Lawrence Makoare</a>, <a href="/tvurce/3829-harry-sinclair/prehled/">Harry Sinclair</a>, <a href="/tvurce/207-elizabeth-moody/prehled/">Elizabeth Moody</a>, <a href="/tvurce/11-peter-jackson/prehled/">Peter Jackson</a>, <a href="/tvurce/23296-bill-johnson/prehled/">Bill Johnson</a>, <a href="/tvurce/33786-billy-jackson/prehled/">Billy Jackson</a>, <a href="/tvurce/47731-bret-mckenzie/prehled/">Bret McKenzie</a>, <a href="/tvurce/50740-sala-baker/prehled/">Sala Baker</a>, <a href="/tvurce/52339-alan-howard/prehled/">Alan Howard</a>, <a href="/tvurce/74156-shane-rangi/prehled/">Shane Rangi</a>, <a href="/tvurce/93207-sabine-crossen/prehled/">Sabine Crossen</a>, <a href="/tvurce/285042-mark-ferguson/prehled/">Mark Ferguson</a>, <a href="/tvurce/289024-martyn-sanderson/prehled/">Martyn Sanderson</a>, <a href="/tvurce/384226-jono-manks/prehled/">Jono Manks</a>, <a href="/tvurce/392127-lori-dungey/prehled/">Lori Dungey</a>, <a href="/tvurce/526543-sam-kelly/prehled/">Sam Kelly</a>, <a href="/tvurce/603214-peter-mckenzie/prehled/">Peter McKenzie</a>, <a href="/tvurce/631715-gino-acevedo/prehled/">Gino Acevedo</a>, <a href="/tvurce/668564-tim-kano/prehled/">Tim Kano</a>, <a href="/tvurce/712653-thomas-robins/prehled/">Thomas Robins</a>, <a href="/tvurce/779337-cameron-rhodes/prehled/">Cameron Rhodes</a>, <a href="/tvurce/894086-katherine-jackson/prehled/">Katherine Jackson</a>, <a href="/tvurce/902141-sarah-mcleod/prehled/">Sarah McLeod</a>, <a href="/tvurce/630856-david-weatherley/prehled/">David Weatherley</a>, <a href="/tvurce/920866-tim-wong/prehled/">Tim Wong</a>, <a href="/tvurce/921005-zo-hartley/prehled/">Zo Hartley</a>, <a href="/tvurce/922315-norman-forsey/prehled/">Norman Forsey</a>, <a href="/tvurce/923290-shane-dawson/prehled/">Shane Dawson</a>, <a href="/tvurce/923947-ray-henwood/prehled/">Ray Henwood</a></span>&nbsp;<span class="span-more-small">(<a href="javascript:void(0);" class="more" data-text="méně" data-show=".more-member-1">více</a>)</span>
 							</div>
 							<div class="other-professions hidden">
 								<h4>Produkce:</h4>
 
 								<span>
-									<a href="/tvurce/11-peter-jackson/prehled/">Peter Jackson</a>,
-									<a href="/tvurce/72205-fran-walsh/prehled/">Fran Walsh</a>,
+									<a href="/tvurce/11-peter-jackson/prehled/">Peter Jackson</a>, 
+									<a href="/tvurce/72205-fran-walsh/prehled/">Fran Walsh</a>, 
 									<a href="/tvurce/351113-barrie-m-osborne/prehled/">Barrie M. Osborne</a>
 								</span>
 							</div>
@@ -640,9 +760,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 								<h4>Zvuk:</h4>
 
 								<span>
-									<a href="/tvurce/714538-mike-hopkins/prehled/">Mike Hopkins</a>,
-									<a href="/tvurce/714536-ethan-van-der-ryn/prehled/">Ethan Van der Ryn</a>,
-									<a href="/tvurce/718523-michael-semanick/prehled/">Michael Semanick</a>,
+									<a href="/tvurce/714538-mike-hopkins/prehled/">Mike Hopkins</a>, 
+									<a href="/tvurce/714536-ethan-van-der-ryn/prehled/">Ethan Van der Ryn</a>, 
+									<a href="/tvurce/718523-michael-semanick/prehled/">Michael Semanick</a>, 
 									<a href="/tvurce/761331-christopher-boyes/prehled/">Christopher Boyes</a>
 								</span>
 							</div>
@@ -650,7 +770,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 								<h4>Scénografie:</h4>
 
 								<span>
-									<a href="/tvurce/271339-grant-major/prehled/">Grant Major</a>,
+									<a href="/tvurce/271339-grant-major/prehled/">Grant Major</a>, 
 									<a href="/tvurce/270736-dan-hennah/prehled/">Dan Hennah</a>
 								</span>
 							</div>
@@ -658,11 +778,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 								<h4>Masky:</h4>
 
 								<span>
-									<a href="/tvurce/220806-vivienne-macgillicuddy/prehled/">Vivienne MacGillicuddy</a>,
-									<a href="/tvurce/630940-peter-swords-king/prehled/">Peter 'Swords' King</a>,
-									<a href="/tvurce/633004-davina-lamont/prehled/">Davina Lamont</a>,
-									<a href="/tvurce/633811-rick-findlater/prehled/">Rick Findlater</a>,
-									<a href="/tvurce/638690-kerryn-flewell-smith/prehled/">Kerryn Flewell-Smith</a>,
+									<a href="/tvurce/220806-vivienne-macgillicuddy/prehled/">Vivienne MacGillicuddy</a>, 
+									<a href="/tvurce/630940-peter-swords-king/prehled/">Peter 'Swords' King</a>, 
+									<a href="/tvurce/633004-davina-lamont/prehled/">Davina Lamont</a>, 
+									<a href="/tvurce/633811-rick-findlater/prehled/">Rick Findlater</a>, 
+									<a href="/tvurce/638690-kerryn-flewell-smith/prehled/">Kerryn Flewell-Smith</a>, 
 									<a href="/tvurce/936933-margaret-aston/prehled/">Margaret Aston</a>
 								</span>
 							</div>
@@ -670,83 +790,110 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 								<h4>Kostýmy:</h4>
 
 								<span>
-									<a href="/tvurce/253203-ngila-dickson/prehled/">Ngila Dickson</a>,
+									<a href="/tvurce/253203-ngila-dickson/prehled/">Ngila Dickson</a>, 
 									<a href="/tvurce/33794-richard-taylor/prehled/">Richard Taylor</a>
 								</span>
 							</div>
-								<span class="span-more-small">(<a href="#" class="more" data-text="méně profesí" data-show=".other-professions">další profese</a>)</span>
+								<span class="span-more-small">(<a href="javascript:void(0);" class="more" data-text="méně profesí" data-show=".other-professions">další profese</a>)</span>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 
-		<div id="vod-items" class="box box-minimal box-vod">
-			<div class="box-film-vod">
-				<h3>VOD <span class="count">(8)</span></h3>
-				<div class="box-film-vod-services">
-					<span class="vod-badge">
-						<a href="https://www.netflix.com/title/60004480"data-no-ads class="vod-badge-link vod-logo-netflix" data-ga-event="vod-service-netflix|film|vod" title="Netflix">
-							<i></i>Netflix
-						</a>
-					</span>
-					<span class="vod-badge">
-						<a href="https://www.hbomax.com/cz/en/movies/lord-of-the-rings-the-fellowship-of-the-ring/fb9f961f-6302-4776-91d7-f1b7a69fb61d"data-no-ads class="vod-badge-link vod-logo-hbomax" data-ga-event="vod-service-hbo-max|film|vod" title="HBO Max">
-							<i></i>HBO Max
-						</a>
-					</span>
-					<span class="vod-badge">
-						<a href="https://www.primevideo.com/detail/amzn1.dv.gti.84a9f6d5-bc3f-73a3-e41f-a82b4ff83e67"data-no-ads class="vod-badge-link vod-logo-amazon" data-ga-event="vod-service-prime-video|film|vod" title="Prime Video">
-							<i></i>Prime Video
-						</a>
-					</span>
-					<span class="vod-badge">
-						<a href="https://srv.clickfuse.com/ads/adclkr.php?id=100006636&amp;url=https%3A//tv.apple.com/cz/movie/the-lord-of-the-rings-the-fellowship-of-the-ring/umc.cmc.29au6l8rcr4g5zhuwcx0euri1"data-no-ads class="vod-badge-link vod-logo-apple" data-ga-event="vod-service-apple-tv|film|vod" title="Apple TV+">
-							<i></i>Apple TV+
-						</a>
-					</span>
-					<span class="vod-badge">
-						<a href="https://www.lepsi.tv/top_tv/film/pan-prstenu-spolecenstvo-prstenu-online?utm_source=csfd&amp;utm_content=csfd"data-no-ads class="vod-badge-link vod-logo-lepsitv" data-ga-event="vod-service-lepsi-tv|film|vod" title="Lepší.TV">
-							<i></i>Lepší.TV
-						</a>
-					</span>
-					<span class="vod-badge">
-						<a href="https://www.oneplay.cz/film/15728-pan-prstenu-spolecenstvo-prstenu"data-no-ads class="vod-badge-link vod-logo-oneplay" data-ga-event="vod-service-oneplay|film|vod" title="Oneplay">
-							<i></i>Oneplay
-						</a>
-					</span>
-					<span class="vod-badge">
-						<a href="https://rakuten.tv/cz/movies/pan-prstenu-spolecenstvo-prstenu"data-no-ads class="vod-badge-link vod-logo-rakuten" data-ga-event="vod-service-rakuten-tv|film|vod" title="Rakuten.tv">
-							<i></i>Rakuten.tv
-						</a>
-					</span>
-					<span class="vod-badge">
-						<a href="https://www.youtube.com/watch?v=rmhG52BrjGI"data-no-ads class="vod-badge-link vod-logo-youtube" data-ga-event="vod-service-youtube-movies|film|vod" title="YouTube Movies">
-							<i></i>YouTube Movies
-						</a>
-					</span>
+
+
+		<div class="updated-box">
+			<header class="updated-box-header">
+				<h2>Kde sledovat</h2>
+
+			</header>
+			<div class="updated-box-content">
+				<div class="film-cinema-list">
+					<div class="box-film-cinema">
+						<h3>Cinema <span class="count">(2)</span></h3>
+						<div class="box-film-cinema-services" data-auto-show-hide-box>
+							<a href="/kino/?films%5B0%5D=4711&amp;period=all&amp;detect=1" class="btn-play-cinema">
+									HRAJÍ V KINECH
+							</a>
+						</div>
+					</div>
 				</div>
-			</div>
-			<div class="box-film-vod-more hidden">
-				(<a href="javascript:void(0);">více</a>)
+
+				<div id="vod-items" class="film-vod-list" data-onboarding-step-7="false">
+					<div class="box-film-vod">
+						<h3>VOD <span class="count">(9)</span></h3>
+						<div class="box-film-vod-services">
+							<span class="vod-badge">
+								<a href="https://www.netflix.com/title/60004480"data-no-ads class="vod-badge-link vod-logo-netflix" data-ga-event="vod-service-netflix|film|vod" title="Netflix">
+									<i></i>Netflix
+								</a>
+							</span>
+							<span class="vod-badge">
+								<a href="https://www.hbomax.com/cz/en/movies/lord-of-the-rings-the-fellowship-of-the-ring/fb9f961f-6302-4776-91d7-f1b7a69fb61d"data-no-ads class="vod-badge-link vod-logo-hbomax" data-ga-event="vod-service-hbo-max|film|vod" title="HBO Max">
+									<i></i>HBO Max
+								</a>
+							</span>
+							<span class="vod-badge">
+								<a href="https://www.primevideo.com/detail/amzn1.dv.gti.84a9f6d5-bc3f-73a3-e41f-a82b4ff83e67"data-no-ads class="vod-badge-link vod-logo-amazon" data-ga-event="vod-service-prime-video|film|vod" title="Prime Video">
+									<i></i>Prime Video
+								</a>
+							</span>
+							<span class="vod-badge">
+								<a href="https://srv.clickfuse.com/ads/adclkr.php?id=100006636&amp;url=https%3A//tv.apple.com/cz/movie/the-lord-of-the-rings-the-fellowship-of-the-ring/umc.cmc.29au6l8rcr4g5zhuwcx0euri1"data-no-ads class="vod-badge-link vod-logo-apple" data-ga-event="vod-service-apple-tv|film|vod" title="Apple TV">
+									<i></i>Apple TV
+								</a>
+							</span>
+							<span class="vod-badge">
+								<a href="https://www.lepsi.tv/top_tv/film/pan-prstenu-spolecenstvo-prstenu-online?utm_source=csfd&amp;utm_content=csfd"data-no-ads class="vod-badge-link vod-logo-lepsitv" data-ga-event="vod-service-lepsi-tv|film|vod" title="Lepší.TV">
+									<i></i>Lepší.TV
+								</a>
+							</span>
+							<span class="vod-badge vod-badge-release vod-badge-expiry">
+								<a href="https://telly.cz/program/pan-prstenu-spolecenstvo-prstenu/"data-no-ads class="vod-badge-link vod-logo-telly" data-ga-event="vod-service-telly|film|vod" title="Telly">
+									<i></i>Telly
+								</a>
+									<span class="vod-badge-tooltip tooltip" data-tippy-content="K přehrání od 27.03.2026.">
+										<svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+											<path fill-rule="evenodd" clip-rule="evenodd" d="M7.9987 2.66666C5.05318 2.66666 2.66536 5.05448 2.66536 7.99999C2.66536 10.9455 5.05318 13.3333 7.9987 13.3333C10.9442 13.3333 13.332 10.9455 13.332 7.99999C13.332 5.05448 10.9442 2.66666 7.9987 2.66666ZM1.33203 7.99999C1.33203 4.3181 4.3168 1.33333 7.9987 1.33333C11.6806 1.33333 14.6654 4.3181 14.6654 7.99999C14.6654 11.6819 11.6806 14.6667 7.9987 14.6667C4.3168 14.6667 1.33203 11.6819 1.33203 7.99999ZM8.9987 4.99999C8.9987 5.55228 8.55098 5.99999 7.9987 5.99999C7.44641 5.99999 6.9987 5.55228 6.9987 4.99999C6.9987 4.44771 7.44641 3.99999 7.9987 3.99999C8.55098 3.99999 8.9987 4.44771 8.9987 4.99999ZM7.33203 7.33333V11.3333H8.66536V7.33333H7.33203Z"></path>
+										</svg>
+									</span>
+							</span>
+							<span class="vod-badge">
+								<a href="https://www.oneplay.cz/film/15728-pan-prstenu-spolecenstvo-prstenu"data-no-ads class="vod-badge-link vod-logo-oneplay" data-ga-event="vod-service-oneplay|film|vod" title="Oneplay">
+									<i></i>Oneplay
+								</a>
+							</span>
+							<span class="vod-badge">
+								<a href="https://rakuten.tv/cz/movies/pan-prstenu-spolecenstvo-prstenu"data-no-ads class="vod-badge-link vod-logo-rakuten" data-ga-event="vod-service-rakuten-tv|film|vod" title="Rakuten.tv">
+									<i></i>Rakuten.tv
+								</a>
+							</span>
+							<span class="vod-badge">
+								<a href="https://www.youtube.com/watch?v=rmhG52BrjGI"data-no-ads class="vod-badge-link vod-logo-youtube" data-ga-event="vod-service-youtube-movies|film|vod" title="YouTube Movies">
+									<i></i>YouTube Movies
+								</a>
+							</span>
+						</div>
+					</div>
+					<div class="box-film-vod-more hidden">
+						<a href="javascript:void(0);">více</a>
+					</div>
+				</div>
+
 			</div>
 		</div>
 
-
-
-
-	<section class="box box-minimal">
-		<div class="box-header">
+	<section class="updated-box updated-box-minimal">
+		<div class="updated-box-header">
 			<h3>
 				Obsahy<span class="count">(2)</span>
-
-
 			</h3>
 			<div class="box-header-action">
 				<a href="#" id="all-plots" data-state="closed" data-state-text="skrýt obsahy" class="more">zobrazit všechny obsahy</a>
 			</div>
 		</div>
-		<div class="box-content box-content-padding">
+		<div class="updated-box-content">
 			<div class="body--plots">
 				<div class="plot-full hidden">
 
@@ -769,7 +916,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 					(oficiální text distributora)
 		</em>
 		</p>
-					<span class="span-more-small">(<a href="#" class="plot-preview-more" data-state="closed" data-hide-preserve=".plot-preview" data-show-preserve=".plot-full" data-text="méně" class="more">více</a>)</span>
+					<span class="span-more-small"><a href="#" class="plot-preview-more" data-state="closed" data-hide-preserve=".plot-preview" data-show-preserve=".plot-full" data-text="méně" class="more">více</a></span>
 				</div>
 				<div class="plots hidden">
 						<div class="plots-item">
@@ -790,7 +937,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
 
-		<div class="tabs">
+		<div class="tabs updated-tabs">
 <nav class="tab-nav tab-nav-count-10">
 	<ul class="tab-nav-list">
 		<li class="tab-nav-item active">
@@ -905,14 +1052,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
 <div class="tab-content movie-profile--tab-default">
-	<section class="box box-video-overview box-borderless">
-			<header class="box-header">
+	<section class="updated-box box-video-overview box-borderless">
+			<header class="updated-box-header updated-box-header-nowrap">
 				<h2>Videa <span class="count">(4)</span></h2>
-				<div class="box-header-action">
+				<div class="updated-box-header-action">
 					<a href="/film/4711-pan-prstenu-spolecenstvo-prstenu/videa/" class="button">VÍCE</a>
 				</div>
 			</header>
-			<div class="box-content">
+			<div class="updated-box-content">
 				<div class="box box-media">
 					<figure class="box-video preview" data-autoplay-video>
 <div class="box-video-content">
@@ -933,12 +1080,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			playsinline
 			width="637"
 			height="360"
-
+			
 			data-video-url="/api/video-player/?data=__data__"
-			data-videos="[&#123;&quot;duration&quot;:113,&quot;copyright&quot;:&quot;New Line Cinema&quot;,&quot;request_data&quot;:&quot;rlW2nJEyo0yxVwbkAGp3BGN4AwZfVaA1LaEcqTkyGTShM3IuM2IWMUZvByfkYQWqYPW0o2gyovV6VwZlA2SyZGtmLzWwBTLjMJMxAGp0AGxmMJH5ZzAzZGx3ZJH0AQZ5L2RvsD&quot;},&#123;&quot;duration&quot;:121,&quot;copyright&quot;:&quot;2001 New Line Cinema&quot;,&quot;request_data&quot;:&quot;rlW2nJEyo0yxVwbmZGR2AQpfVaA1LaEcqTkyGTShM3IuM2IWMUZvByfkYQWqYPW0o2gyovV6VwOxZQp5AzLkMGqvAGx2ZTV1ZwuwLmx3MJLlZQHjMwp1MwZ1AwywZmVvsD&quot;},&#123;&quot;duration&quot;:167,&quot;copyright&quot;:&quot;2001 New Line Cinema&quot;,&quot;request_data&quot;:&quot;rlW2nJEyo0yxVwbmZQHjZmNfVaA1LaEcqTkyGTShM3IuM2IWMUZvByfkYQWqYPW0o2gyovV6VzIvAJV3MQx2BTEvBQOxLmyyBQLkLJIuZ2MvZzR5ZwH5BQH4LJWxLGVvsD&quot;}]"
+			data-videos="[&#123;&quot;duration&quot;:113,&quot;copyright&quot;:&quot;New Line Cinema&quot;,&quot;request_data&quot;:&quot;rlW2nJEyo0yxVwbkAGp3BGN4AwZfVaA1LaEcqTkyGTShM3IuM2IWMUZvByfkYQWqYPW0o2gyovV6VzZ3AmL4ZzHjLmyxAQtlBTR1BTWuZmuzZ2D3L2H2ZzH4Zmp3ZzL5AQVvsD&quot;},&#123;&quot;duration&quot;:121,&quot;copyright&quot;:&quot;2001 New Line Cinema&quot;,&quot;request_data&quot;:&quot;rlW2nJEyo0yxVwbmZGR2AQpfVaA1LaEcqTkyGTShM3IuM2IWMUZvByfkYQWqYPW0o2gyovV6VwuyLmOzZQyxZwuvAJSvZmIwAGZjL2MuAzHjMTMyZQp0ZTL0ZmpjMGxvsD&quot;},&#123;&quot;duration&quot;:167,&quot;copyright&quot;:&quot;2001 New Line Cinema&quot;,&quot;request_data&quot;:&quot;rlW2nJEyo0yxVwbmZQHjZmNfVaA1LaEcqTkyGTShM3IuM2IWMUZvByfkYQWqYPW0o2gyovV6Vwp4MQV1MGN1L2RkMTSvAmSwZGEwAmZ4MGOxLzAuLwywLGV4BGVmLGVvsD&quot;}]"
 			data-recommended-videos-url="/api/video-player/recommended-videos/?videoId=305030"
 			data-recommended-autoplay
-
+			
 		>
 			<p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
 		</video>
@@ -949,70 +1096,66 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			</div>
 	</section>
 
-	<section class="box box-reviews">
-		<header class="box-header">
-			<h2>Recenze <span class="count">(2 044)</span></h2>
-			<div class="box-header-action">
+	<section class="updated-box box-reviews">
+		<header class="updated-box-header updated-box-header-nowrap">
+			<h2>Recenze <span class="count">(2 044)</span></h2>
+			<div class="updated-box-header-action">
 				<a href="/film/4711-pan-prstenu-spolecenstvo-prstenu/recenze/" class="button">VÍCE</a>
 			</div>
 		</header>
-		<div class="box-content">
-	<article id="review-10666802" class="article article-white" data-film-review>
-		<div class="article-content article-content-justify article-review">
-			<header class="article-header article-header-review">
-				<div class="article-header-review-name">
-<h3 class="user-title"><a href="/uzivatel/46418-morien/prehled/" class="user-title-name">Morien</a>&nbsp;<span class="user-title-info"><span class="star-rating"><span class="stars stars-5"></span></span></span></h3>				</div>
-				<div class="article-header-review-action">
-					<a href="/uzivatel/46418-morien/recenze/">všechny recenze uživatele</a>
+		<div class="updated-box-content">
+	<article id="review-9583233" class="article article-review article-content-justify" data-film-review>
+		<header class="article-header article-header-review">
+			<div class="article-header-review-name">
+<h3 class="user-title"><a href="/uzivatel/229260-segrestor/prehled/" class="user-title-name">Segrestor</a>&nbsp;<span class="user-title-info"><span class="star-rating"><span class="stars stars-5"></span></span></span></h3>			</div>
+			<div class="article-header-review-action">
+				<a href="/uzivatel/229260-segrestor/recenze/">všechny recenze uživatele</a>
+				
+				<a href="/film/4711-pan-prstenu-spolecenstvo-prstenu/recenze/?review=9583233" class="permanent-link" title="Trvalý odkaz: /film/4711-pan-prstenu-spolecenstvo-prstenu/recenze/?review=9583233"><i class="icon icon-permalink"></i></a>
+			</div>
+		</header>
 
-					<a href="/film/4711-pan-prstenu-spolecenstvo-prstenu/recenze/?review=10666802" class="permanent-link" title="Trvalý odkaz: /film/4711-pan-prstenu-spolecenstvo-prstenu/recenze/?review=10666802"><i class="icon icon-permalink"></i></a>
-				</div>
-			</header>
-
-
-				<p>
+		
+			<p>
 <span class="comment" data-film-review-content>
- (1001) Když mělo "Společenstvo" premiéru, bylo mi deset a rodiče mi příběhy Pána prstenů četli před spaním tak od pěti nebo šesti. Lze tedy bezpečně říci, že jsem velmi nedočkavě toužila spatřit všechny mé oblíbené postavy ožít na plátně a prožít ultimátní příběh záchrany světa a osobního rozvoje. Možná (nejspíš; určitě) může právě neustálé zírání na tento film, znovu a znovu a znovu a ještě jednou dokola, za to, že jsem si vypěstovala vášeň k filmu. Naučila jsem se "Společenstvo" obdivovat úplně celé a neuplatňovat na něm příliš mnoho kritického myšlení. A to pořád platí, moje láska pro tento film je věčná. Ale když teď už vím, jakým směrem se bude ubírat režijní kariéra Petera Jacksona, začínám si myslet, že on sám osobně nemá skoro žádný tvůrčí styl (umělecké hodnoty). "Společenstvo" je skvělé kvůli báječnému zdrojovému materiálu stvořeném panem Tolkienem a protože Jackson doslova posadil tisíce lidí na zadek a nechal je všechno vyrobit vlastníma rukama (a srdcem). Ale kamera se pořád mele jako šílená a mnoho těch nájezdů a švenků a zoomů působí povrchně a nemotivovaně. A obraz není vždycky tak fotogenický jak by jeden doufal, když je to celé zaplněné elfy a magií. Takto se neochotně pokouším kritizovat formální stránku "Společenstva". Ale fiktivní svět, který skrz ni nahlíží, je dokonalý. ♥♥♥
+ To bylo tak: Internet prožíval svůj vzestup, neznali jsme sociální sítě, vznikaly první amatérské fanweby a tou řídkou sítí začaly prosakovat první informace o tom, že kdesi na Novém Zélandu budou natáčet film podle famózní knihy Pán prstenů. Během dvou let se kusé informace sjednotily do hutných zpráv a desítek fotografií, také ovšem fám, fejků a několik splasklých bublin o Tomu Bombadilovi. Naprosto fantasticky působily první informace o hercích, kteří měli ztvárnit hlavní role. Celý svět prožíval nadšení z Aragorna či Galadriel, kvitoval obsazení Gandalfa, diskutoval nad Frodem a bazíroval nad Elfy zejména Elrondem. Řešili se exteriéry, hudba, kostýmy a především všechny ty odklony od předlohy. Tomu filmu zkrátka předcházela neskutečná masáž fanoušků. Už nikdy potom to nebylo takové. Šlo o to "poprvé". Pak přišel ten velký den. Objevily se první recenze. Dopadlo to špatně! V televizi to doslova sejmuli. Nezbývalo, než na to druhý den vyrazit na premiéru do hlavního města. Stačilo pročísnout řady eflů, trpaslíků, hobitů a skřetů a vyfasovat lístek. Pche, pitomé recenze! Dav rozhodl jinak. Z filmu se stal jeden z největších hitů v dějinách světové filmografie. Recenzenti začali pomalu obracet, nakonec se jim začal líbit i ten soundtrack. Nikdo nechtěl jít hlavou proti zdi. Pirátské kopie ovládly počítače milionů uživatelů. Přišly prodloužené verze. Nejsem asi jediný, kdo je viděl více než desetkrát. To jsou desítky hodin sledování! Konaly se kinomaratóny, pořádaly cony, na louce za Prahou lidé simulovali bitvy ve Středozemi, zavládla prstenová mánie. Pána prstenů začali číst i lidi, kteří v životě přečetli jen lístek na vlak. Prstenová extáze opojila celý svět a všichni už zapomněli na ty první recenze, kde vlastně neřekli nic jiného, než holou pravdu. Hudba je příliš patetická. Celé je to kýčovité, hobiti jsou jako děti, knihou to zcela pohrdá, mnozí působí příliš teploušským dojmem, žádná krev, zmatky v chronologii, nic o geografii Středozemě, změny velikostí hobitů, WTF-Arwen, Gluma mluví kačer Donald, Frodo si kouše nehty a další a další více či méně hnidopišské postřehy by se asi hodilo vypsat do jednoho velkýho "flejmu", ale když ono je to tak krásný. Je to sice úplně jiný svět, než ten, který stvořil J. R. R. Tolkien, ale tím spíše nás zcela pohltí. Tenhle film to ještě umí. Z celé filmové prstenové tvorby je nejpodmanivější, dějově nejnatřískanější a samozřejmě nejkoukatelnější. Dále je třeba vypíchnout několik faktů, které to tak nějak řeknou samy za sebe a tím i lze toto pojednání ukončit: Hobitín a Dno Pytle, Můstek v Khazad-dûm, Lothlórien a Galadrielina zkouška, Argonath a Boromirova smrt.
 </span>
 
 
 
-					<span class="review-date info">
-						(<time>21.04.2017</time>)
-					</span>
-				</p>
+				<span class="review-date info">
+					(<time>21.12.2013</time>)
+				</span>
+			</p>
+		
 
-
-		</div>
 	</article>
 
-	<article id="review-10910309" class="article article-white" data-film-review>
-		<div class="article-content article-content-justify article-review">
-			<header class="article-header article-header-review">
-				<div class="article-header-review-name">
-<h3 class="user-title"><a href="/uzivatel/681552-eliott/prehled/" class="user-title-name">Eliott</a>&nbsp;<span class="user-title-info"><span class="star-rating"><span class="stars stars-5"></span></span></span></h3>				</div>
-				<div class="article-header-review-action">
-					<a href="/uzivatel/681552-eliott/recenze/">všechny recenze uživatele</a>
+	<article id="review-310635" class="article article-review article-content-justify" data-film-review>
+		<header class="article-header article-header-review">
+			<div class="article-header-review-name">
+<h3 class="user-title"><a href="/uzivatel/60347-faidra/prehled/" class="user-title-name">Faidra</a>&nbsp;<span class="user-title-info"><span class="star-rating"><span class="stars stars-3"></span></span></span></h3>			</div>
+			<div class="article-header-review-action">
+				<a href="/uzivatel/60347-faidra/recenze/">všechny recenze uživatele</a>
+				
+				<a href="/film/4711-pan-prstenu-spolecenstvo-prstenu/recenze/?review=310635" class="permanent-link" title="Trvalý odkaz: /film/4711-pan-prstenu-spolecenstvo-prstenu/recenze/?review=310635"><i class="icon icon-permalink"></i></a>
+			</div>
+		</header>
 
-					<a href="/film/4711-pan-prstenu-spolecenstvo-prstenu/recenze/?review=10910309" class="permanent-link" title="Trvalý odkaz: /film/4711-pan-prstenu-spolecenstvo-prstenu/recenze/?review=10910309"><i class="icon icon-permalink"></i></a>
-				</div>
-			</header>
-
-
-				<p>
+		
+			<p>
 <span class="comment" data-film-review-content>
- Pán prstenů je asi mým nejoblíbenějším filmem ze všech a neomrzí ani po několikátém shlédnutí. Je to naprosto bezchybné dílo a vůbec filmu neuškodí, že efekty již mnohdy nejsou nejlepší. Mám rád všechny tři filmy zhruba stejně a tvoří spolu dokonalý celek. Návrat krále jsem však symbolicky přidal do své <a href="https://www.csfd.cz/uzivatel/681552-eliott/oblibene-filmy/">Top  desítky nejlepších filmů</a>, jako ten nejpovedenější z trilogie. PS: také asi jediný důvod proč jsem zvolil <a href="https://www.csfd.cz/tvurce/11-peter-jackson/">Petera Jacksona</a> jako <a href="https://www.csfd.cz/uzivatel/681552-eliott/oblibeni-reziseri/">svého oblíbeného režiséra</a>, ale zaslouženě.  normální verze=90% prodloužená=100%
+ Neznat knihu, byla bych zřejmě nadšená. Jelikož ji znám a ctím léta, nadšená nejsem, protože tohle je sice pěkné, ale s Tolkienem to má společné leda jméno. Co nám zůstalo, jsou dlouhatááááánské záběry na pěkné scenérie, obstojná hudba, patetické řečnění a pár slušných herců (McKellen, Blanchettová, Bean).
 </span>
 
 
 
-					<span class="review-date info">
-						(<time>11.04.2018</time>)
-					</span>
-				</p>
+				<span class="review-date info">
+					(<time>23.06.2007</time>)
+				</span>
+			</p>
+		
 
-
-		</div>
 		<div class="box box-banner-mobile box-banner-mobile-filmreviews">
 			<p class="box-banner-text">Reklama</p>
 <div id="mobile_square_1" class="ad-pmg" style="height: 300px;"></div>
@@ -1022,107 +1165,102 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 		<div class="article article-white article-native article-native-long article-native-onlydesktop">
 <div id="native_long_1" class="ad-pmg" style="height: 115px;"></div>
 		</div>
-	<article id="review-213697" class="article article-white" data-film-review>
-		<div class="article-content article-content-justify article-review">
-			<header class="article-header article-header-review">
-				<div class="article-header-review-name">
-<h3 class="user-title"><a href="/uzivatel/8560-malarkey/prehled/" class="user-title-name">Malarkey</a>&nbsp;<span class="user-title-info"><span class="star-rating"><span class="stars stars-5"></span></span></span></h3>				</div>
-				<div class="article-header-review-action">
-					<a href="/uzivatel/8560-malarkey/recenze/">všechny recenze uživatele</a>
+	<article id="review-90300" class="article article-review article-content-justify" data-film-review>
+		<header class="article-header article-header-review">
+			<div class="article-header-review-name">
+<h3 class="user-title"><a href="/uzivatel/2008-matty/prehled/" class="user-title-name">Matty</a>&nbsp;<span class="user-title-info"><span class="star-rating"><span class="stars stars-5"></span></span></span></h3>			</div>
+			<div class="article-header-review-action">
+				<a href="/uzivatel/2008-matty/recenze/">všechny recenze uživatele</a>
+				
+				<a href="/film/4711-pan-prstenu-spolecenstvo-prstenu/recenze/?review=90300" class="permanent-link" title="Trvalý odkaz: /film/4711-pan-prstenu-spolecenstvo-prstenu/recenze/?review=90300"><i class="icon icon-permalink"></i></a>
+			</div>
+		</header>
 
-					<a href="/film/4711-pan-prstenu-spolecenstvo-prstenu/recenze/?review=213697" class="permanent-link" title="Trvalý odkaz: /film/4711-pan-prstenu-spolecenstvo-prstenu/recenze/?review=213697"><i class="icon icon-permalink"></i></a>
-				</div>
-			</header>
-
-
-				<p>
+		
+			<p>
 <span class="comment" data-film-review-content>
- Počátek trilogie, která čekala na zfilmování jako křesťané na Ježíše a ač se na ni čekalo s ohromným očekáváním svůj úděl splnila a tak se stala kultem nového tisíciletí. První díl je sice trochu volnější od velkých bojů okleštěný, ale zaujme svojí originalitou a pílí jakou Jackson natáčí, jež Vás do světa Středozemě vtáhne natolik jako mě že tomu ihned podlehnete a jen tak se z jejich kleští nedostanete. Fámózní knižní předloha = téměř dokonalý film. Bohůžel se do filmu nevešlo všechno, ale to by poté stopáž byla o mnoho mnoho delší. I tak je to výborné fantasy, které v Hollywoodu dlouho nebylo resp. nikdy nebylo. <strong>--- Jeden prsten vládne všem, Jeden jim všem káže, Jeden všechny přivede, do temnoty sváže.</strong>
+ Vím, že bych měl napsat něco přínosnějšího, ale tohle byl společně s Amadeem film, který mě přivedl k filmu. Objektivně jej tedy zřejmě nikdy zhodnotit nedokážu. 100% <strong>Zajímavé komentáře:</strong> ScreamJay, Jeanne, belldandy, Pacco, Rocky88, Ajantis, salahadin, kitano, Indy, wipeout, Ferelen
 </span>
 
 
 
-					<span class="review-date info">
-						(<time>26.10.2006</time>)
-					</span>
-				</p>
+				<span class="review-date info">
+					(<time>11.05.2005</time>)
+				</span>
+			</p>
+		
 
-
-		</div>
 	</article>
 
-	<article id="review-12252616" class="article article-white" data-film-review>
-		<div class="article-content article-content-justify article-review">
-			<header class="article-header article-header-review">
-				<div class="article-header-review-name">
-<h3 class="user-title"><a href="/uzivatel/635486-algernons/prehled/" class="user-title-name">Algernons</a>&nbsp;<span class="user-title-info"><span class="star-rating"><span class="stars stars-5"></span></span></span></h3>				</div>
-				<div class="article-header-review-action">
-					<a href="/uzivatel/635486-algernons/recenze/">všechny recenze uživatele</a>
+	<article id="review-823" class="article article-review article-content-justify" data-film-review>
+		<header class="article-header article-header-review">
+			<div class="article-header-review-name">
+<h3 class="user-title"><a href="/uzivatel/44-edas/prehled/" class="user-title-name">EdaS</a>&nbsp;<span class="user-title-info"><span class="star-rating"><span class="stars stars-5"></span></span></span></h3>			</div>
+			<div class="article-header-review-action">
+				<a href="/uzivatel/44-edas/recenze/">všechny recenze uživatele</a>
+				
+				<a href="/film/4711-pan-prstenu-spolecenstvo-prstenu/recenze/?review=823" class="permanent-link" title="Trvalý odkaz: /film/4711-pan-prstenu-spolecenstvo-prstenu/recenze/?review=823"><i class="icon icon-permalink"></i></a>
+			</div>
+		</header>
 
-					<a href="/film/4711-pan-prstenu-spolecenstvo-prstenu/recenze/?review=12252616" class="permanent-link" title="Trvalý odkaz: /film/4711-pan-prstenu-spolecenstvo-prstenu/recenze/?review=12252616"><i class="icon icon-permalink"></i></a>
-				</div>
-			</header>
-
-
-				<p>
+		
+			<p>
 <span class="comment" data-film-review-content>
- Unikátní trilogie v rámci historie kinematografie započala zde! Asi nikdy nepochopím, jak se Jacksonovy podařilo na přelomu tisíciletí vytvořit Středozem! Opravdu to působí jako jiný svět. Něco takového se nebude už nikdy opakovat. Příležitost to natočit najednou s tolika nadšenci do jednoho díla, jednoho autora. Společenstvo je perfektní úvod, který vypouští vše nadbytečné a umocňuje vše podstatné z předlohy. Jackson vede všechny herce ke perfektním výkonům, vystavuje extrémně napjaté scény, které s námi zůstali i léta po shlednutí. Navíc to je film který zraje jak víno a čím déle uběhlo a čím víckrát ho vudíte, tím více jej doceníte! Všech devět společníků společenstva je výrazně charakterizováno a každého si zamilujete pro jejich specifické vlastnosti a momenty, kdy zazáří! Prsten je možná ta nejzájímavější a nejděsivější postava celé trilogie, neuvěřitelné jak tomuto předmětu vdechli život a jak ho divákovi prodali! O tomto filmu by se dala napsat diplomová práce a pořád by to bylo málo! Mistrovské dílo! 10/10!
+ Poprvé jsem film viděl bez znalosti knihy. Dojem byl dobrý, až na to, že mi to připadalo moc dlouhé. Pak jsem knihu přečetl a druhé shlédnutí Společenstva mě dostalo mnohem víc. Z toho vyplývá, že tenhle film je "jen" doplněk knihy, ale krásný. Lepší asi opravdu být nemohl. Ne úplně čistých, ale 5 hvězd.
 </span>
 
 
 
-					<span class="review-date info">
-						(<time>24.08.2022</time>)
-					</span>
-				</p>
+				<span class="review-date info">
+					(<time>31.05.2002</time>)
+				</span>
+			</p>
+		
 
-
-		</div>
 	</article>
 
 		<div class="article article-white article-native article-native-onlymobile">
 <div id="mobile_native_1" class="ad-pmg" style="height: 100px;"></div>
 		</div>
-	<article id="review-50714" class="article article-white" data-film-review>
-		<div class="article-content article-content-justify article-review">
-			<header class="article-header article-header-review">
-				<div class="article-header-review-name">
-<h3 class="user-title"><a href="/uzivatel/4597-djkoma/prehled/" class="user-title-name">Djkoma</a>&nbsp;<span class="user-title-info"><span class="star-rating"><span class="stars stars-5"></span></span></span></h3>				</div>
-				<div class="article-header-review-action">
-					<a href="/uzivatel/4597-djkoma/recenze/">všechny recenze uživatele</a>
+	<article id="review-13668" class="article article-review article-content-justify" data-film-review>
+		<header class="article-header article-header-review">
+			<div class="article-header-review-name">
+<h3 class="user-title"><a href="/uzivatel/535-galadriel/prehled/" class="user-title-name">Galadriel</a>&nbsp;<span class="user-title-info"><span class="star-rating"><span class="stars stars-5"></span></span></span></h3>			</div>
+			<div class="article-header-review-action">
+				<a href="/uzivatel/535-galadriel/recenze/">všechny recenze uživatele</a>
+				
+				<a href="/film/4711-pan-prstenu-spolecenstvo-prstenu/recenze/?review=13668" class="permanent-link" title="Trvalý odkaz: /film/4711-pan-prstenu-spolecenstvo-prstenu/recenze/?review=13668"><i class="icon icon-permalink"></i></a>
+			</div>
+		</header>
 
-					<a href="/film/4711-pan-prstenu-spolecenstvo-prstenu/recenze/?review=50714" class="permanent-link" title="Trvalý odkaz: /film/4711-pan-prstenu-spolecenstvo-prstenu/recenze/?review=50714"><i class="icon icon-permalink"></i></a>
-				</div>
-			</header>
-
-
-				<p>
+		
+			<p>
 <span class="comment" data-film-review-content>
- Začátek největší (zatim) trilogie... Perfektní představení světa Pána prstenu, které postrácí perfekcionismus knihy a všechen její obsah, ale to jí nelze vyčítat. Peter Jackson se rychlím tempem žene do konce série, která mu změnila život a producent, který ho před pár lety najmul na režii trilogie Pána prstenu se právě así cítí jako Bůh. Kvalitní obsah, o který vzhledem ke knize nemohla být nouze je však trochu zdlouhavý a natáhnutí na skoro 3 hodiny funguje ve výsledku jako protahování krásného a nastavováním důležitého. Co se herců týče nelze nic vytknout. Mládí kupředu a pořádně se zlepšovat, stáří kupředu a držet standard. Nelze nedat 5*, protože krása tohoto filmu se odvíjí na každém milimetru filmového pásku. Hurá do dalšího dílu.
+ Svět se změnil ... 
+Opravdu. Po Pánu Prstenů už nikdy nebude to, co býval dřív. První slova vás doslova vtáhnou do děje, a než se nadějete, uslyšíte May It Be a budete chtít víc. To je přesně ten pocit, který jsem měla poprvé v kině, podruhé v kině a potom ještě mnohokrát u televize a DVD. Tenhle film se hned tak neokouká a to proto, že je opravdu skoro perfektní. Nevím, co mám vyzdvihnout dřív - hudbu (Oscar pro Howarda Shorea), herecké obsazení, triky, úchvatné Novozélandské scenérie nebo Petera Jacksona v roli scénáristy, producenta a režiséra. Ale hlavně musím říct jedno - díky, pane Tolkiene, za vaší úchvatnou knihu, bez které by nic z tohohle nikdy nevzniklo.
 </span>
 
 
 
-					<span class="review-date info">
-						(<time>03.06.2004</time>)
-					</span>
-				</p>
+				<span class="review-date info">
+					(<time>30.03.2003</time>)
+				</span>
+			</p>
+		
 
-
-		</div>
 	</article>
 
 		</div>
 	</section>
 
-	<section class="box box-borderless">
-		<header class="box-header">
+	<section class="updated-box box-borderless">
+		<header class="updated-box-header updated-box-header-nowrap">
 			<h2>Galerie <span class="count">(172)</span></h2>
-			<div class="box-header-action">
+			<div class="updated-box-header-action">
 				<a href="/film/4711-pan-prstenu-spolecenstvo-prstenu/galerie/" class="button">VÍCE</a>
 			</div>
 		</header>
-		<div class="box-content"><div class="gallery-item">
+		<div class="updated-box-content"><div class="gallery-item">
 			<div class="box-media">
 
 <div class="box-copyright">
@@ -1133,36 +1271,36 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <figure class="figure-skeleton">
 	<div class="media-img" style="padding-bottom: 41.56%">
 		<picture>
-			<source media="(max-width: 400px)" srcset="//image.pmgstatic.com/cache/resized/w360/files/images/film/photos/159/725/159725545_1db15b.jpg 1x, //image.pmgstatic.com/cache/resized/w720/files/images/film/photos/159/725/159725545_1db15b.jpg 2x, //image.pmgstatic.com/cache/resized/w1080/files/images/film/photos/159/725/159725545_1db15b.jpg 3x">
+			<source media="(max-width: 400px)" srcset="//image.pmgstatic.com/cache/resized/w360/files/images/film/photos/159/725/159725537_6736da.jpg 1x, //image.pmgstatic.com/cache/resized/w720/files/images/film/photos/159/725/159725537_6736da.jpg 2x, //image.pmgstatic.com/cache/resized/w1080/files/images/film/photos/159/725/159725537_6736da.jpg 3x">
 			<source media="(max-width: 650px) and (min-width: 401px)" >
 			<source media="(max-width: 1040px) and (min-width: 651px)" >
-			<img src="//image.pmgstatic.com/cache/resized/w663/files/images/film/photos/159/725/159725545_1db15b.jpg" loading="lazy" width="663" height="275" alt="Pán prstenů: Společenstvo Prstenu - Z filmu - Viggo Mortensen" />
+			<img src="//image.pmgstatic.com/cache/resized/w663/files/images/film/photos/159/725/159725537_6736da.jpg" loading="lazy" width="663" height="275" alt="Pán prstenů: Společenstvo Prstenu - Z filmu - Christopher Lee" />
 		</picture>
 	</div>
 </figure>
 <figcaption>
-		<a href="/tvurce/166-viggo-mortensen/prehled/">Viggo Mortensen</a>
+		<a href="/tvurce/81-christopher-lee/prehled/">Christopher Lee</a>
 </figcaption>
 			</div>
 		</div></div>
 	</section>
 
-	<section class="box box-nooverflow">
-		<header class="box-header">
+	<section class="updated-box box-nooverflow">
+		<header class="updated-box-header updated-box-header-nowrap">
 			<h2>Zajímavosti <span class="count">(441)</span></h2>
-			<div class="box-header-action">
+			<div class="updated-box-header-action">
 				<a href="/film/4711-pan-prstenu-spolecenstvo-prstenu/zajimavosti/" class="button">VÍCE</a>
 			</div>
 		</header>
-		<div class="box-content">
+		<div class="updated-box-content">
 			<article class="article article-trivia">
 <div class="article-content">
 	<ul>
 		<li>
-Český dabing vždy nekoresponduje s tím původním, pokud jde o význam. V českém dabingu, když chce Boromir (<a href="https://www.csfd.cz/tvurce/170-sean-bean/">Sean Bean</a>) od Froda (<a href="https://www.csfd.cz/tvurce/165-elijah-wood/">Elijah Wood</a>) získat prsten a ptá se ho, proč od něj Frodo utíká jako by byl zloděj, Frodo mu odpoví: <em>„Vidíš jen sebe,“</em> zatímco v anglickém dabingu mu říká: <em>„Nejsi sám sebou,“</em> čímž mu chtěl říct, že z něj mluví zlá moc prstenu.
+Režisér <a href="https://www.csfd.cz/tvurce/11-peter-jackson/">Peter Jackson</a> o obsazení <a href="https://www.csfd.cz/tvurce/166-viggo-mortensen/">Vigga Mortensena</a> do role Aragorna: <em>"Viggo je známý tím, že si své projekty vybírá velmi svědomitě a na plac přijel takříkajíc s podezřením. V době, kdy už jsem točil, se odehrál velmi ožehavý rozhovor, v němž mi Viggo pokládal nejrůznější otázky ohledně Aragornových motivací, které jsem mu do detailů prostě nedokázal zodpovědět. Dost neúspěšně jsem se pokoušel lhát, až se náhle rozhostilo trapné ticho. Na okamžik jsem měl pocit, že jsem to prošvihl, a v duchu už probíral seznam jmen a přemýšlel, koho bych teď do role Aragorna mohl obsadit, ale Viggo se na mě jen podíval a řekl: 'OK, uvídíme se v úterý na place.' Bože, jak mně se ulevilo."</em>
 
 			<span class="span-more-small">
-					(<a href="/uzivatel/887628-nick321/prehled/">Nick321</a>)
+					(<a href="/uzivatel/34-niro/prehled/">NIRO</a>)
 			</span>
 
 
@@ -1174,10 +1312,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <div class="article-content">
 	<ul>
 		<li>
-V úvodním prologu bitvy o Středozem dochází k chybě v kontinuitě u záběrů na Jeden prsten. Když Sauronův (<a href="https://www.csfd.cz/tvurce/50740-sala-baker/">Sala Baker</a>) useknutý prst dopadá na zem, je nápis v černé řeči orientován čitelně pro protivníky Saurona. Později, kdy se Isildur (<a href="https://www.csfd.cz/tvurce/3829-harry-sinclair/">Harry Sinclair</a>) pro prst natahuje, je však nápis na prstenu vzhůru nohama (což je patrné podle směru dotahů písma). Zároveň se mezi záběry změnilo i natočení samotného prstu na zemi.
+Každý 160. občan Nového Zélandu byl součástí natáčení filmové trilogie <em>Pán prstenů</em>.
 
 			<span class="span-more-small">
-					(<a href="/uzivatel/574924-tomini/prehled/">tomini</a>)
+					(<a href="/uzivatel/622756-asdfasdf/prehled/">asdfasdf</a>)
 			</span>
 
 
@@ -1189,10 +1327,10 @@ V úvodním prologu bitvy o Středozem dochází k chybě v kontinuitě u zábě
 <div class="article-content">
 	<ul>
 		<li>
-V roce 2021 byl film zařazen do Amerického národního filmového registru.
+Všechna kroužková brnění (vypadající kovově, leč ve skutečnosti byla umělohmotná) pro tento díl i oba další (<a href="https://www.csfd.cz/film/4713-pan-prstenu-dve-veze/">2002</a>, <a href="https://www.csfd.cz/film/4712-pan-prstenu-navrat-krale/">2003</a>) byla ručně vyrobena dvěma pány, kteří si při této práci zcela setřeli otisky prstů na palcech a ukazováčcích.
 
 			<span class="span-more-small">
-					(<a href="/uzivatel/282662-wade/prehled/">Wade</a>)
+					(<a href="/uzivatel/34-niro/prehled/">NIRO</a>)
 			</span>
 
 
@@ -1206,125 +1344,117 @@ V roce 2021 byl film zařazen do Amerického národního filmového registru.
 
 </div>
 
-			<section id="shop-mobile" class="box box-shop box-margintop box-shop-mobile hidden"></section>
+			<section id="shop-mobile" class="updated-box box-shop box-margintop box-shop-mobile hidden"></section>
 
-			<section class="box box-borderless box-noborderbottom box-margintop box-relatednews">
-				<header class="box-header">
+			<section class="updated-box box-borderless box-noborderbottom box-margintop box-relatednews">
+				<header class="updated-box-header updated-box-header-nowrap">
 					<h2>Související novinky</h2>
-					<div class="box-header-action">
+					<div class="updated-box-header-action">
 						<a href="/novinky/?filmId=4711" class="button">více</a>
 					</div>
 				</header>
-				<div class="box-content">
-					<div class="newslist-content">
-						<div class="newslist">
+				<div class="updated-box-content">
+					<div class="newslist-content updated-newslist-content">
+						<div class="newslist updated-newslist">
 							<section class="newslist-item">
-								<div class="box-content">
-									<article class="article article-news article-news-60">
-										<figure class="article-img">
-											<a href="/novinky/9746-sedmy-rocnik-comic-con-prague-privita-herecke-hvezdy-svetovych-filmovych-a-serialovych-hitu/">
-												<img class="img" src="//image.pmgstatic.com/cache/resized/w100h132crop/files/images/news/article/171/020/171020107_any9a3.png" loading="lazy" width="100" height="132" srcset="//image.pmgstatic.com/cache/resized/w100h132crop/files/images/news/article/171/020/171020107_any9a3.png 1x, //image.pmgstatic.com/cache/resized/w200h264crop/files/images/news/article/171/020/171020107_any9a3.png 2x, //image.pmgstatic.com/cache/resized/w300h396crop/files/images/news/article/171/020/171020107_any9a3.png 3x" alt="Sedmý ročník Comic-Con Prague přivítá herecké hvězdy světových filmových a seriálových hitů">
-											</a>
-										</figure>
-										<header class="article-header">
-											<h3>
-												<a href="/novinky/9746-sedmy-rocnik-comic-con-prague-privita-herecke-hvezdy-svetovych-filmovych-a-serialovych-hitu/">Sedmý ročník Comic-Con Prague přivítá herecké hvězdy světových filmových a seriálových hitů</a>
-											</h3>
-											<div class="info">
-												<span class="date">14.02.2026</span>
-											</div>
-										</header>
-										<div class="article-news-content article-content-justify">
-											<div class="article-news-textshort">
-												<p>
-													Sedmý ročník Comic-Con Prague postupně odhaluje další zahraniční i domácí hosty a programové novinky. Největší tuzemský festival popkultury, který se uskuteční 13.–15. března 2026 v pražském O₂…
-													<span class="span-more-small">(<a href="/novinky/9746-sedmy-rocnik-comic-con-prague-privita-herecke-hvezdy-svetovych-filmovych-a-serialovych-hitu/">více</a>)</span>
-												</p>
-											</div>
+								<article class="article article-news article-news-60">
+									<figure class="article-img">
+										<a href="/novinky/9746-sedmy-rocnik-comic-con-prague-privita-herecke-hvezdy-svetovych-filmovych-a-serialovych-hitu/">
+											<img class="img" src="//image.pmgstatic.com/cache/resized/w100h132crop/files/images/news/article/171/020/171020107_any9a3.png" loading="lazy" width="100" height="132" srcset="//image.pmgstatic.com/cache/resized/w100h132crop/files/images/news/article/171/020/171020107_any9a3.png 1x, //image.pmgstatic.com/cache/resized/w200h264crop/files/images/news/article/171/020/171020107_any9a3.png 2x, //image.pmgstatic.com/cache/resized/w300h396crop/files/images/news/article/171/020/171020107_any9a3.png 3x" alt="Sedmý ročník Comic-Con Prague přivítá herecké hvězdy světových filmových a seriálových hitů">
+										</a>
+									</figure>
+									<header class="article-header">
+										<h3>
+											<a href="/novinky/9746-sedmy-rocnik-comic-con-prague-privita-herecke-hvezdy-svetovych-filmovych-a-serialovych-hitu/">Sedmý ročník Comic-Con Prague přivítá herecké hvězdy světových filmových a seriálových hitů</a>
+										</h3>
+										<div class="info">
+											<span class="date">14.02.2026</span>
 										</div>
-									</article>
-								</div>
+									</header>
+									<div class="article-news-content article-content-justify">
+										<div class="article-news-textshort">
+											<p>
+												Sedmý ročník Comic-Con Prague postupně odhaluje další zahraniční i domácí hosty a programové novinky. Největší tuzemský festival popkultury, který se uskuteční 13.–15. března 2026 v pražském O₂…
+												<span class="span-more-small"><a href="/novinky/9746-sedmy-rocnik-comic-con-prague-privita-herecke-hvezdy-svetovych-filmovych-a-serialovych-hitu/">více</a></span>
+											</p>
+										</div>
+									</div>
+								</article>
 							</section>
 							<section class="newslist-item">
-								<div class="box-content">
-									<article class="article article-news article-news-60">
-										<figure class="article-img">
-											<a href="/novinky/9712-zombie-horor-28-let-pote-chram-z-kosti-bude-i-pres-chvalu-nejspis-propadakem/">
-												<img class="img" src="//image.pmgstatic.com/cache/resized/w100h132crop/files/images/news/article/170/939/170939711_olq9i6.jpg" loading="lazy" width="100" height="132" srcset="//image.pmgstatic.com/cache/resized/w100h132crop/files/images/news/article/170/939/170939711_olq9i6.jpg 1x, //image.pmgstatic.com/cache/resized/w200h264crop/files/images/news/article/170/939/170939711_olq9i6.jpg 2x, //image.pmgstatic.com/cache/resized/w300h396crop/files/images/news/article/170/939/170939711_olq9i6.jpg 3x" alt="Zombie horor 28 let poté: Chrám z kostí bude i přes chválu nejspíš propadákem">
-											</a>
-										</figure>
-										<header class="article-header">
-											<h3>
-												<a href="/novinky/9712-zombie-horor-28-let-pote-chram-z-kosti-bude-i-pres-chvalu-nejspis-propadakem/">Zombie horor 28 let poté: Chrám z kostí bude i přes chválu nejspíš propadákem</a>
-											</h3>
-											<div class="info">
-												<span class="date">19.01.2026</span>
-											</div>
-										</header>
-										<div class="article-news-content article-content-justify">
-											<div class="article-news-textshort">
-												<p>
-													Kvalitka díla ještě neznamená úspěch v kinech, to všichni víme. A zdá se, že zářným příkladem tohoto tvrzení se stane snímek 28 let poté: Chrám z kostí. Když se poprvé oznámila trilogie navazující na…
-													<span class="span-more-small">(<a href="/novinky/9712-zombie-horor-28-let-pote-chram-z-kosti-bude-i-pres-chvalu-nejspis-propadakem/">více</a>)</span>
-												</p>
-											</div>
+								<article class="article article-news article-news-60">
+									<figure class="article-img">
+										<a href="/novinky/9712-zombie-horor-28-let-pote-chram-z-kosti-bude-i-pres-chvalu-nejspis-propadakem/">
+											<img class="img" src="//image.pmgstatic.com/cache/resized/w100h132crop/files/images/news/article/170/939/170939711_olq9i6.jpg" loading="lazy" width="100" height="132" srcset="//image.pmgstatic.com/cache/resized/w100h132crop/files/images/news/article/170/939/170939711_olq9i6.jpg 1x, //image.pmgstatic.com/cache/resized/w200h264crop/files/images/news/article/170/939/170939711_olq9i6.jpg 2x, //image.pmgstatic.com/cache/resized/w300h396crop/files/images/news/article/170/939/170939711_olq9i6.jpg 3x" alt="Zombie horor 28 let poté: Chrám z kostí bude i přes chválu nejspíš propadákem">
+										</a>
+									</figure>
+									<header class="article-header">
+										<h3>
+											<a href="/novinky/9712-zombie-horor-28-let-pote-chram-z-kosti-bude-i-pres-chvalu-nejspis-propadakem/">Zombie horor 28 let poté: Chrám z kostí bude i přes chválu nejspíš propadákem</a>
+										</h3>
+										<div class="info">
+											<span class="date">19.01.2026</span>
 										</div>
-									</article>
-								</div>
+									</header>
+									<div class="article-news-content article-content-justify">
+										<div class="article-news-textshort">
+											<p>
+												Kvalitka díla ještě neznamená úspěch v kinech, to všichni víme. A zdá se, že zářným příkladem tohoto tvrzení se stane snímek 28 let poté: Chrám z kostí. Když se poprvé oznámila trilogie navazující na…
+												<span class="span-more-small"><a href="/novinky/9712-zombie-horor-28-let-pote-chram-z-kosti-bude-i-pres-chvalu-nejspis-propadakem/">více</a></span>
+											</p>
+										</div>
+									</div>
+								</article>
 							</section>
 							<section class="newslist-item">
-								<div class="box-content">
-									<article class="article article-news article-news-60">
-										<figure class="article-img">
-											<a href="/novinky/9334-filmovy-pan-prstenu-se-zpozdi-serial-prsteny-moci-ceka-casovy-skok/">
-												<img class="img" src="//image.pmgstatic.com/cache/resized/w100h132crop/files/images/news/article/169/891/169891764_rpg231.jpg" loading="lazy" width="100" height="132" srcset="//image.pmgstatic.com/cache/resized/w100h132crop/files/images/news/article/169/891/169891764_rpg231.jpg 1x, //image.pmgstatic.com/cache/resized/w200h264crop/files/images/news/article/169/891/169891764_rpg231.jpg 2x, //image.pmgstatic.com/cache/resized/w300h396crop/files/images/news/article/169/891/169891764_rpg231.jpg 3x" alt="Filmový Pán prstenů se zpozdí, seriál Prsteny moci čeká časový skok">
-											</a>
-										</figure>
-										<header class="article-header">
-											<h3>
-												<a href="/novinky/9334-filmovy-pan-prstenu-se-zpozdi-serial-prsteny-moci-ceka-casovy-skok/">Filmový Pán prstenů se zpozdí, seriál Prsteny moci čeká časový skok</a>
-											</h3>
-											<div class="info">
-												<span class="date">28.02.2025</span>
-											</div>
-										</header>
-										<div class="article-news-content article-content-justify">
-											<div class="article-news-textshort">
-												<p>
-													Již nějakou dobu víme, že filmový svět Pána prstenů se má rozrůst o další přírůstek. Na řadě je dobrodružství s názvem Pán prstenů: Hon na Gluma, to si režijně vezme pod křídla herec a režisér Andy…
-													<span class="span-more-small">(<a href="/novinky/9334-filmovy-pan-prstenu-se-zpozdi-serial-prsteny-moci-ceka-casovy-skok/">více</a>)</span>
-												</p>
-											</div>
+								<article class="article article-news article-news-60">
+									<figure class="article-img">
+										<a href="/novinky/9334-filmovy-pan-prstenu-se-zpozdi-serial-prsteny-moci-ceka-casovy-skok/">
+											<img class="img" src="//image.pmgstatic.com/cache/resized/w100h132crop/files/images/news/article/169/891/169891764_rpg231.jpg" loading="lazy" width="100" height="132" srcset="//image.pmgstatic.com/cache/resized/w100h132crop/files/images/news/article/169/891/169891764_rpg231.jpg 1x, //image.pmgstatic.com/cache/resized/w200h264crop/files/images/news/article/169/891/169891764_rpg231.jpg 2x, //image.pmgstatic.com/cache/resized/w300h396crop/files/images/news/article/169/891/169891764_rpg231.jpg 3x" alt="Filmový Pán prstenů se zpozdí, seriál Prsteny moci čeká časový skok">
+										</a>
+									</figure>
+									<header class="article-header">
+										<h3>
+											<a href="/novinky/9334-filmovy-pan-prstenu-se-zpozdi-serial-prsteny-moci-ceka-casovy-skok/">Filmový Pán prstenů se zpozdí, seriál Prsteny moci čeká časový skok</a>
+										</h3>
+										<div class="info">
+											<span class="date">28.02.2025</span>
 										</div>
-									</article>
-								</div>
+									</header>
+									<div class="article-news-content article-content-justify">
+										<div class="article-news-textshort">
+											<p>
+												Již nějakou dobu víme, že filmový svět Pána prstenů se má rozrůst o další přírůstek. Na řadě je dobrodružství s názvem Pán prstenů: Hon na Gluma, to si režijně vezme pod křídla herec a režisér Andy…
+												<span class="span-more-small"><a href="/novinky/9334-filmovy-pan-prstenu-se-zpozdi-serial-prsteny-moci-ceka-casovy-skok/">více</a></span>
+											</p>
+										</div>
+									</div>
+								</article>
 							</section>
 							<section class="newslist-item">
-								<div class="box-content">
-									<article class="article article-news article-news-60">
-										<figure class="article-img">
-											<a href="/novinky/8989-novy-filmovy-pan-prstenu-dorazi-i-se-starymi-znamymi/">
-												<img class="img" src="//image.pmgstatic.com/cache/resized/w100h132crop/files/images/news/article/168/924/168924901_3cjnyc.jpg" loading="lazy" width="100" height="132" srcset="//image.pmgstatic.com/cache/resized/w100h132crop/files/images/news/article/168/924/168924901_3cjnyc.jpg 1x, //image.pmgstatic.com/cache/resized/w200h264crop/files/images/news/article/168/924/168924901_3cjnyc.jpg 2x, //image.pmgstatic.com/cache/resized/w300h396crop/files/images/news/article/168/924/168924901_3cjnyc.jpg 3x" alt="Nový filmový Pán prstenů dorazí i se starými známými">
-											</a>
-										</figure>
-										<header class="article-header">
-											<h3>
-												<a href="/novinky/8989-novy-filmovy-pan-prstenu-dorazi-i-se-starymi-znamymi/">Nový filmový Pán prstenů dorazí i se starými známými</a>
-											</h3>
-											<div class="info">
-												<span class="date">09.05.2024</span>
-											</div>
-										</header>
-										<div class="article-news-content article-content-justify">
-											<div class="article-news-textshort">
-												<p>
-													Tak je to tu. O nových filmech ze Středozemě se mluví už zhruba rok od té doby, co Warneři koupili práva na známé a oblíbené příběhy a postavy. Teď se však CEO studia David Zaslav rozhovořil o tom,…
-													<span class="span-more-small">(<a href="/novinky/8989-novy-filmovy-pan-prstenu-dorazi-i-se-starymi-znamymi/">více</a>)</span>
-												</p>
-											</div>
+								<article class="article article-news article-news-60">
+									<figure class="article-img">
+										<a href="/novinky/8989-novy-filmovy-pan-prstenu-dorazi-i-se-starymi-znamymi/">
+											<img class="img" src="//image.pmgstatic.com/cache/resized/w100h132crop/files/images/news/article/168/924/168924901_3cjnyc.jpg" loading="lazy" width="100" height="132" srcset="//image.pmgstatic.com/cache/resized/w100h132crop/files/images/news/article/168/924/168924901_3cjnyc.jpg 1x, //image.pmgstatic.com/cache/resized/w200h264crop/files/images/news/article/168/924/168924901_3cjnyc.jpg 2x, //image.pmgstatic.com/cache/resized/w300h396crop/files/images/news/article/168/924/168924901_3cjnyc.jpg 3x" alt="Nový filmový Pán prstenů dorazí i se starými známými">
+										</a>
+									</figure>
+									<header class="article-header">
+										<h3>
+											<a href="/novinky/8989-novy-filmovy-pan-prstenu-dorazi-i-se-starymi-znamymi/">Nový filmový Pán prstenů dorazí i se starými známými</a>
+										</h3>
+										<div class="info">
+											<span class="date">09.05.2024</span>
 										</div>
-									</article>
-								</div>
+									</header>
+									<div class="article-news-content article-content-justify">
+										<div class="article-news-textshort">
+											<p>
+												Tak je to tu. O nových filmech ze Středozemě se mluví už zhruba rok od té doby, co Warneři koupili práva na známé a oblíbené příběhy a postavy. Teď se však CEO studia David Zaslav rozhovořil o tom,…
+												<span class="span-more-small"><a href="/novinky/8989-novy-filmovy-pan-prstenu-dorazi-i-se-starymi-znamymi/">více</a></span>
+											</p>
+										</div>
+									</div>
+								</article>
 							</section>
 						</div>
 					</div>
@@ -1334,13 +1464,7 @@ V roce 2021 byl film zařazen do Amerického národního filmového registru.
 	</div>
 
 	<aside class="aside-movie-profile">
-
-		<div class="box-rating-container">
-			<a href="javascript:void(0);" data-dropdown="#dropdown-control-panel" data-parent-class="box-rating-container" class="button button-control-panel button-control-panel-tablet">
-				<i class="icon icon-menu"></i><span>Ovládací panel</span>
-
-			</a>
-
+		<div class="film-rating">
 
 <div class="box-rating box-rating-withtabs">
 
@@ -1350,633 +1474,552 @@ V roce 2021 byl film zařazen do Amerického národního filmového registru.
 	</div>
 
 	<div class="film-ranking">
-		<span><i class="icon icon-thumb-up"></i></span>
 		<a href="/zebricky/filmy/nejlepsi/#highlight-4711">
-			13. nejlepší
+			<svg class="icon-thumb-up" width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+				<path fill-rule="evenodd" clip-rule="evenodd" d="M7.49739 2.65383C7.49739 2.10883 7.93923 1.66699 8.48423 1.66699H9.99739C11.6082 1.66699 12.914 2.97283 12.914 4.58366V7.50033H15.7894C17.63 7.50033 19.0104 9.18419 18.6495 10.989L17.5482 16.4955C17.4313 17.0798 16.9183 17.5003 16.3224 17.5003H7.08073C6.39031 17.5003 5.83073 16.9407 5.83073 16.2503V8.44632C5.83073 8.22499 5.88948 8.00766 6.00098 7.81649L6.18864 7.49474C7.04573 6.02541 7.49739 4.35491 7.49739 2.65383ZM9.14356 3.33366C9.03723 5.09308 8.51956 6.80658 7.62823 8.33458L7.49739 8.55891V15.8337H15.9809L17.0152 10.6621C17.1699 9.88865 16.5782 9.16699 15.7894 9.16699H12.4974C11.807 9.16699 11.2474 8.60733 11.2474 7.91699V4.58366C11.2474 3.89333 10.6877 3.33366 9.99739 3.33366H9.14356Z"></path>
+				<path d="M1.66406 8.75033C1.66406 8.52024 1.85056 8.33366 2.08073 8.33366H3.7474C3.97748 8.33366 4.16406 8.52024 4.16406 8.75033V17.0837C4.16406 17.3138 3.97748 17.5003 3.7474 17.5003H2.08073C1.85056 17.5003 1.66406 17.3138 1.66406 17.0837V8.75033Z"></path>
+			</svg>
+			<strong>13.</strong> <span>nejlepší</span>
 		</a>
 	</div>
 	<div class="film-ranking">
-		<span><i class="icon icon-thumb-up"></i></span>
 		<a href="/zebricky/filmy/nejoblibenejsi/#highlight-4711">
-			5. nejoblíbenější
+			<svg class="icon-thumb-up" width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+				<path fill-rule="evenodd" clip-rule="evenodd" d="M7.49739 2.65383C7.49739 2.10883 7.93923 1.66699 8.48423 1.66699H9.99739C11.6082 1.66699 12.914 2.97283 12.914 4.58366V7.50033H15.7894C17.63 7.50033 19.0104 9.18419 18.6495 10.989L17.5482 16.4955C17.4313 17.0798 16.9183 17.5003 16.3224 17.5003H7.08073C6.39031 17.5003 5.83073 16.9407 5.83073 16.2503V8.44632C5.83073 8.22499 5.88948 8.00766 6.00098 7.81649L6.18864 7.49474C7.04573 6.02541 7.49739 4.35491 7.49739 2.65383ZM9.14356 3.33366C9.03723 5.09308 8.51956 6.80658 7.62823 8.33458L7.49739 8.55891V15.8337H15.9809L17.0152 10.6621C17.1699 9.88865 16.5782 9.16699 15.7894 9.16699H12.4974C11.807 9.16699 11.2474 8.60733 11.2474 7.91699V4.58366C11.2474 3.89333 10.6877 3.33366 9.99739 3.33366H9.14356Z"></path>
+				<path d="M1.66406 8.75033C1.66406 8.52024 1.85056 8.33366 2.08073 8.33366H3.7474C3.97748 8.33366 4.16406 8.52024 4.16406 8.75033V17.0837C4.16406 17.3138 3.97748 17.5003 3.7474 17.5003H2.08073C1.85056 17.5003 1.66406 17.3138 1.66406 17.0837V8.75033Z"></path>
+			</svg>
+			<strong>5.</strong> <span>nejoblíbenější</span>
 		</a>
 	</div>
 
 
 
 
+	<div class="my-rating my-rating-csfd" data-onboarding-step-4="false">
+		<h3>Klikni a hodnoť</h3>
+		<span class="stars-rating">
+			<a class="star star-0" href="/registration-motivation/?title=VyOlolOjKUHjZGH5nJEpqGNjMGShKUHjZTIxVTuiMT5iL2IhKUHjZTIxVUAyVUOlo3ApqGNjMJEgVT5ynzEpqGNkAGypqGNjMJE2VUOpqGNkAGycnTkupl4v" rel="registrationMotivation" data-no-ads data-rating="0"></a>
+			<a class="star star-20" href="/registration-motivation/?title=VyOlolOjKUHjZGH5nJEpqGNjMGShKUHjZTIxVTuiMT5iL2IhKUHjZTIxVUAyVUOlo3ApqGNjMJEgVT5ynzEpqGNkAGypqGNjMJE2VUOpqGNkAGycnTkupl4v" rel="registrationMotivation" data-no-ads data-rating="20"></a>
+			<a class="star star-40" href="/registration-motivation/?title=VyOlolOjKUHjZGH5nJEpqGNjMGShKUHjZTIxVTuiMT5iL2IhKUHjZTIxVUAyVUOlo3ApqGNjMJEgVT5ynzEpqGNkAGypqGNjMJE2VUOpqGNkAGycnTkupl4v" rel="registrationMotivation" data-no-ads data-rating="40"></a>
+			<a class="star star-60" href="/registration-motivation/?title=VyOlolOjKUHjZGH5nJEpqGNjMGShKUHjZTIxVTuiMT5iL2IhKUHjZTIxVUAyVUOlo3ApqGNjMJEgVT5ynzEpqGNkAGypqGNjMJE2VUOpqGNkAGycnTkupl4v" rel="registrationMotivation" data-no-ads data-rating="60"></a>
+			<a class="star star-80" href="/registration-motivation/?title=VyOlolOjKUHjZGH5nJEpqGNjMGShKUHjZTIxVTuiMT5iL2IhKUHjZTIxVUAyVUOlo3ApqGNjMJEgVT5ynzEpqGNkAGypqGNjMJE2VUOpqGNkAGycnTkupl4v" rel="registrationMotivation" data-no-ads data-rating="80"></a>
+			<a class="star star-100" href="/registration-motivation/?title=VyOlolOjKUHjZGH5nJEpqGNjMGShKUHjZTIxVTuiMT5iL2IhKUHjZTIxVUAyVUOlo3ApqGNjMJEgVT5ynzEpqGNkAGypqGNjMJE2VUOpqGNkAGycnTkupl4v" rel="registrationMotivation" data-no-ads data-rating="100"></a>
+		</span>
+	</div>
 
 
-	<div class="tabs-content">
-<div class="tabs tabs-rating rating-fan-switch">
-	<nav class="tab-nav">
-		<ul class="tab-nav-list">
-			<li class="tab-nav-item ratings-btn active">
-				<a class="tab-link" href="#" data-show-tab=".rating-users" data-hide-tab=".fanclub-users">Hodnocení<span class="counter">(114 603)</span></a>
-			</li>
-			<li class="tab-nav-item fans-btn">
-				<a class="tab-link" href="#" data-show-tab=".fanclub-users" data-hide-tab=".rating-users">Fanklub<span class="counter">(10 125)</span></a>
-			</li>
-		</ul>
-	</nav>
-</div>
+	<div class="ranking-tabs-csfd" data-onboarding-step-6="false">
 
-<div class="user-list rating-users">
-	<section class="others-rating">
-		<ul>
-			<li>
-					<a href="/uzivatel/95-golfista/prehled/">golfista</a>
-
-<span title="Vloženo v 25.01.2003"><span class="star-rating"><span class="stars stars-5"></span></span></span>
-
-			</li>
-			<li>
-					<a href="/uzivatel/1-pomo/prehled/">POMO</a>
-
-<span title="Vloženo v 11.04.2002"><span class="star-rating"><span class="stars stars-5"></span></span></span>
-
-			</li>
-			<li>
-					<a href="/uzivatel/1263-kleopatra/prehled/">kleopatra</a>
-
-<span title="Vloženo v 07.12.2005"><span class="star-rating"><span class="stars stars-4"></span></span></span>
-
-			</li>
-			<li>
-					<a href="/uzivatel/195357-verbal/prehled/">verbal</a>
-
-<span title="Vloženo v 10.01.2010"><span class="star-rating"><span class="stars stars-5"></span></span></span>
-
-			</li>
-			<li>
-					<a href="/uzivatel/38-cival/prehled/">Cival</a>
-
-<span title="Vloženo v 04.06.2002"><span class="star-rating"><span class="stars stars-5"></span></span></span>
-
-			</li>
-			<li>
-					<a href="/uzivatel/5-kevspa/prehled/">KevSpa</a>
-
-<span title="Vloženo v 08.05.2002"><span class="star-rating"><span class="stars stars-5"></span></span></span>
-
-			</li>
-			<li>
-					<a href="/uzivatel/4-douglas/prehled/">Douglas</a>
-
-<span title="Vloženo v 06.06.2002"><span class="star-rating"><span class="stars stars-5"></span></span></span>
-
-			</li>
-			<li>
-					<a href="/uzivatel/69-kocour/prehled/">kOCOUR</a>
-
-<span title="Vloženo v 13.07.2002"><span class="star-rating"><span class="stars stars-5"></span></span></span>
-
-			</li>
-			<li>
-					<a href="/uzivatel/390-houdini/prehled/">Houdini</a>
-
-<span title="Vloženo v 20.02.2004"><span class="star-rating"><span class="stars stars-5"></span></span></span>
-
-			</li>
-			<li>
-					<a href="/uzivatel/11567-don-corleone/prehled/">don corleone</a>
-
-<span title="Vloženo v 04.05.2005"><span class="star-rating"><span class="stars stars-5"></span></span></span>
-
-			</li>
-
-		</ul>
+<div class="ranking-tabs-csfd-content">
+	<div class="ratings-list">
+		<h2>Hodnocení <span class="counter">(114 754)</span></h2>
+		<section class="others-rating">
+			<ul>
+				<li>
+						<a href="/uzivatel/95-golfista/">golfista</a>
+					
+<span title="Vloženo v 25.01.2003"><span class="star-rating"><span class="stars stars-5"></span></span></span>					
+				</li>
+				<li>
+						<a href="/uzivatel/1-pomo/">POMO</a>
+					
+<span title="Vloženo v 11.04.2002"><span class="star-rating"><span class="stars stars-5"></span></span></span>					
+				</li>
+				<li>
+						<a href="/uzivatel/1263-kleopatra/">kleopatra</a>
+					
+<span title="Vloženo v 07.12.2005"><span class="star-rating"><span class="stars stars-4"></span></span></span>					
+				</li>
+				<li>
+						<a href="/uzivatel/195357-verbal/">verbal</a>
+					
+<span title="Vloženo v 10.01.2010"><span class="star-rating"><span class="stars stars-5"></span></span></span>					
+				</li>
+				<li>
+						<a href="/uzivatel/38-cival/">Cival</a>
+					
+<span title="Vloženo v 04.06.2002"><span class="star-rating"><span class="stars stars-5"></span></span></span>					
+				</li>
+				<li>
+						<a href="/uzivatel/5-kevspa/">KevSpa</a>
+					
+<span title="Vloženo v 08.05.2002"><span class="star-rating"><span class="stars stars-5"></span></span></span>					
+				</li>
+				<li>
+						<a href="/uzivatel/4-douglas/">Douglas</a>
+					
+<span title="Vloženo v 06.06.2002"><span class="star-rating"><span class="stars stars-5"></span></span></span>					
+				</li>
+				<li>
+						<a href="/uzivatel/69-kocour/">kOCOUR</a>
+					
+<span title="Vloženo v 13.07.2002"><span class="star-rating"><span class="stars stars-5"></span></span></span>					
+				</li>
+				<li>
+						<a href="/uzivatel/390-houdini/">Houdini</a>
+					
+<span title="Vloženo v 20.02.2004"><span class="star-rating"><span class="stars stars-5"></span></span></span>					
+				</li>
+				<li>
+						<a href="/uzivatel/11567-don-corleone/">don corleone</a>
+					
+<span title="Vloženo v 04.05.2005"><span class="star-rating"><span class="stars stars-5"></span></span></span>					
+				</li>
+			</ul>
 <div class="box-more-bar">
 	<div class="pagination">
-		<a href="/film/4711-pan-prstenu-spolecenstvo-prstenu/prehled/?pageRating=0&amp;tab=rating-users" class="page-prev disabled">
+		<a href="/film/4711-pan-prstenu-spolecenstvo-prstenu/prehled/?pageRating=rlW0LKWaMKDvBvWzAQpkZKjjVvjvpTSaMFV6ZPjvMTylMJA0nJ9hVwbvCvVfVaOip2y0nJ9hVwcoBQp4AFj5AI19" class="page-prev disabled">
 			<span class="pagination-btn-reader">předchozí</span>
 		</a>
 		1 - 10
-		<a href="/film/4711-pan-prstenu-spolecenstvo-prstenu/prehled/?pageRating=2&amp;tab=rating-users" class="page-next">
+		<a href="/film/4711-pan-prstenu-spolecenstvo-prstenu/prehled/?pageRating=rlW0LKWaMKDvBvWzAQpkZKjjVvjvpTSaMFV6ZvjvMTylMJA0nJ9hVwbvCPVfVaOip2y0nJ9hVwcoZmp4ZFjkZGH2A119" class="page-next">
 			<span class="pagination-btn-reader">další</span>
 		</a>
 	</div>
 </div>
-	</section>
-</div>
+		</section>
 
-<div class="user-list fanclub-users hidden">
-	<section class="fans">
-		<ul>
-			<li>
-				<a href="/uzivatel/535-galadriel/oblibene/">Galadriel</a>
-			</li>
-			<li>
-				<a href="/uzivatel/1537-blizzard/oblibene/">Blizzard</a>
-			</li>
-			<li>
-				<a href="/uzivatel/3399-renton/oblibene/">Renton</a>
-			</li>
-			<li>
-				<a href="/uzivatel/6830-superpero/oblibene/">Superpero</a>
-			</li>
-			<li>
-				<a href="/uzivatel/30031-shadwell/oblibene/">Shadwell</a>
-			</li>
-			<li>
-				<a href="/uzivatel/14564-fr/oblibene/">Fr</a>
-			</li>
-			<li>
-				<a href="/uzivatel/7387-novoten/oblibene/">novoten</a>
-			</li>
-			<li>
-				<a href="/uzivatel/6129-jossie/oblibene/">Jossie</a>
-			</li>
-			<li>
-				<a href="/uzivatel/181007-djoker/oblibene/">Djoker</a>
-			</li>
-			<li>
-				<a href="/uzivatel/44793-m-a-t-t/oblibene/">M.a.t.t.</a>
-			</li>
+	</div>
 
-		</ul>
+	<div class="fanclub-list">
+		<h2>Fanklub <span class="counter">(10 150)</span></h2>
+		<section class="fans">
+			<ul>
+				<li>
+					<a href="/uzivatel/535-galadriel/oblibene/">Galadriel</a>
+				</li>
+				<li>
+					<a href="/uzivatel/1537-blizzard/oblibene/">Blizzard</a>
+				</li>
+				<li>
+					<a href="/uzivatel/3399-renton/oblibene/">Renton</a>
+				</li>
+				<li>
+					<a href="/uzivatel/6830-superpero/oblibene/">Superpero</a>
+				</li>
+				<li>
+					<a href="/uzivatel/30031-shadwell/oblibene/">Shadwell</a>
+				</li>
+				<li>
+					<a href="/uzivatel/14564-fr/oblibene/">Fr</a>
+				</li>
+				<li>
+					<a href="/uzivatel/7387-novoten/oblibene/">novoten</a>
+				</li>
+				<li>
+					<a href="/uzivatel/6129-jossie/oblibene/">Jossie</a>
+				</li>
+				<li>
+					<a href="/uzivatel/181007-djoker/oblibene/">Djoker</a>
+				</li>
+				<li>
+					<a href="/uzivatel/44793-m-a-t-t/oblibene/">M.a.t.t.</a>
+				</li>
+			</ul>
 <div class="box-more-bar">
 	<div class="pagination">
-		<a href="/film/4711-pan-prstenu-spolecenstvo-prstenu/prehled/?pageFanclub=0&amp;tab=fanclub-users" class="page-prev disabled">
+		<a href="/film/4711-pan-prstenu-spolecenstvo-prstenu/prehled/?pageFanclub=rlW0LKWaMKDvBvWzAQpkZKjjVvjvpTSaMFV6ZPjvMTylMJA0nJ9hVwbvCvVfVaOip2y0nJ9hVwcoZmVkBFj1ZmIqsD" class="page-prev disabled">
 			<span class="pagination-btn-reader">předchozí</span>
 		</a>
 		1 - 10
-		<a href="/film/4711-pan-prstenu-spolecenstvo-prstenu/prehled/?pageFanclub=2&amp;tab=fanclub-users" class="page-next">
+		<a href="/film/4711-pan-prstenu-spolecenstvo-prstenu/prehled/?pageFanclub=rlW0LKWaMKDvBvWzAQpkZKjjVvjvpTSaMFV6ZvjvMTylMJA0nJ9hVwbvCPVfVaOip2y0nJ9hVwcoZwR5YQD0AmxmKK0" class="page-next">
 			<span class="pagination-btn-reader">další</span>
 		</a>
 	</div>
 </div>
-	</section>
+		</section>
+
+	</div>
 </div>
 	</div>
 </div>
-
-			<div class="box-rating-buttons">
-				<div class="aside-movie-control">
-					<a href="javascript:void(0);" data-dropdown="#dropdown-control-panel" data-parent-class="box-rating-container" class="button button-control-panel button-control-panel-desktop">
-						<i class="icon icon-menu"></i><span>Ovládací panel</span>
-
-					</a>
-				</div>
-
-				<div class="box-buttons box-buttons-showvod">
-						<div class="box-buttons-vod">
-							<span class="vod-badge">
-								<a href="https://www.netflix.com/title/60004480"data-no-ads class="vod-badge-link vod-logo-netflix" data-ga-event="vod-service-netflix|film|vod" title="Netflix">
-									<i></i>Netflix
-								</a>
-							</span>
-							<span class="vod-badge">
-								<a href="https://www.hbomax.com/cz/en/movies/lord-of-the-rings-the-fellowship-of-the-ring/fb9f961f-6302-4776-91d7-f1b7a69fb61d"data-no-ads class="vod-badge-link vod-logo-hbomax" data-ga-event="vod-service-hbo-max|film|vod" title="HBO Max">
-									<i></i>HBO Max
-								</a>
-							</span>
-							<span class="vod-badge">
-								<a href="https://www.primevideo.com/detail/amzn1.dv.gti.84a9f6d5-bc3f-73a3-e41f-a82b4ff83e67"data-no-ads class="vod-badge-link vod-logo-amazon" data-ga-event="vod-service-prime-video|film|vod" title="Prime Video">
-									<i></i>Prime Video
-								</a>
-							</span>
-							<span class="vod-badge">
-								<a href="https://srv.clickfuse.com/ads/adclkr.php?id=100006636&amp;url=https%3A//tv.apple.com/cz/movie/the-lord-of-the-rings-the-fellowship-of-the-ring/umc.cmc.29au6l8rcr4g5zhuwcx0euri1"data-no-ads class="vod-badge-link vod-logo-apple" data-ga-event="vod-service-apple-tv|film|vod" title="Apple TV+">
-									<i></i>Apple TV+
-								</a>
-							</span>
-							<span class="vod-badge">
-								<a href="https://www.lepsi.tv/top_tv/film/pan-prstenu-spolecenstvo-prstenu-online?utm_source=csfd&amp;utm_content=csfd"data-no-ads class="vod-badge-link vod-logo-lepsitv" data-ga-event="vod-service-lepsi-tv|film|vod" title="Lepší.TV">
-									<i></i>Lepší.TV
-								</a>
-							</span>
-							<span class="vod-badge">
-								<a href="https://www.oneplay.cz/film/15728-pan-prstenu-spolecenstvo-prstenu"data-no-ads class="vod-badge-link vod-logo-oneplay" data-ga-event="vod-service-oneplay|film|vod" title="Oneplay">
-									<i></i>Oneplay
-								</a>
-							</span>
-							<span class="vod-badge">
-								<a href="https://rakuten.tv/cz/movies/pan-prstenu-spolecenstvo-prstenu"data-no-ads class="vod-badge-link vod-logo-rakuten" data-ga-event="vod-service-rakuten-tv|film|vod" title="Rakuten.tv">
-									<i></i>Rakuten.tv
-								</a>
-							</span>
-							<span class="vod-badge">
-								<a href="https://www.youtube.com/watch?v=rmhG52BrjGI"data-no-ads class="vod-badge-link vod-logo-youtube" data-ga-event="vod-service-youtube-movies|film|vod" title="YouTube Movies">
-									<i></i>YouTube Movies
-								</a>
-							</span>
-						</div>
-
-
-					<hr>
-						<a href="https://www.martinus.cz/?uItem=168003" class="button button-big" data-ga-event="sales-martinus-cz|film|dvd" target="_blank">
-							<i class="icon icon-shopping-cart"></i>DVD
-						</a>
-
-					<hr>
-						<a href="https://www.martinus.cz/?uItem=36032" class="button button-big" data-ga-event="sales-martinus|film|book" target="_blank">
-							<i class="icon icon-shopping-cart"></i>Kniha
-						</a>
-
-					<hr>
-					<div class="links">
-							<a href="http://www.lordoftherings.net/" title="lordoftherings.net (oficiální web)" class="website"><i class="icon icon-globe-circle"></i><span>lordoftherings.net</span></a>
-					</div>
-
-				</div>
-			</div>
 		</div>
-
-		<div id="dropdown-control-panel" class="dropdown-content control-panel">
-
-			<ul class="blue">
-							<li>
-								<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads>
-									Přidat recenzi
-								</a>
-							</li>
-					<li id="snippet--publicControlMenuWatchlist">
-						<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads>
-								Přidat do Chci vidět
-						</a>
-					</li>
-					<li id="snippet--publicControlMenuFanclub">
-							<a href="/registration-motivation/" rel="registrationMotivation">Přidat do oblíbených</a>
-					</li>
-					<li id="snippet--publicControlMenuCollection">
-							<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads>
-								Přidat do filmotéky
-							</a>
-					</li>
-					<li>
-						<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads>
-								Přidat do seznamu
-						</a>
-					</li>
-			</ul>
-
-			<hr>
-
-			<ul class="blue">
-			<li>
-				<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads>
-					Přidat obsah
-				</a>
-			</li>
-			<li>
-				<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads>
-					Přidat zajímavost
-				</a>
-			</li>
-			<li>
-				<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads>
-					Přidat obrázky
-				</a>
-			</li>
-			<li>
-				<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads>
-					Přidat podobné filmy
-				</a>
-			</li>
-			<li>
-				<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads>
-					Přidat související filmy
-				</a>
-			</li>
-			<li>
-				<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads>
-					Přidat externí recenzi
-				</a>
-			</li>
-			<li>
-				<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads>
-					Přidat tagy
-				</a>
-			</li>
-			<li>
-				<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads>
-					Přidat web
-				</a>
-			</li>
-			</ul>
-		</div>
-
 
 		<div class="play-content-ios">
 			<div id="amplified_100006957"></div>
 		</div>
+
+		<section class="updated-box box-tags">
+			<div class="updated-box-header">
+				<h3>
+					Tagy
+				</h3>
+			</div>
+			<div class="updated-box-content updated-box-content-tags">
+					<a href="/tag/1096-podle-knihy/">podle knihy</a>
+					<a href="/tag/2818-muz/">muž</a>
+					<a href="/tag/1492-zena/">žena</a>
+					<a href="/tag/47-laska/">láska</a>
+					<a href="/tag/73-rodina/">rodina</a>
+					<a href="/tag/76-smrt/">smrt</a>
+					<a href="/tag/71-pratelstvi/">přátelství</a>
+					<a href="/tag/72-pratele/">přátelé</a>
+					<a href="/tag/91-vrazda/">vražda</a>
+					<a href="/tag/59-nasili/">násilí</a>
+					<a href="/tag/234-tajemstvi/">tajemství</a>
+					<a href="/tag/61-otec/">otec</a>
+					<a href="/tag/74-rodice/">rodiče</a>
+					<a href="/tag/83-strach/">strach</a>
+					<a href="/tag/219-zahady/">záhady</a>
+					<a href="/tag/120-touha/">touha</a>
+					<a href="/tag/20-dcera/">dcera</a>
+					<a href="/tag/97-zbrane/">zbraně</a>
+					<a href="/tag/101-utek/">útěk</a>
+					<a href="/tag/99-zvirata/">zvířata</a>
+					<a href="/tag/2348-obet-autonehody-zlocinu/" class="tag-item hidden">oběť (autonehody/zločinu)</a>
+					<a href="/tag/1512-patrani/" class="tag-item hidden">pátrání</a>
+					<a href="/tag/574-cestovani/" class="tag-item hidden">cestování</a>
+					<a href="/tag/1209-vzpominky/" class="tag-item hidden">vzpomínky</a>
+					<a href="/tag/465-vojaci/" class="tag-item hidden">vojáci</a>
+					<a href="/tag/641-manipulace/" class="tag-item hidden">manipulace</a>
+					<a href="/tag/548-venkov/" class="tag-item hidden">venkov</a>
+					<a href="/tag/325-intriky/" class="tag-item hidden">intriky</a>
+					<a href="/tag/166-lez/" class="tag-item hidden">lež</a>
+					<a href="/tag/1309-pronasledovani/" class="tag-item hidden">pronásledování</a>
+					<a href="/tag/335-putovani/" class="tag-item hidden">putování</a>
+					<a href="/tag/798-rivalita/" class="tag-item hidden">rivalita</a>
+					<a href="/tag/348-sny/" class="tag-item hidden">sny</a>
+					<a href="/tag/100-unos/" class="tag-item hidden">únos</a>
+					<a href="/tag/1992-boj-o-preziti/" class="tag-item hidden">boj o přežití</a>
+					<a href="/tag/1016-vesnice/" class="tag-item hidden">vesnice</a>
+					<a href="/tag/95-vezeni/" class="tag-item hidden">vězení</a>
+					<a href="/tag/98-zrada/" class="tag-item hidden">zrada</a>
+					<a href="/tag/2510-vasen/" class="tag-item hidden">vášeň</a>
+					<a href="/tag/258-souboje/" class="tag-item hidden">souboje</a>
+					<a href="/tag/2717-kamaradi/" class="tag-item hidden">kamarádi</a>
+					<a href="/tag/66-podvod/" class="tag-item hidden">podvod</a>
+					<a href="/tag/55-mrtvola/" class="tag-item hidden">mrtvola</a>
+					<a href="/tag/1036-krev/" class="tag-item hidden">krev</a>
+					<a href="/tag/298-les/" class="tag-item hidden">les</a>
+					<a href="/tag/2684-bolest/" class="tag-item hidden">bolest</a>
+					<a href="/tag/2685-smutek/" class="tag-item hidden">smutek</a>
+					<a href="/tag/80-divocina/" class="tag-item hidden">divočina</a>
+					<a href="/tag/1143-nenavist/" class="tag-item hidden">nenávist</a>
+					<a href="/tag/1511-tragedie/" class="tag-item hidden">tragédie</a>
+					<a href="/tag/1368-armada/" class="tag-item hidden">armáda</a>
+					<a href="/tag/56-nadeje/" class="tag-item hidden">naděje</a>
+					<a href="/tag/96-zabijaci/" class="tag-item hidden">zabijáci</a>
+					<a href="/tag/1166-umirani/" class="tag-item hidden">umírání</a>
+					<a href="/tag/326-zarlivost/" class="tag-item hidden">žárlivost</a>
+					<a href="/tag/364-monstra/" class="tag-item hidden">monstra</a>
+					<a href="/tag/2012-zraneni/" class="tag-item hidden">zranění</a>
+					<a href="/tag/1020-stari/" class="tag-item hidden">stáří</a>
+					<a href="/tag/78-hory/" class="tag-item hidden">hory</a>
+					<a href="/tag/1965-rvacka/" class="tag-item hidden">rvačka</a>
+					<a href="/tag/1064-voda/" class="tag-item hidden">voda</a>
+					<a href="/tag/689-party/" class="tag-item hidden">párty</a>
+					<a href="/tag/30-kouzla/" class="tag-item hidden">kouzla</a>
+					<a href="/tag/3104-zoufalstvi/" class="tag-item hidden">zoufalství</a>
+					<a href="/tag/77-snih/" class="tag-item hidden">sníh</a>
+					<a href="/tag/2937-panika/" class="tag-item hidden">panika</a>
+					<a href="/tag/1383-paranoia/" class="tag-item hidden">paranoia</a>
+					<a href="/tag/23-duchove/" class="tag-item hidden">duchové</a>
+					<a href="/tag/503-pocit-viny/" class="tag-item hidden">pocit viny</a>
+					<a href="/tag/1220-prepadeni/" class="tag-item hidden">přepadení</a>
+					<a href="/tag/909-chamtivost/" class="tag-item hidden">chamtivost</a>
+					<a href="/tag/29-kone/" class="tag-item hidden">koně</a>
+					<a href="/tag/1378-dobrodruh/" class="tag-item hidden">dobrodruh</a>
+					<a href="/tag/454-magie/" class="tag-item hidden">magie</a>
+					<a href="/tag/34-kral/" class="tag-item hidden">král</a>
+					<a href="/tag/1361-posedlost/" class="tag-item hidden">posedlost</a>
+					<a href="/tag/450-konspirace/" class="tag-item hidden">konspirace</a>
+					<a href="/tag/218-rukojmi/" class="tag-item hidden">rukojmí</a>
+					<a href="/tag/17-budoucnost/" class="tag-item hidden">budoucnost</a>
+					<a href="/tag/2680-priroda/" class="tag-item hidden">příroda</a>
+					<a href="/tag/334-zlo/" class="tag-item hidden">zlo</a>
+					<a href="/tag/333-bitva/" class="tag-item hidden">bitva</a>
+					<a href="/tag/604-sledovani/" class="tag-item hidden">sledování</a>
+					<a href="/tag/488-muceni/" class="tag-item hidden">mučení</a>
+					<a href="/tag/967-zavist/" class="tag-item hidden">závist</a>
+					<a href="/tag/765-dedictvi/" class="tag-item hidden">dědictví</a>
+					<a href="/tag/2637-oslava/" class="tag-item hidden">oslava</a>
+					<a href="/tag/359-legenda/" class="tag-item hidden">legenda</a>
+					<a href="/tag/445-reka/" class="tag-item hidden">řeka</a>
+					<a href="/tag/813-hospoda/" class="tag-item hidden">hospoda</a>
+					<a href="/tag/2347-obet-nekomu-necemu/" class="tag-item hidden">oběť (někomu/něčemu)</a>
+					<a href="/tag/2554-alkohol/" class="tag-item hidden">alkohol</a>
+					<a href="/tag/2927-zajatci/" class="tag-item hidden">zajatci</a>
+					<a href="/tag/35-kralovna/" class="tag-item hidden">královna</a>
+					<a href="/tag/2059-spiknuti/" class="tag-item hidden">spiknutí</a>
+					<a href="/tag/504-odpusteni/" class="tag-item hidden">odpuštění</a>
+					<a href="/tag/296-loajalita/" class="tag-item hidden">loajalita</a>
+					<a href="/tag/3012-noc/" class="tag-item hidden">noc</a>
+					<a href="/tag/2610-moc/" class="tag-item hidden">moc</a>
+					<a href="/tag/385-prizrak/" class="tag-item hidden">přízrak</a>
+					<a href="/tag/3165-nuz/" class="tag-item hidden">nůž</a>
+					<a href="/tag/165-narozeniny/" class="tag-item hidden">narozeniny</a>
+					<a href="/tag/3065-dobrodruzstvi/" class="tag-item hidden">dobrodružství</a>
+					<a href="/tag/817-jezero/" class="tag-item hidden">jezero</a>
+					<a href="/tag/183-carodejnictvi/" class="tag-item hidden">čarodějnictví</a>
+					<a href="/tag/2313-stryc/" class="tag-item hidden">strýc</a>
+					<a href="/tag/437-dul/" class="tag-item hidden">důl</a>
+					<a href="/tag/455-mec-a-magie/" class="tag-item hidden">Meč a magie</a>
+					<a href="/tag/269-carodejove/" class="tag-item hidden">čarodějové</a>
+					<a href="/tag/181-rytiri/" class="tag-item hidden">rytíři</a>
+					<a href="/tag/1055-strom/" class="tag-item hidden">strom</a>
+					<a href="/tag/2314-synovec/" class="tag-item hidden">synovec</a>
+					<a href="/tag/1032-podzemi/" class="tag-item hidden">podzemí</a>
+					<a href="/tag/1548-statecnost/" class="tag-item hidden">statečnost</a>
+					<a href="/tag/1503-slib/" class="tag-item hidden">slib</a>
+					<a href="/tag/1212-kouzelnik/" class="tag-item hidden">kouzelník</a>
+					<a href="/tag/2120-vyhnanstvi/" class="tag-item hidden">vyhnanství</a>
+					<a href="/tag/1757-artefakt/" class="tag-item hidden">artefakt</a>
+					<a href="/tag/259-elfove/" class="tag-item hidden">elfové</a>
+					<a href="/tag/299-trpaslici/" class="tag-item hidden">trpaslíci</a>
+					<a href="/tag/2770-sekera/" class="tag-item hidden">sekera</a>
+					<a href="/tag/1216-stopar/" class="tag-item hidden">stopař</a>
+					<a href="/tag/1985-luk-a-sip/" class="tag-item hidden">luk a šíp</a>
+					<a href="/tag/588-pivo/" class="tag-item hidden">pivo</a>
+					<a href="/tag/1259-neviditelnost/" class="tag-item hidden">neviditelnost</a>
+					<a href="/tag/3284-cerna-magie/" class="tag-item hidden">černá magie</a>
+					<a href="/tag/470-skreti/" class="tag-item hidden">skřeti</a>
+					<a href="/tag/3334-prsten/" class="tag-item hidden">prsten</a>
+					<a href="/tag/481-orkove/" class="tag-item hidden">orkové</a>
+					<a href="/tag/2845-ohnostroj/" class="tag-item hidden">ohňostroj</a>
+					<a href="/tag/2719-kouzelna-hul/" class="tag-item hidden">kouzelná hůl</a>
+			</div>
+			<div class="box-content-more">
+				<a href="javascript:void(0);" data-show=".tag-item" data-text="méně" data-show-icon>
+					více
+				</a>
+			</div>
+		</section>
+
+
+		<section class="updated-box box-links">
+			<div class="updated-box-header">
+				<h3>Odkazy</h3>
+			</div>
+			<div class="updated-box-content-padding">
+					<a href="https://www.martinus.cz/?uItem=168003" class="button" data-ga-event="sales-martinus-cz|film|dvd"><i class="icon icon-shopping-cart"></i>DVD</a>
+
+					<a href="https://www.martinus.cz/?uItem=36032" class="button" data-ga-event="sales-martinus|film|book"><i class="icon icon-shopping-cart"></i>Kniha</a>
+
+				<div class="film-www">
+						<a href="http://www.lordoftherings.net/" title="lordoftherings.net (oficiální web)" class="website"><i class="icon icon-globe-circle"></i><span>lordoftherings.net</span></a>
+				</div>
+
+			</div>
+		</section>
 
 		<div class="box box-banner-mobile">
 			<p class="box-banner-text">Reklama</p>
 <div id="mobile_square_2" class="ad-pmg" style="height: 300px;"></div>
 		</div>
 
-		<section class="box">
-			<div class="box-header box-header-small">
-				<h2>
-					V seznamech uživatelů
-					<span class="tooltip" data-tippy-content="Průměrné řazení filmu v seznamech uživatelů. Své seznamy si můžeš sestavit ve <a href=&quot;/prihlaseni/&quot;>svém profilu</a>.">
-						<i class="icon icon-info" aria-hidden="true"></i>
-					</span>
-					<span class="box-header-new">new</span>
-				</h2>
-			</div>
-			<div class="box-content box-content-padding box-content-directorylist with-border-bottom">
-				<a href="https://www.csfd.cz/seznamy/filmy/?detail=16#highlight-4711">
-					<i class="nr">1.</i>
-					Filmy, na které můžu koukat znovu a znovu
-				</a>
-				<a href="https://www.csfd.cz/seznamy/filmy/?detail=60#highlight-4711">
-					<i class="nr">1.</i>
-					Filmy, které zásadně formovaly mou lásku ke kinematografii
-				</a>
-				<a href="https://www.csfd.cz/seznamy/filmy/?detail=58#highlight-4711">
-					<i class="nr">1.</i>
-					Filmy, s nimiž mám spojené zásadní životní okamžiky
-				</a>
-				<a href="https://www.csfd.cz/seznamy/filmy/?detail=61#highlight-4711">
-					<i class="nr">2.</i>
-					Filmy, které bych chtěl zažít znovu poprvé
-				</a>
-				<a href="https://www.csfd.cz/seznamy/filmy/?detail=66#highlight-4711">
-					<i class="nr">4.</i>
-					Filmy s nejlepší úvodní scénou
-				</a>
-				<a href="https://www.csfd.cz/seznamy/filmy/?detail=17#highlight-4711" class="user-list-item hidden">
-					<i class="nr">5.</i>
-					Filmy, které nedokážu dokoukat do konce
-				</a>
-				<a href="https://www.csfd.cz/seznamy/filmy/?detail=8#highlight-4711" class="user-list-item hidden">
-					<i class="nr">6.</i>
-					Filmy, které mi vždy zvednou náladu
-				</a>
-				<a href="https://www.csfd.cz/seznamy/filmy/?detail=19#highlight-4711" class="user-list-item hidden">
-					<i class="nr">8.</i>
-					Filmy s nejlepším hereckým obsazením všech dob
-				</a>
-				<a href="https://www.csfd.cz/seznamy/filmy/?detail=55#highlight-4711" class="user-list-item hidden">
-					<i class="nr">9.</i>
-					Filmy, které se mi líbí méně než většině
-				</a>
-				<a href="https://www.csfd.cz/seznamy/filmy/?detail=20#highlight-4711" class="user-list-item hidden">
-					<i class="nr">13.</i>
-					Filmy mého dětství
-				</a>
-				<a href="https://www.csfd.cz/seznamy/filmy/?detail=9#highlight-4711" class="user-list-item hidden">
-					<i class="nr">20.</i>
-					Filmy, které nechci nikdy vidět
-				</a>
-				<a href="https://www.csfd.cz/seznamy/filmy/?detail=4#highlight-4711" class="user-list-item hidden">
-					<i class="nr">23.</i>
-					Filmy, které mě nejvíce duševně povznesly
-				</a>
-				<a href="https://www.csfd.cz/seznamy/filmy/?detail=13#highlight-4711" class="user-list-item hidden">
-					<i class="nr">35.</i>
-					Filmy, které doporučuji na rande
-				</a>
-				<a href="https://www.csfd.cz/seznamy/filmy/?detail=15#highlight-4711" class="user-list-item hidden">
-					<i class="nr">49.</i>
-					Filmy, které doporučuji na párty s kamarády
-				</a>
-				<a href="https://www.csfd.cz/seznamy/filmy/?detail=14#highlight-4711" class="user-list-item hidden">
-					<i class="nr">56.</i>
-					Filmy, které NEdoporučuji na rande
-				</a>
-				<a href="https://www.csfd.cz/seznamy/filmy/?detail=3&amp;page=2#highlight-4711" class="user-list-item hidden">
-					<i class="nr">115.</i>
-					Filmy, které mě nejvíce dojaly
-				</a>
-				<a href="https://www.csfd.cz/seznamy/filmy/?detail=64&amp;page=2#highlight-4711" class="user-list-item hidden">
-					<i class="nr">138.</i>
-					Filmy, které si nejvíce spojuji s Vánocemi
-				</a>
-				<a href="https://www.csfd.cz/seznamy/filmy/?detail=11&amp;page=3#highlight-4711" class="user-list-item hidden">
-					<i class="nr">283.</i>
-					Filmy, které jsem nepochopil
-				</a>
-				<a href="https://www.csfd.cz/seznamy/filmy/?detail=12&amp;page=5#highlight-4711" class="user-list-item hidden">
-					<i class="nr">448.</i>
-					Filmy, které se mi líbí více než většině
-				</a>
-				<a href="https://www.csfd.cz/seznamy/filmy/?detail=5&amp;page=5#highlight-4711" class="user-list-item hidden">
-					<i class="nr">474.</i>
-					Filmy, které mě nejvíce vyděsily
-				</a>
-			</div>
-			<div class="box-content-more"><a href="javascript:void(0);" data-show=".user-list-item" data-text="méně">více</a></div>
-		</section>
-
-		<section class="box box-premieres box-premieres-has-some-hidden"  data-toggle-class="box-premieres-has-some-hidden-show">
-			<div class="box-header box-header-small">
+		<section class="updated-box box-premieres box-premieres-has-some-hidden"  data-toggle-class="box-premieres-has-some-hidden-show">
+			<div class="updated-box-header">
 				<h3>
 					Premiéry
 				</h3>
 			</div>
-			<div class="box-content">
-				<div class="box-premieres-content">
+			<div class="updated-box-content updated-box-content-padding">
 
-					<ul>
-							<li class="divider">
-									<span class="item-img"><img src="//image.pmgstatic.com/files/svg/flags/162/751/162751326/162751326_a09679.svg" class="flag" title="Česko" alt="Česko"/></span>
-								<p>
-									V kinech od
-								</p>
-								<span title="10.01.2002 Warner Bros. CZ">
-									10.01.2002
-										Warner Bros. CZ
-								</span>
-							</li>
-							<li class="hidden-release">
-									<span class="item-img"><img src="//image.pmgstatic.com/files/svg/flags/162/751/162751326/162751326_a09679.svg" class="flag" title="Česko" alt="Česko"/></span>
-								<p>
-									Na DVD od
-								</p>
-								<span title="01.02.2023 Magic Box">
-									01.02.2023
-										Magic Box
-								</span>
-							</li>
-							<li class="hidden-release">
-									<span class="item-img"><img src="//image.pmgstatic.com/files/svg/flags/162/751/162751326/162751326_a09679.svg" class="flag" title="Česko" alt="Česko"/></span>
-								<p>
-									Na DVD od
-								</p>
-								<span title="22.07.2015 Magic Box">
-									22.07.2015
-										Magic Box
-								</span>
-							</li>
-							<li class="hidden-release">
-									<span class="item-img"><img src="//image.pmgstatic.com/files/svg/flags/162/751/162751326/162751326_a09679.svg" class="flag" title="Česko" alt="Česko"/></span>
-								<p>
-									Na DVD od
-								</p>
-								<span title="17.06.2015 Magic Box">
-									17.06.2015
-										Magic Box
-								</span>
-							</li>
-							<li class="hidden-release">
-									<span class="item-img"><img src="//image.pmgstatic.com/files/svg/flags/162/751/162751326/162751326_a09679.svg" class="flag" title="Česko" alt="Česko"/></span>
-								<p>
-									Na DVD od
-								</p>
-								<span title="16.05.2012 Magic Box">
-									16.05.2012
-										Magic Box
-								</span>
-							</li>
-							<li>
-									<span class="item-img"><img src="//image.pmgstatic.com/files/svg/flags/162/751/162751326/162751326_a09679.svg" class="flag" title="Česko" alt="Česko"/></span>
-								<p>
-									Na DVD od
-								</p>
-								<span title="02.10.2010 Magic Box">
-									02.10.2010
-										Magic Box
-								</span>
-							</li>
-							<li>
-									<span class="item-img"><img src="//image.pmgstatic.com/files/svg/flags/162/751/162751326/162751326_a09679.svg" class="flag" title="Česko" alt="Česko"/></span>
-								<p>
-									Na DVD od
-								</p>
-								<span title="13.09.2002 Warner Bros. CZ">
-									13.09.2002
-										Warner Bros. CZ
-								</span>
-							</li>
-							<li class="hidden-release">
-									<span class="item-img"><img src="//image.pmgstatic.com/files/svg/flags/162/751/162751326/162751326_a09679.svg" class="flag" title="Česko" alt="Česko"/></span>
-								<p>
-									Na Blu-ray od
-								</p>
-								<span title="05.11.2025 Magic Box">
-									05.11.2025
-										Magic Box
-								</span>
-							</li>
-							<li class="hidden-release">
-									<span class="item-img"><img src="//image.pmgstatic.com/files/svg/flags/162/751/162751326/162751326_a09679.svg" class="flag" title="Česko" alt="Česko"/></span>
-								<p>
-									Na Blu-ray od
-								</p>
-								<span title="04.12.2024 Magic Box">
-									04.12.2024
-										Magic Box
-								</span>
-							</li>
-							<li class="hidden-release">
-									<span class="item-img"><img src="//image.pmgstatic.com/files/svg/flags/162/751/162751326/162751326_a09679.svg" class="flag" title="Česko" alt="Česko"/></span>
-								<p>
-									Na Blu-ray od
-								</p>
-								<span title="10.11.2021 Magic Box">
-									10.11.2021
-										Magic Box
-								</span>
-							</li>
-							<li class="hidden-release">
-									<span class="item-img"><img src="//image.pmgstatic.com/files/svg/flags/162/751/162751326/162751326_a09679.svg" class="flag" title="Česko" alt="Česko"/></span>
-								<p>
-									Na Blu-ray od
-								</p>
-								<span title="15.05.2013 Magic Box">
-									15.05.2013
-										Magic Box
-								</span>
-							</li>
-							<li class="hidden-release">
-									<span class="item-img"><img src="//image.pmgstatic.com/files/svg/flags/162/751/162751326/162751326_a09679.svg" class="flag" title="Česko" alt="Česko"/></span>
-								<p>
-									Na Blu-ray od
-								</p>
-								<span title="05.12.2012 Magic Box">
-									05.12.2012
-										Magic Box
-								</span>
-							</li>
-							<li>
-									<span class="item-img"><img src="//image.pmgstatic.com/files/svg/flags/162/751/162751326/162751326_a09679.svg" class="flag" title="Česko" alt="Česko"/></span>
-								<p>
-									Na Blu-ray od
-								</p>
-								<span title="29.06.2011 Magic Box">
-									29.06.2011
-										Magic Box
-								</span>
-							</li>
-							<li>
-									<span class="item-img"><img src="//image.pmgstatic.com/files/svg/flags/162/751/162751326/162751326_a09679.svg" class="flag" title="Česko" alt="Česko"/></span>
-								<p>
-									Na Blu-ray od
-								</p>
-								<span title="12.04.2010 Magic Box">
-									12.04.2010
-										Magic Box
-								</span>
-							</li>
-							<li>
-									<span class="item-img"><img src="//image.pmgstatic.com/files/svg/flags/162/751/162751326/162751326_a09679.svg" class="flag" title="Česko" alt="Česko"/></span>
-								<p>
-									Na 4K Blu-ray od
-								</p>
-								<span title="01.10.2025 Magic Box">
-									01.10.2025
-										Magic Box
-								</span>
-							</li>
-							<li>
-									<span class="item-img"><img src="//image.pmgstatic.com/files/svg/flags/162/751/162751326/162751326_a09679.svg" class="flag" title="Česko" alt="Česko"/></span>
-								<p>
-									Na 4K Blu-ray od
-								</p>
-								<span title="11.01.2023 Magic Box">
-									11.01.2023
-										Magic Box
-								</span>
-							</li>
-							<li class="divider">
-									<span class="item-img"><img src="//image.pmgstatic.com/files/svg/flags/162/751/162751397/162751397_37070c.svg" class="flag" title="Nový Zéland" alt="Nový Zéland"/></span>
-								<p>
-									V kinech od
-								</p>
-								<span title="20.12.2001 Roadshow Films">
-									20.12.2001
-										Roadshow Films
-								</span>
-							</li>
-							<li class="divider hidden-release">
-									<span class="item-img"><img src="//image.pmgstatic.com/files/svg/flags/162/751/162751232/162751232_6f9adb.svg" class="flag" title="USA" alt="USA"/></span>
-								<p>
-									V kinech od
-								</p>
-								<span title="16.01.2026 Fathom Events">
-									16.01.2026
-										Fathom Events
-								</span>
-							</li>
-							<li>
-									<span class="item-img"><img src="//image.pmgstatic.com/files/svg/flags/162/751/162751232/162751232_6f9adb.svg" class="flag" title="USA" alt="USA"/></span>
-								<p>
-									V kinech od
-								</p>
-								<span title="08.06.2024 Fathom Events">
-									08.06.2024
-										Fathom Events
-								</span>
-							</li>
-							<li>
-									<span class="item-img"><img src="//image.pmgstatic.com/files/svg/flags/162/751/162751232/162751232_6f9adb.svg" class="flag" title="USA" alt="USA"/></span>
-								<p>
-									V kinech od
-								</p>
-								<span title="19.12.2001 New Line Cinema">
-									19.12.2001
-										New Line Cinema
-								</span>
-							</li>
-					</ul>
-				</div>
-				<div class="box-content-more">
-					<a href="javascript:void(0);" data-show-preserve=".box-premieres-has-some-hidden" data-text="méně">více</a>
-				</div>
+				<ul>
+						<li class="divider">
+								<span class="item-img"><img src="//image.pmgstatic.com/files/svg/flags/162/751/162751326/162751326_a09679.svg" class="flag" title="Česko" alt="Česko"/></span>
+							<p>
+								V kinech od
+							</p>
+							<span title="10.01.2002 Warner Bros. CZ">
+								10.01.2002
+									Warner Bros. CZ
+							</span>
+						</li>
+						<li class="hidden-release">
+								<span class="item-img"><img src="//image.pmgstatic.com/files/svg/flags/162/751/162751326/162751326_a09679.svg" class="flag" title="Česko" alt="Česko"/></span>
+							<p>
+								Na DVD od
+							</p>
+							<span title="01.02.2023 Magic Box">
+								01.02.2023
+									Magic Box
+							</span>
+						</li>
+						<li class="hidden-release">
+								<span class="item-img"><img src="//image.pmgstatic.com/files/svg/flags/162/751/162751326/162751326_a09679.svg" class="flag" title="Česko" alt="Česko"/></span>
+							<p>
+								Na DVD od
+							</p>
+							<span title="22.07.2015 Magic Box">
+								22.07.2015
+									Magic Box
+							</span>
+						</li>
+						<li class="hidden-release">
+								<span class="item-img"><img src="//image.pmgstatic.com/files/svg/flags/162/751/162751326/162751326_a09679.svg" class="flag" title="Česko" alt="Česko"/></span>
+							<p>
+								Na DVD od
+							</p>
+							<span title="17.06.2015 Magic Box">
+								17.06.2015
+									Magic Box
+							</span>
+						</li>
+						<li class="hidden-release">
+								<span class="item-img"><img src="//image.pmgstatic.com/files/svg/flags/162/751/162751326/162751326_a09679.svg" class="flag" title="Česko" alt="Česko"/></span>
+							<p>
+								Na DVD od
+							</p>
+							<span title="16.05.2012 Magic Box">
+								16.05.2012
+									Magic Box
+							</span>
+						</li>
+						<li>
+								<span class="item-img"><img src="//image.pmgstatic.com/files/svg/flags/162/751/162751326/162751326_a09679.svg" class="flag" title="Česko" alt="Česko"/></span>
+							<p>
+								Na DVD od
+							</p>
+							<span title="02.10.2010 Magic Box">
+								02.10.2010
+									Magic Box
+							</span>
+						</li>
+						<li>
+								<span class="item-img"><img src="//image.pmgstatic.com/files/svg/flags/162/751/162751326/162751326_a09679.svg" class="flag" title="Česko" alt="Česko"/></span>
+							<p>
+								Na DVD od
+							</p>
+							<span title="13.09.2002 Warner Bros. CZ">
+								13.09.2002
+									Warner Bros. CZ
+							</span>
+						</li>
+						<li class="hidden-release">
+								<span class="item-img"><img src="//image.pmgstatic.com/files/svg/flags/162/751/162751326/162751326_a09679.svg" class="flag" title="Česko" alt="Česko"/></span>
+							<p>
+								Na Blu-ray od
+							</p>
+							<span title="05.11.2025 Magic Box">
+								05.11.2025
+									Magic Box
+							</span>
+						</li>
+						<li class="hidden-release">
+								<span class="item-img"><img src="//image.pmgstatic.com/files/svg/flags/162/751/162751326/162751326_a09679.svg" class="flag" title="Česko" alt="Česko"/></span>
+							<p>
+								Na Blu-ray od
+							</p>
+							<span title="04.12.2024 Magic Box">
+								04.12.2024
+									Magic Box
+							</span>
+						</li>
+						<li class="hidden-release">
+								<span class="item-img"><img src="//image.pmgstatic.com/files/svg/flags/162/751/162751326/162751326_a09679.svg" class="flag" title="Česko" alt="Česko"/></span>
+							<p>
+								Na Blu-ray od
+							</p>
+							<span title="10.11.2021 Magic Box">
+								10.11.2021
+									Magic Box
+							</span>
+						</li>
+						<li class="hidden-release">
+								<span class="item-img"><img src="//image.pmgstatic.com/files/svg/flags/162/751/162751326/162751326_a09679.svg" class="flag" title="Česko" alt="Česko"/></span>
+							<p>
+								Na Blu-ray od
+							</p>
+							<span title="15.05.2013 Magic Box">
+								15.05.2013
+									Magic Box
+							</span>
+						</li>
+						<li class="hidden-release">
+								<span class="item-img"><img src="//image.pmgstatic.com/files/svg/flags/162/751/162751326/162751326_a09679.svg" class="flag" title="Česko" alt="Česko"/></span>
+							<p>
+								Na Blu-ray od
+							</p>
+							<span title="05.12.2012 Magic Box">
+								05.12.2012
+									Magic Box
+							</span>
+						</li>
+						<li>
+								<span class="item-img"><img src="//image.pmgstatic.com/files/svg/flags/162/751/162751326/162751326_a09679.svg" class="flag" title="Česko" alt="Česko"/></span>
+							<p>
+								Na Blu-ray od
+							</p>
+							<span title="29.06.2011 Magic Box">
+								29.06.2011
+									Magic Box
+							</span>
+						</li>
+						<li>
+								<span class="item-img"><img src="//image.pmgstatic.com/files/svg/flags/162/751/162751326/162751326_a09679.svg" class="flag" title="Česko" alt="Česko"/></span>
+							<p>
+								Na Blu-ray od
+							</p>
+							<span title="12.04.2010 Magic Box">
+								12.04.2010
+									Magic Box
+							</span>
+						</li>
+						<li>
+								<span class="item-img"><img src="//image.pmgstatic.com/files/svg/flags/162/751/162751326/162751326_a09679.svg" class="flag" title="Česko" alt="Česko"/></span>
+							<p>
+								Na 4K Blu-ray od
+							</p>
+							<span title="01.10.2025 Magic Box">
+								01.10.2025
+									Magic Box
+							</span>
+						</li>
+						<li>
+								<span class="item-img"><img src="//image.pmgstatic.com/files/svg/flags/162/751/162751326/162751326_a09679.svg" class="flag" title="Česko" alt="Česko"/></span>
+							<p>
+								Na 4K Blu-ray od
+							</p>
+							<span title="11.01.2023 Magic Box">
+								11.01.2023
+									Magic Box
+							</span>
+						</li>
+						<li class="divider">
+								<span class="item-img"><img src="//image.pmgstatic.com/files/svg/flags/162/751/162751397/162751397_37070c.svg" class="flag" title="Nový Zéland" alt="Nový Zéland"/></span>
+							<p>
+								V kinech od
+							</p>
+							<span title="20.12.2001 Roadshow Films">
+								20.12.2001
+									Roadshow Films
+							</span>
+						</li>
+						<li class="divider hidden-release">
+								<span class="item-img"><img src="//image.pmgstatic.com/files/svg/flags/162/751/162751232/162751232_6f9adb.svg" class="flag" title="USA" alt="USA"/></span>
+							<p>
+								V kinech od
+							</p>
+							<span title="16.01.2026 Fathom Events">
+								16.01.2026
+									Fathom Events
+							</span>
+						</li>
+						<li>
+								<span class="item-img"><img src="//image.pmgstatic.com/files/svg/flags/162/751/162751232/162751232_6f9adb.svg" class="flag" title="USA" alt="USA"/></span>
+							<p>
+								V kinech od
+							</p>
+							<span title="08.06.2024 Fathom Events">
+								08.06.2024
+									Fathom Events
+							</span>
+						</li>
+						<li>
+								<span class="item-img"><img src="//image.pmgstatic.com/files/svg/flags/162/751/162751232/162751232_6f9adb.svg" class="flag" title="USA" alt="USA"/></span>
+							<p>
+								V kinech od
+							</p>
+							<span title="19.12.2001 New Line Cinema">
+								19.12.2001
+									New Line Cinema
+							</span>
+						</li>
+				</ul>
+			</div>
+			<div class="box-content-more">
+				<a href="javascript:void(0);" data-show-preserve=".box-premieres-has-some-hidden" data-text="méně" data-show-icon>více</a>
 			</div>
 		</section>
 
@@ -1987,386 +2030,199 @@ V roce 2021 byl film zařazen do Amerického národního filmového registru.
 		</section>
 
 
-		<section class="box">
-			<div class="box-header box-header-small">
-				<h3>
-					Tagy
-				</h3>
-			</div>
-			<div class="box-content box-content-padding">
-					<a href="/tag/1096-podle-knihy/">podle knihy</a>,
-					<a href="/tag/2818-muz/">muž</a>,
-					<a href="/tag/47-laska/">láska</a>,
-					<a href="/tag/1492-zena/">žena</a>,
-					<a href="/tag/73-rodina/">rodina</a>,
-					<a href="/tag/76-smrt/">smrt</a>,
-					<a href="/tag/71-pratelstvi/">přátelství</a>,
-					<a href="/tag/72-pratele/">přátelé</a>,
-					<a href="/tag/91-vrazda/">vražda</a>,
-					<a href="/tag/59-nasili/">násilí</a>,
-					<a href="/tag/61-otec/">otec</a>,
-					<a href="/tag/234-tajemstvi/">tajemství</a>,
-					<a href="/tag/74-rodice/">rodiče</a>,
-					<a href="/tag/83-strach/">strach</a>,
-					<a href="/tag/20-dcera/">dcera</a>,
-					<a href="/tag/219-zahady/">záhady</a>,
-					<a href="/tag/120-touha/">touha</a>,
-					<a href="/tag/101-utek/">útěk</a>,
-					<a href="/tag/97-zbrane/">zbraně</a>,
-					<a href="/tag/99-zvirata/">zvířata</a>,
-					<a href="/tag/2348-obet-autonehody-zlocinu/">oběť (autonehody/zločinu)</a>,
-					<a href="/tag/1512-patrani/">pátrání</a>,
-					<a href="/tag/574-cestovani/">cestování</a>,
-					<a href="/tag/1209-vzpominky/">vzpomínky</a>,
-					<a href="/tag/465-vojaci/">vojáci</a>,
-					<a href="/tag/548-venkov/">venkov</a>,
-					<a href="/tag/641-manipulace/">manipulace</a>,
-					<a href="/tag/166-lez/">lež</a>,
-					<a href="/tag/325-intriky/">intriky</a>,
-					<a href="/tag/1309-pronasledovani/">pronásledování</a>,
-					<a href="/tag/335-putovani/">putování</a>,
-					<a href="/tag/348-sny/">sny</a>,
-					<a href="/tag/798-rivalita/">rivalita</a>,
-					<a href="/tag/100-unos/">únos</a>,
-					<a href="/tag/1016-vesnice/">vesnice</a>,
-					<a href="/tag/95-vezeni/">vězení</a>,
-					<a href="/tag/98-zrada/">zrada</a>,
-					<a href="/tag/1992-boj-o-preziti/">boj o přežití</a>,
-					<a href="/tag/66-podvod/">podvod</a>,
-					<a href="/tag/258-souboje/">souboje</a>,
-					<a href="/tag/1036-krev/">krev</a>,
-					<a href="/tag/2510-vasen/">vášeň</a>,
-					<a href="/tag/298-les/">les</a>,
-					<a href="/tag/2717-kamaradi/">kamarádi</a>,
-					<a href="/tag/55-mrtvola/">mrtvola</a>,
-					<a href="/tag/80-divocina/">divočina</a>,
-					<a href="/tag/2684-bolest/">bolest</a>,
-					<a href="/tag/1143-nenavist/">nenávist</a>,
-					<a href="/tag/2685-smutek/">smutek</a>,
-					<a href="/tag/1368-armada/">armáda</a>,
-					<a href="/tag/56-nadeje/">naděje</a>,
-					<a href="/tag/1511-tragedie/">tragédie</a>,
-					<a href="/tag/326-zarlivost/">žárlivost</a>,
-					<a href="/tag/96-zabijaci/">zabijáci</a>,
-					<a href="/tag/364-monstra/">monstra</a>,
-					<a href="/tag/1020-stari/">stáří</a>,
-					<a href="/tag/2012-zraneni/">zranění</a>,
-					<a href="/tag/78-hory/">hory</a>,
-					<a href="/tag/689-party/">párty</a>,
-					<a href="/tag/1064-voda/">voda</a>,
-					<a href="/tag/1166-umirani/">umírání</a>,
-					<a href="/tag/30-kouzla/">kouzla</a>,
-					<a href="/tag/1965-rvacka/">rvačka</a>,
-					<a href="/tag/77-snih/">sníh</a>,
-					<a href="/tag/3104-zoufalstvi/">zoufalství</a>,
-					<a href="/tag/23-duchove/">duchové</a>,
-					<a href="/tag/1383-paranoia/">paranoia</a>,
-					<a href="/tag/503-pocit-viny/">pocit viny</a>,
-					<a href="/tag/1220-prepadeni/">přepadení</a>,
-					<a href="/tag/909-chamtivost/">chamtivost</a>,
-					<a href="/tag/2937-panika/">panika</a>,
-					<a href="/tag/29-kone/">koně</a>,
-					<a href="/tag/454-magie/">magie</a>,
-					<a href="/tag/1378-dobrodruh/">dobrodruh</a>,
-					<a href="/tag/34-kral/">král</a>,
-					<a href="/tag/1361-posedlost/">posedlost</a>,
-					<a href="/tag/450-konspirace/">konspirace</a>,
-					<a href="/tag/17-budoucnost/">budoucnost</a>,
-					<a href="/tag/218-rukojmi/">rukojmí</a>,
-					<a href="/tag/334-zlo/">zlo</a>,
-					<a href="/tag/333-bitva/">bitva</a>,
-					<a href="/tag/2680-priroda/">příroda</a>,
-					<a href="/tag/488-muceni/">mučení</a>,
-					<a href="/tag/604-sledovani/">sledování</a>,
-					<a href="/tag/967-zavist/">závist</a>,
-					<a href="/tag/765-dedictvi/">dědictví</a>,
-					<a href="/tag/359-legenda/">legenda</a>,
-					<a href="/tag/2637-oslava/">oslava</a>,
-					<a href="/tag/445-reka/">řeka</a>,
-					<a href="/tag/813-hospoda/">hospoda</a>,
-					<a href="/tag/2347-obet-nekomu-necemu/">oběť (někomu/něčemu)</a>,
-					<a href="/tag/35-kralovna/">královna</a>,
-					<a href="/tag/2554-alkohol/">alkohol</a>,
-					<a href="/tag/2059-spiknuti/">spiknutí</a>,
-					<a href="/tag/2927-zajatci/">zajatci</a>,
-					<a href="/tag/504-odpusteni/">odpuštění</a>,
-					<a href="/tag/296-loajalita/">loajalita</a>,
-					<a href="/tag/3012-noc/">noc</a>,
-					<a href="/tag/2610-moc/">moc</a>,
-					<a href="/tag/385-prizrak/">přízrak</a>,
-					<a href="/tag/3165-nuz/">nůž</a>,
-					<a href="/tag/165-narozeniny/">narozeniny</a>,
-					<a href="/tag/817-jezero/">jezero</a>,
-					<a href="/tag/183-carodejnictvi/">čarodějnictví</a>,
-					<a href="/tag/437-dul/">důl</a>,
-					<a href="/tag/3065-dobrodruzstvi/">dobrodružství</a>,
-					<a href="/tag/2313-stryc/">strýc</a>,
-					<a href="/tag/455-mec-a-magie/">Meč a magie</a>,
-					<a href="/tag/269-carodejove/">čarodějové</a>,
-					<a href="/tag/181-rytiri/">rytíři</a>,
-					<a href="/tag/1055-strom/">strom</a>,
-					<a href="/tag/1032-podzemi/">podzemí</a>,
-					<a href="/tag/2314-synovec/">synovec</a>,
-					<a href="/tag/1548-statecnost/">statečnost</a>,
-					<a href="/tag/1503-slib/">slib</a>,
-					<a href="/tag/1212-kouzelnik/">kouzelník</a>,
-					<a href="/tag/2120-vyhnanstvi/">vyhnanství</a>,
-					<a href="/tag/1757-artefakt/">artefakt</a>,
-					<a href="/tag/259-elfove/">elfové</a>,
-					<a href="/tag/299-trpaslici/">trpaslíci</a>,
-					<a href="/tag/2770-sekera/">sekera</a>,
-					<a href="/tag/1216-stopar/">stopař</a>,
-					<a href="/tag/588-pivo/">pivo</a>,
-					<a href="/tag/1985-luk-a-sip/">luk a šíp</a>,
-					<a href="/tag/1259-neviditelnost/">neviditelnost</a>,
-					<a href="/tag/3284-cerna-magie/">černá magie</a>,
-					<a href="/tag/470-skreti/">skřeti</a>,
-					<a href="/tag/3334-prsten/">prsten</a>,
-					<a href="/tag/481-orkove/">orkové</a>,
-					<a href="/tag/2845-ohnostroj/">ohňostroj</a>,
-					<a href="/tag/2719-kouzelna-hul/">kouzelná hůl</a>
-			</div>
-		</section>
-
-		<section class="box box-related">
-			<div class="box-header box-header-small">
+		<section class="updated-box">
+			<div class="updated-box-header" data-onboarding-step-8="false">
 				<h3>
 					Související
 				</h3>
 			</div>
-			<div class="box-content">
-	<article class="article">
-		<div class="article-content article-aside-films">
-			<header class="article-header">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/1528850-pan-prstenu-hon-na-gluma/prehled/" class="film-title-name">Pán prstenů: Hon na Gluma</a> <span class="film-title-info"><span class="info">(2027)</span></span></h3>			</header>
-
-<p class="film-origins-genres"><span class="info"><span class="info-country">USA / Nový Zéland</span>, Akční / Dobrodružný / Drama</span></p>
-<p class="film-creators">Režie: <a href="/tvurce/13883-andy-serkis/prehled/">Andy Serkis</a></p><p class="film-creators">Hrají: <a href="/tvurce/165-elijah-wood/prehled/">Elijah Wood</a>, <a href="/tvurce/74-ian-mckellen/prehled/">Ian McKellen</a></p>		</div>
+			<div class="updated-box-content">
+	<article class="article aside-films-article">
+		<header class="article-header">
+<h3 class="film-title-inline"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/1528850-pan-prstenu-hon-na-gluma/prehled/" class="film-title-name">Pán prstenů: Hon na Gluma</a><span class="film-title-info"><span class="bullet"></span><span class="info">2027</span></span></h3><p class="film-origins-genres"><span class="info"><span class="info-country">USA / Nový Zéland</span><span class="bullet"></span>Akční, Dobrodružný, Drama</span></p>		</header>
+		<div class="article-content-spacing">
+<p class="film-creators">Režie: <a href="/tvurce/13883-andy-serkis/prehled/">Andy Serkis</a></p><p class="film-creators">Hrají: <a href="/tvurce/74-ian-mckellen/prehled/">Ian McKellen</a>, <a href="/tvurce/13883-andy-serkis/prehled/">Andy Serkis</a></p>		</div>
 	</article>
-	<article class="article">
-		<div class="article-content article-aside-films">
-			<header class="article-header">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/1040886-pan-prstenu-valka-rohiru/prehled/" class="film-title-name">Pán prstenů: Válka Rohirů</a> <span class="film-title-info"><span class="info">(2024)</span></span></h3>			</header>
-
-<p class="film-origins-genres"><span class="info"><span class="info-country">USA / Japonsko</span>, Animovaný / Fantasy / Akční</span></p>
+	<article class="article aside-films-article">
+		<header class="article-header">
+<h3 class="film-title-inline"><i class="icon icon-rounded-square blue"></i><a href="/film/1040886-pan-prstenu-valka-rohiru/prehled/" class="film-title-name">Pán prstenů: Válka Rohirů</a><span class="film-title-info"><span class="bullet"></span><span class="info">2024</span></span></h3><p class="film-origins-genres"><span class="info"><span class="info-country">USA / Japonsko</span><span class="bullet"></span>Animovaný, Fantasy, Akční</span></p>		</header>
+		<div class="article-content-spacing">
 <p class="film-creators">Režie: <a href="/tvurce/26184-kendzi-kamijama/prehled/">Kendži Kamijama</a></p><p class="film-creators">Hrají: <a href="/tvurce/2200-brian-cox/prehled/">Brian Cox</a>, <a href="/tvurce/911331-gaia-wise/prehled/">Gaia Wise</a></p>		</div>
 	</article>
-	<article class="article">
-		<div class="article-content article-aside-films">
-			<header class="article-header">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/687111-stiny-kraje/prehled/" class="film-title-name">Stíny Kraje</a> <span class="film-title-info"><span class="info">(2023)</span> <span class="info">(amatérský film)</span></span></h3>			</header>
-
-<p class="film-origins-genres"><span class="info"><span class="info-country">Česko</span>, Krátkometrážní / Fantasy / Dobrodružný</span></p>
+	<article class="article aside-films-article">
+		<header class="article-header">
+<h3 class="film-title-inline"><i class="icon icon-rounded-square blue"></i><a href="/film/687111-stiny-kraje/prehled/" class="film-title-name">Stíny Kraje</a><span class="film-title-info"><span class="bullet"></span><span class="info">2023</span><span class="bullet"></span><span class="info">amatérský film</span></span></h3><p class="film-origins-genres"><span class="info"><span class="info-country">Česko</span><span class="bullet"></span>Krátkometrážní, Fantasy, Dobrodružný</span></p>		</header>
+		<div class="article-content-spacing">
 <p class="film-creators">Režie: <a href="/tvurce/440099-jaroslav-kejzlar/prehled/">Jaroslav Kejzlar</a></p><p class="film-creators">Hrají: <a href="/tvurce/440103-dominika-dufkova/prehled/">Dominika Dufková</a>, <a href="/tvurce/440102-martin-vana/prehled/">Martin Váňa</a></p>		</div>
 	</article>
-	<article class="article">
-		<div class="article-content article-aside-films">
-			<header class="article-header">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/609925-pan-prstenu-prsteny-moci/prehled/" class="film-title-name">Pán prstenů: Prsteny moci</a> <span class="film-title-info"><span class="info">(2022)</span> <span class="info">(seriál)</span></span></h3>			</header>
-
-<p class="film-origins-genres"><span class="info"><span class="info-country">USA</span>, Akční / Dobrodružný / Fantasy</span></p>
+	<article class="article aside-films-article">
+		<header class="article-header">
+<h3 class="film-title-inline"><i class="icon icon-rounded-square blue"></i><a href="/film/609925-pan-prstenu-prsteny-moci/prehled/" class="film-title-name">Pán prstenů: Prsteny moci</a><span class="film-title-info"><span class="bullet"></span><span class="info">2022</span><span class="bullet"></span><span class="info">seriál</span></span></h3><p class="film-origins-genres"><span class="info"><span class="info-country">USA</span><span class="bullet"></span>Akční, Dobrodružný, Fantasy</span></p>		</header>
+		<div class="article-content-spacing">
 <p class="film-creators">Režie: <a href="/tvurce/33978-j-a-bayona/prehled/">J.A. Bayona</a>, <a href="/tvurce/69482-wayne-che-yip/prehled/">Wayne Che Yip</a></p><p class="film-creators">Hrají: <a href="/tvurce/257422-morfydd-clark/prehled/">Morfydd Clark</a>, <a href="/tvurce/248407-robert-aramayo/prehled/">Robert Aramayo</a></p>		</div>
 	</article>
-	<article class="article">
-		<div class="article-content article-aside-films">
-			<header class="article-header">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/900115-roh-gondoru/prehled/" class="film-title-name">Roh Gondoru</a> <span class="film-title-info"><span class="info">(2020)</span></span></h3>			</header>
-
-<p class="film-origins-genres"><span class="info"><span class="info-country">Česko</span>, Krátkometrážní / Fantasy / Akční</span></p>
+	<article class="article aside-films-article">
+		<header class="article-header">
+<h3 class="film-title-inline"><i class="icon icon-rounded-square red"></i><a href="/film/900115-roh-gondoru/prehled/" class="film-title-name">Roh Gondoru</a><span class="film-title-info"><span class="bullet"></span><span class="info">2020</span></span></h3><p class="film-origins-genres"><span class="info"><span class="info-country">Česko</span><span class="bullet"></span>Krátkometrážní, Fantasy, Akční</span></p>		</header>
+		<div class="article-content-spacing">
 <p class="film-creators">Režie: <a href="/tvurce/218926-simon-pesta/prehled/">Šimon Pešta</a></p><p class="film-creators">Hrají: <a href="/tvurce/350913-dalibor-belfin/prehled/">Dalibor Belfín</a>, <a href="/tvurce/62469-zdenek-gloser/prehled/">Zdeněk Gloser</a></p>		</div>
 	</article>
-	<article class="article related hidden">
-		<div class="article-content article-aside-films">
-			<header class="article-header">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/322679-hobit-bitva-peti-armad/prehled/" class="film-title-name">Hobit: Bitva pěti armád</a> <span class="film-title-info"><span class="info">(2014)</span></span></h3>			</header>
-
-<p class="film-origins-genres"><span class="info"><span class="info-country">USA / Nový Zéland</span>, Dobrodružný / Fantasy</span></p>
+	<article class="article aside-films-article related hidden">
+		<header class="article-header">
+<h3 class="film-title-inline"><i class="icon icon-rounded-square red"></i><a href="/film/322679-hobit-bitva-peti-armad/prehled/" class="film-title-name">Hobit: Bitva pěti armád</a><span class="film-title-info"><span class="bullet"></span><span class="info">2014</span></span></h3><p class="film-origins-genres"><span class="info"><span class="info-country">USA / Nový Zéland</span><span class="bullet"></span>Dobrodružný, Fantasy</span></p>		</header>
+		<div class="article-content-spacing">
 <p class="film-creators">Režie: <a href="/tvurce/11-peter-jackson/prehled/">Peter Jackson</a></p><p class="film-creators">Hrají: <a href="/tvurce/17867-martin-freeman/prehled/">Martin Freeman</a>, <a href="/tvurce/74-ian-mckellen/prehled/">Ian McKellen</a></p>		</div>
 	</article>
-	<article class="article related hidden">
-		<div class="article-content article-aside-films">
-			<header class="article-header">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/238304-hobit-smakova-draci-poust/prehled/" class="film-title-name">Hobit: Šmakova dračí poušť</a> <span class="film-title-info"><span class="info">(2013)</span></span></h3>			</header>
-
-<p class="film-origins-genres"><span class="info"><span class="info-country">USA / Nový Zéland</span>, Dobrodružný / Fantasy</span></p>
+	<article class="article aside-films-article related hidden">
+		<header class="article-header">
+<h3 class="film-title-inline"><i class="icon icon-rounded-square red"></i><a href="/film/238304-hobit-smakova-draci-poust/prehled/" class="film-title-name">Hobit: Šmakova dračí poušť</a><span class="film-title-info"><span class="bullet"></span><span class="info">2013</span></span></h3><p class="film-origins-genres"><span class="info"><span class="info-country">USA / Nový Zéland</span><span class="bullet"></span>Dobrodružný, Fantasy</span></p>		</header>
+		<div class="article-content-spacing">
 <p class="film-creators">Režie: <a href="/tvurce/11-peter-jackson/prehled/">Peter Jackson</a></p><p class="film-creators">Hrají: <a href="/tvurce/17867-martin-freeman/prehled/">Martin Freeman</a>, <a href="/tvurce/74-ian-mckellen/prehled/">Ian McKellen</a></p>		</div>
 	</article>
-	<article class="article related hidden">
-		<div class="article-content article-aside-films">
-			<header class="article-header">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/232938-hobit-neocekavana-cesta/prehled/" class="film-title-name">Hobit: Neočekávaná cesta</a> <span class="film-title-info"><span class="info">(2012)</span></span></h3>			</header>
-
-<p class="film-origins-genres"><span class="info"><span class="info-country">USA / Nový Zéland</span>, Dobrodružný / Fantasy</span></p>
+	<article class="article aside-films-article related hidden">
+		<header class="article-header">
+<h3 class="film-title-inline"><i class="icon icon-rounded-square red"></i><a href="/film/232938-hobit-neocekavana-cesta/prehled/" class="film-title-name">Hobit: Neočekávaná cesta</a><span class="film-title-info"><span class="bullet"></span><span class="info">2012</span></span></h3><p class="film-origins-genres"><span class="info"><span class="info-country">USA / Nový Zéland</span><span class="bullet"></span>Dobrodružný, Fantasy</span></p>		</header>
+		<div class="article-content-spacing">
 <p class="film-creators">Režie: <a href="/tvurce/11-peter-jackson/prehled/">Peter Jackson</a></p><p class="film-creators">Hrají: <a href="/tvurce/17867-martin-freeman/prehled/">Martin Freeman</a>, <a href="/tvurce/74-ian-mckellen/prehled/">Ian McKellen</a></p>		</div>
 	</article>
-	<article class="article related hidden">
-		<div class="article-content article-aside-films">
-			<header class="article-header">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/256926-lov-na-gluma/prehled/" class="film-title-name">Lov na Gluma</a> <span class="film-title-info"><span class="info">(2009)</span></span></h3>			</header>
-
-<p class="film-origins-genres"><span class="info"><span class="info-country">Velká Británie</span>, Krátkometrážní / Akční / Dobrodružný</span></p>
+	<article class="article aside-films-article related hidden">
+		<header class="article-header">
+<h3 class="film-title-inline"><i class="icon icon-rounded-square blue"></i><a href="/film/256926-lov-na-gluma/prehled/" class="film-title-name">Lov na Gluma</a><span class="film-title-info"><span class="bullet"></span><span class="info">2009</span></span></h3><p class="film-origins-genres"><span class="info"><span class="info-country">Velká Británie</span><span class="bullet"></span>Krátkometrážní, Akční, Dobrodružný</span></p>		</header>
+		<div class="article-content-spacing">
 <p class="film-creators">Režie: <a href="/tvurce/72521-chris-bouchard/prehled/">Chris Bouchard</a></p><p class="film-creators">Hrají: <a href="/tvurce/72522-adrian-webster/prehled/">Adrian Webster</a>, <a href="/tvurce/72523-arin-alldridge/prehled/">Arin Alldridge</a></p>		</div>
 	</article>
-	<article class="article related hidden">
-		<div class="article-content article-aside-films">
-			<header class="article-header">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/189742-zrozeni-nadeje/prehled/" class="film-title-name">Zrození naděje</a> <span class="film-title-info"><span class="info">(2009)</span></span></h3>			</header>
-
-<p class="film-origins-genres"><span class="info"><span class="info-country">Velká Británie</span>, Akční / Fantasy / Dobrodružný</span></p>
+	<article class="article aside-films-article related hidden">
+		<header class="article-header">
+<h3 class="film-title-inline"><i class="icon icon-rounded-square blue"></i><a href="/film/189742-zrozeni-nadeje/prehled/" class="film-title-name">Zrození naděje</a><span class="film-title-info"><span class="bullet"></span><span class="info">2009</span></span></h3><p class="film-origins-genres"><span class="info"><span class="info-country">Velká Británie</span><span class="bullet"></span>Akční, Fantasy, Dobrodružný</span></p>		</header>
+		<div class="article-content-spacing">
 <p class="film-creators">Režie: <a href="/tvurce/56078-kate-madison/prehled/">Kate Madison</a></p><p class="film-creators">Hrají: <a href="/tvurce/62502-christopher-dane/prehled/">Christopher Dane</a>, <a href="/tvurce/56078-kate-madison/prehled/">Kate Madison</a></p>		</div>
 	</article>
-	<article class="article related hidden">
-		<div class="article-content article-aside-films">
-			<header class="article-header">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/4712-pan-prstenu-navrat-krale/prehled/" class="film-title-name">Pán prstenů: Návrat krále</a> <span class="film-title-info"><span class="info">(2003)</span></span></h3>			</header>
-
-<p class="film-origins-genres"><span class="info"><span class="info-country">USA / Nový Zéland</span>, Fantasy / Dobrodružný / Akční</span></p>
+	<article class="article aside-films-article related hidden">
+		<header class="article-header">
+<h3 class="film-title-inline"><i class="icon icon-rounded-square red"></i><a href="/film/4712-pan-prstenu-navrat-krale/prehled/" class="film-title-name">Pán prstenů: Návrat krále</a><span class="film-title-info"><span class="bullet"></span><span class="info">2003</span></span></h3><p class="film-origins-genres"><span class="info"><span class="info-country">USA / Nový Zéland</span><span class="bullet"></span>Fantasy, Dobrodružný, Akční</span></p>		</header>
+		<div class="article-content-spacing">
 <p class="film-creators">Režie: <a href="/tvurce/11-peter-jackson/prehled/">Peter Jackson</a></p><p class="film-creators">Hrají: <a href="/tvurce/165-elijah-wood/prehled/">Elijah Wood</a>, <a href="/tvurce/168-billy-boyd/prehled/">Billy Boyd</a></p>		</div>
 	</article>
-	<article class="article related hidden">
-		<div class="article-content article-aside-films">
-			<header class="article-header">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square red"></i><a href="/film/4713-pan-prstenu-dve-veze/prehled/" class="film-title-name">Pán prstenů: Dvě věže</a> <span class="film-title-info"><span class="info">(2002)</span></span></h3>			</header>
-
-<p class="film-origins-genres"><span class="info"><span class="info-country">USA / Nový Zéland</span>, Fantasy / Dobrodružný / Akční</span></p>
+	<article class="article aside-films-article related hidden">
+		<header class="article-header">
+<h3 class="film-title-inline"><i class="icon icon-rounded-square red"></i><a href="/film/4713-pan-prstenu-dve-veze/prehled/" class="film-title-name">Pán prstenů: Dvě věže</a><span class="film-title-info"><span class="bullet"></span><span class="info">2002</span></span></h3><p class="film-origins-genres"><span class="info"><span class="info-country">USA / Nový Zéland</span><span class="bullet"></span>Fantasy, Dobrodružný, Akční</span></p>		</header>
+		<div class="article-content-spacing">
 <p class="film-creators">Režie: <a href="/tvurce/11-peter-jackson/prehled/">Peter Jackson</a></p><p class="film-creators">Hrají: <a href="/tvurce/165-elijah-wood/prehled/">Elijah Wood</a>, <a href="/tvurce/74-ian-mckellen/prehled/">Ian McKellen</a></p>		</div>
 	</article>
-	<article class="article related hidden">
-		<div class="article-content article-aside-films">
-			<header class="article-header">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square grey"></i><a href="/film/211588-hobitit/prehled/" class="film-title-name">Hobitit</a> <span class="film-title-info"><span class="info">(1993)</span> <span class="info">(seriál)</span></span></h3>			</header>
-
-<p class="film-origins-genres"><span class="info"><span class="info-country">Finsko</span>, Fantasy / Rodinný / Dobrodružný</span></p>
+	<article class="article aside-films-article related hidden">
+		<header class="article-header">
+<h3 class="film-title-inline"><i class="icon icon-rounded-square grey"></i><a href="/film/211588-hobitit/prehled/" class="film-title-name">Hobitit</a><span class="film-title-info"><span class="bullet"></span><span class="info">1993</span><span class="bullet"></span><span class="info">seriál</span></span></h3><p class="film-origins-genres"><span class="info"><span class="info-country">Finsko</span><span class="bullet"></span>Fantasy, Rodinný, Dobrodružný</span></p>		</header>
+		<div class="article-content-spacing">
 <p class="film-creators">Režie: <a href="/tvurce/12150-timo-torikka/prehled/">Timo Torikka</a></p><p class="film-creators">Hrají: <a href="/tvurce/44982-martti-suosalo/prehled/">Martti Suosalo</a>, <a href="/tvurce/12129-taneli-makela/prehled/">Taneli Mäkelä</a></p>		</div>
 	</article>
-	<article class="article related hidden">
-		<div class="article-content article-aside-films">
-			<header class="article-header">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/331341-skazocnoje-putesestvije-mistera-bilbo-begginsa-hobbita/prehled/" class="film-title-name">Skazočnoje putěšestvije mistera Bilbo Begginsa Hobbita</a> <span class="film-title-info"><span class="info">(1985)</span> <span class="info">(TV film)</span></span></h3>			</header>
-
-<p class="film-origins-genres"><span class="info"><span class="info-country">Sovětský svaz</span>, Fantasy / Dobrodružný / Rodinný</span></p>
+	<article class="article aside-films-article related hidden">
+		<header class="article-header">
+<h3 class="film-title-inline"><i class="icon icon-rounded-square blue"></i><a href="/film/331341-skazocnoje-putesestvije-mistera-bilbo-begginsa-hobbita/prehled/" class="film-title-name">Skazočnoje putěšestvije mistera Bilbo Begginsa Hobbita</a><span class="film-title-info"><span class="bullet"></span><span class="info">1985</span><span class="bullet"></span><span class="info">TV film</span></span></h3><p class="film-origins-genres"><span class="info"><span class="info-country">Sovětský svaz</span><span class="bullet"></span>Fantasy, Dobrodružný, Rodinný</span></p>		</header>
+		<div class="article-content-spacing">
 <p class="film-creators">Režie: <a href="/tvurce/82477-vladimir-latysev/prehled/">Vladimir Latyšev</a></p><p class="film-creators">Hrají: <a href="/tvurce/12830-michajl-kuznecov/prehled/">Michajl Kuzněcov</a>, <a href="/tvurce/135353-michail-danilov/prehled/">Michail Danilov</a></p>		</div>
 	</article>
-	<article class="article related hidden">
-		<div class="article-content article-aside-films">
-			<header class="article-header">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/33111-the-return-of-the-king/prehled/" class="film-title-name">The Return of the King</a> <span class="film-title-info"><span class="info">(1980)</span> <span class="info">(TV film)</span></span></h3>			</header>
-
-<p class="film-origins-genres"><span class="info"><span class="info-country">USA</span>, Animovaný / Muzikál / Fantasy</span></p>
+	<article class="article aside-films-article related hidden">
+		<header class="article-header">
+<h3 class="film-title-inline"><i class="icon icon-rounded-square blue"></i><a href="/film/33111-the-return-of-the-king/prehled/" class="film-title-name">The Return of the King</a><span class="film-title-info"><span class="bullet"></span><span class="info">1980</span><span class="bullet"></span><span class="info">TV film</span></span></h3><p class="film-origins-genres"><span class="info"><span class="info-country">USA</span><span class="bullet"></span>Animovaný, Muzikál, Fantasy</span></p>		</header>
+		<div class="article-content-spacing">
 <p class="film-creators">Režie: <a href="/tvurce/11105-jules-bass/prehled/">Jules Bass</a>, <a href="/tvurce/11177-arthur-rankin-jr/prehled/">Arthur Rankin Jr.</a></p><p class="film-creators">Hrají: <a href="/tvurce/51005-orson-bean/prehled/">Orson Bean</a>, <a href="/tvurce/11229-theodore-bikel/prehled/">Theodore Bikel</a></p>		</div>
 	</article>
-	<article class="article related hidden">
-		<div class="article-content article-aside-films">
-			<header class="article-header">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/13477-pan-prstenu/prehled/" class="film-title-name">Pán prstenů</a> <span class="film-title-info"><span class="info">(1978)</span></span></h3>			</header>
-
-<p class="film-origins-genres"><span class="info"><span class="info-country">USA</span>, Animovaný / Fantasy / Dobrodružný</span></p>
+	<article class="article aside-films-article related hidden">
+		<header class="article-header">
+<h3 class="film-title-inline"><i class="icon icon-rounded-square blue"></i><a href="/film/13477-pan-prstenu/prehled/" class="film-title-name">Pán prstenů</a><span class="film-title-info"><span class="bullet"></span><span class="info">1978</span></span></h3><p class="film-origins-genres"><span class="info"><span class="info-country">USA</span><span class="bullet"></span>Animovaný, Fantasy, Dobrodružný</span></p>		</header>
+		<div class="article-content-spacing">
 <p class="film-creators">Režie: <a href="/tvurce/5000-ralph-bakshi/prehled/">Ralph Bakshi</a></p><p class="film-creators">Hrají: <a href="/tvurce/96203-dominic-guard/prehled/">Dominic Guard</a>, <a href="/tvurce/226-john-hurt/prehled/">John Hurt</a></p>		</div>
 	</article>
-	<article class="article related hidden">
-		<div class="article-content article-aside-films">
-			<header class="article-header">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/74902-the-hobbit/prehled/" class="film-title-name">The Hobbit</a> <span class="film-title-info"><span class="info">(1977)</span> <span class="info">(TV film)</span></span></h3>			</header>
-
-<p class="film-origins-genres"><span class="info"><span class="info-country">USA</span>, Animovaný / Fantasy / Rodinný</span></p>
+	<article class="article aside-films-article related hidden">
+		<header class="article-header">
+<h3 class="film-title-inline"><i class="icon icon-rounded-square blue"></i><a href="/film/74902-the-hobbit/prehled/" class="film-title-name">The Hobbit</a><span class="film-title-info"><span class="bullet"></span><span class="info">1977</span><span class="bullet"></span><span class="info">TV film</span></span></h3><p class="film-origins-genres"><span class="info"><span class="info-country">USA</span><span class="bullet"></span>Animovaný, Fantasy, Rodinný</span></p>		</header>
+		<div class="article-content-spacing">
 <p class="film-creators">Režie: <a href="/tvurce/11105-jules-bass/prehled/">Jules Bass</a>, <a href="/tvurce/11177-arthur-rankin-jr/prehled/">Arthur Rankin Jr.</a></p><p class="film-creators">Hrají: <a href="/tvurce/51005-orson-bean/prehled/">Orson Bean</a>, <a href="/tvurce/2945-john-huston/prehled/">John Huston</a></p>		</div>
 	</article>
-	<article class="article related hidden last">
-		<div class="article-content article-aside-films">
-			<header class="article-header">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/310276-hobit/prehled/" class="film-title-name">Hobit</a> <span class="film-title-info"><span class="info">(1966)</span></span></h3>			</header>
-
-<p class="film-origins-genres"><span class="info"><span class="info-country">Československo / USA</span>, Animovaný / Krátkometrážní / Rodinný</span></p>
+	<article class="article aside-films-article related hidden">
+		<header class="article-header">
+<h3 class="film-title-inline"><i class="icon icon-rounded-square blue"></i><a href="/film/310276-hobit/prehled/" class="film-title-name">Hobit</a><span class="film-title-info"><span class="bullet"></span><span class="info">1966</span></span></h3><p class="film-origins-genres"><span class="info"><span class="info-country">Československo / USA</span><span class="bullet"></span>Animovaný, Krátkometrážní, Rodinný</span></p>		</header>
+		<div class="article-content-spacing">
 <p class="film-creators">Režie: <a href="/tvurce/37331-adolf-born/prehled/">Adolf Born</a>, <a href="/tvurce/17779-gene-deitch/prehled/">Gene Deitch</a></p>		</div>
 	</article>
-	<div class="box-content-more"><a href="#" data-show=".related" data-text="méně">více</a></div>
+	<div class="box-content-more">
+		<a href="javascript:void(0);" data-show=".related" data-text="méně" data-show-icon>
+			více
+		</a>
+	</div>
 			</div>
 		</section>
 
-		<section class="box box-related">
-			<div class="box-header box-header-small">
+		<section class="updated-box">
+			<div class="updated-box-header" data-onboarding-step-8="false">
 				<h3>
 					Podobné
 				</h3>
 			</div>
-			<div class="box-content">
-	<article class="article">
-		<div class="article-content article-aside-films">
-			<header class="article-header">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/1481380-narnia-the-magician-s-nephew/prehled/" class="film-title-name">Narnia: The Magician's Nephew</a> <span class="film-title-info"><span class="info">(2026)</span></span></h3>			</header>
-
-<p class="film-origins-genres"><span class="info"><span class="info-country">USA</span>, Fantasy / Dobrodružný</span></p>
+			<div class="updated-box-content">
+	<article class="article aside-films-article">
+		<header class="article-header">
+<h3 class="film-title-inline"><i class="icon icon-rounded-square lightgrey"></i><a href="/film/1481380-narnia-the-magician-s-nephew/prehled/" class="film-title-name">Narnia: The Magician's Nephew</a><span class="film-title-info"><span class="bullet"></span><span class="info">2026</span></span></h3><p class="film-origins-genres"><span class="info"><span class="info-country">USA</span><span class="bullet"></span>Fantasy, Dobrodružný</span></p>		</header>
+		<div class="article-content-spacing">
 <p class="film-creators">Režie: <a href="/tvurce/47046-greta-gerwig/prehled/">Greta Gerwig</a></p><p class="film-creators">Hrají: <a href="/tvurce/433925-emma-mackey/prehled/">Emma Mackey</a>, <a href="/tvurce/2775-daniel-craig/prehled/">Daniel Craig</a></p>		</div>
 	</article>
-	<article class="article">
-		<div class="article-content article-aside-films">
-			<header class="article-header">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/243146-letopisy-narnie-plavba-jitrniho-poutnika/prehled/" class="film-title-name">Letopisy Narnie: Plavba Jitřního poutníka</a> <span class="film-title-info"><span class="info">(2010)</span></span></h3>			</header>
-
-<p class="film-origins-genres"><span class="info"><span class="info-country">USA</span>, Dobrodružný / Rodinný / Fantasy</span></p>
+	<article class="article aside-films-article">
+		<header class="article-header">
+<h3 class="film-title-inline"><i class="icon icon-rounded-square blue"></i><a href="/film/243146-letopisy-narnie-plavba-jitrniho-poutnika/prehled/" class="film-title-name">Letopisy Narnie: Plavba Jitřního poutníka</a><span class="film-title-info"><span class="bullet"></span><span class="info">2010</span></span></h3><p class="film-origins-genres"><span class="info"><span class="info-country">USA</span><span class="bullet"></span>Dobrodružný, Rodinný, Fantasy</span></p>		</header>
+		<div class="article-content-spacing">
 <p class="film-creators">Režie: <a href="/tvurce/2805-michael-apted/prehled/">Michael Apted</a></p><p class="film-creators">Hrají: <a href="/tvurce/40095-ben-barnes/prehled/">Ben Barnes</a>, <a href="/tvurce/26101-skandar-keynes/prehled/">Skandar Keynes</a></p>		</div>
 	</article>
-	<article class="article">
-		<div class="article-content article-aside-films">
-			<header class="article-header">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/221770-letopisy-narnie-princ-kaspian/prehled/" class="film-title-name">Letopisy Narnie: Princ Kaspian</a> <span class="film-title-info"><span class="info">(2008)</span></span></h3>			</header>
-
-<p class="film-origins-genres"><span class="info"><span class="info-country">USA / Polsko / Slovinsko</span>, Dobrodružný / Rodinný / Fantasy</span></p>
+	<article class="article aside-films-article">
+		<header class="article-header">
+<h3 class="film-title-inline"><i class="icon icon-rounded-square blue"></i><a href="/film/221770-letopisy-narnie-princ-kaspian/prehled/" class="film-title-name">Letopisy Narnie: Princ Kaspian</a><span class="film-title-info"><span class="bullet"></span><span class="info">2008</span></span></h3><p class="film-origins-genres"><span class="info"><span class="info-country">USA / Polsko / Slovinsko</span><span class="bullet"></span>Dobrodružný, Rodinný, Fantasy</span></p>		</header>
+		<div class="article-content-spacing">
 <p class="film-creators">Režie: <a href="/tvurce/8902-andrew-adamson/prehled/">Andrew Adamson</a></p><p class="film-creators">Hrají: <a href="/tvurce/40095-ben-barnes/prehled/">Ben Barnes</a>, <a href="/tvurce/26101-skandar-keynes/prehled/">Skandar Keynes</a></p>		</div>
 	</article>
-	<article class="article">
-		<div class="article-content article-aside-films">
-			<header class="article-header">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/130148-letopisy-narnie-lev-carodejnice-a-skrin/prehled/" class="film-title-name">Letopisy Narnie: Lev, čarodějnice a skříň</a> <span class="film-title-info"><span class="info">(2005)</span></span></h3>			</header>
-
-<p class="film-origins-genres"><span class="info"><span class="info-country">USA / Velká Británie</span>, Dobrodružný / Rodinný / Fantasy</span></p>
+	<article class="article aside-films-article">
+		<header class="article-header">
+<h3 class="film-title-inline"><i class="icon icon-rounded-square blue"></i><a href="/film/130148-letopisy-narnie-lev-carodejnice-a-skrin/prehled/" class="film-title-name">Letopisy Narnie: Lev, čarodějnice a skříň</a><span class="film-title-info"><span class="bullet"></span><span class="info">2005</span></span></h3><p class="film-origins-genres"><span class="info"><span class="info-country">USA / Velká Británie</span><span class="bullet"></span>Dobrodružný, Rodinný, Fantasy</span></p>		</header>
+		<div class="article-content-spacing">
 <p class="film-creators">Režie: <a href="/tvurce/8902-andrew-adamson/prehled/">Andrew Adamson</a></p><p class="film-creators">Hrají: <a href="/tvurce/26100-georgie-henley/prehled/">Georgie Henley</a>, <a href="/tvurce/26101-skandar-keynes/prehled/">Skandar Keynes</a></p>		</div>
 	</article>
-	<article class="article">
-		<div class="article-content article-aside-films">
-			<header class="article-header">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/128777-letopisy-narnie-stribrna-zidle/prehled/" class="film-title-name">Letopisy Narnie - Stříbrná židle</a> <span class="film-title-info"><span class="info">(1990)</span> <span class="info">(seriál)</span></span></h3>			</header>
-
-<p class="film-origins-genres"><span class="info"><span class="info-country">Velká Británie</span>, Dobrodružný / Rodinný / Fantasy</span></p>
+	<article class="article aside-films-article">
+		<header class="article-header">
+<h3 class="film-title-inline"><i class="icon icon-rounded-square blue"></i><a href="/film/128777-letopisy-narnie-stribrna-zidle/prehled/" class="film-title-name">Letopisy Narnie - Stříbrná židle</a><span class="film-title-info"><span class="bullet"></span><span class="info">1990</span><span class="bullet"></span><span class="info">seriál</span></span></h3><p class="film-origins-genres"><span class="info"><span class="info-country">Velká Británie</span><span class="bullet"></span>Dobrodružný, Rodinný, Fantasy</span></p>		</header>
+		<div class="article-content-spacing">
 <p class="film-creators">Režie: <a href="/tvurce/26233-alex-kirby/prehled/">Alex Kirby</a></p><p class="film-creators">Hrají: <a href="/tvurce/63194-david-thwaites/prehled/">David Thwaites</a>, <a href="/tvurce/63201-camilla-power/prehled/">Camilla Power</a></p>		</div>
 	</article>
-	<article class="article similar hidden">
-		<div class="article-content article-aside-films">
-			<header class="article-header">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/21920-letopisy-narnie-princ-kaspian-a-plavba-jitrniho-poutnika/prehled/" class="film-title-name">Letopisy Narnie - Princ Kaspian a Plavba Jitřního poutníka</a> <span class="film-title-info"><span class="info">(1989)</span> <span class="info">(seriál)</span></span></h3>			</header>
-
-<p class="film-origins-genres"><span class="info"><span class="info-country">Velká Británie</span>, Dobrodružný / Rodinný / Fantasy</span></p>
+	<article class="article aside-films-article similar hidden">
+		<header class="article-header">
+<h3 class="film-title-inline"><i class="icon icon-rounded-square blue"></i><a href="/film/21920-letopisy-narnie-princ-kaspian-a-plavba-jitrniho-poutnika/prehled/" class="film-title-name">Letopisy Narnie - Princ Kaspian a Plavba Jitřního poutníka</a><span class="film-title-info"><span class="bullet"></span><span class="info">1989</span><span class="bullet"></span><span class="info">seriál</span></span></h3><p class="film-origins-genres"><span class="info"><span class="info-country">Velká Británie</span><span class="bullet"></span>Dobrodružný, Rodinný, Fantasy</span></p>		</header>
+		<div class="article-content-spacing">
 <p class="film-creators">Režie: <a href="/tvurce/26233-alex-kirby/prehled/">Alex Kirby</a></p><p class="film-creators">Hrají: <a href="/tvurce/63198-richard-dempsey/prehled/">Richard Dempsey</a>, <a href="/tvurce/63195-sophie-cook/prehled/">Sophie Cook</a></p>		</div>
 	</article>
-	<article class="article similar hidden">
-		<div class="article-content article-aside-films">
-			<header class="article-header">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/221211-letopisy-narnie-lev-carodejnice-a-skrin/prehled/" class="film-title-name">Letopisy Narnie - Lev, čarodějnice a skříň</a> <span class="film-title-info"><span class="info">(1988)</span> <span class="info">(seriál)</span></span></h3>			</header>
-
-<p class="film-origins-genres"><span class="info"><span class="info-country">Velká Británie</span>, Dobrodružný / Rodinný / Fantasy</span></p>
+	<article class="article aside-films-article similar hidden">
+		<header class="article-header">
+<h3 class="film-title-inline"><i class="icon icon-rounded-square blue"></i><a href="/film/221211-letopisy-narnie-lev-carodejnice-a-skrin/prehled/" class="film-title-name">Letopisy Narnie - Lev, čarodějnice a skříň</a><span class="film-title-info"><span class="bullet"></span><span class="info">1988</span><span class="bullet"></span><span class="info">seriál</span></span></h3><p class="film-origins-genres"><span class="info"><span class="info-country">Velká Británie</span><span class="bullet"></span>Dobrodružný, Rodinný, Fantasy</span></p>		</header>
+		<div class="article-content-spacing">
 <p class="film-creators">Režie: <a href="/tvurce/57217-marilyn-fox/prehled/">Marilyn Fox</a></p><p class="film-creators">Hrají: <a href="/tvurce/63198-richard-dempsey/prehled/">Richard Dempsey</a>, <a href="/tvurce/63195-sophie-cook/prehled/">Sophie Cook</a></p>		</div>
 	</article>
-	<article class="article similar hidden">
-		<div class="article-content article-aside-films">
-			<header class="article-header">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/40344-the-lion-the-witch-and-the-wardrobe/prehled/" class="film-title-name">The Lion, the Witch and the Wardrobe</a> <span class="film-title-info"><span class="info">(1979)</span> <span class="info">(TV film)</span></span></h3>			</header>
-
-<p class="film-origins-genres"><span class="info"><span class="info-country">Velká Británie / USA</span>, Animovaný / Dobrodružný / Rodinný</span></p>
+	<article class="article aside-films-article similar hidden">
+		<header class="article-header">
+<h3 class="film-title-inline"><i class="icon icon-rounded-square blue"></i><a href="/film/40344-the-lion-the-witch-and-the-wardrobe/prehled/" class="film-title-name">The Lion, the Witch and the Wardrobe</a><span class="film-title-info"><span class="bullet"></span><span class="info">1979</span><span class="bullet"></span><span class="info">TV film</span></span></h3><p class="film-origins-genres"><span class="info"><span class="info-country">Velká Británie / USA</span><span class="bullet"></span>Animovaný, Dobrodružný, Rodinný</span></p>		</header>
+		<div class="article-content-spacing">
 <p class="film-creators">Režie: <a href="/tvurce/23343-bill-melendez/prehled/">Bill Melendez</a></p><p class="film-creators">Hrají: <a href="/tvurce/2436-leo-mckern/prehled/">Leo McKern</a>, <a href="/tvurce/60436-victor-spinetti/prehled/">Victor Spinetti</a></p>		</div>
 	</article>
-	<article class="article similar hidden last">
-		<div class="article-content article-aside-films">
-			<header class="article-header">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/221210-the-lion-the-witch-and-the-wardrobe/prehled/" class="film-title-name">The Lion, the Witch and the Wardrobe</a> <span class="film-title-info"><span class="info">(1967)</span> <span class="info">(seriál)</span></span></h3>			</header>
-
-<p class="film-origins-genres"><span class="info"><span class="info-country">Velká Británie</span>, Fantasy / Rodinný / Drama</span></p>
+	<article class="article aside-films-article similar hidden">
+		<header class="article-header">
+<h3 class="film-title-inline"><i class="icon icon-rounded-square blue"></i><a href="/film/221210-the-lion-the-witch-and-the-wardrobe/prehled/" class="film-title-name">The Lion, the Witch and the Wardrobe</a><span class="film-title-info"><span class="bullet"></span><span class="info">1967</span><span class="bullet"></span><span class="info">seriál</span></span></h3><p class="film-origins-genres"><span class="info"><span class="info-country">Velká Británie</span><span class="bullet"></span>Fantasy, Rodinný, Drama</span></p>		</header>
+		<div class="article-content-spacing">
 <p class="film-creators">Režie: <a href="/tvurce/26091-helen-standage/prehled/">Helen Standage</a></p><p class="film-creators">Hrají: <a href="/tvurce/225436-bernard-kay/prehled/">Bernard Kay</a>, <a href="/tvurce/915632-zuleika-robson/prehled/">Zuleika Robson</a></p>		</div>
 	</article>
-	<div class="box-content-more"><a href="#" data-show=".similar" data-text="méně">více</a></div>
+	<div class="box-content-more">
+		<a href="javascript:void(0);" data-show=".similar" data-text="méně" data-show-icon>
+			více
+		</a>
+	</div>
 			</div>
 		</section>
 
-		<section id="shop-desktop" class="box box-shop box-shop-desktop hidden"></section>
+		<section id="shop-desktop" class="updated-box box-shop box-shop-desktop hidden"></section>
 	</aside>
 </div>
 
@@ -2390,8 +2246,8 @@ V roce 2021 byl film zařazen do Amerického národního filmového registru.
 						<div class="footer-boxes">
 								<div class="footer-box-apps">
 									<h3>Download App</h3>
-									<a href="https://apps.apple.com/cz/app/id6755365206"><img src=&#47;&#47;static.pmgstatic.com&#47;assets&#47;images&#47;2b5f1f1793f6881e6e9326d2c21f9445&#47;appstore-cz.png width="114" height="38" alt=""></a>
-									<a href="https://play.google.com/store/apps/details?id=cz.csfd.csfdroid"><img src=&#47;&#47;static.pmgstatic.com&#47;assets&#47;images&#47;2b5f1f1793f6881e6e9326d2c21f9445&#47;googleplay-cz.png width="128" height="38" alt=""></a>
+									<a href="https://apps.apple.com/cz/app/id6755365206"><img src=&#47;&#47;static.pmgstatic.com&#47;assets&#47;images&#47;6aeb8871e0052a62b04d591a3f85e733&#47;appstore-cz.png width="114" height="38" alt=""></a>
+									<a href="https://play.google.com/store/apps/details?id=cz.csfd.csfdroid"><img src=&#47;&#47;static.pmgstatic.com&#47;assets&#47;images&#47;6aeb8871e0052a62b04d591a3f85e733&#47;googleplay-cz.png width="128" height="38" alt=""></a>
 								</div>
 
 							<div class="footer-box-social">
@@ -2417,9 +2273,9 @@ V roce 2021 byl film zařazen do Amerického národního filmového registru.
 						<div class="footer-action-timezones">
 							<h3>Výběr časového pásma</h3>
 							<form action="/film/4711-pan-prstenu-spolecenstvo-prstenu/prehled/" method="post" id="frm-timezoneForm">
-								<select name="timezone" data-auto-submit-form="true" id="frm-timezoneForm-timezone" class="updated-select"><option value="africa/abidjan">Africa/Abidjan</option><option value="africa/accra">Africa/Accra</option><option value="africa/addis_ababa">Africa/Addis Ababa</option><option value="africa/algiers">Africa/Algiers</option><option value="africa/asmara">Africa/Asmara</option><option value="africa/bamako">Africa/Bamako</option><option value="africa/bangui">Africa/Bangui</option><option value="africa/banjul">Africa/Banjul</option><option value="africa/bissau">Africa/Bissau</option><option value="africa/blantyre">Africa/Blantyre</option><option value="africa/brazzaville">Africa/Brazzaville</option><option value="africa/bujumbura">Africa/Bujumbura</option><option value="africa/cairo">Africa/Cairo</option><option value="africa/casablanca">Africa/Casablanca</option><option value="africa/ceuta">Africa/Ceuta</option><option value="africa/conakry">Africa/Conakry</option><option value="africa/dakar">Africa/Dakar</option><option value="africa/dar_es_salaam">Africa/Dar es Salaam</option><option value="africa/djibouti">Africa/Djibouti</option><option value="africa/douala">Africa/Douala</option><option value="africa/el_aaiun">Africa/El Aaiun</option><option value="africa/freetown">Africa/Freetown</option><option value="africa/gaborone">Africa/Gaborone</option><option value="africa/harare">Africa/Harare</option><option value="africa/johannesburg">Africa/Johannesburg</option><option value="africa/juba">Africa/Juba</option><option value="africa/kampala">Africa/Kampala</option><option value="africa/khartoum">Africa/Khartoum</option><option value="africa/kigali">Africa/Kigali</option><option value="africa/kinshasa">Africa/Kinshasa</option><option value="africa/lagos">Africa/Lagos</option><option value="africa/libreville">Africa/Libreville</option><option value="africa/lome">Africa/Lome</option><option value="africa/luanda">Africa/Luanda</option><option value="africa/lubumbashi">Africa/Lubumbashi</option><option value="africa/lusaka">Africa/Lusaka</option><option value="africa/malabo">Africa/Malabo</option><option value="africa/maputo">Africa/Maputo</option><option value="africa/maseru">Africa/Maseru</option><option value="africa/mbabane">Africa/Mbabane</option><option value="africa/mogadishu">Africa/Mogadishu</option><option value="africa/monrovia">Africa/Monrovia</option><option value="africa/nairobi">Africa/Nairobi</option><option value="africa/ndjamena">Africa/Ndjamena</option><option value="africa/niamey">Africa/Niamey</option><option value="africa/nouakchott">Africa/Nouakchott</option><option value="africa/ouagadougou">Africa/Ouagadougou</option><option value="africa/porto-novo">Africa/Porto-Novo</option><option value="africa/sao_tome">Africa/Sao Tome</option><option value="africa/tripoli">Africa/Tripoli</option><option value="africa/tunis">Africa/Tunis</option><option value="africa/windhoek">Africa/Windhoek</option><option value="america/adak">America/Adak</option><option value="america/anchorage">America/Anchorage</option><option value="america/anguilla">America/Anguilla</option><option value="america/antigua">America/Antigua</option><option value="america/araguaina">America/Araguaina</option><option value="america/argentina/buenos_aires">America/Argentina/Buenos Aires</option><option value="america/argentina/catamarca">America/Argentina/Catamarca</option><option value="america/argentina/cordoba">America/Argentina/Cordoba</option><option value="america/argentina/jujuy">America/Argentina/Jujuy</option><option value="america/argentina/la_rioja">America/Argentina/La Rioja</option><option value="america/argentina/mendoza">America/Argentina/Mendoza</option><option value="america/argentina/rio_gallegos">America/Argentina/Rio Gallegos</option><option value="america/argentina/salta">America/Argentina/Salta</option><option value="america/argentina/san_juan">America/Argentina/San Juan</option><option value="america/argentina/san_luis">America/Argentina/San Luis</option><option value="america/argentina/tucuman">America/Argentina/Tucuman</option><option value="america/argentina/ushuaia">America/Argentina/Ushuaia</option><option value="america/aruba">America/Aruba</option><option value="america/asuncion">America/Asuncion</option><option value="america/atikokan">America/Atikokan</option><option value="america/bahia">America/Bahia</option><option value="america/bahia_banderas">America/Bahia Banderas</option><option value="america/barbados">America/Barbados</option><option value="america/belem">America/Belem</option><option value="america/belize">America/Belize</option><option value="america/blanc-sablon">America/Blanc-Sablon</option><option value="america/boa_vista">America/Boa Vista</option><option value="america/bogota">America/Bogota</option><option value="america/boise">America/Boise</option><option value="america/cambridge_bay">America/Cambridge Bay</option><option value="america/campo_grande">America/Campo Grande</option><option value="america/cancun">America/Cancun</option><option value="america/caracas">America/Caracas</option><option value="america/cayenne">America/Cayenne</option><option value="america/cayman">America/Cayman</option><option value="america/chicago">America/Chicago</option><option value="america/chihuahua">America/Chihuahua</option><option value="america/ciudad_juarez">America/Ciudad Juarez</option><option value="america/costa_rica">America/Costa Rica</option><option value="america/creston">America/Creston</option><option value="america/cuiaba">America/Cuiaba</option><option value="america/curacao">America/Curacao</option><option value="america/dawson">America/Dawson</option><option value="america/dawson_creek">America/Dawson Creek</option><option value="america/denver">America/Denver</option><option value="america/detroit">America/Detroit</option><option value="america/dominica">America/Dominica</option><option value="america/edmonton">America/Edmonton</option><option value="america/eirunepe">America/Eirunepe</option><option value="america/el_salvador">America/El Salvador</option><option value="america/fort_nelson">America/Fort Nelson</option><option value="america/fortaleza">America/Fortaleza</option><option value="america/glace_bay">America/Glace Bay</option><option value="america/goose_bay">America/Goose Bay</option><option value="america/grand_turk">America/Grand Turk</option><option value="america/grenada">America/Grenada</option><option value="america/guadeloupe">America/Guadeloupe</option><option value="america/guatemala">America/Guatemala</option><option value="america/guayaquil">America/Guayaquil</option><option value="america/guyana">America/Guyana</option><option value="america/halifax">America/Halifax</option><option value="america/havana">America/Havana</option><option value="america/hermosillo">America/Hermosillo</option><option value="america/indiana/indianapolis">America/Indiana/Indianapolis</option><option value="america/indiana/knox">America/Indiana/Knox</option><option value="america/indiana/marengo">America/Indiana/Marengo</option><option value="america/indiana/petersburg">America/Indiana/Petersburg</option><option value="america/indiana/tell_city">America/Indiana/Tell City</option><option value="america/indiana/vevay">America/Indiana/Vevay</option><option value="america/indiana/vincennes">America/Indiana/Vincennes</option><option value="america/indiana/winamac">America/Indiana/Winamac</option><option value="america/inuvik">America/Inuvik</option><option value="america/iqaluit">America/Iqaluit</option><option value="america/jamaica">America/Jamaica</option><option value="america/juneau">America/Juneau</option><option value="america/kentucky/louisville">America/Kentucky/Louisville</option><option value="america/kentucky/monticello">America/Kentucky/Monticello</option><option value="america/kralendijk">America/Kralendijk</option><option value="america/la_paz">America/La Paz</option><option value="america/lima">America/Lima</option><option value="america/los_angeles">America/Los Angeles</option><option value="america/lower_princes">America/Lower Princes</option><option value="america/maceio">America/Maceio</option><option value="america/managua">America/Managua</option><option value="america/manaus">America/Manaus</option><option value="america/marigot">America/Marigot</option><option value="america/martinique">America/Martinique</option><option value="america/matamoros">America/Matamoros</option><option value="america/mazatlan">America/Mazatlan</option><option value="america/menominee">America/Menominee</option><option value="america/merida">America/Merida</option><option value="america/metlakatla">America/Metlakatla</option><option value="america/mexico_city">America/Mexico City</option><option value="america/miquelon">America/Miquelon</option><option value="america/moncton">America/Moncton</option><option value="america/monterrey">America/Monterrey</option><option value="america/montevideo">America/Montevideo</option><option value="america/montserrat">America/Montserrat</option><option value="america/nassau">America/Nassau</option><option value="america/new_york">America/New York</option><option value="america/nome">America/Nome</option><option value="america/north_dakota/beulah">America/North Dakota/Beulah</option><option value="america/north_dakota/center">America/North Dakota/Center</option><option value="america/north_dakota/new_salem">America/North Dakota/New Salem</option><option value="america/nuuk">America/Nuuk</option><option value="america/ojinaga">America/Ojinaga</option><option value="america/panama">America/Panama</option><option value="america/paramaribo">America/Paramaribo</option><option value="america/phoenix">America/Phoenix</option><option value="america/port-au-prince">America/Port-au-Prince</option><option value="america/port_of_spain">America/Port of Spain</option><option value="america/porto_velho">America/Porto Velho</option><option value="america/puerto_rico">America/Puerto Rico</option><option value="america/punta_arenas">America/Punta Arenas</option><option value="america/rankin_inlet">America/Rankin Inlet</option><option value="america/recife">America/Recife</option><option value="america/regina">America/Regina</option><option value="america/resolute">America/Resolute</option><option value="america/rio_branco">America/Rio Branco</option><option value="america/santarem">America/Santarem</option><option value="america/santiago">America/Santiago</option><option value="america/santo_domingo">America/Santo Domingo</option><option value="america/sao_paulo">America/Sao Paulo</option><option value="america/scoresbysund">America/Scoresbysund</option><option value="america/sitka">America/Sitka</option><option value="america/st_barthelemy">America/St Barthelemy</option><option value="america/st_johns">America/St. John's</option><option value="america/st_kitts">America/St. Kitts</option><option value="america/st_lucia">America/St. Lucia</option><option value="america/st_thomas">America/St. Thomas</option><option value="america/st_vincent">America/St. Vincent</option><option value="america/swift_current">America/Swift Current</option><option value="america/tegucigalpa">America/Tegucigalpa</option><option value="america/thule">America/Thule</option><option value="america/tijuana">America/Tijuana</option><option value="america/toronto">America/Toronto</option><option value="america/tortola">America/Tortola</option><option value="america/vancouver">America/Vancouver</option><option value="america/whitehorse">America/Whitehorse</option><option value="america/winnipeg">America/Winnipeg</option><option value="america/yakutat">America/Yakutat</option><option value="america/yellowknife">America/Yellowknife</option><option value="antarctica/syowa">Antarctica/Syowa</option><option value="arctic/longyearbyen">Arctic/Longyearbyen</option><option value="asia/aden">Asia/Aden</option><option value="asia/almaty">Asia/Almaty</option><option value="asia/amman">Asia/Amman</option><option value="asia/anadyr">Asia/Anadyr</option><option value="asia/aqtau">Asia/Aqtau</option><option value="asia/aqtobe">Asia/Aqtobe</option><option value="asia/ashgabat">Asia/Ashgabat</option><option value="asia/atyrau">Asia/Atyrau</option><option value="asia/baghdad">Asia/Baghdad</option><option value="asia/bahrain">Asia/Bahrain</option><option value="asia/baku">Asia/Baku</option><option value="asia/bangkok">Asia/Bangkok</option><option value="asia/barnaul">Asia/Barnaul</option><option value="asia/beirut">Asia/Beirut</option><option value="asia/bishkek">Asia/Bishkek</option><option value="asia/brunei">Asia/Brunei</option><option value="asia/chita">Asia/Chita</option><option value="asia/choibalsan">Asia/Choibalsan</option><option value="asia/colombo">Asia/Colombo</option><option value="asia/damascus">Asia/Damascus</option><option value="asia/dhaka">Asia/Dhaka</option><option value="asia/dili">Asia/Dili</option><option value="asia/dubai">Asia/Dubai</option><option value="asia/dushanbe">Asia/Dushanbe</option><option value="asia/famagusta">Asia/Famagusta</option><option value="asia/gaza">Asia/Gaza</option><option value="asia/hebron">Asia/Hebron</option><option value="asia/ho_chi_minh">Asia/Ho Chi Minh</option><option value="asia/hong_kong">Asia/Hong Kong</option><option value="asia/hovd">Asia/Hovd</option><option value="asia/irkutsk">Asia/Irkutsk</option><option value="asia/jakarta">Asia/Jakarta</option><option value="asia/jayapura">Asia/Jayapura</option><option value="asia/jerusalem">Asia/Jerusalem</option><option value="asia/kabul">Asia/Kabul</option><option value="asia/kamchatka">Asia/Kamchatka</option><option value="asia/karachi">Asia/Karachi</option><option value="asia/kathmandu">Asia/Kathmandu</option><option value="asia/kolkata">Asia/Kolkata</option><option value="asia/krasnoyarsk">Asia/Krasnoyarsk</option><option value="asia/kuala_lumpur">Asia/Kuala Lumpur</option><option value="asia/kuching">Asia/Kuching</option><option value="asia/kuwait">Asia/Kuwait</option><option value="asia/macau">Asia/Macau</option><option value="asia/magadan">Asia/Magadan</option><option value="asia/makassar">Asia/Makassar</option><option value="asia/manila">Asia/Manila</option><option value="asia/muscat">Asia/Muscat</option><option value="asia/nicosia">Asia/Nicosia</option><option value="asia/novokuznetsk">Asia/Novokuznetsk</option><option value="asia/novosibirsk">Asia/Novosibirsk</option><option value="asia/omsk">Asia/Omsk</option><option value="asia/oral">Asia/Oral</option><option value="asia/phnom_penh">Asia/Phnom Penh</option><option value="asia/pontianak">Asia/Pontianak</option><option value="asia/pyongyang">Asia/Pyongyang</option><option value="asia/qatar">Asia/Qatar</option><option value="asia/qostanay">Asia/Qostanay</option><option value="asia/qyzylorda">Asia/Qyzylorda</option><option value="asia/riyadh">Asia/Riyadh</option><option value="asia/sakhalin">Asia/Sakhalin</option><option value="asia/samarkand">Asia/Samarkand</option><option value="asia/seoul">Asia/Seoul</option><option value="asia/shanghai">Asia/Shanghai</option><option value="asia/singapore">Asia/Singapore</option><option value="asia/taipei">Asia/Taipei</option><option value="asia/tashkent">Asia/Tashkent</option><option value="asia/tbilisi">Asia/Tbilisi</option><option value="asia/tehran">Asia/Tehran</option><option value="asia/thimphu">Asia/Thimphu</option><option value="asia/tokyo">Asia/Tokyo</option><option value="asia/tomsk">Asia/Tomsk</option><option value="asia/ulaanbaatar">Asia/Ulaanbaatar</option><option value="asia/urumqi">Asia/Urumqi</option><option value="asia/vientiane">Asia/Vientiane</option><option value="asia/vladivostok">Asia/Vladivostok</option><option value="asia/yakutsk">Asia/Yakutsk</option><option value="asia/yangon">Asia/Yangon</option><option value="asia/yekaterinburg">Asia/Yekaterinburg</option><option value="asia/yerevan">Asia/Yerevan</option><option value="atlantic/azores">Atlantic/Azores</option><option value="atlantic/bermuda">Atlantic/Bermuda</option><option value="atlantic/canary">Atlantic/Canary</option><option value="atlantic/cape_verde">Atlantic/Cape Verde</option><option value="atlantic/faroe">Atlantic/Faroe</option><option value="atlantic/madeira">Atlantic/Madeira</option><option value="atlantic/reykjavik">Atlantic/Reykjavik</option><option value="atlantic/south_georgia">Atlantic/South Georgia</option><option value="atlantic/st_helena">Atlantic/St Helena</option><option value="atlantic/stanley">Atlantic/Stanley</option><option value="australia/adelaide">Australia/Adelaide</option><option value="australia/brisbane">Australia/Brisbane</option><option value="australia/broken_hill">Australia/Broken Hill</option><option value="australia/darwin">Australia/Darwin</option><option value="australia/eucla">Australia/Eucla</option><option value="australia/hobart">Australia/Hobart</option><option value="australia/lindeman">Australia/Lindeman</option><option value="australia/lord_howe">Australia/Lord Howe</option><option value="australia/melbourne">Australia/Melbourne</option><option value="australia/perth">Australia/Perth</option><option value="australia/sydney">Australia/Sydney</option><option value="europe/amsterdam">Europe/Amsterdam</option><option value="europe/andorra">Europe/Andorra</option><option value="europe/astrakhan">Europe/Astrakhan</option><option value="europe/athens">Europe/Athens</option><option value="europe/belgrade">Europe/Belgrade</option><option value="europe/berlin">Europe/Berlin</option><option value="europe/bratislava">Europe/Bratislava</option><option value="europe/brussels">Europe/Brussels</option><option value="europe/bucharest">Europe/Bucharest</option><option value="europe/budapest">Europe/Budapest</option><option value="europe/chisinau">Europe/Chisinau</option><option value="europe/copenhagen">Europe/Copenhagen</option><option value="europe/dublin">Europe/Dublin</option><option value="europe/gibraltar">Europe/Gibraltar</option><option value="europe/guernsey">Europe/Guernsey</option><option value="europe/helsinki">Europe/Helsinki</option><option value="europe/isle_of_man">Europe/Isle of Man</option><option value="europe/istanbul">Europe/Istanbul</option><option value="europe/jersey">Europe/Jersey</option><option value="europe/kaliningrad">Europe/Kaliningrad</option><option value="europe/kirov">Europe/Kirov</option><option value="europe/kyiv">Europe/Kyiv</option><option value="europe/lisbon">Europe/Lisbon</option><option value="europe/ljubljana">Europe/Ljubljana</option><option value="europe/london">Europe/London</option><option value="europe/luxembourg">Europe/Luxembourg</option><option value="europe/madrid">Europe/Madrid</option><option value="europe/malta">Europe/Malta</option><option value="europe/mariehamn">Europe/Mariehamn</option><option value="europe/minsk">Europe/Minsk</option><option value="europe/monaco">Europe/Monaco</option><option value="europe/moscow">Europe/Moscow</option><option value="europe/oslo">Europe/Oslo</option><option value="europe/paris">Europe/Paris</option><option value="europe/podgorica">Europe/Podgorica</option><option value="europe/prague" selected>Europe/Prague</option><option value="europe/riga">Europe/Riga</option><option value="europe/rome">Europe/Rome</option><option value="europe/samara">Europe/Samara</option><option value="europe/san_marino">Europe/San Marino</option><option value="europe/sarajevo">Europe/Sarajevo</option><option value="europe/saratov">Europe/Saratov</option><option value="europe/simferopol">Europe/Simferopol</option><option value="europe/skopje">Europe/Skopje</option><option value="europe/sofia">Europe/Sofia</option><option value="europe/stockholm">Europe/Stockholm</option><option value="europe/tallinn">Europe/Tallinn</option><option value="europe/tirane">Europe/Tirane</option><option value="europe/ulyanovsk">Europe/Ulyanovsk</option><option value="europe/vaduz">Europe/Vaduz</option><option value="europe/vatican">Europe/Vatican</option><option value="europe/vienna">Europe/Vienna</option><option value="europe/vilnius">Europe/Vilnius</option><option value="europe/volgograd">Europe/Volgograd</option><option value="europe/warsaw">Europe/Warsaw</option><option value="europe/zagreb">Europe/Zagreb</option><option value="europe/zurich">Europe/Zurich</option><option value="indian/antananarivo">Indian/Antananarivo</option><option value="indian/chagos">Indian/Chagos</option><option value="indian/christmas">Indian/Christmas</option><option value="indian/cocos">Indian/Cocos</option><option value="indian/comoro">Indian/Comoro</option><option value="indian/kerguelen">Indian/Kerguelen</option><option value="indian/mahe">Indian/Mahe</option><option value="indian/maldives">Indian/Maldives</option><option value="indian/mauritius">Indian/Mauritius</option><option value="indian/mayotte">Indian/Mayotte</option><option value="indian/reunion">Indian/Reunion</option><option value="pacific/apia">Pacific/Apia</option><option value="pacific/auckland">Pacific/Auckland</option><option value="pacific/bougainville">Pacific/Bougainville</option><option value="pacific/chatham">Pacific/Chatham</option><option value="pacific/chuuk">Pacific/Chuuk</option><option value="pacific/easter">Pacific/Easter</option><option value="pacific/efate">Pacific/Efate</option><option value="pacific/fakaofo">Pacific/Fakaofo</option><option value="pacific/fiji">Pacific/Fiji</option><option value="pacific/funafuti">Pacific/Funafuti</option><option value="pacific/galapagos">Pacific/Galapagos</option><option value="pacific/gambier">Pacific/Gambier</option><option value="pacific/guadalcanal">Pacific/Guadalcanal</option><option value="pacific/guam">Pacific/Guam</option><option value="pacific/honolulu">Pacific/Honolulu</option><option value="pacific/kanton">Pacific/Kanton</option><option value="pacific/kiritimati">Pacific/Kiritimati</option><option value="pacific/kosrae">Pacific/Kosrae</option><option value="pacific/kwajalein">Pacific/Kwajalein</option><option value="pacific/majuro">Pacific/Majuro</option><option value="pacific/marquesas">Pacific/Marquesas</option><option value="pacific/midway">Pacific/Midway</option><option value="pacific/nauru">Pacific/Nauru</option><option value="pacific/niue">Pacific/Niue</option><option value="pacific/norfolk">Pacific/Norfolk</option><option value="pacific/noumea">Pacific/Noumea</option><option value="pacific/pago_pago">Pacific/Pago Pago</option><option value="pacific/palau">Pacific/Palau</option><option value="pacific/pitcairn">Pacific/Pitcairn</option><option value="pacific/pohnpei">Pacific/Pohnpei</option><option value="pacific/port_moresby">Pacific/Port Moresby</option><option value="pacific/rarotonga">Pacific/Rarotonga</option><option value="pacific/saipan">Pacific/Saipan</option><option value="pacific/tahiti">Pacific/Tahiti</option><option value="pacific/tarawa">Pacific/Tarawa</option><option value="pacific/tongatapu">Pacific/Tongatapu</option><option value="pacific/wake">Pacific/Wake</option><option value="pacific/wallis">Pacific/Wallis</option></select>
+								<select name="timezone" data-auto-submit-form="true" id="frm-timezoneForm-timezone" class="updated-select"><option value="africa/abidjan">Africa/Abidjan</option><option value="africa/accra">Africa/Accra</option><option value="africa/addis_ababa">Africa/Addis Ababa</option><option value="africa/algiers">Africa/Algiers</option><option value="africa/asmara">Africa/Asmara</option><option value="africa/bamako">Africa/Bamako</option><option value="africa/bangui">Africa/Bangui</option><option value="africa/banjul">Africa/Banjul</option><option value="africa/bissau">Africa/Bissau</option><option value="africa/blantyre">Africa/Blantyre</option><option value="africa/brazzaville">Africa/Brazzaville</option><option value="africa/bujumbura">Africa/Bujumbura</option><option value="africa/cairo">Africa/Cairo</option><option value="africa/casablanca">Africa/Casablanca</option><option value="africa/ceuta">Africa/Ceuta</option><option value="africa/conakry">Africa/Conakry</option><option value="africa/dakar">Africa/Dakar</option><option value="africa/dar_es_salaam">Africa/Dar es Salaam</option><option value="africa/djibouti">Africa/Djibouti</option><option value="africa/douala">Africa/Douala</option><option value="africa/el_aaiun">Africa/El Aaiun</option><option value="africa/freetown">Africa/Freetown</option><option value="africa/gaborone">Africa/Gaborone</option><option value="africa/harare">Africa/Harare</option><option value="africa/johannesburg">Africa/Johannesburg</option><option value="africa/juba">Africa/Juba</option><option value="africa/kampala">Africa/Kampala</option><option value="africa/khartoum">Africa/Khartoum</option><option value="africa/kigali">Africa/Kigali</option><option value="africa/kinshasa">Africa/Kinshasa</option><option value="africa/lagos">Africa/Lagos</option><option value="africa/libreville">Africa/Libreville</option><option value="africa/lome">Africa/Lome</option><option value="africa/luanda">Africa/Luanda</option><option value="africa/lubumbashi">Africa/Lubumbashi</option><option value="africa/lusaka">Africa/Lusaka</option><option value="africa/malabo">Africa/Malabo</option><option value="africa/maputo">Africa/Maputo</option><option value="africa/maseru">Africa/Maseru</option><option value="africa/mbabane">Africa/Mbabane</option><option value="africa/mogadishu">Africa/Mogadishu</option><option value="africa/monrovia">Africa/Monrovia</option><option value="africa/nairobi">Africa/Nairobi</option><option value="africa/ndjamena">Africa/Ndjamena</option><option value="africa/niamey">Africa/Niamey</option><option value="africa/nouakchott">Africa/Nouakchott</option><option value="africa/ouagadougou">Africa/Ouagadougou</option><option value="africa/porto-novo">Africa/Porto-Novo</option><option value="africa/sao_tome">Africa/Sao Tome</option><option value="africa/tripoli">Africa/Tripoli</option><option value="africa/tunis">Africa/Tunis</option><option value="africa/windhoek">Africa/Windhoek</option><option value="america/adak">America/Adak</option><option value="america/anchorage">America/Anchorage</option><option value="america/anguilla">America/Anguilla</option><option value="america/antigua">America/Antigua</option><option value="america/araguaina">America/Araguaina</option><option value="america/argentina/buenos_aires">America/Argentina/Buenos Aires</option><option value="america/argentina/catamarca">America/Argentina/Catamarca</option><option value="america/argentina/cordoba">America/Argentina/Cordoba</option><option value="america/argentina/jujuy">America/Argentina/Jujuy</option><option value="america/argentina/la_rioja">America/Argentina/La Rioja</option><option value="america/argentina/mendoza">America/Argentina/Mendoza</option><option value="america/argentina/rio_gallegos">America/Argentina/Rio Gallegos</option><option value="america/argentina/salta">America/Argentina/Salta</option><option value="america/argentina/san_juan">America/Argentina/San Juan</option><option value="america/argentina/san_luis">America/Argentina/San Luis</option><option value="america/argentina/tucuman">America/Argentina/Tucuman</option><option value="america/argentina/ushuaia">America/Argentina/Ushuaia</option><option value="america/aruba">America/Aruba</option><option value="america/asuncion">America/Asuncion</option><option value="america/atikokan">America/Atikokan</option><option value="america/bahia">America/Bahia</option><option value="america/bahia_banderas">America/Bahia Banderas</option><option value="america/barbados">America/Barbados</option><option value="america/belem">America/Belem</option><option value="america/belize">America/Belize</option><option value="america/blanc-sablon">America/Blanc-Sablon</option><option value="america/boa_vista">America/Boa Vista</option><option value="america/bogota">America/Bogota</option><option value="america/boise">America/Boise</option><option value="america/cambridge_bay">America/Cambridge Bay</option><option value="america/campo_grande">America/Campo Grande</option><option value="america/cancun">America/Cancun</option><option value="america/caracas">America/Caracas</option><option value="america/cayenne">America/Cayenne</option><option value="america/cayman">America/Cayman</option><option value="america/chicago">America/Chicago</option><option value="america/chihuahua">America/Chihuahua</option><option value="america/ciudad_juarez">America/Ciudad Juarez</option><option value="america/costa_rica">America/Costa Rica</option><option value="america/creston">America/Creston</option><option value="america/cuiaba">America/Cuiaba</option><option value="america/curacao">America/Curacao</option><option value="america/dawson">America/Dawson</option><option value="america/dawson_creek">America/Dawson Creek</option><option value="america/denver">America/Denver</option><option value="america/detroit">America/Detroit</option><option value="america/dominica">America/Dominica</option><option value="america/edmonton">America/Edmonton</option><option value="america/eirunepe">America/Eirunepe</option><option value="america/el_salvador">America/El Salvador</option><option value="america/fort_nelson">America/Fort Nelson</option><option value="america/fortaleza">America/Fortaleza</option><option value="america/glace_bay">America/Glace Bay</option><option value="america/goose_bay">America/Goose Bay</option><option value="america/grand_turk">America/Grand Turk</option><option value="america/grenada">America/Grenada</option><option value="america/guadeloupe">America/Guadeloupe</option><option value="america/guatemala">America/Guatemala</option><option value="america/guayaquil">America/Guayaquil</option><option value="america/guyana">America/Guyana</option><option value="america/halifax">America/Halifax</option><option value="america/havana">America/Havana</option><option value="america/hermosillo">America/Hermosillo</option><option value="america/indiana/indianapolis">America/Indiana/Indianapolis</option><option value="america/indiana/knox">America/Indiana/Knox</option><option value="america/indiana/marengo">America/Indiana/Marengo</option><option value="america/indiana/petersburg">America/Indiana/Petersburg</option><option value="america/indiana/tell_city">America/Indiana/Tell City</option><option value="america/indiana/vevay">America/Indiana/Vevay</option><option value="america/indiana/vincennes">America/Indiana/Vincennes</option><option value="america/indiana/winamac">America/Indiana/Winamac</option><option value="america/inuvik">America/Inuvik</option><option value="america/iqaluit">America/Iqaluit</option><option value="america/jamaica">America/Jamaica</option><option value="america/juneau">America/Juneau</option><option value="america/kentucky/louisville">America/Kentucky/Louisville</option><option value="america/kentucky/monticello">America/Kentucky/Monticello</option><option value="america/kralendijk">America/Kralendijk</option><option value="america/la_paz">America/La Paz</option><option value="america/lima">America/Lima</option><option value="america/los_angeles">America/Los Angeles</option><option value="america/lower_princes">America/Lower Princes</option><option value="america/maceio">America/Maceio</option><option value="america/managua">America/Managua</option><option value="america/manaus">America/Manaus</option><option value="america/marigot">America/Marigot</option><option value="america/martinique">America/Martinique</option><option value="america/matamoros">America/Matamoros</option><option value="america/mazatlan">America/Mazatlan</option><option value="america/menominee">America/Menominee</option><option value="america/merida">America/Merida</option><option value="america/metlakatla">America/Metlakatla</option><option value="america/mexico_city">America/Mexico City</option><option value="america/miquelon">America/Miquelon</option><option value="america/moncton">America/Moncton</option><option value="america/monterrey">America/Monterrey</option><option value="america/montevideo">America/Montevideo</option><option value="america/montserrat">America/Montserrat</option><option value="america/nassau">America/Nassau</option><option value="america/new_york">America/New York</option><option value="america/nome">America/Nome</option><option value="america/north_dakota/beulah">America/North Dakota/Beulah</option><option value="america/north_dakota/center">America/North Dakota/Center</option><option value="america/north_dakota/new_salem">America/North Dakota/New Salem</option><option value="america/nuuk">America/Nuuk</option><option value="america/ojinaga">America/Ojinaga</option><option value="america/panama">America/Panama</option><option value="america/paramaribo">America/Paramaribo</option><option value="america/phoenix">America/Phoenix</option><option value="america/port-au-prince">America/Port-au-Prince</option><option value="america/port_of_spain">America/Port of Spain</option><option value="america/porto_velho">America/Porto Velho</option><option value="america/puerto_rico">America/Puerto Rico</option><option value="america/punta_arenas">America/Punta Arenas</option><option value="america/rankin_inlet">America/Rankin Inlet</option><option value="america/recife">America/Recife</option><option value="america/regina">America/Regina</option><option value="america/resolute">America/Resolute</option><option value="america/rio_branco">America/Rio Branco</option><option value="america/santarem">America/Santarem</option><option value="america/santiago">America/Santiago</option><option value="america/santo_domingo">America/Santo Domingo</option><option value="america/sao_paulo">America/Sao Paulo</option><option value="america/scoresbysund">America/Scoresbysund</option><option value="america/sitka">America/Sitka</option><option value="america/st_barthelemy">America/St Barthelemy</option><option value="america/st_johns">America/St. John's</option><option value="america/st_kitts">America/St. Kitts</option><option value="america/st_lucia">America/St. Lucia</option><option value="america/st_thomas">America/St. Thomas</option><option value="america/st_vincent">America/St. Vincent</option><option value="america/swift_current">America/Swift Current</option><option value="america/tegucigalpa">America/Tegucigalpa</option><option value="america/thule">America/Thule</option><option value="america/tijuana">America/Tijuana</option><option value="america/toronto">America/Toronto</option><option value="america/tortola">America/Tortola</option><option value="america/vancouver">America/Vancouver</option><option value="america/whitehorse">America/Whitehorse</option><option value="america/winnipeg">America/Winnipeg</option><option value="america/yakutat">America/Yakutat</option><option value="america/yellowknife">America/Yellowknife</option><option value="antarctica/syowa">Antarctica/Syowa</option><option value="arctic/longyearbyen">Arctic/Longyearbyen</option><option value="asia/aden">Asia/Aden</option><option value="asia/almaty">Asia/Almaty</option><option value="asia/amman">Asia/Amman</option><option value="asia/anadyr">Asia/Anadyr</option><option value="asia/aqtau">Asia/Aqtau</option><option value="asia/aqtobe">Asia/Aqtobe</option><option value="asia/ashgabat">Asia/Ashgabat</option><option value="asia/atyrau">Asia/Atyrau</option><option value="asia/baghdad">Asia/Baghdad</option><option value="asia/bahrain">Asia/Bahrain</option><option value="asia/baku">Asia/Baku</option><option value="asia/bangkok">Asia/Bangkok</option><option value="asia/barnaul">Asia/Barnaul</option><option value="asia/beirut">Asia/Beirut</option><option value="asia/bishkek">Asia/Bishkek</option><option value="asia/brunei">Asia/Brunei</option><option value="asia/chita">Asia/Chita</option><option value="asia/colombo">Asia/Colombo</option><option value="asia/damascus">Asia/Damascus</option><option value="asia/dhaka">Asia/Dhaka</option><option value="asia/dili">Asia/Dili</option><option value="asia/dubai">Asia/Dubai</option><option value="asia/dushanbe">Asia/Dushanbe</option><option value="asia/famagusta">Asia/Famagusta</option><option value="asia/gaza">Asia/Gaza</option><option value="asia/hebron">Asia/Hebron</option><option value="asia/ho_chi_minh">Asia/Ho Chi Minh</option><option value="asia/hong_kong">Asia/Hong Kong</option><option value="asia/hovd">Asia/Hovd</option><option value="asia/irkutsk">Asia/Irkutsk</option><option value="asia/jakarta">Asia/Jakarta</option><option value="asia/jayapura">Asia/Jayapura</option><option value="asia/jerusalem">Asia/Jerusalem</option><option value="asia/kabul">Asia/Kabul</option><option value="asia/kamchatka">Asia/Kamchatka</option><option value="asia/karachi">Asia/Karachi</option><option value="asia/kathmandu">Asia/Kathmandu</option><option value="asia/kolkata">Asia/Kolkata</option><option value="asia/krasnoyarsk">Asia/Krasnoyarsk</option><option value="asia/kuala_lumpur">Asia/Kuala Lumpur</option><option value="asia/kuching">Asia/Kuching</option><option value="asia/kuwait">Asia/Kuwait</option><option value="asia/macau">Asia/Macau</option><option value="asia/magadan">Asia/Magadan</option><option value="asia/makassar">Asia/Makassar</option><option value="asia/manila">Asia/Manila</option><option value="asia/muscat">Asia/Muscat</option><option value="asia/nicosia">Asia/Nicosia</option><option value="asia/novokuznetsk">Asia/Novokuznetsk</option><option value="asia/novosibirsk">Asia/Novosibirsk</option><option value="asia/omsk">Asia/Omsk</option><option value="asia/oral">Asia/Oral</option><option value="asia/phnom_penh">Asia/Phnom Penh</option><option value="asia/pontianak">Asia/Pontianak</option><option value="asia/pyongyang">Asia/Pyongyang</option><option value="asia/qatar">Asia/Qatar</option><option value="asia/qostanay">Asia/Qostanay</option><option value="asia/qyzylorda">Asia/Qyzylorda</option><option value="asia/riyadh">Asia/Riyadh</option><option value="asia/sakhalin">Asia/Sakhalin</option><option value="asia/samarkand">Asia/Samarkand</option><option value="asia/seoul">Asia/Seoul</option><option value="asia/shanghai">Asia/Shanghai</option><option value="asia/singapore">Asia/Singapore</option><option value="asia/taipei">Asia/Taipei</option><option value="asia/tashkent">Asia/Tashkent</option><option value="asia/tbilisi">Asia/Tbilisi</option><option value="asia/tehran">Asia/Tehran</option><option value="asia/thimphu">Asia/Thimphu</option><option value="asia/tokyo">Asia/Tokyo</option><option value="asia/tomsk">Asia/Tomsk</option><option value="asia/ulaanbaatar">Asia/Ulaanbaatar</option><option value="asia/urumqi">Asia/Urumqi</option><option value="asia/vientiane">Asia/Vientiane</option><option value="asia/vladivostok">Asia/Vladivostok</option><option value="asia/yakutsk">Asia/Yakutsk</option><option value="asia/yangon">Asia/Yangon</option><option value="asia/yekaterinburg">Asia/Yekaterinburg</option><option value="asia/yerevan">Asia/Yerevan</option><option value="atlantic/azores">Atlantic/Azores</option><option value="atlantic/bermuda">Atlantic/Bermuda</option><option value="atlantic/canary">Atlantic/Canary</option><option value="atlantic/cape_verde">Atlantic/Cape Verde</option><option value="atlantic/faroe">Atlantic/Faroe</option><option value="atlantic/madeira">Atlantic/Madeira</option><option value="atlantic/reykjavik">Atlantic/Reykjavik</option><option value="atlantic/south_georgia">Atlantic/South Georgia</option><option value="atlantic/st_helena">Atlantic/St Helena</option><option value="atlantic/stanley">Atlantic/Stanley</option><option value="australia/adelaide">Australia/Adelaide</option><option value="australia/brisbane">Australia/Brisbane</option><option value="australia/broken_hill">Australia/Broken Hill</option><option value="australia/darwin">Australia/Darwin</option><option value="australia/eucla">Australia/Eucla</option><option value="australia/hobart">Australia/Hobart</option><option value="australia/lindeman">Australia/Lindeman</option><option value="australia/lord_howe">Australia/Lord Howe</option><option value="australia/melbourne">Australia/Melbourne</option><option value="australia/perth">Australia/Perth</option><option value="australia/sydney">Australia/Sydney</option><option value="europe/amsterdam">Europe/Amsterdam</option><option value="europe/andorra">Europe/Andorra</option><option value="europe/astrakhan">Europe/Astrakhan</option><option value="europe/athens">Europe/Athens</option><option value="europe/belgrade">Europe/Belgrade</option><option value="europe/berlin">Europe/Berlin</option><option value="europe/bratislava">Europe/Bratislava</option><option value="europe/brussels">Europe/Brussels</option><option value="europe/bucharest">Europe/Bucharest</option><option value="europe/budapest">Europe/Budapest</option><option value="europe/chisinau">Europe/Chisinau</option><option value="europe/copenhagen">Europe/Copenhagen</option><option value="europe/dublin">Europe/Dublin</option><option value="europe/gibraltar">Europe/Gibraltar</option><option value="europe/guernsey">Europe/Guernsey</option><option value="europe/helsinki">Europe/Helsinki</option><option value="europe/isle_of_man">Europe/Isle of Man</option><option value="europe/istanbul">Europe/Istanbul</option><option value="europe/jersey">Europe/Jersey</option><option value="europe/kaliningrad">Europe/Kaliningrad</option><option value="europe/kirov">Europe/Kirov</option><option value="europe/kyiv">Europe/Kyiv</option><option value="europe/lisbon">Europe/Lisbon</option><option value="europe/ljubljana">Europe/Ljubljana</option><option value="europe/london">Europe/London</option><option value="europe/luxembourg">Europe/Luxembourg</option><option value="europe/madrid">Europe/Madrid</option><option value="europe/malta">Europe/Malta</option><option value="europe/mariehamn">Europe/Mariehamn</option><option value="europe/minsk">Europe/Minsk</option><option value="europe/monaco">Europe/Monaco</option><option value="europe/moscow">Europe/Moscow</option><option value="europe/oslo">Europe/Oslo</option><option value="europe/paris">Europe/Paris</option><option value="europe/podgorica">Europe/Podgorica</option><option value="europe/prague" selected>Europe/Prague</option><option value="europe/riga">Europe/Riga</option><option value="europe/rome">Europe/Rome</option><option value="europe/samara">Europe/Samara</option><option value="europe/san_marino">Europe/San Marino</option><option value="europe/sarajevo">Europe/Sarajevo</option><option value="europe/saratov">Europe/Saratov</option><option value="europe/simferopol">Europe/Simferopol</option><option value="europe/skopje">Europe/Skopje</option><option value="europe/sofia">Europe/Sofia</option><option value="europe/stockholm">Europe/Stockholm</option><option value="europe/tallinn">Europe/Tallinn</option><option value="europe/tirane">Europe/Tirane</option><option value="europe/ulyanovsk">Europe/Ulyanovsk</option><option value="europe/vaduz">Europe/Vaduz</option><option value="europe/vatican">Europe/Vatican</option><option value="europe/vienna">Europe/Vienna</option><option value="europe/vilnius">Europe/Vilnius</option><option value="europe/volgograd">Europe/Volgograd</option><option value="europe/warsaw">Europe/Warsaw</option><option value="europe/zagreb">Europe/Zagreb</option><option value="europe/zurich">Europe/Zurich</option><option value="indian/antananarivo">Indian/Antananarivo</option><option value="indian/chagos">Indian/Chagos</option><option value="indian/christmas">Indian/Christmas</option><option value="indian/cocos">Indian/Cocos</option><option value="indian/comoro">Indian/Comoro</option><option value="indian/kerguelen">Indian/Kerguelen</option><option value="indian/mahe">Indian/Mahe</option><option value="indian/maldives">Indian/Maldives</option><option value="indian/mauritius">Indian/Mauritius</option><option value="indian/mayotte">Indian/Mayotte</option><option value="indian/reunion">Indian/Reunion</option><option value="pacific/apia">Pacific/Apia</option><option value="pacific/auckland">Pacific/Auckland</option><option value="pacific/bougainville">Pacific/Bougainville</option><option value="pacific/chatham">Pacific/Chatham</option><option value="pacific/chuuk">Pacific/Chuuk</option><option value="pacific/easter">Pacific/Easter</option><option value="pacific/efate">Pacific/Efate</option><option value="pacific/fakaofo">Pacific/Fakaofo</option><option value="pacific/fiji">Pacific/Fiji</option><option value="pacific/funafuti">Pacific/Funafuti</option><option value="pacific/galapagos">Pacific/Galapagos</option><option value="pacific/gambier">Pacific/Gambier</option><option value="pacific/guadalcanal">Pacific/Guadalcanal</option><option value="pacific/guam">Pacific/Guam</option><option value="pacific/honolulu">Pacific/Honolulu</option><option value="pacific/kanton">Pacific/Kanton</option><option value="pacific/kiritimati">Pacific/Kiritimati</option><option value="pacific/kosrae">Pacific/Kosrae</option><option value="pacific/kwajalein">Pacific/Kwajalein</option><option value="pacific/majuro">Pacific/Majuro</option><option value="pacific/marquesas">Pacific/Marquesas</option><option value="pacific/midway">Pacific/Midway</option><option value="pacific/nauru">Pacific/Nauru</option><option value="pacific/niue">Pacific/Niue</option><option value="pacific/norfolk">Pacific/Norfolk</option><option value="pacific/noumea">Pacific/Noumea</option><option value="pacific/pago_pago">Pacific/Pago Pago</option><option value="pacific/palau">Pacific/Palau</option><option value="pacific/pitcairn">Pacific/Pitcairn</option><option value="pacific/pohnpei">Pacific/Pohnpei</option><option value="pacific/port_moresby">Pacific/Port Moresby</option><option value="pacific/rarotonga">Pacific/Rarotonga</option><option value="pacific/saipan">Pacific/Saipan</option><option value="pacific/tahiti">Pacific/Tahiti</option><option value="pacific/tarawa">Pacific/Tarawa</option><option value="pacific/tongatapu">Pacific/Tongatapu</option><option value="pacific/wake">Pacific/Wake</option><option value="pacific/wallis">Pacific/Wallis</option></select>
 							<input type="hidden" name="_do" value="timezoneForm-submit"></form>
-								<p>Detekovali jsme, že jsi v časové zóně Europe/Berlin. <a href="/film/4711-pan-prstenu-spolecenstvo-prstenu/prehled/?value=Europe%2FBerlin&do=changeHomeTimezone">Změnit časovou zónu</a></p>
+								<p>Detekovali jsme, že jsi v časové zóně Europe/Bratislava. <a href="/film/4711-pan-prstenu-spolecenstvo-prstenu/prehled/?value=Europe%2FBratislava&do=changeHomeTimezone">Změnit časovou zónu</a></p>
 						</div>
 
 						<div class="footer-action-languages" id="language-switch">
@@ -2481,17 +2337,13 @@ V roce 2021 byl film zařazen do Amerického národního filmového registru.
 
 		</div>
 
-<div id="slide_up" class="ad-pmg"></div>
-<div id="interstitial" class="ad-pmg"></div>
-
 
 <script type="text/json" id="js-common-config">{"country":1,"domain":"csfd.cz","host":"www.csfd.cz","userLanguageId":1,"translations":{"web.ajax.default.error.message":"Omlouváme se, ale nastala chyba při zpracování.","web.ajax.resend.button":"Odeslat znovu","web.autocomplete.creator.header":"Tvůrci","web.autocomplete.film.header":"Filmy","web.autocomplete.noservice":"Služba vyhledávání není momentálně dostupná.","web.autocomplete.searching":"Vyhledávám...","web.autocomplete.search.select":"Vyplň název filmu / jméno tvůrce nebo uživatele","web.autocomplete.series.header":"Seriály","web.autocomplete.user.header":"Uživatelé","web.layout.more":"více","web.check.all":"zaškrtnout vše","web.fileupload.preloader":"Načítám knihovnu, prosím o strpení...","web.modal.confirm.close":"Opravdu chceš zavřít okno? Možná máš neuložené změny.","web.preloader.loading":"Načítání...","web.search.creator.notfound":"Nenalezeni žádní tvůrci","web.search.film.notfound":"Nenalezeny žádné filmy","web.search.series.notfound":"Nenalezeny žádné seriály","web.search.user.notfound":"Nenalezeni žádní uživatelé","web.selectize.plugin.remove.button.remove":"Odebrat","web.sortable.error.move":"Při přesunu pozic došlo k chybě. Stránka bude obnovena. Pokračovat?","web.shop.related_title":"Související merch","web.shop.button.buy":"Koupit","web.shop.more":"více"},"route":":Web:Film:Overview:default","isLoggedIn":false,"userId":null,"hooks":["ShowMore","HighlightByData","Confirm","Shop","SecureHandle","StarRating","ReviewContent","AutoSubmitForm"]}</script>
-<script src="//static.pmgstatic.com/assets/utils-js/c8258f86692083bd0b360e2ab40d666b/scripts.min.js"></script>
-<script type="text/javascript">CSFDAds.setServer('https://a.csfd.cz/csfd');CSFDAds.complete({"ball":{"site":"csfd.cz","czaidc":0,"page":2,"login":2,"viewId":73145220,"film_id":4711,"film_type":1,"film_genre":[4,11,1],"film_origin":[172,122],"film_year":2001,"film_tags":[1096,2818,47,1492,73,76,71,72,91,59,61,234,74,83,20,219,120,101,97,99,2348,1512,574,1209,465,548,641,166,325,1309,335,348,798,100,1016,95,98,1992,66,258,1036,2510,298,2717,55,80,2684,1143,2685,1368,56,1511,326,96,364,1020,2012,78,689,1064,1166,30,1965,77,3104,23,1383,503,1220,909,2937,29,454,1378,34,1361,450,17,218,334,333,2680,488,604,967,765,359,2637,445,813,2347,35,2554,2059,2927,504,296,3012,2610,385,3165,165,817,183,437,3065,2313,455,269,181,1055,1032,2314,1548,1503,1212,2120,1757,259,299,2770,1216,588,1985,1259,3284,470,3334,481,2845,2719],"film_creators":[11,66519,72205,72206,67568,62277,165,74,166,167,62,170,97,76,168,169,60,81,102,171,69116,11781,4356,13883,9563,64124,3829,207,23296,33786,47731,50740,52339,74156,93207,285042,289024,384226,392127,526543,603214,631715,668564,712653,779337,894086,902141,630856,920866,921005],"vod_service_id":[18,68,25,28,58,91,49,90]},"0":{"area":"leaderboard","size":"2000x1400,1800x1000,1000x210,970x210,998x200,930x180,970x90,750x100,728x90,750x200,branding_web"},"1":{"area":"halfpage","size":"300x600,160x600,300x300,300x250,250x250,120x600,336x280"},"2":{"area":"billboard","size":"1000x310,970x310,950x300,980x250,970x250,750x300,1000x210,970x210,998x200,930x180,750x200,970x90,728x90"},"3":{"area":"slide_up","size":"1000x310,970x310,970x250,970x210,500x200,336x280,300x300,300x250,728x90,250x250,320x100,300x100,320x50,300x50,slide_up"},"4":{"area":"interstitial","size":"interstitial"},"5":{"area":"mobile_square_1","size":"300x300,300x250,250x250,336x280,720x1280,480x820,300x600,Interscroller"},"6":{"area":"mobile_square_2","size":"300x300,300x250,250x250,336x280"},"7":{"area":"mobile_billboard","size":"300x300,300x250,250x250,336x280"},"8":{"area":"native_long_1","size":"native_50,native_90,634x115,320x100"},"9":{"area":"mobile_native_1","size":"native_50,320x100"},"10":{"area":"pre_roll","size":"videoad","supertag":"InstreamVideo"},"11":{"area":"pre_roll_2","size":"videoad","supertag":"InstreamVideo"}}, false);</script>
+<script src="//static.pmgstatic.com/assets/utils-js/fad8ad03ad30d313dac66de1cc69ef73/scripts.min.js"></script>
+<script type="text/javascript">CSFDAds.setServer('https://a.csfd.cz/csfd');CSFDAds.complete({"ball":{"site":"csfd.cz","czaidc":0,"page":2,"login":2,"viewId":59718244,"film_id":4711,"film_type":1,"film_genre":[4,11,1],"film_origin":[172,122],"film_year":2001,"film_tags":[1096,2818,1492,47,73,76,71,72,91,59,234,61,74,83,219,120,20,97,101,99,2348,1512,574,1209,465,641,548,325,166,1309,335,798,348,100,1992,1016,95,98,2510,258,2717,66,55,1036,298,2684,2685,80,1143,1511,1368,56,96,1166,326,364,2012,1020,78,1965,1064,689,30,3104,77,2937,1383,23,503,1220,909,29,1378,454,34,1361,450,218,17,2680,334,333,604,488,967,765,2637,359,445,813,2347,2554,2927,35,2059,504,296,3012,2610,385,3165,165,3065,817,183,2313,437,455,269,181,1055,2314,1032,1548,1503,1212,2120,1757,259,299,2770,1216,1985,588,1259,3284,470,3334,481,2845,2719],"film_creators":[11,66519,72205,72206,67568,62277,165,74,166,167,62,170,97,76,168,169,60,81,102,171,69116,11781,4356,13883,9563,64124,3829,207,23296,33786,47731,50740,52339,74156,93207,285042,289024,384226,392127,526543,603214,631715,668564,712653,779337,894086,902141,630856,920866,921005],"vod_service_id":[18,68,25,28,58,94,91,49,90]},"0":{"area":"leaderboard","size":"2000x1400,1800x1000,1000x210,970x210,998x200,930x180,970x90,750x100,728x90,750x200,branding_web"},"1":{"area":"halfpage","size":"300x600,160x600,300x300,300x250,250x250,120x600,336x280"},"2":{"area":"billboard","size":"1000x310,970x310,950x300,980x250,970x250,750x300,1000x210,970x210,998x200,930x180,750x200,970x90,728x90"},"3":{"area":"slide_up","size":"1000x310,970x310,970x250,970x210,500x200,336x280,300x300,300x250,728x90,250x250,320x100,300x100,320x50,300x50,slide_up"},"4":{"area":"interstitial","size":"interstitial"},"5":{"area":"mobile_square_1","size":"300x300,300x250,250x250,336x280,720x1280,480x820,300x600,Interscroller"},"6":{"area":"mobile_square_2","size":"300x300,300x250,250x250,336x280"},"7":{"area":"mobile_billboard","size":"300x300,300x250,250x250,336x280"},"8":{"area":"native_long_1","size":"native_50,native_90,634x115,320x100"},"9":{"area":"mobile_native_1","size":"native_50,320x100"},"10":{"area":"pre_roll","size":"videoad","supertag":"InstreamVideo"},"11":{"area":"pre_roll_2","size":"videoad","supertag":"InstreamVideo"}}, false);</script>
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TM3S526" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	</body>
 
 	<a href="#top" title="Zpět nahoru" id="back-to-top"><i class="icon icon-arrow-up" aria-hidden="true"></i></a>
 </html>
-
 `;

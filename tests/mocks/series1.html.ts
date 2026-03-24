@@ -1,6 +1,4 @@
 export const seriesMock = `
-
-
 <!DOCTYPE html>
 <html lang="cs-CZ">
 	<head>
@@ -13,7 +11,7 @@ export const seriesMock = `
 </script>
 <script src="/nativeads.js"></script>
 <script>
-	function gtag(){window.dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("consent","default",{ad_storage:"denied",ad_user_data:"denied",ad_personalization:"denied",analytics_storage:"denied",functionality_storage:"denied",personalization_storage:"denied",security_storage:"denied"}),window.didomiOnReady=window.didomiOnReady||[],window.didomiOnReady.push(function(){var a=!1,e={};Didomi.getUserConsentStatusForPurpose("publishers-Kqq3iPge")&&(e.analytics_storage="granted",a=!0),Didomi.getUserConsentStatusForVendor("google")&&(e.ad_storage="granted",e.ad_user_data="granted",e.ad_personalization="granted",e.functionality_storage="granted",e.personalization_storage="granted",e.security_storage="granted",a=!0),a&&(gtag("consent","update",e),window.dataLayer.push({event:"consent_init",consent:e}))});var googleAnalyticsPageViewData={"event":"page_view","site":"www.csfd.cz","platform":"web","environment":"production","language":"cs","device":"desktop","user":{"id":null,"adblock":false},"page":{"id":71924,"type":"Film","title":null,"url":"https:\/\/www.csfd.cz\/film\/71924-kralovstvi\/prehled\/","path":"\/film\/71924-kralovstvi\/prehled\/","section":"Film","dark_mode":false},"_clear":true};if(null!==googleAnalyticsPageViewData){googleAnalyticsPageViewData.page.title="Království (1994) | ČSFD.cz",googleAnalyticsPageViewData.user.adblock=!!window[ab_detection];var sp=null;if(null!==window.localStorage){var i=window.localStorage.getItem("sp");"1"===i||"2"===i?sp=parseInt(i,10):(sp=Math.floor(2*Math.random())+1,window.localStorage.setItem("sp",sp))}googleAnalyticsPageViewData.status_pair=null===sp?Math.floor(2*Math.random())+1:sp,window.dataLayer.push(googleAnalyticsPageViewData)}
+	function gtag(){window.dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("consent","default",{ad_storage:"denied",ad_user_data:"denied",ad_personalization:"denied",analytics_storage:"denied",functionality_storage:"denied",personalization_storage:"denied",security_storage:"denied"}),window.didomiOnReady=window.didomiOnReady||[],window.didomiOnReady.push(function(){var a=!1,e={};Didomi.getUserConsentStatusForPurpose("publishers-Kqq3iPge")&&(e.analytics_storage="granted",a=!0),Didomi.getUserConsentStatusForVendor("google")&&(e.ad_storage="granted",e.ad_user_data="granted",e.ad_personalization="granted",e.functionality_storage="granted",e.personalization_storage="granted",e.security_storage="granted",a=!0),a&&(gtag("consent","update",e),window.dataLayer.push({event:"consent_init",consent:e}))});var googleAnalyticsPageViewData={"event":"page_view","site":"www.csfd.cz","platform":"web","environment":"production","language":"cs","device":"desktop","user":{"id":null,"adblock":false},"page":{"id":71924,"type":"Film","title":null,"url":"https:\\/\\/www.csfd.cz\\/film\\/71924-kralovstvi\\/prehled\\/","path":"\\/film\\/71924-kralovstvi\\/prehled\\/","section":"Film","dark_mode":false},"_clear":true};if(null!==googleAnalyticsPageViewData){googleAnalyticsPageViewData.page.title="Království (1994) | ČSFD.cz",googleAnalyticsPageViewData.user.adblock=!!window[ab_detection];var sp=null;if(null!==window.localStorage){var i=window.localStorage.getItem("sp");"1"===i||"2"===i?sp=parseInt(i,10):(sp=Math.floor(2*Math.random())+1,window.localStorage.setItem("sp",sp))}googleAnalyticsPageViewData.status_pair=null===sp?Math.floor(2*Math.random())+1:sp,window.dataLayer.push(googleAnalyticsPageViewData)}
 </script>
 <script>
 window.didomiConfig = {
@@ -79,11 +77,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 		<meta name="theme-color" content="#ba0305">
 		<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ba0305">
 		<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#ba0305">
-		<link rel="stylesheet" href="//static.pmgstatic.com/assets/web-css/5e349933e1358275e5dbfccce0a335bf/styles.min.css">
-		<link rel="shortcut icon" href="//static.pmgstatic.com/assets/images/2b5f1f1793f6881e6e9326d2c21f9445/favicon.ico">
-		<link rel="apple-touch-icon" href="//static.pmgstatic.com/assets/images/2b5f1f1793f6881e6e9326d2c21f9445/apple-touch-icon.png">
-		<script src="//static.pmgstatic.com/assets/vendor/4c4b0b91e77c007ce5325f7e57bb5384/jquery.min.js"></script>
-		<script src="//static.pmgstatic.com/assets/web-js/de8b64f92d0e41c829cda8b30a9fbe17/scripts.min.js" defer></script>
+		<link rel="stylesheet" href="//static.pmgstatic.com/assets/web-css/58bd7f3ed81bd9d84a6905e0711f1007/styles.min.css">
+		<link rel="shortcut icon" href="//static.pmgstatic.com/assets/images/6aeb8871e0052a62b04d591a3f85e733/favicon.ico">
+		<link rel="apple-touch-icon" href="//static.pmgstatic.com/assets/images/6aeb8871e0052a62b04d591a3f85e733/apple-touch-icon.png">
+		<script src="//static.pmgstatic.com/assets/vendor/efb570e5cd44fe9a1272efc8cc7f5b66/jquery.min.js"></script>
+		<script src="//static.pmgstatic.com/assets/web-js/460dfd2da94a6a3c5789376d716cee42/scripts.min.js" defer></script>
 
 		<script async src="https://srv.tunefindforfans.com/fruits/mangos.js"></script>
 		<script type="text/javascript">
@@ -120,12 +118,67 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	</script>
 
 
-<script id="videojs-vendor" src="//static.pmgstatic.com/assets/vendor/4c4b0b91e77c007ce5325f7e57bb5384/videojs/video.min.js" async defer></script>
+<script id="videojs-vendor" src="//static.pmgstatic.com/assets/vendor/efb570e5cd44fe9a1272efc8cc7f5b66/videojs/video.min.js" async defer></script>
 <script type="text/javascript" src="https://www.gstatic.com/cv/js/sender/v1/cast_sender.js?loadCastFramework=1" async defer></script>
-<link rel="stylesheet" href="//static.pmgstatic.com/assets/vendor/4c4b0b91e77c007ce5325f7e57bb5384/videojs/video-js.min.css">
+<link rel="stylesheet" href="//static.pmgstatic.com/assets/vendor/efb570e5cd44fe9a1272efc8cc7f5b66/videojs/video-js.min.css">
 	</head>
 
 	<body id="top" data-lang="cs" class="csfd-cz lang-1" data-page="film">
+<div id="slide_up" class="ad-pmg"></div>
+<div id="interstitial" class="ad-pmg"></div>
+
+<div id="switch-tld-modal">
+	<div data-mfp-to-close class="mfp-bg mfp-ready"></div>
+	<div data-mfp-to-close class="mfp-wrap mfp-close-btn-in mfp-auto-cursor mfp-ready modal-small">
+		<div class="mfp-container mfp-s-ready mfp-inline-holder">
+			<div class="mfp-content">
+				<div id="panelModal" class="modal" role="dialog">
+					<span id="mfp-modalWindow">
+						<div class="modal--hp">
+							<div class="switch-lang">
+								<h2>
+									ČSFD nanovo aj v slovenčine
+								</h2>
+								<p>
+									Všimli sme si, že prichádzaš zo slovenskej IP adresy. Vieš o tom, že existuje slovenská verzia CSFD.sk?
+								</p>
+							</div>
+							<footer>
+								<span class="left">
+									<a href="javascript:void(0)" data-mfp-close class="">
+											zostať
+									</a>
+								</span>
+								<a href="https://www.csfd.sk/film/71924-kralovstvi/prehlad/" class="button right">
+									prejsť na CSFD.sk
+								</a>
+							</footer>
+						</div>
+					</span>
+					<a href="javascript:void(0)" data-mfp-close class="close-modal mfp-close" title="Close (Esc)">
+						<i class="mfp-close icon icon-close-round"></i>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		var modal = document.getElementById('switch-tld-modal');
+		var closeElements = modal.querySelectorAll('[data-mfp-close]');
+		for (var i = 0; i < closeElements.length; ++i) {
+			closeElements[i].addEventListener(
+					'click',
+					function () {
+						var toCloseElements = modal.querySelectorAll('[data-mfp-to-close]');
+						for (var i = 0; i < toCloseElements.length; ++i) {
+							toCloseElements[i].remove();
+						}
+					}
+			)
+		}
+	</script>
+</div>
 		<div class="body">
 			<div class="ad-wrapper">
 				<div id="leaderboard-wrapper">
@@ -135,35 +188,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			</div>
 
 			<div id="page-wrapper">
-				<div id="suggest-switch-locale-panel" class="lang-info-panel-content" data-cookie-name="_ls_ns">
-					<div class="lang-info-panel">
-						<p>
-							Change website language <a href="#secureHandle-frm-switchLocale-form=Zt" class="btn-second"><img src="//image.pmgstatic.com/files/svg/flags/162/751/162751395/162751395_38cf6e.svg"><i class="icon icon-arrow-right"></i></a>
-						</p>
-						<p>
-							<a href="javascript:void(0);" class="btn btn-close" data-close-button>
-								<i class="icon icon-close"></i><span>Do not switch</span>
-							</a>
-						</p>
-					</div>
-				</div>
 
-				<div class="top-info top-info-language-switch top-info-user-not-logged top-info-only-projection">
-					<div class="top-info-content">
-						<p class="top-info-community-event">
-								<a href="/akce/536-projekce-drobna-nehoda/" class="link-with-icons">
-									<svg width="119" height="93" viewBox="0 0 119 93" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-										<path fill-rule="evenodd" clip-rule="evenodd" d="M63.0255 24.0791C54.0281 24.0791 45.3834 31.4353 43.7172 40.5099C42.0516 49.5841 47.9946 56.9401 56.9923 56.9401C65.9889 56.9401 74.6337 49.5841 76.3001 40.5099C77.9655 31.4353 72.0227 24.0791 63.0255 24.0791Z"></path>
-										<path fill-rule="evenodd" clip-rule="evenodd" d="M25.4185 80.1819H77.7067C77.6211 66.7115 67.9229 56.3457 54.5975 56.3457C41.2723 56.3459 28.9347 66.7117 25.4185 80.1819Z"></path>
-										<path fill-rule="evenodd" clip-rule="evenodd" d="M100.612 0.0336914L98.6975 8.23869C98.5319 8.94589 97.8249 9.51909 97.1179 9.51909H37.9319C37.2249 9.51909 36.7853 8.94589 36.9503 8.23869L38.8645 0.0336914H21.7031L0.459091 91.0949H0.490292L0.104492 92.7483H17.1399L18.8861 85.2607C19.0511 84.5535 19.7581 83.9809 20.4653 83.9809H79.6519C80.3589 83.9809 80.7985 84.5535 80.6329 85.2607L79.2727 91.0949H79.2917L78.9143 92.7133H78.9361L78.9315 92.7359H96.3537L96.7367 91.0949H96.7687L118.013 0.0336914H100.612V0.0336914ZM23.2341 9.99969L24.3083 5.39529C24.4733 4.68829 25.1803 4.11489 25.8875 4.11489H32.1603C32.8673 4.11489 33.3069 4.68829 33.1421 5.39529L32.0677 9.99969C31.9027 10.7069 31.1957 11.2801 30.4885 11.2801H24.2157C23.5087 11.2801 23.0691 10.7069 23.2341 9.99969ZM19.6467 25.3761L19.9601 24.0333C19.9653 23.9689 19.9705 23.9047 19.9861 23.8381L20.7021 20.7679C20.8671 20.0607 21.5741 19.4875 22.2815 19.4875H28.5241C28.8937 19.4875 29.1871 19.6469 29.3625 19.8979C29.5633 20.1317 29.6485 20.4649 29.5609 20.8389L28.5027 25.3763C28.3377 26.0833 27.6307 26.6565 26.9231 26.6565H20.6285C19.9213 26.6563 19.4817 26.0831 19.6467 25.3761ZM16.0075 41.0327L17.0823 36.4259C17.2473 35.7189 17.9543 35.1457 18.6615 35.1457H24.8847C25.5919 35.1457 26.0313 35.7189 25.8663 36.4259L24.7915 41.0327C24.6265 41.7403 23.9195 42.3135 23.2123 42.3135H16.9891C16.2821 42.3135 15.8425 41.7401 16.0075 41.0327ZM14.9775 83.2539L13.9055 87.8479C13.7405 88.5559 13.0335 89.1287 12.3265 89.1287H6.05929C5.35209 89.1287 4.91269 88.5559 5.07769 87.8479L6.14949 83.2539C6.31449 82.5459 7.02149 81.9731 7.72869 81.9731H13.9959C14.7029 81.9729 15.1425 82.5457 14.9775 83.2539ZM18.6409 67.7617L17.5633 72.3805C17.3983 73.0885 16.6913 73.6611 15.9841 73.6611H9.66789C8.96069 73.6611 8.5213 73.0885 8.6863 72.3805L9.7639 67.7617C9.9287 67.0539 10.6359 66.4809 11.3429 66.4809H17.6593C18.3665 66.4807 18.8059 67.0539 18.6409 67.7617ZM19.5839 58.0215H13.3167C12.6091 58.0215 12.1697 57.4477 12.3345 56.7407L13.4065 52.1457C13.5715 51.4385 14.2789 50.8657 14.9861 50.8657H21.2531C21.9603 50.8657 22.3997 51.4385 22.2347 52.1457L21.1629 56.7407C20.9981 57.4477 20.2909 58.0215 19.5839 58.0215ZM81.1405 78.0045H21.8595C21.1525 78.0045 20.7129 77.4319 20.8779 76.7239L34.7971 17.0599C34.9619 16.3529 35.6691 15.7797 36.3763 15.7797H95.6573C96.3643 15.7797 96.8037 16.3529 96.6393 17.0599L82.7199 76.7239C82.5547 77.4319 81.8477 78.0045 81.1405 78.0045ZM94.2101 83.2539L93.1323 87.8735C92.9669 88.5805 92.2599 89.1533 91.5529 89.1533H85.3103C84.6033 89.1533 84.1637 88.5805 84.3281 87.8735L85.4059 83.2539C85.5713 82.5459 86.2783 81.9731 86.9853 81.9731H93.2279C93.9349 81.9729 94.3745 82.5457 94.2101 83.2539ZM97.8729 67.7617L96.7951 72.3805C96.6297 73.0885 95.9227 73.6611 95.2159 73.6611H88.9241C88.2169 73.6611 87.7775 73.0885 87.9429 72.3805L89.0205 67.7617C89.1849 67.0539 89.8921 66.4809 90.5993 66.4809H96.8919C97.5987 66.4807 98.0383 67.0539 97.8729 67.7617ZM101.516 52.1457L100.45 56.7161C100.284 57.4231 99.5773 57.9969 98.8703 57.9969H92.5785C91.8715 57.9969 91.4319 57.4231 91.5975 56.7161L92.6627 52.1457C92.8281 51.4385 93.5351 50.8657 94.2421 50.8657H100.534C101.241 50.8659 101.68 51.4387 101.516 52.1457ZM105.193 36.3833L104.116 41.0029C103.95 41.7101 103.244 42.2833 102.536 42.2833H96.2443C95.5371 42.2833 95.0977 41.7101 95.2631 41.0029L96.3409 36.3833C96.5051 35.6763 97.2123 35.1029 97.9195 35.1029H104.211C104.918 35.1029 105.359 35.6763 105.193 36.3833ZM108.842 20.7437L107.764 25.3629C107.599 26.0705 106.892 26.6431 106.185 26.6431H99.8929C99.1859 26.6431 98.7465 26.0703 98.9119 25.3629L99.9895 20.7437C100.154 20.0361 100.861 19.4629 101.568 19.4629H107.86C108.567 19.4629 109.007 20.0361 108.842 20.7437ZM111.35 9.99349C111.184 10.7007 110.477 11.2739 109.77 11.2739H103.479C102.772 11.2739 102.332 10.7005 102.497 9.99349L103.575 5.37389C103.74 4.66689 104.447 4.09349 105.154 4.09349H111.446C112.153 4.09349 112.592 4.66689 112.428 5.37389L111.35 9.99349Z"></path>
-									</svg>
-									Projekce <em>Drobná nehoda</em>
-								</a>
-						</p>
-					</div>
-				</div>
 
-				<header class="page-header page-header-csfd-cz user-not-logged projection-on language-switch-on header-user-language-switch">
+				<header class="page-header page-header-csfd-cz user-not-logged header-user-language-switch">
 					<div class="header-main">
 						<div class="logo">
 							<a href="/" class="csfd-cz">ČSFD.cz</a>
@@ -393,45 +420,28 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
 <div class="main-movie">
-<script type="application/ld+json">{"@context":"https://schema.org/","@type":"TVSeries","name":"Království","dateCreated":"1994","director":[{"@type":"Person","name":"Lars von Trier"},{"@type":"Person","name":"Morten Arnfred"}],"actor":[{"@type":"Person","name":"Ernst-Hugo Järegård"},{"@type":"Person","name":"Kirsten Rolffes"},{"@type":"Person","name":"Søren Pilmark"},{"@type":"Person","name":"Ghita Nørby"},{"@type":"Person","name":"Jens Okking"},{"@type":"Person","name":"Baard Owe"},{"@type":"Person","name":"Peter Mygind"},{"@type":"Person","name":"Udo Kier"},{"@type":"Person","name":"Holger Perfort"},{"@type":"Person","name":"Laura Christensen"}],"aggregateRating":{"@type":"AggregateRating","worstRating":0,"bestRating":100,"ratingValue":86.35826370491135,"ratingCount":4907,"reviewCount":247},"image":"https://image.pmgstatic.com/cache/resized/w420/files/images/film/posters/166/708/166708064_2da697.jpg"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org/","@type":"TVSeries","name":"Království","dateCreated":"1994","director":[{"@type":"Person","name":"Lars von Trier"},{"@type":"Person","name":"Morten Arnfred"}],"actor":[{"@type":"Person","name":"Ernst-Hugo Järegård"},{"@type":"Person","name":"Kirsten Rolffes"},{"@type":"Person","name":"Søren Pilmark"},{"@type":"Person","name":"Ghita Nørby"},{"@type":"Person","name":"Jens Okking"},{"@type":"Person","name":"Baard Owe"},{"@type":"Person","name":"Peter Mygind"},{"@type":"Person","name":"Udo Kier"},{"@type":"Person","name":"Holger Perfort"},{"@type":"Person","name":"Laura Christensen"}],"aggregateRating":{"@type":"AggregateRating","worstRating":0,"bestRating":100,"ratingValue":86.34384537131231,"ratingCount":4915,"reviewCount":247},"image":"https://image.pmgstatic.com/cache/resized/w420/files/images/film/posters/166/708/166708064_2da697.jpg"}</script>
 	<div class="main-movie-profile">
-		<div class="box box-film">
-			<div id="profile-header-info" class="hidden box-header">
-				<div class="controls-left">
-					<div id="snippet--boxButtonWatchlist" class="hidden snippet-box" data-auto-show-hide-parent>
-					</div>
-					<div id="snippet--boxButtonCollection" class="hidden snippet-box" data-auto-show-hide-parent>
-					</div>
-					<div id="snippet--boxButtonFanclub" class="hidden snippet-box" data-auto-show-hide-parent>
-					</div>
-
-
-				</div>
-			</div>
-			<div class="box-content">
-				<div class="film-info">
+		<div class="movie-profile">
+			<div class="updated-box updated-box-nooverflow">
+				<div class="film-info"> 
 
 					<header class="film-header film-header-min-height">
-						<div class="film-header-name">
+						<div class="film-header-name" data-onboarding-step-1="false">
 							<h1>
 
 								Království
-
+								
 							</h1>
 							<span class="type">(seriál)</span>
 
 
 
-							<a href="javascript:void(0);" data-dropdown="#dropdown-control-panel" data-position="absolute" data-position-right-offset="15" data-position-anchor="right" class="button button-control-panel small">
-								<i class="icon icon-menu"></i>
-
-							</a>
-
 							<ul class="film-names">
 								<li >
 <img src="//image.pmgstatic.com/files/svg/flags/162/751/162751319/162751319_8eac4e.svg" class="flag" title="Dánsko" alt="Dánsko"/>									Riget
 									<span class="normal more-name-link">
-										<span class="span-more-small">(<a href="#" class="more" data-parent=".more-name-link" data-show=".more-names, .less-name-link">více</a>)</span>
+										<span class="span-more-small"><a href="javascript:void(0);" class="more" data-parent=".more-name-link" data-show=".more-names, .less-name-link">více</a></span>
 									</span>
 								</li>
 								<li class="more-names hidden">
@@ -458,7 +468,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 								<li class="more-names hidden">
 <img src="//image.pmgstatic.com/files/svg/flags/162/751/162751233/162751233_bfc3e7.svg" class="flag" title="Kanada" alt="Kanada"/>									The Kingdom
 									<span class="normal less-name-link">
-										<span class="span-more-small">(<a href="#" class="more" data-parent=".less-name-link" data-show=".more-name-link" data-hide=".more-names">méně</a>)</span>
+										<span class="span-more-small"><a href="javascript:void(0);" class="more" data-parent=".less-name-link" data-show=".more-name-link" data-hide=".more-names">méně</a></span>
 									</span>
 								</li>
 							</ul>
@@ -478,8 +488,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <div class="box-video-content">
 	<a href="javascript:void(0);" class="box-video-preview disabled" data-video-player-initialize="video-player-1" data-video-player-playlist-start="0" data-video-player-autoplay="" data-video-player-translations-url="/api/video-player/translations/">
 			<picture>
-				<source media="(max-width: 650px)" srcset="//image.pmgstatic.com/cache/resized/w360/files/images/film/video/preview/166/763/166763692_7f07b8.jpg 1x, //image.pmgstatic.com/cache/resized/w720/files/images/film/video/preview/166/763/166763692_7f07b8.jpg 2x, //image.pmgstatic.com/cache/resized/w1080/files/images/film/video/preview/166/763/166763692_7f07b8.jpg 3x" />
-				<img class="prev-img" src="//image.pmgstatic.com/cache/resized/w663/files/images/film/video/preview/166/763/166763692_7f07b8.jpg" loading="lazy" width="663" height="372" srcset="//image.pmgstatic.com/cache/resized/w663/files/images/film/video/preview/166/763/166763692_7f07b8.jpg 1x, //image.pmgstatic.com/cache/resized/w1326/files/images/film/video/preview/166/763/166763692_7f07b8.jpg 2x" alt="Trailer 2" />
+				<source media="(max-width: 650px)" srcset="//image.pmgstatic.com/cache/resized/w360/files/images/film/video/preview/168/485/168485572_rwzey6.jpg 1x, //image.pmgstatic.com/cache/resized/w720/files/images/film/video/preview/168/485/168485572_rwzey6.jpg 2x, //image.pmgstatic.com/cache/resized/w1080/files/images/film/video/preview/168/485/168485572_rwzey6.jpg 3x" />
+				<img class="prev-img" src="//image.pmgstatic.com/cache/resized/w663/files/images/film/video/preview/168/485/168485572_rwzey6.jpg" loading="lazy" width="663" height="372" srcset="//image.pmgstatic.com/cache/resized/w663/files/images/film/video/preview/168/485/168485572_rwzey6.jpg 1x, //image.pmgstatic.com/cache/resized/w1326/files/images/film/video/preview/168/485/168485572_rwzey6.jpg 2x" alt="Trailer 3" />
 			</picture>
 		<span class="play-button"><i class="icon icon-play-simple"></i></span>
 	</a>
@@ -493,12 +503,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			playsinline
 			width="637"
 			height="360"
-
+			
 			data-video-url="/api/video-player/?data=__data__"
-			data-videos="[&#123;&quot;duration&quot;:129,&quot;copyright&quot;:&quot;KVIFF.TV&quot;,&quot;request_data&quot;:&quot;rlW2nJEyo0yxVwbkAGp4ZQZmBQDfVaA1LaEcqTkyGTShM3IuM2IWMUZvByfkYQWqYPW0o2gyovV6VzVlAmpmAQAuZJZ1MwZ0BJSvLGIzBGN4MJZ5AGyuMQSxLGWzBGHkAGVvsD&quot;},&#123;&quot;duration&quot;:135,&quot;copyright&quot;:&quot;MUBI&quot;,&quot;request_data&quot;:&quot;rlW2nJEyo0yxVwbkAGp4ZQVlBQtfVaA1LaEcqTkyGTShM3IuM2IWMUZvByfkYQWqYPW0o2gyovV6VwRjBGH2ZQAxATEzLmVkZQAyAQquAwR5AmZ2AwN4ZQyzAQH2MJVlBQtvsD&quot;},&#123;&quot;duration&quot;:103,&quot;copyright&quot;:&quot;Synca&quot;,&quot;request_data&quot;:&quot;rlW2nJEyo0yxVwbkAGp4AwR5AQDfVaA1LaEcqTkyGTShM3IuM2IWMUZvByfkYQWqYPW0o2gyovV6VwHkLmVmMzZkLwMuLwx1LwquL2WyAQEvAGtlAmZ4MGExAwMwMTEyLzRvsD&quot;}]"
-			data-recommended-videos-url="/api/video-player/recommended-videos/?videoId=157861944"
+			data-videos="[&#123;&quot;duration&quot;:113,&quot;copyright&quot;:&quot;Plaion Pictures&quot;,&quot;request_data&quot;:&quot;rlW2nJEyo0yxVwbkAGp4AQZmAGDfVaA1LaEcqTkyGTShM3IuM2IWMUZvByfkYQWqYPW0o2gyovV6VwxkBJWyMQAyAzD0ZQZ5LmAvMwD0AQuyMJMvAQD4Awx3BQHjA2RjZQZvsD&quot;},&#123;&quot;duration&quot;:135,&quot;copyright&quot;:&quot;MUBI&quot;,&quot;request_data&quot;:&quot;rlW2nJEyo0yxVwbkAGp4ZQVlBQtfVaA1LaEcqTkyGTShM3IuM2IWMUZvByfkYQWqYPW0o2gyovV6VzZ2MGSwZ2AxAwHkMQRkZGZ5LwyuBGt3ZJL4ZQAvBTH0L2SyL2V4MzZvsD&quot;},&#123;&quot;duration&quot;:129,&quot;copyright&quot;:&quot;KVIFF.TV&quot;,&quot;request_data&quot;:&quot;rlW2nJEyo0yxVwbkAGp4ZQZmBQDfVaA1LaEcqTkyGTShM3IuM2IWMUZvByfkYQWqYPW0o2gyovV6VzLmMQWuA2R0Z2WyZwEzZJZ0LJRmZwp4LGp4BGIwLwV2ZmEvAQNmZmtvsD&quot;}]"
+			data-recommended-videos-url="/api/video-player/recommended-videos/?videoId=157803384"
 			data-recommended-autoplay
-
+			
 		>
 			<p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
 		</video>
@@ -511,39 +521,201 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 					</div>
 					<div class="film-info-content">
-						<div class="mobile-film-rating">
-							<div class="box-rating has-fans">
-								<div class="film-rating-average">
-										86%
+						<div class="genres"><a href="/zanry/2-drama/">Drama</a> <span class="bullet"></span> <a href="/zanry/5-horor/">Horor</a> <span class="bullet"></span> Mysteriózní <span class="bullet"></span> <a href="/zanry/9-komedie/">Komedie</a></div>
+						<div class="origin">Dánsko / Francie / Německo / Švédsko <span class="bullet"></span> 
+							<span>(1994–2022) <span class="bullet"></span> </span>14 h 20 min (Minutáž: 60–79 min)
 
+						</div>
+
+						<div class="mobile-film-rating"> 
+							<div class="film-rating-average" data-onboarding-step-2="false" data-onboarding-step-3="false">
+									86%
+
+							</div>
+
+							<div class="film-ranking">
+								<a href="/zebricky/serialy/nejlepsi/?from=100#highlight-71924">
+									<svg class="icon-thumb-up" width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+										<path fill-rule="evenodd" clip-rule="evenodd" d="M7.49739 2.65383C7.49739 2.10883 7.93923 1.66699 8.48423 1.66699H9.99739C11.6082 1.66699 12.914 2.97283 12.914 4.58366V7.50033H15.7894C17.63 7.50033 19.0104 9.18419 18.6495 10.989L17.5482 16.4955C17.4313 17.0798 16.9183 17.5003 16.3224 17.5003H7.08073C6.39031 17.5003 5.83073 16.9407 5.83073 16.2503V8.44632C5.83073 8.22499 5.88948 8.00766 6.00098 7.81649L6.18864 7.49474C7.04573 6.02541 7.49739 4.35491 7.49739 2.65383ZM9.14356 3.33366C9.03723 5.09308 8.51956 6.80658 7.62823 8.33458L7.49739 8.55891V15.8337H15.9809L17.0152 10.6621C17.1699 9.88865 16.5782 9.16699 15.7894 9.16699H12.4974C11.807 9.16699 11.2474 8.60733 11.2474 7.91699V4.58366C11.2474 3.89333 10.6877 3.33366 9.99739 3.33366H9.14356Z"></path>
+										<path d="M1.66406 8.75033C1.66406 8.52024 1.85056 8.33366 2.08073 8.33366H3.7474C3.97748 8.33366 4.16406 8.52024 4.16406 8.75033V17.0837C4.16406 17.3138 3.97748 17.5003 3.7474 17.5003H2.08073C1.85056 17.5003 1.66406 17.3138 1.66406 17.0837V8.75033Z"></path>
+									</svg>
+									<strong>126.</strong> <span>nejlepší</span>
+								</a>
+							</div>
+							<div class="film-ranking">
+								<a href="/zebricky/serialy/nejoblibenejsi/?from=100#highlight-71924">
+									<svg class="icon-thumb-up" width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+										<path fill-rule="evenodd" clip-rule="evenodd" d="M7.49739 2.65383C7.49739 2.10883 7.93923 1.66699 8.48423 1.66699H9.99739C11.6082 1.66699 12.914 2.97283 12.914 4.58366V7.50033H15.7894C17.63 7.50033 19.0104 9.18419 18.6495 10.989L17.5482 16.4955C17.4313 17.0798 16.9183 17.5003 16.3224 17.5003H7.08073C6.39031 17.5003 5.83073 16.9407 5.83073 16.2503V8.44632C5.83073 8.22499 5.88948 8.00766 6.00098 7.81649L6.18864 7.49474C7.04573 6.02541 7.49739 4.35491 7.49739 2.65383ZM9.14356 3.33366C9.03723 5.09308 8.51956 6.80658 7.62823 8.33458L7.49739 8.55891V15.8337H15.9809L17.0152 10.6621C17.1699 9.88865 16.5782 9.16699 15.7894 9.16699H12.4974C11.807 9.16699 11.2474 8.60733 11.2474 7.91699V4.58366C11.2474 3.89333 10.6877 3.33366 9.99739 3.33366H9.14356Z"></path>
+										<path d="M1.66406 8.75033C1.66406 8.52024 1.85056 8.33366 2.08073 8.33366H3.7474C3.97748 8.33366 4.16406 8.52024 4.16406 8.75033V17.0837C4.16406 17.3138 3.97748 17.5003 3.7474 17.5003H2.08073C1.85056 17.5003 1.66406 17.3138 1.66406 17.0837V8.75033Z"></path>
+									</svg>
+									<strong>149.</strong> <span>nejoblíbenější</span>
+								</a>
+							</div>
+
+	<div class="mobile-film-rating-detail">
+		<h3>Klikni a hodnoť</h3>
+		<a href="/registration-motivation/?title=VyOlolOjKUHjZGH5nJEpqGNjMGShKUHjZTIxVTuiMT5iL2IhKUHjZTIxVUAyVUOlo3ApqGNjMJEgVT5ynzEpqGNkAGypqGNjMJE2VUOpqGNkAGycnTkupl4v" rel="registrationMotivation" data-no-ads>
+			<span class="star-rating">
+				<span class="star-rating"><span class="stars stars-0-withtrash"></span></span>
+			</span>
+		</a>
+	</div>
+
+							<div class="mobile-film-count">
+								<a href="/film/71924-kralovstvi/prehled/?modal=ratingAndFanclub" data-no-ads rel="contentModal" class="more more-modal-ratings-fanclub" data-modal-class="modal-ratings-fanclub">
+									Hodnocení
+									<strong>4 915</strong>
+								</a>
+								<a href="/film/71924-kralovstvi/recenze/">
+									Recenze
+									<strong>248</strong>
+								</a>
+								<a href="/film/71924-kralovstvi/prehled/?modal=ratingAndFanclub" data-no-ads rel="contentModal" class="more more-modal-ratings-fanclub" data-modal-class="modal-ratings-fanclub">
+									Fanklub
+									<strong>853</strong>
+								</a>
+							</div>
+
+						</div>
+
+						<div class="action-panel">
+							<div class="action-panel-list">
+								<div class="action-panel-item">
+											<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads class="btn-profile-action">
+												<svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+													<path fill-rule="evenodd" clip-rule="evenodd" d="M12.9832 2.04084C12.072 1.12962 10.5946 1.12962 9.68342 2.04084L2.29289 9.43136C2.10536 9.6189 2 9.87325 2 10.1385V13.0004C2 13.5527 2.44772 14.0004 3 14.0004H5.86193C6.12715 14.0004 6.3815 13.895 6.56904 13.7075L13.9596 6.31698C14.8708 5.40576 14.8708 3.92838 13.9596 3.01715L12.9832 2.04084ZM10.6262 2.98365C11.0168 2.59312 11.6499 2.59312 12.0404 2.98365L13.0168 3.95996C13.4073 4.35048 13.4073 4.98365 13.0168 5.37417L12.3334 6.05757L9.94283 3.66705L10.6262 2.98365ZM9.00002 4.60986L3.33333 10.2765V12.6671H5.72386L11.3905 7.00038L9.00002 4.60986Z"></path>
+												</svg>
+												Recenze
+											</a>
 								</div>
 
-								<div class="film-ranking">
-									<span><i class="icon icon-thumb-up"></i></span>
-									<a href="/zebricky/serialy/nejlepsi/?from=100#highlight-71924">
-										124. nejlepší
+								<div id="snippet--actionLinkWatchlist" class="action-panel-item">
+									<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads class="btn-profile-action">
+											<svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+												<path d="M11.9974 3.3335C11.9974 3.15669 11.9271 2.98717 11.8021 2.86214C11.6771 2.73712 11.5075 2.66683 11.3307 2.66683H4.66406C4.48725 2.66683 4.31773 2.73712 4.19271 2.86214C4.06768 2.98717 3.9974 3.15668 3.9974 3.3335V12.7046L7.61003 10.1245L7.70052 10.0698C7.91852 9.96133 8.18203 9.9797 8.38477 10.1245L11.9974 12.7046V3.3335ZM13.3307 14.0002C13.3307 14.2499 13.1914 14.479 12.9694 14.5933C12.7474 14.7075 12.4799 14.6876 12.2767 14.5425L7.9974 11.4858L3.7181 14.5425C3.51489 14.6876 3.24744 14.7075 3.02539 14.5933C2.8034 14.479 2.66406 14.2499 2.66406 14.0002V3.3335C2.66406 2.80306 2.87493 2.29451 3.25 1.91943C3.62507 1.54436 4.13363 1.3335 4.66406 1.3335H11.3307C11.8612 1.3335 12.3697 1.54436 12.7448 1.91943C13.1199 2.29451 13.3307 2.80306 13.3307 3.3335V14.0002Z"></path>
+											</svg>
+											Chci vidět
 									</a>
 								</div>
-								<div class="film-ranking">
-									<span><i class="icon icon-thumb-up"></i></span>
-									<a href="/zebricky/serialy/nejoblibenejsi/?from=100#highlight-71924">
-										148. nejoblíbenější
+
+								<div id="snippet--actionLinkFanclub" class="action-panel-item">
+										<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads class="btn-profile-action">
+											<svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+												<path fill-rule="evenodd" clip-rule="evenodd" d="M6.31657 4.01676C6.0999 3.80009 5.84266 3.62823 5.55957 3.51097C5.27648 3.39371 4.97304 3.33335 4.66663 3.33335C4.36021 3.33335 4.05682 3.3937 3.77372 3.51097C3.49063 3.62823 3.23339 3.80011 3.01672 4.01678C2.80005 4.23346 2.62821 4.49067 2.51095 4.77376C2.39369 5.05686 2.33333 5.36029 2.33333 5.66671C2.33333 5.97313 2.39368 6.27654 2.51095 6.55963C2.62821 6.84272 2.80005 7.09994 3.01672 7.31661L8 12.2998L12.9832 7.31661C13.4208 6.87902 13.6667 6.28553 13.6667 5.66669C13.6667 5.04784 13.4208 4.45435 12.9832 4.01676C12.5456 3.57918 11.9521 3.33333 11.3333 3.33333C10.7144 3.33334 10.121 3.57917 9.68339 4.01676L8.70711 4.99308C8.51957 5.18062 8.26522 5.28597 8 5.28597C7.73478 5.28597 7.48039 5.18062 7.29285 4.99308L6.31657 4.01676ZM7.2594 3.07395L8 3.81455L8.7406 3.07395C9.42824 2.38632 10.3609 2 11.3333 2C12.3058 2 13.2384 2.38632 13.9261 3.07395C14.6137 3.76159 15 4.69422 15 5.66669C15 6.63915 14.6137 7.57178 13.9261 8.25942L8.70711 13.4784C8.51957 13.6659 8.26523 13.7712 8 13.7712C7.73477 13.7712 7.48039 13.6659 7.29285 13.4784L2.07393 8.25942C1.73345 7.91894 1.46336 7.51473 1.27909 7.06987C1.09483 6.625 1 6.1482 1 5.66669C1 5.18517 1.09483 4.70837 1.27909 4.26351C1.46336 3.81865 1.73345 3.41444 2.07393 3.07395C2.41442 2.73347 2.81861 2.46338 3.26347 2.27911C3.70833 2.09485 4.18515 2.00002 4.66667 2.00002C5.14818 2.00002 5.62496 2.09485 6.06982 2.27911C6.51469 2.46338 6.91892 2.73347 7.2594 3.07395V3.07395Z"></path>
+											</svg>
+											Oblíbené
+										</a>
+								</div>
+
+								<div class="action-panel-item">
+										<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads class="btn-profile-action">
+											<svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
+												<path d="M2.66667 8.66634C3.03486 8.66634 3.33333 8.36786 3.33333 7.99967C3.33333 7.63148 3.03486 7.33301 2.66667 7.33301C2.29848 7.33301 2 7.63148 2 7.99967C2 8.36786 2.29848 8.66634 2.66667 8.66634Z"></path>
+												<path d="M2.66667 4.66634C3.03486 4.66634 3.33333 4.36786 3.33333 3.99967C3.33333 3.63148 3.03486 3.33301 2.66667 3.33301C2.29848 3.33301 2 3.63148 2 3.99967C2 4.36786 2.29848 4.66634 2.66667 4.66634Z"></path>
+												<path d="M2.66667 12.6663C3.03486 12.6663 3.33333 12.3679 3.33333 11.9997C3.33333 11.6315 3.03486 11.333 2.66667 11.333C2.29848 11.333 2 11.6315 2 11.9997C2 12.3679 2.29848 12.6663 2.66667 12.6663Z"></path>
+												<path d="M14 7.99967L6 7.99967M14 3.99968L6 3.99967M14 11.9997L6 11.9997M3.33333 7.99967C3.33333 8.36786 3.03486 8.66634 2.66667 8.66634C2.29848 8.66634 2 8.36786 2 7.99967C2 7.63148 2.29848 7.33301 2.66667 7.33301C3.03486 7.33301 3.33333 7.63148 3.33333 7.99967ZM3.33333 3.99967C3.33333 4.36786 3.03486 4.66634 2.66667 4.66634C2.29848 4.66634 2 4.36786 2 3.99967C2 3.63148 2.29848 3.33301 2.66667 3.33301C3.03486 3.33301 3.33333 3.63148 3.33333 3.99967ZM3.33333 11.9997C3.33333 12.3679 3.03486 12.6663 2.66667 12.6663C2.29848 12.6663 2 12.3679 2 11.9997C2 11.6315 2.29848 11.333 2.66667 11.333C3.03486 11.333 3.33333 11.6315 3.33333 11.9997Z" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"></path>
+											</svg>
+											Seznamy
+										</a>
+								</div>
+
+								<div id="snippet--actionLinkCollection" class="action-panel-item">
+									<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads class="btn-profile-action">
+											<svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+												<path d="M11.2735 2.7786L13.0641 13.3373L14.3786 13.1144L12.588 2.55566L11.2735 2.7786Z"></path>
+												<path d="M2 2.66713V13.3338H3.33333V2.66713H2Z"></path>
+												<path d="M6.66667 4.00046V13.3338H5.33333V4.00046H6.66667Z"></path>
+												<path d="M8.66667 13.3338V2.66713H10V13.3338H8.66667Z"></path>
+											</svg>
+											Filmotéka
+									</a>
+								</div>
+
+								<div class="action-panel-item">
+									<a title="Ovládací panel" href="javascript:void(0);" data-dropdown="#dropdown-control-panel" data-parent-class="box-rating-container" class="button-control-panel" data-onboarding-step-9="false">
+										<svg width="24" height="24" viewBox="0 0 24 24" stroke="currentColor" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M11.9974 12.6663C12.3656 12.6663 12.6641 12.3679 12.6641 11.9997C12.6641 11.6315 12.3656 11.333 11.9974 11.333C11.6292 11.333 11.3307 11.6315 11.3307 11.9997C11.3307 12.3679 11.6292 12.6663 11.9974 12.6663Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+											<path d="M16.6641 12.6663C17.0323 12.6663 17.3307 12.3679 17.3307 11.9997C17.3307 11.6315 17.0323 11.333 16.6641 11.333C16.2959 11.333 15.9974 11.6315 15.9974 11.9997C15.9974 12.3679 16.2959 12.6663 16.6641 12.6663Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+											<path d="M7.33073 12.6663C7.69892 12.6663 7.9974 12.3679 7.9974 11.9997C7.9974 11.6315 7.69892 11.333 7.33073 11.333C6.96254 11.333 6.66406 11.6315 6.66406 11.9997C6.66406 12.3679 6.96254 12.6663 7.33073 12.6663Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+										</svg>
+										
 									</a>
 								</div>
 							</div>
 
+							<div id="dropdown-control-panel" class="dropdown-content control-panel">
 
-							<a href="/film/71924-kralovstvi/prehled/?modal=ratingAndFanclub" data-no-ads rel="contentModal" class="more more-modal-ratings-fanclub" data-modal-class="modal-ratings-fanclub">
-								Hodnocení a fanklub
-							</a>
+								<ul class="blue">
+											<li>
+												<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads>
+													Přidat recenzi
+												</a>
+											</li>
+									<li id="snippet--publicControlMenuWatchlist">
+										<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads>
+												Přidat do Chci vidět
+										</a>
+									</li>
+									<li id="snippet--publicControlMenuFanclub">
+											<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads>Přidat do oblíbených</a>
+									</li>
+									<li>
+										<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads>
+												Přidat do seznamů
+										</a>
+									</li>
+									<li id="snippet--publicControlMenuCollection">
+										<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads>
+												Přidat do filmotéky
+										</a>
+									</li>
+								</ul>
 
-						</div>
+								<hr>
 
-						<div class="genres"><a href="/zanry/2-drama/">Drama</a> / <a href="/zanry/5-horor/">Horor</a> / Mysteriózní / <a href="/zanry/9-komedie/">Komedie</a></div>
-						<div class="origin">Dánsko / Francie / Německo / Švédsko,
-							<span>(1994–2022), </span>14 h 20 min
-							(Minutáž: 60–79 min)
-
+								<ul class="blue">
+								<li>
+									<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads>
+										Přidat obsah
+									</a>
+								</li>
+								<li>
+									<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads>
+										Přidat zajímavost
+									</a>
+								</li>
+								<li>
+									<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads>
+										Přidat obrázky
+									</a>
+								</li>
+								<li>
+									<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads>
+										Přidat podobné filmy
+									</a>
+								</li>
+								<li>
+									<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads>
+										Přidat související filmy
+									</a>
+								</li>
+								<li>
+									<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads>
+										Přidat externí recenzi
+									</a>
+								</li>
+								<li>
+									<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads>
+										Přidat tagy
+									</a>
+								</li>
+								<li>
+									<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads>
+										Přidat web
+									</a>
+								</li>
+								</ul>
+							</div>
 						</div>
 
 						<div class="creators" id="creators">
@@ -565,13 +737,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							</div>
 							<div>
 								<h4>Hrají:</h4>
-<a href="/tvurce/32989-ernst-hugo-jaregard/prehled/">Ernst-Hugo Järegård</a>, <a href="/tvurce/330359-kirsten-rolffes/prehled/">Kirsten Rolffes</a>, <a href="/tvurce/8608-soren-pilmark/prehled/">Søren Pilmark</a>, <a href="/tvurce/56972-ghita-norby/prehled/">Ghita Nørby</a>, <a href="/tvurce/204496-jens-okking/prehled/">Jens Okking</a>, <a href="/tvurce/70901-baard-owe/prehled/">Baard Owe</a>, <a href="/tvurce/33152-peter-mygind/prehled/">Peter Mygind</a>, <a href="/tvurce/2567-udo-kier/prehled/">Udo Kier</a>, <a href="/tvurce/154402-holger-perfort/prehled/">Holger Perfort</a>, <a href="/tvurce/16702-laura-christensen/prehled/">Laura Christensen</a><span class="more-member-1 hidden">, <a href="/tvurce/216062-ole-boisen/prehled/">Ole Boisen</a>, <a href="/tvurce/3111-lars-von-trier/prehled/">Lars von Trier</a>, <a href="/tvurce/200085-mette-munk-plum/prehled/">Mette Munk Plum</a>, <a href="/tvurce/33116-birte-tove/prehled/">Birte Tove</a>, <a href="/tvurce/204502-solbjorg-hojfeldt/prehled/">Solbjørg Højfeldt</a>, <a href="/tvurce/53200-claus-nissen/prehled/">Claus Nissen</a>, <a href="/tvurce/165418-birthe-neumann/prehled/">Birthe Neumann</a>, <a href="/tvurce/154394-benny-hansen/prehled/">Benny Hansen</a>, <a href="/tvurce/163780-lars-lunoe/prehled/">Lars Lunøe</a>, <a href="/tvurce/233318-dick-kayso/prehled/">Dick Kaysø</a>, <a href="/tvurce/7814-thomas-bo-larsen/prehled/">Thomas Bo Larsen</a>, <a href="/tvurce/207732-ole-dupont/prehled/">Ole Dupont</a>, <a href="/tvurce/232181-michael-moritzen/prehled/">Michael Moritzen</a>, <a href="/tvurce/219822-morten-eisner/prehled/">Morten Eisner</a>, <a href="/tvurce/157-stellan-skarsgard/prehled/">Stellan Skarsgård</a>, <a href="/tvurce/215879-kurt-ravn/prehled/">Kurt Ravn</a>, <a href="/tvurce/235315-anders-hove/prehled/">Anders Hove</a>, <a href="/tvurce/14684-philip-zanden/prehled/">Philip Zandén</a>, <a href="/tvurce/79992-jens-jorn-spottag/prehled/">Jens Jørn Spottag</a>, <a href="/tvurce/167982-torben-zeller/prehled/">Torben Zeller</a>, <a href="/tvurce/55800-troels-lyby/prehled/">Troels Lyby</a>, <a href="/tvurce/303716-mette-marckmann/prehled/">Mette Marckmann</a>, <a href="/tvurce/329084-bente-eskesen/prehled/">Bente Eskesen</a>, <a href="/tvurce/337871-finn-nielsen/prehled/">Finn Nielsen</a>, <a href="/tvurce/347973-henning-jensen/prehled/">Henning Jensen</a>, <a href="/tvurce/354418-tove-maes/prehled/">Tove Maës</a>, <a href="/tvurce/355110-paul-huttel/prehled/">Paul Hüttel</a>, <a href="/tvurce/329350-claus-flygare/prehled/">Claus Flygare</a>, <a href="/tvurce/279961-michelle-bjorn-andersen/prehled/">Michelle Bjørn-Andersen</a>, <a href="/tvurce/270175-jannie-faurschou/prehled/">Jannie Faurschou</a>, <a href="/tvurce/376281-peter-gilsfort/prehled/">Peter Gilsfort</a>, <a href="/tvurce/405615-louise-fribo/prehled/">Louise Fribo</a>, <a href="/tvurce/405632-nis-bank-mikkelsen/prehled/">Nis Bank-Mikkelsen</a>, <a href="/tvurce/414114-henrik-koefoed/prehled/">Henrik Koefoed</a>, <a href="/tvurce/427505-john-hahn-petersen/prehled/">John Hahn-Petersen</a>, <a href="/tvurce/429831-ole-emil-riisager/prehled/">Ole Emil Riisager</a>&nbsp;<span class="span-more-small" title="">(vypravěč)</span>, <a href="/tvurce/430042-julie-wieth/prehled/">Julie Wieth</a>, <a href="/tvurce/503015-soren-lenander/prehled/">Søren Lenander</a>, <a href="/tvurce/690448-gunnvor-nolsoe/prehled/">Gunnvør Nolsøe</a>, <a href="/tvurce/690494-bjarne-g-nielsen/prehled/">Bjarne G. Nielsen</a>, <a href="/tvurce/690510-steen-svare/prehled/">Steen Svare</a>, <a href="/tvurce/738122-gordon-kennedy/prehled/">Gordon Kennedy</a>, <a href="/tvurce/17947-lars-mikkelsen/prehled/">Lars Mikkelsen</a>, <a href="/tvurce/10502-nicolas-bro/prehled/">Nicolas Bro</a>, <a href="/tvurce/16772-tuva-novotny/prehled/">Tuva Novotny</a>, <a href="/tvurce/8265-nikolaj-lie-kaas/prehled/">Nikolaj Lie Kaas</a>, <a href="/tvurce/7409-mikael-persbrandt/prehled/">Mikael Persbrandt</a>, <a href="/tvurce/5785-bodil-jorgensen/prehled/">Bodil Jørgensen</a>, <a href="/tvurce/168108-ida-engvoll/prehled/">Ida Engvoll</a>, <a href="/tvurce/641782-birgitte-raaberg/prehled/">Birgitte Raaberg</a>, <a href="/tvurce/67701-david-dencik/prehled/">David Dencik</a>, <a href="/tvurce/145987-danica-curcic/prehled/">Danica Curcic</a>, <a href="/tvurce/5462-jens-albinus/prehled/">Jens Albinus</a>, <a href="/tvurce/337270-asta-kamma-august/prehled/">Asta Kamma August</a>, <a href="/tvurce/316892-anders-mossling/prehled/">Anders Mossling</a>, <a href="/tvurce/15667-cyron-melville/prehled/">Cyron Melville</a>, <a href="/tvurce/583302-helle-pilar-larsen/prehled/">Helle Pilar Larsen</a>, <a href="/tvurce/543065-palmi-gudmundsson/prehled/">Palmi Gudmundsson</a>, <a href="/tvurce/763770-peter-hartmann/prehled/">Peter Hartmann</a>, <a href="/tvurce/763792-tomas-stender/prehled/">Tomas Stender</a>, <a href="/tvurce/763801-cecilie-brask/prehled/">Cecilie Brask</a>, <a href="/tvurce/239-willem-dafoe/prehled/">Willem Dafoe</a>, <a href="/tvurce/49172-alexander-skarsgard/prehled/">Alexander Skarsgård</a>, <a href="/tvurce/774185-jasmine-junker/prehled/">Jasmine Junker</a>, <a href="/tvurce/307806-victoria-carmen-sonne/prehled/">Victoria Carmen Sonne</a>, <a href="/tvurce/200086-simon-sears/prehled/">Simon Sears</a>, <a href="/tvurce/285281-mads-reuther/prehled/">Mads Reuther</a>, <a href="/tvurce/634183-dorte-romer/prehled/">Dorte Rømer</a>, <a href="/tvurce/774187-kevin-k-yuven/prehled/">Kevin K. Yuven</a>, <a href="/tvurce/490107-marie-reuther/prehled/">Marie Reuther</a>, <a href="/tvurce/774186-rebecca-langley-jensen/prehled/">Rebecca Langley Jensen</a>, <a href="/tvurce/301451-michael-asmussen/prehled/">Michael Asmussen</a>, <a href="/tvurce/456436-imad-abul-foul/prehled/">Imad Abul-Foul</a>, <a href="/tvurce/276689-rasmus-botoft/prehled/">Rasmus Botoft</a>, <a href="/tvurce/330968-katrine-falkenberg/prehled/">Katrine Falkenberg</a>, <a href="/tvurce/541655-elias-eliot/prehled/">Elias Eliot</a>, <a href="/tvurce/70767-charlotte-sieling/prehled/">Charlotte Sieling</a>, <a href="/tvurce/142455-stig-hoffmeyer/prehled/">Stig Hoffmeyer</a>, <a href="/tvurce/774189-joakim-hoglund/prehled/">Joakim Höglund</a>, <a href="/tvurce/251621-lene-axelsen/prehled/">Lene Axelsen</a>, <a href="/tvurce/165528-mikkel-vadsholt/prehled/">Mikkel Vadsholt</a>, <a href="/tvurce/219686-lado-hadzic/prehled/">Lado Hadzic</a>, <a href="/tvurce/774190-fredrik-bock/prehled/">Fredrik Bock</a>, <a href="/tvurce/774192-jesper-sorensen/prehled/">Jesper Sørensen</a>, <a href="/tvurce/813435-henrik-fiig/prehled/">Henrik Fiig</a>, <a href="/tvurce/875165-annevig-schelde-ebbe/prehled/">Annevig Schelde Ebbe</a></span>&nbsp;<span class="span-more-small">(<a href="#" class="more" data-text="méně" data-show=".more-member-1">více</a>)</span>
+<a href="/tvurce/32989-ernst-hugo-jaregard/prehled/">Ernst-Hugo Järegård</a>, <a href="/tvurce/330359-kirsten-rolffes/prehled/">Kirsten Rolffes</a>, <a href="/tvurce/8608-soren-pilmark/prehled/">Søren Pilmark</a>, <a href="/tvurce/56972-ghita-norby/prehled/">Ghita Nørby</a>, <a href="/tvurce/204496-jens-okking/prehled/">Jens Okking</a>, <a href="/tvurce/70901-baard-owe/prehled/">Baard Owe</a>, <a href="/tvurce/33152-peter-mygind/prehled/">Peter Mygind</a>, <a href="/tvurce/2567-udo-kier/prehled/">Udo Kier</a>, <a href="/tvurce/154402-holger-perfort/prehled/">Holger Perfort</a>, <a href="/tvurce/16702-laura-christensen/prehled/">Laura Christensen</a><span class="more-member-1 hidden">, <a href="/tvurce/216062-ole-boisen/prehled/">Ole Boisen</a>, <a href="/tvurce/3111-lars-von-trier/prehled/">Lars von Trier</a>, <a href="/tvurce/200085-mette-munk-plum/prehled/">Mette Munk Plum</a>, <a href="/tvurce/33116-birte-tove/prehled/">Birte Tove</a>, <a href="/tvurce/204502-solbjorg-hojfeldt/prehled/">Solbjørg Højfeldt</a>, <a href="/tvurce/53200-claus-nissen/prehled/">Claus Nissen</a>, <a href="/tvurce/165418-birthe-neumann/prehled/">Birthe Neumann</a>, <a href="/tvurce/154394-benny-hansen/prehled/">Benny Hansen</a>, <a href="/tvurce/163780-lars-lunoe/prehled/">Lars Lunøe</a>, <a href="/tvurce/233318-dick-kayso/prehled/">Dick Kaysø</a>, <a href="/tvurce/7814-thomas-bo-larsen/prehled/">Thomas Bo Larsen</a>, <a href="/tvurce/207732-ole-dupont/prehled/">Ole Dupont</a>, <a href="/tvurce/232181-michael-moritzen/prehled/">Michael Moritzen</a>, <a href="/tvurce/219822-morten-eisner/prehled/">Morten Eisner</a>, <a href="/tvurce/157-stellan-skarsgard/prehled/">Stellan Skarsgård</a>, <a href="/tvurce/215879-kurt-ravn/prehled/">Kurt Ravn</a>, <a href="/tvurce/235315-anders-hove/prehled/">Anders Hove</a>, <a href="/tvurce/14684-philip-zanden/prehled/">Philip Zandén</a>, <a href="/tvurce/79992-jens-jorn-spottag/prehled/">Jens Jørn Spottag</a>, <a href="/tvurce/167982-torben-zeller/prehled/">Torben Zeller</a>, <a href="/tvurce/55800-troels-lyby/prehled/">Troels Lyby</a>, <a href="/tvurce/303716-mette-marckmann/prehled/">Mette Marckmann</a>, <a href="/tvurce/329084-bente-eskesen/prehled/">Bente Eskesen</a>, <a href="/tvurce/337871-finn-nielsen/prehled/">Finn Nielsen</a>, <a href="/tvurce/347973-henning-jensen/prehled/">Henning Jensen</a>, <a href="/tvurce/354418-tove-maes/prehled/">Tove Maës</a>, <a href="/tvurce/355110-paul-huttel/prehled/">Paul Hüttel</a>, <a href="/tvurce/329350-claus-flygare/prehled/">Claus Flygare</a>, <a href="/tvurce/279961-michelle-bjorn-andersen/prehled/">Michelle Bjørn-Andersen</a>, <a href="/tvurce/270175-jannie-faurschou/prehled/">Jannie Faurschou</a>, <a href="/tvurce/376281-peter-gilsfort/prehled/">Peter Gilsfort</a>, <a href="/tvurce/405615-louise-fribo/prehled/">Louise Fribo</a>, <a href="/tvurce/405632-nis-bank-mikkelsen/prehled/">Nis Bank-Mikkelsen</a>, <a href="/tvurce/414114-henrik-koefoed/prehled/">Henrik Koefoed</a>, <a href="/tvurce/427505-john-hahn-petersen/prehled/">John Hahn-Petersen</a>, <a href="/tvurce/429831-ole-emil-riisager/prehled/">Ole Emil Riisager</a>&nbsp;<span class="span-more-small" title="">(vypravěč)</span>, <a href="/tvurce/430042-julie-wieth/prehled/">Julie Wieth</a>, <a href="/tvurce/503015-soren-lenander/prehled/">Søren Lenander</a>, <a href="/tvurce/690448-gunnvor-nolsoe/prehled/">Gunnvør Nolsøe</a>, <a href="/tvurce/690494-bjarne-g-nielsen/prehled/">Bjarne G. Nielsen</a>, <a href="/tvurce/690510-steen-svare/prehled/">Steen Svare</a>, <a href="/tvurce/738122-gordon-kennedy/prehled/">Gordon Kennedy</a>, <a href="/tvurce/17947-lars-mikkelsen/prehled/">Lars Mikkelsen</a>, <a href="/tvurce/10502-nicolas-bro/prehled/">Nicolas Bro</a>, <a href="/tvurce/16772-tuva-novotny/prehled/">Tuva Novotny</a>, <a href="/tvurce/8265-nikolaj-lie-kaas/prehled/">Nikolaj Lie Kaas</a>, <a href="/tvurce/7409-mikael-persbrandt/prehled/">Mikael Persbrandt</a>, <a href="/tvurce/5785-bodil-jorgensen/prehled/">Bodil Jørgensen</a>, <a href="/tvurce/168108-ida-engvoll/prehled/">Ida Engvoll</a>, <a href="/tvurce/641782-birgitte-raaberg/prehled/">Birgitte Raaberg</a>, <a href="/tvurce/67701-david-dencik/prehled/">David Dencik</a>, <a href="/tvurce/145987-danica-curcic/prehled/">Danica Curcic</a>, <a href="/tvurce/5462-jens-albinus/prehled/">Jens Albinus</a>, <a href="/tvurce/337270-asta-kamma-august/prehled/">Asta Kamma August</a>, <a href="/tvurce/316892-anders-mossling/prehled/">Anders Mossling</a>, <a href="/tvurce/15667-cyron-melville/prehled/">Cyron Melville</a>, <a href="/tvurce/583302-helle-pilar-larsen/prehled/">Helle Pilar Larsen</a>, <a href="/tvurce/543065-palmi-gudmundsson/prehled/">Palmi Gudmundsson</a>, <a href="/tvurce/763770-peter-hartmann/prehled/">Peter Hartmann</a>, <a href="/tvurce/763792-tomas-stender/prehled/">Tomas Stender</a>, <a href="/tvurce/763801-cecilie-brask/prehled/">Cecilie Brask</a>, <a href="/tvurce/239-willem-dafoe/prehled/">Willem Dafoe</a>, <a href="/tvurce/49172-alexander-skarsgard/prehled/">Alexander Skarsgård</a>, <a href="/tvurce/774185-jasmine-junker/prehled/">Jasmine Junker</a>, <a href="/tvurce/307806-victoria-carmen-sonne/prehled/">Victoria Carmen Sonne</a>, <a href="/tvurce/200086-simon-sears/prehled/">Simon Sears</a>, <a href="/tvurce/285281-mads-reuther/prehled/">Mads Reuther</a>, <a href="/tvurce/634183-dorte-romer/prehled/">Dorte Rømer</a>, <a href="/tvurce/774187-kevin-k-yuven/prehled/">Kevin K. Yuven</a>, <a href="/tvurce/490107-marie-reuther/prehled/">Marie Reuther</a>, <a href="/tvurce/774186-rebecca-langley-jensen/prehled/">Rebecca Langley Jensen</a>, <a href="/tvurce/301451-michael-asmussen/prehled/">Michael Asmussen</a>, <a href="/tvurce/456436-imad-abul-foul/prehled/">Imad Abul-Foul</a>, <a href="/tvurce/276689-rasmus-botoft/prehled/">Rasmus Botoft</a>, <a href="/tvurce/330968-katrine-falkenberg/prehled/">Katrine Falkenberg</a>, <a href="/tvurce/541655-elias-eliot/prehled/">Elias Eliot</a>, <a href="/tvurce/70767-charlotte-sieling/prehled/">Charlotte Sieling</a>, <a href="/tvurce/142455-stig-hoffmeyer/prehled/">Stig Hoffmeyer</a>, <a href="/tvurce/774189-joakim-hoglund/prehled/">Joakim Höglund</a>, <a href="/tvurce/251621-lene-axelsen/prehled/">Lene Axelsen</a>, <a href="/tvurce/165528-mikkel-vadsholt/prehled/">Mikkel Vadsholt</a>, <a href="/tvurce/219686-lado-hadzic/prehled/">Lado Hadzic</a>, <a href="/tvurce/774190-fredrik-bock/prehled/">Fredrik Bock</a>, <a href="/tvurce/774192-jesper-sorensen/prehled/">Jesper Sørensen</a>, <a href="/tvurce/813435-henrik-fiig/prehled/">Henrik Fiig</a>, <a href="/tvurce/875165-annevig-schelde-ebbe/prehled/">Annevig Schelde Ebbe</a>, <a href="/tvurce/671296-michael-phillip-simpson/prehled/">Michael Phillip Simpson</a></span>&nbsp;<span class="span-more-small">(<a href="javascript:void(0);" class="more" data-text="méně" data-show=".more-member-1">více</a>)</span>
 							</div>
 							<div class="other-professions hidden">
 								<h4>Produkce:</h4>
 
 								<span>
-									<a href="/tvurce/374473-bo-lindquist/prehled/">Bo Lindquist</a>,
+									<a href="/tvurce/374473-bo-lindquist/prehled/">Bo Lindquist</a>, 
 									<a href="/tvurce/140118-louise-vesth/prehled/">Louise Vesth</a>
 								</span>
 							</div>
@@ -579,11 +751,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 								<h4>Střih:</h4>
 
 								<span>
-									<a href="/tvurce/45712-jacob-thuesen/prehled/">Jacob Thuesen</a>,
-									<a href="/tvurce/297955-molly-malene-stensgaard/prehled/">Molly Malene Stensgaard</a>,
-									<a href="/tvurce/175808-pernille-bech-christensen/prehled/">Pernille Bech Christensen</a>,
-									<a href="/tvurce/87935-jacob-secher-schulsinger/prehled/">Jacob Secher Schulsinger</a>,
-									<a href="/tvurce/329367-my-thordal/prehled/">My Thordal</a>,
+									<a href="/tvurce/45712-jacob-thuesen/prehled/">Jacob Thuesen</a>, 
+									<a href="/tvurce/297955-molly-malene-stensgaard/prehled/">Molly Malene Stensgaard</a>, 
+									<a href="/tvurce/175808-pernille-bech-christensen/prehled/">Pernille Bech Christensen</a>, 
+									<a href="/tvurce/87935-jacob-secher-schulsinger/prehled/">Jacob Secher Schulsinger</a>, 
+									<a href="/tvurce/329367-my-thordal/prehled/">My Thordal</a>, 
 									<a href="/tvurce/185578-olivier-bugge-coutte/prehled/">Olivier Bugge Coutté</a>
 								</span>
 							</div>
@@ -591,7 +763,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 								<h4>Zvuk:</h4>
 
 								<span>
-									<a href="/tvurce/657211-per-streit/prehled/">Per Streit</a>,
+									<a href="/tvurce/657211-per-streit/prehled/">Per Streit</a>, 
 									<a href="/tvurce/335572-robert-leib/prehled/">Robert Leib</a>
 								</span>
 							</div>
@@ -599,7 +771,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 								<h4>Scénografie:</h4>
 
 								<span>
-									<a href="/tvurce/310289-jette-lehmann/prehled/">Jette Lehmann</a>,
+									<a href="/tvurce/310289-jette-lehmann/prehled/">Jette Lehmann</a>, 
 									<a href="/tvurce/774188-cecilia-hellner/prehled/">Cecilia Hellner</a>
 								</span>
 							</div>
@@ -607,10 +779,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 								<h4>Masky:</h4>
 
 								<span>
-									<a href="/tvurce/337747-birthe-lyngsoe/prehled/">Birthe Lyngsøe</a>,
-									<a href="/tvurce/337234-jeanet-keil/prehled/">Jeanet Keil</a>,
-									<a href="/tvurce/658282-kim-olsson/prehled/">Kim Olsson</a>,
-									<a href="/tvurce/467172-love-larson/prehled/">Love Larson</a>,
+									<a href="/tvurce/337747-birthe-lyngsoe/prehled/">Birthe Lyngsøe</a>, 
+									<a href="/tvurce/337234-jeanet-keil/prehled/">Jeanet Keil</a>, 
+									<a href="/tvurce/658282-kim-olsson/prehled/">Kim Olsson</a>, 
+									<a href="/tvurce/467172-love-larson/prehled/">Love Larson</a>, 
 									<a href="/tvurce/852006-lis-olsson/prehled/">Lis Olsson</a>
 								</span>
 							</div>
@@ -618,73 +790,85 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 								<h4>Kostýmy:</h4>
 
 								<span>
-									<a href="/tvurce/427566-annelise-bailey/prehled/">Annelise Bailey</a>,
+									<a href="/tvurce/427566-annelise-bailey/prehled/">Annelise Bailey</a>, 
 									<a href="/tvurce/934416-clara-nystrom/prehled/">Clara Nyström</a>
 								</span>
 							</div>
-								<span class="span-more-small">(<a href="#" class="more" data-text="méně profesí" data-show=".other-professions">další profese</a>)</span>
+								<span class="span-more-small">(<a href="javascript:void(0);" class="more" data-text="méně profesí" data-show=".other-professions">další profese</a>)</span>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 
-		<div id="vod-items" class="box box-minimal box-vod">
-			<div class="box-film-vod">
-				<h3>VOD <span class="count">(1)</span></h3>
-				<div class="box-film-vod-services">
-					<span class="vod-badge">
-						<a href="https://kviff.tv/katalog/kralovstvi-cast-prvni-nenebeske-zastupy"data-no-ads class="vod-badge-link vod-logo-kvifftv" data-ga-event="vod-service-kviff-tv|film|vod" title="KVIFF.TV">
-							<i></i>KVIFF.TV
-						</a>
-					</span>
-				</div>
-			</div>
-			<div class="box-film-vod-more hidden">
-				(<a href="javascript:void(0);">více</a>)
-			</div>
-		</div>
 
-
-
-	<section class="box box-minimal">
-		<div class="box-header">
+	<section class="updated-box updated-box-minimal">
+		<div class="updated-box-header">
 			<h3>
-				Série<span class="count">(3)</span> / Epizody<span class="count">(13)</span>
+				Série<span class="count">(3)</span> <span class="bullet bullet-h2"></span> <a href="/film/71924-kralovstvi/epizody/">Epizody</a><span class="count">(13)</span>
 			</h3>
 		</div>
-		<div class="box-content box-content-padding">
+		<div class="updated-box-content">
 			<div class="film-episodes-list">
 				<ul>
 					<li>
-<h3 class="film-title"><i class="icon icon-rounded-square red"></i><a href="/film/71924-kralovstvi/614326-serie-1/prehled/" class="film-title-name">Série 1</a> <span class="film-title-info"><span class="info">(1994)</span> - 4 epizody</span></h3>					</li>
+<h3 class="film-title-inline"><i class="icon icon-rounded-square red"></i><a href="/film/71924-kralovstvi/614326-serie-1/prehled/" class="film-title-name">Série 1</a><span class="film-title-info"><span class="bullet"></span><span class="info">1994</span><span class="bullet"></span>4 epizody</span></h3>					</li>
 					<li>
-<h3 class="film-title"><i class="icon icon-rounded-square red"></i><a href="/film/71924-kralovstvi/71923-serie-2/prehled/" class="film-title-name">Série 2</a> <span class="film-title-info"><span class="info">(1997)</span> - 4 epizody</span></h3>					</li>
+<h3 class="film-title-inline"><i class="icon icon-rounded-square red"></i><a href="/film/71924-kralovstvi/71923-serie-2/prehled/" class="film-title-name">Série 2</a><span class="film-title-info"><span class="bullet"></span><span class="info">1997</span><span class="bullet"></span>4 epizody</span></h3>					</li>
 					<li>
-<h3 class="film-title"><i class="icon icon-rounded-square red"></i><a href="/film/71924-kralovstvi/1228437-exodus/prehled/" class="film-title-name">Exodus</a> <span class="film-title-info"><span class="info">(2022)</span> - 5 epizod</span></h3>					</li>
+<h3 class="film-title-inline"><i class="icon icon-rounded-square red"></i><a href="/film/71924-kralovstvi/1228437-exodus/prehled/" class="film-title-name">Exodus</a><span class="film-title-info"><span class="bullet"></span><span class="info">2022</span><span class="bullet"></span>5 epizod</span></h3>					</li>
 				</ul>
 			</div>
 		</div>
 	</section>
 
-	<section class="box box-minimal">
-		<div class="box-header">
+		<div class="updated-box">
+			<header class="updated-box-header">
+				<h2>Kde sledovat</h2>
+
+			</header>
+			<div class="updated-box-content">
+
+				<div id="vod-items" class="film-vod-list" data-onboarding-step-7="false">
+					<div class="box-film-vod">
+						<h3>VOD <span class="count">(2)</span></h3>
+						<div class="box-film-vod-services">
+							<span class="vod-badge">
+								<a href="https://www.lepsi.tv/top_tv/serial/kralovstvi-cast-prvni-online?utm_source=csfd&amp;utm_content=csfd"data-no-ads class="vod-badge-link vod-logo-lepsitv" data-ga-event="vod-service-lepsi-tv|film|vod" title="Lepší.TV">
+									<i></i>Lepší.TV
+								</a>
+							</span>
+							<span class="vod-badge">
+								<a href="https://kviff.tv/katalog/kralovstvi-cast-prvni-nenebeske-zastupy"data-no-ads class="vod-badge-link vod-logo-kvifftv" data-ga-event="vod-service-kviff-tv|film|vod" title="KVIFF.TV">
+									<i></i>KVIFF.TV
+								</a>
+							</span>
+						</div>
+					</div>
+					<div class="box-film-vod-more hidden">
+						<a href="javascript:void(0);">více</a>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+	<section class="updated-box updated-box-minimal">
+		<div class="updated-box-header">
 			<h3>
 				Obsahy<span class="count">(2)</span>
-
-
 			</h3>
 			<div class="box-header-action">
 				<a href="#" id="all-plots" data-state="closed" data-state-text="skrýt obsahy" class="more">zobrazit všechny obsahy</a>
 			</div>
 		</div>
-		<div class="box-content box-content-padding">
+		<div class="updated-box-content">
 			<div class="body--plots">
 				<div class="plot-full hidden">
 
 
 		<p>
-			V době, kdy Netflix ještě neexistoval ani jako půjčovna DVD, natočil režisér <a href="https://www.csfd.cz/tvurce/3111-lars-von-trier/">Lars von Trier</a> televizní sérii <em>Království</em>, odehrávající se v útrobách kodaňského špitálu postaveného na místě, kde kdysi byly jen mokřiny a stará bělidla. Lékaři zde dennodenně zápolí s limity medicíny i vlastními kolegy, Švédové tu proklínají Dány a záhady a hrůzy se zde mísí s nadsázkou a humorem. Televizní série, proslavená svými sépiové tóny a chóry umývačů nádobí, se postupem času stala kultovní a zařadila se mezi nejvýznamnější díla quality TV.
+			V době, kdy Netflix ještě neexistoval ani jako půjčovna DVD, natočil režisér <a href="https://www.csfd.cz/tvurce/3111-lars-von-trier/">Lars von Trier</a> televizní sérii <em>Království</em>, odehrávající se v útrobách kodaňského špitálu postaveného na místě, kde kdysi byly jen mokřiny a stará bělidla. Lékaři zde dennodenně zápolí s limity medicíny i vlastními kolegy, Švédové tu proklínají Dány a záhady a hrůzy se zde mísí s nadsázkou a humorem. Televizní série, proslavená svými sépiové tóny a chóry umývačů nádobí, se postupem času stala kultovní a zařadila se mezi nejvýznamnější díla quality TV.
 
 		<em class="span-more-small">
 					(<a href="https://kviff.tv">KVIFF.TV</a>)
@@ -695,13 +879,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
 		<p>
-			V době, kdy Netflix ještě neexistoval ani jako půjčovna DVD, natočil režisér <a href="https://www.csfd.cz/tvurce/3111-lars-von-trier/">Lars von Trier</a> televizní sérii <em>Království</em>, odehrávající se v útrobách kodaňského špitálu postaveného na místě, kde kdysi byly jen mokřiny a stará bělidla. Lékaři zde dennodenně zápolí s limity medicíny i vlastními kolegy, Švédové tu proklínají Dány a záhady a hrůzy se zde mísí s nadsázkou a humorem. Televizní série, proslavená svými sépiové tóny a chóry umývačů nádobí, se postupem času stala kultovní a zařadila se mezi nejvýznamnější díla quality TV.
+			V době, kdy Netflix ještě neexistoval ani jako půjčovna DVD, natočil režisér <a href="https://www.csfd.cz/tvurce/3111-lars-von-trier/">Lars von Trier</a> televizní sérii <em>Království</em>, odehrávající se v útrobách kodaňského špitálu postaveného na místě, kde kdysi byly jen mokřiny a stará bělidla. Lékaři zde dennodenně zápolí s limity medicíny i vlastními kolegy, Švédové tu proklínají Dány a záhady a hrůzy se zde mísí s nadsázkou a humorem. Televizní série, proslavená svými sépiové tóny a chóry umývačů nádobí, se postupem času stala kultovní a zařadila se mezi nejvýznamnější díla quality TV.
 
 		<em class="span-more-small">
 					(<a href="https://kviff.tv">KVIFF.TV</a>)
 		</em>
 		</p>
-					<span class="span-more-small">(<a href="#" class="plot-preview-more" data-state="closed" data-hide-preserve=".plot-preview" data-show-preserve=".plot-full" data-text="méně" class="more">více</a>)</span>
+					<span class="span-more-small"><a href="#" class="plot-preview-more" data-state="closed" data-hide-preserve=".plot-preview" data-show-preserve=".plot-full" data-text="méně" class="more">více</a></span>
 				</div>
 				<div class="plots hidden">
 						<div class="plots-item">
@@ -722,7 +906,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
 
-		<div class="tabs">
+		<div class="tabs updated-tabs">
 <nav class="tab-nav tab-nav-count-11">
 	<ul class="tab-nav-list">
 		<li class="tab-nav-item active">
@@ -847,22 +1031,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
 <div class="tab-content movie-profile--tab-default">
-	<section class="box box-video-overview box-borderless">
-			<header class="box-header">
+	<section class="updated-box box-video-overview box-borderless">
+			<header class="updated-box-header updated-box-header-nowrap">
 				<h2>Videa <span class="count">(5)</span></h2>
-				<div class="box-header-action">
+				<div class="updated-box-header-action">
 					<a href="/film/71924-kralovstvi/videa/" class="button">VÍCE</a>
 				</div>
 			</header>
-<div id="branding_video_player" class="ad-pmg"></div>
-			<div class="box-content">
+			<div class="updated-box-content">
 				<div class="box box-media">
 					<figure class="box-video preview" data-autoplay-video>
 <div class="box-video-content">
 	<a href="javascript:void(0);" class="box-video-preview disabled" data-video-player-initialize="video-player-2" data-video-player-playlist-start="0" data-video-player-autoplay="" data-video-player-translations-url="/api/video-player/translations/">
 			<picture>
-				<source media="(max-width: 650px)" srcset="//image.pmgstatic.com/cache/resized/w360/files/images/film/video/preview/166/763/166763692_7f07b8.jpg 1x, //image.pmgstatic.com/cache/resized/w720/files/images/film/video/preview/166/763/166763692_7f07b8.jpg 2x, //image.pmgstatic.com/cache/resized/w1080/files/images/film/video/preview/166/763/166763692_7f07b8.jpg 3x" />
-				<img class="prev-img" src="//image.pmgstatic.com/cache/resized/w663/files/images/film/video/preview/166/763/166763692_7f07b8.jpg" loading="lazy" width="663" height="372" srcset="//image.pmgstatic.com/cache/resized/w663/files/images/film/video/preview/166/763/166763692_7f07b8.jpg 1x, //image.pmgstatic.com/cache/resized/w1326/files/images/film/video/preview/166/763/166763692_7f07b8.jpg 2x" alt="Trailer 2" />
+				<source media="(max-width: 650px)" srcset="//image.pmgstatic.com/cache/resized/w360/files/images/film/video/preview/168/485/168485572_rwzey6.jpg 1x, //image.pmgstatic.com/cache/resized/w720/files/images/film/video/preview/168/485/168485572_rwzey6.jpg 2x, //image.pmgstatic.com/cache/resized/w1080/files/images/film/video/preview/168/485/168485572_rwzey6.jpg 3x" />
+				<img class="prev-img" src="//image.pmgstatic.com/cache/resized/w663/files/images/film/video/preview/168/485/168485572_rwzey6.jpg" loading="lazy" width="663" height="372" srcset="//image.pmgstatic.com/cache/resized/w663/files/images/film/video/preview/168/485/168485572_rwzey6.jpg 1x, //image.pmgstatic.com/cache/resized/w1326/files/images/film/video/preview/168/485/168485572_rwzey6.jpg 2x" alt="Trailer 3" />
 			</picture>
 		<span class="play-button"><i class="icon icon-play-simple"></i></span>
 	</a>
@@ -876,12 +1059,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			playsinline
 			width="637"
 			height="360"
-
+			
 			data-video-url="/api/video-player/?data=__data__"
-			data-videos="[&#123;&quot;duration&quot;:129,&quot;copyright&quot;:&quot;KVIFF.TV&quot;,&quot;request_data&quot;:&quot;rlW2nJEyo0yxVwbkAGp4ZQZmBQDfVaA1LaEcqTkyGTShM3IuM2IWMUZvByfkYQWqYPW0o2gyovV6VzVlAmpmAQAuZJZ1MwZ0BJSvLGIzBGN4MJZ5AGyuMQSxLGWzBGHkAGVvsD&quot;},&#123;&quot;duration&quot;:135,&quot;copyright&quot;:&quot;MUBI&quot;,&quot;request_data&quot;:&quot;rlW2nJEyo0yxVwbkAGp4ZQVlBQtfVaA1LaEcqTkyGTShM3IuM2IWMUZvByfkYQWqYPW0o2gyovV6VwRjBGH2ZQAxATEzLmVkZQAyAQquAwR5AmZ2AwN4ZQyzAQH2MJVlBQtvsD&quot;},&#123;&quot;duration&quot;:103,&quot;copyright&quot;:&quot;Synca&quot;,&quot;request_data&quot;:&quot;rlW2nJEyo0yxVwbkAGp4AwR5AQDfVaA1LaEcqTkyGTShM3IuM2IWMUZvByfkYQWqYPW0o2gyovV6VwHkLmVmMzZkLwMuLwx1LwquL2WyAQEvAGtlAmZ4MGExAwMwMTEyLzRvsD&quot;}]"
-			data-recommended-videos-url="/api/video-player/recommended-videos/?videoId=157861944"
+			data-videos="[&#123;&quot;duration&quot;:113,&quot;copyright&quot;:&quot;Plaion Pictures&quot;,&quot;request_data&quot;:&quot;rlW2nJEyo0yxVwbkAGp4AQZmAGDfVaA1LaEcqTkyGTShM3IuM2IWMUZvByfkYQWqYPW0o2gyovV6VwxkBJWyMQAyAzD0ZQZ5LmAvMwD0AQuyMJMvAQD4Awx3BQHjA2RjZQZvsD&quot;},&#123;&quot;duration&quot;:135,&quot;copyright&quot;:&quot;MUBI&quot;,&quot;request_data&quot;:&quot;rlW2nJEyo0yxVwbkAGp4ZQVlBQtfVaA1LaEcqTkyGTShM3IuM2IWMUZvByfkYQWqYPW0o2gyovV6VzZ2MGSwZ2AxAwHkMQRkZGZ5LwyuBGt3ZJL4ZQAvBTH0L2SyL2V4MzZvsD&quot;},&#123;&quot;duration&quot;:129,&quot;copyright&quot;:&quot;KVIFF.TV&quot;,&quot;request_data&quot;:&quot;rlW2nJEyo0yxVwbkAGp4ZQZmBQDfVaA1LaEcqTkyGTShM3IuM2IWMUZvByfkYQWqYPW0o2gyovV6VzLmMQWuA2R0Z2WyZwEzZJZ0LJRmZwp4LGp4BGIwLwV2ZmEvAQNmZmtvsD&quot;}]"
+			data-recommended-videos-url="/api/video-player/recommended-videos/?videoId=157803384"
 			data-recommended-autoplay
-
+			
 		>
 			<p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
 		</video>
@@ -892,70 +1075,66 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			</div>
 	</section>
 
-	<section class="box box-reviews">
-		<header class="box-header">
+	<section class="updated-box box-reviews">
+		<header class="updated-box-header updated-box-header-nowrap">
 			<h2>Recenze <span class="count">(248)</span></h2>
-			<div class="box-header-action">
+			<div class="updated-box-header-action">
 				<a href="/film/71924-kralovstvi/recenze/" class="button">VÍCE</a>
 			</div>
 		</header>
-		<div class="box-content">
-	<article id="review-463666" class="article article-white" data-film-review>
-		<div class="article-content article-content-justify article-review">
-			<header class="article-header article-header-review">
-				<div class="article-header-review-name">
-<h3 class="user-title"><a href="/uzivatel/2538-b-shop/prehled/" class="user-title-name">B!shop</a>&nbsp;<span class="user-title-info"><span class="star-rating"><span class="stars stars-5"></span></span></span></h3>				</div>
-				<div class="article-header-review-action">
-					<a href="/uzivatel/2538-b-shop/recenze/">všechny recenze uživatele</a>
-					(<a href="/film/71924-kralovstvi/recenze/k-serialu/?userId=2538">k tomuto seriálu</a>)
-					<a href="/film/71924-kralovstvi/recenze/?review=463666" class="permanent-link" title="Trvalý odkaz: /film/71924-kralovstvi/recenze/?review=463666"><i class="icon icon-permalink"></i></a>
-				</div>
-			</header>
+		<div class="updated-box-content">
+	<article id="review-8741134" class="article article-review article-content-justify" data-film-review>
+		<header class="article-header article-header-review">
+			<div class="article-header-review-name">
+<h3 class="user-title"><a href="/uzivatel/131749-tomtomtoma/prehled/" class="user-title-name">tomtomtoma</a>&nbsp;<span class="user-title-info"><span class="star-rating"><span class="stars stars-4"></span></span></span></h3>			</div>
+			<div class="article-header-review-action">
+				<a href="/uzivatel/131749-tomtomtoma/recenze/">všechny recenze uživatele</a>
+				(<a href="/film/71924-kralovstvi/recenze/k-serialu/?userId=131749">k tomuto seriálu</a>)
+				<a href="/film/71924-kralovstvi/recenze/?review=8741134" class="permanent-link" title="Trvalý odkaz: /film/71924-kralovstvi/recenze/?review=8741134"><i class="icon icon-permalink"></i></a>
+			</div>
+		</header>
 
-
-				<p>
+		
+			<p>
 <span class="comment" data-film-review-content>
- Naprosto neskutecne atmosfericka zalezitost. Prolinaj se tady tri linie, vyzkum jater, reseni obvineni primare a babka hledajici duchy a do toho samozrejme ruzny vztahy mezi doktorama. Takze az na ty duchy to vypada jak normalni nemocnici serial. Jenze uz uvodni atmosfericky titulky (ackoliv jejich vyznam pozdejc v serialu je nulovej) a uvodni husta pisnicka davaj tusit, ze tady je neco jinak. Jednak je celej serial hozenej do hneda (ne hovna, ale filtr), pak tu je skoro az dokumentarni kamera a pro me, az na Uda, neznamy herci. To vse dohromady vytvari tak neskutecne hustou, mrazivou, mysteriozni, napinavou, syrovou a misty skoro az zlou atmosferu, o ktery se rade hororu muze jen zdat. A to tenhle serial pritom ciste horor neni. No a misty, skutecne jen minimalne, tu je nakej cernohumornej vtipek. Jakmile jsem si behem prvniho dilu zvyk na postavy, danskou rec, styl natoceni a zacal se trochu orientovat v pribehu, tak od ty doby me serial neskutecne zaujal a nemoh sem od nej odtrhnout oci.
+ Příjemně zábavné ironické až cynické dílo z nemocničního prostředí a s dávkou mystiky. Každá osoba směřuje za svým cílem, ale ironií osudu se výsledek jejich snažení zvrhává. Švédský doktor Stig Helmer (dobrý Ernst-Hugo Järegård) nenávidí zemi svého působiště, Dánsko, snaží se zamést stopy svého profesního selhání, aby se nakonec přiklonil k haitskému woodoo. Stará okultistka Sigrid Drusse (Kirsten Rolffes) pátrá po duchu malé Mary Krüger (Annevig Schelde Ebbe), aby jí dopřála klidu, ale zaříkávání se nepovede. Bodrý ředitel oddělení Einar Moesgaard (Holger Juul Hansen) se snaží vylepšit své oddělení a komunikaci s pacienty. Návštěva z ministerstva však nevychází z údivu ze všech podivných aktivit. Doktor Jørgen Krogshøj (Søren Pilmark) sbírá materiály pochybení na všechny v nemocnici, aby je v patřičném okamžiku mohl použít ve svůj prospěch vydíráním. Děsí ho jeho nová láska, doktorka Judith Petersen (Birgitte Raaberg), která otěhotní se zlým duchem, aby se mohl zhmotnit do současného světa. Doktorka Rigmor Mortensen (Ghita Nørby) se snaží usadit a spolužít se Stigem, ale její ženská hrdost je pokořena. Zřízenec Bulder Harly Drusse (Jens Okking) pomáhá své matce při hledání ducha. Doktor Palle Bondo (Baard Owe) si při snaze o získání zhoubného hematomu, nechává voperovat nakažená játra, aby mu nakonec zůstala. Morten 'Mogge' Moesgaard (Peter Mygind), ředitelův syn a medik, se snaží dostat do postele vedoucí doktorku spánkové laboratoře Camillu (Solbjørg Højfeldt), která se nakonec nechává vyprovokovat jeho mokrým snem. A do toho zasahuje tajemná elitářská sekta doktorů Lóže. Neuzavřený konec se škodolibostí postihuje všechny zúčastněné. Příjemné, hravé, a trochu morbidní.
 </span>
 
 
 
-					<span class="review-date info">
-						(<time>02.04.2008</time>)
-					</span>
-				</p>
+				<span class="review-date info">
+					(<time>21.01.2012</time>)
+				</span>
+			</p>
+		
 
-
-		</div>
 	</article>
 
-	<article id="review-325516" class="article article-white" data-film-review>
-		<div class="article-content article-content-justify article-review">
-			<header class="article-header article-header-review">
-				<div class="article-header-review-name">
-<h3 class="user-title"><a href="/uzivatel/36603-ad-k/prehled/" class="user-title-name">ad-k</a>&nbsp;<span class="user-title-info"><span class="star-rating"><span class="stars stars-5"></span></span></span></h3>				</div>
-				<div class="article-header-review-action">
-					<a href="/uzivatel/36603-ad-k/recenze/">všechny recenze uživatele</a>
+	<article id="review-9073984" class="article article-review article-content-justify" data-film-review>
+		<header class="article-header article-header-review">
+			<div class="article-header-review-name">
+<h3 class="user-title"><a href="/uzivatel/370711-kaferano/prehled/" class="user-title-name">Kaferano</a>&nbsp;<span class="user-title-info"><span class="star-rating"><span class="stars stars-5"></span></span></span></h3>			</div>
+			<div class="article-header-review-action">
+				<a href="/uzivatel/370711-kaferano/recenze/">všechny recenze uživatele</a>
+				
+				<a href="/film/71924-kralovstvi/recenze/?review=9073984" class="permanent-link" title="Trvalý odkaz: /film/71924-kralovstvi/recenze/?review=9073984"><i class="icon icon-permalink"></i></a>
+			</div>
+		</header>
 
-					<a href="/film/71924-kralovstvi/recenze/?review=325516" class="permanent-link" title="Trvalý odkaz: /film/71924-kralovstvi/recenze/?review=325516"><i class="icon icon-permalink"></i></a>
-				</div>
-			</header>
-
-
-				<p>
+		
+			<p>
 <span class="comment" data-film-review-content>
- Jedna z nejlepších televizních sérií, jaké kdy byly natočené. A proč vlastně ten seriál z nemocničního prostředí (ano, něco na způsob Sanitky, Nemocnice na kraji města...) tak vyzdvihovat? Čím že to "Království" ve skutečnosti je? Bizarní společností, obskurním nemocničním zařízením se svými specifickými zřízenci, pacienty... probouzí se temnota, navrací zlo, otevírá brána do Království, umývači nádobí věští konec světa, glosují dění kolem a Udo Kier roste víc a víc do krásy... už maličko chápete? Nadužití rudo-hnědých filtrů, ruční kamera, humor, napětí i strach. Šílené nápady, dánsko-švédská nevraživost, výborná psychologie postav a především špitál, kam "váží" cestu i pacienti se zástavou srdce, mozkovou mrtvicí a sennou rýmou zároveň. Několik paralel s Twin Peaks (aneb kampaň za čerstvý vzduch aka zachraňte Ghostwood, postava Moesgaarda = Benjamin Horn, neuvěřitelný psychiatr s netradičními metodami, kombinace absurdity / vtipu se strachem / mystériem atd.), ale především originální dílo dánské kinematografie, vrstevnaté v možných náhledech, směšné i děsivé zároveň. Dílů není příliš, ovšem zajímavých událostí i postav moře (a v divákovi stále budí zvědavost, což beru jako ohromné seriálové plus). Nechte se utopit v labyrintu nemocničních chodeb a následně povozit sanitkou bez řidiče. Jste-li odvážní... │<strong>100</strong>%
+ Nejsem seriálový divák a Riget jsem musela vidět najednou vcelku. Tolik mě to vtáhlo a po seriálu Twin Peaks opět splnilo moji představu o propojení humoru a duchařiny. To jediné mi připomínalo Lynche, jinak Riget považuju za jedinečný. Severský humor už úspěšně prozkoumávám dál a to, co se dělo ve špitále byl extrakt dosud neviděné absurdity. Odvážné, zábavné, napínavé...Dansk jävlar!!!!!!!! :-)))))
 </span>
 
 
 
-					<span class="review-date info">
-						(<time>25.07.2007</time>)
-					</span>
-				</p>
+				<span class="review-date info">
+					(<time>20.10.2012</time>)
+				</span>
+			</p>
+		
 
-
-		</div>
 		<div class="box box-banner-mobile box-banner-mobile-filmreviews">
 			<p class="box-banner-text">Reklama</p>
 <div id="mobile_square_1" class="ad-pmg" style="height: 300px;"></div>
@@ -965,177 +1144,138 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 		<div class="article article-white article-native article-native-long article-native-onlydesktop">
 <div id="native_long_1" class="ad-pmg" style="height: 115px;"></div>
 		</div>
-	<article id="review-8545591" class="article article-white" data-film-review>
-		<div class="article-content article-content-justify article-review">
-			<header class="article-header article-header-review">
-				<div class="article-header-review-name">
-<h3 class="user-title"><a href="/uzivatel/159338-kagemush/prehled/" class="user-title-name">kagemush</a>&nbsp;<span class="user-title-info"><span class="star-rating"><span class="stars stars-5"></span></span></span></h3>				</div>
-				<div class="article-header-review-action">
-					<a href="/uzivatel/159338-kagemush/recenze/">všechny recenze uživatele</a>
+	<article id="review-117413" class="article article-review article-content-justify" data-film-review>
+		<header class="article-header article-header-review">
+			<div class="article-header-review-name">
+<h3 class="user-title"><a href="/uzivatel/13756-tombac/prehled/" class="user-title-name">tombac</a>&nbsp;<span class="user-title-info"><span class="star-rating"><span class="stars stars-5"></span></span></span></h3>			</div>
+			<div class="article-header-review-action">
+				<a href="/uzivatel/13756-tombac/recenze/">všechny recenze uživatele</a>
+				
+				<a href="/film/71924-kralovstvi/recenze/?review=117413" class="permanent-link" title="Trvalý odkaz: /film/71924-kralovstvi/recenze/?review=117413"><i class="icon icon-permalink"></i></a>
+			</div>
+		</header>
 
-					<a href="/film/71924-kralovstvi/recenze/?review=8545591" class="permanent-link" title="Trvalý odkaz: /film/71924-kralovstvi/recenze/?review=8545591"><i class="icon icon-permalink"></i></a>
-				</div>
-			</header>
-
-
-				<p>
+		
+			<p>
 <span class="comment" data-film-review-content>
- Především je to sranda.Teda sranda alá von.Spůsob jakým Trier baví sebe a všechny ostatní kteří o to alespoň trochu stojí mi stojí za komentář. Celý tenhle projekt není nic jiného než uštěpačná fraška reality šou (a když už nějaký to drámo nebo horo/ro/vání (hlavně čtvrtý díl) -tak je vždy téměř okamžitě smeteno nějakým brutálním frkem) sice s jednoduchou osnovou, ale neskutečně vybroušenými všemi možnými odbočkami a formou která se neomrzí ani po šestsetšedesátýmšestým zkouknutí.
+ Brilantní a neskutečně ujetý a originální seriál o jedné "hodně zvláštní" nemocnici, kde není vše, jak se zdá, a jejích zajímavých obyvatelích. Ve svém pomyslném žebříčku oblíbených hraných seriálů z dob, kdy jsem ještě koukal na TV, bych ho řadil na první místo před Twin Peaks a první dvě řady Akt-X. Každý díl jsem vyloženě hltal a výborně se u něho bavil. Dvojku mentálně postižených, v kuchyni vtipně glosujících události v nemocnici, jsem si hned zamiloval. Bohužel mi nebylo přáno zhlédnout poslední dvě části, takže doteď nevím, jak to dopadlo s Bratříčkem a tou ráznou babkou, která do všeho strkala prsty. Časem to musím napravit. I bez toho je pro mě tento Trierův TV projekt absolutním kultem.
 </span>
 
 
 
-					<span class="review-date info">
-						(<time>12.08.2011</time>)
-					</span>
-				</p>
+				<span class="review-date info">
+					(<time>17.10.2005</time>)
+				</span>
+			</p>
+		
 
-
-		</div>
 	</article>
 
-	<article id="review-10944763" class="article article-white" data-film-review>
-		<div class="article-content article-content-justify article-review">
-			<header class="article-header article-header-review">
-				<div class="article-header-review-name">
-<h3 class="user-title"><a href="/uzivatel/434081-seabeast/prehled/" class="user-title-name">Seabeast</a>&nbsp;<span class="user-title-info"><span class="star-rating"><span class="stars stars-5"></span></span></span></h3>				</div>
-				<div class="article-header-review-action">
-					<a href="/uzivatel/434081-seabeast/recenze/">všechny recenze uživatele</a>
-					(<a href="/film/71924-kralovstvi/recenze/k-serialu/?userId=434081">k tomuto seriálu</a>)
-					<a href="/film/71924-kralovstvi/recenze/?review=10944763" class="permanent-link" title="Trvalý odkaz: /film/71924-kralovstvi/recenze/?review=10944763"><i class="icon icon-permalink"></i></a>
-				</div>
-			</header>
+	<article id="review-12207292" class="article article-review article-content-justify" data-film-review>
+		<header class="article-header article-header-review">
+			<div class="article-header-review-name">
+<h3 class="user-title"><a href="/uzivatel/183992-honajz2/prehled/" class="user-title-name">honajz2</a>&nbsp;<span class="user-title-info"><span class="star-rating"><span class="stars stars-3"></span></span></span></h3>			</div>
+			<div class="article-header-review-action">
+				<a href="/uzivatel/183992-honajz2/recenze/">všechny recenze uživatele</a>
+				(<a href="/film/71924-kralovstvi/recenze/k-serialu/?userId=183992">k tomuto seriálu</a>)
+				<a href="/film/71924-kralovstvi/recenze/?review=12207292" class="permanent-link" title="Trvalý odkaz: /film/71924-kralovstvi/recenze/?review=12207292"><i class="icon icon-permalink"></i></a>
+			</div>
+		</header>
 
-
-				<p>
+		
+			<p>
 <span class="comment" data-film-review-content>
- <strong><em>Království I:</em></strong> Mistrovské Trierovo panoptikum! Tohle prostředí nemocnice je tak bizarní, že Ordinace v růžové zahradě působí ve srovnání jako souboj panenky Barbie kontra Action Man! Do toho u každého dílu počítejte s pečlivě budovanou depkoidní atmosférou a rafinovanou gradací, kde na každém konci budete chtít další dávku Trierova morfia! Celek je navíc obrazově podporován poněkud živější kamerou a vtažení do tohoto maniackého labyrintu je o to silnější. Království má i pro mě poměrně sympatickou stopáž, neboť tahle první čítá pouze 4 epizody. A druhá je na tom stejně, takže se jedná o ideální volbu pro večerní maratón (po kterém tedy doufám, že vůbec pak usnete). Jestli je teda první řada jen takový "rozjezd", tak si vůbec nedovedu představit, co mě čeká v té druhé, protože tohle byla sakra poutavá projížďka lunaparkovým domem hrůzy. Ovšem nezapomenu na poslední díl a scénu s návštěvou inspekce, která zavítala do nemocnice - z toho jsem šel fakt smíchy do kolen!
-<strong><em>Království II:</em></strong> Druhá řada unikátního Trierova seriálu je stejně tak napínavá a zajímavá jako ta první a vůbec za ni nezaostává. Naopak, prostředí nemocnice a postavy se mění k ještě větší absurditě! Veškerá racionalita je smetena ze stolu a precizně rozpitvána panem chirurgem Trierem. A ten bordel, co zbyde po operaci vám zaručeně klidné spaní nepřinese. Věčná škoda, že seriál končí otevřeně a kéž by v něm Trier pokračoval, protože nemá naprosto obdoby. Ať už jde o totální psycho atmosféru, hororový nádech, komické paralely a sociální kritiku. To vše a mnohem více tahle nemocnice skrývá. A proč jsou vlastně jen dvě řady? Protože si smrt vybrala jednoho z hlavních protagonistů jménem Ernst-Hugo Järegård (role Stig Helmera) bez kterého by nejspíš seriál ztratil veškerý smysl. Kdo ví, jestli se Trier k této temné poetice opět vrátí a scénáristickou kličkou vyřeší tuto svízelnou situaci, protože by to spousta jeho fandů jistě uvítala.
+ První série je tím nejlepším, co kdy Trier zplodil, i když to nemá ujasněné, čím to chce vlastně být víc. Ta druhá to sice ujasněné má, ale kromě jedné epizody je to jen vaření z vody, která se ničemu jinému, než zvyšovaní bizarního chování postav nevěnuje. Stranou pak jde jak příběh (ten teda hodně), tak i humor, kterého tam není málo nikdy, ale v posledních dvou dílech značně ochabne. Ale co se postav týče, na paní Drusse a jejího přihlouplého syna nikdy nezapomenu, stejně jako na Bratříčka, to je totiž fakt něco nevídaného. Vůbec si z toho panoptika budu dost postav pamatovat, ale ne všechny v dobrém slova smyslu - třeba na to rádobyfilozofické duo postižených jsem si vůbec nezvykl a jejich účel zde jsem sice pobral, ale rád bych je viděl mluvit i s nějakými dalšími postavami... A jelikož je to od Triera, tak si tu samozřejmě neodpustil svůj narcismus a na konci každé epizody vždycky vyleze před oponu s nějakým tím svým obrovským moudrem... Podrobněji u komentářů k jednotlivým epizodám. Silné 3*
 </span>
 
 
 
-					<span class="review-date info">
-						(<time>28.05.2018</time>)
-					</span>
-				</p>
+				<span class="review-date info">
+					(<time>19.07.2022</time>)
+				</span>
+			</p>
+		
 
-
-		</div>
 	</article>
 
 		<div class="article article-white article-native article-native-onlymobile">
 <div id="mobile_native_1" class="ad-pmg" style="height: 100px;"></div>
 		</div>
-	<article id="review-8482704" class="article article-white" data-film-review>
-		<div class="article-content article-content-justify article-review">
-			<header class="article-header article-header-review">
-				<div class="article-header-review-name">
-<h3 class="user-title"><a href="/uzivatel/14564-fr/prehled/" class="user-title-name">Fr</a>&nbsp;<span class="user-title-info"><span class="star-rating"><span class="stars stars-4"></span></span></span></h3>				</div>
-				<div class="article-header-review-action">
-					<a href="/uzivatel/14564-fr/recenze/">všechny recenze uživatele</a>
-					(<a href="/film/71924-kralovstvi/recenze/k-serialu/?userId=14564">k tomuto seriálu</a>)
-					<a href="/film/71924-kralovstvi/recenze/?review=8482704" class="permanent-link" title="Trvalý odkaz: /film/71924-kralovstvi/recenze/?review=8482704"><i class="icon icon-permalink"></i></a>
-				</div>
-			</header>
+	<article id="review-41793" class="article article-review article-content-justify" data-film-review>
+		<header class="article-header article-header-review">
+			<div class="article-header-review-name">
+<h3 class="user-title"><a href="/uzivatel/2107-marigold/prehled/" class="user-title-name">Marigold</a>&nbsp;<span class="user-title-info"><span class="star-rating"><span class="stars stars-5"></span></span></span></h3>			</div>
+			<div class="article-header-review-action">
+				<a href="/uzivatel/2107-marigold/recenze/">všechny recenze uživatele</a>
+				(<a href="/film/71924-kralovstvi/recenze/k-serialu/?userId=2107">k tomuto seriálu</a>)
+				<a href="/film/71924-kralovstvi/recenze/?review=41793" class="permanent-link" title="Trvalý odkaz: /film/71924-kralovstvi/recenze/?review=41793"><i class="icon icon-permalink"></i></a>
+			</div>
+		</header>
 
-
-				<p>
+		
+			<p>
 <span class="comment" data-film-review-content>
- <em>.....POTOM TAM POSTAVILI NEMOCNICI A BĚLIČI UVOLNILI MÍSTO LÉKAŘŮM A VĚDCŮM, NEJLEPŠÍM MOZKŮM NÁRODA A NEJNOVĚJŠÍ TECHNOLOGII. DÍLO BYLO DOVRŠENO TÍM, ŽE MÍSTO POJMENOVALI "KRÁLOVSTVÍ".....</em> <em>///</em>
-Seriál se rozjíždí pozvolně. Dánská nemocnice na ,,kraji města“ - ve které buďte připraveni na vše ,,v dobrém i ve zlém“ - nenabízí nic z romantiky nemocničního prostředí primáře Sovy nebo toho s <a href="http://www.csfd.cz/film/69276-pohotovost/strana-3/">G. Clooneym</a>. Primář Stig Helmer je (pro mě) jedna z nejzajímavějších seriálových rolí vůbec a vlastně všichni ti lidi jsou zvláštní. Nejdůležitější ovšem je, že všude kolem VE SKRYTU EXCENTRISMU, ŠARMU ČI DOKONCE ŠÍLENSTVÍ ČÍHÁ DĚS. Lidské zlo, bába hledající strašidla, doktor toužící po nádoru a ještě k tomu někdo uctívá Ďábla -  Z PRACHU JSI VZEŠLA A V PRACH SE OBRÁTÍŠ. A Z PRACHU ZASE POVSTANEŠ..... Brána KRÁLOVSTVÍ se pomalu začíná otevírat..... <a href="https://www.csfd.cz/film/71924-kralovstvi/71923-serie-2/">POKRAČOVÁNÍ PŘÍŠTĚ</a>....
-
-<em>///</em> <strong><em>NĚKOLIK DŮVODŮ, PROČ MÁ SMYSL FILM VIDĚT:</em></strong> 1.) Jsem student psychologie. 2.) Chtěl bych přinést oběť lékařský vědě a nevím jak na to.  3.) Chystám se vyvolávat duchy. 4.) Dlouho jsem neviděl porodit ženskou chlapa.
-
-/// <strong>PŘÍBĚH</strong>  ****  <strong>HUMOR</strong>  ne  <strong>AKCE</strong>  ne  <strong>NAPĚTÍ</strong>  **
+ Ten chlap je ALE POŠUK!!! Království je velice podivný projekt, který ve svém bažinatém nitru syntetizuje parodii na seriály z lékařského porstředí, horror a naprosto bestiální psychologický terror, který panu Trierovi zjevně dělá dobře. Tradiční atributy jako civilní herectví, dokumentaristický dojem, třaslavá kamera a takřka Lynchovsky absurdní scény vytvářejí dusivou a elektrizující atmosféru místa, které je sice na povrchu hrdým mementem civilizace, jejímuž ostrozraku žádná mystika neunikne, ale které je ve svém nitru natolik přesycená tajemnem a iracionálnem (ať už je to genius loci nebo vztahy postav), že to prostě na diváka nemůže působit jinak než depresivním dojmem. Kabinet kuriozit a bizarnosti. A jen tak mimochodem jeden z nejlepších seriálů všech dob.
 </span>
 
 
 
-					<span class="review-date info">
-						(<time>28.06.2011</time>)
-					</span>
-				</p>
+				<span class="review-date info">
+					(<time>05.03.2004</time>)
+				</span>
+			</p>
+		
 
-
-		</div>
 	</article>
 
 		</div>
 	</section>
 
-	<section class="box box-borderless">
-		<header class="box-header">
+	<section class="updated-box box-borderless">
+		<header class="updated-box-header updated-box-header-nowrap">
 			<h2>Galerie <span class="count">(53)</span></h2>
-			<div class="box-header-action">
+			<div class="updated-box-header-action">
 				<a href="/film/71924-kralovstvi/galerie/" class="button">VÍCE</a>
 			</div>
 		</header>
-		<div class="box-content"><div class="gallery-item">
+		<div class="updated-box-content"><div class="gallery-item">
 			<div class="box-media">
 
 <div class="box-copyright">
 	<div>
-		<p class="p-box-copyright">Photo © Nederlandse Omroepstichting</p>
+		<p class="p-box-copyright">Photo © Zentropa Entertainments</p>
 	</div>
 </div>
 <figure class="figure-skeleton">
-	<div class="media-img" style="padding-bottom: 56.25%">
+	<div class="media-img" style="padding-bottom: 66.66%">
 		<picture>
-			<source media="(max-width: 400px)" srcset="//image.pmgstatic.com/cache/resized/w360/files/images/film/photos/166/598/166598546_c16928.jpg 1x, //image.pmgstatic.com/cache/resized/w720/files/images/film/photos/166/598/166598546_c16928.jpg 2x, //image.pmgstatic.com/cache/resized/w1080/files/images/film/photos/166/598/166598546_c16928.jpg 3x">
-			<source media="(max-width: 650px) and (min-width: 401px)" srcset="//image.pmgstatic.com/cache/resized/w663/files/images/film/photos/166/598/166598546_c16928.jpg 1x, //image.pmgstatic.com/cache/resized/w1326/files/images/film/photos/166/598/166598546_c16928.jpg 2x, //image.pmgstatic.com/cache/resized/w1989/files/images/film/photos/166/598/166598546_c16928.jpg 3x">
-			<source media="(max-width: 1040px) and (min-width: 651px)" srcset="//image.pmgstatic.com/cache/resized/w763/files/images/film/photos/166/598/166598546_c16928.jpg 1x, //image.pmgstatic.com/cache/resized/w1526/files/images/film/photos/166/598/166598546_c16928.jpg 2x, //image.pmgstatic.com/cache/resized/w2289/files/images/film/photos/166/598/166598546_c16928.jpg 3x">
-			<img src="//image.pmgstatic.com/cache/resized/w663/files/images/film/photos/166/598/166598546_c16928.jpg" loading="lazy" width="663" height="372" srcset="//image.pmgstatic.com/cache/resized/w663/files/images/film/photos/166/598/166598546_c16928.jpg 1x, //image.pmgstatic.com/cache/resized/w1326/files/images/film/photos/166/598/166598546_c16928.jpg 2x, //image.pmgstatic.com/cache/resized/w1989/files/images/film/photos/166/598/166598546_c16928.jpg 3x" alt="Království - Z filmu" />
+			<source media="(max-width: 400px)" srcset="//image.pmgstatic.com/cache/resized/w360/files/images/film/photos/158/804/158804662_de9ba6.jpg 1x, //image.pmgstatic.com/cache/resized/w720/files/images/film/photos/158/804/158804662_de9ba6.jpg 2x">
+			<source media="(max-width: 650px) and (min-width: 401px)" >
+			<source media="(max-width: 1040px) and (min-width: 651px)" >
+			<img src="//image.pmgstatic.com/cache/resized/w663/files/images/film/photos/158/804/158804662_de9ba6.jpg" loading="lazy" width="663" height="442" alt="Království - Z filmu - Ernst-Hugo Järegård" />
 		</picture>
 	</div>
 </figure>
+<figcaption>
+		<a href="/tvurce/32989-ernst-hugo-jaregard/prehled/">Ernst-Hugo Järegård</a>
+</figcaption>
 			</div>
 		</div></div>
 	</section>
 
-	<section class="box box-nooverflow">
-		<header class="box-header">
+	<section class="updated-box box-nooverflow">
+		<header class="updated-box-header updated-box-header-nowrap">
 			<h2>Zajímavosti <span class="count">(13)</span></h2>
-			<div class="box-header-action">
+			<div class="updated-box-header-action">
 				<a href="/film/71924-kralovstvi/zajimavosti/" class="button">VÍCE</a>
 			</div>
 		</header>
-		<div class="box-content">
+		<div class="updated-box-content">
 			<article class="article article-trivia">
 <div class="article-content">
 	<ul>
 		<li>
-<a href="https://www.csfd.cz/tvurce/32989-ernst-hugo-jaregard/">Ernst-Hugo Järegård</a> (Stig Helmer) se právě díky roli v seriálu v Dánsku výrazně zviditelnil a byl dokonce považován za nový sexuální symbol.
-
-			<span class="span-more-small">
-					(<a href="/uzivatel/92340-tomikzlesa/prehled/">TomikZlesa</a>)
-			</span>
-
-
-		</li>
-	</ul>
-</div>
-			</article>
-			<article class="article article-trivia">
-<div class="article-content">
-	<ul>
-		<li>
-Plánovanú <a href="https://www.csfd.cz/film/71924-kralovstvi/1228437-exodus/">3. sériu</a> narušila predčasná smrť niektorých hlavných hercov, ale po 25 rokoch predsa len vznikla.
-
-			<span class="span-more-small">
-					(<a href="/uzivatel/403581-misterz/prehled/">misterz</a>)
-			</span>
-
-
-		</li>
-	</ul>
-</div>
-			</article>
-			<article class="article article-trivia">
-<div class="article-content">
-	<ul>
-		<li>
-Když nastane stav beztíže, jako hudební podkres hraje <a href="https://www.csfd.cz/tvurce/291258-johann-sebastian-bach/">Bachovo</a> „Preludium F moll“. Tento hudební motiv, spolu se záběrem na vznášejícího se Pontopidana (<a href="https://www.csfd.cz/tvurce/17947-lars-mikkelsen/">Lars Mikkelsen</a>), je jednoznačným odkazem na podobnou scénu se stavem beztíže z filmu <a href="https://www.csfd.cz/film/32352-solaris/"><em>Solaris</em></a> (1972).
+Když nastane stav beztíže, jako hudební podkres hraje <a href="https://www.csfd.cz/tvurce/291258-johann-sebastian-bach/">Bachovo</a> „Preludium F moll“. Tento hudební motiv, spolu se záběrem na vznášejícího se Pontopidana (<a href="https://www.csfd.cz/tvurce/17947-lars-mikkelsen/">Lars Mikkelsen</a>), je jednoznačným odkazem na podobnou scénu se stavem beztíže z filmu <a href="https://www.csfd.cz/film/32352-solaris/"><em>Solaris</em></a> (1972).
 
 			<span class="span-more-small">
 					(<a href="/uzivatel/906533-kaleidoskop/prehled/">Kaleidoskop</a>)
@@ -1146,131 +1286,153 @@ Když nastane stav beztíže, jako hudební podkres hraje <a href="https://www.c
 	</ul>
 </div>
 			</article>
+			<article class="article article-trivia">
+<div class="article-content">
+	<ul>
+		<li>
+3. série byla v ČR poprvé uvedena v září 2022 na Mezinárodním festivalu seriálů Serial Killer v Brně.
+
+			<span class="span-more-small">
+					(<a href="/uzivatel/840285-filip-sk/prehled/">Filip_SK</a>)
+			</span>
+
+
+		</li>
+	</ul>
+</div>
+			</article>
+			<article class="article article-trivia">
+<div class="article-content">
+	<ul>
+		<li>
+Herci, kteří se v seriálu objevili jako umývači nádobí, nedokázali své dialogy řádně vyslovovat, a tak museli být předabováni.
+
+			<span class="span-more-small">
+					(<a href="/uzivatel/78028-hellfire/prehled/">HellFire</a>)
+			</span>
+
+
+		</li>
+	</ul>
+</div>
+			</article>
 		</div>
 	</section>
 
 
 </div>
 
-			<section id="shop-mobile" class="box box-shop box-margintop box-shop-mobile hidden"></section>
+			<section id="shop-mobile" class="updated-box box-shop box-margintop box-shop-mobile hidden"></section>
 
-			<section class="box box-borderless box-noborderbottom box-margintop box-relatednews">
-				<header class="box-header">
+			<section class="updated-box box-borderless box-noborderbottom box-margintop box-relatednews">
+				<header class="updated-box-header updated-box-header-nowrap">
 					<h2>Související novinky</h2>
-					<div class="box-header-action">
+					<div class="updated-box-header-action">
 						<a href="/novinky/?filmId=71924" class="button">více</a>
 					</div>
 				</header>
-				<div class="box-content">
-					<div class="newslist-content">
-						<div class="newslist">
+				<div class="updated-box-content">
+					<div class="newslist-content updated-newslist-content">
+						<div class="newslist updated-newslist">
 							<section class="newslist-item">
-								<div class="box-content">
-									<article class="article article-news article-news-60">
-										<figure class="article-img">
-											<a href="/novinky/9645-zemrel-herec-udo-kier/">
-												<img class="img" src="//image.pmgstatic.com/cache/resized/w100h132crop/files/images/news/article/170/754/170754444_gvzvwi.jpg" loading="lazy" width="100" height="132" srcset="//image.pmgstatic.com/cache/resized/w100h132crop/files/images/news/article/170/754/170754444_gvzvwi.jpg 1x, //image.pmgstatic.com/cache/resized/w200h264crop/files/images/news/article/170/754/170754444_gvzvwi.jpg 2x, //image.pmgstatic.com/cache/resized/w300h396crop/files/images/news/article/170/754/170754444_gvzvwi.jpg 3x" alt="Zemřel herec Udo Kier">
-											</a>
-										</figure>
-										<header class="article-header">
-											<h3>
-												<a href="/novinky/9645-zemrel-herec-udo-kier/">Zemřel herec Udo Kier</a>
-											</h3>
-											<div class="info">
-												<span class="date">24.11.2025</span>
-											</div>
-										</header>
-										<div class="article-news-content article-content-justify">
-											<div class="article-news-textshort">
-												<p>
-													Přichází velmi smutná zpráva pro celý filmový svět. V nedělních ranních hodinách odešla výrazná tvář mnoha kultovních filmů, německý herec Udo Kier. Bylo mu jednaosmdesát let. Jeho velmi plodná a…
-													<span class="span-more-small">(<a href="/novinky/9645-zemrel-herec-udo-kier/">více</a>)</span>
-												</p>
-											</div>
+								<article class="article article-news article-news-60">
+									<figure class="article-img">
+										<a href="/novinky/9645-zemrel-herec-udo-kier/">
+											<img class="img" src="//image.pmgstatic.com/cache/resized/w100h132crop/files/images/news/article/170/754/170754444_gvzvwi.jpg" loading="lazy" width="100" height="132" srcset="//image.pmgstatic.com/cache/resized/w100h132crop/files/images/news/article/170/754/170754444_gvzvwi.jpg 1x, //image.pmgstatic.com/cache/resized/w200h264crop/files/images/news/article/170/754/170754444_gvzvwi.jpg 2x, //image.pmgstatic.com/cache/resized/w300h396crop/files/images/news/article/170/754/170754444_gvzvwi.jpg 3x" alt="Zemřel herec Udo Kier">
+										</a>
+									</figure>
+									<header class="article-header">
+										<h3>
+											<a href="/novinky/9645-zemrel-herec-udo-kier/">Zemřel herec Udo Kier</a>
+										</h3>
+										<div class="info">
+											<span class="date">24.11.2025</span>
 										</div>
-									</article>
-								</div>
+									</header>
+									<div class="article-news-content article-content-justify">
+										<div class="article-news-textshort">
+											<p>
+												Přichází velmi smutná zpráva pro celý filmový svět. V nedělních ranních hodinách odešla výrazná tvář mnoha kultovních filmů, německý herec Udo Kier. Bylo mu jednaosmdesát let. Jeho velmi plodná a…
+												<span class="span-more-small"><a href="/novinky/9645-zemrel-herec-udo-kier/">více</a></span>
+											</p>
+										</div>
+									</div>
+								</article>
 							</section>
 							<section class="newslist-item">
-								<div class="box-content">
-									<article class="article article-news article-news-60">
-										<figure class="article-img">
-											<a href="/novinky/8307-kviff-tv-exkluzivne-uvadi-trojuhelnik-smutku/">
-												<img class="img" src="//image.pmgstatic.com/cache/resized/w100h132crop/files/images/news/article/167/004/167004032_97d9c3.jpg" loading="lazy" width="100" height="132" srcset="//image.pmgstatic.com/cache/resized/w100h132crop/files/images/news/article/167/004/167004032_97d9c3.jpg 1x, //image.pmgstatic.com/cache/resized/w200h264crop/files/images/news/article/167/004/167004032_97d9c3.jpg 2x, //image.pmgstatic.com/cache/resized/w300h396crop/files/images/news/article/167/004/167004032_97d9c3.jpg 3x" alt="KVIFF.TV exkluzivně uvádí Trojúhelník smutku">
-											</a>
-										</figure>
-										<header class="article-header">
-											<h3>
-												<a href="/novinky/8307-kviff-tv-exkluzivne-uvadi-trojuhelnik-smutku/">KVIFF.TV exkluzivně uvádí Trojúhelník smutku</a>
-											</h3>
-											<div class="info">
-												<span class="date">20.12.2022</span>
-											</div>
-										</header>
-										<div class="article-news-content article-content-justify">
-											<div class="article-news-textshort">
-												<p>
-													Streamovací platformu KVIFF.TV nemohli fanoušci filmu v uplynulém roce přehlédnout. Jako jediná přinesla do České republiky poslední počin režisérské legendy Larse von Triera – třetí sérii Království…
-													<span class="span-more-small">(<a href="/novinky/8307-kviff-tv-exkluzivne-uvadi-trojuhelnik-smutku/">více</a>)</span>
-												</p>
-											</div>
+								<article class="article article-news article-news-60">
+									<figure class="article-img">
+										<a href="/novinky/8307-kviff-tv-exkluzivne-uvadi-trojuhelnik-smutku/">
+											<img class="img" src="//image.pmgstatic.com/cache/resized/w100h132crop/files/images/news/article/167/004/167004032_97d9c3.jpg" loading="lazy" width="100" height="132" srcset="//image.pmgstatic.com/cache/resized/w100h132crop/files/images/news/article/167/004/167004032_97d9c3.jpg 1x, //image.pmgstatic.com/cache/resized/w200h264crop/files/images/news/article/167/004/167004032_97d9c3.jpg 2x, //image.pmgstatic.com/cache/resized/w300h396crop/files/images/news/article/167/004/167004032_97d9c3.jpg 3x" alt="KVIFF.TV exkluzivně uvádí Trojúhelník smutku">
+										</a>
+									</figure>
+									<header class="article-header">
+										<h3>
+											<a href="/novinky/8307-kviff-tv-exkluzivne-uvadi-trojuhelnik-smutku/">KVIFF.TV exkluzivně uvádí Trojúhelník smutku</a>
+										</h3>
+										<div class="info">
+											<span class="date">20.12.2022</span>
 										</div>
-									</article>
-								</div>
+									</header>
+									<div class="article-news-content article-content-justify">
+										<div class="article-news-textshort">
+											<p>
+												Streamovací platformu KVIFF.TV nemohli fanoušci filmu v uplynulém roce přehlédnout. Jako jediná přinesla do České republiky poslední počin režisérské legendy Larse von Triera – třetí sérii Království…
+												<span class="span-more-small"><a href="/novinky/8307-kviff-tv-exkluzivne-uvadi-trojuhelnik-smutku/">více</a></span>
+											</p>
+										</div>
+									</div>
+								</article>
 							</section>
 							<section class="newslist-item">
-								<div class="box-content">
-									<article class="article article-news article-news-60">
-										<figure class="article-img">
-											<a href="/novinky/7973-reziser-lars-von-trier-bojuje-s-parkinsonem/">
-												<img class="img" src="//image.pmgstatic.com/cache/resized/w100h132crop/files/images/news/article/166/543/166543198_ba2f52.jpg" loading="lazy" width="100" height="132" srcset="//image.pmgstatic.com/cache/resized/w100h132crop/files/images/news/article/166/543/166543198_ba2f52.jpg 1x, //image.pmgstatic.com/cache/resized/w200h264crop/files/images/news/article/166/543/166543198_ba2f52.jpg 2x, //image.pmgstatic.com/cache/resized/w300h396crop/files/images/news/article/166/543/166543198_ba2f52.jpg 3x" alt="Režisér Lars von Trier bojuje s Parkinsonem">
-											</a>
-										</figure>
-										<header class="article-header">
-											<h3>
-												<a href="/novinky/7973-reziser-lars-von-trier-bojuje-s-parkinsonem/">Režisér Lars von Trier bojuje s Parkinsonem</a>
-											</h3>
-											<div class="info">
-												<span class="date">09.08.2022</span>
-											</div>
-										</header>
-										<div class="article-news-content article-content-justify">
-											<div class="article-news-textshort">
-												<p>
-													Ačkoli bývá někdy označován za provokatéra a kontroverzní osobnost, šestašedesátiletý dánský režisér Lars von Trier (Melancholie, Antikrist) dodnes patří mezi jedny z nejunikátnějších hlasů moderního…
-													<span class="span-more-small">(<a href="/novinky/7973-reziser-lars-von-trier-bojuje-s-parkinsonem/">více</a>)</span>
-												</p>
-											</div>
+								<article class="article article-news article-news-60">
+									<figure class="article-img">
+										<a href="/novinky/7973-reziser-lars-von-trier-bojuje-s-parkinsonem/">
+											<img class="img" src="//image.pmgstatic.com/cache/resized/w100h132crop/files/images/news/article/166/543/166543198_ba2f52.jpg" loading="lazy" width="100" height="132" srcset="//image.pmgstatic.com/cache/resized/w100h132crop/files/images/news/article/166/543/166543198_ba2f52.jpg 1x, //image.pmgstatic.com/cache/resized/w200h264crop/files/images/news/article/166/543/166543198_ba2f52.jpg 2x, //image.pmgstatic.com/cache/resized/w300h396crop/files/images/news/article/166/543/166543198_ba2f52.jpg 3x" alt="Režisér Lars von Trier bojuje s Parkinsonem">
+										</a>
+									</figure>
+									<header class="article-header">
+										<h3>
+											<a href="/novinky/7973-reziser-lars-von-trier-bojuje-s-parkinsonem/">Režisér Lars von Trier bojuje s Parkinsonem</a>
+										</h3>
+										<div class="info">
+											<span class="date">09.08.2022</span>
 										</div>
-									</article>
-								</div>
+									</header>
+									<div class="article-news-content article-content-justify">
+										<div class="article-news-textshort">
+											<p>
+												Ačkoli bývá někdy označován za provokatéra a kontroverzní osobnost, šestašedesátiletý dánský režisér Lars von Trier (Melancholie, Antikrist) dodnes patří mezi jedny z nejunikátnějších hlasů moderního…
+												<span class="span-more-small"><a href="/novinky/7973-reziser-lars-von-trier-bojuje-s-parkinsonem/">více</a></span>
+											</p>
+										</div>
+									</div>
+								</article>
 							</section>
 							<section class="newslist-item">
-								<div class="box-content">
-									<article class="article article-news article-news-60">
-										<figure class="article-img">
-											<a href="/novinky/7037-kultovni-serial-kralovstvi-se-docka-3-rady/">
-												<img class="img" src="//image.pmgstatic.com/cache/resized/w100h132crop/files/images/news/article/165/051/165051815_09a26e.jpg" loading="lazy" width="100" height="132" srcset="//image.pmgstatic.com/cache/resized/w100h132crop/files/images/news/article/165/051/165051815_09a26e.jpg 1x, //image.pmgstatic.com/cache/resized/w200h264crop/files/images/news/article/165/051/165051815_09a26e.jpg 2x, //image.pmgstatic.com/cache/resized/w300h396crop/files/images/news/article/165/051/165051815_09a26e.jpg 3x" alt="Kultovní seriál Království se dočká 3. řady">
-											</a>
-										</figure>
-										<header class="article-header">
-											<h3>
-												<a href="/novinky/7037-kultovni-serial-kralovstvi-se-docka-3-rady/">Kultovní seriál Království se dočká 3. řady</a>
-											</h3>
-											<div class="info">
-												<span class="date">21.12.2020</span>
-											</div>
-										</header>
-										<div class="article-news-content article-content-justify">
-											<div class="article-news-textshort">
-												<p>
-													Mysteriózní seriál Království od Larse von Triera (Antikrist) se v roce 2022 dočká třetí řady. Kultovní hit z let 1994 a 1997 vyprávěl znepokojivý příběh dvou neurochirurgů z Kodaně a už původně byl…
-													<span class="span-more-small">(<a href="/novinky/7037-kultovni-serial-kralovstvi-se-docka-3-rady/">více</a>)</span>
-												</p>
-											</div>
+								<article class="article article-news article-news-60">
+									<figure class="article-img">
+										<a href="/novinky/7037-kultovni-serial-kralovstvi-se-docka-3-rady/">
+											<img class="img" src="//image.pmgstatic.com/cache/resized/w100h132crop/files/images/news/article/165/051/165051815_09a26e.jpg" loading="lazy" width="100" height="132" srcset="//image.pmgstatic.com/cache/resized/w100h132crop/files/images/news/article/165/051/165051815_09a26e.jpg 1x, //image.pmgstatic.com/cache/resized/w200h264crop/files/images/news/article/165/051/165051815_09a26e.jpg 2x, //image.pmgstatic.com/cache/resized/w300h396crop/files/images/news/article/165/051/165051815_09a26e.jpg 3x" alt="Kultovní seriál Království se dočká 3. řady">
+										</a>
+									</figure>
+									<header class="article-header">
+										<h3>
+											<a href="/novinky/7037-kultovni-serial-kralovstvi-se-docka-3-rady/">Kultovní seriál Království se dočká 3. řady</a>
+										</h3>
+										<div class="info">
+											<span class="date">21.12.2020</span>
 										</div>
-									</article>
-								</div>
+									</header>
+									<div class="article-news-content article-content-justify">
+										<div class="article-news-textshort">
+											<p>
+												Mysteriózní seriál Království od Larse von Triera (Antikrist) se v roce 2022 dočká třetí řady. Kultovní hit z let 1994 a 1997 vyprávěl znepokojivý příběh dvou neurochirurgů z Kodaně a už původně byl…
+												<span class="span-more-small"><a href="/novinky/7037-kultovni-serial-kralovstvi-se-docka-3-rady/">více</a></span>
+											</p>
+										</div>
+									</div>
+								</article>
 							</section>
 						</div>
 					</div>
@@ -1280,13 +1442,7 @@ Když nastane stav beztíže, jako hudební podkres hraje <a href="https://www.c
 	</div>
 
 	<aside class="aside-movie-profile">
-
-		<div class="box-rating-container">
-			<a href="javascript:void(0);" data-dropdown="#dropdown-control-panel" data-parent-class="box-rating-container" class="button button-control-panel button-control-panel-tablet">
-				<i class="icon icon-menu"></i><span>Ovládací panel</span>
-
-			</a>
-
+		<div class="film-rating">
 
 <div class="box-rating box-rating-withtabs">
 
@@ -1296,385 +1452,291 @@ Když nastane stav beztíže, jako hudební podkres hraje <a href="https://www.c
 	</div>
 
 	<div class="film-ranking">
-		<span><i class="icon icon-thumb-up"></i></span>
 		<a href="/zebricky/serialy/nejlepsi/?from=100#highlight-71924">
-			124. nejlepší
+			<svg class="icon-thumb-up" width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+				<path fill-rule="evenodd" clip-rule="evenodd" d="M7.49739 2.65383C7.49739 2.10883 7.93923 1.66699 8.48423 1.66699H9.99739C11.6082 1.66699 12.914 2.97283 12.914 4.58366V7.50033H15.7894C17.63 7.50033 19.0104 9.18419 18.6495 10.989L17.5482 16.4955C17.4313 17.0798 16.9183 17.5003 16.3224 17.5003H7.08073C6.39031 17.5003 5.83073 16.9407 5.83073 16.2503V8.44632C5.83073 8.22499 5.88948 8.00766 6.00098 7.81649L6.18864 7.49474C7.04573 6.02541 7.49739 4.35491 7.49739 2.65383ZM9.14356 3.33366C9.03723 5.09308 8.51956 6.80658 7.62823 8.33458L7.49739 8.55891V15.8337H15.9809L17.0152 10.6621C17.1699 9.88865 16.5782 9.16699 15.7894 9.16699H12.4974C11.807 9.16699 11.2474 8.60733 11.2474 7.91699V4.58366C11.2474 3.89333 10.6877 3.33366 9.99739 3.33366H9.14356Z"></path>
+				<path d="M1.66406 8.75033C1.66406 8.52024 1.85056 8.33366 2.08073 8.33366H3.7474C3.97748 8.33366 4.16406 8.52024 4.16406 8.75033V17.0837C4.16406 17.3138 3.97748 17.5003 3.7474 17.5003H2.08073C1.85056 17.5003 1.66406 17.3138 1.66406 17.0837V8.75033Z"></path>
+			</svg>
+			<strong>126.</strong> <span>nejlepší</span>
 		</a>
 	</div>
 	<div class="film-ranking">
-		<span><i class="icon icon-thumb-up"></i></span>
 		<a href="/zebricky/serialy/nejoblibenejsi/?from=100#highlight-71924">
-			148. nejoblíbenější
+			<svg class="icon-thumb-up" width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+				<path fill-rule="evenodd" clip-rule="evenodd" d="M7.49739 2.65383C7.49739 2.10883 7.93923 1.66699 8.48423 1.66699H9.99739C11.6082 1.66699 12.914 2.97283 12.914 4.58366V7.50033H15.7894C17.63 7.50033 19.0104 9.18419 18.6495 10.989L17.5482 16.4955C17.4313 17.0798 16.9183 17.5003 16.3224 17.5003H7.08073C6.39031 17.5003 5.83073 16.9407 5.83073 16.2503V8.44632C5.83073 8.22499 5.88948 8.00766 6.00098 7.81649L6.18864 7.49474C7.04573 6.02541 7.49739 4.35491 7.49739 2.65383ZM9.14356 3.33366C9.03723 5.09308 8.51956 6.80658 7.62823 8.33458L7.49739 8.55891V15.8337H15.9809L17.0152 10.6621C17.1699 9.88865 16.5782 9.16699 15.7894 9.16699H12.4974C11.807 9.16699 11.2474 8.60733 11.2474 7.91699V4.58366C11.2474 3.89333 10.6877 3.33366 9.99739 3.33366H9.14356Z"></path>
+				<path d="M1.66406 8.75033C1.66406 8.52024 1.85056 8.33366 2.08073 8.33366H3.7474C3.97748 8.33366 4.16406 8.52024 4.16406 8.75033V17.0837C4.16406 17.3138 3.97748 17.5003 3.7474 17.5003H2.08073C1.85056 17.5003 1.66406 17.3138 1.66406 17.0837V8.75033Z"></path>
+			</svg>
+			<strong>149.</strong> <span>nejoblíbenější</span>
 		</a>
 	</div>
 
 
 
 
+	<div class="my-rating my-rating-csfd" data-onboarding-step-4="false">
+		<h3>Klikni a hodnoť</h3>
+		<span class="stars-rating">
+			<a class="star star-0" href="/registration-motivation/?title=VyOlolOjKUHjZGH5nJEpqGNjMGShKUHjZTIxVTuiMT5iL2IhKUHjZTIxVUAyVUOlo3ApqGNjMJEgVT5ynzEpqGNkAGypqGNjMJE2VUOpqGNkAGycnTkupl4v" rel="registrationMotivation" data-no-ads data-rating="0"></a>
+			<a class="star star-20" href="/registration-motivation/?title=VyOlolOjKUHjZGH5nJEpqGNjMGShKUHjZTIxVTuiMT5iL2IhKUHjZTIxVUAyVUOlo3ApqGNjMJEgVT5ynzEpqGNkAGypqGNjMJE2VUOpqGNkAGycnTkupl4v" rel="registrationMotivation" data-no-ads data-rating="20"></a>
+			<a class="star star-40" href="/registration-motivation/?title=VyOlolOjKUHjZGH5nJEpqGNjMGShKUHjZTIxVTuiMT5iL2IhKUHjZTIxVUAyVUOlo3ApqGNjMJEgVT5ynzEpqGNkAGypqGNjMJE2VUOpqGNkAGycnTkupl4v" rel="registrationMotivation" data-no-ads data-rating="40"></a>
+			<a class="star star-60" href="/registration-motivation/?title=VyOlolOjKUHjZGH5nJEpqGNjMGShKUHjZTIxVTuiMT5iL2IhKUHjZTIxVUAyVUOlo3ApqGNjMJEgVT5ynzEpqGNkAGypqGNjMJE2VUOpqGNkAGycnTkupl4v" rel="registrationMotivation" data-no-ads data-rating="60"></a>
+			<a class="star star-80" href="/registration-motivation/?title=VyOlolOjKUHjZGH5nJEpqGNjMGShKUHjZTIxVTuiMT5iL2IhKUHjZTIxVUAyVUOlo3ApqGNjMJEgVT5ynzEpqGNkAGypqGNjMJE2VUOpqGNkAGycnTkupl4v" rel="registrationMotivation" data-no-ads data-rating="80"></a>
+			<a class="star star-100" href="/registration-motivation/?title=VyOlolOjKUHjZGH5nJEpqGNjMGShKUHjZTIxVTuiMT5iL2IhKUHjZTIxVUAyVUOlo3ApqGNjMJEgVT5ynzEpqGNkAGypqGNjMJE2VUOpqGNkAGycnTkupl4v" rel="registrationMotivation" data-no-ads data-rating="100"></a>
+		</span>
+	</div>
 
 
-	<div class="tabs-content">
-<div class="tabs tabs-rating rating-fan-switch">
-	<nav class="tab-nav">
-		<ul class="tab-nav-list">
-			<li class="tab-nav-item ratings-btn active">
-				<a class="tab-link" href="#" data-show-tab=".rating-users" data-hide-tab=".fanclub-users">Hodnocení<span class="counter">(4 907)</span></a>
-			</li>
-			<li class="tab-nav-item fans-btn">
-				<a class="tab-link" href="#" data-show-tab=".fanclub-users" data-hide-tab=".rating-users">Fanklub<span class="counter">(853)</span></a>
-			</li>
-		</ul>
-	</nav>
-</div>
+	<div class="ranking-tabs-csfd" data-onboarding-step-6="false">
 
-<div class="user-list rating-users">
-	<section class="others-rating">
-		<ul>
-			<li>
-					<a href="/uzivatel/1-pomo/prehled/">POMO</a>
-
-<span title="spočteno ze sérií: 1"><span class="star-rating computed"><span class="stars stars-4"></span></span></span>
-
-			</li>
-			<li>
-					<a href="/uzivatel/195357-verbal/prehled/">verbal</a>
-
-<span title="Vloženo v 19.01.2010"><span class="star-rating"><span class="stars stars-2"></span></span></span>
-
-			</li>
-			<li>
-					<a href="/uzivatel/38-cival/prehled/">Cival</a>
-
-<span title="Vloženo v 19.02.2003"><span class="star-rating"><span class="stars stars-5"></span></span></span>
-
-			</li>
-			<li>
-					<a href="/uzivatel/474-tsunamix/prehled/">Tsunami_X</a>
-
-<span title="Vloženo v 30.01.2003"><span class="star-rating"><span class="stars stars-4"></span></span></span>
-
-			</li>
-			<li>
-					<a href="/uzivatel/1537-blizzard/prehled/">Blizzard</a>
-
-<span title="Vloženo v 30.05.2004"><span class="star-rating"><span class="stars stars-4"></span></span></span>
-
-			</li>
-			<li>
-					<a href="/uzivatel/2008-matty/prehled/">Matty</a>
-
-<span title="Vloženo v 08.07.2017"><span class="star-rating"><span class="stars stars-3"></span></span></span>
-
-			</li>
-			<li>
-					<a href="/uzivatel/172-tom-hardy/prehled/">Tom Hardy</a>
-
-<span title="Vloženo v 01.01.2007"><span class="star-rating"><span class="stars stars-5"></span></span></span>
-
-			</li>
-			<li>
-					<a href="/uzivatel/111-tosim/prehled/">Tosim</a>
-
-<span title="Vloženo v 04.04.2018"><span class="star-rating"><span class="stars stars-4"></span></span></span>
-
-			</li>
-			<li>
-					<a href="/uzivatel/58909-j-a-s-m/prehled/">J*A*S*M</a>
-
-<span title="Vloženo v 01.11.2009"><span class="star-rating"><span class="stars stars-4"></span></span></span>
-
-			</li>
-			<li>
-					<a href="/uzivatel/360-lebowski/prehled/">lebowski</a>
-
-<span title="Vloženo v 03.11.2007"><span class="star-rating"><span class="stars stars-4"></span></span></span>
-
-			</li>
-
-		</ul>
+<div class="ranking-tabs-csfd-content">
+	<div class="ratings-list">
+		<h2>Hodnocení <span class="counter">(4 915)</span></h2>
+		<section class="others-rating">
+			<ul>
+				<li>
+						<a href="/uzivatel/1-pomo/">POMO</a>
+					
+<span title="spočteno ze sérií: 1"><span class="star-rating computed"><span class="stars stars-4"></span></span></span>					
+				</li>
+				<li>
+						<a href="/uzivatel/195357-verbal/">verbal</a>
+					
+<span title="Vloženo v 19.01.2010"><span class="star-rating"><span class="stars stars-2"></span></span></span>					
+				</li>
+				<li>
+						<a href="/uzivatel/38-cival/">Cival</a>
+					
+<span title="Vloženo v 19.02.2003"><span class="star-rating"><span class="stars stars-5"></span></span></span>					
+				</li>
+				<li>
+						<a href="/uzivatel/474-tsunamix/">Tsunami_X</a>
+					
+<span title="Vloženo v 30.01.2003"><span class="star-rating"><span class="stars stars-4"></span></span></span>					
+				</li>
+				<li>
+						<a href="/uzivatel/1537-blizzard/">Blizzard</a>
+					
+<span title="Vloženo v 30.05.2004"><span class="star-rating"><span class="stars stars-4"></span></span></span>					
+				</li>
+				<li>
+						<a href="/uzivatel/2008-matty/">Matty</a>
+					
+<span title="Vloženo v 08.07.2017"><span class="star-rating"><span class="stars stars-3"></span></span></span>					
+				</li>
+				<li>
+						<a href="/uzivatel/172-tom-hardy/">Tom Hardy</a>
+					
+<span title="Vloženo v 01.01.2007"><span class="star-rating"><span class="stars stars-5"></span></span></span>					
+				</li>
+				<li>
+						<a href="/uzivatel/111-tosim/">Tosim</a>
+					
+<span title="Vloženo v 04.04.2018"><span class="star-rating"><span class="stars stars-4"></span></span></span>					
+				</li>
+				<li>
+						<a href="/uzivatel/58909-j-a-s-m/">J*A*S*M</a>
+					
+<span title="Vloženo v 01.11.2009"><span class="star-rating"><span class="stars stars-4"></span></span></span>					
+				</li>
+				<li>
+						<a href="/uzivatel/360-lebowski/">lebowski</a>
+					
+<span title="Vloženo v 03.11.2007"><span class="star-rating"><span class="stars stars-4"></span></span></span>					
+				</li>
+			</ul>
 <div class="box-more-bar">
 	<div class="pagination">
-		<a href="/film/71924-kralovstvi/prehled/?pageRating=0&amp;tab=rating-users" class="page-prev disabled">
+		<a href="/film/71924-kralovstvi/prehled/?pageRating=rlW0LKWaMKDvBvWzAmR5ZwE8ZPVfVaOuM2HvBwNfVzEcpzIwqTyiovV6Vw4vYPWjo3AcqTyiovV6Jmp4BGZfZI19" class="page-prev disabled">
 			<span class="pagination-btn-reader">předchozí</span>
 		</a>
 		1 - 10
-		<a href="/film/71924-kralovstvi/prehled/?pageRating=2&amp;tab=rating-users" class="page-next">
+		<a href="/film/71924-kralovstvi/prehled/?pageRating=rlW0LKWaMKDvBvWzAmR5ZwE8ZPVfVaOuM2HvBwVfVzEcpzIwqTyiovV6VwjvYPWjo3AcqTyiovV6JmR4ZwHfZmLjKK0" class="page-next">
 			<span class="pagination-btn-reader">další</span>
 		</a>
 	</div>
 </div>
-	</section>
-</div>
+		</section>
 
-<div class="user-list fanclub-users hidden">
-	<section class="fans">
-		<ul>
-			<li>
-				<a href="/uzivatel/38-cival/oblibene/filmy-serialy-a-porady/">Cival</a>
-			</li>
-			<li>
-				<a href="/uzivatel/2107-marigold/oblibene/filmy-serialy-a-porady/">Marigold</a>
-			</li>
-			<li>
-				<a href="/uzivatel/34950-rimsy/oblibene/filmy-serialy-a-porady/">Rimsy</a>
-			</li>
-			<li>
-				<a href="/uzivatel/51363-bluntman/oblibene/filmy-serialy-a-porady/">Bluntman</a>
-			</li>
-			<li>
-				<a href="/uzivatel/25853-hirnlego/oblibene/filmy-serialy-a-porady/">hirnlego</a>
-			</li>
-			<li>
-				<a href="/uzivatel/13482-eodeon/oblibene/filmy-serialy-a-porady/">Eodeon</a>
-			</li>
-			<li>
-				<a href="/uzivatel/112774-david3141/oblibene/filmy-serialy-a-porady/">DaviD3141</a>
-			</li>
-			<li>
-				<a href="/uzivatel/313948-pan-hnedy/oblibene/filmy-serialy-a-porady/">pan Hnědý</a>
-			</li>
-			<li>
-				<a href="/uzivatel/125212-xxmartinxx/oblibene/filmy-serialy-a-porady/">xxmartinxx</a>
-			</li>
-			<li>
-				<a href="/uzivatel/13756-tombac/oblibene/filmy-serialy-a-porady/">tombac</a>
-			</li>
+	</div>
 
-		</ul>
+	<div class="fanclub-list">
+		<h2>Fanklub <span class="counter">(853)</span></h2>
+		<section class="fans">
+			<ul>
+				<li>
+					<a href="/uzivatel/38-cival/oblibene/filmy-serialy-a-porady/">Cival</a>
+				</li>
+				<li>
+					<a href="/uzivatel/2107-marigold/oblibene/filmy-serialy-a-porady/">Marigold</a>
+				</li>
+				<li>
+					<a href="/uzivatel/34950-rimsy/oblibene/filmy-serialy-a-porady/">Rimsy</a>
+				</li>
+				<li>
+					<a href="/uzivatel/51363-bluntman/oblibene/filmy-serialy-a-porady/">Bluntman</a>
+				</li>
+				<li>
+					<a href="/uzivatel/25853-hirnlego/oblibene/filmy-serialy-a-porady/">hirnlego</a>
+				</li>
+				<li>
+					<a href="/uzivatel/13482-eodeon/oblibene/filmy-serialy-a-porady/">Eodeon</a>
+				</li>
+				<li>
+					<a href="/uzivatel/112774-david3141/oblibene/filmy-serialy-a-porady/">DaviD3141</a>
+				</li>
+				<li>
+					<a href="/uzivatel/313948-pan-hnedy/oblibene/filmy-serialy-a-porady/">pan Hnědý</a>
+				</li>
+				<li>
+					<a href="/uzivatel/125212-xxmartinxx/oblibene/filmy-serialy-a-porady/">xxmartinxx</a>
+				</li>
+				<li>
+					<a href="/uzivatel/13756-tombac/oblibene/filmy-serialy-a-porady/">tombac</a>
+				</li>
+			</ul>
 <div class="box-more-bar">
 	<div class="pagination">
-		<a href="/film/71924-kralovstvi/prehled/?pageFanclub=0&amp;tab=fanclub-users" class="page-prev disabled">
+		<a href="/film/71924-kralovstvi/prehled/?pageFanclub=rlW0LKWaMKDvBvWzAmR5ZwE8ZPVfVaOuM2HvBwNfVzEcpzIwqTyiovV6Vw4vYPWjo3AcqTyiovV6JmH4AGxfZmuqsD" class="page-prev disabled">
 			<span class="pagination-btn-reader">předchozí</span>
 		</a>
 		1 - 10
-		<a href="/film/71924-kralovstvi/prehled/?pageFanclub=2&amp;tab=fanclub-users" class="page-next">
+		<a href="/film/71924-kralovstvi/prehled/?pageFanclub=rlW0LKWaMKDvBvWzAmR5ZwE8ZPVfVaOuM2HvBwVfVzEcpzIwqTyiovV6VwjvYPWjo3AcqTyiovV6JmV1BFjkZmp1Ay19" class="page-next">
 			<span class="pagination-btn-reader">další</span>
 		</a>
 	</div>
 </div>
-	</section>
+		</section>
+
+	</div>
 </div>
 	</div>
 </div>
-
-			<div class="box-rating-buttons">
-				<div class="aside-movie-control">
-					<a href="javascript:void(0);" data-dropdown="#dropdown-control-panel" data-parent-class="box-rating-container" class="button button-control-panel button-control-panel-desktop">
-						<i class="icon icon-menu"></i><span>Ovládací panel</span>
-
-					</a>
-				</div>
-
-				<div class="box-buttons box-buttons-showvod">
-						<div class="box-buttons-vod">
-							<span class="vod-badge">
-								<a href="https://kviff.tv/katalog/kralovstvi-cast-prvni-nenebeske-zastupy"data-no-ads class="vod-badge-link vod-logo-kvifftv" data-ga-event="vod-service-kviff-tv|film|vod" title="KVIFF.TV">
-									<i></i>KVIFF.TV
-								</a>
-							</span>
-						</div>
-
-
-
-
-
-				</div>
-			</div>
 		</div>
-
-		<div id="dropdown-control-panel" class="dropdown-content control-panel">
-
-			<ul class="blue">
-							<li>
-								<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads>
-									Přidat recenzi
-								</a>
-							</li>
-					<li id="snippet--publicControlMenuWatchlist">
-						<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads>
-								Přidat do Chci vidět
-						</a>
-					</li>
-					<li id="snippet--publicControlMenuFanclub">
-							<a href="/registration-motivation/" rel="registrationMotivation">Přidat do oblíbených</a>
-					</li>
-					<li id="snippet--publicControlMenuCollection">
-							<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads>
-								Přidat do filmotéky
-							</a>
-					</li>
-					<li>
-						<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads>
-								Přidat do seznamu
-						</a>
-					</li>
-			</ul>
-
-			<hr>
-
-			<ul class="blue">
-			<li>
-				<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads>
-					Přidat obsah
-				</a>
-			</li>
-			<li>
-				<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads>
-					Přidat zajímavost
-				</a>
-			</li>
-			<li>
-				<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads>
-					Přidat obrázky
-				</a>
-			</li>
-			<li>
-				<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads>
-					Přidat podobné filmy
-				</a>
-			</li>
-			<li>
-				<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads>
-					Přidat související filmy
-				</a>
-			</li>
-			<li>
-				<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads>
-					Přidat externí recenzi
-				</a>
-			</li>
-			<li>
-				<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads>
-					Přidat tagy
-				</a>
-			</li>
-			<li>
-				<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads>
-					Přidat web
-				</a>
-			</li>
-			</ul>
-		</div>
-
 
 		<div class="play-content-ios">
 			<div id="amplified_100006957"></div>
 		</div>
+
+		<section class="updated-box box-tags">
+			<div class="updated-box-header">
+				<h3>
+					Tagy
+				</h3>
+			</div>
+			<div class="updated-box-content updated-box-content-tags">
+					<a href="/tag/2818-muz/">muž</a>
+					<a href="/tag/1492-zena/">žena</a>
+					<a href="/tag/47-laska/">láska</a>
+					<a href="/tag/73-rodina/">rodina</a>
+					<a href="/tag/76-smrt/">smrt</a>
+					<a href="/tag/91-vrazda/">vražda</a>
+					<a href="/tag/573-divka/">dívka</a>
+					<a href="/tag/234-tajemstvi/">tajemství</a>
+					<a href="/tag/61-otec/">otec</a>
+					<a href="/tag/25-deti/">děti</a>
+					<a href="/tag/74-rodice/">rodiče</a>
+					<a href="/tag/83-strach/">strach</a>
+					<a href="/tag/1065-mladez/">mládež</a>
+					<a href="/tag/219-zahady/">záhady</a>
+					<a href="/tag/20-dcera/">dcera</a>
+					<a href="/tag/352-vysetrovani/">vyšetřování</a>
+					<a href="/tag/90-vrah/">vrah</a>
+					<a href="/tag/1512-patrani/">pátrání</a>
+					<a href="/tag/548-venkov/">venkov</a>
+					<a href="/tag/2404-kolegove/">kolegové</a>
+					<a href="/tag/21-doktori/" class="tag-item hidden">doktoři</a>
+					<a href="/tag/170-nemoc/" class="tag-item hidden">nemoc</a>
+					<a href="/tag/161-dum/" class="tag-item hidden">dům</a>
+					<a href="/tag/1511-tragedie/" class="tag-item hidden">tragédie</a>
+					<a href="/tag/57-nemocnice/" class="tag-item hidden">nemocnice</a>
+					<a href="/tag/88-tehotenstvi/" class="tag-item hidden">těhotenství</a>
+					<a href="/tag/559-vedci/" class="tag-item hidden">vědci</a>
+					<a href="/tag/596-cerny-humor/" class="tag-item hidden">černý humor</a>
+					<a href="/tag/23-duchove/" class="tag-item hidden">duchové</a>
+					<a href="/tag/950-veda/" class="tag-item hidden">věda</a>
+					<a href="/tag/602-lekarstvi/" class="tag-item hidden">lékařství</a>
+					<a href="/tag/427-paranormalni-jevy/" class="tag-item hidden">paranormální jevy</a>
+					<a href="/tag/1899-vedec/" class="tag-item hidden">vědec</a>
+					<a href="/tag/167-nevylecitelna-nemoc/" class="tag-item hidden">nevyléčitelná nemoc</a>
+					<a href="/tag/168-rakovina/" class="tag-item hidden">rakovina</a>
+					<a href="/tag/385-prizrak/" class="tag-item hidden">přízrak</a>
+					<a href="/tag/1012-lek/" class="tag-item hidden">lék</a>
+					<a href="/tag/1475-vytah/" class="tag-item hidden">výtah</a>
+			</div>
+			<div class="box-content-more">
+				<a href="javascript:void(0);" data-show=".tag-item" data-text="méně" data-show-icon>
+					více
+				</a>
+			</div>
+		</section>
+
+
 
 		<div class="box box-banner-mobile">
 			<p class="box-banner-text">Reklama</p>
 <div id="mobile_square_2" class="ad-pmg" style="height: 300px;"></div>
 		</div>
 
-		<section class="box">
-			<div class="box-header box-header-small">
-				<h2>
-					V seznamech uživatelů
-					<span class="tooltip" data-tippy-content="Průměrné řazení filmu v seznamech uživatelů. Své seznamy si můžeš sestavit ve <a href=&quot;/prihlaseni/&quot;>svém profilu</a>.">
-						<i class="icon icon-info" aria-hidden="true"></i>
-					</span>
-					<span class="box-header-new">new</span>
-				</h2>
-			</div>
-			<div class="box-content box-content-padding box-content-directorylist with-border-bottom">
-				<a href="https://www.csfd.cz/seznamy/serialy/?detail=25#highlight-71924">
-					<i class="nr">30.</i>
-					Seriály, které mě nejvíce vyděsily
-				</a>
-				<a href="https://www.csfd.cz/seznamy/serialy/?detail=26#highlight-71924">
-					<i class="nr">88.</i>
-					Seriály, které mě nejvíce šokovaly
-				</a>
-				<a href="https://www.csfd.cz/seznamy/serialy/?detail=35#highlight-71924">
-					<i class="nr">99.</i>
-					Seriály, které mě nejvíce překvapily závěrečnou pointou
-				</a>
-				<a href="https://www.csfd.cz/seznamy/serialy/?detail=56&amp;page=2#highlight-71924">
-					<i class="nr">137.</i>
-					Seriály, které se mi líbí méně než většině
-				</a>
-				<a href="https://www.csfd.cz/seznamy/serialy/?detail=24&amp;page=2#highlight-71924">
-					<i class="nr">141.</i>
-					Seriály, které mě nejvíce duševně povznesly
-				</a>
-				<a href="https://www.csfd.cz/seznamy/serialy/?detail=22&amp;page=2#highlight-71924" class="user-list-item hidden">
-					<i class="nr">181.</i>
-					Seriály, které mě nejvíce rozesmály
-				</a>
-				<a href="https://www.csfd.cz/seznamy/serialy/?detail=34&amp;page=3#highlight-71924" class="user-list-item hidden">
-					<i class="nr">265.</i>
-					Seriály, jejichž všechny epizody jsem viděl několikrát
-				</a>
-				<a href="https://www.csfd.cz/seznamy/serialy/?detail=30&amp;page=4#highlight-71924" class="user-list-item hidden">
-					<i class="nr">381.</i>
-					Seriály, které se mi líbí více než většině
-				</a>
-			</div>
-			<div class="box-content-more"><a href="javascript:void(0);" data-show=".user-list-item" data-text="méně">více</a></div>
-		</section>
-
-		<section class="box box-premieres" >
-			<div class="box-header box-header-small">
+		<section class="updated-box box-premieres" >
+			<div class="updated-box-header">
 				<h3>
 					Premiéry
 				</h3>
 			</div>
-			<div class="box-content">
-				<div class="box-premieres-content">
+			<div class="updated-box-content updated-box-content-padding">
 
-					<ul>
-							<li class="divider">
-									<span class="item-img"><img src="//image.pmgstatic.com/files/svg/flags/162/751/162751326/162751326_a09679.svg" class="flag" title="Česko" alt="Česko"/></span>
-								<p>
-									V kinech od
-								</p>
-								<span title="26.09.2022 Aerofilms">
-									26.09.2022
-										Aerofilms
-								</span>
-							</li>
-							<li>
-									<span class="item-img"><img src="//image.pmgstatic.com/files/svg/flags/162/751/162751326/162751326_a09679.svg" class="flag" title="Česko" alt="Česko"/></span>
-								<p>
-									Na DVD od
-								</p>
-								<span title="22.12.2010 Levné knihy">
-									22.12.2010
-										Levné knihy
-								</span>
-							</li>
-							<li class="divider">
-									<span class="item-img"><img src="//image.pmgstatic.com/files/svg/flags/162/751/162751319/162751319_8eac4e.svg" class="flag" title="Dánsko" alt="Dánsko"/></span>
-								<p>
-									V TV od
-								</p>
-								<span title="24.11.1994 Danmarks Radio">
-									24.11.1994
-										Danmarks Radio
-								</span>
-							</li>
-							<li class="divider">
-									<span class="item-img"><img src="//image.pmgstatic.com/files/svg/flags/162/751/162751335/162751335_263544.svg" class="flag" title="Německo" alt="Německo"/></span>
-								<p>
-									V TV od
-								</p>
-								<span title="11.03.1995 arte">
-									11.03.1995
-										arte
-								</span>
-							</li>
-							<li class="divider">
-									<span class="item-img"><img src="//image.pmgstatic.com/files/svg/flags/162/751/162751221/162751221_2aa316.svg" class="flag" title="Švédsko" alt="Švédsko"/></span>
-								<p>
-									V TV od
-								</p>
-								<span title="04.03.1995 SVT">
-									04.03.1995
-										SVT
-								</span>
-							</li>
-					</ul>
-				</div>
+				<ul>
+						<li class="divider">
+								<span class="item-img"><img src="//image.pmgstatic.com/files/svg/flags/162/751/162751326/162751326_a09679.svg" class="flag" title="Česko" alt="Česko"/></span>
+							<p>
+								V kinech od
+							</p>
+							<span title="26.09.2022 Aerofilms">
+								26.09.2022
+									Aerofilms
+							</span>
+						</li>
+						<li>
+								<span class="item-img"><img src="//image.pmgstatic.com/files/svg/flags/162/751/162751326/162751326_a09679.svg" class="flag" title="Česko" alt="Česko"/></span>
+							<p>
+								Na DVD od
+							</p>
+							<span title="22.12.2010 Levné knihy">
+								22.12.2010
+									Levné knihy
+							</span>
+						</li>
+						<li class="divider">
+								<span class="item-img"><img src="//image.pmgstatic.com/files/svg/flags/162/751/162751319/162751319_8eac4e.svg" class="flag" title="Dánsko" alt="Dánsko"/></span>
+							<p>
+								V TV od
+							</p>
+							<span title="24.11.1994 Danmarks Radio">
+								24.11.1994
+									Danmarks Radio
+							</span>
+						</li>
+						<li class="divider">
+								<span class="item-img"><img src="//image.pmgstatic.com/files/svg/flags/162/751/162751335/162751335_263544.svg" class="flag" title="Německo" alt="Německo"/></span>
+							<p>
+								V TV od
+							</p>
+							<span title="11.03.1995 arte">
+								11.03.1995
+									arte
+							</span>
+						</li>
+						<li class="divider">
+								<span class="item-img"><img src="//image.pmgstatic.com/files/svg/flags/162/751/162751221/162751221_2aa316.svg" class="flag" title="Švédsko" alt="Švédsko"/></span>
+							<p>
+								V TV od
+							</p>
+							<span title="04.03.1995 SVT">
+								04.03.1995
+									SVT
+							</span>
+						</li>
+				</ul>
 			</div>
 		</section>
 
@@ -1685,74 +1747,24 @@ Když nastane stav beztíže, jako hudební podkres hraje <a href="https://www.c
 		</section>
 
 
-		<section class="box">
-			<div class="box-header box-header-small">
-				<h3>
-					Tagy
-				</h3>
-			</div>
-			<div class="box-content box-content-padding">
-					<a href="/tag/2818-muz/">muž</a>,
-					<a href="/tag/47-laska/">láska</a>,
-					<a href="/tag/1492-zena/">žena</a>,
-					<a href="/tag/73-rodina/">rodina</a>,
-					<a href="/tag/76-smrt/">smrt</a>,
-					<a href="/tag/91-vrazda/">vražda</a>,
-					<a href="/tag/573-divka/">dívka</a>,
-					<a href="/tag/61-otec/">otec</a>,
-					<a href="/tag/234-tajemstvi/">tajemství</a>,
-					<a href="/tag/25-deti/">děti</a>,
-					<a href="/tag/74-rodice/">rodiče</a>,
-					<a href="/tag/83-strach/">strach</a>,
-					<a href="/tag/1065-mladez/">mládež</a>,
-					<a href="/tag/20-dcera/">dcera</a>,
-					<a href="/tag/219-zahady/">záhady</a>,
-					<a href="/tag/352-vysetrovani/">vyšetřování</a>,
-					<a href="/tag/90-vrah/">vrah</a>,
-					<a href="/tag/1512-patrani/">pátrání</a>,
-					<a href="/tag/548-venkov/">venkov</a>,
-					<a href="/tag/2404-kolegove/">kolegové</a>,
-					<a href="/tag/21-doktori/">doktoři</a>,
-					<a href="/tag/170-nemoc/">nemoc</a>,
-					<a href="/tag/161-dum/">dům</a>,
-					<a href="/tag/57-nemocnice/">nemocnice</a>,
-					<a href="/tag/1511-tragedie/">tragédie</a>,
-					<a href="/tag/88-tehotenstvi/">těhotenství</a>,
-					<a href="/tag/559-vedci/">vědci</a>,
-					<a href="/tag/596-cerny-humor/">černý humor</a>,
-					<a href="/tag/23-duchove/">duchové</a>,
-					<a href="/tag/950-veda/">věda</a>,
-					<a href="/tag/602-lekarstvi/">lékařství</a>,
-					<a href="/tag/427-paranormalni-jevy/">paranormální jevy</a>,
-					<a href="/tag/1899-vedec/">vědec</a>,
-					<a href="/tag/167-nevylecitelna-nemoc/">nevyléčitelná nemoc</a>,
-					<a href="/tag/168-rakovina/">rakovina</a>,
-					<a href="/tag/385-prizrak/">přízrak</a>,
-					<a href="/tag/1012-lek/">lék</a>,
-					<a href="/tag/1475-vytah/">výtah</a>
-			</div>
-		</section>
-
-		<section class="box box-related">
-			<div class="box-header box-header-small">
+		<section class="updated-box">
+			<div class="updated-box-header" data-onboarding-step-8="false">
 				<h3>
 					Související
 				</h3>
 			</div>
-			<div class="box-content">
-	<article class="article last">
-		<div class="article-content article-aside-films">
-			<header class="article-header">
-<h3 class="film-title-nooverflow"><i class="icon icon-rounded-square blue"></i><a href="/film/116244-kralovska-nemocnice/prehled/" class="film-title-name">Královská nemocnice</a> <span class="film-title-info"><span class="info">(2004)</span> <span class="info">(seriál)</span></span></h3>			</header>
-
-<p class="film-origins-genres"><span class="info"><span class="info-country">USA</span>, Drama / Mysteriózní / Horor</span></p>
+			<div class="updated-box-content">
+	<article class="article aside-films-article">
+		<header class="article-header">
+<h3 class="film-title-inline"><i class="icon icon-rounded-square blue"></i><a href="/film/116244-kralovska-nemocnice/prehled/" class="film-title-name">Královská nemocnice</a><span class="film-title-info"><span class="bullet"></span><span class="info">2004</span><span class="bullet"></span><span class="info">seriál</span></span></h3><p class="film-origins-genres"><span class="info"><span class="info-country">USA</span><span class="bullet"></span>Drama, Mysteriózní, Horor</span></p>		</header>
+		<div class="article-content-spacing">
 <p class="film-creators">Režie: <a href="/tvurce/2817-craig-r-baxley/prehled/">Craig R. Baxley</a></p><p class="film-creators">Hrají: <a href="/tvurce/35311-jamie-harrold/prehled/">Jamie Harrold</a>, <a href="/tvurce/241-diane-ladd/prehled/">Diane Ladd</a></p>		</div>
 	</article>
 			</div>
 		</section>
 
 
-		<section id="shop-desktop" class="box box-shop box-shop-desktop hidden"></section>
+		<section id="shop-desktop" class="updated-box box-shop box-shop-desktop hidden"></section>
 	</aside>
 </div>
 
@@ -1776,8 +1788,8 @@ Když nastane stav beztíže, jako hudební podkres hraje <a href="https://www.c
 						<div class="footer-boxes">
 								<div class="footer-box-apps">
 									<h3>Download App</h3>
-									<a href="https://apps.apple.com/cz/app/id6755365206"><img src=&#47;&#47;static.pmgstatic.com&#47;assets&#47;images&#47;2b5f1f1793f6881e6e9326d2c21f9445&#47;appstore-cz.png width="114" height="38" alt=""></a>
-									<a href="https://play.google.com/store/apps/details?id=cz.csfd.csfdroid"><img src=&#47;&#47;static.pmgstatic.com&#47;assets&#47;images&#47;2b5f1f1793f6881e6e9326d2c21f9445&#47;googleplay-cz.png width="128" height="38" alt=""></a>
+									<a href="https://apps.apple.com/cz/app/id6755365206"><img src=&#47;&#47;static.pmgstatic.com&#47;assets&#47;images&#47;6aeb8871e0052a62b04d591a3f85e733&#47;appstore-cz.png width="114" height="38" alt=""></a>
+									<a href="https://play.google.com/store/apps/details?id=cz.csfd.csfdroid"><img src=&#47;&#47;static.pmgstatic.com&#47;assets&#47;images&#47;6aeb8871e0052a62b04d591a3f85e733&#47;googleplay-cz.png width="128" height="38" alt=""></a>
 								</div>
 
 							<div class="footer-box-social">
@@ -1803,9 +1815,9 @@ Když nastane stav beztíže, jako hudební podkres hraje <a href="https://www.c
 						<div class="footer-action-timezones">
 							<h3>Výběr časového pásma</h3>
 							<form action="/film/71924-kralovstvi/prehled/" method="post" id="frm-timezoneForm">
-								<select name="timezone" data-auto-submit-form="true" id="frm-timezoneForm-timezone" class="updated-select"><option value="africa/abidjan">Africa/Abidjan</option><option value="africa/accra">Africa/Accra</option><option value="africa/addis_ababa">Africa/Addis Ababa</option><option value="africa/algiers">Africa/Algiers</option><option value="africa/asmara">Africa/Asmara</option><option value="africa/bamako">Africa/Bamako</option><option value="africa/bangui">Africa/Bangui</option><option value="africa/banjul">Africa/Banjul</option><option value="africa/bissau">Africa/Bissau</option><option value="africa/blantyre">Africa/Blantyre</option><option value="africa/brazzaville">Africa/Brazzaville</option><option value="africa/bujumbura">Africa/Bujumbura</option><option value="africa/cairo">Africa/Cairo</option><option value="africa/casablanca">Africa/Casablanca</option><option value="africa/ceuta">Africa/Ceuta</option><option value="africa/conakry">Africa/Conakry</option><option value="africa/dakar">Africa/Dakar</option><option value="africa/dar_es_salaam">Africa/Dar es Salaam</option><option value="africa/djibouti">Africa/Djibouti</option><option value="africa/douala">Africa/Douala</option><option value="africa/el_aaiun">Africa/El Aaiun</option><option value="africa/freetown">Africa/Freetown</option><option value="africa/gaborone">Africa/Gaborone</option><option value="africa/harare">Africa/Harare</option><option value="africa/johannesburg">Africa/Johannesburg</option><option value="africa/juba">Africa/Juba</option><option value="africa/kampala">Africa/Kampala</option><option value="africa/khartoum">Africa/Khartoum</option><option value="africa/kigali">Africa/Kigali</option><option value="africa/kinshasa">Africa/Kinshasa</option><option value="africa/lagos">Africa/Lagos</option><option value="africa/libreville">Africa/Libreville</option><option value="africa/lome">Africa/Lome</option><option value="africa/luanda">Africa/Luanda</option><option value="africa/lubumbashi">Africa/Lubumbashi</option><option value="africa/lusaka">Africa/Lusaka</option><option value="africa/malabo">Africa/Malabo</option><option value="africa/maputo">Africa/Maputo</option><option value="africa/maseru">Africa/Maseru</option><option value="africa/mbabane">Africa/Mbabane</option><option value="africa/mogadishu">Africa/Mogadishu</option><option value="africa/monrovia">Africa/Monrovia</option><option value="africa/nairobi">Africa/Nairobi</option><option value="africa/ndjamena">Africa/Ndjamena</option><option value="africa/niamey">Africa/Niamey</option><option value="africa/nouakchott">Africa/Nouakchott</option><option value="africa/ouagadougou">Africa/Ouagadougou</option><option value="africa/porto-novo">Africa/Porto-Novo</option><option value="africa/sao_tome">Africa/Sao Tome</option><option value="africa/tripoli">Africa/Tripoli</option><option value="africa/tunis">Africa/Tunis</option><option value="africa/windhoek">Africa/Windhoek</option><option value="america/adak">America/Adak</option><option value="america/anchorage">America/Anchorage</option><option value="america/anguilla">America/Anguilla</option><option value="america/antigua">America/Antigua</option><option value="america/araguaina">America/Araguaina</option><option value="america/argentina/buenos_aires">America/Argentina/Buenos Aires</option><option value="america/argentina/catamarca">America/Argentina/Catamarca</option><option value="america/argentina/cordoba">America/Argentina/Cordoba</option><option value="america/argentina/jujuy">America/Argentina/Jujuy</option><option value="america/argentina/la_rioja">America/Argentina/La Rioja</option><option value="america/argentina/mendoza">America/Argentina/Mendoza</option><option value="america/argentina/rio_gallegos">America/Argentina/Rio Gallegos</option><option value="america/argentina/salta">America/Argentina/Salta</option><option value="america/argentina/san_juan">America/Argentina/San Juan</option><option value="america/argentina/san_luis">America/Argentina/San Luis</option><option value="america/argentina/tucuman">America/Argentina/Tucuman</option><option value="america/argentina/ushuaia">America/Argentina/Ushuaia</option><option value="america/aruba">America/Aruba</option><option value="america/asuncion">America/Asuncion</option><option value="america/atikokan">America/Atikokan</option><option value="america/bahia">America/Bahia</option><option value="america/bahia_banderas">America/Bahia Banderas</option><option value="america/barbados">America/Barbados</option><option value="america/belem">America/Belem</option><option value="america/belize">America/Belize</option><option value="america/blanc-sablon">America/Blanc-Sablon</option><option value="america/boa_vista">America/Boa Vista</option><option value="america/bogota">America/Bogota</option><option value="america/boise">America/Boise</option><option value="america/cambridge_bay">America/Cambridge Bay</option><option value="america/campo_grande">America/Campo Grande</option><option value="america/cancun">America/Cancun</option><option value="america/caracas">America/Caracas</option><option value="america/cayenne">America/Cayenne</option><option value="america/cayman">America/Cayman</option><option value="america/chicago">America/Chicago</option><option value="america/chihuahua">America/Chihuahua</option><option value="america/ciudad_juarez">America/Ciudad Juarez</option><option value="america/costa_rica">America/Costa Rica</option><option value="america/creston">America/Creston</option><option value="america/cuiaba">America/Cuiaba</option><option value="america/curacao">America/Curacao</option><option value="america/dawson">America/Dawson</option><option value="america/dawson_creek">America/Dawson Creek</option><option value="america/denver">America/Denver</option><option value="america/detroit">America/Detroit</option><option value="america/dominica">America/Dominica</option><option value="america/edmonton">America/Edmonton</option><option value="america/eirunepe">America/Eirunepe</option><option value="america/el_salvador">America/El Salvador</option><option value="america/fort_nelson">America/Fort Nelson</option><option value="america/fortaleza">America/Fortaleza</option><option value="america/glace_bay">America/Glace Bay</option><option value="america/goose_bay">America/Goose Bay</option><option value="america/grand_turk">America/Grand Turk</option><option value="america/grenada">America/Grenada</option><option value="america/guadeloupe">America/Guadeloupe</option><option value="america/guatemala">America/Guatemala</option><option value="america/guayaquil">America/Guayaquil</option><option value="america/guyana">America/Guyana</option><option value="america/halifax">America/Halifax</option><option value="america/havana">America/Havana</option><option value="america/hermosillo">America/Hermosillo</option><option value="america/indiana/indianapolis">America/Indiana/Indianapolis</option><option value="america/indiana/knox">America/Indiana/Knox</option><option value="america/indiana/marengo">America/Indiana/Marengo</option><option value="america/indiana/petersburg">America/Indiana/Petersburg</option><option value="america/indiana/tell_city">America/Indiana/Tell City</option><option value="america/indiana/vevay">America/Indiana/Vevay</option><option value="america/indiana/vincennes">America/Indiana/Vincennes</option><option value="america/indiana/winamac">America/Indiana/Winamac</option><option value="america/inuvik">America/Inuvik</option><option value="america/iqaluit">America/Iqaluit</option><option value="america/jamaica">America/Jamaica</option><option value="america/juneau">America/Juneau</option><option value="america/kentucky/louisville">America/Kentucky/Louisville</option><option value="america/kentucky/monticello">America/Kentucky/Monticello</option><option value="america/kralendijk">America/Kralendijk</option><option value="america/la_paz">America/La Paz</option><option value="america/lima">America/Lima</option><option value="america/los_angeles">America/Los Angeles</option><option value="america/lower_princes">America/Lower Princes</option><option value="america/maceio">America/Maceio</option><option value="america/managua">America/Managua</option><option value="america/manaus">America/Manaus</option><option value="america/marigot">America/Marigot</option><option value="america/martinique">America/Martinique</option><option value="america/matamoros">America/Matamoros</option><option value="america/mazatlan">America/Mazatlan</option><option value="america/menominee">America/Menominee</option><option value="america/merida">America/Merida</option><option value="america/metlakatla">America/Metlakatla</option><option value="america/mexico_city">America/Mexico City</option><option value="america/miquelon">America/Miquelon</option><option value="america/moncton">America/Moncton</option><option value="america/monterrey">America/Monterrey</option><option value="america/montevideo">America/Montevideo</option><option value="america/montserrat">America/Montserrat</option><option value="america/nassau">America/Nassau</option><option value="america/new_york">America/New York</option><option value="america/nome">America/Nome</option><option value="america/north_dakota/beulah">America/North Dakota/Beulah</option><option value="america/north_dakota/center">America/North Dakota/Center</option><option value="america/north_dakota/new_salem">America/North Dakota/New Salem</option><option value="america/nuuk">America/Nuuk</option><option value="america/ojinaga">America/Ojinaga</option><option value="america/panama">America/Panama</option><option value="america/paramaribo">America/Paramaribo</option><option value="america/phoenix">America/Phoenix</option><option value="america/port-au-prince">America/Port-au-Prince</option><option value="america/port_of_spain">America/Port of Spain</option><option value="america/porto_velho">America/Porto Velho</option><option value="america/puerto_rico">America/Puerto Rico</option><option value="america/punta_arenas">America/Punta Arenas</option><option value="america/rankin_inlet">America/Rankin Inlet</option><option value="america/recife">America/Recife</option><option value="america/regina">America/Regina</option><option value="america/resolute">America/Resolute</option><option value="america/rio_branco">America/Rio Branco</option><option value="america/santarem">America/Santarem</option><option value="america/santiago">America/Santiago</option><option value="america/santo_domingo">America/Santo Domingo</option><option value="america/sao_paulo">America/Sao Paulo</option><option value="america/scoresbysund">America/Scoresbysund</option><option value="america/sitka">America/Sitka</option><option value="america/st_barthelemy">America/St Barthelemy</option><option value="america/st_johns">America/St. John's</option><option value="america/st_kitts">America/St. Kitts</option><option value="america/st_lucia">America/St. Lucia</option><option value="america/st_thomas">America/St. Thomas</option><option value="america/st_vincent">America/St. Vincent</option><option value="america/swift_current">America/Swift Current</option><option value="america/tegucigalpa">America/Tegucigalpa</option><option value="america/thule">America/Thule</option><option value="america/tijuana">America/Tijuana</option><option value="america/toronto">America/Toronto</option><option value="america/tortola">America/Tortola</option><option value="america/vancouver">America/Vancouver</option><option value="america/whitehorse">America/Whitehorse</option><option value="america/winnipeg">America/Winnipeg</option><option value="america/yakutat">America/Yakutat</option><option value="america/yellowknife">America/Yellowknife</option><option value="antarctica/syowa">Antarctica/Syowa</option><option value="arctic/longyearbyen">Arctic/Longyearbyen</option><option value="asia/aden">Asia/Aden</option><option value="asia/almaty">Asia/Almaty</option><option value="asia/amman">Asia/Amman</option><option value="asia/anadyr">Asia/Anadyr</option><option value="asia/aqtau">Asia/Aqtau</option><option value="asia/aqtobe">Asia/Aqtobe</option><option value="asia/ashgabat">Asia/Ashgabat</option><option value="asia/atyrau">Asia/Atyrau</option><option value="asia/baghdad">Asia/Baghdad</option><option value="asia/bahrain">Asia/Bahrain</option><option value="asia/baku">Asia/Baku</option><option value="asia/bangkok">Asia/Bangkok</option><option value="asia/barnaul">Asia/Barnaul</option><option value="asia/beirut">Asia/Beirut</option><option value="asia/bishkek">Asia/Bishkek</option><option value="asia/brunei">Asia/Brunei</option><option value="asia/chita">Asia/Chita</option><option value="asia/choibalsan">Asia/Choibalsan</option><option value="asia/colombo">Asia/Colombo</option><option value="asia/damascus">Asia/Damascus</option><option value="asia/dhaka">Asia/Dhaka</option><option value="asia/dili">Asia/Dili</option><option value="asia/dubai">Asia/Dubai</option><option value="asia/dushanbe">Asia/Dushanbe</option><option value="asia/famagusta">Asia/Famagusta</option><option value="asia/gaza">Asia/Gaza</option><option value="asia/hebron">Asia/Hebron</option><option value="asia/ho_chi_minh">Asia/Ho Chi Minh</option><option value="asia/hong_kong">Asia/Hong Kong</option><option value="asia/hovd">Asia/Hovd</option><option value="asia/irkutsk">Asia/Irkutsk</option><option value="asia/jakarta">Asia/Jakarta</option><option value="asia/jayapura">Asia/Jayapura</option><option value="asia/jerusalem">Asia/Jerusalem</option><option value="asia/kabul">Asia/Kabul</option><option value="asia/kamchatka">Asia/Kamchatka</option><option value="asia/karachi">Asia/Karachi</option><option value="asia/kathmandu">Asia/Kathmandu</option><option value="asia/kolkata">Asia/Kolkata</option><option value="asia/krasnoyarsk">Asia/Krasnoyarsk</option><option value="asia/kuala_lumpur">Asia/Kuala Lumpur</option><option value="asia/kuching">Asia/Kuching</option><option value="asia/kuwait">Asia/Kuwait</option><option value="asia/macau">Asia/Macau</option><option value="asia/magadan">Asia/Magadan</option><option value="asia/makassar">Asia/Makassar</option><option value="asia/manila">Asia/Manila</option><option value="asia/muscat">Asia/Muscat</option><option value="asia/nicosia">Asia/Nicosia</option><option value="asia/novokuznetsk">Asia/Novokuznetsk</option><option value="asia/novosibirsk">Asia/Novosibirsk</option><option value="asia/omsk">Asia/Omsk</option><option value="asia/oral">Asia/Oral</option><option value="asia/phnom_penh">Asia/Phnom Penh</option><option value="asia/pontianak">Asia/Pontianak</option><option value="asia/pyongyang">Asia/Pyongyang</option><option value="asia/qatar">Asia/Qatar</option><option value="asia/qostanay">Asia/Qostanay</option><option value="asia/qyzylorda">Asia/Qyzylorda</option><option value="asia/riyadh">Asia/Riyadh</option><option value="asia/sakhalin">Asia/Sakhalin</option><option value="asia/samarkand">Asia/Samarkand</option><option value="asia/seoul">Asia/Seoul</option><option value="asia/shanghai">Asia/Shanghai</option><option value="asia/singapore">Asia/Singapore</option><option value="asia/taipei">Asia/Taipei</option><option value="asia/tashkent">Asia/Tashkent</option><option value="asia/tbilisi">Asia/Tbilisi</option><option value="asia/tehran">Asia/Tehran</option><option value="asia/thimphu">Asia/Thimphu</option><option value="asia/tokyo">Asia/Tokyo</option><option value="asia/tomsk">Asia/Tomsk</option><option value="asia/ulaanbaatar">Asia/Ulaanbaatar</option><option value="asia/urumqi">Asia/Urumqi</option><option value="asia/vientiane">Asia/Vientiane</option><option value="asia/vladivostok">Asia/Vladivostok</option><option value="asia/yakutsk">Asia/Yakutsk</option><option value="asia/yangon">Asia/Yangon</option><option value="asia/yekaterinburg">Asia/Yekaterinburg</option><option value="asia/yerevan">Asia/Yerevan</option><option value="atlantic/azores">Atlantic/Azores</option><option value="atlantic/bermuda">Atlantic/Bermuda</option><option value="atlantic/canary">Atlantic/Canary</option><option value="atlantic/cape_verde">Atlantic/Cape Verde</option><option value="atlantic/faroe">Atlantic/Faroe</option><option value="atlantic/madeira">Atlantic/Madeira</option><option value="atlantic/reykjavik">Atlantic/Reykjavik</option><option value="atlantic/south_georgia">Atlantic/South Georgia</option><option value="atlantic/st_helena">Atlantic/St Helena</option><option value="atlantic/stanley">Atlantic/Stanley</option><option value="australia/adelaide">Australia/Adelaide</option><option value="australia/brisbane">Australia/Brisbane</option><option value="australia/broken_hill">Australia/Broken Hill</option><option value="australia/darwin">Australia/Darwin</option><option value="australia/eucla">Australia/Eucla</option><option value="australia/hobart">Australia/Hobart</option><option value="australia/lindeman">Australia/Lindeman</option><option value="australia/lord_howe">Australia/Lord Howe</option><option value="australia/melbourne">Australia/Melbourne</option><option value="australia/perth">Australia/Perth</option><option value="australia/sydney">Australia/Sydney</option><option value="europe/amsterdam">Europe/Amsterdam</option><option value="europe/andorra">Europe/Andorra</option><option value="europe/astrakhan">Europe/Astrakhan</option><option value="europe/athens">Europe/Athens</option><option value="europe/belgrade">Europe/Belgrade</option><option value="europe/berlin">Europe/Berlin</option><option value="europe/bratislava">Europe/Bratislava</option><option value="europe/brussels">Europe/Brussels</option><option value="europe/bucharest">Europe/Bucharest</option><option value="europe/budapest">Europe/Budapest</option><option value="europe/chisinau">Europe/Chisinau</option><option value="europe/copenhagen">Europe/Copenhagen</option><option value="europe/dublin">Europe/Dublin</option><option value="europe/gibraltar">Europe/Gibraltar</option><option value="europe/guernsey">Europe/Guernsey</option><option value="europe/helsinki">Europe/Helsinki</option><option value="europe/isle_of_man">Europe/Isle of Man</option><option value="europe/istanbul">Europe/Istanbul</option><option value="europe/jersey">Europe/Jersey</option><option value="europe/kaliningrad">Europe/Kaliningrad</option><option value="europe/kirov">Europe/Kirov</option><option value="europe/kyiv">Europe/Kyiv</option><option value="europe/lisbon">Europe/Lisbon</option><option value="europe/ljubljana">Europe/Ljubljana</option><option value="europe/london">Europe/London</option><option value="europe/luxembourg">Europe/Luxembourg</option><option value="europe/madrid">Europe/Madrid</option><option value="europe/malta">Europe/Malta</option><option value="europe/mariehamn">Europe/Mariehamn</option><option value="europe/minsk">Europe/Minsk</option><option value="europe/monaco">Europe/Monaco</option><option value="europe/moscow">Europe/Moscow</option><option value="europe/oslo">Europe/Oslo</option><option value="europe/paris">Europe/Paris</option><option value="europe/podgorica">Europe/Podgorica</option><option value="europe/prague" selected>Europe/Prague</option><option value="europe/riga">Europe/Riga</option><option value="europe/rome">Europe/Rome</option><option value="europe/samara">Europe/Samara</option><option value="europe/san_marino">Europe/San Marino</option><option value="europe/sarajevo">Europe/Sarajevo</option><option value="europe/saratov">Europe/Saratov</option><option value="europe/simferopol">Europe/Simferopol</option><option value="europe/skopje">Europe/Skopje</option><option value="europe/sofia">Europe/Sofia</option><option value="europe/stockholm">Europe/Stockholm</option><option value="europe/tallinn">Europe/Tallinn</option><option value="europe/tirane">Europe/Tirane</option><option value="europe/ulyanovsk">Europe/Ulyanovsk</option><option value="europe/vaduz">Europe/Vaduz</option><option value="europe/vatican">Europe/Vatican</option><option value="europe/vienna">Europe/Vienna</option><option value="europe/vilnius">Europe/Vilnius</option><option value="europe/volgograd">Europe/Volgograd</option><option value="europe/warsaw">Europe/Warsaw</option><option value="europe/zagreb">Europe/Zagreb</option><option value="europe/zurich">Europe/Zurich</option><option value="indian/antananarivo">Indian/Antananarivo</option><option value="indian/chagos">Indian/Chagos</option><option value="indian/christmas">Indian/Christmas</option><option value="indian/cocos">Indian/Cocos</option><option value="indian/comoro">Indian/Comoro</option><option value="indian/kerguelen">Indian/Kerguelen</option><option value="indian/mahe">Indian/Mahe</option><option value="indian/maldives">Indian/Maldives</option><option value="indian/mauritius">Indian/Mauritius</option><option value="indian/mayotte">Indian/Mayotte</option><option value="indian/reunion">Indian/Reunion</option><option value="pacific/apia">Pacific/Apia</option><option value="pacific/auckland">Pacific/Auckland</option><option value="pacific/bougainville">Pacific/Bougainville</option><option value="pacific/chatham">Pacific/Chatham</option><option value="pacific/chuuk">Pacific/Chuuk</option><option value="pacific/easter">Pacific/Easter</option><option value="pacific/efate">Pacific/Efate</option><option value="pacific/fakaofo">Pacific/Fakaofo</option><option value="pacific/fiji">Pacific/Fiji</option><option value="pacific/funafuti">Pacific/Funafuti</option><option value="pacific/galapagos">Pacific/Galapagos</option><option value="pacific/gambier">Pacific/Gambier</option><option value="pacific/guadalcanal">Pacific/Guadalcanal</option><option value="pacific/guam">Pacific/Guam</option><option value="pacific/honolulu">Pacific/Honolulu</option><option value="pacific/kanton">Pacific/Kanton</option><option value="pacific/kiritimati">Pacific/Kiritimati</option><option value="pacific/kosrae">Pacific/Kosrae</option><option value="pacific/kwajalein">Pacific/Kwajalein</option><option value="pacific/majuro">Pacific/Majuro</option><option value="pacific/marquesas">Pacific/Marquesas</option><option value="pacific/midway">Pacific/Midway</option><option value="pacific/nauru">Pacific/Nauru</option><option value="pacific/niue">Pacific/Niue</option><option value="pacific/norfolk">Pacific/Norfolk</option><option value="pacific/noumea">Pacific/Noumea</option><option value="pacific/pago_pago">Pacific/Pago Pago</option><option value="pacific/palau">Pacific/Palau</option><option value="pacific/pitcairn">Pacific/Pitcairn</option><option value="pacific/pohnpei">Pacific/Pohnpei</option><option value="pacific/port_moresby">Pacific/Port Moresby</option><option value="pacific/rarotonga">Pacific/Rarotonga</option><option value="pacific/saipan">Pacific/Saipan</option><option value="pacific/tahiti">Pacific/Tahiti</option><option value="pacific/tarawa">Pacific/Tarawa</option><option value="pacific/tongatapu">Pacific/Tongatapu</option><option value="pacific/wake">Pacific/Wake</option><option value="pacific/wallis">Pacific/Wallis</option></select>
+								<select name="timezone" data-auto-submit-form="true" id="frm-timezoneForm-timezone" class="updated-select"><option value="africa/abidjan">Africa/Abidjan</option><option value="africa/accra">Africa/Accra</option><option value="africa/addis_ababa">Africa/Addis Ababa</option><option value="africa/algiers">Africa/Algiers</option><option value="africa/asmara">Africa/Asmara</option><option value="africa/bamako">Africa/Bamako</option><option value="africa/bangui">Africa/Bangui</option><option value="africa/banjul">Africa/Banjul</option><option value="africa/bissau">Africa/Bissau</option><option value="africa/blantyre">Africa/Blantyre</option><option value="africa/brazzaville">Africa/Brazzaville</option><option value="africa/bujumbura">Africa/Bujumbura</option><option value="africa/cairo">Africa/Cairo</option><option value="africa/casablanca">Africa/Casablanca</option><option value="africa/ceuta">Africa/Ceuta</option><option value="africa/conakry">Africa/Conakry</option><option value="africa/dakar">Africa/Dakar</option><option value="africa/dar_es_salaam">Africa/Dar es Salaam</option><option value="africa/djibouti">Africa/Djibouti</option><option value="africa/douala">Africa/Douala</option><option value="africa/el_aaiun">Africa/El Aaiun</option><option value="africa/freetown">Africa/Freetown</option><option value="africa/gaborone">Africa/Gaborone</option><option value="africa/harare">Africa/Harare</option><option value="africa/johannesburg">Africa/Johannesburg</option><option value="africa/juba">Africa/Juba</option><option value="africa/kampala">Africa/Kampala</option><option value="africa/khartoum">Africa/Khartoum</option><option value="africa/kigali">Africa/Kigali</option><option value="africa/kinshasa">Africa/Kinshasa</option><option value="africa/lagos">Africa/Lagos</option><option value="africa/libreville">Africa/Libreville</option><option value="africa/lome">Africa/Lome</option><option value="africa/luanda">Africa/Luanda</option><option value="africa/lubumbashi">Africa/Lubumbashi</option><option value="africa/lusaka">Africa/Lusaka</option><option value="africa/malabo">Africa/Malabo</option><option value="africa/maputo">Africa/Maputo</option><option value="africa/maseru">Africa/Maseru</option><option value="africa/mbabane">Africa/Mbabane</option><option value="africa/mogadishu">Africa/Mogadishu</option><option value="africa/monrovia">Africa/Monrovia</option><option value="africa/nairobi">Africa/Nairobi</option><option value="africa/ndjamena">Africa/Ndjamena</option><option value="africa/niamey">Africa/Niamey</option><option value="africa/nouakchott">Africa/Nouakchott</option><option value="africa/ouagadougou">Africa/Ouagadougou</option><option value="africa/porto-novo">Africa/Porto-Novo</option><option value="africa/sao_tome">Africa/Sao Tome</option><option value="africa/tripoli">Africa/Tripoli</option><option value="africa/tunis">Africa/Tunis</option><option value="africa/windhoek">Africa/Windhoek</option><option value="america/adak">America/Adak</option><option value="america/anchorage">America/Anchorage</option><option value="america/anguilla">America/Anguilla</option><option value="america/antigua">America/Antigua</option><option value="america/araguaina">America/Araguaina</option><option value="america/argentina/buenos_aires">America/Argentina/Buenos Aires</option><option value="america/argentina/catamarca">America/Argentina/Catamarca</option><option value="america/argentina/cordoba">America/Argentina/Cordoba</option><option value="america/argentina/jujuy">America/Argentina/Jujuy</option><option value="america/argentina/la_rioja">America/Argentina/La Rioja</option><option value="america/argentina/mendoza">America/Argentina/Mendoza</option><option value="america/argentina/rio_gallegos">America/Argentina/Rio Gallegos</option><option value="america/argentina/salta">America/Argentina/Salta</option><option value="america/argentina/san_juan">America/Argentina/San Juan</option><option value="america/argentina/san_luis">America/Argentina/San Luis</option><option value="america/argentina/tucuman">America/Argentina/Tucuman</option><option value="america/argentina/ushuaia">America/Argentina/Ushuaia</option><option value="america/aruba">America/Aruba</option><option value="america/asuncion">America/Asuncion</option><option value="america/atikokan">America/Atikokan</option><option value="america/bahia">America/Bahia</option><option value="america/bahia_banderas">America/Bahia Banderas</option><option value="america/barbados">America/Barbados</option><option value="america/belem">America/Belem</option><option value="america/belize">America/Belize</option><option value="america/blanc-sablon">America/Blanc-Sablon</option><option value="america/boa_vista">America/Boa Vista</option><option value="america/bogota">America/Bogota</option><option value="america/boise">America/Boise</option><option value="america/cambridge_bay">America/Cambridge Bay</option><option value="america/campo_grande">America/Campo Grande</option><option value="america/cancun">America/Cancun</option><option value="america/caracas">America/Caracas</option><option value="america/cayenne">America/Cayenne</option><option value="america/cayman">America/Cayman</option><option value="america/chicago">America/Chicago</option><option value="america/chihuahua">America/Chihuahua</option><option value="america/ciudad_juarez">America/Ciudad Juarez</option><option value="america/costa_rica">America/Costa Rica</option><option value="america/creston">America/Creston</option><option value="america/cuiaba">America/Cuiaba</option><option value="america/curacao">America/Curacao</option><option value="america/dawson">America/Dawson</option><option value="america/dawson_creek">America/Dawson Creek</option><option value="america/denver">America/Denver</option><option value="america/detroit">America/Detroit</option><option value="america/dominica">America/Dominica</option><option value="america/edmonton">America/Edmonton</option><option value="america/eirunepe">America/Eirunepe</option><option value="america/el_salvador">America/El Salvador</option><option value="america/fort_nelson">America/Fort Nelson</option><option value="america/fortaleza">America/Fortaleza</option><option value="america/glace_bay">America/Glace Bay</option><option value="america/goose_bay">America/Goose Bay</option><option value="america/grand_turk">America/Grand Turk</option><option value="america/grenada">America/Grenada</option><option value="america/guadeloupe">America/Guadeloupe</option><option value="america/guatemala">America/Guatemala</option><option value="america/guayaquil">America/Guayaquil</option><option value="america/guyana">America/Guyana</option><option value="america/halifax">America/Halifax</option><option value="america/havana">America/Havana</option><option value="america/hermosillo">America/Hermosillo</option><option value="america/indiana/indianapolis">America/Indiana/Indianapolis</option><option value="america/indiana/knox">America/Indiana/Knox</option><option value="america/indiana/marengo">America/Indiana/Marengo</option><option value="america/indiana/petersburg">America/Indiana/Petersburg</option><option value="america/indiana/tell_city">America/Indiana/Tell City</option><option value="america/indiana/vevay">America/Indiana/Vevay</option><option value="america/indiana/vincennes">America/Indiana/Vincennes</option><option value="america/indiana/winamac">America/Indiana/Winamac</option><option value="america/inuvik">America/Inuvik</option><option value="america/iqaluit">America/Iqaluit</option><option value="america/jamaica">America/Jamaica</option><option value="america/juneau">America/Juneau</option><option value="america/kentucky/louisville">America/Kentucky/Louisville</option><option value="america/kentucky/monticello">America/Kentucky/Monticello</option><option value="america/kralendijk">America/Kralendijk</option><option value="america/la_paz">America/La Paz</option><option value="america/lima">America/Lima</option><option value="america/los_angeles">America/Los Angeles</option><option value="america/lower_princes">America/Lower Princes</option><option value="america/maceio">America/Maceio</option><option value="america/managua">America/Managua</option><option value="america/manaus">America/Manaus</option><option value="america/marigot">America/Marigot</option><option value="america/martinique">America/Martinique</option><option value="america/matamoros">America/Matamoros</option><option value="america/mazatlan">America/Mazatlan</option><option value="america/menominee">America/Menominee</option><option value="america/merida">America/Merida</option><option value="america/metlakatla">America/Metlakatla</option><option value="america/mexico_city">America/Mexico City</option><option value="america/miquelon">America/Miquelon</option><option value="america/moncton">America/Moncton</option><option value="america/monterrey">America/Monterrey</option><option value="america/montevideo">America/Montevideo</option><option value="america/montserrat">America/Montserrat</option><option value="america/nassau">America/Nassau</option><option value="america/new_york">America/New York</option><option value="america/nome">America/Nome</option><option value="america/north_dakota/beulah">America/North Dakota/Beulah</option><option value="america/north_dakota/center">America/North Dakota/Center</option><option value="america/north_dakota/new_salem">America/North Dakota/New Salem</option><option value="america/nuuk">America/Nuuk</option><option value="america/ojinaga">America/Ojinaga</option><option value="america/panama">America/Panama</option><option value="america/paramaribo">America/Paramaribo</option><option value="america/phoenix">America/Phoenix</option><option value="america/port-au-prince">America/Port-au-Prince</option><option value="america/port_of_spain">America/Port of Spain</option><option value="america/porto_velho">America/Porto Velho</option><option value="america/puerto_rico">America/Puerto Rico</option><option value="america/punta_arenas">America/Punta Arenas</option><option value="america/rankin_inlet">America/Rankin Inlet</option><option value="america/recife">America/Recife</option><option value="america/regina">America/Regina</option><option value="america/resolute">America/Resolute</option><option value="america/rio_branco">America/Rio Branco</option><option value="america/santarem">America/Santarem</option><option value="america/santiago">America/Santiago</option><option value="america/santo_domingo">America/Santo Domingo</option><option value="america/sao_paulo">America/Sao Paulo</option><option value="america/scoresbysund">America/Scoresbysund</option><option value="america/sitka">America/Sitka</option><option value="america/st_barthelemy">America/St Barthelemy</option><option value="america/st_johns">America/St. John's</option><option value="america/st_kitts">America/St. Kitts</option><option value="america/st_lucia">America/St. Lucia</option><option value="america/st_thomas">America/St. Thomas</option><option value="america/st_vincent">America/St. Vincent</option><option value="america/swift_current">America/Swift Current</option><option value="america/tegucigalpa">America/Tegucigalpa</option><option value="america/thule">America/Thule</option><option value="america/tijuana">America/Tijuana</option><option value="america/toronto">America/Toronto</option><option value="america/tortola">America/Tortola</option><option value="america/vancouver">America/Vancouver</option><option value="america/whitehorse">America/Whitehorse</option><option value="america/winnipeg">America/Winnipeg</option><option value="america/yakutat">America/Yakutat</option><option value="america/yellowknife">America/Yellowknife</option><option value="antarctica/syowa">Antarctica/Syowa</option><option value="arctic/longyearbyen">Arctic/Longyearbyen</option><option value="asia/aden">Asia/Aden</option><option value="asia/almaty">Asia/Almaty</option><option value="asia/amman">Asia/Amman</option><option value="asia/anadyr">Asia/Anadyr</option><option value="asia/aqtau">Asia/Aqtau</option><option value="asia/aqtobe">Asia/Aqtobe</option><option value="asia/ashgabat">Asia/Ashgabat</option><option value="asia/atyrau">Asia/Atyrau</option><option value="asia/baghdad">Asia/Baghdad</option><option value="asia/bahrain">Asia/Bahrain</option><option value="asia/baku">Asia/Baku</option><option value="asia/bangkok">Asia/Bangkok</option><option value="asia/barnaul">Asia/Barnaul</option><option value="asia/beirut">Asia/Beirut</option><option value="asia/bishkek">Asia/Bishkek</option><option value="asia/brunei">Asia/Brunei</option><option value="asia/chita">Asia/Chita</option><option value="asia/colombo">Asia/Colombo</option><option value="asia/damascus">Asia/Damascus</option><option value="asia/dhaka">Asia/Dhaka</option><option value="asia/dili">Asia/Dili</option><option value="asia/dubai">Asia/Dubai</option><option value="asia/dushanbe">Asia/Dushanbe</option><option value="asia/famagusta">Asia/Famagusta</option><option value="asia/gaza">Asia/Gaza</option><option value="asia/hebron">Asia/Hebron</option><option value="asia/ho_chi_minh">Asia/Ho Chi Minh</option><option value="asia/hong_kong">Asia/Hong Kong</option><option value="asia/hovd">Asia/Hovd</option><option value="asia/irkutsk">Asia/Irkutsk</option><option value="asia/jakarta">Asia/Jakarta</option><option value="asia/jayapura">Asia/Jayapura</option><option value="asia/jerusalem">Asia/Jerusalem</option><option value="asia/kabul">Asia/Kabul</option><option value="asia/kamchatka">Asia/Kamchatka</option><option value="asia/karachi">Asia/Karachi</option><option value="asia/kathmandu">Asia/Kathmandu</option><option value="asia/kolkata">Asia/Kolkata</option><option value="asia/krasnoyarsk">Asia/Krasnoyarsk</option><option value="asia/kuala_lumpur">Asia/Kuala Lumpur</option><option value="asia/kuching">Asia/Kuching</option><option value="asia/kuwait">Asia/Kuwait</option><option value="asia/macau">Asia/Macau</option><option value="asia/magadan">Asia/Magadan</option><option value="asia/makassar">Asia/Makassar</option><option value="asia/manila">Asia/Manila</option><option value="asia/muscat">Asia/Muscat</option><option value="asia/nicosia">Asia/Nicosia</option><option value="asia/novokuznetsk">Asia/Novokuznetsk</option><option value="asia/novosibirsk">Asia/Novosibirsk</option><option value="asia/omsk">Asia/Omsk</option><option value="asia/oral">Asia/Oral</option><option value="asia/phnom_penh">Asia/Phnom Penh</option><option value="asia/pontianak">Asia/Pontianak</option><option value="asia/pyongyang">Asia/Pyongyang</option><option value="asia/qatar">Asia/Qatar</option><option value="asia/qostanay">Asia/Qostanay</option><option value="asia/qyzylorda">Asia/Qyzylorda</option><option value="asia/riyadh">Asia/Riyadh</option><option value="asia/sakhalin">Asia/Sakhalin</option><option value="asia/samarkand">Asia/Samarkand</option><option value="asia/seoul">Asia/Seoul</option><option value="asia/shanghai">Asia/Shanghai</option><option value="asia/singapore">Asia/Singapore</option><option value="asia/taipei">Asia/Taipei</option><option value="asia/tashkent">Asia/Tashkent</option><option value="asia/tbilisi">Asia/Tbilisi</option><option value="asia/tehran">Asia/Tehran</option><option value="asia/thimphu">Asia/Thimphu</option><option value="asia/tokyo">Asia/Tokyo</option><option value="asia/tomsk">Asia/Tomsk</option><option value="asia/ulaanbaatar">Asia/Ulaanbaatar</option><option value="asia/urumqi">Asia/Urumqi</option><option value="asia/vientiane">Asia/Vientiane</option><option value="asia/vladivostok">Asia/Vladivostok</option><option value="asia/yakutsk">Asia/Yakutsk</option><option value="asia/yangon">Asia/Yangon</option><option value="asia/yekaterinburg">Asia/Yekaterinburg</option><option value="asia/yerevan">Asia/Yerevan</option><option value="atlantic/azores">Atlantic/Azores</option><option value="atlantic/bermuda">Atlantic/Bermuda</option><option value="atlantic/canary">Atlantic/Canary</option><option value="atlantic/cape_verde">Atlantic/Cape Verde</option><option value="atlantic/faroe">Atlantic/Faroe</option><option value="atlantic/madeira">Atlantic/Madeira</option><option value="atlantic/reykjavik">Atlantic/Reykjavik</option><option value="atlantic/south_georgia">Atlantic/South Georgia</option><option value="atlantic/st_helena">Atlantic/St Helena</option><option value="atlantic/stanley">Atlantic/Stanley</option><option value="australia/adelaide">Australia/Adelaide</option><option value="australia/brisbane">Australia/Brisbane</option><option value="australia/broken_hill">Australia/Broken Hill</option><option value="australia/darwin">Australia/Darwin</option><option value="australia/eucla">Australia/Eucla</option><option value="australia/hobart">Australia/Hobart</option><option value="australia/lindeman">Australia/Lindeman</option><option value="australia/lord_howe">Australia/Lord Howe</option><option value="australia/melbourne">Australia/Melbourne</option><option value="australia/perth">Australia/Perth</option><option value="australia/sydney">Australia/Sydney</option><option value="europe/amsterdam">Europe/Amsterdam</option><option value="europe/andorra">Europe/Andorra</option><option value="europe/astrakhan">Europe/Astrakhan</option><option value="europe/athens">Europe/Athens</option><option value="europe/belgrade">Europe/Belgrade</option><option value="europe/berlin">Europe/Berlin</option><option value="europe/bratislava">Europe/Bratislava</option><option value="europe/brussels">Europe/Brussels</option><option value="europe/bucharest">Europe/Bucharest</option><option value="europe/budapest">Europe/Budapest</option><option value="europe/chisinau">Europe/Chisinau</option><option value="europe/copenhagen">Europe/Copenhagen</option><option value="europe/dublin">Europe/Dublin</option><option value="europe/gibraltar">Europe/Gibraltar</option><option value="europe/guernsey">Europe/Guernsey</option><option value="europe/helsinki">Europe/Helsinki</option><option value="europe/isle_of_man">Europe/Isle of Man</option><option value="europe/istanbul">Europe/Istanbul</option><option value="europe/jersey">Europe/Jersey</option><option value="europe/kaliningrad">Europe/Kaliningrad</option><option value="europe/kirov">Europe/Kirov</option><option value="europe/kyiv">Europe/Kyiv</option><option value="europe/lisbon">Europe/Lisbon</option><option value="europe/ljubljana">Europe/Ljubljana</option><option value="europe/london">Europe/London</option><option value="europe/luxembourg">Europe/Luxembourg</option><option value="europe/madrid">Europe/Madrid</option><option value="europe/malta">Europe/Malta</option><option value="europe/mariehamn">Europe/Mariehamn</option><option value="europe/minsk">Europe/Minsk</option><option value="europe/monaco">Europe/Monaco</option><option value="europe/moscow">Europe/Moscow</option><option value="europe/oslo">Europe/Oslo</option><option value="europe/paris">Europe/Paris</option><option value="europe/podgorica">Europe/Podgorica</option><option value="europe/prague" selected>Europe/Prague</option><option value="europe/riga">Europe/Riga</option><option value="europe/rome">Europe/Rome</option><option value="europe/samara">Europe/Samara</option><option value="europe/san_marino">Europe/San Marino</option><option value="europe/sarajevo">Europe/Sarajevo</option><option value="europe/saratov">Europe/Saratov</option><option value="europe/simferopol">Europe/Simferopol</option><option value="europe/skopje">Europe/Skopje</option><option value="europe/sofia">Europe/Sofia</option><option value="europe/stockholm">Europe/Stockholm</option><option value="europe/tallinn">Europe/Tallinn</option><option value="europe/tirane">Europe/Tirane</option><option value="europe/ulyanovsk">Europe/Ulyanovsk</option><option value="europe/vaduz">Europe/Vaduz</option><option value="europe/vatican">Europe/Vatican</option><option value="europe/vienna">Europe/Vienna</option><option value="europe/vilnius">Europe/Vilnius</option><option value="europe/volgograd">Europe/Volgograd</option><option value="europe/warsaw">Europe/Warsaw</option><option value="europe/zagreb">Europe/Zagreb</option><option value="europe/zurich">Europe/Zurich</option><option value="indian/antananarivo">Indian/Antananarivo</option><option value="indian/chagos">Indian/Chagos</option><option value="indian/christmas">Indian/Christmas</option><option value="indian/cocos">Indian/Cocos</option><option value="indian/comoro">Indian/Comoro</option><option value="indian/kerguelen">Indian/Kerguelen</option><option value="indian/mahe">Indian/Mahe</option><option value="indian/maldives">Indian/Maldives</option><option value="indian/mauritius">Indian/Mauritius</option><option value="indian/mayotte">Indian/Mayotte</option><option value="indian/reunion">Indian/Reunion</option><option value="pacific/apia">Pacific/Apia</option><option value="pacific/auckland">Pacific/Auckland</option><option value="pacific/bougainville">Pacific/Bougainville</option><option value="pacific/chatham">Pacific/Chatham</option><option value="pacific/chuuk">Pacific/Chuuk</option><option value="pacific/easter">Pacific/Easter</option><option value="pacific/efate">Pacific/Efate</option><option value="pacific/fakaofo">Pacific/Fakaofo</option><option value="pacific/fiji">Pacific/Fiji</option><option value="pacific/funafuti">Pacific/Funafuti</option><option value="pacific/galapagos">Pacific/Galapagos</option><option value="pacific/gambier">Pacific/Gambier</option><option value="pacific/guadalcanal">Pacific/Guadalcanal</option><option value="pacific/guam">Pacific/Guam</option><option value="pacific/honolulu">Pacific/Honolulu</option><option value="pacific/kanton">Pacific/Kanton</option><option value="pacific/kiritimati">Pacific/Kiritimati</option><option value="pacific/kosrae">Pacific/Kosrae</option><option value="pacific/kwajalein">Pacific/Kwajalein</option><option value="pacific/majuro">Pacific/Majuro</option><option value="pacific/marquesas">Pacific/Marquesas</option><option value="pacific/midway">Pacific/Midway</option><option value="pacific/nauru">Pacific/Nauru</option><option value="pacific/niue">Pacific/Niue</option><option value="pacific/norfolk">Pacific/Norfolk</option><option value="pacific/noumea">Pacific/Noumea</option><option value="pacific/pago_pago">Pacific/Pago Pago</option><option value="pacific/palau">Pacific/Palau</option><option value="pacific/pitcairn">Pacific/Pitcairn</option><option value="pacific/pohnpei">Pacific/Pohnpei</option><option value="pacific/port_moresby">Pacific/Port Moresby</option><option value="pacific/rarotonga">Pacific/Rarotonga</option><option value="pacific/saipan">Pacific/Saipan</option><option value="pacific/tahiti">Pacific/Tahiti</option><option value="pacific/tarawa">Pacific/Tarawa</option><option value="pacific/tongatapu">Pacific/Tongatapu</option><option value="pacific/wake">Pacific/Wake</option><option value="pacific/wallis">Pacific/Wallis</option></select>
 							<input type="hidden" name="_do" value="timezoneForm-submit"></form>
-								<p>Detekovali jsme, že jsi v časové zóně Europe/Berlin. <a href="/film/71924-kralovstvi/prehled/?value=Europe%2FBerlin&do=changeHomeTimezone">Změnit časovou zónu</a></p>
+								<p>Detekovali jsme, že jsi v časové zóně Europe/Bratislava. <a href="/film/71924-kralovstvi/prehled/?value=Europe%2FBratislava&do=changeHomeTimezone">Změnit časovou zónu</a></p>
 						</div>
 
 						<div class="footer-action-languages" id="language-switch">
@@ -1867,17 +1879,13 @@ Když nastane stav beztíže, jako hudební podkres hraje <a href="https://www.c
 
 		</div>
 
-<div id="slide_up" class="ad-pmg"></div>
-<div id="interstitial" class="ad-pmg"></div>
-
 
 <script type="text/json" id="js-common-config">{"country":1,"domain":"csfd.cz","host":"www.csfd.cz","userLanguageId":1,"translations":{"web.ajax.default.error.message":"Omlouváme se, ale nastala chyba při zpracování.","web.ajax.resend.button":"Odeslat znovu","web.autocomplete.creator.header":"Tvůrci","web.autocomplete.film.header":"Filmy","web.autocomplete.noservice":"Služba vyhledávání není momentálně dostupná.","web.autocomplete.searching":"Vyhledávám...","web.autocomplete.search.select":"Vyplň název filmu / jméno tvůrce nebo uživatele","web.autocomplete.series.header":"Seriály","web.autocomplete.user.header":"Uživatelé","web.layout.more":"více","web.check.all":"zaškrtnout vše","web.fileupload.preloader":"Načítám knihovnu, prosím o strpení...","web.modal.confirm.close":"Opravdu chceš zavřít okno? Možná máš neuložené změny.","web.preloader.loading":"Načítání...","web.search.creator.notfound":"Nenalezeni žádní tvůrci","web.search.film.notfound":"Nenalezeny žádné filmy","web.search.series.notfound":"Nenalezeny žádné seriály","web.search.user.notfound":"Nenalezeni žádní uživatelé","web.selectize.plugin.remove.button.remove":"Odebrat","web.sortable.error.move":"Při přesunu pozic došlo k chybě. Stránka bude obnovena. Pokračovat?","web.shop.related_title":"Související merch","web.shop.button.buy":"Koupit","web.shop.more":"více"},"route":":Web:Film:Overview:default","isLoggedIn":false,"userId":null,"hooks":["ShowMore","HighlightByData","Confirm","Shop","SecureHandle","StarRating","ReviewContent","AutoSubmitForm"]}</script>
-<script src="//static.pmgstatic.com/assets/utils-js/c8258f86692083bd0b360e2ab40d666b/scripts.min.js"></script>
-<script type="text/javascript">CSFDAds.setServer('https://a.csfd.cz/csfd');CSFDAds.complete({"ball":{"site":"csfd.cz","czaidc":0,"page":2,"login":2,"viewId":15860638,"film_id":71924,"film_type":12,"film_genre":[2,5,16,9],"film_origin":[34,44,123,193],"film_year":1994,"film_tags":[2818,47,1492,73,76,91,573,61,234,25,74,83,1065,20,219,352,90,1512,548,2404,21,170,161,57,1511,88,559,596,23,950,602,427,1899,167,168,385,1012,1475],"film_creators":[3111,28966,94054,374472,110967,93256,70314,32989,330359,8608,56972,204496,70901,33152,2567,154402,16702,216062,200085,33116,204502,53200,165418,154394,163780,233318,7814,207732,232181,219822,157,215879,235315,14684,79992,167982,55800,303716,329084,337871,347973,354418,355110,329350,279961,270175,376281,405615,405632,414114],"vod_service_id":[61]},"0":{"area":"leaderboard","size":"2000x1400,1800x1000,1000x210,970x210,998x200,930x180,970x90,750x100,728x90,750x200,branding_web"},"1":{"area":"halfpage","size":"300x600,160x600,300x300,300x250,250x250,120x600,336x280"},"2":{"area":"billboard","size":"1000x310,970x310,950x300,980x250,970x250,750x300,1000x210,970x210,998x200,930x180,750x200,970x90,728x90"},"3":{"area":"slide_up","size":"1000x310,970x310,970x250,970x210,500x200,336x280,300x300,300x250,728x90,250x250,320x100,300x100,320x50,300x50,slide_up"},"4":{"area":"interstitial","size":"interstitial"},"5":{"area":"mobile_square_1","size":"300x300,300x250,250x250,336x280,720x1280,480x820,300x600,Interscroller"},"6":{"area":"mobile_square_2","size":"300x300,300x250,250x250,336x280"},"7":{"area":"mobile_billboard","size":"300x300,300x250,250x250,336x280"},"8":{"area":"native_long_1","size":"native_50,native_90,634x115,320x100"},"9":{"area":"mobile_native_1","size":"native_50,320x100"},"10":{"area":"branding_video_player","size":"branding_video_player,670x720"},"11":{"area":"pre_roll","size":"videoad","supertag":"InstreamVideo"},"12":{"area":"pre_roll_2","size":"videoad","supertag":"InstreamVideo"}}, false);</script>
+<script src="//static.pmgstatic.com/assets/utils-js/fad8ad03ad30d313dac66de1cc69ef73/scripts.min.js"></script>
+<script type="text/javascript">CSFDAds.setServer('https://a.csfd.cz/csfd');CSFDAds.complete({"ball":{"site":"csfd.cz","czaidc":0,"page":2,"login":2,"viewId":62703989,"film_id":71924,"film_type":12,"film_genre":[2,5,16,9],"film_origin":[34,44,123,193],"film_year":1994,"film_tags":[2818,1492,47,73,76,91,573,234,61,25,74,83,1065,219,20,352,90,1512,548,2404,21,170,161,1511,57,88,559,596,23,950,602,427,1899,167,168,385,1012,1475],"film_creators":[3111,28966,94054,374472,110967,93256,70314,32989,330359,8608,56972,204496,70901,33152,2567,154402,16702,216062,200085,33116,204502,53200,165418,154394,163780,233318,7814,207732,232181,219822,157,215879,235315,14684,79992,167982,55800,303716,329084,337871,347973,354418,355110,329350,279961,270175,376281,405615,405632,414114],"vod_service_id":[58,61]},"0":{"area":"leaderboard","size":"2000x1400,1800x1000,1000x210,970x210,998x200,930x180,970x90,750x100,728x90,750x200,branding_web"},"1":{"area":"halfpage","size":"300x600,160x600,300x300,300x250,250x250,120x600,336x280"},"2":{"area":"billboard","size":"1000x310,970x310,950x300,980x250,970x250,750x300,1000x210,970x210,998x200,930x180,750x200,970x90,728x90"},"3":{"area":"slide_up","size":"1000x310,970x310,970x250,970x210,500x200,336x280,300x300,300x250,728x90,250x250,320x100,300x100,320x50,300x50,slide_up"},"4":{"area":"interstitial","size":"interstitial"},"5":{"area":"mobile_square_1","size":"300x300,300x250,250x250,336x280,720x1280,480x820,300x600,Interscroller"},"6":{"area":"mobile_square_2","size":"300x300,300x250,250x250,336x280"},"7":{"area":"mobile_billboard","size":"300x300,300x250,250x250,336x280"},"8":{"area":"native_long_1","size":"native_50,native_90,634x115,320x100"},"9":{"area":"mobile_native_1","size":"native_50,320x100"},"10":{"area":"pre_roll","size":"videoad","supertag":"InstreamVideo"},"11":{"area":"pre_roll_2","size":"videoad","supertag":"InstreamVideo"}}, false);</script>
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TM3S526" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	</body>
 
 	<a href="#top" title="Zpět nahoru" id="back-to-top"><i class="icon icon-arrow-up" aria-hidden="true"></i></a>
 </html>
-
 `;

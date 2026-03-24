@@ -1,6 +1,4 @@
 export const movieMockBlank = `
-
-
 <!DOCTYPE html>
 <html lang="cs-CZ">
 	<head>
@@ -13,7 +11,7 @@ export const movieMockBlank = `
 </script>
 <script src="/nativeads.js"></script>
 <script>
-	function gtag(){window.dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("consent","default",{ad_storage:"denied",ad_user_data:"denied",ad_personalization:"denied",analytics_storage:"denied",functionality_storage:"denied",personalization_storage:"denied",security_storage:"denied"}),window.didomiOnReady=window.didomiOnReady||[],window.didomiOnReady.push(function(){var a=!1,e={};Didomi.getUserConsentStatusForPurpose("publishers-Kqq3iPge")&&(e.analytics_storage="granted",a=!0),Didomi.getUserConsentStatusForVendor("google")&&(e.ad_storage="granted",e.ad_user_data="granted",e.ad_personalization="granted",e.functionality_storage="granted",e.personalization_storage="granted",e.security_storage="granted",a=!0),a&&(gtag("consent","update",e),window.dataLayer.push({event:"consent_init",consent:e}))});var googleAnalyticsPageViewData={"event":"page_view","site":"www.csfd.cz","platform":"web","environment":"production","language":"cs","device":"desktop","user":{"id":null,"adblock":false},"page":{"id":99999,"type":"Film","title":null,"url":"https:\/\/www.csfd.cz\/film\/99999-the-loan-shark\/prehled\/","path":"\/film\/99999-the-loan-shark\/prehled\/","section":"Film","dark_mode":false},"_clear":true};if(null!==googleAnalyticsPageViewData){googleAnalyticsPageViewData.page.title="The Loan Shark (1912) | ČSFD.cz",googleAnalyticsPageViewData.user.adblock=!!window[ab_detection];var sp=null;if(null!==window.localStorage){var i=window.localStorage.getItem("sp");"1"===i||"2"===i?sp=parseInt(i,10):(sp=Math.floor(2*Math.random())+1,window.localStorage.setItem("sp",sp))}googleAnalyticsPageViewData.status_pair=null===sp?Math.floor(2*Math.random())+1:sp,window.dataLayer.push(googleAnalyticsPageViewData)}
+	function gtag(){window.dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("consent","default",{ad_storage:"denied",ad_user_data:"denied",ad_personalization:"denied",analytics_storage:"denied",functionality_storage:"denied",personalization_storage:"denied",security_storage:"denied"}),window.didomiOnReady=window.didomiOnReady||[],window.didomiOnReady.push(function(){var a=!1,e={};Didomi.getUserConsentStatusForPurpose("publishers-Kqq3iPge")&&(e.analytics_storage="granted",a=!0),Didomi.getUserConsentStatusForVendor("google")&&(e.ad_storage="granted",e.ad_user_data="granted",e.ad_personalization="granted",e.functionality_storage="granted",e.personalization_storage="granted",e.security_storage="granted",a=!0),a&&(gtag("consent","update",e),window.dataLayer.push({event:"consent_init",consent:e}))});var googleAnalyticsPageViewData={"event":"page_view","site":"www.csfd.cz","platform":"web","environment":"production","language":"cs","device":"desktop","user":{"id":null,"adblock":false},"page":{"id":99999,"type":"Film","title":null,"url":"https:\\/\\/www.csfd.cz\\/film\\/99999-the-loan-shark\\/prehled\\/","path":"\\/film\\/99999-the-loan-shark\\/prehled\\/","section":"Film","dark_mode":false},"_clear":true};if(null!==googleAnalyticsPageViewData){googleAnalyticsPageViewData.page.title="The Loan Shark (1912) | ČSFD.cz",googleAnalyticsPageViewData.user.adblock=!!window[ab_detection];var sp=null;if(null!==window.localStorage){var i=window.localStorage.getItem("sp");"1"===i||"2"===i?sp=parseInt(i,10):(sp=Math.floor(2*Math.random())+1,window.localStorage.setItem("sp",sp))}googleAnalyticsPageViewData.status_pair=null===sp?Math.floor(2*Math.random())+1:sp,window.dataLayer.push(googleAnalyticsPageViewData)}
 </script>
 <script>
 window.didomiConfig = {
@@ -62,7 +60,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="canonical" href="https://www.csfd.cz/film/99999-the-loan-shark/prehled/">
 
 <meta property="og:site_name" content="ČSFD.cz">
-<meta property="og:image" content="https://static.pmgstatic.com/assets/images/2b5f1f1793f6881e6e9326d2c21f9445/logo-social.png">
+<meta property="og:image" content="https://static.pmgstatic.com/assets/images/6aeb8871e0052a62b04d591a3f85e733/logo-social.png">
 <meta property="og:description" content="The Loan Shark (1912) - film: Recenze, Hodnocení, Zajímavosti, Videa, Galerie, Data uvedení, Diskuze, Filmotéka a další...">
 <meta property="og:title" content="The Loan Shark (1912) | ČSFD.cz">
 <meta property="og:type" content="video.movie">
@@ -73,15 +71,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta name="twitter:url" content="https://www.csfd.cz/film/99999-the-loan-shark/prehled/">
 <meta name="twitter:title" content="The Loan Shark (1912) | ČSFD.cz">
 <meta name="twitter:description" content="The Loan Shark (1912) - film: Recenze, Hodnocení, Zajímavosti, Videa, Galerie, Data uvedení, Diskuze, Filmotéka a další...">
-<meta property="twitter:image" content="https://static.pmgstatic.com/assets/images/2b5f1f1793f6881e6e9326d2c21f9445/logo-social.png">
+<meta property="twitter:image" content="https://static.pmgstatic.com/assets/images/6aeb8871e0052a62b04d591a3f85e733/logo-social.png">
 		<meta name="theme-color" content="#ba0305">
 		<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ba0305">
 		<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#ba0305">
-		<link rel="stylesheet" href="//static.pmgstatic.com/assets/web-css/5e349933e1358275e5dbfccce0a335bf/styles.min.css">
-		<link rel="shortcut icon" href="//static.pmgstatic.com/assets/images/2b5f1f1793f6881e6e9326d2c21f9445/favicon.ico">
-		<link rel="apple-touch-icon" href="//static.pmgstatic.com/assets/images/2b5f1f1793f6881e6e9326d2c21f9445/apple-touch-icon.png">
-		<script src="//static.pmgstatic.com/assets/vendor/4c4b0b91e77c007ce5325f7e57bb5384/jquery.min.js"></script>
-		<script src="//static.pmgstatic.com/assets/web-js/de8b64f92d0e41c829cda8b30a9fbe17/scripts.min.js" defer></script>
+		<link rel="stylesheet" href="//static.pmgstatic.com/assets/web-css/58bd7f3ed81bd9d84a6905e0711f1007/styles.min.css">
+		<link rel="shortcut icon" href="//static.pmgstatic.com/assets/images/6aeb8871e0052a62b04d591a3f85e733/favicon.ico">
+		<link rel="apple-touch-icon" href="//static.pmgstatic.com/assets/images/6aeb8871e0052a62b04d591a3f85e733/apple-touch-icon.png">
+		<script src="//static.pmgstatic.com/assets/vendor/efb570e5cd44fe9a1272efc8cc7f5b66/jquery.min.js"></script>
+		<script src="//static.pmgstatic.com/assets/web-js/460dfd2da94a6a3c5789376d716cee42/scripts.min.js" defer></script>
 
 		<script async src="https://srv.tunefindforfans.com/fruits/mangos.js"></script>
 		<script type="text/javascript">
@@ -117,6 +115,61 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	</head>
 
 	<body id="top" data-lang="cs" class="csfd-cz lang-1" data-page="film">
+<div id="slide_up" class="ad-pmg"></div>
+<div id="interstitial" class="ad-pmg"></div>
+
+<div id="switch-tld-modal">
+	<div data-mfp-to-close class="mfp-bg mfp-ready"></div>
+	<div data-mfp-to-close class="mfp-wrap mfp-close-btn-in mfp-auto-cursor mfp-ready modal-small">
+		<div class="mfp-container mfp-s-ready mfp-inline-holder">
+			<div class="mfp-content">
+				<div id="panelModal" class="modal" role="dialog">
+					<span id="mfp-modalWindow">
+						<div class="modal--hp">
+							<div class="switch-lang">
+								<h2>
+									ČSFD nanovo aj v slovenčine
+								</h2>
+								<p>
+									Všimli sme si, že prichádzaš zo slovenskej IP adresy. Vieš o tom, že existuje slovenská verzia CSFD.sk?
+								</p>
+							</div>
+							<footer>
+								<span class="left">
+									<a href="javascript:void(0)" data-mfp-close class="">
+											zostať
+									</a>
+								</span>
+								<a href="https://www.csfd.sk/film/99999-the-loan-shark/prehlad/" class="button right">
+									prejsť na CSFD.sk
+								</a>
+							</footer>
+						</div>
+					</span>
+					<a href="javascript:void(0)" data-mfp-close class="close-modal mfp-close" title="Close (Esc)">
+						<i class="mfp-close icon icon-close-round"></i>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		var modal = document.getElementById('switch-tld-modal');
+		var closeElements = modal.querySelectorAll('[data-mfp-close]');
+		for (var i = 0; i < closeElements.length; ++i) {
+			closeElements[i].addEventListener(
+					'click',
+					function () {
+						var toCloseElements = modal.querySelectorAll('[data-mfp-to-close]');
+						for (var i = 0; i < toCloseElements.length; ++i) {
+							toCloseElements[i].remove();
+						}
+					}
+			)
+		}
+	</script>
+</div>
 		<div class="body">
 			<div class="ad-wrapper">
 				<div id="leaderboard-wrapper">
@@ -126,35 +179,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			</div>
 
 			<div id="page-wrapper">
-				<div id="suggest-switch-locale-panel" class="lang-info-panel-content" data-cookie-name="_ls_ns">
-					<div class="lang-info-panel">
-						<p>
-							Change website language <a href="#secureHandle-frm-switchLocale-form=Zt" class="btn-second"><img src="//image.pmgstatic.com/files/svg/flags/162/751/162751395/162751395_38cf6e.svg"><i class="icon icon-arrow-right"></i></a>
-						</p>
-						<p>
-							<a href="javascript:void(0);" class="btn btn-close" data-close-button>
-								<i class="icon icon-close"></i><span>Do not switch</span>
-							</a>
-						</p>
-					</div>
-				</div>
 
-				<div class="top-info top-info-language-switch top-info-user-not-logged top-info-only-projection">
-					<div class="top-info-content">
-						<p class="top-info-community-event">
-								<a href="/akce/536-projekce-drobna-nehoda/" class="link-with-icons">
-									<svg width="119" height="93" viewBox="0 0 119 93" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-										<path fill-rule="evenodd" clip-rule="evenodd" d="M63.0255 24.0791C54.0281 24.0791 45.3834 31.4353 43.7172 40.5099C42.0516 49.5841 47.9946 56.9401 56.9923 56.9401C65.9889 56.9401 74.6337 49.5841 76.3001 40.5099C77.9655 31.4353 72.0227 24.0791 63.0255 24.0791Z"></path>
-										<path fill-rule="evenodd" clip-rule="evenodd" d="M25.4185 80.1819H77.7067C77.6211 66.7115 67.9229 56.3457 54.5975 56.3457C41.2723 56.3459 28.9347 66.7117 25.4185 80.1819Z"></path>
-										<path fill-rule="evenodd" clip-rule="evenodd" d="M100.612 0.0336914L98.6975 8.23869C98.5319 8.94589 97.8249 9.51909 97.1179 9.51909H37.9319C37.2249 9.51909 36.7853 8.94589 36.9503 8.23869L38.8645 0.0336914H21.7031L0.459091 91.0949H0.490292L0.104492 92.7483H17.1399L18.8861 85.2607C19.0511 84.5535 19.7581 83.9809 20.4653 83.9809H79.6519C80.3589 83.9809 80.7985 84.5535 80.6329 85.2607L79.2727 91.0949H79.2917L78.9143 92.7133H78.9361L78.9315 92.7359H96.3537L96.7367 91.0949H96.7687L118.013 0.0336914H100.612V0.0336914ZM23.2341 9.99969L24.3083 5.39529C24.4733 4.68829 25.1803 4.11489 25.8875 4.11489H32.1603C32.8673 4.11489 33.3069 4.68829 33.1421 5.39529L32.0677 9.99969C31.9027 10.7069 31.1957 11.2801 30.4885 11.2801H24.2157C23.5087 11.2801 23.0691 10.7069 23.2341 9.99969ZM19.6467 25.3761L19.9601 24.0333C19.9653 23.9689 19.9705 23.9047 19.9861 23.8381L20.7021 20.7679C20.8671 20.0607 21.5741 19.4875 22.2815 19.4875H28.5241C28.8937 19.4875 29.1871 19.6469 29.3625 19.8979C29.5633 20.1317 29.6485 20.4649 29.5609 20.8389L28.5027 25.3763C28.3377 26.0833 27.6307 26.6565 26.9231 26.6565H20.6285C19.9213 26.6563 19.4817 26.0831 19.6467 25.3761ZM16.0075 41.0327L17.0823 36.4259C17.2473 35.7189 17.9543 35.1457 18.6615 35.1457H24.8847C25.5919 35.1457 26.0313 35.7189 25.8663 36.4259L24.7915 41.0327C24.6265 41.7403 23.9195 42.3135 23.2123 42.3135H16.9891C16.2821 42.3135 15.8425 41.7401 16.0075 41.0327ZM14.9775 83.2539L13.9055 87.8479C13.7405 88.5559 13.0335 89.1287 12.3265 89.1287H6.05929C5.35209 89.1287 4.91269 88.5559 5.07769 87.8479L6.14949 83.2539C6.31449 82.5459 7.02149 81.9731 7.72869 81.9731H13.9959C14.7029 81.9729 15.1425 82.5457 14.9775 83.2539ZM18.6409 67.7617L17.5633 72.3805C17.3983 73.0885 16.6913 73.6611 15.9841 73.6611H9.66789C8.96069 73.6611 8.5213 73.0885 8.6863 72.3805L9.7639 67.7617C9.9287 67.0539 10.6359 66.4809 11.3429 66.4809H17.6593C18.3665 66.4807 18.8059 67.0539 18.6409 67.7617ZM19.5839 58.0215H13.3167C12.6091 58.0215 12.1697 57.4477 12.3345 56.7407L13.4065 52.1457C13.5715 51.4385 14.2789 50.8657 14.9861 50.8657H21.2531C21.9603 50.8657 22.3997 51.4385 22.2347 52.1457L21.1629 56.7407C20.9981 57.4477 20.2909 58.0215 19.5839 58.0215ZM81.1405 78.0045H21.8595C21.1525 78.0045 20.7129 77.4319 20.8779 76.7239L34.7971 17.0599C34.9619 16.3529 35.6691 15.7797 36.3763 15.7797H95.6573C96.3643 15.7797 96.8037 16.3529 96.6393 17.0599L82.7199 76.7239C82.5547 77.4319 81.8477 78.0045 81.1405 78.0045ZM94.2101 83.2539L93.1323 87.8735C92.9669 88.5805 92.2599 89.1533 91.5529 89.1533H85.3103C84.6033 89.1533 84.1637 88.5805 84.3281 87.8735L85.4059 83.2539C85.5713 82.5459 86.2783 81.9731 86.9853 81.9731H93.2279C93.9349 81.9729 94.3745 82.5457 94.2101 83.2539ZM97.8729 67.7617L96.7951 72.3805C96.6297 73.0885 95.9227 73.6611 95.2159 73.6611H88.9241C88.2169 73.6611 87.7775 73.0885 87.9429 72.3805L89.0205 67.7617C89.1849 67.0539 89.8921 66.4809 90.5993 66.4809H96.8919C97.5987 66.4807 98.0383 67.0539 97.8729 67.7617ZM101.516 52.1457L100.45 56.7161C100.284 57.4231 99.5773 57.9969 98.8703 57.9969H92.5785C91.8715 57.9969 91.4319 57.4231 91.5975 56.7161L92.6627 52.1457C92.8281 51.4385 93.5351 50.8657 94.2421 50.8657H100.534C101.241 50.8659 101.68 51.4387 101.516 52.1457ZM105.193 36.3833L104.116 41.0029C103.95 41.7101 103.244 42.2833 102.536 42.2833H96.2443C95.5371 42.2833 95.0977 41.7101 95.2631 41.0029L96.3409 36.3833C96.5051 35.6763 97.2123 35.1029 97.9195 35.1029H104.211C104.918 35.1029 105.359 35.6763 105.193 36.3833ZM108.842 20.7437L107.764 25.3629C107.599 26.0705 106.892 26.6431 106.185 26.6431H99.8929C99.1859 26.6431 98.7465 26.0703 98.9119 25.3629L99.9895 20.7437C100.154 20.0361 100.861 19.4629 101.568 19.4629H107.86C108.567 19.4629 109.007 20.0361 108.842 20.7437ZM111.35 9.99349C111.184 10.7007 110.477 11.2739 109.77 11.2739H103.479C102.772 11.2739 102.332 10.7005 102.497 9.99349L103.575 5.37389C103.74 4.66689 104.447 4.09349 105.154 4.09349H111.446C112.153 4.09349 112.592 4.66689 112.428 5.37389L111.35 9.99349Z"></path>
-									</svg>
-									Projekce <em>Drobná nehoda</em>
-								</a>
-						</p>
-					</div>
-				</div>
 
-				<header class="page-header page-header-csfd-cz user-not-logged projection-on language-switch-on header-user-language-switch">
+				<header class="page-header page-header-csfd-cz user-not-logged header-user-language-switch">
 					<div class="header-main">
 						<div class="logo">
 							<a href="/" class="csfd-cz">ČSFD.cz</a>
@@ -384,46 +411,29 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
 <div class="main-movie">
-<script type="application/ld+json">{"@context":"https://schema.org/","@type":"Movie","name":"The Loan Shark","dateCreated":"1912","director":[{"@type":"Person","name":"Otis Turner"}],"actor":[{"@type":"Person","name":"King Baggot"},{"@type":"Person","name":"William Robert Daly"}],"image":"//static.pmgstatic.com/assets/images/2b5f1f1793f6881e6e9326d2c21f9445/empty-image.svg"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org/","@type":"Movie","name":"The Loan Shark","dateCreated":"1912","director":[{"@type":"Person","name":"Otis Turner"}],"actor":[{"@type":"Person","name":"King Baggot"},{"@type":"Person","name":"William Robert Daly"}],"image":"//static.pmgstatic.com/assets/images/6aeb8871e0052a62b04d591a3f85e733/empty-image.svg"}</script>
 	<div class="main-movie-profile">
-		<div class="box box-film">
-			<div id="profile-header-info" class="hidden box-header">
-				<div class="controls-left">
-					<div id="snippet--boxButtonWatchlist" class="hidden snippet-box" data-auto-show-hide-parent>
-					</div>
-					<div id="snippet--boxButtonCollection" class="hidden snippet-box" data-auto-show-hide-parent>
-					</div>
-					<div id="snippet--boxButtonFanclub" class="hidden snippet-box" data-auto-show-hide-parent>
-					</div>
-
-
-				</div>
-			</div>
-			<div class="box-content">
-				<div class="film-info">
+		<div class="movie-profile">
+			<div class="updated-box updated-box-nooverflow">
+				<div class="film-info"> 
 
 					<header class="film-header">
-						<div class="film-header-name">
+						<div class="film-header-name" data-onboarding-step-1="false">
 							<h1>
 
 								The Loan Shark
-
+								
 							</h1>
 
 
-
-							<a href="javascript:void(0);" data-dropdown="#dropdown-control-panel" data-position="absolute" data-position-right-offset="15" data-position-anchor="right" class="button button-control-panel small">
-								<i class="icon icon-menu"></i>
-
-							</a>
 
 						</div>
 					</header>
 					<div class="film-about">
 						<div class="film-posters">
-
+							
 								<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" loading="lazy" class="empty-image" width="140" alt="všechny plakáty">
-
+							
 						</div>
 
 						<div class="mobile-video">
@@ -437,24 +447,169 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 					</div>
 					<div class="film-info-content">
-						<div class="mobile-film-rating">
-							<div class="box-rating not-rated">
-								<div class="film-rating-average">
-										? %
+						<div class="genres"><a href="/zanry/2-drama/">Drama</a> <span class="bullet"></span> Krátkometrážní</div>
+						<div class="origin">USA <span class="bullet"></span> 
+							<span>1912</span> 
 
-								</div>
+						</div>
+
+						<div class="mobile-film-rating not-rated"> 
+							<div class="film-rating-average" data-onboarding-step-2="false" data-onboarding-step-3="false">
+									? %
 
 							</div>
 
 
+	<div class="mobile-film-rating-detail">
+		<h3>Klikni a hodnoť</h3>
+		<a href="/registration-motivation/?title=VyOlolOjKUHjZGH5nJEpqGNjMGShKUHjZTIxVTuiMT5iL2IhKUHjZTIxVUAyVUOlo3ApqGNjMJEgVT5ynzEpqGNkAGypqGNjMJE2VUOpqGNkAGycnTkupl4v" rel="registrationMotivation" data-no-ads>
+			<span class="star-rating">
+				<span class="star-rating"><span class="stars stars-0-withtrash"></span></span>
+			</span>
+		</a>
+	</div>
+
 
 						</div>
 
-						<div class="genres"><a href="/zanry/2-drama/">Drama</a> / Krátkometrážní</div>
-						<div class="origin">USA,
-							<span>1912</span>
+						<div class="action-panel">
+							<div class="action-panel-list">
+								<div class="action-panel-item">
+											<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads class="btn-profile-action">
+												<svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+													<path fill-rule="evenodd" clip-rule="evenodd" d="M12.9832 2.04084C12.072 1.12962 10.5946 1.12962 9.68342 2.04084L2.29289 9.43136C2.10536 9.6189 2 9.87325 2 10.1385V13.0004C2 13.5527 2.44772 14.0004 3 14.0004H5.86193C6.12715 14.0004 6.3815 13.895 6.56904 13.7075L13.9596 6.31698C14.8708 5.40576 14.8708 3.92838 13.9596 3.01715L12.9832 2.04084ZM10.6262 2.98365C11.0168 2.59312 11.6499 2.59312 12.0404 2.98365L13.0168 3.95996C13.4073 4.35048 13.4073 4.98365 13.0168 5.37417L12.3334 6.05757L9.94283 3.66705L10.6262 2.98365ZM9.00002 4.60986L3.33333 10.2765V12.6671H5.72386L11.3905 7.00038L9.00002 4.60986Z"></path>
+												</svg>
+												Recenze
+											</a>
+								</div>
 
+								<div id="snippet--actionLinkWatchlist" class="action-panel-item">
+									<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads class="btn-profile-action">
+											<svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+												<path d="M11.9974 3.3335C11.9974 3.15669 11.9271 2.98717 11.8021 2.86214C11.6771 2.73712 11.5075 2.66683 11.3307 2.66683H4.66406C4.48725 2.66683 4.31773 2.73712 4.19271 2.86214C4.06768 2.98717 3.9974 3.15668 3.9974 3.3335V12.7046L7.61003 10.1245L7.70052 10.0698C7.91852 9.96133 8.18203 9.9797 8.38477 10.1245L11.9974 12.7046V3.3335ZM13.3307 14.0002C13.3307 14.2499 13.1914 14.479 12.9694 14.5933C12.7474 14.7075 12.4799 14.6876 12.2767 14.5425L7.9974 11.4858L3.7181 14.5425C3.51489 14.6876 3.24744 14.7075 3.02539 14.5933C2.8034 14.479 2.66406 14.2499 2.66406 14.0002V3.3335C2.66406 2.80306 2.87493 2.29451 3.25 1.91943C3.62507 1.54436 4.13363 1.3335 4.66406 1.3335H11.3307C11.8612 1.3335 12.3697 1.54436 12.7448 1.91943C13.1199 2.29451 13.3307 2.80306 13.3307 3.3335V14.0002Z"></path>
+											</svg>
+											Chci vidět
+									</a>
+								</div>
 
+								<div id="snippet--actionLinkFanclub" class="action-panel-item">
+										<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads class="btn-profile-action">
+											<svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+												<path fill-rule="evenodd" clip-rule="evenodd" d="M6.31657 4.01676C6.0999 3.80009 5.84266 3.62823 5.55957 3.51097C5.27648 3.39371 4.97304 3.33335 4.66663 3.33335C4.36021 3.33335 4.05682 3.3937 3.77372 3.51097C3.49063 3.62823 3.23339 3.80011 3.01672 4.01678C2.80005 4.23346 2.62821 4.49067 2.51095 4.77376C2.39369 5.05686 2.33333 5.36029 2.33333 5.66671C2.33333 5.97313 2.39368 6.27654 2.51095 6.55963C2.62821 6.84272 2.80005 7.09994 3.01672 7.31661L8 12.2998L12.9832 7.31661C13.4208 6.87902 13.6667 6.28553 13.6667 5.66669C13.6667 5.04784 13.4208 4.45435 12.9832 4.01676C12.5456 3.57918 11.9521 3.33333 11.3333 3.33333C10.7144 3.33334 10.121 3.57917 9.68339 4.01676L8.70711 4.99308C8.51957 5.18062 8.26522 5.28597 8 5.28597C7.73478 5.28597 7.48039 5.18062 7.29285 4.99308L6.31657 4.01676ZM7.2594 3.07395L8 3.81455L8.7406 3.07395C9.42824 2.38632 10.3609 2 11.3333 2C12.3058 2 13.2384 2.38632 13.9261 3.07395C14.6137 3.76159 15 4.69422 15 5.66669C15 6.63915 14.6137 7.57178 13.9261 8.25942L8.70711 13.4784C8.51957 13.6659 8.26523 13.7712 8 13.7712C7.73477 13.7712 7.48039 13.6659 7.29285 13.4784L2.07393 8.25942C1.73345 7.91894 1.46336 7.51473 1.27909 7.06987C1.09483 6.625 1 6.1482 1 5.66669C1 5.18517 1.09483 4.70837 1.27909 4.26351C1.46336 3.81865 1.73345 3.41444 2.07393 3.07395C2.41442 2.73347 2.81861 2.46338 3.26347 2.27911C3.70833 2.09485 4.18515 2.00002 4.66667 2.00002C5.14818 2.00002 5.62496 2.09485 6.06982 2.27911C6.51469 2.46338 6.91892 2.73347 7.2594 3.07395V3.07395Z"></path>
+											</svg>
+											Oblíbené
+										</a>
+								</div>
+
+								<div class="action-panel-item">
+										<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads class="btn-profile-action">
+											<svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
+												<path d="M2.66667 8.66634C3.03486 8.66634 3.33333 8.36786 3.33333 7.99967C3.33333 7.63148 3.03486 7.33301 2.66667 7.33301C2.29848 7.33301 2 7.63148 2 7.99967C2 8.36786 2.29848 8.66634 2.66667 8.66634Z"></path>
+												<path d="M2.66667 4.66634C3.03486 4.66634 3.33333 4.36786 3.33333 3.99967C3.33333 3.63148 3.03486 3.33301 2.66667 3.33301C2.29848 3.33301 2 3.63148 2 3.99967C2 4.36786 2.29848 4.66634 2.66667 4.66634Z"></path>
+												<path d="M2.66667 12.6663C3.03486 12.6663 3.33333 12.3679 3.33333 11.9997C3.33333 11.6315 3.03486 11.333 2.66667 11.333C2.29848 11.333 2 11.6315 2 11.9997C2 12.3679 2.29848 12.6663 2.66667 12.6663Z"></path>
+												<path d="M14 7.99967L6 7.99967M14 3.99968L6 3.99967M14 11.9997L6 11.9997M3.33333 7.99967C3.33333 8.36786 3.03486 8.66634 2.66667 8.66634C2.29848 8.66634 2 8.36786 2 7.99967C2 7.63148 2.29848 7.33301 2.66667 7.33301C3.03486 7.33301 3.33333 7.63148 3.33333 7.99967ZM3.33333 3.99967C3.33333 4.36786 3.03486 4.66634 2.66667 4.66634C2.29848 4.66634 2 4.36786 2 3.99967C2 3.63148 2.29848 3.33301 2.66667 3.33301C3.03486 3.33301 3.33333 3.63148 3.33333 3.99967ZM3.33333 11.9997C3.33333 12.3679 3.03486 12.6663 2.66667 12.6663C2.29848 12.6663 2 12.3679 2 11.9997C2 11.6315 2.29848 11.333 2.66667 11.333C3.03486 11.333 3.33333 11.6315 3.33333 11.9997Z" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"></path>
+											</svg>
+											Seznamy
+										</a>
+								</div>
+
+								<div id="snippet--actionLinkCollection" class="action-panel-item">
+									<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads class="btn-profile-action">
+											<svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+												<path d="M11.2735 2.7786L13.0641 13.3373L14.3786 13.1144L12.588 2.55566L11.2735 2.7786Z"></path>
+												<path d="M2 2.66713V13.3338H3.33333V2.66713H2Z"></path>
+												<path d="M6.66667 4.00046V13.3338H5.33333V4.00046H6.66667Z"></path>
+												<path d="M8.66667 13.3338V2.66713H10V13.3338H8.66667Z"></path>
+											</svg>
+											Filmotéka
+									</a>
+								</div>
+
+								<div class="action-panel-item">
+									<a title="Ovládací panel" href="javascript:void(0);" data-dropdown="#dropdown-control-panel" data-parent-class="box-rating-container" class="button-control-panel" data-onboarding-step-9="false">
+										<svg width="24" height="24" viewBox="0 0 24 24" stroke="currentColor" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M11.9974 12.6663C12.3656 12.6663 12.6641 12.3679 12.6641 11.9997C12.6641 11.6315 12.3656 11.333 11.9974 11.333C11.6292 11.333 11.3307 11.6315 11.3307 11.9997C11.3307 12.3679 11.6292 12.6663 11.9974 12.6663Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+											<path d="M16.6641 12.6663C17.0323 12.6663 17.3307 12.3679 17.3307 11.9997C17.3307 11.6315 17.0323 11.333 16.6641 11.333C16.2959 11.333 15.9974 11.6315 15.9974 11.9997C15.9974 12.3679 16.2959 12.6663 16.6641 12.6663Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+											<path d="M7.33073 12.6663C7.69892 12.6663 7.9974 12.3679 7.9974 11.9997C7.9974 11.6315 7.69892 11.333 7.33073 11.333C6.96254 11.333 6.66406 11.6315 6.66406 11.9997C6.66406 12.3679 6.96254 12.6663 7.33073 12.6663Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+										</svg>
+										
+									</a>
+								</div>
+							</div>
+
+							<div id="dropdown-control-panel" class="dropdown-content control-panel">
+
+								<ul class="blue">
+											<li>
+												<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads>
+													Přidat recenzi
+												</a>
+											</li>
+									<li id="snippet--publicControlMenuWatchlist">
+										<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads>
+												Přidat do Chci vidět
+										</a>
+									</li>
+									<li id="snippet--publicControlMenuFanclub">
+											<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads>Přidat do oblíbených</a>
+									</li>
+									<li>
+										<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads>
+												Přidat do seznamů
+										</a>
+									</li>
+									<li id="snippet--publicControlMenuCollection">
+										<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads>
+												Přidat do filmotéky
+										</a>
+									</li>
+								</ul>
+
+								<hr>
+
+								<ul class="blue">
+								<li>
+									<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads>
+										Přidat obsah
+									</a>
+								</li>
+								<li>
+									<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads>
+										Přidat zajímavost
+									</a>
+								</li>
+								<li>
+									<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads>
+										Přidat obrázky
+									</a>
+								</li>
+								<li>
+									<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads>
+										Přidat podobné filmy
+									</a>
+								</li>
+								<li>
+									<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads>
+										Přidat související filmy
+									</a>
+								</li>
+								<li>
+									<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads>
+										Přidat externí recenzi
+									</a>
+								</li>
+								<li>
+									<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads>
+										Přidat tagy
+									</a>
+								</li>
+								<li>
+									<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads>
+										Přidat web
+									</a>
+								</li>
+								</ul>
+							</div>
 						</div>
 
 						<div class="creators" id="creators">
@@ -476,8 +631,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
 
-
-		<div class="tabs">
+		<div class="tabs updated-tabs">
 <nav class="tab-nav tab-nav-count-10">
 	<ul class="tab-nav-list">
 		<li class="tab-nav-item active">
@@ -592,7 +746,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
 <div class="tab-content movie-profile--tab-default">
-	<section class="box box-video-overview box-borderless box-outstream">
+	<section class="updated-box box-video-overview box-borderless updated-box-outstream">
 <script async id="PS_6900c13a9c569028757a8ff0" type="text/javascript" src="https://ads.playstream.media/api/adserver/scripts?PS_TAGID=6900c13a9c569028757a8ff0&PS_PUB_ID=688224f92736ea5d3474df10"></script>
 <div class="adsolut-slot"></div>
 	</section>
@@ -600,12 +754,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
 
-	<section class="box box-nooverflow box-film-creator">
-		<header class="box-header">
+	<section class="updated-box box-nooverflow box-film-creator">
+		<header class="updated-box-header updated-box-header-nowrap">
 			<h2>Hrají <span class="count">(2)</span></h2>
 		</header>
-		<div class="box-content">
-<article class="article article-photo-88">
+		<div class="updated-box-content">
+<article class="article article-photo-88 updated-article-photo-88">
 	<figure class="article-img">
 		<img src="//image.pmgstatic.com/cache/resized/w88h116crop/files/images/creator/photos/000/270/270980_0a2cc7.jpg" loading="lazy" width="88" height="116" alt="King Baggot">
 	</figure>
@@ -614,7 +768,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			<h3 class="film-title-nooverflow-norating">
 				<a href="/tvurce/6140-king-baggot/prehled/" class="film-title-name">King Baggot</a>
 			</h3>
-			<p><span class="info">
+			<p class="film-origins-genres film-origins-genres-nopadding"><span class="info">
 				USA
 			</span></p>
 		</header>
@@ -622,7 +776,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 		</div>
 	</div>
 </article>
-<article class="article article-photo-88">
+<article class="article article-photo-88 updated-article-photo-88">
 	<figure class="article-img">
 		<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" loading="lazy" class="empty-image" width="88" height="116" alt="William Robert Daly">
 	</figure>
@@ -631,7 +785,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			<h3 class="film-title-nooverflow-norating">
 				<a href="/tvurce/331812-william-robert-daly/prehled/" class="film-title-name">William Robert Daly</a>
 			</h3>
-			<p><span class="info">
+			<p class="film-origins-genres film-origins-genres-nopadding"><span class="info">
 				USA
 			</span></p>
 		</header>
@@ -644,19 +798,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 </div>
 
-			<section id="shop-mobile" class="box box-shop box-margintop box-shop-mobile hidden"></section>
+			<section id="shop-mobile" class="updated-box box-shop box-margintop box-shop-mobile hidden"></section>
 
 		</div>
 	</div>
 
 	<aside class="aside-movie-profile">
-
-		<div class="box-rating-container">
-			<a href="javascript:void(0);" data-dropdown="#dropdown-control-panel" data-parent-class="box-rating-container" class="button button-control-panel button-control-panel-tablet">
-				<i class="icon icon-menu"></i><span>Ovládací panel</span>
-
-			</a>
-
+		<div class="film-rating">
 
 <div class="box-rating not-rated">
 
@@ -669,107 +817,50 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
 
+	<div class="my-rating my-rating-csfd" data-onboarding-step-4="false">
+		<h3>Klikni a hodnoť</h3>
+		<span class="stars-rating">
+			<a class="star star-0" href="/registration-motivation/?title=VyOlolOjKUHjZGH5nJEpqGNjMGShKUHjZTIxVTuiMT5iL2IhKUHjZTIxVUAyVUOlo3ApqGNjMJEgVT5ynzEpqGNkAGypqGNjMJE2VUOpqGNkAGycnTkupl4v" rel="registrationMotivation" data-no-ads data-rating="0"></a>
+			<a class="star star-20" href="/registration-motivation/?title=VyOlolOjKUHjZGH5nJEpqGNjMGShKUHjZTIxVTuiMT5iL2IhKUHjZTIxVUAyVUOlo3ApqGNjMJEgVT5ynzEpqGNkAGypqGNjMJE2VUOpqGNkAGycnTkupl4v" rel="registrationMotivation" data-no-ads data-rating="20"></a>
+			<a class="star star-40" href="/registration-motivation/?title=VyOlolOjKUHjZGH5nJEpqGNjMGShKUHjZTIxVTuiMT5iL2IhKUHjZTIxVUAyVUOlo3ApqGNjMJEgVT5ynzEpqGNkAGypqGNjMJE2VUOpqGNkAGycnTkupl4v" rel="registrationMotivation" data-no-ads data-rating="40"></a>
+			<a class="star star-60" href="/registration-motivation/?title=VyOlolOjKUHjZGH5nJEpqGNjMGShKUHjZTIxVTuiMT5iL2IhKUHjZTIxVUAyVUOlo3ApqGNjMJEgVT5ynzEpqGNkAGypqGNjMJE2VUOpqGNkAGycnTkupl4v" rel="registrationMotivation" data-no-ads data-rating="60"></a>
+			<a class="star star-80" href="/registration-motivation/?title=VyOlolOjKUHjZGH5nJEpqGNjMGShKUHjZTIxVTuiMT5iL2IhKUHjZTIxVUAyVUOlo3ApqGNjMJEgVT5ynzEpqGNkAGypqGNjMJE2VUOpqGNkAGycnTkupl4v" rel="registrationMotivation" data-no-ads data-rating="80"></a>
+			<a class="star star-100" href="/registration-motivation/?title=VyOlolOjKUHjZGH5nJEpqGNjMGShKUHjZTIxVTuiMT5iL2IhKUHjZTIxVUAyVUOlo3ApqGNjMJEgVT5ynzEpqGNkAGypqGNjMJE2VUOpqGNkAGycnTkupl4v" rel="registrationMotivation" data-no-ads data-rating="100"></a>
+		</span>
+	</div>
 
 
-	<div class="tabs-content">
+	<div class="ranking-tabs-csfd" data-onboarding-step-6="false">
+
+<div class="ranking-tabs-csfd-content">
+	<div class="ratings-list">
+		<h2>Hodnocení </h2>
+
+		<div class="no-rating-desc">
+				
+				<span><a href="/registration-motivation/" rel="registrationMotivation">Ohodnoť</a> jako první.</span>
+
+		</div>
+	</div>
+
+	<div class="fanclub-list">
+		<h2>Fanklub </h2>
+
+		<div class="no-rating-desc">
+			
+			<span>Přidej si do <a href="/registration-motivation/" rel="registrationMotivation">Oblíbených</a> jako první.</span>
+		</div>
 	</div>
 </div>
-
-			<div class="box-rating-buttons">
-				<div class="aside-movie-control">
-					<a href="javascript:void(0);" data-dropdown="#dropdown-control-panel" data-parent-class="box-rating-container" class="button button-control-panel button-control-panel-desktop">
-						<i class="icon icon-menu"></i><span>Ovládací panel</span>
-
-					</a>
-				</div>
-
-				<div class="box-buttons">
-
-
-
-
-				</div>
-			</div>
+	</div>
+</div>
 		</div>
-
-		<div id="dropdown-control-panel" class="dropdown-content control-panel">
-
-			<ul class="blue">
-							<li>
-								<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads>
-									Přidat recenzi
-								</a>
-							</li>
-					<li id="snippet--publicControlMenuWatchlist">
-						<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads>
-								Přidat do Chci vidět
-						</a>
-					</li>
-					<li id="snippet--publicControlMenuFanclub">
-							<a href="/registration-motivation/" rel="registrationMotivation">Přidat do oblíbených</a>
-					</li>
-					<li id="snippet--publicControlMenuCollection">
-							<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads>
-								Přidat do filmotéky
-							</a>
-					</li>
-					<li>
-						<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads>
-								Přidat do seznamu
-						</a>
-					</li>
-			</ul>
-
-			<hr>
-
-			<ul class="blue">
-			<li>
-				<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads>
-					Přidat obsah
-				</a>
-			</li>
-			<li>
-				<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads>
-					Přidat zajímavost
-				</a>
-			</li>
-			<li>
-				<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads>
-					Přidat obrázky
-				</a>
-			</li>
-			<li>
-				<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads>
-					Přidat podobné filmy
-				</a>
-			</li>
-			<li>
-				<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads>
-					Přidat související filmy
-				</a>
-			</li>
-			<li>
-				<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads>
-					Přidat externí recenzi
-				</a>
-			</li>
-			<li>
-				<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads>
-					Přidat tagy
-				</a>
-			</li>
-			<li>
-				<a href="/registration-motivation/" rel="registrationMotivation" data-no-ads>
-					Přidat web
-				</a>
-			</li>
-			</ul>
-		</div>
-
 
 		<div class="play-content-ios">
 			<div id="amplified_100006957"></div>
 		</div>
+
+
 
 
 
@@ -783,8 +874,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
 
-
-		<section id="shop-desktop" class="box box-shop box-shop-desktop hidden"></section>
+		<section id="shop-desktop" class="updated-box box-shop box-shop-desktop hidden"></section>
 	</aside>
 </div>
 
@@ -808,8 +898,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						<div class="footer-boxes">
 								<div class="footer-box-apps">
 									<h3>Download App</h3>
-									<a href="https://apps.apple.com/cz/app/id6755365206"><img src=&#47;&#47;static.pmgstatic.com&#47;assets&#47;images&#47;2b5f1f1793f6881e6e9326d2c21f9445&#47;appstore-cz.png width="114" height="38" alt=""></a>
-									<a href="https://play.google.com/store/apps/details?id=cz.csfd.csfdroid"><img src=&#47;&#47;static.pmgstatic.com&#47;assets&#47;images&#47;2b5f1f1793f6881e6e9326d2c21f9445&#47;googleplay-cz.png width="128" height="38" alt=""></a>
+									<a href="https://apps.apple.com/cz/app/id6755365206"><img src=&#47;&#47;static.pmgstatic.com&#47;assets&#47;images&#47;6aeb8871e0052a62b04d591a3f85e733&#47;appstore-cz.png width="114" height="38" alt=""></a>
+									<a href="https://play.google.com/store/apps/details?id=cz.csfd.csfdroid"><img src=&#47;&#47;static.pmgstatic.com&#47;assets&#47;images&#47;6aeb8871e0052a62b04d591a3f85e733&#47;googleplay-cz.png width="128" height="38" alt=""></a>
 								</div>
 
 							<div class="footer-box-social">
@@ -835,9 +925,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						<div class="footer-action-timezones">
 							<h3>Výběr časového pásma</h3>
 							<form action="/film/99999-the-loan-shark/prehled/" method="post" id="frm-timezoneForm">
-								<select name="timezone" data-auto-submit-form="true" id="frm-timezoneForm-timezone" class="updated-select"><option value="africa/abidjan">Africa/Abidjan</option><option value="africa/accra">Africa/Accra</option><option value="africa/addis_ababa">Africa/Addis Ababa</option><option value="africa/algiers">Africa/Algiers</option><option value="africa/asmara">Africa/Asmara</option><option value="africa/bamako">Africa/Bamako</option><option value="africa/bangui">Africa/Bangui</option><option value="africa/banjul">Africa/Banjul</option><option value="africa/bissau">Africa/Bissau</option><option value="africa/blantyre">Africa/Blantyre</option><option value="africa/brazzaville">Africa/Brazzaville</option><option value="africa/bujumbura">Africa/Bujumbura</option><option value="africa/cairo">Africa/Cairo</option><option value="africa/casablanca">Africa/Casablanca</option><option value="africa/ceuta">Africa/Ceuta</option><option value="africa/conakry">Africa/Conakry</option><option value="africa/dakar">Africa/Dakar</option><option value="africa/dar_es_salaam">Africa/Dar es Salaam</option><option value="africa/djibouti">Africa/Djibouti</option><option value="africa/douala">Africa/Douala</option><option value="africa/el_aaiun">Africa/El Aaiun</option><option value="africa/freetown">Africa/Freetown</option><option value="africa/gaborone">Africa/Gaborone</option><option value="africa/harare">Africa/Harare</option><option value="africa/johannesburg">Africa/Johannesburg</option><option value="africa/juba">Africa/Juba</option><option value="africa/kampala">Africa/Kampala</option><option value="africa/khartoum">Africa/Khartoum</option><option value="africa/kigali">Africa/Kigali</option><option value="africa/kinshasa">Africa/Kinshasa</option><option value="africa/lagos">Africa/Lagos</option><option value="africa/libreville">Africa/Libreville</option><option value="africa/lome">Africa/Lome</option><option value="africa/luanda">Africa/Luanda</option><option value="africa/lubumbashi">Africa/Lubumbashi</option><option value="africa/lusaka">Africa/Lusaka</option><option value="africa/malabo">Africa/Malabo</option><option value="africa/maputo">Africa/Maputo</option><option value="africa/maseru">Africa/Maseru</option><option value="africa/mbabane">Africa/Mbabane</option><option value="africa/mogadishu">Africa/Mogadishu</option><option value="africa/monrovia">Africa/Monrovia</option><option value="africa/nairobi">Africa/Nairobi</option><option value="africa/ndjamena">Africa/Ndjamena</option><option value="africa/niamey">Africa/Niamey</option><option value="africa/nouakchott">Africa/Nouakchott</option><option value="africa/ouagadougou">Africa/Ouagadougou</option><option value="africa/porto-novo">Africa/Porto-Novo</option><option value="africa/sao_tome">Africa/Sao Tome</option><option value="africa/tripoli">Africa/Tripoli</option><option value="africa/tunis">Africa/Tunis</option><option value="africa/windhoek">Africa/Windhoek</option><option value="america/adak">America/Adak</option><option value="america/anchorage">America/Anchorage</option><option value="america/anguilla">America/Anguilla</option><option value="america/antigua">America/Antigua</option><option value="america/araguaina">America/Araguaina</option><option value="america/argentina/buenos_aires">America/Argentina/Buenos Aires</option><option value="america/argentina/catamarca">America/Argentina/Catamarca</option><option value="america/argentina/cordoba">America/Argentina/Cordoba</option><option value="america/argentina/jujuy">America/Argentina/Jujuy</option><option value="america/argentina/la_rioja">America/Argentina/La Rioja</option><option value="america/argentina/mendoza">America/Argentina/Mendoza</option><option value="america/argentina/rio_gallegos">America/Argentina/Rio Gallegos</option><option value="america/argentina/salta">America/Argentina/Salta</option><option value="america/argentina/san_juan">America/Argentina/San Juan</option><option value="america/argentina/san_luis">America/Argentina/San Luis</option><option value="america/argentina/tucuman">America/Argentina/Tucuman</option><option value="america/argentina/ushuaia">America/Argentina/Ushuaia</option><option value="america/aruba">America/Aruba</option><option value="america/asuncion">America/Asuncion</option><option value="america/atikokan">America/Atikokan</option><option value="america/bahia">America/Bahia</option><option value="america/bahia_banderas">America/Bahia Banderas</option><option value="america/barbados">America/Barbados</option><option value="america/belem">America/Belem</option><option value="america/belize">America/Belize</option><option value="america/blanc-sablon">America/Blanc-Sablon</option><option value="america/boa_vista">America/Boa Vista</option><option value="america/bogota">America/Bogota</option><option value="america/boise">America/Boise</option><option value="america/cambridge_bay">America/Cambridge Bay</option><option value="america/campo_grande">America/Campo Grande</option><option value="america/cancun">America/Cancun</option><option value="america/caracas">America/Caracas</option><option value="america/cayenne">America/Cayenne</option><option value="america/cayman">America/Cayman</option><option value="america/chicago">America/Chicago</option><option value="america/chihuahua">America/Chihuahua</option><option value="america/ciudad_juarez">America/Ciudad Juarez</option><option value="america/costa_rica">America/Costa Rica</option><option value="america/creston">America/Creston</option><option value="america/cuiaba">America/Cuiaba</option><option value="america/curacao">America/Curacao</option><option value="america/dawson">America/Dawson</option><option value="america/dawson_creek">America/Dawson Creek</option><option value="america/denver">America/Denver</option><option value="america/detroit">America/Detroit</option><option value="america/dominica">America/Dominica</option><option value="america/edmonton">America/Edmonton</option><option value="america/eirunepe">America/Eirunepe</option><option value="america/el_salvador">America/El Salvador</option><option value="america/fort_nelson">America/Fort Nelson</option><option value="america/fortaleza">America/Fortaleza</option><option value="america/glace_bay">America/Glace Bay</option><option value="america/goose_bay">America/Goose Bay</option><option value="america/grand_turk">America/Grand Turk</option><option value="america/grenada">America/Grenada</option><option value="america/guadeloupe">America/Guadeloupe</option><option value="america/guatemala">America/Guatemala</option><option value="america/guayaquil">America/Guayaquil</option><option value="america/guyana">America/Guyana</option><option value="america/halifax">America/Halifax</option><option value="america/havana">America/Havana</option><option value="america/hermosillo">America/Hermosillo</option><option value="america/indiana/indianapolis">America/Indiana/Indianapolis</option><option value="america/indiana/knox">America/Indiana/Knox</option><option value="america/indiana/marengo">America/Indiana/Marengo</option><option value="america/indiana/petersburg">America/Indiana/Petersburg</option><option value="america/indiana/tell_city">America/Indiana/Tell City</option><option value="america/indiana/vevay">America/Indiana/Vevay</option><option value="america/indiana/vincennes">America/Indiana/Vincennes</option><option value="america/indiana/winamac">America/Indiana/Winamac</option><option value="america/inuvik">America/Inuvik</option><option value="america/iqaluit">America/Iqaluit</option><option value="america/jamaica">America/Jamaica</option><option value="america/juneau">America/Juneau</option><option value="america/kentucky/louisville">America/Kentucky/Louisville</option><option value="america/kentucky/monticello">America/Kentucky/Monticello</option><option value="america/kralendijk">America/Kralendijk</option><option value="america/la_paz">America/La Paz</option><option value="america/lima">America/Lima</option><option value="america/los_angeles">America/Los Angeles</option><option value="america/lower_princes">America/Lower Princes</option><option value="america/maceio">America/Maceio</option><option value="america/managua">America/Managua</option><option value="america/manaus">America/Manaus</option><option value="america/marigot">America/Marigot</option><option value="america/martinique">America/Martinique</option><option value="america/matamoros">America/Matamoros</option><option value="america/mazatlan">America/Mazatlan</option><option value="america/menominee">America/Menominee</option><option value="america/merida">America/Merida</option><option value="america/metlakatla">America/Metlakatla</option><option value="america/mexico_city">America/Mexico City</option><option value="america/miquelon">America/Miquelon</option><option value="america/moncton">America/Moncton</option><option value="america/monterrey">America/Monterrey</option><option value="america/montevideo">America/Montevideo</option><option value="america/montserrat">America/Montserrat</option><option value="america/nassau">America/Nassau</option><option value="america/new_york">America/New York</option><option value="america/nome">America/Nome</option><option value="america/north_dakota/beulah">America/North Dakota/Beulah</option><option value="america/north_dakota/center">America/North Dakota/Center</option><option value="america/north_dakota/new_salem">America/North Dakota/New Salem</option><option value="america/nuuk">America/Nuuk</option><option value="america/ojinaga">America/Ojinaga</option><option value="america/panama">America/Panama</option><option value="america/paramaribo">America/Paramaribo</option><option value="america/phoenix">America/Phoenix</option><option value="america/port-au-prince">America/Port-au-Prince</option><option value="america/port_of_spain">America/Port of Spain</option><option value="america/porto_velho">America/Porto Velho</option><option value="america/puerto_rico">America/Puerto Rico</option><option value="america/punta_arenas">America/Punta Arenas</option><option value="america/rankin_inlet">America/Rankin Inlet</option><option value="america/recife">America/Recife</option><option value="america/regina">America/Regina</option><option value="america/resolute">America/Resolute</option><option value="america/rio_branco">America/Rio Branco</option><option value="america/santarem">America/Santarem</option><option value="america/santiago">America/Santiago</option><option value="america/santo_domingo">America/Santo Domingo</option><option value="america/sao_paulo">America/Sao Paulo</option><option value="america/scoresbysund">America/Scoresbysund</option><option value="america/sitka">America/Sitka</option><option value="america/st_barthelemy">America/St Barthelemy</option><option value="america/st_johns">America/St. John's</option><option value="america/st_kitts">America/St. Kitts</option><option value="america/st_lucia">America/St. Lucia</option><option value="america/st_thomas">America/St. Thomas</option><option value="america/st_vincent">America/St. Vincent</option><option value="america/swift_current">America/Swift Current</option><option value="america/tegucigalpa">America/Tegucigalpa</option><option value="america/thule">America/Thule</option><option value="america/tijuana">America/Tijuana</option><option value="america/toronto">America/Toronto</option><option value="america/tortola">America/Tortola</option><option value="america/vancouver">America/Vancouver</option><option value="america/whitehorse">America/Whitehorse</option><option value="america/winnipeg">America/Winnipeg</option><option value="america/yakutat">America/Yakutat</option><option value="america/yellowknife">America/Yellowknife</option><option value="antarctica/syowa">Antarctica/Syowa</option><option value="arctic/longyearbyen">Arctic/Longyearbyen</option><option value="asia/aden">Asia/Aden</option><option value="asia/almaty">Asia/Almaty</option><option value="asia/amman">Asia/Amman</option><option value="asia/anadyr">Asia/Anadyr</option><option value="asia/aqtau">Asia/Aqtau</option><option value="asia/aqtobe">Asia/Aqtobe</option><option value="asia/ashgabat">Asia/Ashgabat</option><option value="asia/atyrau">Asia/Atyrau</option><option value="asia/baghdad">Asia/Baghdad</option><option value="asia/bahrain">Asia/Bahrain</option><option value="asia/baku">Asia/Baku</option><option value="asia/bangkok">Asia/Bangkok</option><option value="asia/barnaul">Asia/Barnaul</option><option value="asia/beirut">Asia/Beirut</option><option value="asia/bishkek">Asia/Bishkek</option><option value="asia/brunei">Asia/Brunei</option><option value="asia/chita">Asia/Chita</option><option value="asia/choibalsan">Asia/Choibalsan</option><option value="asia/colombo">Asia/Colombo</option><option value="asia/damascus">Asia/Damascus</option><option value="asia/dhaka">Asia/Dhaka</option><option value="asia/dili">Asia/Dili</option><option value="asia/dubai">Asia/Dubai</option><option value="asia/dushanbe">Asia/Dushanbe</option><option value="asia/famagusta">Asia/Famagusta</option><option value="asia/gaza">Asia/Gaza</option><option value="asia/hebron">Asia/Hebron</option><option value="asia/ho_chi_minh">Asia/Ho Chi Minh</option><option value="asia/hong_kong">Asia/Hong Kong</option><option value="asia/hovd">Asia/Hovd</option><option value="asia/irkutsk">Asia/Irkutsk</option><option value="asia/jakarta">Asia/Jakarta</option><option value="asia/jayapura">Asia/Jayapura</option><option value="asia/jerusalem">Asia/Jerusalem</option><option value="asia/kabul">Asia/Kabul</option><option value="asia/kamchatka">Asia/Kamchatka</option><option value="asia/karachi">Asia/Karachi</option><option value="asia/kathmandu">Asia/Kathmandu</option><option value="asia/kolkata">Asia/Kolkata</option><option value="asia/krasnoyarsk">Asia/Krasnoyarsk</option><option value="asia/kuala_lumpur">Asia/Kuala Lumpur</option><option value="asia/kuching">Asia/Kuching</option><option value="asia/kuwait">Asia/Kuwait</option><option value="asia/macau">Asia/Macau</option><option value="asia/magadan">Asia/Magadan</option><option value="asia/makassar">Asia/Makassar</option><option value="asia/manila">Asia/Manila</option><option value="asia/muscat">Asia/Muscat</option><option value="asia/nicosia">Asia/Nicosia</option><option value="asia/novokuznetsk">Asia/Novokuznetsk</option><option value="asia/novosibirsk">Asia/Novosibirsk</option><option value="asia/omsk">Asia/Omsk</option><option value="asia/oral">Asia/Oral</option><option value="asia/phnom_penh">Asia/Phnom Penh</option><option value="asia/pontianak">Asia/Pontianak</option><option value="asia/pyongyang">Asia/Pyongyang</option><option value="asia/qatar">Asia/Qatar</option><option value="asia/qostanay">Asia/Qostanay</option><option value="asia/qyzylorda">Asia/Qyzylorda</option><option value="asia/riyadh">Asia/Riyadh</option><option value="asia/sakhalin">Asia/Sakhalin</option><option value="asia/samarkand">Asia/Samarkand</option><option value="asia/seoul">Asia/Seoul</option><option value="asia/shanghai">Asia/Shanghai</option><option value="asia/singapore">Asia/Singapore</option><option value="asia/taipei">Asia/Taipei</option><option value="asia/tashkent">Asia/Tashkent</option><option value="asia/tbilisi">Asia/Tbilisi</option><option value="asia/tehran">Asia/Tehran</option><option value="asia/thimphu">Asia/Thimphu</option><option value="asia/tokyo">Asia/Tokyo</option><option value="asia/tomsk">Asia/Tomsk</option><option value="asia/ulaanbaatar">Asia/Ulaanbaatar</option><option value="asia/urumqi">Asia/Urumqi</option><option value="asia/vientiane">Asia/Vientiane</option><option value="asia/vladivostok">Asia/Vladivostok</option><option value="asia/yakutsk">Asia/Yakutsk</option><option value="asia/yangon">Asia/Yangon</option><option value="asia/yekaterinburg">Asia/Yekaterinburg</option><option value="asia/yerevan">Asia/Yerevan</option><option value="atlantic/azores">Atlantic/Azores</option><option value="atlantic/bermuda">Atlantic/Bermuda</option><option value="atlantic/canary">Atlantic/Canary</option><option value="atlantic/cape_verde">Atlantic/Cape Verde</option><option value="atlantic/faroe">Atlantic/Faroe</option><option value="atlantic/madeira">Atlantic/Madeira</option><option value="atlantic/reykjavik">Atlantic/Reykjavik</option><option value="atlantic/south_georgia">Atlantic/South Georgia</option><option value="atlantic/st_helena">Atlantic/St Helena</option><option value="atlantic/stanley">Atlantic/Stanley</option><option value="australia/adelaide">Australia/Adelaide</option><option value="australia/brisbane">Australia/Brisbane</option><option value="australia/broken_hill">Australia/Broken Hill</option><option value="australia/darwin">Australia/Darwin</option><option value="australia/eucla">Australia/Eucla</option><option value="australia/hobart">Australia/Hobart</option><option value="australia/lindeman">Australia/Lindeman</option><option value="australia/lord_howe">Australia/Lord Howe</option><option value="australia/melbourne">Australia/Melbourne</option><option value="australia/perth">Australia/Perth</option><option value="australia/sydney">Australia/Sydney</option><option value="europe/amsterdam">Europe/Amsterdam</option><option value="europe/andorra">Europe/Andorra</option><option value="europe/astrakhan">Europe/Astrakhan</option><option value="europe/athens">Europe/Athens</option><option value="europe/belgrade">Europe/Belgrade</option><option value="europe/berlin">Europe/Berlin</option><option value="europe/bratislava">Europe/Bratislava</option><option value="europe/brussels">Europe/Brussels</option><option value="europe/bucharest">Europe/Bucharest</option><option value="europe/budapest">Europe/Budapest</option><option value="europe/chisinau">Europe/Chisinau</option><option value="europe/copenhagen">Europe/Copenhagen</option><option value="europe/dublin">Europe/Dublin</option><option value="europe/gibraltar">Europe/Gibraltar</option><option value="europe/guernsey">Europe/Guernsey</option><option value="europe/helsinki">Europe/Helsinki</option><option value="europe/isle_of_man">Europe/Isle of Man</option><option value="europe/istanbul">Europe/Istanbul</option><option value="europe/jersey">Europe/Jersey</option><option value="europe/kaliningrad">Europe/Kaliningrad</option><option value="europe/kirov">Europe/Kirov</option><option value="europe/kyiv">Europe/Kyiv</option><option value="europe/lisbon">Europe/Lisbon</option><option value="europe/ljubljana">Europe/Ljubljana</option><option value="europe/london">Europe/London</option><option value="europe/luxembourg">Europe/Luxembourg</option><option value="europe/madrid">Europe/Madrid</option><option value="europe/malta">Europe/Malta</option><option value="europe/mariehamn">Europe/Mariehamn</option><option value="europe/minsk">Europe/Minsk</option><option value="europe/monaco">Europe/Monaco</option><option value="europe/moscow">Europe/Moscow</option><option value="europe/oslo">Europe/Oslo</option><option value="europe/paris">Europe/Paris</option><option value="europe/podgorica">Europe/Podgorica</option><option value="europe/prague" selected>Europe/Prague</option><option value="europe/riga">Europe/Riga</option><option value="europe/rome">Europe/Rome</option><option value="europe/samara">Europe/Samara</option><option value="europe/san_marino">Europe/San Marino</option><option value="europe/sarajevo">Europe/Sarajevo</option><option value="europe/saratov">Europe/Saratov</option><option value="europe/simferopol">Europe/Simferopol</option><option value="europe/skopje">Europe/Skopje</option><option value="europe/sofia">Europe/Sofia</option><option value="europe/stockholm">Europe/Stockholm</option><option value="europe/tallinn">Europe/Tallinn</option><option value="europe/tirane">Europe/Tirane</option><option value="europe/ulyanovsk">Europe/Ulyanovsk</option><option value="europe/vaduz">Europe/Vaduz</option><option value="europe/vatican">Europe/Vatican</option><option value="europe/vienna">Europe/Vienna</option><option value="europe/vilnius">Europe/Vilnius</option><option value="europe/volgograd">Europe/Volgograd</option><option value="europe/warsaw">Europe/Warsaw</option><option value="europe/zagreb">Europe/Zagreb</option><option value="europe/zurich">Europe/Zurich</option><option value="indian/antananarivo">Indian/Antananarivo</option><option value="indian/chagos">Indian/Chagos</option><option value="indian/christmas">Indian/Christmas</option><option value="indian/cocos">Indian/Cocos</option><option value="indian/comoro">Indian/Comoro</option><option value="indian/kerguelen">Indian/Kerguelen</option><option value="indian/mahe">Indian/Mahe</option><option value="indian/maldives">Indian/Maldives</option><option value="indian/mauritius">Indian/Mauritius</option><option value="indian/mayotte">Indian/Mayotte</option><option value="indian/reunion">Indian/Reunion</option><option value="pacific/apia">Pacific/Apia</option><option value="pacific/auckland">Pacific/Auckland</option><option value="pacific/bougainville">Pacific/Bougainville</option><option value="pacific/chatham">Pacific/Chatham</option><option value="pacific/chuuk">Pacific/Chuuk</option><option value="pacific/easter">Pacific/Easter</option><option value="pacific/efate">Pacific/Efate</option><option value="pacific/fakaofo">Pacific/Fakaofo</option><option value="pacific/fiji">Pacific/Fiji</option><option value="pacific/funafuti">Pacific/Funafuti</option><option value="pacific/galapagos">Pacific/Galapagos</option><option value="pacific/gambier">Pacific/Gambier</option><option value="pacific/guadalcanal">Pacific/Guadalcanal</option><option value="pacific/guam">Pacific/Guam</option><option value="pacific/honolulu">Pacific/Honolulu</option><option value="pacific/kanton">Pacific/Kanton</option><option value="pacific/kiritimati">Pacific/Kiritimati</option><option value="pacific/kosrae">Pacific/Kosrae</option><option value="pacific/kwajalein">Pacific/Kwajalein</option><option value="pacific/majuro">Pacific/Majuro</option><option value="pacific/marquesas">Pacific/Marquesas</option><option value="pacific/midway">Pacific/Midway</option><option value="pacific/nauru">Pacific/Nauru</option><option value="pacific/niue">Pacific/Niue</option><option value="pacific/norfolk">Pacific/Norfolk</option><option value="pacific/noumea">Pacific/Noumea</option><option value="pacific/pago_pago">Pacific/Pago Pago</option><option value="pacific/palau">Pacific/Palau</option><option value="pacific/pitcairn">Pacific/Pitcairn</option><option value="pacific/pohnpei">Pacific/Pohnpei</option><option value="pacific/port_moresby">Pacific/Port Moresby</option><option value="pacific/rarotonga">Pacific/Rarotonga</option><option value="pacific/saipan">Pacific/Saipan</option><option value="pacific/tahiti">Pacific/Tahiti</option><option value="pacific/tarawa">Pacific/Tarawa</option><option value="pacific/tongatapu">Pacific/Tongatapu</option><option value="pacific/wake">Pacific/Wake</option><option value="pacific/wallis">Pacific/Wallis</option></select>
+								<select name="timezone" data-auto-submit-form="true" id="frm-timezoneForm-timezone" class="updated-select"><option value="africa/abidjan">Africa/Abidjan</option><option value="africa/accra">Africa/Accra</option><option value="africa/addis_ababa">Africa/Addis Ababa</option><option value="africa/algiers">Africa/Algiers</option><option value="africa/asmara">Africa/Asmara</option><option value="africa/bamako">Africa/Bamako</option><option value="africa/bangui">Africa/Bangui</option><option value="africa/banjul">Africa/Banjul</option><option value="africa/bissau">Africa/Bissau</option><option value="africa/blantyre">Africa/Blantyre</option><option value="africa/brazzaville">Africa/Brazzaville</option><option value="africa/bujumbura">Africa/Bujumbura</option><option value="africa/cairo">Africa/Cairo</option><option value="africa/casablanca">Africa/Casablanca</option><option value="africa/ceuta">Africa/Ceuta</option><option value="africa/conakry">Africa/Conakry</option><option value="africa/dakar">Africa/Dakar</option><option value="africa/dar_es_salaam">Africa/Dar es Salaam</option><option value="africa/djibouti">Africa/Djibouti</option><option value="africa/douala">Africa/Douala</option><option value="africa/el_aaiun">Africa/El Aaiun</option><option value="africa/freetown">Africa/Freetown</option><option value="africa/gaborone">Africa/Gaborone</option><option value="africa/harare">Africa/Harare</option><option value="africa/johannesburg">Africa/Johannesburg</option><option value="africa/juba">Africa/Juba</option><option value="africa/kampala">Africa/Kampala</option><option value="africa/khartoum">Africa/Khartoum</option><option value="africa/kigali">Africa/Kigali</option><option value="africa/kinshasa">Africa/Kinshasa</option><option value="africa/lagos">Africa/Lagos</option><option value="africa/libreville">Africa/Libreville</option><option value="africa/lome">Africa/Lome</option><option value="africa/luanda">Africa/Luanda</option><option value="africa/lubumbashi">Africa/Lubumbashi</option><option value="africa/lusaka">Africa/Lusaka</option><option value="africa/malabo">Africa/Malabo</option><option value="africa/maputo">Africa/Maputo</option><option value="africa/maseru">Africa/Maseru</option><option value="africa/mbabane">Africa/Mbabane</option><option value="africa/mogadishu">Africa/Mogadishu</option><option value="africa/monrovia">Africa/Monrovia</option><option value="africa/nairobi">Africa/Nairobi</option><option value="africa/ndjamena">Africa/Ndjamena</option><option value="africa/niamey">Africa/Niamey</option><option value="africa/nouakchott">Africa/Nouakchott</option><option value="africa/ouagadougou">Africa/Ouagadougou</option><option value="africa/porto-novo">Africa/Porto-Novo</option><option value="africa/sao_tome">Africa/Sao Tome</option><option value="africa/tripoli">Africa/Tripoli</option><option value="africa/tunis">Africa/Tunis</option><option value="africa/windhoek">Africa/Windhoek</option><option value="america/adak">America/Adak</option><option value="america/anchorage">America/Anchorage</option><option value="america/anguilla">America/Anguilla</option><option value="america/antigua">America/Antigua</option><option value="america/araguaina">America/Araguaina</option><option value="america/argentina/buenos_aires">America/Argentina/Buenos Aires</option><option value="america/argentina/catamarca">America/Argentina/Catamarca</option><option value="america/argentina/cordoba">America/Argentina/Cordoba</option><option value="america/argentina/jujuy">America/Argentina/Jujuy</option><option value="america/argentina/la_rioja">America/Argentina/La Rioja</option><option value="america/argentina/mendoza">America/Argentina/Mendoza</option><option value="america/argentina/rio_gallegos">America/Argentina/Rio Gallegos</option><option value="america/argentina/salta">America/Argentina/Salta</option><option value="america/argentina/san_juan">America/Argentina/San Juan</option><option value="america/argentina/san_luis">America/Argentina/San Luis</option><option value="america/argentina/tucuman">America/Argentina/Tucuman</option><option value="america/argentina/ushuaia">America/Argentina/Ushuaia</option><option value="america/aruba">America/Aruba</option><option value="america/asuncion">America/Asuncion</option><option value="america/atikokan">America/Atikokan</option><option value="america/bahia">America/Bahia</option><option value="america/bahia_banderas">America/Bahia Banderas</option><option value="america/barbados">America/Barbados</option><option value="america/belem">America/Belem</option><option value="america/belize">America/Belize</option><option value="america/blanc-sablon">America/Blanc-Sablon</option><option value="america/boa_vista">America/Boa Vista</option><option value="america/bogota">America/Bogota</option><option value="america/boise">America/Boise</option><option value="america/cambridge_bay">America/Cambridge Bay</option><option value="america/campo_grande">America/Campo Grande</option><option value="america/cancun">America/Cancun</option><option value="america/caracas">America/Caracas</option><option value="america/cayenne">America/Cayenne</option><option value="america/cayman">America/Cayman</option><option value="america/chicago">America/Chicago</option><option value="america/chihuahua">America/Chihuahua</option><option value="america/ciudad_juarez">America/Ciudad Juarez</option><option value="america/costa_rica">America/Costa Rica</option><option value="america/creston">America/Creston</option><option value="america/cuiaba">America/Cuiaba</option><option value="america/curacao">America/Curacao</option><option value="america/dawson">America/Dawson</option><option value="america/dawson_creek">America/Dawson Creek</option><option value="america/denver">America/Denver</option><option value="america/detroit">America/Detroit</option><option value="america/dominica">America/Dominica</option><option value="america/edmonton">America/Edmonton</option><option value="america/eirunepe">America/Eirunepe</option><option value="america/el_salvador">America/El Salvador</option><option value="america/fort_nelson">America/Fort Nelson</option><option value="america/fortaleza">America/Fortaleza</option><option value="america/glace_bay">America/Glace Bay</option><option value="america/goose_bay">America/Goose Bay</option><option value="america/grand_turk">America/Grand Turk</option><option value="america/grenada">America/Grenada</option><option value="america/guadeloupe">America/Guadeloupe</option><option value="america/guatemala">America/Guatemala</option><option value="america/guayaquil">America/Guayaquil</option><option value="america/guyana">America/Guyana</option><option value="america/halifax">America/Halifax</option><option value="america/havana">America/Havana</option><option value="america/hermosillo">America/Hermosillo</option><option value="america/indiana/indianapolis">America/Indiana/Indianapolis</option><option value="america/indiana/knox">America/Indiana/Knox</option><option value="america/indiana/marengo">America/Indiana/Marengo</option><option value="america/indiana/petersburg">America/Indiana/Petersburg</option><option value="america/indiana/tell_city">America/Indiana/Tell City</option><option value="america/indiana/vevay">America/Indiana/Vevay</option><option value="america/indiana/vincennes">America/Indiana/Vincennes</option><option value="america/indiana/winamac">America/Indiana/Winamac</option><option value="america/inuvik">America/Inuvik</option><option value="america/iqaluit">America/Iqaluit</option><option value="america/jamaica">America/Jamaica</option><option value="america/juneau">America/Juneau</option><option value="america/kentucky/louisville">America/Kentucky/Louisville</option><option value="america/kentucky/monticello">America/Kentucky/Monticello</option><option value="america/kralendijk">America/Kralendijk</option><option value="america/la_paz">America/La Paz</option><option value="america/lima">America/Lima</option><option value="america/los_angeles">America/Los Angeles</option><option value="america/lower_princes">America/Lower Princes</option><option value="america/maceio">America/Maceio</option><option value="america/managua">America/Managua</option><option value="america/manaus">America/Manaus</option><option value="america/marigot">America/Marigot</option><option value="america/martinique">America/Martinique</option><option value="america/matamoros">America/Matamoros</option><option value="america/mazatlan">America/Mazatlan</option><option value="america/menominee">America/Menominee</option><option value="america/merida">America/Merida</option><option value="america/metlakatla">America/Metlakatla</option><option value="america/mexico_city">America/Mexico City</option><option value="america/miquelon">America/Miquelon</option><option value="america/moncton">America/Moncton</option><option value="america/monterrey">America/Monterrey</option><option value="america/montevideo">America/Montevideo</option><option value="america/montserrat">America/Montserrat</option><option value="america/nassau">America/Nassau</option><option value="america/new_york">America/New York</option><option value="america/nome">America/Nome</option><option value="america/north_dakota/beulah">America/North Dakota/Beulah</option><option value="america/north_dakota/center">America/North Dakota/Center</option><option value="america/north_dakota/new_salem">America/North Dakota/New Salem</option><option value="america/nuuk">America/Nuuk</option><option value="america/ojinaga">America/Ojinaga</option><option value="america/panama">America/Panama</option><option value="america/paramaribo">America/Paramaribo</option><option value="america/phoenix">America/Phoenix</option><option value="america/port-au-prince">America/Port-au-Prince</option><option value="america/port_of_spain">America/Port of Spain</option><option value="america/porto_velho">America/Porto Velho</option><option value="america/puerto_rico">America/Puerto Rico</option><option value="america/punta_arenas">America/Punta Arenas</option><option value="america/rankin_inlet">America/Rankin Inlet</option><option value="america/recife">America/Recife</option><option value="america/regina">America/Regina</option><option value="america/resolute">America/Resolute</option><option value="america/rio_branco">America/Rio Branco</option><option value="america/santarem">America/Santarem</option><option value="america/santiago">America/Santiago</option><option value="america/santo_domingo">America/Santo Domingo</option><option value="america/sao_paulo">America/Sao Paulo</option><option value="america/scoresbysund">America/Scoresbysund</option><option value="america/sitka">America/Sitka</option><option value="america/st_barthelemy">America/St Barthelemy</option><option value="america/st_johns">America/St. John's</option><option value="america/st_kitts">America/St. Kitts</option><option value="america/st_lucia">America/St. Lucia</option><option value="america/st_thomas">America/St. Thomas</option><option value="america/st_vincent">America/St. Vincent</option><option value="america/swift_current">America/Swift Current</option><option value="america/tegucigalpa">America/Tegucigalpa</option><option value="america/thule">America/Thule</option><option value="america/tijuana">America/Tijuana</option><option value="america/toronto">America/Toronto</option><option value="america/tortola">America/Tortola</option><option value="america/vancouver">America/Vancouver</option><option value="america/whitehorse">America/Whitehorse</option><option value="america/winnipeg">America/Winnipeg</option><option value="america/yakutat">America/Yakutat</option><option value="america/yellowknife">America/Yellowknife</option><option value="antarctica/syowa">Antarctica/Syowa</option><option value="arctic/longyearbyen">Arctic/Longyearbyen</option><option value="asia/aden">Asia/Aden</option><option value="asia/almaty">Asia/Almaty</option><option value="asia/amman">Asia/Amman</option><option value="asia/anadyr">Asia/Anadyr</option><option value="asia/aqtau">Asia/Aqtau</option><option value="asia/aqtobe">Asia/Aqtobe</option><option value="asia/ashgabat">Asia/Ashgabat</option><option value="asia/atyrau">Asia/Atyrau</option><option value="asia/baghdad">Asia/Baghdad</option><option value="asia/bahrain">Asia/Bahrain</option><option value="asia/baku">Asia/Baku</option><option value="asia/bangkok">Asia/Bangkok</option><option value="asia/barnaul">Asia/Barnaul</option><option value="asia/beirut">Asia/Beirut</option><option value="asia/bishkek">Asia/Bishkek</option><option value="asia/brunei">Asia/Brunei</option><option value="asia/chita">Asia/Chita</option><option value="asia/colombo">Asia/Colombo</option><option value="asia/damascus">Asia/Damascus</option><option value="asia/dhaka">Asia/Dhaka</option><option value="asia/dili">Asia/Dili</option><option value="asia/dubai">Asia/Dubai</option><option value="asia/dushanbe">Asia/Dushanbe</option><option value="asia/famagusta">Asia/Famagusta</option><option value="asia/gaza">Asia/Gaza</option><option value="asia/hebron">Asia/Hebron</option><option value="asia/ho_chi_minh">Asia/Ho Chi Minh</option><option value="asia/hong_kong">Asia/Hong Kong</option><option value="asia/hovd">Asia/Hovd</option><option value="asia/irkutsk">Asia/Irkutsk</option><option value="asia/jakarta">Asia/Jakarta</option><option value="asia/jayapura">Asia/Jayapura</option><option value="asia/jerusalem">Asia/Jerusalem</option><option value="asia/kabul">Asia/Kabul</option><option value="asia/kamchatka">Asia/Kamchatka</option><option value="asia/karachi">Asia/Karachi</option><option value="asia/kathmandu">Asia/Kathmandu</option><option value="asia/kolkata">Asia/Kolkata</option><option value="asia/krasnoyarsk">Asia/Krasnoyarsk</option><option value="asia/kuala_lumpur">Asia/Kuala Lumpur</option><option value="asia/kuching">Asia/Kuching</option><option value="asia/kuwait">Asia/Kuwait</option><option value="asia/macau">Asia/Macau</option><option value="asia/magadan">Asia/Magadan</option><option value="asia/makassar">Asia/Makassar</option><option value="asia/manila">Asia/Manila</option><option value="asia/muscat">Asia/Muscat</option><option value="asia/nicosia">Asia/Nicosia</option><option value="asia/novokuznetsk">Asia/Novokuznetsk</option><option value="asia/novosibirsk">Asia/Novosibirsk</option><option value="asia/omsk">Asia/Omsk</option><option value="asia/oral">Asia/Oral</option><option value="asia/phnom_penh">Asia/Phnom Penh</option><option value="asia/pontianak">Asia/Pontianak</option><option value="asia/pyongyang">Asia/Pyongyang</option><option value="asia/qatar">Asia/Qatar</option><option value="asia/qostanay">Asia/Qostanay</option><option value="asia/qyzylorda">Asia/Qyzylorda</option><option value="asia/riyadh">Asia/Riyadh</option><option value="asia/sakhalin">Asia/Sakhalin</option><option value="asia/samarkand">Asia/Samarkand</option><option value="asia/seoul">Asia/Seoul</option><option value="asia/shanghai">Asia/Shanghai</option><option value="asia/singapore">Asia/Singapore</option><option value="asia/taipei">Asia/Taipei</option><option value="asia/tashkent">Asia/Tashkent</option><option value="asia/tbilisi">Asia/Tbilisi</option><option value="asia/tehran">Asia/Tehran</option><option value="asia/thimphu">Asia/Thimphu</option><option value="asia/tokyo">Asia/Tokyo</option><option value="asia/tomsk">Asia/Tomsk</option><option value="asia/ulaanbaatar">Asia/Ulaanbaatar</option><option value="asia/urumqi">Asia/Urumqi</option><option value="asia/vientiane">Asia/Vientiane</option><option value="asia/vladivostok">Asia/Vladivostok</option><option value="asia/yakutsk">Asia/Yakutsk</option><option value="asia/yangon">Asia/Yangon</option><option value="asia/yekaterinburg">Asia/Yekaterinburg</option><option value="asia/yerevan">Asia/Yerevan</option><option value="atlantic/azores">Atlantic/Azores</option><option value="atlantic/bermuda">Atlantic/Bermuda</option><option value="atlantic/canary">Atlantic/Canary</option><option value="atlantic/cape_verde">Atlantic/Cape Verde</option><option value="atlantic/faroe">Atlantic/Faroe</option><option value="atlantic/madeira">Atlantic/Madeira</option><option value="atlantic/reykjavik">Atlantic/Reykjavik</option><option value="atlantic/south_georgia">Atlantic/South Georgia</option><option value="atlantic/st_helena">Atlantic/St Helena</option><option value="atlantic/stanley">Atlantic/Stanley</option><option value="australia/adelaide">Australia/Adelaide</option><option value="australia/brisbane">Australia/Brisbane</option><option value="australia/broken_hill">Australia/Broken Hill</option><option value="australia/darwin">Australia/Darwin</option><option value="australia/eucla">Australia/Eucla</option><option value="australia/hobart">Australia/Hobart</option><option value="australia/lindeman">Australia/Lindeman</option><option value="australia/lord_howe">Australia/Lord Howe</option><option value="australia/melbourne">Australia/Melbourne</option><option value="australia/perth">Australia/Perth</option><option value="australia/sydney">Australia/Sydney</option><option value="europe/amsterdam">Europe/Amsterdam</option><option value="europe/andorra">Europe/Andorra</option><option value="europe/astrakhan">Europe/Astrakhan</option><option value="europe/athens">Europe/Athens</option><option value="europe/belgrade">Europe/Belgrade</option><option value="europe/berlin">Europe/Berlin</option><option value="europe/bratislava">Europe/Bratislava</option><option value="europe/brussels">Europe/Brussels</option><option value="europe/bucharest">Europe/Bucharest</option><option value="europe/budapest">Europe/Budapest</option><option value="europe/chisinau">Europe/Chisinau</option><option value="europe/copenhagen">Europe/Copenhagen</option><option value="europe/dublin">Europe/Dublin</option><option value="europe/gibraltar">Europe/Gibraltar</option><option value="europe/guernsey">Europe/Guernsey</option><option value="europe/helsinki">Europe/Helsinki</option><option value="europe/isle_of_man">Europe/Isle of Man</option><option value="europe/istanbul">Europe/Istanbul</option><option value="europe/jersey">Europe/Jersey</option><option value="europe/kaliningrad">Europe/Kaliningrad</option><option value="europe/kirov">Europe/Kirov</option><option value="europe/kyiv">Europe/Kyiv</option><option value="europe/lisbon">Europe/Lisbon</option><option value="europe/ljubljana">Europe/Ljubljana</option><option value="europe/london">Europe/London</option><option value="europe/luxembourg">Europe/Luxembourg</option><option value="europe/madrid">Europe/Madrid</option><option value="europe/malta">Europe/Malta</option><option value="europe/mariehamn">Europe/Mariehamn</option><option value="europe/minsk">Europe/Minsk</option><option value="europe/monaco">Europe/Monaco</option><option value="europe/moscow">Europe/Moscow</option><option value="europe/oslo">Europe/Oslo</option><option value="europe/paris">Europe/Paris</option><option value="europe/podgorica">Europe/Podgorica</option><option value="europe/prague" selected>Europe/Prague</option><option value="europe/riga">Europe/Riga</option><option value="europe/rome">Europe/Rome</option><option value="europe/samara">Europe/Samara</option><option value="europe/san_marino">Europe/San Marino</option><option value="europe/sarajevo">Europe/Sarajevo</option><option value="europe/saratov">Europe/Saratov</option><option value="europe/simferopol">Europe/Simferopol</option><option value="europe/skopje">Europe/Skopje</option><option value="europe/sofia">Europe/Sofia</option><option value="europe/stockholm">Europe/Stockholm</option><option value="europe/tallinn">Europe/Tallinn</option><option value="europe/tirane">Europe/Tirane</option><option value="europe/ulyanovsk">Europe/Ulyanovsk</option><option value="europe/vaduz">Europe/Vaduz</option><option value="europe/vatican">Europe/Vatican</option><option value="europe/vienna">Europe/Vienna</option><option value="europe/vilnius">Europe/Vilnius</option><option value="europe/volgograd">Europe/Volgograd</option><option value="europe/warsaw">Europe/Warsaw</option><option value="europe/zagreb">Europe/Zagreb</option><option value="europe/zurich">Europe/Zurich</option><option value="indian/antananarivo">Indian/Antananarivo</option><option value="indian/chagos">Indian/Chagos</option><option value="indian/christmas">Indian/Christmas</option><option value="indian/cocos">Indian/Cocos</option><option value="indian/comoro">Indian/Comoro</option><option value="indian/kerguelen">Indian/Kerguelen</option><option value="indian/mahe">Indian/Mahe</option><option value="indian/maldives">Indian/Maldives</option><option value="indian/mauritius">Indian/Mauritius</option><option value="indian/mayotte">Indian/Mayotte</option><option value="indian/reunion">Indian/Reunion</option><option value="pacific/apia">Pacific/Apia</option><option value="pacific/auckland">Pacific/Auckland</option><option value="pacific/bougainville">Pacific/Bougainville</option><option value="pacific/chatham">Pacific/Chatham</option><option value="pacific/chuuk">Pacific/Chuuk</option><option value="pacific/easter">Pacific/Easter</option><option value="pacific/efate">Pacific/Efate</option><option value="pacific/fakaofo">Pacific/Fakaofo</option><option value="pacific/fiji">Pacific/Fiji</option><option value="pacific/funafuti">Pacific/Funafuti</option><option value="pacific/galapagos">Pacific/Galapagos</option><option value="pacific/gambier">Pacific/Gambier</option><option value="pacific/guadalcanal">Pacific/Guadalcanal</option><option value="pacific/guam">Pacific/Guam</option><option value="pacific/honolulu">Pacific/Honolulu</option><option value="pacific/kanton">Pacific/Kanton</option><option value="pacific/kiritimati">Pacific/Kiritimati</option><option value="pacific/kosrae">Pacific/Kosrae</option><option value="pacific/kwajalein">Pacific/Kwajalein</option><option value="pacific/majuro">Pacific/Majuro</option><option value="pacific/marquesas">Pacific/Marquesas</option><option value="pacific/midway">Pacific/Midway</option><option value="pacific/nauru">Pacific/Nauru</option><option value="pacific/niue">Pacific/Niue</option><option value="pacific/norfolk">Pacific/Norfolk</option><option value="pacific/noumea">Pacific/Noumea</option><option value="pacific/pago_pago">Pacific/Pago Pago</option><option value="pacific/palau">Pacific/Palau</option><option value="pacific/pitcairn">Pacific/Pitcairn</option><option value="pacific/pohnpei">Pacific/Pohnpei</option><option value="pacific/port_moresby">Pacific/Port Moresby</option><option value="pacific/rarotonga">Pacific/Rarotonga</option><option value="pacific/saipan">Pacific/Saipan</option><option value="pacific/tahiti">Pacific/Tahiti</option><option value="pacific/tarawa">Pacific/Tarawa</option><option value="pacific/tongatapu">Pacific/Tongatapu</option><option value="pacific/wake">Pacific/Wake</option><option value="pacific/wallis">Pacific/Wallis</option></select>
 							<input type="hidden" name="_do" value="timezoneForm-submit"></form>
-								<p>Detekovali jsme, že jsi v časové zóně Europe/Berlin. <a href="/film/99999-the-loan-shark/prehled/?value=Europe%2FBerlin&do=changeHomeTimezone">Změnit časovou zónu</a></p>
+								<p>Detekovali jsme, že jsi v časové zóně Europe/Bratislava. <a href="/film/99999-the-loan-shark/prehled/?value=Europe%2FBratislava&do=changeHomeTimezone">Změnit časovou zónu</a></p>
 						</div>
 
 						<div class="footer-action-languages" id="language-switch">
@@ -899,18 +989,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 		</div>
 
-<div id="slide_up" class="ad-pmg"></div>
-<div id="interstitial" class="ad-pmg"></div>
-
 
 <script type="text/json" id="js-common-config">{"country":1,"domain":"csfd.cz","host":"www.csfd.cz","userLanguageId":1,"translations":{"web.ajax.default.error.message":"Omlouváme se, ale nastala chyba při zpracování.","web.ajax.resend.button":"Odeslat znovu","web.autocomplete.creator.header":"Tvůrci","web.autocomplete.film.header":"Filmy","web.autocomplete.noservice":"Služba vyhledávání není momentálně dostupná.","web.autocomplete.searching":"Vyhledávám...","web.autocomplete.search.select":"Vyplň název filmu / jméno tvůrce nebo uživatele","web.autocomplete.series.header":"Seriály","web.autocomplete.user.header":"Uživatelé","web.layout.more":"více","web.check.all":"zaškrtnout vše","web.fileupload.preloader":"Načítám knihovnu, prosím o strpení...","web.modal.confirm.close":"Opravdu chceš zavřít okno? Možná máš neuložené změny.","web.preloader.loading":"Načítání...","web.search.creator.notfound":"Nenalezeni žádní tvůrci","web.search.film.notfound":"Nenalezeny žádné filmy","web.search.series.notfound":"Nenalezeny žádné seriály","web.search.user.notfound":"Nenalezeni žádní uživatelé","web.selectize.plugin.remove.button.remove":"Odebrat","web.sortable.error.move":"Při přesunu pozic došlo k chybě. Stránka bude obnovena. Pokračovat?","web.shop.related_title":"Související merch","web.shop.button.buy":"Koupit","web.shop.more":"více"},"route":":Web:Film:Overview:default","isLoggedIn":false,"userId":null,"hooks":["ShowMore","HighlightByData","Confirm","Shop","SecureHandle","StarRating","AutoSubmitForm"]}</script>
-<script src="//static.pmgstatic.com/assets/utils-js/c8258f86692083bd0b360e2ab40d666b/scripts.min.js"></script>
-<script type="text/javascript">CSFDAds.setServer('https://a.csfd.cz/csfd');CSFDAds.complete({"ball":{"site":"csfd.cz","czaidc":0,"page":2,"login":2,"viewId":65362241,"film_id":99999,"film_type":1,"film_genre":[2,14],"film_origin":[172],"film_year":1912,"film_creators":[18452,6140,331812]},"0":{"area":"leaderboard","size":"2000x1400,1800x1000,1000x210,970x210,998x200,930x180,970x90,750x100,728x90,750x200,branding_web"},"1":{"area":"halfpage","size":"300x600,160x600,300x300,300x250,250x250,120x600,336x280"},"2":{"area":"billboard","size":"1000x310,970x310,950x300,980x250,970x250,750x300,1000x210,970x210,998x200,930x180,750x200,970x90,728x90"},"3":{"area":"slide_up","size":"1000x310,970x310,970x250,970x210,500x200,336x280,300x300,300x250,728x90,250x250,320x100,300x100,320x50,300x50,slide_up"},"4":{"area":"interstitial","size":"interstitial"},"5":{"area":"mobile_billboard","size":"300x300,300x250,250x250,336x280"}}, false);</script>
+<script src="//static.pmgstatic.com/assets/utils-js/fad8ad03ad30d313dac66de1cc69ef73/scripts.min.js"></script>
+<script type="text/javascript">CSFDAds.setServer('https://a.csfd.cz/csfd');CSFDAds.complete({"ball":{"site":"csfd.cz","czaidc":0,"page":2,"login":2,"viewId":20056950,"film_id":99999,"film_type":1,"film_genre":[2,14],"film_origin":[172],"film_year":1912,"film_creators":[18452,6140,331812]},"0":{"area":"leaderboard","size":"2000x1400,1800x1000,1000x210,970x210,998x200,930x180,970x90,750x100,728x90,750x200,branding_web"},"1":{"area":"halfpage","size":"300x600,160x600,300x300,300x250,250x250,120x600,336x280"},"2":{"area":"billboard","size":"1000x310,970x310,950x300,980x250,970x250,750x300,1000x210,970x210,998x200,930x180,750x200,970x90,728x90"},"3":{"area":"slide_up","size":"1000x310,970x310,970x250,970x210,500x200,336x280,300x300,300x250,728x90,250x250,320x100,300x100,320x50,300x50,slide_up"},"4":{"area":"interstitial","size":"interstitial"},"5":{"area":"mobile_billboard","size":"300x300,300x250,250x250,336x280"}}, false);</script>
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TM3S526" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	</body>
 
 	<a href="#top" title="Zpět nahoru" id="back-to-top"><i class="icon icon-arrow-up" aria-hidden="true"></i></a>
 </html>
-
-
 `;
