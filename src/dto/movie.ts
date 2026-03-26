@@ -40,6 +40,7 @@ export type CSFDVodService =
   | 'hbogo'
   | 'Prime Video'
   | 'Apple TV+'
+  | 'Apple TV'
   | 'iTunes'
   | 'KVIFF.TV'
   | 'Edisonline'

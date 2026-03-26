@@ -130,22 +130,15 @@ describe('Get Series and Season Title', () => {
 
 describe('Get Parent', () => {
   test('Series 1 Episode parent', () => {
-    // Assuming title is extracted as Mluvící hlava
-    const parent = getSeasonOrEpisodeParent(serie1Season1EpisodeNode, {
-      id: 474220,
-      title: 'Mluvící hlava'
-    });
+    const parent = getSeasonOrEpisodeParent(serie1Season1EpisodeNode);
     expect(parent).toBeDefined();
-    expect(parent!.series.title).toBe('Simpsonovi');
-    expect(parent!.season!.title).toBe('Série 1');
+    expect(parent!.series?.title).toBe('Simpsonovi');
+    expect(parent!.season?.title).toBe('Série 1');
   });
   test('Series 2 Episode parent', () => {
-    const parent = getSeasonOrEpisodeParent(serie2EpisodeNode, {
-      id: 1436408,
-      title: 'Kouzelná země'
-    });
+    const parent = getSeasonOrEpisodeParent(serie2EpisodeNode);
     expect(parent).toBeDefined();
-    expect(parent!.series.title).toBe('The Curse');
+    expect(parent!.series?.title).toBe('The Curse');
     expect(parent!.season).toBeNull();
   });
 });
@@ -202,7 +195,7 @@ describe('Get Genres', () => {
 
 describe('Get VOD services', () => {
   test('Series 2 Main', () => {
-    expect(getMovieVods(serie2EpisodesAside).length).toBeGreaterThan(0);
+    expect(getMovieVods(serie2EpisodesNode).length).toBeGreaterThan(0);
   });
 });
 

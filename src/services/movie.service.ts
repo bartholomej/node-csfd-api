@@ -45,18 +45,19 @@ export class MovieScraper {
     const pageClasses = movieHtml.querySelector('.page-content').classNames.split(' ');
     const asideNode = movieHtml.querySelector('.aside-movie-profile');
     const movieNode = movieHtml.querySelector('.main-movie-profile');
-    const jsonLdString = movieHtml.querySelector('script[type="application/ld+json"]').innerText;
+    const jsonLdString = movieHtml.querySelector('script[type="application/ld+json"]')?.textContent;
     let jsonLd: MovieJsonLd | null = null;
     try {
       jsonLd = JSON.parse(jsonLdString);
     } catch (e) {
       console.error(LIB_PREFIX + ' Error parsing JSON-LD', e);
     }
-    return this.buildMovie(+movieId, movieNode, asideNode, pageClasses, jsonLd, options);
+    return this.buildMovie(+movieId, movieHtml, movieNode as HTMLElement, asideNode as HTMLElement, pageClasses, jsonLd, options);
   }
 
   private buildMovie(
     movieId: number,
+    movieHtml: HTMLElement,
     el: HTMLElement,
     asideEl: HTMLElement,
     pageClasses: string[],
@@ -66,7 +67,7 @@ export class MovieScraper {
     const type = getMovieType(el) as CSFDFilmTypes;
     const { seriesName = null, seasonName = null } =
       type === 'season' ? getSeriesAndSeasonTitle(el) : {};
-    const seasonOrEpisodeListType = detectSeasonOrEpisodeListType(el);
+    const seasonOrEpisodeListType = detectSeasonOrEpisodeListType(movieHtml);
 
     const title = type === 'season' && seriesName ? seriesName : getMovieTitle(el);
     return {
@@ -87,13 +88,13 @@ export class MovieScraper {
       photo: getMovieRandomPhoto(el),
       trivia: getMovieTrivia(el),
       creators: getMovieCreators(el, options),
-      vod: getMovieVods(asideEl),
+      vod: getMovieVods(el),
       tags: getMovieTags(asideEl),
       premieres: getMoviePremieres(asideEl),
       related: getMovieBoxMovies(asideEl, 'Související'),
       similar: getMovieBoxMovies(asideEl, 'Podobné'),
-      seasons: seasonOrEpisodeListType === 'seasons' ? getSeasonsOrEpisodes(el) : null,
-      episodes: seasonOrEpisodeListType === 'episodes' ? getSeasonsOrEpisodes(el) : null,
+      seasons: seasonOrEpisodeListType === 'seasons' ? getSeasonsOrEpisodes(movieHtml) : null,
+      episodes: seasonOrEpisodeListType === 'episodes' ? getSeasonsOrEpisodes(movieHtml) : null,
       parent: type === 'season' || type === 'episode' ? getSeasonOrEpisodeParent(el) : null,
       episodeCode: type === 'episode' ? getEpisodeCode(el) : null,
       seasonName

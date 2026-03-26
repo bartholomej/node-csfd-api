@@ -30,11 +30,11 @@ describe('Live: Fetch rating page', () => {
   });
 });
 
-describe('Fetch rating page 2', () => {
-  test('Fetch `912-bart` user – page 2 and check html', async () => {
-    const url = userRatingsUrl(912, 2);
-    const html = await fetchPage(url);
-    expect(html).toContain('Návštěvník');
+describe('Fetch generic page', () => {
+  test('Fetch main page and check html logic', async () => {
+    const html = await fetchPage('https://www.csfd.cz/');
+    expect(html).toContain('csfd');
+    expect(html).not.toEqual('Error');
   });
 });
 

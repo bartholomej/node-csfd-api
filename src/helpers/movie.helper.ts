@@ -136,14 +136,18 @@ export const getMovieTitle = (el: HTMLElement): string => {
 };
 
 export const getMovieGenres = (el: HTMLElement): CSFDGenres[] => {
-  const genresRaw = el.querySelector('.genres').textContent;
-  return genresRaw.split(' / ') as CSFDGenres[];
+  const genresNode = el.querySelector('.genres');
+  if (!genresNode) return [];
+  return genresNode.childNodes
+    .map((n) => n.textContent.trim())
+    .filter((x) => x.length > 0) as CSFDGenres[];
 };
 
 export const getMovieOrigins = (el: HTMLElement): string[] => {
-  const originsRaw = el.querySelector('.origin').textContent;
-  const origins = originsRaw.split(',')[0];
-  return origins.split(' / ');
+  const originNode = el.querySelector('.origin');
+  if (!originNode) return [];
+  const text = originNode.childNodes[0]?.text || '';
+  return text.split('/').map(x => x.trim()).filter(x => x);
 };
 
 export const getMovieColorRating = (bodyClasses: string[]): CSFDColorRating => {
@@ -151,8 +155,8 @@ export const getMovieColorRating = (bodyClasses: string[]): CSFDColorRating => {
 };
 
 export const getMovieRating = (el: HTMLElement): number => {
-  const ratingRaw = el.querySelector('.film-rating-average').textContent;
-  const rating = ratingRaw?.replace(/%/g, '').trim();
+  const ratingRaw = el.querySelector('.film-rating-average')?.textContent;
+  const rating = ratingRaw?.replace(/%/g, '')?.trim();
   const ratingInt = parseInt(rating);
 
   if (Number.isInteger(ratingInt)) {
@@ -163,8 +167,10 @@ export const getMovieRating = (el: HTMLElement): number => {
 };
 
 export const getMovieRatingCount = (el: HTMLElement): number => {
-  const ratingCountRaw = el.querySelector('.box-rating-container .counter')?.textContent;
-  const ratingCount = +ratingCountRaw?.replace(/[(\s)]/g, '');
+  const ratingCountRaw = el.querySelector('.ratings-list .counter')?.textContent;
+  if (!ratingCountRaw) return null;
+  const countString = ratingCountRaw.replace(/[^\d]/g, '');
+  const ratingCount = parseInt(countString, 10);
   if (Number.isInteger(ratingCount)) {
     return ratingCount;
   } else {
@@ -189,25 +195,19 @@ export const getMovieDuration = (jsonLd: MovieJsonLd | null, el: HTMLElement): n
   }
 
   try {
-    const origin = el.querySelector('.origin').innerText;
-    const timeString = origin.split(',');
-    if (timeString.length > 2) {
-      // Get last time elelment
-      const timeString2 = timeString.pop().trim();
-      // Clean it
-      const timeRaw = timeString2.split('(')[0].trim();
-      // Split by minutes and hours
-      const hoursMinsRaw = timeRaw.split('min')[0];
-      const hoursMins = hoursMinsRaw.split('h');
-      // Resolve hours + minutes format
-      const duration = hoursMins.length > 1 ? +hoursMins[0] * 60 + +hoursMins[1] : +hoursMins[0];
-      return duration;
-    } else {
-      return null;
+    const originText = el.querySelector('.origin')?.textContent;
+    if (originText) {
+      const match = originText.match(/(?:(\d+)\s*h)?\s*(\d+)\s*min/);
+      if (match) {
+        const hours = parseInt(match[1] || '0', 10);
+        const minutes = parseInt(match[2] || '0', 10);
+        return hours * 60 + minutes;
+      }
     }
   } catch (error) {
     return null;
   }
+  return null;
 };
 
 export const getMovieTitlesOther = (el: HTMLElement): CSFDTitlesOther[] => {
@@ -357,7 +357,7 @@ export const getSeasonsOrEpisodes = (el: HTMLElement): CSFDSeriesChild[] | null 
   const childrenList = el.querySelector('.film-episodes-list');
   if (!childrenList) return null;
 
-  const childrenNodes = childrenList.querySelectorAll('.film-title');
+  const childrenNodes = childrenList.querySelectorAll('.film-title-inline');
   if (!childrenNodes?.length) return [];
 
   return childrenNodes.map((season) => {
@@ -388,20 +388,20 @@ export const getEpisodeCode = (el: HTMLElement): string | null => {
 };
 
 export const detectSeasonOrEpisodeListType = (el: HTMLElement) => {
-  const headerText = el.querySelector('.box-header h3')?.innerText.trim() ?? '';
+  const episodesList = el.querySelector('.film-episodes-list');
+  if (!episodesList) return null;
+
+  const section = episodesList.closest('.updated-box') || episodesList.closest('section') || el;
+  const headerText = section.querySelector('.updated-box-header h3')?.textContent?.trim() ?? '';
 
   if (headerText.includes('Série')) return 'seasons';
-  if (headerText.startsWith('Epizody')) return 'episodes';
+  if (headerText.includes('Epizody')) return 'episodes';
   return null;
 };
 
 export const getSeasonOrEpisodeParent = (el: HTMLElement): CSFDParent | null => {
-  // Try h2 first (for episodes), then h1 (for seasons)
-  let parents = el.querySelectorAll('.film-header h2 a');
-  if (parents.length === 0) {
-    parents = el.querySelectorAll('.film-header h1 a');
-  }
-
+  let parents = el.querySelectorAll('.film-series-content h2 a');
+  if (parents.length === 0) parents = el.querySelectorAll('.film-header-name h1 a');
   if (parents.length === 0) return null;
 
   const [parentSeries, parentSeason] = parents;
@@ -434,13 +434,14 @@ export const getMovieGroup = (
 
 export const getMovieType = (el: HTMLElement): CSFDFilmTypes => {
   const type = el.querySelector('.film-header-name .type');
-  return parseFilmType(type?.innerText?.replace(/[{()}]/g, '') || 'film');
+  const text = type?.innerText?.replace(/[{()}]/g, '').split('\n')[0].trim() || 'film';
+  return parseFilmType(text);
 };
 
 export const getMovieVods = (el: HTMLElement | null): CSFDVod[] => {
   let vods: CSFDVod[] = [];
   if (el) {
-    const buttonsVod = el.querySelectorAll('.box-buttons-vod .vod-badge a');
+    const buttonsVod = el.querySelectorAll('.box-film-vod .vod-badge-link');
     vods = buttonsVod.map((btn) => {
       return {
         title: btn.textContent.trim() as CSFDVodService,
@@ -453,9 +454,12 @@ export const getMovieVods = (el: HTMLElement | null): CSFDVod[] => {
 
 // Get box content
 const getBoxContent = (el: HTMLElement, box: string): HTMLElement => {
-  const headers = el.querySelectorAll('section.box .box-header');
-  return headers.find((header) => header.querySelector('h3')?.textContent.trim().includes(box))
-    ?.parentNode;
+  const headers = el.querySelectorAll('section .updated-box-header');
+  return headers.find(
+    (header) =>
+      header.querySelector('h3')?.textContent.trim() === box ||
+      header.querySelector('h2')?.textContent.trim() === box
+  )?.parentNode;
 };
 
 export const getMovieBoxMovies = (
@@ -501,6 +505,6 @@ export const getMoviePremieres = (el: HTMLElement): CSFDPremiere[] => {
 };
 
 export const getMovieTags = (el: HTMLElement): string[] => {
-  const tagsRaw = el.querySelectorAll('.box-content a[href*="/tag/"]');
-  return tagsRaw.map((tag) => tag.textContent);
+  const tagsNodes = el.querySelectorAll('.updated-box-content-tags a');
+  return tagsNodes.map((tag) => tag.textContent.trim());
 };

@@ -1,5 +1,5 @@
-import { fetchSafe } from './fetch.polyfill';
 import { LIB_PREFIX } from '../vars';
+import { fetchSafe } from './fetch.polyfill';
 
 interface BrowserProfile {
   'User-Agent': string;

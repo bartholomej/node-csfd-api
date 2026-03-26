@@ -167,7 +167,7 @@ describe('Cinema info', () => {
     const item = parseCinema(contentNode[11]);
     expect(item).toEqual({
       city: 'Praha',
-      name: 'Kino Aero'
+      name: 'Edison Filmhub'
     });
   });
 });
@@ -175,7 +175,7 @@ describe('Cinema info', () => {
 describe('Cinema films by date', () => {
   test('getGroupedFilmsByDate. First movie in second cinema', () => {
     const item = getGroupedFilmsByDate(contentNode[1]);
-    expect(item[0]?.date).toEqual('pondělí 23.02.2026');
+    expect(item[0]?.date).toEqual('úterý 24.03.2026');
     expect(item[0]?.films[0].title).toEqual('Avatar: Oheň a popel');
   });
 
