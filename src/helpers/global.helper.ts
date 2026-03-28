@@ -9,10 +9,14 @@ export const parseIdFromUrl = (url: string): number => {
   if (!url) return null;
 
   const parts = url.split('/');
-  const idParts = parts.filter((p) => /^\d+-/.test(p));
-  if (idParts.length > 0) {
-    const idSlug = idParts[idParts.length - 1];
-    return +idSlug.split('-')[0] || null;
+
+  // Performance Optimization: loop backwards to find the last ID slug
+  // without creating intermediate array allocations.
+  for (let i = parts.length - 1; i >= 0; i--) {
+    const p = parts[i];
+    if (/^\d+-/.test(p)) {
+      return +p.split('-')[0] || null;
+    }
   }
 
   // Fallback
