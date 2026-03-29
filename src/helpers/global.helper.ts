@@ -4,15 +4,19 @@ import { CSFDColors } from '../dto/user-ratings';
 const LANG_PREFIX_REGEX = /^[a-z]{2,3}$/;
 const ISO8601_DURATION_REGEX =
   /(-)?P(?:([.,\d]+)Y)?(?:([.,\d]+)M)?(?:([.,\d]+)W)?(?:([.,\d]+)D)?T(?:([.,\d]+)H)?(?:([.,\d]+)M)?(?:([.,\d]+)S)?/;
+const ID_SLUG_REGEX = /^\d+-/;
 
 export const parseIdFromUrl = (url: string): number => {
   if (!url) return null;
 
   const parts = url.split('/');
-  const idParts = parts.filter((p) => /^\d+-/.test(p));
-  if (idParts.length > 0) {
-    const idSlug = idParts[idParts.length - 1];
-    return +idSlug.split('-')[0] || null;
+
+  // Optimization: Find the last part that matches the ID pattern.
+  // Using a reverse loop avoids allocating an intermediate array.
+  for (let i = parts.length - 1; i >= 0; i--) {
+    if (ID_SLUG_REGEX.test(parts[i])) {
+      return +parts[i].split('-')[0] || null;
+    }
   }
 
   // Fallback
