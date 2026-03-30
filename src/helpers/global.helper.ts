@@ -2,6 +2,7 @@ import { CSFDColorRating, CSFDFilmTypes } from '../dto/global';
 import { CSFDColors } from '../dto/user-ratings';
 
 const LANG_PREFIX_REGEX = /^[a-z]{2,3}$/;
+const ID_SLUG_REGEX = /^\d+-/;
 const ISO8601_DURATION_REGEX =
   /(-)?P(?:([.,\d]+)Y)?(?:([.,\d]+)M)?(?:([.,\d]+)W)?(?:([.,\d]+)D)?T(?:([.,\d]+)H)?(?:([.,\d]+)M)?(?:([.,\d]+)S)?/;
 
@@ -9,10 +10,14 @@ export const parseIdFromUrl = (url: string): number => {
   if (!url) return null;
 
   const parts = url.split('/');
-  const idParts = parts.filter((p) => /^\d+-/.test(p));
-  if (idParts.length > 0) {
-    const idSlug = idParts[idParts.length - 1];
-    return +idSlug.split('-')[0] || null;
+
+  // Performance optimization: Avoid intermediate array allocations (.filter)
+  // by using a reverse for loop with an early return to find the ID slug.
+  for (let i = parts.length - 1; i >= 0; i--) {
+    const p = parts[i];
+    if (ID_SLUG_REGEX.test(p)) {
+      return +p.split('-')[0] || null;
+    }
   }
 
   // Fallback
