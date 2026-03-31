@@ -50,12 +50,22 @@ export const parseSearchPeople = (
   if (type === 'directors') who = 'Režie:';
   if (type === 'actors') who = 'Hrají:';
 
-  const peopleNode = Array.from(el && el.querySelectorAll('.article-content p')).find((el) =>
-    el.textContent.includes(who)
-  );
+  // Optimization: use regular for-loop to avoid Array.from(...).find()
+  // which causes unnecessary array allocations and iterations.
+  const pNodes = el?.querySelectorAll('.article-content p');
+  let peopleNode: HTMLElement | null = null;
+
+  if (pNodes) {
+    for (let i = 0; i < pNodes.length; i++) {
+      if (pNodes[i].textContent.includes(who)) {
+        peopleNode = pNodes[i];
+        break;
+      }
+    }
+  }
 
   if (peopleNode) {
-    const people = Array.from(peopleNode.querySelectorAll('a')) as unknown as HTMLElement[];
+    const people = peopleNode.querySelectorAll('a');
 
     return people.map((person) => {
       return {
