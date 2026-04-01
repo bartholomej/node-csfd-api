@@ -9,27 +9,27 @@ export const parseIdFromUrl = (url: string): number => {
   if (!url) return null;
 
   const parts = url.split('/');
-  const idParts = parts.filter((p) => /^\d+-/.test(p));
-  if (idParts.length > 0) {
-    const idSlug = idParts[idParts.length - 1];
-    return +idSlug.split('-')[0] || null;
+  // Performance Optimization: Iterate backwards to find the last ID matching the pattern, avoiding array filter allocations
+  for (let i = parts.length - 1; i >= 0; i--) {
+    const p = parts[i];
+    if (/^\d+-/.test(p)) {
+      return parseInt(p, 10) || null;
+    }
   }
 
   // Fallback
   const hasLangPrefix = LANG_PREFIX_REGEX.test(parts[1]);
   const idSlug = parts[hasLangPrefix ? 3 : 2];
-  const id = idSlug?.split('-')[0];
-  return +id || null;
+  return idSlug ? parseInt(idSlug, 10) || null : null;
 };
 
 export const parseLastIdFromUrl = (url: string): number => {
   if (url) {
-    const idSlug = url?.split('/')[3];
-    const id = idSlug?.split('-')[0];
-    return +id || null;
-  } else {
-    return null;
+    // Performance Optimization: Use parseInt to natively ignore trailing non-numeric chars, avoiding intermediate string splits
+    const idSlug = url.split('/')[3];
+    return idSlug ? parseInt(idSlug, 10) || null : null;
   }
+  return null;
 };
 
 const PAGE_COLORS: Record<string, CSFDColorRating> = {
