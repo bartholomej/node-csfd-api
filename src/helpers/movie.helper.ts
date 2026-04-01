@@ -147,7 +147,10 @@ export const getMovieOrigins = (el: HTMLElement): string[] => {
   const originNode = el.querySelector('.origin');
   if (!originNode) return [];
   const text = originNode.childNodes[0]?.text || '';
-  return text.split('/').map(x => x.trim()).filter(x => x);
+  return text
+    .split('/')
+    .map((x) => x.trim())
+    .filter((x) => x);
 };
 
 export const getMovieColorRating = (bodyClasses: string[]): CSFDColorRating => {
@@ -434,7 +437,11 @@ export const getMovieGroup = (
 
 export const getMovieType = (el: HTMLElement): CSFDFilmTypes => {
   const type = el.querySelector('.film-header-name .type');
-  const text = type?.innerText?.replace(/[{()}]/g, '').split('\n')[0].trim() || 'film';
+  const text =
+    type?.innerText
+      ?.replace(/[{()}]/g, '')
+      .split('\n')[0]
+      .trim() || 'film';
   return parseFilmType(text);
 };
 
