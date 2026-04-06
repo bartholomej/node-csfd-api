@@ -37,8 +37,8 @@
     "registry": "https://registry.npmjs.org"
   },
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.28.0",
-    "dotenv": "^17.3.1",
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "dotenv": "^17.4.1",
     "express": "^5.2.1",
     "node-html-parser": "^7.1.0",
     "zod": "^4.3.6"
@@ -48,12 +48,12 @@
     "@eslint/eslintrc": "^3.3.5",
     "@eslint/js": "^10.0.1",
     "@types/express": "^5.0.6",
-    "@types/node": "^25.5.0",
-    "@typescript-eslint/eslint-plugin": "^8.57.2",
-    "@typescript-eslint/parser": "^8.57.2",
+    "@types/node": "^25.5.2",
+    "@typescript-eslint/eslint-plugin": "^8.58.0",
+    "@typescript-eslint/parser": "^8.58.0",
     "@vitest/coverage-istanbul": "^4.1.2",
     "@vitest/ui": "^4.1.2",
-    "eslint": "^10.1.0",
+    "eslint": "^10.2.0",
     "eslint-config-google": "^0.14.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.5",
