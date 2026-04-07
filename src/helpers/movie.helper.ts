@@ -302,6 +302,38 @@ const parseMoviePeople = (el: HTMLElement): CSFDMovieCreator[] => {
 //   }
 // };
 
+const CREATOR_KEYS = [
+  'directors',
+  'writers',
+  'cinematography',
+  'music',
+  'actors',
+  'basedOn',
+  'producers',
+  'filmEditing',
+  'costumeDesign',
+  'productionDesign',
+  'sound'
+] as const;
+
+type CreatorKey = typeof CREATOR_KEYS[number];
+
+// Precompute language maps to avoid O(N*M) lookups inside getMovieCreators
+const LOCALIZED_CREATOR_LABELS: Record<string, Record<string, CreatorKey>> = {
+  cs: {},
+  en: {},
+  sk: {}
+};
+
+for (const lang of ['cs', 'en', 'sk']) {
+  for (const key of CREATOR_KEYS) {
+    const label = getLocalizedCreatorLabel(lang, key) as string;
+    // Remove colons and trim for reliable O(1) matching against HTML text
+    const normalizedLabel = label.replace(/:/g, '').trim();
+    LOCALIZED_CREATOR_LABELS[lang][normalizedLabel] = key;
+  }
+}
+
 export const getMovieCreators = (el: HTMLElement, options?: CSFDOptions): CSFDCreators => {
   const creators: CSFDCreators = {
     directors: [],
@@ -318,35 +350,18 @@ export const getMovieCreators = (el: HTMLElement, options?: CSFDOptions): CSFDCr
   };
 
   const groups = el.querySelectorAll('.creators h4');
-
-  const keys = [
-    'directors',
-    'writers',
-    'cinematography',
-    'music',
-    'actors',
-    'basedOn',
-    'producers',
-    'filmEditing',
-    'costumeDesign',
-    'productionDesign',
-    'sound'
-  ] as const;
-
-  const localizedLabels = keys.map((key) => ({
-    key,
-    label: getLocalizedCreatorLabel(options?.language, key) as string
-  }));
+  const lang = options?.language || 'cs';
+  const labelMap = LOCALIZED_CREATOR_LABELS[lang] || LOCALIZED_CREATOR_LABELS['cs'];
 
   for (const group of groups) {
-    const text = group.textContent.trim();
-    for (const { key, label } of localizedLabels) {
-      if (text.includes(label)) {
-        if (group.parentNode) {
-          creators[key] = parseMoviePeople(group.parentNode as HTMLElement);
-        }
-        break;
-      }
+    // ⚡ Bolt Performance Optimization:
+    // O(1) property lookup replaces previous nested loops.
+    // Removes the trailing colon from HTML text (e.g., 'Režie:' -> 'Režie') for exact matching.
+    const text = group.textContent.replace(/:/g, '').trim();
+    const key = labelMap[text];
+
+    if (key && group.parentNode) {
+      creators[key] = parseMoviePeople(group.parentNode as HTMLElement);
     }
   }
 
