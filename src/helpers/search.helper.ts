@@ -42,29 +42,48 @@ export const getSearchOrigins = (el: HTMLElement): string[] => {
   return originsAll?.split('/').map((country) => country.trim());
 };
 
-export const parseSearchPeople = (
-  el: HTMLElement,
-  type: 'directors' | 'actors'
-): CSFDMovieCreator[] => {
-  let who: Creator;
-  if (type === 'directors') who = 'Režie:';
-  if (type === 'actors') who = 'Hrají:';
+export const parseSearchCreators = (
+  el: HTMLElement
+): { directors: CSFDMovieCreator[]; actors: CSFDMovieCreator[] } => {
+  const creators: { directors: CSFDMovieCreator[]; actors: CSFDMovieCreator[] } = {
+    directors: [],
+    actors: []
+  };
 
-  const peopleNode = Array.from(el && el.querySelectorAll('.article-content p')).find((el) =>
-    el.textContent.includes(who)
-  );
+  if (!el) return creators;
 
-  if (peopleNode) {
-    const people = Array.from(peopleNode.querySelectorAll('a')) as unknown as HTMLElement[];
+  const pNodes = el.querySelectorAll('.article-content p');
 
-    return people.map((person) => {
-      return {
-        id: parseIdFromUrl(person.attributes.href),
-        name: person.innerText.trim(),
-        url: `https://www.csfd.cz${person.attributes.href}`
-      };
-    });
-  } else {
-    return [];
+  let directorsNode: HTMLElement | null = null;
+  let actorsNode: HTMLElement | null = null;
+
+  // Single pass to find both directors and actors nodes
+  for (const node of pNodes) {
+    const text = node.textContent;
+    if (text.includes('Režie:')) {
+      directorsNode = node;
+    } else if (text.includes('Hrají:')) {
+      actorsNode = node;
+    }
   }
+
+  if (directorsNode) {
+    const people = directorsNode.querySelectorAll('a');
+    creators.directors = people.map((person) => ({
+      id: parseIdFromUrl(person.attributes.href),
+      name: person.innerText.trim(),
+      url: `https://www.csfd.cz${person.attributes.href}`
+    }));
+  }
+
+  if (actorsNode) {
+    const people = actorsNode.querySelectorAll('a');
+    creators.actors = people.map((person) => ({
+      id: parseIdFromUrl(person.attributes.href),
+      name: person.innerText.trim(),
+      url: `https://www.csfd.cz${person.attributes.href}`
+    }));
+  }
+
+  return creators;
 };

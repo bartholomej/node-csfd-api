@@ -16,7 +16,7 @@ import {
   getSearchType,
   getSearchUrl,
   getSearchYear,
-  parseSearchPeople
+  parseSearchCreators
 } from '../src/helpers/search.helper';
 import { searchMock } from './mocks/search.html';
 
@@ -147,8 +147,8 @@ describe('Get Movie origins', () => {
 
 describe('Get Movie creators', () => {
   test('First movie directors', () => {
-    const movie = parseSearchPeople(moviesNode[0], 'directors');
-    expect(movie).toEqual<CSFDMovieCreator[]>([
+    const creators = parseSearchCreators(moviesNode[0]);
+    expect(creators.directors).toEqual<CSFDMovieCreator[]>([
       {
         id: 3112,
         name: 'Lilly Wachowski',
@@ -162,8 +162,8 @@ describe('Get Movie creators', () => {
     ]);
   });
   test('Last movie actors', () => {
-    const movie = parseSearchPeople(moviesNode[moviesNode.length - 1], 'actors');
-    expect(movie).toEqual<CSFDMovieCreator[]>([
+    const creators = parseSearchCreators(moviesNode[moviesNode.length - 1]);
+    expect(creators.actors).toEqual<CSFDMovieCreator[]>([
       {
         id: 101,
         name: 'Carrie-Anne Moss',
@@ -177,8 +177,8 @@ describe('Get Movie creators', () => {
     ]);
   });
   // test('Empty actors', () => {
-  //   const movie = parseSearchPeople(moviesNode[5], 'actors');
-  //   expect(movie).toEqual<CSFDCreator[]>([]);
+  //   const movie = parseSearchCreators(moviesNode[5]);
+  //   expect(movie.actors).toEqual<CSFDCreator[]>([]);
   // });
 });
 
@@ -295,30 +295,29 @@ describe('Get TV series origins', () => {
 
 describe('Get TV series creators', () => {
   test('First TV series directors', () => {
-    const movie = parseSearchPeople(tvSeriesNode[0], 'directors');
-    expect(movie.length).toBeGreaterThan(0);
-    expect(movie[0].id).toBeGreaterThan(0);
-    expect(movie[0].name.length).toBeGreaterThan(0);
-    expect(movie[0].url).toContain(String(movie[0].id));
-    expect(movie[0].url).toContain('https://www.csfd.cz/tvurce/');
+    const creators = parseSearchCreators(tvSeriesNode[0]);
+    expect(creators.directors.length).toBeGreaterThan(0);
+    expect(creators.directors[0].id).toBeGreaterThan(0);
+    expect(creators.directors[0].name.length).toBeGreaterThan(0);
+    expect(creators.directors[0].url).toContain(String(creators.directors[0].id));
+    expect(creators.directors[0].url).toContain('https://www.csfd.cz/tvurce/');
   });
   test('Last TV series actors', () => {
-    const movie = parseSearchPeople(tvSeriesNode[tvSeriesNode.length - 1], 'actors');
-    expect(movie.length).toBeGreaterThan(0);
-    expect(movie[0].id).toBeGreaterThan(0);
-    expect(movie[0].name.length).toBeGreaterThan(0);
-    expect(movie[0].url).toContain(String(movie[0].id));
-    expect(movie[0].url).toContain('https://www.csfd.cz/tvurce/');
+    const creators = parseSearchCreators(tvSeriesNode[tvSeriesNode.length - 1]);
+    expect(creators.actors.length).toBeGreaterThan(0);
+    expect(creators.actors[0].id).toBeGreaterThan(0);
+    expect(creators.actors[0].name.length).toBeGreaterThan(0);
+    expect(creators.actors[0].url).toContain(String(creators.actors[0].id));
+    expect(creators.actors[0].url).toContain('https://www.csfd.cz/tvurce/');
   });
   test('Empty directors check', () => {
-    const movie = parseSearchPeople(parse('<div></div>') as any, 'directors');
-    expect(movie).toEqual<CSFDMovieCreator[]>([]);
+    const creators = parseSearchCreators(parse('<div></div>') as any);
+    expect(creators.directors).toEqual<CSFDMovieCreator[]>([]);
   });
   // test('Empty directors + some actors', () => {
-  //   const movie = parseSearchPeople(tvSeriesNode[3], 'actors');
-  //   const movieDirectors = parseSearchPeople(tvSeriesNode[3], 'directors');
-  //   expect(movie.length).toBeGreaterThan(0);
-  //   expect(movieDirectors.length).toBeGreaterThan(0); // The mock changed, it now has directors
+  //   const movie = parseSearchCreators(tvSeriesNode[3]);
+  //   expect(movie.actors.length).toBeGreaterThan(0);
+  //   expect(movie.directors.length).toBeGreaterThan(0); // The mock changed, it now has directors
   // });
 });
 
