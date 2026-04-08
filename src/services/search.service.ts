@@ -12,7 +12,7 @@ import {
   getSearchType,
   getSearchUrl,
   getSearchYear,
-  parseSearchPeople
+  parseSearchCreators
 } from '../helpers/search.helper';
 import { CSFDLanguage, CSFDOptions } from '../types';
 import { getUrlByLanguage, searchUrl } from '../vars';
@@ -56,10 +56,7 @@ export class SearchScraper {
         colorRating: getSearchColorRating(m),
         poster: getSearchPoster(m),
         origins: getSearchOrigins(m),
-        creators: {
-          directors: parseSearchPeople(m, 'directors'),
-          actors: parseSearchPeople(m, 'actors')
-        }
+        creators: parseSearchCreators(m)
       };
     };
 
