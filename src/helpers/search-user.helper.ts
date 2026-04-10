@@ -9,7 +9,9 @@ export const getUserRealName = (el: HTMLElement): string => {
   const p = el.querySelector('.article-content p');
   if (!p) return null;
 
-  const textNodes = p.childNodes.filter(n => n.nodeType === NodeType.TEXT_NODE && n.rawText.trim() !== '');
+  const textNodes = p.childNodes.filter(
+    (n) => n.nodeType === NodeType.TEXT_NODE && n.rawText.trim() !== ''
+  );
   const name = textNodes.length ? textNodes[0].rawText.trim() : null;
 
   return name;
