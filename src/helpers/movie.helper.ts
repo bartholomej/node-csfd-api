@@ -147,7 +147,10 @@ export const getMovieOrigins = (el: HTMLElement): string[] => {
   const originNode = el.querySelector('.origin');
   if (!originNode) return [];
   const text = originNode.childNodes[0]?.text || '';
-  return text.split('/').map(x => x.trim()).filter(x => x);
+  return text
+    .split('/')
+    .map((x) => x.trim())
+    .filter((x) => x);
 };
 
 export const getMovieColorRating = (bodyClasses: string[]): CSFDColorRating => {
@@ -261,10 +264,13 @@ export const getMovieRandomPhoto = (el: HTMLElement | null): string => {
   }
 };
 
+// Optimization: Extract regex to prevent redundant compilation in .map() iterations
+const CLEAN_TEXT_REGEX = /(\r\n|\n|\r|\t)/gm;
+
 export const getMovieTrivia = (el: HTMLElement | null): string[] => {
   const triviaNodes = el.querySelectorAll('.article-trivia ul li');
   if (triviaNodes?.length) {
-    return triviaNodes.map((node) => node.textContent.trim().replace(/(\r\n|\n|\r|\t)/gm, ''));
+    return triviaNodes.map((node) => node.textContent.trim().replace(CLEAN_TEXT_REGEX, ''));
   } else {
     return null;
   }
@@ -273,7 +279,7 @@ export const getMovieTrivia = (el: HTMLElement | null): string[] => {
 export const getMovieDescriptions = (el: HTMLElement): string[] => {
   return el
     .querySelectorAll('.body--plots .plot-full p, .body--plots .plots .plots-item p')
-    .map((movie) => movie.textContent?.trim().replace(/(\r\n|\n|\r|\t)/gm, ''));
+    .map((movie) => movie.textContent?.trim().replace(CLEAN_TEXT_REGEX, ''));
 };
 
 const parseMoviePeople = (el: HTMLElement): CSFDMovieCreator[] => {
@@ -434,7 +440,11 @@ export const getMovieGroup = (
 
 export const getMovieType = (el: HTMLElement): CSFDFilmTypes => {
   const type = el.querySelector('.film-header-name .type');
-  const text = type?.innerText?.replace(/[{()}]/g, '').split('\n')[0].trim() || 'film';
+  const text =
+    type?.innerText
+      ?.replace(/[{()}]/g, '')
+      .split('\n')[0]
+      .trim() || 'film';
   return parseFilmType(text);
 };
 
