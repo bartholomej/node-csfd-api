@@ -101,6 +101,10 @@ export const parseISO8601Duration = (iso: string): number => {
   return +duration.hours * 60 + +duration.minutes;
 };
 
+const PARSE_DATE_DOTS_REGEX = /^(\d{1,2})\.\s*(\d{1,2})\.\s*(\d{4})$/;
+const PARSE_DATE_SLASH_REGEX = /^(\d{1,2})\/(\d{1,2})\/(\d{4})$/;
+const PARSE_DATE_YEAR_REGEX = /^(\d{4})$/;
+
 /**
  * Parses a date string into a standardized YYYY-MM-DD format.
  * Supports:
@@ -117,7 +121,7 @@ export const parseDate = (date: string): string | null => {
   const cleanDate = date.trim();
 
   // Try parsing DD.MM.YYYY or D.M.YYYY with optional spaces
-  const dateMatch = cleanDate.match(/^(\d{1,2})\.\s*(\d{1,2})\.\s*(\d{4})$/);
+  const dateMatch = PARSE_DATE_DOTS_REGEX.exec(cleanDate);
   if (dateMatch) {
     const day = dateMatch[1].padStart(2, '0');
     const month = dateMatch[2].padStart(2, '0');
@@ -126,7 +130,7 @@ export const parseDate = (date: string): string | null => {
   }
 
   // Try parsing MM/DD/YYYY
-  const slashMatch = cleanDate.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
+  const slashMatch = PARSE_DATE_SLASH_REGEX.exec(cleanDate);
   if (slashMatch) {
     const month = slashMatch[1].padStart(2, '0');
     const day = slashMatch[2].padStart(2, '0');
@@ -135,7 +139,7 @@ export const parseDate = (date: string): string | null => {
   }
 
   // Try parsing YYYY
-  const yearMatch = cleanDate.match(/^(\d{4})$/);
+  const yearMatch = PARSE_DATE_YEAR_REGEX.exec(cleanDate);
   if (yearMatch) {
     return `${yearMatch[1]}-01-01`;
   }
