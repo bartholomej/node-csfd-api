@@ -50,9 +50,16 @@ export const parseSearchPeople = (
   if (type === 'directors') who = 'Režie:';
   if (type === 'actors') who = 'Hrají:';
 
-  const peopleNode = Array.from(el && el.querySelectorAll('.article-content p')).find((el) =>
-    el.textContent.includes(who)
-  );
+  let peopleNode: HTMLElement | undefined;
+  if (el) {
+    const pNodes = el.querySelectorAll('.article-content p');
+    for (const node of pNodes) {
+      if (node.textContent.includes(who)) {
+        peopleNode = node;
+        break;
+      }
+    }
+  }
 
   if (peopleNode) {
     const people = Array.from(peopleNode.querySelectorAll('a')) as unknown as HTMLElement[];
