@@ -50,12 +50,21 @@ export const parseSearchPeople = (
   if (type === 'directors') who = 'Režie:';
   if (type === 'actors') who = 'Hrají:';
 
-  const peopleNode = Array.from(el && el.querySelectorAll('.article-content p')).find((el) =>
-    el.textContent.includes(who)
-  );
+  const pNodes = el && el.querySelectorAll('.article-content p');
+  let peopleNode: HTMLElement | null = null;
+  if (pNodes) {
+    for (const p of pNodes) {
+      if (p.textContent.includes(who)) {
+        peopleNode = p;
+        break;
+      }
+    }
+  }
 
   if (peopleNode) {
-    const people = Array.from(peopleNode.querySelectorAll('a')) as unknown as HTMLElement[];
+    // Optimization: Avoid Array.from allocation and use direct mapping if possible,
+    // though NodeList might require mapping. In our environment querySelectorAll returns an array.
+    const people = peopleNode.querySelectorAll('a');
 
     return people.map((person) => {
       return {
