@@ -64,7 +64,10 @@ export class UserReviewsScraper {
     const films: CSFDUserReviews[] = [];
     if (config) {
       if (config.includesOnly?.length && config.excludes?.length) {
-        console.warn(`${LIB_PREFIX} Both 'includesOnly' and 'excludes' were provided. 'includesOnly' takes precedence:`, config.includesOnly);
+        console.warn(
+          `${LIB_PREFIX} Both 'includesOnly' and 'excludes' were provided. 'includesOnly' takes precedence:`,
+          config.includesOnly
+        );
       }
     }
 
