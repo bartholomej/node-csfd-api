@@ -5,6 +5,18 @@ const LANG_PREFIX_REGEX = /^[a-z]{2,3}$/;
 const ISO8601_DURATION_REGEX =
   /(-)?P(?:([.,\d]+)Y)?(?:([.,\d]+)M)?(?:([.,\d]+)W)?(?:([.,\d]+)D)?T(?:([.,\d]+)H)?(?:([.,\d]+)M)?(?:([.,\d]+)S)?/;
 
+export const getLastWord = (text: string): string => {
+  if (!text) return '';
+  const idx = text.lastIndexOf(' ');
+  return idx === -1 ? text : text.substring(idx + 1);
+};
+
+export const getFirstLine = (text: string): string => {
+  if (!text) return '';
+  const idx = text.indexOf('\n');
+  return idx === -1 ? text : text.substring(0, idx);
+};
+
 export const parseIdFromUrl = (url: string): number => {
   if (!url) return null;
 
