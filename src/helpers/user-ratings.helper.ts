@@ -1,7 +1,7 @@
 import { HTMLElement } from 'node-html-parser';
 import { CSFDColorRating, CSFDFilmTypes, CSFDStars } from '../dto/global';
 import { CSFDColors } from '../dto/user-ratings';
-import { parseColor, parseDate, parseFilmType, parseIdFromUrl } from './global.helper';
+import { getLastWord, parseColor, parseDate, parseFilmType, parseIdFromUrl } from './global.helper';
 
 export const getUserRatingId = (el: HTMLElement): number => {
   const url = el.querySelector('td.name .film-title-name').attributes.href;
@@ -9,9 +9,9 @@ export const getUserRatingId = (el: HTMLElement): number => {
 };
 
 export const getUserRating = (el: HTMLElement): CSFDStars => {
-  const ratingText = el.querySelector('td.star-rating-only .stars').classNames.split(' ').pop();
+  const ratingText = getLastWord(el.querySelector('td.star-rating-only .stars').classNames);
 
-  const rating = ratingText.includes('stars-') ? +ratingText.split('-').pop() : 0;
+  const rating = ratingText.includes('stars-') ? +getLastWord(ratingText, '-') : 0;
   return rating as CSFDStars;
 };
 
@@ -31,7 +31,7 @@ export const getUserRatingYear = (el: HTMLElement): number | null => {
 
 export const getUserRatingColorRating = (el: HTMLElement): CSFDColorRating => {
   const color = parseColor(
-    el.querySelector('td.name .icon').classNames.split(' ').pop() as CSFDColors
+    getLastWord(el.querySelector('td.name .icon').classNames) as CSFDColors
   );
   return color;
 };

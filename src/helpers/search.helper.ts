@@ -2,7 +2,7 @@ import { HTMLElement } from 'node-html-parser';
 import { CSFDColorRating, CSFDFilmTypes } from '../dto/global';
 import { CSFDMovieCreator } from '../dto/movie';
 import { CSFDColors } from '../dto/user-ratings';
-import { addProtocol, parseColor, parseFilmType, parseIdFromUrl } from './global.helper';
+import { addProtocol, getLastWord, parseColor, parseFilmType, parseIdFromUrl } from './global.helper';
 
 type Creator = 'Režie:' | 'Hrají:';
 
@@ -26,7 +26,7 @@ export const getSearchUrl = (el: HTMLElement): string => {
 
 export const getSearchColorRating = (el: HTMLElement): CSFDColorRating => {
   return parseColor(
-    el.querySelector('.article-header i.icon').classNames.split(' ').pop() as CSFDColors
+    getLastWord(el.querySelector('.article-header i.icon').classNames) as CSFDColors
   );
 };
 
