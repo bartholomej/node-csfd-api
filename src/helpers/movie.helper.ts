@@ -21,6 +21,7 @@ import type { CSFDOptions } from '../types';
 import {
   addProtocol,
   getColor,
+  getFirstLine,
   parseDate,
   parseFilmType,
   parseISO8601Duration,
@@ -219,7 +220,7 @@ export const getMovieTitlesOther = (el: HTMLElement): CSFDTitlesOther[] => {
 
   const titlesOther = namesNode.map((el) => {
     const country = el.querySelector('img.flag').attributes.alt;
-    const title = el.textContent.trim().split('\n')[0];
+    const title = getFirstLine(el.textContent.trim());
 
     if (country && title) {
       return {
@@ -434,7 +435,7 @@ export const getMovieGroup = (
 
 export const getMovieType = (el: HTMLElement): CSFDFilmTypes => {
   const type = el.querySelector('.film-header-name .type');
-  const text = type?.innerText?.replace(/[{()}]/g, '').split('\n')[0].trim() || 'film';
+  const text = getFirstLine(type?.innerText?.replace(/[{()}]/g, ''))?.trim() || 'film';
   return parseFilmType(text);
 };
 

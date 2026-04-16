@@ -145,3 +145,23 @@ export const parseDate = (date: string): string | null => {
 
 // Sleep in loop
 export const sleep = (ms: number) => new Promise((res) => setTimeout(res, ms));
+
+/**
+ * Performance optimization: Extract the last word from a string efficiently
+ * without intermediate array allocations (avoids .split(' ').pop()).
+ */
+export const getLastWord = (text: string | null | undefined, delimiter: string = ' '): string => {
+  if (!text) return '';
+  const lastIndex = text.lastIndexOf(delimiter);
+  return lastIndex !== -1 ? text.substring(lastIndex + delimiter.length) : text;
+};
+
+/**
+ * Performance optimization: Extract the first line from a string efficiently
+ * without intermediate array allocations (avoids .split('\n')[0]).
+ */
+export const getFirstLine = (text: string | null | undefined): string => {
+  if (!text) return '';
+  const index = text.indexOf('\n');
+  return index !== -1 ? text.substring(0, index) : text;
+};
