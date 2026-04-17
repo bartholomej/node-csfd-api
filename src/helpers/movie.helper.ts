@@ -28,6 +28,10 @@ import {
   parseLastIdFromUrl
 } from './global.helper';
 
+// Performance Optimization: Extract regex literal from loop map callbacks
+// This avoids redundant recompilation per iteration.
+const CLEAN_TEXT_REGEX = /(\r\n|\n|\r|\t)/gm;
+
 const CREATOR_LABELS: Record<
   string,
   Record<string, CSFDCreatorGroups | CSFDCreatorGroupsEnglish | CSFDCreatorGroupsSlovak>
@@ -264,7 +268,7 @@ export const getMovieRandomPhoto = (el: HTMLElement | null): string => {
 export const getMovieTrivia = (el: HTMLElement | null): string[] => {
   const triviaNodes = el.querySelectorAll('.article-trivia ul li');
   if (triviaNodes?.length) {
-    return triviaNodes.map((node) => node.textContent.trim().replace(/(\r\n|\n|\r|\t)/gm, ''));
+    return triviaNodes.map((node) => node.textContent.trim().replace(CLEAN_TEXT_REGEX, ''));
   } else {
     return null;
   }
@@ -273,7 +277,7 @@ export const getMovieTrivia = (el: HTMLElement | null): string[] => {
 export const getMovieDescriptions = (el: HTMLElement): string[] => {
   return el
     .querySelectorAll('.body--plots .plot-full p, .body--plots .plots .plots-item p')
-    .map((movie) => movie.textContent?.trim().replace(/(\r\n|\n|\r|\t)/gm, ''));
+    .map((movie) => movie.textContent?.trim().replace(CLEAN_TEXT_REGEX, ''));
 };
 
 const parseMoviePeople = (el: HTMLElement): CSFDMovieCreator[] => {
