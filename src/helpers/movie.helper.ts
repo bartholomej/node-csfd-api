@@ -85,6 +85,19 @@ const CREATOR_LABELS: Record<
  * @param key - The key of the creator group (e.g., 'directors', 'writers')
  * @returns The localized label for the creator group
  */
+
+/**
+ * Reverse mapping of CREATOR_LABELS for O(1) lookups during parsing.
+ * Structure: { 'en': { 'Directed by': 'directors', ... }, 'cs': { 'Režie': 'directors', ... }, ... }
+ */
+const REVERSE_CREATOR_LABELS: Record<string, Record<string, keyof typeof CREATOR_LABELS.en>> = {};
+for (const lang in CREATOR_LABELS) {
+  REVERSE_CREATOR_LABELS[lang] = {};
+  for (const [key, label] of Object.entries(CREATOR_LABELS[lang as keyof typeof CREATOR_LABELS])) {
+    REVERSE_CREATOR_LABELS[lang][label as string] = key as keyof typeof CREATOR_LABELS.en;
+  }
+}
+
 export const getLocalizedCreatorLabel = (
   language: string | undefined,
   key:
@@ -278,18 +291,21 @@ export const getMovieDescriptions = (el: HTMLElement): string[] => {
 
 const parseMoviePeople = (el: HTMLElement): CSFDMovieCreator[] => {
   const people = el.querySelectorAll('a');
-  return (
-    people
-      // Filter out "more" links
-      .filter((x) => x.classNames.length === 0)
-      .map((person) => {
-        return {
-          id: parseIdFromUrl(person.attributes.href),
-          name: person.innerText.trim(),
-          url: `https://www.csfd.cz${person.attributes.href}`
-        };
-      })
-  );
+  const result: CSFDMovieCreator[] = [];
+
+  for (let i = 0; i < people.length; i++) {
+    const person = people[i];
+    // Filter out "more" links
+    if (person.classNames.length === 0) {
+      result.push({
+        id: parseIdFromUrl(person.attributes.href),
+        name: person.innerText.trim(),
+        url: `https://www.csfd.cz${person.attributes.href}`
+      });
+    }
+  }
+
+  return result;
 };
 
 // export const getMovieGroup = (el: HTMLElement, group: CSFDCreatorGroups | CSFDCreatorGroupsEnglish | CSFDCreatorGroupsSlovak): CSFDMovieCreator[] => {
@@ -319,34 +335,21 @@ export const getMovieCreators = (el: HTMLElement, options?: CSFDOptions): CSFDCr
 
   const groups = el.querySelectorAll('.creators h4');
 
-  const keys = [
-    'directors',
-    'writers',
-    'cinematography',
-    'music',
-    'actors',
-    'basedOn',
-    'producers',
-    'filmEditing',
-    'costumeDesign',
-    'productionDesign',
-    'sound'
-  ] as const;
+  const lang = options?.language || 'cs';
+  const reverseMap = REVERSE_CREATOR_LABELS[lang] || REVERSE_CREATOR_LABELS['cs'];
 
-  const localizedLabels = keys.map((key) => ({
-    key,
-    label: getLocalizedCreatorLabel(options?.language, key) as string
-  }));
+  for (let i = 0; i < groups.length; i++) {
+    const group = groups[i];
+    let text = group.textContent.trim();
+    if (text.endsWith(':')) {
+      text = text.substring(0, text.length - 1).trim();
+    }
 
-  for (const group of groups) {
-    const text = group.textContent.trim();
-    for (const { key, label } of localizedLabels) {
-      if (text.includes(label)) {
-        if (group.parentNode) {
-          creators[key] = parseMoviePeople(group.parentNode as HTMLElement);
-        }
-        break;
-      }
+    // Performance Optimization: O(1) map lookup replaces inner loop over localized labels array
+    const key = reverseMap[text];
+
+    if (key && key in creators && group.parentNode) {
+      creators[key as keyof typeof creators] = parseMoviePeople(group.parentNode as HTMLElement);
     }
   }
 
