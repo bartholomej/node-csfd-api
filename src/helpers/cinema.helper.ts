@@ -52,14 +52,15 @@ export const parseCinema = (el: HTMLElement | null): { city: string; name: strin
 
 export const getGroupedFilmsByDate = (el: HTMLElement | null): CSFDCinemaGroupedFilmsByDate[] => {
   const divs = el.querySelectorAll(':scope > div');
-  const getDatesAndFilms = divs
-    .map((_, index) => index)
-    .filter((index) => index % 2 === 0)
-    .map((index) => {
-      const [date, films] = divs.slice(index, index + 2);
-      const dateText = date?.firstChild?.textContent?.trim() ?? null;
-      return { date: dateText, films: getCinemaFilms('', films) };
-    });
+  const getDatesAndFilms: CSFDCinemaGroupedFilmsByDate[] = [];
+
+  // Performance optimization: Avoid intermediate array allocations by mapping/filtering in a single standard loop
+  for (let i = 0; i < divs.length; i += 2) {
+    const date = divs[i];
+    const films = divs[i + 1];
+    const dateText = date?.firstChild?.textContent?.trim() ?? null;
+    getDatesAndFilms.push({ date: dateText, films: getCinemaFilms('', films) });
+  }
 
   return getDatesAndFilms;
 };
