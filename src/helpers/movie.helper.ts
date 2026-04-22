@@ -85,6 +85,34 @@ const CREATOR_LABELS: Record<
  * @param key - The key of the creator group (e.g., 'directors', 'writers')
  * @returns The localized label for the creator group
  */
+const CREATOR_KEYS = [
+  'directors',
+  'writers',
+  'cinematography',
+  'music',
+  'actors',
+  'basedOn',
+  'producers',
+  'filmEditing',
+  'costumeDesign',
+  'productionDesign',
+  'sound'
+] as const;
+
+// ⚡ Bolt Performance Optimization:
+// Precomputed reverse map for O(1) creator group lookups instead of dynamic mapping and O(N) string includes checking inside a loop.
+const REVERSE_CREATOR_LABELS = (() => {
+  const map = new Map<string, (typeof CREATOR_KEYS)[number]>();
+  for (const lang of Object.values(CREATOR_LABELS)) {
+    for (const key of CREATOR_KEYS) {
+      if (lang[key]) {
+        map.set(lang[key] as string, key);
+      }
+    }
+  }
+  return map;
+})();
+
 export const getLocalizedCreatorLabel = (
   language: string | undefined,
   key:
@@ -147,7 +175,10 @@ export const getMovieOrigins = (el: HTMLElement): string[] => {
   const originNode = el.querySelector('.origin');
   if (!originNode) return [];
   const text = originNode.childNodes[0]?.text || '';
-  return text.split('/').map(x => x.trim()).filter(x => x);
+  return text
+    .split('/')
+    .map((x) => x.trim())
+    .filter((x) => x);
 };
 
 export const getMovieColorRating = (bodyClasses: string[]): CSFDColorRating => {
@@ -319,33 +350,15 @@ export const getMovieCreators = (el: HTMLElement, options?: CSFDOptions): CSFDCr
 
   const groups = el.querySelectorAll('.creators h4');
 
-  const keys = [
-    'directors',
-    'writers',
-    'cinematography',
-    'music',
-    'actors',
-    'basedOn',
-    'producers',
-    'filmEditing',
-    'costumeDesign',
-    'productionDesign',
-    'sound'
-  ] as const;
-
-  const localizedLabels = keys.map((key) => ({
-    key,
-    label: getLocalizedCreatorLabel(options?.language, key) as string
-  }));
-
   for (const group of groups) {
-    const text = group.textContent.trim();
-    for (const { key, label } of localizedLabels) {
-      if (text.includes(label)) {
-        if (group.parentNode) {
-          creators[key] = parseMoviePeople(group.parentNode as HTMLElement);
-        }
-        break;
+    let text = group.textContent.trim();
+    if (text.endsWith(':')) {
+      text = text.slice(0, -1);
+    }
+    const key = REVERSE_CREATOR_LABELS.get(text);
+    if (key) {
+      if (group.parentNode) {
+        creators[key] = parseMoviePeople(group.parentNode as HTMLElement);
       }
     }
   }
@@ -434,7 +447,11 @@ export const getMovieGroup = (
 
 export const getMovieType = (el: HTMLElement): CSFDFilmTypes => {
   const type = el.querySelector('.film-header-name .type');
-  const text = type?.innerText?.replace(/[{()}]/g, '').split('\n')[0].trim() || 'film';
+  const text =
+    type?.innerText
+      ?.replace(/[{()}]/g, '')
+      .split('\n')[0]
+      .trim() || 'film';
   return parseFilmType(text);
 };
 
