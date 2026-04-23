@@ -1,6 +1,7 @@
 import { HTMLElement, parse } from 'node-html-parser';
 import { CSFDCreator } from '../dto/creator';
 import { fetchPage } from '../fetchers';
+import { extractId } from '../helpers/global.helper';
 import {
   getCreatorBio,
   getCreatorBirthdayInfo,
@@ -12,9 +13,9 @@ import { CSFDOptions } from '../types';
 import { creatorUrl } from '../vars';
 
 export class CreatorScraper {
-  public async creator(creatorId: number, options?: CSFDOptions): Promise<CSFDCreator> {
-    const id = Number(creatorId);
-    if (isNaN(id)) {
+  public async creator(creatorId: number | string, options?: CSFDOptions): Promise<CSFDCreator> {
+    const id = extractId(creatorId);
+    if (id === null || isNaN(id)) {
       throw new Error('node-csfd-api: creatorId must be a valid number');
     }
     const url = creatorUrl(id, { language: options?.language });

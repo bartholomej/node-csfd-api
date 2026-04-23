@@ -10,6 +10,17 @@ describe('Movie Service coverage', () => {
     await expect(movieScraper.movie(Number.NaN)).rejects.toThrow('movieId must be a valid number');
   });
 
+  test('Fetch using slug format', async () => {
+    const movieScraper = new MovieScraper();
+    const fetchSpy = vi.spyOn(fetchers, 'fetchPage').mockResolvedValue(movieMock);
+
+    // Test slug capability
+    const movie = await movieScraper.movie('535121-projekt-adam');
+    expect(movie.id).toBe(535121);
+
+    fetchSpy.mockRestore();
+  });
+
   test('JSON-LD parse fails gracefully', async () => {
     const movieScraper = new MovieScraper();
 

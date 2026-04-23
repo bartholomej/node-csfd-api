@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'vitest';
-import { addProtocol, parseColor, parseIdFromUrl } from '../src/helpers/global.helper';
+import { addProtocol, extractId, parseColor, parseIdFromUrl } from '../src/helpers/global.helper';
 
 describe('Add protocol', () => {
   test('Handle without protocol', () => {
@@ -46,6 +46,24 @@ describe('Parse Id', () => {
   test('bad string', () => {
     const url = parseIdFromUrl('bad string');
     expect(url).toBe(null);
+  });
+});
+
+describe('extractId', () => {
+  test('Handle numeric ID', () => {
+    expect(extractId(228329)).toBe(228329);
+  });
+  test('Handle numeric string', () => {
+    expect(extractId('228329')).toBe(228329);
+  });
+  test('Handle slug', () => {
+    expect(extractId('228329-avatar')).toBe(228329);
+  });
+  test('Handle full URL', () => {
+    expect(extractId('https://www.csfd.cz/film/228329-avatar/')).toBe(228329);
+  });
+  test('Handle invalid strings', () => {
+    expect(extractId('invalid-string')).toBe(null);
   });
 });
 
