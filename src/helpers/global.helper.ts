@@ -25,6 +25,31 @@ export const parseIdFromUrl = (url: string): number => {
   return +id || null;
 };
 
+/**
+ * Extracts a numeric ID from a number, string, slug, or full URL.
+ * Designed for Developer Experience (DX) to allow flexible inputs.
+ */
+export const extractId = (idOrUrl: number | string): number | null => {
+  if (typeof idOrUrl === 'number') {
+    return isNaN(idOrUrl) ? null : idOrUrl;
+  }
+
+  if (typeof idOrUrl === 'string') {
+    // Pure number string
+    if (/^\d+$/.test(idOrUrl)) {
+      return Number(idOrUrl);
+    }
+    // Direct slug with ID prefix (e.g. "228329-avatar")
+    if (/^\d+-/.test(idOrUrl)) {
+      return +idOrUrl.split('-')[0] || null;
+    }
+    // Fallback to URL parsing
+    return parseIdFromUrl(idOrUrl);
+  }
+
+  return null;
+};
+
 export const parseLastIdFromUrl = (url: string): number => {
   if (url) {
     const idSlug = url?.split('/')[3];
