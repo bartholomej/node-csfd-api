@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'vitest';
-import { addProtocol, parseColor, parseIdFromUrl } from '../src/helpers/global.helper';
+import { addProtocol, parseColor, parseIdFromUrl, extractId } from '../src/helpers/global.helper';
 
 describe('Add protocol', () => {
   test('Handle without protocol', () => {
@@ -46,6 +46,41 @@ describe('Parse Id', () => {
   test('bad string', () => {
     const url = parseIdFromUrl('bad string');
     expect(url).toBe(null);
+  });
+});
+
+describe('Extract Id', () => {
+  test('Handle plain numbers', () => {
+    const id = extractId(535121);
+    expect(id).toBe(535121);
+  });
+  test('Handle numeric strings', () => {
+    const id = extractId('535121');
+    expect(id).toBe(535121);
+  });
+  test('Handle URL slugs', () => {
+    const id = extractId('535121-blade-runner-2049');
+    expect(id).toBe(535121);
+  });
+  test('Handle full CSFD URLs', () => {
+    const id = extractId('https://www.csfd.cz/film/535121-blade-runner-2049/prehled/');
+    expect(id).toBe(535121);
+  });
+  test('Handle CSFD URLs path only', () => {
+    const id = extractId('/film/535121-blade-runner-2049/prehled/');
+    expect(id).toBe(535121);
+  });
+  test('Handle non-id slug starting with numbers', () => {
+    const id = extractId('3d-printers');
+    expect(id).toBe(null);
+  });
+  test('Handle bad strings', () => {
+    const id = extractId('bad string');
+    expect(id).toBe(null);
+  });
+  test('Handle null/undefined correctly via TS bypass', () => {
+    const id = extractId(null as any);
+    expect(id).toBe(null);
   });
 });
 

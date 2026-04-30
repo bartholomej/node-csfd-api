@@ -145,3 +145,29 @@ export const parseDate = (date: string): string | null => {
 
 // Sleep in loop
 export const sleep = (ms: number) => new Promise((res) => setTimeout(res, ms));
+
+export const extractId = (id: number | string): number | null => {
+  if (typeof id === 'number') {
+    return id;
+  }
+
+  if (typeof id !== 'string' || !id.trim()) {
+    return null;
+  }
+
+  const str = id.trim();
+
+  if (/^\d+$/.test(str)) {
+    return +str;
+  }
+
+  if (str.includes('/')) {
+    return parseIdFromUrl(str);
+  }
+
+  if (/^\d+-/.test(str)) {
+    return +str.split('-')[0] || null;
+  }
+
+  return null;
+};

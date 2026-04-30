@@ -2,7 +2,7 @@ import { HTMLElement, parse } from 'node-html-parser';
 import { CSFDColorRating, CSFDFilmTypes, CSFDStars } from '../dto/global';
 import { CSFDUserRatingConfig, CSFDUserRatings } from '../dto/user-ratings';
 import { fetchPage } from '../fetchers';
-import { sleep } from '../helpers/global.helper';
+import { extractId, sleep } from '../helpers/global.helper';
 import {
   getUserRating,
   getUserRatingColorRating,
@@ -22,9 +22,14 @@ export class UserRatingsScraper {
     config?: CSFDUserRatingConfig,
     options?: CSFDOptions
   ): Promise<CSFDUserRatings[]> {
+    const userId = extractId(user);
+    if (!userId) {
+      throw new Error('node-csfd-api: user must be a valid number, string ID, or CSFD URL');
+    }
+
     let allMovies: CSFDUserRatings[] = [];
     const pageToFetch = config?.page || 1;
-    const url = userRatingsUrl(user, pageToFetch > 1 ? pageToFetch : undefined, {
+    const url = userRatingsUrl(userId, pageToFetch > 1 ? pageToFetch : undefined, {
       language: options?.language
     });
     const response = await fetchPage(url, { ...options?.request });
@@ -62,7 +67,10 @@ export class UserRatingsScraper {
     const films: CSFDUserRatings[] = [];
     if (config) {
       if (config.includesOnly?.length && config.excludes?.length) {
-        console.warn(`${LIB_PREFIX} Both 'includesOnly' and 'excludes' were provided. 'includesOnly' takes precedence:`, config.includesOnly);
+        console.warn(
+          `${LIB_PREFIX} Both 'includesOnly' and 'excludes' were provided. 'includesOnly' takes precedence:`,
+          config.includesOnly
+        );
       }
     }
 
