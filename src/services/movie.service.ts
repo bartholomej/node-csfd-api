@@ -2,6 +2,7 @@ import { HTMLElement, parse } from 'node-html-parser';
 import { CSFDFilmTypes } from '../dto/global';
 import { CSFDMovie, MovieJsonLd } from '../dto/movie';
 import { fetchPage } from '../fetchers';
+import { extractId } from '../helpers/global.helper';
 import {
   detectSeasonOrEpisodeListType,
   getEpisodeCode,
@@ -32,10 +33,10 @@ import { CSFDOptions } from '../types';
 import { LIB_PREFIX, movieUrl } from '../vars';
 
 export class MovieScraper {
-  public async movie(movieId: number, options?: CSFDOptions): Promise<CSFDMovie> {
-    const id = Number(movieId);
-    if (isNaN(id)) {
-      throw new Error('node-csfd-api: movieId must be a valid number');
+  public async movie(movieId: number | string, options?: CSFDOptions): Promise<CSFDMovie> {
+    const id = extractId(movieId);
+    if (!id) {
+      throw new Error('node-csfd-api: movieId must be a valid number, slug, or URL');
     }
     const url = movieUrl(id, { language: options?.language });
     const response = await fetchPage(url, { ...options?.request });
@@ -52,7 +53,15 @@ export class MovieScraper {
     } catch (e) {
       console.error(LIB_PREFIX + ' Error parsing JSON-LD', e);
     }
-    return this.buildMovie(+movieId, movieHtml, movieNode as HTMLElement, asideNode as HTMLElement, pageClasses, jsonLd, options);
+    return this.buildMovie(
+      id,
+      movieHtml,
+      movieNode as HTMLElement,
+      asideNode as HTMLElement,
+      pageClasses,
+      jsonLd,
+      options
+    );
   }
 
   private buildMovie(

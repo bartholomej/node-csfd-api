@@ -2,7 +2,7 @@ import { HTMLElement, parse } from 'node-html-parser';
 import { CSFDColorRating, CSFDFilmTypes, CSFDStars } from '../dto/global';
 import { CSFDUserReviews, CSFDUserReviewsConfig } from '../dto/user-reviews';
 import { fetchPage } from '../fetchers';
-import { sleep } from '../helpers/global.helper';
+import { extractId, sleep } from '../helpers/global.helper';
 import {
   getUserReviewColorRating,
   getUserReviewDate,
@@ -24,9 +24,10 @@ export class UserReviewsScraper {
     config?: CSFDUserReviewsConfig,
     options?: CSFDOptions
   ): Promise<CSFDUserReviews[]> {
+    const id = extractId(user) ?? user;
     let allReviews: CSFDUserReviews[] = [];
     const pageToFetch = config?.page || 1;
-    const url = userReviewsUrl(user, pageToFetch > 1 ? pageToFetch : undefined, {
+    const url = userReviewsUrl(id, pageToFetch > 1 ? pageToFetch : undefined, {
       language: options?.language
     });
     const response = await fetchPage(url, { ...options?.request });
@@ -42,7 +43,7 @@ export class UserReviewsScraper {
     if (config?.allPages) {
       for (let i = 2; i <= pages; i++) {
         config.onProgress?.(i, pages);
-        const url = userReviewsUrl(user, i, { language: options?.language });
+        const url = userReviewsUrl(id, i, { language: options?.language });
         const response = await fetchPage(url, { ...options?.request });
 
         const items = parse(response);
@@ -64,7 +65,10 @@ export class UserReviewsScraper {
     const films: CSFDUserReviews[] = [];
     if (config) {
       if (config.includesOnly?.length && config.excludes?.length) {
-        console.warn(`${LIB_PREFIX} Both 'includesOnly' and 'excludes' were provided. 'includesOnly' takes precedence:`, config.includesOnly);
+        console.warn(
+          `${LIB_PREFIX} Both 'includesOnly' and 'excludes' were provided. 'includesOnly' takes precedence:`,
+          config.includesOnly
+        );
       }
     }
 

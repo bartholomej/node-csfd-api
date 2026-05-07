@@ -54,14 +54,14 @@ export class Csfd {
     return this.userReviewsService.userReviews(user, config, opts);
   }
 
-  public async movie(movie: number, options?: CSFDOptions): Promise<CSFDMovie> {
+  public async movie(movie: number | string, options?: CSFDOptions): Promise<CSFDMovie> {
     const opts = options ?? this.defaultOptions;
-    return this.movieService.movie(+movie, opts);
+    return this.movieService.movie(movie, opts);
   }
 
-  public async creator(creator: number, options?: CSFDOptions): Promise<CSFDCreator> {
+  public async creator(creator: number | string, options?: CSFDOptions): Promise<CSFDCreator> {
     const opts = options ?? this.defaultOptions;
-    return this.creatorService.creator(+creator, opts);
+    return this.creatorService.creator(creator, opts);
   }
 
   public async search(text: string, options?: CSFDOptions): Promise<CSFDSearch> {
@@ -96,4 +96,3 @@ export const csfd = new Csfd(
 );
 
 export type * from './dto';
-

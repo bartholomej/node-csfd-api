@@ -35,6 +35,44 @@ export const parseLastIdFromUrl = (url: string): number => {
   }
 };
 
+export const extractId = (value: number | string): number | null => {
+  if (value === null || value === undefined) return null;
+
+  if (typeof value === 'number') {
+    return Number.isInteger(value) ? value : null;
+  }
+
+  const str = value.toString().trim();
+
+  // If it's a URL
+  if (str.includes('/')) {
+    const parts = str.split('/');
+    for (let i = parts.length - 1; i >= 0; i--) {
+      const p = parts[i];
+      if (/^\d+-/.test(p)) {
+        return +p.split('-')[0] || null;
+      }
+    }
+    // Fallback logic for URL
+    const hasLangPrefix = LANG_PREFIX_REGEX.test(parts[1]);
+    const idSlug = parts[hasLangPrefix ? 3 : 2];
+    const id = idSlug?.split('-')[0];
+    return +id || null;
+  }
+
+  // If it's just a number string
+  if (/^\d+$/.test(str)) {
+    return Number(str);
+  }
+
+  // If it's a slug like "912-bart"
+  if (/^\d+-/.test(str)) {
+    return +str.split('-')[0];
+  }
+
+  return null;
+};
+
 const PAGE_COLORS: Record<string, CSFDColorRating> = {
   'page-lightgrey': 'unknown',
   'page-red': 'good',

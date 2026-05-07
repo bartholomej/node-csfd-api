@@ -1,5 +1,27 @@
 import { describe, expect, test } from 'vitest';
-import { addProtocol, parseColor, parseIdFromUrl } from '../src/helpers/global.helper';
+import { addProtocol, extractId, parseColor, parseIdFromUrl } from '../src/helpers/global.helper';
+
+describe('Extract ID', () => {
+  test('Handle number', () => {
+    expect(extractId(906693)).toBe(906693);
+  });
+  test('Handle numeric string', () => {
+    expect(extractId('906693')).toBe(906693);
+  });
+  test('Handle slug', () => {
+    expect(extractId('906693-projekt-adam')).toBe(906693);
+  });
+  test('Handle URL', () => {
+    expect(extractId('https://www.csfd.cz/film/906693-projekt-adam/recenze/')).toBe(906693);
+  });
+  test('Handle null/undefined', () => {
+    expect(extractId(null as any)).toBe(null);
+    expect(extractId(undefined as any)).toBe(null);
+  });
+  test('Handle invalid string', () => {
+    expect(extractId('blade-runner')).toBe(null);
+  });
+});
 
 describe('Add protocol', () => {
   test('Handle without protocol', () => {
