@@ -7,7 +7,7 @@ import { movieMock } from './mocks/movie1.html';
 describe('Movie Service coverage', () => {
   test('Fetch not number directly on service', async () => {
     const movieScraper = new MovieScraper();
-    await expect(movieScraper.movie(Number.NaN)).rejects.toThrow('movieId must be a valid number');
+    await expect(movieScraper.movie(Number.NaN)).rejects.toThrow('node-csfd-api: movieId could not be extracted');
   });
 
   test('JSON-LD parse fails gracefully', async () => {

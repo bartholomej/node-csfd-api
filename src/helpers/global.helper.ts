@@ -5,6 +5,27 @@ const LANG_PREFIX_REGEX = /^[a-z]{2,3}$/;
 const ISO8601_DURATION_REGEX =
   /(-)?P(?:([.,\d]+)Y)?(?:([.,\d]+)M)?(?:([.,\d]+)W)?(?:([.,\d]+)D)?T(?:([.,\d]+)H)?(?:([.,\d]+)M)?(?:([.,\d]+)S)?/;
 
+export const extractId = (id: string | number): number | null => {
+  if (typeof id === 'number') {
+    return id;
+  }
+
+  if (typeof id === 'string') {
+    let parsedId: number | null = null;
+    if (id.includes('/')) {
+      parsedId = parseIdFromUrl(id);
+    } else {
+      parsedId = +id.split('-')[0];
+    }
+
+    if (parsedId !== null && !isNaN(parsedId)) {
+      return parsedId;
+    }
+  }
+
+  return null;
+};
+
 export const parseIdFromUrl = (url: string): number => {
   if (!url) return null;
 

@@ -1,5 +1,28 @@
 import { describe, expect, test } from 'vitest';
-import { addProtocol, parseColor, parseIdFromUrl } from '../src/helpers/global.helper';
+import { addProtocol, extractId, parseColor, parseIdFromUrl } from '../src/helpers/global.helper';
+
+describe('Extract Id', () => {
+  test('Handle number', () => {
+    const id = extractId(1234);
+    expect(id).toBe(1234);
+  });
+  test('Handle string number', () => {
+    const id = extractId('1234');
+    expect(id).toBe(1234);
+  });
+  test('Handle slug', () => {
+    const id = extractId('1234-some-slug');
+    expect(id).toBe(1234);
+  });
+  test('Handle whole movie url', () => {
+    const id = extractId('https://www.csfd.cz/film/906693-projekt-adam/recenze/');
+    expect(id).toBe(906693);
+  });
+  test('Handle null/invalid', () => {
+    const id = extractId('bad string');
+    expect(id).toBe(null);
+  });
+});
 
 describe('Add protocol', () => {
   test('Handle without protocol', () => {
