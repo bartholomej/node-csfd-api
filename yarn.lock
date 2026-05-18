@@ -3769,7 +3769,7 @@ __metadata:
     node-html-parser: "npm:^7.1.0"
     prettier: "npm:^3.8.3"
     rimraf: "npm:^6.1.3"
-    rolldown-plugin-dist-package: "npm:^1.0.1"
+    rolldown-plugin-dist-package: "npm:^1.1.0"
     tsdown: "npm:^0.21.10"
     tsx: "npm:^4.21.0"
     typedoc: "npm:^0.28.19"
@@ -4167,9 +4167,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rolldown-plugin-dist-package@npm:^1.0.1":
-  version: 1.0.1
-  resolution: "rolldown-plugin-dist-package@npm:1.0.1"
+"rolldown-plugin-dist-package@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "rolldown-plugin-dist-package@npm:1.1.0"
   peerDependencies:
     rolldown: ^1.0.0
     rollup: ^3.0.0 || ^4.0.0
@@ -4179,7 +4179,7 @@ __metadata:
       optional: true
     rollup:
       optional: true
-  checksum: 10c0/abb4107d2a30a4a6b5290f9d84806d17ee3a6df81d9113bffd8a5d65634a731819bcdac243b514e9429b29f2984c542bb08a9dcd63be11a3495ed203dc723902
+  checksum: 10c0/c469d69464db59263d9052cc496e5ebb76c4c07c4d43a4db8b29a85aaf21681ba69714b8847ab48845aa3909ead1d3d4878864bc9a0fd2e2c17c345cd830a7c4
   languageName: node
   linkType: hard
 
