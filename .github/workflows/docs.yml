@@ -25,19 +25,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: 📥 Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: 📦 Enable Corepack
         run: corepack enable
 
       - name: 🔧 Setup Node.js
-        uses: actions/setup-node@v5
+        uses: actions/setup-node@v6
         with:
-          node-version: 24
+          node-version: 26
           cache: 'yarn'
 
       - name: ⚙️ Setup Pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v6
 
       - name: 📦 Install dependencies
         run: yarn install --immutable
@@ -46,10 +46,10 @@ jobs:
         run: yarn docs
 
       - name: 📤 Upload artifact
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v5
         with:
           path: './docs'
 
       - name: 🚀 Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5

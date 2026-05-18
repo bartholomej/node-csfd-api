@@ -24,7 +24,7 @@ jobs:
       - name: 🔧 Use Node.js
         uses: actions/setup-node@v6
         with:
-          node-version: 24
+          node-version: 26
           registry-url: 'https://registry.npmjs.org'
           cache: 'yarn'
 
@@ -39,7 +39,7 @@ jobs:
         run: yarn test:coverage
 
       - name: 📊 Upload coverage to Codecov
-        uses: codecov/codecov-action@v5
+        uses: codecov/codecov-action@v6
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           fail_ci_if_error: true
@@ -62,7 +62,7 @@ jobs:
 
       - name: 🏷️ Docker Metadata extraction
         id: meta
-        uses: docker/metadata-action@v5
+        uses: docker/metadata-action@v6
         with:
           images: ${{ github.repository_owner }}/${{ github.event.repository.name }}
           tags: |

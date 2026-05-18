@@ -16,7 +16,7 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@v6
         with:
-          node-version: 24
+          node-version: 26
           cache: 'yarn'
 
       - name: 🥟 Setup Bun
@@ -53,7 +53,7 @@ jobs:
           sha256sum csfd-macos-arm64.tar.gz csfd-macos-x64.tar.gz csfd-linux-x64.tar.gz csfd-linux-arm64.tar.gz csfd-windows-x64.zip > sha256sums.txt
 
       - name: 📤 Upload to Release
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3
         with:
           files: |
             csfd-*.tar.gz
