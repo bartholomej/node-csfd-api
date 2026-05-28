@@ -16,6 +16,7 @@ import {
   getUserReviewYear
 } from '../helpers/user-reviews.helper';
 import { CSFDOptions } from '../types';
+import { extractId } from '../helpers/global.helper';
 import { LIB_PREFIX, userReviewsUrl } from '../vars';
 
 export class UserReviewsScraper {
@@ -24,9 +25,14 @@ export class UserReviewsScraper {
     config?: CSFDUserReviewsConfig,
     options?: CSFDOptions
   ): Promise<CSFDUserReviews[]> {
+    const id = extractId(user);
+    if (id === null || isNaN(id)) {
+      throw new Error('node-csfd-api: user must be a valid number or url');
+    }
+
     let allReviews: CSFDUserReviews[] = [];
     const pageToFetch = config?.page || 1;
-    const url = userReviewsUrl(user, pageToFetch > 1 ? pageToFetch : undefined, {
+    const url = userReviewsUrl(id, pageToFetch > 1 ? pageToFetch : undefined, {
       language: options?.language
     });
     const response = await fetchPage(url, { ...options?.request });
@@ -42,7 +48,7 @@ export class UserReviewsScraper {
     if (config?.allPages) {
       for (let i = 2; i <= pages; i++) {
         config.onProgress?.(i, pages);
-        const url = userReviewsUrl(user, i, { language: options?.language });
+        const url = userReviewsUrl(id, i, { language: options?.language });
         const response = await fetchPage(url, { ...options?.request });
 
         const items = parse(response);
@@ -64,7 +70,10 @@ export class UserReviewsScraper {
     const films: CSFDUserReviews[] = [];
     if (config) {
       if (config.includesOnly?.length && config.excludes?.length) {
-        console.warn(`${LIB_PREFIX} Both 'includesOnly' and 'excludes' were provided. 'includesOnly' takes precedence:`, config.includesOnly);
+        console.warn(
+          `${LIB_PREFIX} Both 'includesOnly' and 'excludes' were provided. 'includesOnly' takes precedence:`,
+          config.includesOnly
+        );
       }
     }
 
