@@ -2,7 +2,7 @@ import { HTMLElement, parse } from 'node-html-parser';
 import { CSFDColorRating, CSFDFilmTypes, CSFDStars } from '../dto/global';
 import { CSFDUserReviews, CSFDUserReviewsConfig } from '../dto/user-reviews';
 import { fetchPage } from '../fetchers';
-import { sleep } from '../helpers/global.helper';
+import { extractId, sleep } from '../helpers/global.helper';
 import {
   getUserReviewColorRating,
   getUserReviewDate,
@@ -25,8 +25,9 @@ export class UserReviewsScraper {
     options?: CSFDOptions
   ): Promise<CSFDUserReviews[]> {
     let allReviews: CSFDUserReviews[] = [];
+    const id = extractId(user) || user;
     const pageToFetch = config?.page || 1;
-    const url = userReviewsUrl(user, pageToFetch > 1 ? pageToFetch : undefined, {
+    const url = userReviewsUrl(id, pageToFetch > 1 ? pageToFetch : undefined, {
       language: options?.language
     });
     const response = await fetchPage(url, { ...options?.request });
@@ -42,7 +43,7 @@ export class UserReviewsScraper {
     if (config?.allPages) {
       for (let i = 2; i <= pages; i++) {
         config.onProgress?.(i, pages);
-        const url = userReviewsUrl(user, i, { language: options?.language });
+        const url = userReviewsUrl(id, i, { language: options?.language });
         const response = await fetchPage(url, { ...options?.request });
 
         const items = parse(response);
