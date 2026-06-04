@@ -16,6 +16,10 @@ export const parseIdFromUrl = (url: string): number => {
     if (/^\d+-/.test(p)) {
       return +p.split('-')[0] || null;
     }
+    // Also support pure number segments in URLs (e.g. /uzivatel/1000/)
+    if (/^\d+$/.test(p)) {
+      return +p || null;
+    }
   }
 
   // Fallback
