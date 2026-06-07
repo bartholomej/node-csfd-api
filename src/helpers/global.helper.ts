@@ -16,6 +16,9 @@ export const parseIdFromUrl = (url: string): number => {
     if (/^\d+-/.test(p)) {
       return +p.split('-')[0] || null;
     }
+    if (/^\d+$/.test(p)) {
+      return +p || null;
+    }
   }
 
   // Fallback
