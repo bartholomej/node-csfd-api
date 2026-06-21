@@ -11,7 +11,7 @@ export const getCinemaColorRating = (el: HTMLElement | null): CSFDColorRating =>
 };
 
 export const getCinemaId = (el: HTMLElement | null): number => {
-  const id = el?.id?.split('-')[1];
+  const id = el?.id?.split('-').at(-1);
   return +id;
 };
 
