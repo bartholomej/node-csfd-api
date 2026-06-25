@@ -50,6 +50,50 @@ export const extractId = (idOrUrl: number | string): number | null => {
   return null;
 };
 
+/**
+ * Extracts a user ID or text slug from a number, string, slug, or full URL.
+ * Designed for Developer Experience (DX) to allow flexible inputs for user endpoints.
+ */
+export const extractUser = (userOrUrl: number | string): number | string | null => {
+  if (typeof userOrUrl === 'number') {
+    return isNaN(userOrUrl) ? null : userOrUrl;
+  }
+
+  if (typeof userOrUrl === 'string') {
+    // Pure number string
+    if (/^\d+$/.test(userOrUrl)) {
+      return Number(userOrUrl);
+    }
+
+    // Check if it's a URL
+    if (userOrUrl.includes('/')) {
+      const parts = userOrUrl.split('/').filter(Boolean);
+      const uzivatelIndex = parts.indexOf('uzivatel');
+      if (uzivatelIndex !== -1 && parts.length > uzivatelIndex + 1) {
+        const userSlug = parts[uzivatelIndex + 1];
+        // If slug is numeric, return number, else return slug string
+        if (/^\d+-/.test(userSlug)) {
+          return +userSlug.split('-')[0] || null;
+        }
+        if (/^\d+$/.test(userSlug)) {
+          return +userSlug || null;
+        }
+        return userSlug;
+      }
+    }
+
+    // Direct numeric slug with ID prefix (e.g. "912-hobit")
+    if (/^\d+-/.test(userOrUrl)) {
+      return +userOrUrl.split('-')[0] || null;
+    }
+
+    // Return string slug as fallback (e.g. "admin")
+    return userOrUrl;
+  }
+
+  return null;
+};
+
 export const parseLastIdFromUrl = (url: string): number => {
   if (url) {
     const idSlug = url?.split('/')[3];

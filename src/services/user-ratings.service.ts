@@ -2,7 +2,7 @@ import { HTMLElement, parse } from 'node-html-parser';
 import { CSFDColorRating, CSFDFilmTypes, CSFDStars } from '../dto/global';
 import { CSFDUserRatingConfig, CSFDUserRatings } from '../dto/user-ratings';
 import { fetchPage } from '../fetchers';
-import { sleep } from '../helpers/global.helper';
+import { extractUser, sleep } from '../helpers/global.helper';
 import {
   getUserRating,
   getUserRatingColorRating,
@@ -22,9 +22,14 @@ export class UserRatingsScraper {
     config?: CSFDUserRatingConfig,
     options?: CSFDOptions
   ): Promise<CSFDUserRatings[]> {
+    const userIdOrSlug = extractUser(user);
+    if (userIdOrSlug === null || (typeof userIdOrSlug === 'number' && isNaN(userIdOrSlug))) {
+      throw new Error('node-csfd-api: user must be a valid number, slug, or url');
+    }
+
     let allMovies: CSFDUserRatings[] = [];
     const pageToFetch = config?.page || 1;
-    const url = userRatingsUrl(user, pageToFetch > 1 ? pageToFetch : undefined, {
+    const url = userRatingsUrl(userIdOrSlug, pageToFetch > 1 ? pageToFetch : undefined, {
       language: options?.language
     });
     const response = await fetchPage(url, { ...options?.request });
@@ -40,7 +45,7 @@ export class UserRatingsScraper {
     if (config?.allPages) {
       for (let i = 2; i <= pages; i++) {
         config.onProgress?.(i, pages);
-        const url = userRatingsUrl(user, i, { language: options?.language });
+        const url = userRatingsUrl(userIdOrSlug, i, { language: options?.language });
         const response = await fetchPage(url, { ...options?.request });
 
         const items = parse(response);
