@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'vitest';
-import { addProtocol, extractId, parseColor, parseIdFromUrl } from '../src/helpers/global.helper';
+import { addProtocol, extractId, extractUser, parseColor, parseIdFromUrl } from '../src/helpers/global.helper';
 
 describe('Add protocol', () => {
   test('Handle without protocol', () => {
@@ -64,6 +64,30 @@ describe('extractId', () => {
   });
   test('Handle invalid strings', () => {
     expect(extractId('invalid-string')).toBe(null);
+  });
+});
+
+describe('extractUser', () => {
+  test('Handle numeric ID', () => {
+    expect(extractUser(912)).toBe(912);
+  });
+  test('Handle numeric string', () => {
+    expect(extractUser('912')).toBe(912);
+  });
+  test('Handle slug', () => {
+    expect(extractUser('912-bart')).toBe('912-bart');
+  });
+  test('Handle full URL', () => {
+    expect(extractUser('https://www.csfd.cz/uzivatel/912-bart/')).toBe('912-bart');
+  });
+  test('Handle full URL with subpath', () => {
+    expect(extractUser('https://www.csfd.cz/uzivatel/912-bart/hodnoceni/')).toBe('912-bart');
+  });
+  test('Handle relative path', () => {
+    expect(extractUser('/uzivatel/912-bart/')).toBe('912-bart');
+  });
+  test('Handle fallback for non-uzivatel strings', () => {
+    expect(extractUser('something-else')).toBe('something-else');
   });
 });
 
