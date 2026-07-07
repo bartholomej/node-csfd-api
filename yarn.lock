@@ -3786,7 +3786,7 @@ __metadata:
     globals: "npm:^17.7.0"
     husky: "npm:^9.1.7"
     lint-staged: "npm:^17.0.8"
-    node-html-parser: "npm:^8.0.4"
+    node-html-parser: "npm:^9.0.0"
     prettier: "npm:^3.9.4"
     rimraf: "npm:^6.1.3"
     rolldown-plugin-dist-package: "npm:^1.1.0"
@@ -3822,13 +3822,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"node-html-parser@npm:^8.0.4":
-  version: 8.0.4
-  resolution: "node-html-parser@npm:8.0.4"
+"node-html-parser@npm:^9.0.0":
+  version: 9.0.0
+  resolution: "node-html-parser@npm:9.0.0"
   dependencies:
     css-select: "npm:^5.1.0"
     entities: "npm:^8.0.0"
-  checksum: 10c0/066283a4cfcc31fd9612f6e131d1b0bc03f1b85d927de98e5a623185fd91b6101fa95d92c42e477134d9beb768ce24a8eeef086b5beed2a6fb718229e9f38bc0
+  checksum: 10c0/76d15271de4cf77dd941fe64cbbeabe2e3ac3b7be8753a79480e645072e880347c83c3879fe5cfa7ff439527a7cf8c657d3101f51644f7f86101c024cd77d1f6
   languageName: node
   linkType: hard
 
