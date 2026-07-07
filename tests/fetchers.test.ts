@@ -18,14 +18,14 @@ describe('Live: Fetch rating page', () => {
     expect(movies.length).toEqual(50);
   });
   test('Fetch `912-bart` user and check some movie', () => {
-    const MOVIE_NAME = 'Poslední Viking';
+    const MOVIE_NAME = 'Fjord';
 
     const movieSelected = movies.filter((x) => x.title === MOVIE_NAME)[0];
     expect(movies.map((x) => x.title)).toEqual(expect.arrayContaining([MOVIE_NAME]));
-    expect(movieSelected?.id).toEqual<number>(1563219);
-    expect(movieSelected?.year).toEqual<number>(2025);
+    expect(movieSelected?.id).toEqual<number>(1677585);
+    expect(movieSelected?.year).toEqual<number>(2026);
     expect(movieSelected?.type).toEqual<CSFDFilmTypes>('film');
-    expect(movieSelected?.userDate).toContain<string>('2025');
+    expect(movieSelected?.userDate).toContain<string>('2026');
     expect(movies.length).toEqual(50);
   });
 });
