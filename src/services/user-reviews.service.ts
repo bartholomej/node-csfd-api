@@ -2,7 +2,7 @@ import { HTMLElement, parse } from 'node-html-parser';
 import { CSFDColorRating, CSFDFilmTypes, CSFDStars } from '../dto/global';
 import { CSFDUserReviews, CSFDUserReviewsConfig } from '../dto/user-reviews';
 import { fetchPage } from '../fetchers';
-import { sleep } from '../helpers/global.helper';
+import { extractUser, sleep } from '../helpers/global.helper';
 import {
   getUserReviewColorRating,
   getUserReviewDate,
@@ -24,9 +24,13 @@ export class UserReviewsScraper {
     config?: CSFDUserReviewsConfig,
     options?: CSFDOptions
   ): Promise<CSFDUserReviews[]> {
+    const extractedUser = extractUser(user);
+    if (extractedUser === null || extractedUser === undefined || extractedUser === '') {
+      throw new Error('node-csfd-api: user must be a valid user ID or slug');
+    }
     let allReviews: CSFDUserReviews[] = [];
     const pageToFetch = config?.page || 1;
-    const url = userReviewsUrl(user, pageToFetch > 1 ? pageToFetch : undefined, {
+    const url = userReviewsUrl(extractedUser, pageToFetch > 1 ? pageToFetch : undefined, {
       language: options?.language
     });
     const response = await fetchPage(url, { ...options?.request });
@@ -42,7 +46,7 @@ export class UserReviewsScraper {
     if (config?.allPages) {
       for (let i = 2; i <= pages; i++) {
         config.onProgress?.(i, pages);
-        const url = userReviewsUrl(user, i, { language: options?.language });
+        const url = userReviewsUrl(extractedUser, i, { language: options?.language });
         const response = await fetchPage(url, { ...options?.request });
 
         const items = parse(response);
