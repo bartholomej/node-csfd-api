@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'vitest';
-import { addProtocol, extractId, parseColor, parseIdFromUrl } from '../src/helpers/global.helper';
+import { addProtocol, extractId, extractUser, parseColor, parseIdFromUrl } from '../src/helpers/global.helper';
 
 describe('Add protocol', () => {
   test('Handle without protocol', () => {
@@ -64,6 +64,27 @@ describe('extractId', () => {
   });
   test('Handle invalid strings', () => {
     expect(extractId('invalid-string')).toBe(null);
+  });
+});
+
+describe('extractUser', () => {
+  test('should return number for numeric input', () => {
+    expect(extractUser(912)).toBe(912);
+  });
+  test('should return number for numeric string input', () => {
+    expect(extractUser('912')).toBe(912);
+  });
+  test('should return number for slug input', () => {
+    expect(extractUser('912-hobit')).toBe(912);
+  });
+  test('should return number for full url with numeric slug', () => {
+    expect(extractUser('https://www.csfd.cz/uzivatel/912-hobit/')).toBe(912);
+  });
+  test('should return string for text slug', () => {
+    expect(extractUser('admin')).toBe('admin');
+  });
+  test('should return string for full url with text slug', () => {
+    expect(extractUser('https://www.csfd.cz/uzivatel/admin/')).toBe('admin');
   });
 });
 
