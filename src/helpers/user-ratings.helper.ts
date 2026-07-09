@@ -1,6 +1,6 @@
 import { HTMLElement } from 'node-html-parser';
-import { CSFDColorRating, CSFDFilmTypes, CSFDStars } from '../dto/global';
-import { CSFDColors } from '../dto/user-ratings';
+import type { CSFDColorRating, CSFDFilmTypes, CSFDStars } from '../dto/global';
+import type { CSFDColors } from '../dto/user-ratings';
 import { parseColor, parseDate, parseFilmType, parseIdFromUrl } from './global.helper';
 
 export const getUserRatingId = (el: HTMLElement): number => {
