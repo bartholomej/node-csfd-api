@@ -1,7 +1,7 @@
 import { HTMLElement } from 'node-html-parser';
-import { CSFDCinemaGroupedFilmsByDate, CSFDCinemaMeta, CSFDCinemaMovie } from '../dto/cinema';
-import { CSFDColorRating } from '../dto/global';
-import { CSFDColors } from '../dto/user-ratings';
+import type { CSFDCinemaGroupedFilmsByDate, CSFDCinemaMeta, CSFDCinemaMovie } from '../dto/cinema';
+import type { CSFDColorRating } from '../dto/global';
+import type { CSFDColors } from '../dto/user-ratings';
 import { parseColor, parseIdFromUrl } from './global.helper';
 
 export const getCinemaColorRating = (el: HTMLElement | null): CSFDColorRating => {
