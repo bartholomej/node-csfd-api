@@ -4,7 +4,7 @@
 
 import { writeFile } from 'node:fs/promises';
 import { csfd } from '..';
-import { CSFDUserRatingConfig } from '../dto/user-ratings';
+import type { CSFDUserRatingConfig } from '../dto/user-ratings';
 import { escapeCsvField, renderProgress } from './utils';
 
 export interface ExportRatingsOptions {

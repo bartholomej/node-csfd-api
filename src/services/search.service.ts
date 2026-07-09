@@ -1,5 +1,5 @@
 import { HTMLElement, parse } from 'node-html-parser';
-import { CSFDSearch, CSFDSearchCreator, CSFDSearchMovie, CSFDSearchUser } from '../dto/search';
+import type { CSFDSearch, CSFDSearchCreator, CSFDSearchMovie, CSFDSearchUser } from '../dto/search';
 import { fetchPage } from '../fetchers';
 import { parseIdFromUrl } from '../helpers/global.helper';
 import { getCreatorImage, getCreatorName, getCreatorUrl } from '../helpers/search-creator.helper';
@@ -14,7 +14,7 @@ import {
   getSearchYear,
   parseSearchPeople
 } from '../helpers/search.helper';
-import { CSFDLanguage, CSFDOptions } from '../types';
+import type { CSFDLanguage, CSFDOptions } from '../types';
 import { getUrlByLanguage, searchUrl } from '../vars';
 
 export class SearchScraper {

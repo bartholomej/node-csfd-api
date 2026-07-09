@@ -12,5 +12,10 @@
   },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
-  "typescript.tsdk": "node_modules/typescript/lib"
+  // UI Setting:
+  // TypeScript 7 > Experimental: Use Tsgo
+  "js/ts.experimental.useTsgo": true,
+
+  // Optional: use a local TypeScript package directory.
+  "js/ts.tsdk.path": "./node_modules/typescript"
 }

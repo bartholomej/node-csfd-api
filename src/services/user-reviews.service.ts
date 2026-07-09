@@ -1,6 +1,6 @@
 import { HTMLElement, parse } from 'node-html-parser';
-import { CSFDColorRating, CSFDFilmTypes, CSFDStars } from '../dto/global';
-import { CSFDUserReviews, CSFDUserReviewsConfig } from '../dto/user-reviews';
+import type { CSFDColorRating, CSFDFilmTypes, CSFDStars } from '../dto/global';
+import type { CSFDUserReviews, CSFDUserReviewsConfig } from '../dto/user-reviews';
 import { fetchPage } from '../fetchers';
 import { sleep } from '../helpers/global.helper';
 import {
@@ -15,7 +15,7 @@ import {
   getUserReviewUrl,
   getUserReviewYear
 } from '../helpers/user-reviews.helper';
-import { CSFDOptions } from '../types';
+import type { CSFDOptions } from '../types';
 import { LIB_PREFIX, userReviewsUrl } from '../vars';
 
 export class UserReviewsScraper {

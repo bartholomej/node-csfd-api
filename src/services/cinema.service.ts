@@ -1,7 +1,7 @@
 import { HTMLElement, parse } from 'node-html-parser';
-import { CSFDCinema, CSFDCinemaPeriod } from '../dto/cinema';
+import type { CSFDCinema, CSFDCinemaPeriod } from '../dto/cinema';
 import { fetchPage } from '../fetchers';
-import { CSFDOptions } from '../types';
+import type { CSFDOptions } from '../types';
 import { cinemasUrl } from '../vars';
 import {
   getCinemaCoords,

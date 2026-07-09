@@ -1,5 +1,5 @@
-import { CSFDColorRating, CSFDFilmTypes } from '../dto/global';
-import { CSFDColors } from '../dto/user-ratings';
+import type { CSFDColorRating, CSFDFilmTypes } from '../dto/global';
+import type { CSFDColors } from '../dto/user-ratings';
 
 const LANG_PREFIX_REGEX = /^[a-z]{2,3}$/;
 const ISO8601_DURATION_REGEX =
