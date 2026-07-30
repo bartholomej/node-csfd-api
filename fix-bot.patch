@@ -1,0 +1,11 @@
+--- src/fetchers/index.ts
++++ src/fetchers/index.ts
+@@ -102,6 +102,12 @@
+     // Quickly check if we hit the trap
+     if (
+       html.includes("Making sure you're not a bot!") ||
++      html.includes("Making sure you are not a bot!") ||
++      html.includes("You are seeing this because the administrator of this website has configured Anubis") ||
+       html.includes('Ujišťujeme se, že nejste robot!')
+     ) {
+       console.warn('[node-csfd-api] Trap detected. You may be rate-limited or blocked by ČSFD.');

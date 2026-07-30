@@ -401,8 +401,6 @@ describe('Fetch with custom headers', () => {
         'X-Custom-Header': 'test-value'
       }
     });
-    if (html !== 'Error') {
-      expect(html).toContain('BART!');
-    }
+    expect(html).toContain('BART!');
   });
 });
