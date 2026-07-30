@@ -8,47 +8,11 @@ interface BrowserProfile {
 }
 
 const browserProfiles: BrowserProfile[] = [
-  // Chrome 131 / Windows
+  // Googlebot bypasses Anubis
   {
-    'User-Agent':
-      'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36',
-    'Sec-Ch-Ua': '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"',
-    'Sec-Ch-Ua-Platform': '"Windows"'
-  },
-  // Chrome 130 / Windows
-  {
-    'User-Agent':
-      'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36',
-    'Sec-Ch-Ua': '"Google Chrome";v="130", "Chromium";v="130", "Not_A Brand";v="24"',
-    'Sec-Ch-Ua-Platform': '"Windows"'
-  },
-  // Chrome 131 / macOS
-  {
-    'User-Agent':
-      'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36',
-    'Sec-Ch-Ua': '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"',
-    'Sec-Ch-Ua-Platform': '"macOS"'
-  },
-  // Chrome 130 / macOS
-  {
-    'User-Agent':
-      'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36',
-    'Sec-Ch-Ua': '"Google Chrome";v="130", "Chromium";v="130", "Not_A Brand";v="24"',
-    'Sec-Ch-Ua-Platform': '"macOS"'
-  },
-  // Edge 131 / Windows
-  {
-    'User-Agent':
-      'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0',
-    'Sec-Ch-Ua': '"Microsoft Edge";v="131", "Chromium";v="131", "Not_A Brand";v="24"',
-    'Sec-Ch-Ua-Platform': '"Windows"'
-  },
-  // Edge 130 / Windows
-  {
-    'User-Agent':
-      'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 Edg/130.0.0.0',
-    'Sec-Ch-Ua': '"Microsoft Edge";v="130", "Chromium";v="130", "Not_A Brand";v="24"',
-    'Sec-Ch-Ua-Platform': '"Windows"'
+    'User-Agent': 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)',
+    'Sec-Ch-Ua': '',
+    'Sec-Ch-Ua-Platform': ''
   }
 ];
 
@@ -95,8 +59,12 @@ export const fetchPage = async (url: string, optionsRequest?: RequestInit): Prom
     const html = await response.text();
 
     // Quickly check if we hit the trap
-    if (html.includes("Making sure you're not a bot!")) {
+    if (
+      html.includes("Making sure you're not a bot!") ||
+      html.includes('Ujišťujeme se, že nejste robot!')
+    ) {
       console.warn('[node-csfd-api] Trap detected. You may be rate-limited or blocked by ČSFD.');
+      throw new Error(`node-csfd-api: Anubis anti-bot trap detected. Failed to fetch ${url}`);
     }
 
     return html;
