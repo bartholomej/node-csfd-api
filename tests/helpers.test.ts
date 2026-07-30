@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'vitest';
-import { addProtocol, extractId, parseColor, parseIdFromUrl } from '../src/helpers/global.helper';
+import { addProtocol, extractId, extractUser, parseColor, parseIdFromUrl } from '../src/helpers/global.helper';
 
 describe('Add protocol', () => {
   test('Handle without protocol', () => {
@@ -46,6 +46,30 @@ describe('Parse Id', () => {
   test('bad string', () => {
     const url = parseIdFromUrl('bad string');
     expect(url).toBe(null);
+  });
+});
+
+describe('extractUser', () => {
+  test('Handle numeric ID', () => {
+    expect(extractUser(912)).toBe(912);
+  });
+  test('Handle numeric string', () => {
+    expect(extractUser('912')).toBe(912);
+  });
+  test('Handle slug', () => {
+    expect(extractUser('912-bart')).toBe('912-bart');
+  });
+  test('Handle text slug', () => {
+    expect(extractUser('admin')).toBe('admin');
+  });
+  test('Handle full URL', () => {
+    expect(extractUser('https://www.csfd.cz/uzivatel/912-bart/hodnoceni/')).toBe('912-bart');
+  });
+  test('Handle full URL text slug', () => {
+    expect(extractUser('https://www.csfd.cz/uzivatel/admin/')).toBe('admin');
+  });
+  test('Handle invalid strings', () => {
+    expect(extractUser('   ')).toBe(null);
   });
 });
 

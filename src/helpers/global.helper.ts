@@ -29,6 +29,49 @@ export const parseIdFromUrl = (url: string): number => {
  * Extracts a numeric ID from a number, string, slug, or full URL.
  * Designed for Developer Experience (DX) to allow flexible inputs.
  */
+/**
+ * Extracts a user slug or ID from a number, string, slug, or full URL.
+ * Designed for Developer Experience (DX) to allow flexible inputs.
+ */
+export const extractUser = (userOrUrl: number | string): string | number | null => {
+  if (typeof userOrUrl === 'number') {
+    return isNaN(userOrUrl) ? null : userOrUrl;
+  }
+
+  if (typeof userOrUrl === 'string') {
+    const trimmed = userOrUrl.trim();
+    if (!trimmed) return null;
+
+    // Pure number string
+    if (/^\d+$/.test(trimmed)) {
+      return Number(trimmed);
+    }
+    // Full URL parsing
+    if (trimmed.includes('/uzivatel/')) {
+      try {
+        const parsedUrl = new URL(trimmed);
+        const parts = parsedUrl.pathname.split('/');
+        const userIndex = parts.findIndex((p) => p === 'uzivatel');
+        if (userIndex !== -1 && parts[userIndex + 1]) {
+          return parts[userIndex + 1];
+        }
+      } catch {
+        // Fallback if URL parsing fails (e.g., relative URL), though unlikely with typical inputs
+        const parts = trimmed.split('?')[0].split('/');
+        const userIndex = parts.findIndex((p) => p === 'uzivatel');
+        if (userIndex !== -1 && parts[userIndex + 1]) {
+          return parts[userIndex + 1];
+        }
+      }
+    }
+
+    // Direct slug (e.g. "912-bart" or "admin") - strip potential query string if someone passed a raw string with one
+    return trimmed.split('?')[0];
+  }
+
+  return null;
+};
+
 export const extractId = (idOrUrl: number | string): number | null => {
   if (typeof idOrUrl === 'number') {
     return isNaN(idOrUrl) ? null : idOrUrl;
