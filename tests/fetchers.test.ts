@@ -1,5 +1,5 @@
 import { beforeAll, describe, expect, test } from 'vitest';
-import { csfd, CSFDUserRatings } from '../src';
+import { csfd, CsfdError, CSFDUserRatings } from '../src';
 import { CSFDCinema } from '../src/dto/cinema';
 import { CSFDCreator, CSFDCreatorScreening } from '../src/dto/creator';
 import { CSFDColorRating, CSFDFilmTypes } from '../src/dto/global';
@@ -34,7 +34,6 @@ describe('Fetch generic page', () => {
   test('Fetch main page and check html logic', async () => {
     const html = await fetchPage('https://www.csfd.cz/');
     expect(html).toContain('csfd');
-    expect(html).not.toEqual('Error');
   });
 });
 
@@ -370,26 +369,20 @@ describe('Live: User Reviews page', () => {
 
 // Edge cases
 describe('User page 404', () => {
-  test('Fetch error URL', async () => {
-    try {
-      const url = userRatingsUrl(badId);
-      const html = await fetchPage(url);
-      expect(html).toBe('Error');
-    } catch (e) {
-      expect(e).toContain(Error);
-    }
+  test('Rejects with a typed error instead of a placeholder body', async () => {
+    const error = await fetchPage(userRatingsUrl(badId)).catch((e: unknown) => e);
+    expect(error).toBeInstanceOf(CsfdError);
+    expect((error as CsfdError).reason).toBe('not-found');
+    expect((error as CsfdError).status).toBe(404);
+    expect((error as CsfdError).url).toContain(String(badId));
   });
 });
 
 describe('Movie page 404', () => {
-  test('Fetch error URL', async () => {
-    try {
-      const url = movieUrl(badId, {});
-      const html = await fetchPage(url);
-      expect(html).toBe('Error');
-    } catch (e) {
-      expect(e).toThrow(Error);
-    }
+  test('Rejects with a typed error instead of a placeholder body', async () => {
+    const error = await fetchPage(movieUrl(badId, {})).catch((e: unknown) => e);
+    expect(error).toBeInstanceOf(CsfdError);
+    expect((error as CsfdError).reason).toBe('not-found');
   });
 });
 

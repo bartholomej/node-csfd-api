@@ -1,5 +1,5 @@
 import { createAnubisClient } from '../anubis';
-import { LIB_PREFIX } from '../vars';
+import { CsfdError } from '../errors';
 import { fetchSafe } from './fetch.polyfill';
 
 interface BrowserProfile {
@@ -103,55 +103,74 @@ const buildHeaders = (optionsRequest?: RequestInit): Headers => {
   return mergedHeaders;
 };
 
+/**
+ * Fetch a ČSFD page, passing an anti-bot challenge if one is served.
+ *
+ * @throws {CsfdError} when the page cannot be retrieved. Never returns a
+ * placeholder body: letting one reach the parsers turns a plain failure into an
+ * unrelated crash deep inside them.
+ */
 export const fetchPage = async (url: string, optionsRequest?: RequestInit): Promise<string> => {
-  try {
-    const { headers: _, ...restOptions } = optionsRequest || {};
-    // Stay credential-less by default so no ambient session rides along; only
-    // runtimes that hide Set-Cookie need their jar, and only once detected.
-    const doFetch = () =>
-      fetchSafe(url, {
+  const { headers: _, ...restOptions } = optionsRequest || {};
+
+  const doFetch = async (): Promise<Response> => {
+    let response: Response;
+    try {
+      // Stay credential-less by default so no ambient session rides along; only
+      // runtimes that hide Set-Cookie need their jar, and only once detected.
+      response = await fetchSafe(url, {
         credentials: anubis.usesPlatformCookieJar() ? 'include' : 'omit',
         ...restOptions,
         headers: buildHeaders(optionsRequest)
       });
-
-    let response = await doFetch();
-    if (!response.ok) {
-      throw new Error(`node-csfd-api: Bad response ${response.status} for url: ${url}`);
+    } catch (e: unknown) {
+      throw new CsfdError('network', url, `Request failed for url: ${url}`, { cause: e });
     }
 
-    let html = await response.text();
+    if (!response.ok) {
+      throw new CsfdError(
+        response.status === 404 ? 'not-found' : 'http',
+        url,
+        `Bad response ${response.status} for url: ${url}`,
+        { status: response.status }
+      );
+    }
+    return response;
+  };
 
-    if (anubis.isChallenge(html)) {
-      const passed = await anubis.pass(
+  let response = await doFetch();
+  let html = await response.text();
+
+  if (anubis.isChallenge(html)) {
+    // A failure inside the exchange is just another way of not getting through,
+    // so it is reported as `blocked` with the original error kept as the cause.
+    let passed = false;
+    let exchangeError: unknown;
+    try {
+      passed = await anubis.pass(
         html,
         response.headers,
         url,
         new Headers({ ...baseHeaders, ...randomProfile() })
       );
-      if (passed) {
-        response = await doFetch();
-        if (!response.ok) {
-          throw new Error(`node-csfd-api: Bad response ${response.status} for url: ${url}`);
-        }
-        html = await response.text();
-      }
-      // Fail loudly rather than let the interstitial reach the parsers, where
-      // it would silently look like a page with no results.
-      if (anubis.isChallenge(html)) {
-        throw new Error(
-          `node-csfd-api: Anubis challenge could not be solved for url: ${url}. You may be rate-limited or blocked by ČSFD.`
-        );
-      }
+    } catch (e: unknown) {
+      exchangeError = e;
     }
 
-    return html;
-  } catch (e: unknown) {
-    if (e instanceof Error) {
-      console.error(LIB_PREFIX, e.message);
-    } else {
-      console.error(LIB_PREFIX, String(e));
+    if (passed) {
+      response = await doFetch();
+      html = await response.text();
     }
-    return 'Error';
+
+    if (anubis.isChallenge(html)) {
+      throw new CsfdError(
+        'blocked',
+        url,
+        `Anti-bot challenge could not be passed for url: ${url}. You may be rate-limited or blocked by ČSFD.`,
+        { cause: exchangeError }
+      );
+    }
   }
+
+  return html;
 };
