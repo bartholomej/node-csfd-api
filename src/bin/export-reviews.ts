@@ -30,7 +30,17 @@ export async function runReviewsExport(userId: number, options: ExportReviewsOpt
       content = JSON.stringify(reviews, null, 2);
       fileName = `${userId}-reviews.json`;
     } else {
-      const headers = ['id', 'title', 'year', 'type', 'colorRating', 'userRating', 'date', 'url', 'text'];
+      const headers = [
+        'id',
+        'title',
+        'year',
+        'type',
+        'colorRating',
+        'userRating',
+        'date',
+        'url',
+        'text'
+      ];
       content = [
         headers.join(','),
         ...reviews.map((r) =>

@@ -6,7 +6,7 @@ const __dirname = path.dirname(new URL(import.meta.url).pathname);
 const mocksDir = path.join(__dirname, 'mocks');
 
 async function downloadMocks() {
-  const files = fs.readdirSync(mocksDir).filter(f => f.endsWith('.ts'));
+  const files = fs.readdirSync(mocksDir).filter((f) => f.endsWith('.ts'));
 
   for (const file of files) {
     const filePath = path.join(mocksDir, file);
@@ -19,7 +19,7 @@ async function downloadMocks() {
       continue;
     }
     const prefix = exportMatch[1];
-    
+
     // Try to find the source URL in the original mock file
     let url = '';
     const canonicalMatch = content.match(/<link rel="canonical" href="([^"]+)">/);
@@ -41,24 +41,26 @@ async function downloadMocks() {
     try {
       const res = await fetch(url, {
         headers: {
-          'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-          'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
+          'User-Agent':
+            'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+          Accept:
+            'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
           'Accept-Language': 'cs-CZ,cs;q=0.9,en;q=0.8'
         }
       });
-      
+
       if (!res.ok) {
         throw new Error(`HTTP error ${res.status}`);
       }
-      
+
       let html = await res.text();
-      
+
       // Sanitize HTML to safely inject it as a template literal string
       // 1. Escape backslashes
       // 2. Escape backticks (\`)
       // 3. Escape syntax for variables \${} in string literals
       html = html.replace(/\\/g, '\\\\').replace(/`/g, '\\`').replace(/\$\{/g, '\\${');
-      
+
       // Write the updated content back to the mock file
       fs.writeFileSync(filePath, `${prefix}\n${html}\`;\n`);
       console.log(`\u2705 Successfully updated ${file}`);

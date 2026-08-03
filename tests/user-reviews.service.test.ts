@@ -1,4 +1,4 @@
-import { describe, expect, test } from 'vitest';
+import { describe, expect, test, vi } from 'vitest';
 import { CSFDUserReviews } from '../src/dto/user-reviews';
 import { UserReviewsScraper } from '../src/services/user-reviews.service';
 
@@ -129,14 +129,21 @@ describe('User Reviews - AllPages multiple pages without delay', () => {
 });
 
 describe('User Reviews - Exclude + includes together (warning)', () => {
+  // The spy has to exist before the call below, which is what emits the warning.
+  const warn = vi.spyOn(console, 'warn').mockImplementation(() => undefined);
   const userReviewsScraper = new UserReviewsScraper();
   const resBoth: Promise<CSFDUserReviews[]> = userReviewsScraper.userReviews(USER_WITH_REVIEWS, {
     includesOnly: ['film'],
     excludes: ['series']
   });
 
-  test('Should have warning', () => {
-    expect(console.warn).toHaveBeenCalled;
+  test('Should have warning', async () => {
+    // The warning is emitted while parsing, so let the call finish first.
+    await resBoth;
+    expect(warn).toHaveBeenCalledWith(
+      expect.stringContaining("Both 'includesOnly' and 'excludes'"),
+      ['film']
+    );
   });
 
   test('Should use includesOnly (not excludes)', async () => {

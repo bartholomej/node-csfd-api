@@ -53,7 +53,15 @@ export class MovieScraper {
     } catch (e) {
       console.error(LIB_PREFIX + ' Error parsing JSON-LD', e);
     }
-    return this.buildMovie(id, movieHtml, movieNode as HTMLElement, asideNode as HTMLElement, pageClasses, jsonLd, options);
+    return this.buildMovie(
+      id,
+      movieHtml,
+      movieNode as HTMLElement,
+      asideNode as HTMLElement,
+      pageClasses,
+      jsonLd,
+      options
+    );
   }
 
   private buildMovie(

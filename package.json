@@ -18,7 +18,7 @@
     "example:esm:js": "cd examples/server/esm && yarn build",
     "letterboxd": "tsx examples/letterboxd/letterboxd-export.ts",
     "examples": "yarn example:cjs:ts && yarn example:cjs:js && yarn example:esm:ts && yarn example:esm:js",
-    "lint": "eslint ./src/**/**/* --fix",
+    "lint": "oxlint --fix",
     "docs": "typedoc",
     "test": "vitest --watch=false",
     "mock": "tsx tests/update-mocks.ts",
@@ -30,7 +30,10 @@
     "release:patch": "git checkout master && npm version patch -m \"chore(update): patch release %s 🐛\"",
     "release:minor": "git checkout master && npm version minor -m \"chore(update): release %s 🚀\"",
     "release:major": "git checkout master && npm version major -m \"chore(update): major release %s 💥\"",
-    "prepare": "husky"
+    "prepare": "husky",
+    "lint:check": "oxlint",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "publishConfig": {
     "access": "public",
@@ -45,21 +48,13 @@
   },
   "devDependencies": {
     "@babel/preset-typescript": "^8.0.1",
-    "@eslint/eslintrc": "^3.3.5",
-    "@eslint/js": "^10.0.1",
     "@types/express": "^5.0.6",
     "@types/node": "^26.1.0",
-    "@typescript-eslint/eslint-plugin": "^8.63.0",
-    "@typescript-eslint/parser": "^8.63.0",
     "@vitest/coverage-istanbul": "^4.1.10",
     "@vitest/ui": "^4.1.10",
-    "eslint": "^10.6.0",
-    "eslint-config-google": "^0.14.0",
-    "eslint-config-prettier": "^10.1.8",
-    "eslint-plugin-prettier": "^5.5.6",
-    "globals": "^17.7.0",
     "husky": "^9.1.7",
     "lint-staged": "^17.0.8",
+    "oxlint": "^1.77.0",
     "prettier": "^3.9.4",
     "rimraf": "^6.1.3",
     "rolldown-plugin-dist-package": "^1.1.0",
@@ -102,7 +97,10 @@
   },
   "license": "MIT",
   "lint-staged": {
-    "*.ts": "eslint --cache --fix"
+    "*.ts": [
+      "oxlint --fix",
+      "prettier --write"
+    ]
   },
   "type": "module",
   "main": "./dist/index.cjs",

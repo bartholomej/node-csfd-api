@@ -224,7 +224,7 @@ export const getMovieDuration = (jsonLd: MovieJsonLd | null, el: HTMLElement): n
   if (jsonLd && jsonLd.duration) {
     try {
       return parseISO8601Duration(jsonLd.duration);
-    } catch (e) {
+    } catch {
       // ignore
     }
   }
@@ -239,7 +239,7 @@ export const getMovieDuration = (jsonLd: MovieJsonLd | null, el: HTMLElement): n
         return hours * 60 + minutes;
       }
     }
-  } catch (error) {
+  } catch {
     return null;
   }
   return null;
@@ -337,7 +337,7 @@ const parseMoviePeople = (el: HTMLElement): CSFDMovieCreator[] => {
 //   }
 // };
 
-export const getMovieCreators = (el: HTMLElement, options?: CSFDOptions): CSFDCreators => {
+export const getMovieCreators = (el: HTMLElement, _options?: CSFDOptions): CSFDCreators => {
   const creators: CSFDCreators = {
     directors: [],
     writers: [],
@@ -509,7 +509,7 @@ export const getMoviePremieres = (el: HTMLElement): CSFDPremiere[] => {
     const title = premiereNode.querySelector('p + span').attributes.title;
 
     if (title) {
-      const [dateRaw, ...company] = title?.split(' ');
+      const [dateRaw, ...company] = title.split(' ');
       const date = parseDate(dateRaw);
 
       if (date) {

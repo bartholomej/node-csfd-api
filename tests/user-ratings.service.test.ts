@@ -114,6 +114,8 @@ describe('Includes only TV series or Episodes or something...', () => {
 });
 
 describe('Exclude + includes together', () => {
+  // The spy has to exist before the call below, which is what emits the warning.
+  const warn = vi.spyOn(console, 'warn').mockImplementation(() => undefined);
   // Fetch data with excludes + includes
   const userRatingsScraper = new UserRatingsScraper();
   const resBoth: Promise<CSFDUserRatings[]> = userRatingsScraper.userRatings(USER, {
@@ -121,8 +123,13 @@ describe('Exclude + includes together', () => {
     excludes: ['film']
   });
 
-  test('Should have warning', () => {
-    expect(console.warn).toHaveBeenCalled;
+  test('Should have warning', async () => {
+    // The warning is emitted while parsing, so let the call finish first.
+    await resBoth;
+    expect(warn).toHaveBeenCalledWith(
+      expect.stringContaining("Both 'includesOnly' and 'excludes'"),
+      ['series']
+    );
   });
 
   test('Should use includesOnly', async () => {

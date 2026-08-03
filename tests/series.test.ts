@@ -37,7 +37,7 @@ const getJsonLd = (node: HTMLElement): MovieJsonLd | null => {
   const json = node.querySelector('script[type="application/ld+json"]')?.innerText;
   try {
     return json ? JSON.parse(json) : null;
-  } catch (e) {
+  } catch {
     return null;
   }
 };
@@ -62,7 +62,7 @@ const {
 } = getMovie(serie1SeasonsHtml);
 
 const serie1Season1Html = parse(serie1Season1Mock);
-const { pNode: serie1Season1Node, jsonLd: serie1Season1JsonLd } = getMovie(serie1Season1Html);
+const { pNode: serie1Season1Node } = getMovie(serie1Season1Html);
 
 const serie1Season1EpisodeHtml = parse(serie1Season1EpisodeMock);
 const { pNode: serie1Season1EpisodeNode, jsonLd: serie1Season1EpisodeJsonLd } =
@@ -77,11 +77,7 @@ const {
 } = getMovie(serie2EpisodesHtml);
 
 const serie2EpisodeHtml = parse(serie2EpisodeMock);
-const {
-  pNode: serie2EpisodeNode,
-  aside: serie2EpisodeAside,
-  jsonLd: serie2EpisodeJsonLd
-} = getMovie(serie2EpisodeHtml);
+const { pNode: serie2EpisodeNode, jsonLd: serie2EpisodeJsonLd } = getMovie(serie2EpisodeHtml);
 
 describe('Get Type', () => {
   test('Series 1 Main', () => {

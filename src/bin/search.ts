@@ -13,17 +13,27 @@ export async function runSearch(query: string, json: boolean): Promise<void> {
 
 function printSearch(query: string, results: CSFDSearch) {
   const ratingDot = (colorRating: string | null) =>
-    colorRating === 'good' ? c.green('●') :
-    colorRating === 'average' ? c.yellow('●') :
-    colorRating === 'bad' ? c.red('●') : c.dim('●');
+    colorRating === 'good'
+      ? c.green('●')
+      : colorRating === 'average'
+        ? c.yellow('●')
+        : colorRating === 'bad'
+          ? c.red('●')
+          : c.dim('●');
 
   const section = (label: string, count: number) =>
     count > 0 ? `\n${c.bold(label)}  ${c.dim(`(${count})`)}` : null;
 
-  const total = results.movies.length + results.tvSeries.length + results.creators.length + results.users.length;
+  const total =
+    results.movies.length +
+    results.tvSeries.length +
+    results.creators.length +
+    results.users.length;
 
   console.log('');
-  console.log(`${c.bold('Search results for')} ${c.cyan(`"${query}"`)}  ${c.dim(`— ${total} found`)}`);
+  console.log(
+    `${c.bold('Search results for')} ${c.cyan(`"${query}"`)}  ${c.dim(`— ${total} found`)}`
+  );
   console.log(c.dim('─'.repeat(52)));
 
   const movieLine = (r: CSFDSearch['movies'][0]) =>
@@ -43,15 +53,16 @@ function printSearch(query: string, results: CSFDSearch) {
 
   if (results.creators.length > 0) {
     console.log(section('Creators', results.creators.length));
-    results.creators.forEach((r) =>
-      console.log(`  ${c.dim(String(r.id).padEnd(8))}    ${r.name}`)
-    );
+    results.creators.forEach((r) => console.log(`  ${c.dim(String(r.id).padEnd(8))}    ${r.name}`));
   }
 
   if (results.users.length > 0) {
     console.log(section('Users', results.users.length));
     results.users.forEach((r) =>
-      console.log(`  ${c.dim(String(r.id).padEnd(8))}    ${r.user}` + (r.userRealName ? c.dim(`  (${r.userRealName})`) : ''))
+      console.log(
+        `  ${c.dim(String(r.id).padEnd(8))}    ${r.user}` +
+          (r.userRealName ? c.dim(`  (${r.userRealName})`) : '')
+      )
     );
   }
 

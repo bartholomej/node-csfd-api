@@ -60,7 +60,7 @@ const getJsonLd = (node: HTMLElement): MovieJsonLd | null => {
   const json = node.querySelector('script[type="application/ld+json"]')?.innerText;
   try {
     return json ? JSON.parse(json) : null;
-  } catch (e) {
+  } catch {
     return null;
   }
 };

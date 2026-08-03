@@ -1,6 +1,6 @@
 import { HTMLElement, parse } from 'node-html-parser';
 import { describe, expect, test } from 'vitest';
-import { CSFDColorRating, CSFDFilmTypes, CSFDStars } from '../src/dto/global';
+import { CSFDFilmTypes, CSFDStars } from '../src/dto/global';
 import {
   getUserReviewColorRating,
   getUserReviewDate,
@@ -106,7 +106,9 @@ describe('Get date', () => {
 describe('Get Url', () => {
   test('First url', () => {
     const url = getUserReviewUrl(reviews[0]);
-    expect(url).toEqual<string>('https://www.csfd.cz/film/1563295-gangy-z-birminghamu-nesmrtelny-muz/prehled/');
+    expect(url).toEqual<string>(
+      'https://www.csfd.cz/film/1563295-gangy-z-birminghamu-nesmrtelny-muz/prehled/'
+    );
   });
   test('Last url', () => {
     const url = getUserReviewUrl(reviews[reviews.length - 1]);
