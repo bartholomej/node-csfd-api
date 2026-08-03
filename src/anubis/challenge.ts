@@ -195,7 +195,16 @@ export const passChallenge = async ({
       redirect: 'manual',
       headers: requestHeaders
     });
-    html = await reissued.text();
+    const reissuedHtml = await reissued.text();
+
+    // Credentials change the answer: the jar may already hold a valid auth
+    // cookie, in which case this sails straight past Anubis. There is then no
+    // challenge left to solve — only a request worth retrying with the jar.
+    if (!isAnubisChallenge(reissuedHtml)) {
+      return { cookie: null, platformCookieJar };
+    }
+
+    html = reissuedHtml;
     headers = reissued.headers;
   }
 

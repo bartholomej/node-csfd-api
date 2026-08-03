@@ -512,6 +512,58 @@ describe('Anubis: runtimes that hide Set-Cookie', () => {
     expect(await client.pass(interstitial, new Headers(), PAGE_URL)).toBe(false);
     expect(client.getCookie()).toBeNull();
   });
+
+  // Observed on a device: the credential-less first request is challenged even
+  // though the jar already holds a valid auth cookie, and the reissue that does
+  // send it sails through to ČSFD's own canonical redirect. There is nothing
+  // left to solve, so the challenge must not be treated as unsolvable.
+  test('treats a reissue that gets through as passed, not as a dead end', async () => {
+    const calls: URL[] = [];
+    const client = createAnubisClient({
+      fetch: async (input) => {
+        calls.push(new URL(input));
+        return new Response('<html><head><title>Redirecting</title></head></html>', {
+          status: 302,
+          headers: new Headers({ location: '/film/1822825-pet-svestek/prehled/' })
+        });
+      }
+    });
+
+    expect(await client.pass(interstitial, new Headers(), PAGE_URL)).toBe(true);
+    expect(client.usesPlatformCookieJar()).toBe(true);
+    expect(client.getCookie()).toBeNull();
+
+    // Only the reissue: solving anything would have needed a second request.
+    expect(calls).toHaveLength(1);
+    expect(calls[0].pathname).toBe('/protected/');
+  });
+
+  // The interstitial we were handed is worthless on a jar runtime — its
+  // verification cookie was never stored — so the reissued one has to be used.
+  test('solves the challenge the reissue returns, not the one it was handed', async () => {
+    const staleInterstitial = `<html><head><script id="anubis_challenge" type="application/json">${JSON.stringify(
+      {
+        rules: { algorithm: 'fast', difficulty: 2 },
+        challenge: { id: 'stale-id', randomData: 'stale' }
+      }
+    )}</script></head></html>`;
+
+    const calls: URL[] = [];
+    const client = createAnubisClient({
+      fetch: async (input) => {
+        const url = new URL(input);
+        calls.push(url);
+        if (url.pathname === PASS_PATH) {
+          return new Response(PROTECTED_PAGE, { status: 200, headers: new Headers() });
+        }
+        return new Response(interstitial, { status: 200, headers: new Headers() });
+      }
+    });
+
+    expect(await client.pass(staleInterstitial, new Headers(), PAGE_URL)).toBe(true);
+    const exchange = calls.find((url) => url.pathname === PASS_PATH);
+    expect(exchange?.searchParams.get('id')).toBe(CHALLENGE_ID);
+  });
 });
 
 describe('Anubis: client', () => {
