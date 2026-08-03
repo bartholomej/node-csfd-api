@@ -1,3 +1,4 @@
+import { createAnubisClient } from '../anubis';
 import { LIB_PREFIX } from '../vars';
 import { fetchSafe } from './fetch.polyfill';
 
@@ -70,33 +71,78 @@ const baseHeaders = {
   'Upgrade-Insecure-Requests': '1'
 };
 
+const anubis = createAnubisClient({ fetch: fetchSafe });
+
+/**
+ * The cached Anubis cookie, so it can be persisted between runs. Anubis binds
+ * it to the client IP for a week, so it is only reusable from the same address.
+ */
+export const getAnubisCookie = (): string | null => anubis.getCookie();
+
+/** Seed the cookie cache, e.g. from a previous run or a per-tenant store. */
+export const setAnubisCookie = (cookie: string | null): void => anubis.setCookie(cookie);
+
+/** Forget the cookie so the next request solves a fresh challenge. */
+export const resetAnubisCookie = (): void => anubis.reset();
+
+const buildHeaders = (optionsRequest?: RequestInit): Headers => {
+  const mergedHeaders = new Headers({ ...baseHeaders, ...randomProfile() });
+
+  // Merge any custom headers provided in the function arguments
+  if (optionsRequest?.headers) {
+    const reqHeaders = new Headers(optionsRequest.headers);
+    reqHeaders.forEach((value, key) => mergedHeaders.set(key, value));
+  }
+
+  const cookie = anubis.getCookie();
+  if (cookie) {
+    const existing = mergedHeaders.get('Cookie');
+    mergedHeaders.set('Cookie', existing ? `${cookie}; ${existing}` : cookie);
+  }
+
+  return mergedHeaders;
+};
+
 export const fetchPage = async (url: string, optionsRequest?: RequestInit): Promise<string> => {
   try {
-    const mergedHeaders = new Headers({ ...baseHeaders, ...randomProfile() });
-
-    // Merge any custom headers provided in the function arguments
-    if (optionsRequest?.headers) {
-      const reqHeaders = new Headers(optionsRequest.headers);
-      reqHeaders.forEach((value, key) => mergedHeaders.set(key, value));
-    }
-
     const { headers: _, ...restOptions } = optionsRequest || {};
+    // Stay credential-less by default so no ambient session rides along; only
+    // runtimes that hide Set-Cookie need their jar, and only once detected.
+    const doFetch = () =>
+      fetchSafe(url, {
+        credentials: anubis.usesPlatformCookieJar() ? 'include' : 'omit',
+        ...restOptions,
+        headers: buildHeaders(optionsRequest)
+      });
 
-    const response = await fetchSafe(url, {
-      credentials: 'omit',
-      ...restOptions,
-      headers: mergedHeaders
-    });
-
+    let response = await doFetch();
     if (!response.ok) {
       throw new Error(`node-csfd-api: Bad response ${response.status} for url: ${url}`);
     }
 
-    const html = await response.text();
+    let html = await response.text();
 
-    // Quickly check if we hit the trap
-    if (html.includes("Making sure you're not a bot!")) {
-      console.warn('[node-csfd-api] Trap detected. You may be rate-limited or blocked by ČSFD.');
+    if (anubis.isChallenge(html)) {
+      const passed = await anubis.pass(
+        html,
+        response.headers,
+        url,
+        new Headers({ ...baseHeaders, ...randomProfile() })
+      );
+      if (passed) {
+        response = await doFetch();
+        if (!response.ok) {
+          throw new Error(`node-csfd-api: Bad response ${response.status} for url: ${url}`);
+        }
+        html = await response.text();
+      }
+      // Fail loudly rather than let the interstitial reach the parsers, where
+      // it would silently look like a page with no results.
+      if (anubis.isChallenge(html)) {
+        throw new Error(
+          `node-csfd-api: Anubis challenge could not be solved for url: ${url}. You may be rate-limited or blocked by ČSFD.`
+        );
+      }
     }
 
     return html;

@@ -95,5 +95,6 @@ export const csfd = new Csfd(
   cinemaScraper
 );
 
+export { getAnubisCookie, resetAnubisCookie, setAnubisCookie } from './fetchers';
 export type * from './dto';
 
