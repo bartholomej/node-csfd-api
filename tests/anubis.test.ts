@@ -1,5 +1,5 @@
 import { createHash } from 'node:crypto';
-import { describe, expect, test } from 'vitest';
+import { describe, expect, test, vi } from 'vitest';
 import {
   createAnubisClient,
   isAnubisChallenge,
@@ -8,6 +8,13 @@ import {
   solveProofOfWork,
   toHex
 } from '../src/anubis';
+
+/** Node exposes Set-Cookie; browsers and React Native hide it behind their jar. */
+const withSetCookie = (...cookies: string[]): Headers => {
+  const headers = new Headers();
+  cookies.forEach((cookie) => headers.append('set-cookie', cookie));
+  return headers;
+};
 
 // The pure-JS SHA-256 is what makes the solver portable (Node/browser/RN). Pin
 // it to the NIST vectors and cross-check it against node:crypto (available here
@@ -24,7 +31,14 @@ describe('sha256 (portable pure-JS)', () => {
 
   test('matches node:crypto across block boundaries', () => {
     // 55/56/64 bytes exercise the padding edge cases (one vs two blocks).
-    for (const input of ['', 'a', 'a'.repeat(55), 'a'.repeat(56), 'a'.repeat(64), 'x'.repeat(200)]) {
+    for (const input of [
+      '',
+      'a',
+      'a'.repeat(55),
+      'a'.repeat(56),
+      'a'.repeat(64),
+      'x'.repeat(200)
+    ]) {
       expect(toHex(sha256(input))).toBe(createHash('sha256').update(input).digest('hex'));
     }
   });
@@ -45,10 +59,26 @@ describe('Anubis: solveProofOfWork', () => {
   // Precomputed vectors: the solver iterates nonce from 0 upward, so the first
   // valid nonce for a given (data, difficulty) is deterministic.
   const vectors = [
-    { difficulty: 1, nonce: 8, hash: '0ca5e234ebe9ed5341e35a02c4ab2d44860cf7c8084c76a0e2b9496536b26554' },
-    { difficulty: 2, nonce: 1048, hash: '006fe24fe34772b34e103be62bf4d75718b57c5d87f2e1b83f61709eae986c00' },
-    { difficulty: 3, nonce: 8623, hash: '0003be1161d05bf661f70b314a4241b7b80fe851d274db557fec72ad56cfe35e' },
-    { difficulty: 4, nonce: 10148, hash: '0000b951efd5c69a4d9fca8263c0c59a7612fc3db11b5a618ab498f5d0be4d3c' }
+    {
+      difficulty: 1,
+      nonce: 8,
+      hash: '0ca5e234ebe9ed5341e35a02c4ab2d44860cf7c8084c76a0e2b9496536b26554'
+    },
+    {
+      difficulty: 2,
+      nonce: 1048,
+      hash: '006fe24fe34772b34e103be62bf4d75718b57c5d87f2e1b83f61709eae986c00'
+    },
+    {
+      difficulty: 3,
+      nonce: 8623,
+      hash: '0003be1161d05bf661f70b314a4241b7b80fe851d274db557fec72ad56cfe35e'
+    },
+    {
+      difficulty: 4,
+      nonce: 10148,
+      hash: '0000b951efd5c69a4d9fca8263c0c59a7612fc3db11b5a618ab498f5d0be4d3c'
+    }
   ];
 
   test.each(vectors)(
@@ -58,12 +88,19 @@ describe('Anubis: solveProofOfWork', () => {
     }
   );
 
-  test.each(vectors)('the digest actually satisfies difficulty $difficulty', ({ difficulty, nonce, hash }) => {
-    // difficulty N leading zero nibbles == N leading '0' hex characters
-    expect(hash.startsWith('0'.repeat(difficulty))).toBe(true);
-    // and the hash is genuinely sha256(data + nonce)
-    expect(createHash('sha256').update(DATA + nonce).digest('hex')).toBe(hash);
-  });
+  test.each(vectors)(
+    'the digest actually satisfies difficulty $difficulty',
+    ({ difficulty, nonce, hash }) => {
+      // difficulty N leading zero nibbles == N leading '0' hex characters
+      expect(hash.startsWith('0'.repeat(difficulty))).toBe(true);
+      // and the hash is genuinely sha256(data + nonce)
+      expect(
+        createHash('sha256')
+          .update(DATA + nonce)
+          .digest('hex')
+      ).toBe(hash);
+    }
+  );
 
   test('difficulty 0 is solved immediately by nonce 0', async () => {
     const result = await solveProofOfWork(DATA, 0);
@@ -111,8 +148,9 @@ describe('Anubis: passChallenge guards', () => {
       fetch: forbiddenFetch
     });
 
+  // `preact` runs Anubis' own UI code, which needs a real JS runtime.
   test('refuses a challenge method it cannot compute', async () => {
-    await expect(attempt(challengePage('metarefresh'))).resolves.toBeNull();
+    await expect(attempt(challengePage('preact'))).resolves.toBeNull();
   });
 
   test('accepts the methods it does implement', async () => {
@@ -145,12 +183,6 @@ describe('Anubis: challenge exchange', () => {
       challenge: { id: CHALLENGE_ID, randomData: RANDOM_DATA, method: algorithm }
     })}</script></head></html>`;
 
-  const withSetCookie = (...cookies: string[]): Headers => {
-    const headers = new Headers();
-    cookies.forEach((cookie) => headers.append('set-cookie', cookie));
-    return headers;
-  };
-
   /**
    * Stands in for Anubis. `hidesSetCookie` mimics a browser or React Native,
    * where Set-Cookie is stripped from what scripts may read.
@@ -171,7 +203,9 @@ describe('Anubis: challenge exchange', () => {
       // Validate the submitted proof the way the real server would.
       const nonce = url.searchParams.get('nonce') ?? '';
       const claimed = url.searchParams.get('response') ?? '';
-      const digest = createHash('sha256').update(RANDOM_DATA + nonce).digest('hex');
+      const digest = createHash('sha256')
+        .update(RANDOM_DATA + nonce)
+        .digest('hex');
       const provenWork = claimed === digest && digest.startsWith('0'.repeat(DIFFICULTY));
       const rightChallenge = url.searchParams.get('id') === CHALLENGE_ID;
       const provenCookies =
@@ -227,10 +261,25 @@ describe('Anubis: challenge exchange', () => {
     const server = fakeAnubis();
     const client = createAnubisClient({ fetch: server.fetch });
 
-    expect(
-      await client.pass(interstitial('metarefresh'), withSetCookie(VERIFY_COOKIE), PAGE_URL)
-    ).toBe(false);
+    expect(await client.pass(interstitial('preact'), withSetCookie(VERIFY_COOKIE), PAGE_URL)).toBe(
+      false
+    );
     expect(server.calls).toHaveLength(0);
+  });
+
+  // A runtime that lets us read Set-Cookie would have shown the auth cookie, so
+  // a bare redirect is a failed exchange — not a cookie quietly stashed in a jar
+  // this runtime does not even have. Claiming success here would send the retry
+  // out with `credentials: 'include'` and no cookie at all.
+  test('does not claim success when a readable response redirects without a cookie', async () => {
+    const client = createAnubisClient({
+      fetch: async () => new Response(null, { status: 302, headers: withSetCookie('_nss=1') })
+    });
+
+    // Set-Cookie is readable, it just never carried the verification cookie.
+    expect(await client.pass(interstitial(), withSetCookie('_nss=1'), PAGE_URL)).toBe(false);
+    expect(client.getCookie()).toBeNull();
+    expect(client.usesPlatformCookieJar()).toBe(false);
   });
 
   test('concurrent callers share a single proof-of-work', async () => {
@@ -258,6 +307,210 @@ describe('Anubis: challenge exchange', () => {
     // The challenge is re-requested with credentials so the jar can store it.
     const reissue = server.calls.find((call) => call.url.pathname !== PASS_PATH);
     expect(reissue?.init?.credentials).toBe('include');
+  });
+});
+
+// `metarefresh` is Anubis' patience challenge: no hashing, but the exchange is
+// refused until the delay it declared has elapsed. ČSFD serves this one to
+// requests that already look browser-like, so it is the variant most likely to
+// be met in practice.
+describe('Anubis: metarefresh challenge', () => {
+  const CHALLENGE_ID = '019fc8c0-0951-771c-8569-4305e0bdccea';
+  const RANDOM_DATA = 'b737eccc'.repeat(16);
+  const PAGE_URL = 'https://example.test/protected/';
+  const PASS_PATH = '/.within.website/x/cmd/anubis/api/pass-challenge';
+  const AUTH_COOKIE = 'techaro.lol-anubis-auth=header.payload.signature';
+  const VERIFY_COOKIE = `techaro.lol-anubis-cookie-verification=${CHALLENGE_ID}`;
+
+  /** How Anubis handed over the exchange URL — or `none` when it served neither. */
+  type Directive = 'header' | 'meta' | 'none';
+
+  const passQuery = `challenge=${RANDOM_DATA}&id=${CHALLENGE_ID}&redir=%2Fprotected%2F`;
+  const directive = (delaySeconds: number) => `${delaySeconds}; url=${PASS_PATH}?${passQuery}`;
+
+  const interstitial = (via: Directive, delaySeconds: number): string => {
+    // Inside a meta attribute the query separators have to be escaped.
+    const meta =
+      via === 'meta'
+        ? `<meta http-equiv="refresh" content="${directive(delaySeconds).replace(/&/g, '&amp;')}">`
+        : '';
+    const challenge = JSON.stringify({
+      rules: { algorithm: 'metarefresh', difficulty: 1 },
+      challenge: { id: CHALLENGE_ID, method: 'metarefresh', randomData: RANDOM_DATA }
+    });
+    return `<html><head>${meta}<script id="anubis_challenge" type="application/json">${challenge}</script></head></html>`;
+  };
+
+  const challengeHeaders = (via: Directive, delaySeconds: number): Headers => {
+    const headers = withSetCookie(`${VERIFY_COOKIE}; Path=/`);
+    if (via === 'header') {
+      headers.set('refresh', directive(delaySeconds));
+    }
+    return headers;
+  };
+
+  /**
+   * Stands in for Anubis: refuses the exchange until `enforcedDelaySeconds` have
+   * passed and insists on the verification cookie, as the live server does.
+   */
+  const fakeAnubis = (enforcedDelaySeconds: number) => {
+    const calls: { url: URL; init?: RequestInit }[] = [];
+    let waited = enforcedDelaySeconds === 0;
+    if (!waited) {
+      setTimeout(() => (waited = true), enforcedDelaySeconds * 1000);
+    }
+
+    const fetch = async (input: string, init?: RequestInit): Promise<Response> => {
+      const url = new URL(input);
+      calls.push({ url, init });
+
+      if (!waited) {
+        return new Response('Oh noes!', { status: 403 });
+      }
+      if (new Headers(init?.headers).get('Cookie') !== VERIFY_COOKIE) {
+        return new Response('Oh noes!', { status: 500 });
+      }
+      if (
+        url.searchParams.get('id') !== CHALLENGE_ID ||
+        url.searchParams.get('challenge') !== RANDOM_DATA
+      ) {
+        return new Response('Oh noes!', { status: 403 });
+      }
+      return new Response(null, { status: 302, headers: withSetCookie(AUTH_COOKIE) });
+    };
+
+    return { fetch, calls };
+  };
+
+  test('passes without hashing when Anubis sends the Refresh header', async () => {
+    const server = fakeAnubis(0);
+    const client = createAnubisClient({ fetch: server.fetch });
+
+    expect(
+      await client.pass(interstitial('header', 0), challengeHeaders('header', 0), PAGE_URL)
+    ).toBe(true);
+    expect(client.getCookie()).toBe(AUTH_COOKIE);
+    expect(server.calls).toHaveLength(1);
+    expect(server.calls[0].url.pathname).toBe(PASS_PATH);
+  });
+
+  test('reads the exchange URL out of the meta tag as well, unescaped', async () => {
+    const server = fakeAnubis(0);
+    const client = createAnubisClient({ fetch: server.fetch });
+
+    expect(await client.pass(interstitial('meta', 0), challengeHeaders('meta', 0), PAGE_URL)).toBe(
+      true
+    );
+    // A stray `&amp;` would fold the whole query into a single parameter.
+    const [call] = server.calls;
+    expect(call.url.searchParams.get('id')).toBe(CHALLENGE_ID);
+    expect(call.url.searchParams.get('challenge')).toBe(RANDOM_DATA);
+    expect(call.url.searchParams.get('redir')).toBe('/protected/');
+  });
+
+  test('sits out the declared delay instead of being refused', async () => {
+    vi.useFakeTimers();
+    try {
+      const server = fakeAnubis(2);
+      const client = createAnubisClient({ fetch: server.fetch });
+      const passing = client.pass(
+        interstitial('header', 2),
+        challengeHeaders('header', 2),
+        PAGE_URL
+      );
+
+      await vi.advanceTimersByTimeAsync(1999);
+      expect(server.calls).toHaveLength(0);
+
+      await vi.advanceTimersByTimeAsync(1);
+      expect(await passing).toBe(true);
+      expect(client.getCookie()).toBe(AUTH_COOKIE);
+    } finally {
+      vi.useRealTimers();
+    }
+  });
+
+  test('rebuilds the exchange URL when Anubis serves no directive at all', async () => {
+    vi.useFakeTimers();
+    try {
+      const server = fakeAnubis(2);
+      const client = createAnubisClient({ fetch: server.fetch });
+      const passing = client.pass(interstitial('none', 2), challengeHeaders('none', 2), PAGE_URL);
+
+      await vi.advanceTimersByTimeAsync(2000);
+      expect(await passing).toBe(true);
+
+      const [call] = server.calls;
+      expect(call.url.pathname).toBe(PASS_PATH);
+      expect(call.url.searchParams.get('challenge')).toBe(RANDOM_DATA);
+      expect(call.url.searchParams.get('id')).toBe(CHALLENGE_ID);
+      expect(call.url.searchParams.get('redir')).toBe(PAGE_URL);
+    } finally {
+      vi.useRealTimers();
+    }
+  });
+
+  test('gives up rather than wait longer than the caller allows', async () => {
+    const server = fakeAnubis(0);
+    const client = createAnubisClient({ fetch: server.fetch, timeBudgetMs: 500 });
+
+    expect(
+      await client.pass(interstitial('header', 30), challengeHeaders('header', 30), PAGE_URL)
+    ).toBe(false);
+    expect(server.calls).toHaveLength(0);
+  });
+});
+
+// React Native's fetch is an XHR polyfill: `Headers` has no `getSetCookie` and
+// `redirect: 'manual'` is ignored, so the 302 after the exchange is followed and
+// the auth cookie only ever lands in the platform's own jar.
+describe('Anubis: runtimes that hide Set-Cookie', () => {
+  const CHALLENGE_ID = '019f8462-2dd6-7755-9d82-de2c14c2d59e';
+  const RANDOM_DATA = 'a3f1c908'.repeat(16);
+  const PAGE_URL = 'https://example.test/protected/';
+  const PASS_PATH = '/.within.website/x/cmd/anubis/api/pass-challenge';
+  const PROTECTED_PAGE = '<html><body><h1>Vykoupení z věznice Shawshank</h1></body></html>';
+
+  const interstitial = `<html><head><script id="anubis_challenge" type="application/json">${JSON.stringify(
+    {
+      rules: { algorithm: 'fast', difficulty: 2 },
+      challenge: { id: CHALLENGE_ID, randomData: RANDOM_DATA }
+    }
+  )}</script></head></html>`;
+
+  /**
+   * A React Native-shaped fetch: nothing readable in Set-Cookie, and the
+   * redirect is followed, so the exchange returns whatever `redir` served.
+   */
+  const reactNativeFetch = (destination: string) => {
+    const calls: { url: URL; init?: RequestInit }[] = [];
+    const fetch = async (input: string, init?: RequestInit): Promise<Response> => {
+      const url = new URL(input);
+      calls.push({ url, init });
+      const body = url.pathname === PASS_PATH ? destination : interstitial;
+      return new Response(body, { status: 200, headers: new Headers() });
+    };
+    return { fetch, calls };
+  };
+
+  test('takes the followed redirect as proof and leaves the cookie to the jar', async () => {
+    const runtime = reactNativeFetch(PROTECTED_PAGE);
+    const client = createAnubisClient({ fetch: runtime.fetch });
+
+    expect(await client.pass(interstitial, new Headers(), PAGE_URL)).toBe(true);
+    expect(client.getCookie()).toBeNull();
+    expect(client.usesPlatformCookieJar()).toBe(true);
+
+    // Every request must opt into the jar, or the cookie never rides along.
+    expect(runtime.calls.every((call) => call.init?.credentials === 'include')).toBe(true);
+  });
+
+  test('reports failure when the exchange lands back on the interstitial', async () => {
+    const runtime = reactNativeFetch(interstitial);
+    const client = createAnubisClient({ fetch: runtime.fetch });
+
+    expect(await client.pass(interstitial, new Headers(), PAGE_URL)).toBe(false);
+    expect(client.getCookie()).toBeNull();
   });
 });
 
