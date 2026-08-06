@@ -50,6 +50,34 @@ export const extractId = (idOrUrl: number | string): number | null => {
   return null;
 };
 
+/**
+ * Extracts a user ID or slug from a number, string, slug, or full URL.
+ * Designed for Developer Experience (DX) to allow flexible inputs.
+ */
+export const extractUser = (userOrUrl: number | string): string | number | null => {
+  if (typeof userOrUrl === 'number') {
+    return isNaN(userOrUrl) ? null : userOrUrl;
+  }
+
+  if (typeof userOrUrl === 'string') {
+    const trimmed = userOrUrl.trim();
+    if (!trimmed) return null;
+
+    if (trimmed.includes('/') || trimmed.includes('csfd.')) {
+      const parts = trimmed.split('/');
+      const uzivatelIndex = parts.indexOf('uzivatel');
+      if (uzivatelIndex !== -1 && parts[uzivatelIndex + 1]) {
+        return parts[uzivatelIndex + 1];
+      }
+      return null;
+    }
+
+    return trimmed;
+  }
+
+  return null;
+};
+
 export const parseLastIdFromUrl = (url: string): number => {
   if (url) {
     const idSlug = url?.split('/')[3];
