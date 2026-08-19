@@ -1,6 +1,6 @@
 import { HTMLElement, parse } from 'node-html-parser';
-import { CSFDFilmTypes } from '../dto/global';
-import { CSFDMovie, MovieJsonLd } from '../dto/movie';
+import type { CSFDFilmTypes } from '../dto/global';
+import type { CSFDMovie, MovieJsonLd } from '../dto/movie';
 import { fetchPage } from '../fetchers';
 import { extractId } from '../helpers/global.helper';
 import {
@@ -29,7 +29,7 @@ import {
   getSeasonsOrEpisodes,
   getSeriesAndSeasonTitle
 } from '../helpers/movie.helper';
-import { CSFDOptions } from '../types';
+import type { CSFDOptions } from '../types';
 import { LIB_PREFIX, movieUrl } from '../vars';
 
 export class MovieScraper {

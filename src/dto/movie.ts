@@ -1,4 +1,4 @@
-import { CSFDScreening } from './global';
+import type { CSFDScreening } from './global';
 
 export interface CSFDMovie extends CSFDScreening {
   rating: number | null;

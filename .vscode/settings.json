@@ -4,7 +4,8 @@
   },
   "editor.codeActionsOnSave": {
     "source.organizeImports": "explicit",
-    "source.fixAll.eslint": "explicit"
+    // oxlint (requires the `oxc.oxc-vscode` extension)
+    "source.fixAll.oxc": "explicit"
   },
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -12,5 +13,10 @@
   },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
-  "typescript.tsdk": "node_modules/typescript/lib"
+  // UI Setting:
+  // TypeScript 7 > Experimental: Use Tsgo
+  // (still experimental in VS Code 1.131; disables the built-in TS/JS
+  // language features so the native TypeScript 7 server takes over.
+  // The tsdk is resolved from `node_modules/typescript` automatically.)
+  "js/ts.experimental.useTsgo": true
 }

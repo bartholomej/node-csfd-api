@@ -1,7 +1,7 @@
 import { HTMLElement } from 'node-html-parser';
-import { CSFDCreatorScreening } from '../dto/creator';
-import { CSFDColorRating } from '../dto/global';
-import { CSFDColors } from '../dto/user-ratings';
+import type { CSFDCreatorScreening } from '../dto/creator';
+import type { CSFDColorRating } from '../dto/global';
+import type { CSFDColors } from '../dto/user-ratings';
 import { addProtocol, parseColor, parseDate, parseIdFromUrl } from './global.helper';
 
 const getCreatorColorRating = (el: HTMLElement | null): CSFDColorRating => {
