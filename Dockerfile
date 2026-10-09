@@ -1,5 +1,7 @@
 # --- STAGE 1: Build & Prune ---
-FROM node:24-alpine AS build
+# Runs natively on the runner: its output is plain JS, and native build tools
+# (esbuild, rolldown) crash with "Illegal instruction" under QEMU-emulated arm64.
+FROM --platform=$BUILDPLATFORM node:24-alpine AS build
 
 WORKDIR /usr/src/app
 
