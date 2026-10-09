@@ -70,6 +70,16 @@ const parseChallenge = (html: string): ParsedChallenge | null => {
   }
 };
 
+// Since v1.27 Anubis suffixes its cookie names per instance, e.g.
+// `techaro.lol-anubis-auth-6b097436`, so the bare name is only a prefix.
+const isCookieNamed = (pair: string, name: string): boolean => {
+  const separator = pair.indexOf('=');
+  const key = pair.slice(0, separator);
+  return (
+    separator > 0 && separator < pair.length - 1 && (key === name || key.startsWith(`${name}-`))
+  );
+};
+
 const readCookie = (headers: Headers, name: string): string | null => {
   if (typeof headers.getSetCookie !== 'function') {
     return null;
@@ -77,7 +87,7 @@ const readCookie = (headers: Headers, name: string): string | null => {
   const cookie = headers
     .getSetCookie()
     .map((entry) => entry.split(';', 1)[0])
-    .find((pair) => pair.startsWith(`${name}=`) && pair.length > name.length + 1);
+    .find((pair) => isCookieNamed(pair, name));
   return cookie ?? null;
 };
 

@@ -187,7 +187,11 @@ describe('Anubis: challenge exchange', () => {
    * Stands in for Anubis. `hidesSetCookie` mimics a browser or React Native,
    * where Set-Cookie is stripped from what scripts may read.
    */
-  const fakeAnubis = ({ hidesSetCookie = false } = {}) => {
+  const fakeAnubis = ({
+    hidesSetCookie = false,
+    verifyCookie = VERIFY_COOKIE,
+    authCookie = AUTH_COOKIE
+  } = {}) => {
     const calls: { url: URL; init?: RequestInit }[] = [];
 
     const fetch = async (input: string, init?: RequestInit): Promise<Response> => {
@@ -196,7 +200,7 @@ describe('Anubis: challenge exchange', () => {
 
       if (url.pathname !== PASS_PATH) {
         return new Response(interstitial(), {
-          headers: hidesSetCookie ? new Headers() : withSetCookie(VERIFY_COOKIE)
+          headers: hidesSetCookie ? new Headers() : withSetCookie(verifyCookie)
         });
       }
 
@@ -209,14 +213,14 @@ describe('Anubis: challenge exchange', () => {
       const provenWork = claimed === digest && digest.startsWith('0'.repeat(DIFFICULTY));
       const rightChallenge = url.searchParams.get('id') === CHALLENGE_ID;
       const provenCookies =
-        hidesSetCookie || new Headers(init?.headers).get('Cookie') === VERIFY_COOKIE;
+        hidesSetCookie || new Headers(init?.headers).get('Cookie') === verifyCookie;
 
       if (!provenWork || !rightChallenge || !provenCookies) {
         return new Response('challenge failed', { status: 403 });
       }
       return new Response(null, {
         status: 302,
-        headers: hidesSetCookie ? new Headers({ location: PAGE_URL }) : withSetCookie(AUTH_COOKIE)
+        headers: hidesSetCookie ? new Headers({ location: PAGE_URL }) : withSetCookie(authCookie)
       });
     };
 
@@ -232,6 +236,23 @@ describe('Anubis: challenge exchange', () => {
     expect(await client.pass(interstitial(), withSetCookie(VERIFY_COOKIE), PAGE_URL)).toBe(true);
     expect(client.getCookie()).toBe(AUTH_COOKIE);
     expect(client.usesPlatformCookieJar()).toBe(false);
+  });
+
+  test('reads cookie names carrying a per-instance suffix (Anubis v1.27+)', async () => {
+    const verifyCookie = `techaro.lol-anubis-cookie-verification-6b097436=${CHALLENGE_ID}`;
+    const authCookie = 'techaro.lol-anubis-auth-6b097436=header.payload.signature';
+    const server = fakeAnubis({ verifyCookie, authCookie });
+    const client = createAnubisClient({ fetch: server.fetch });
+
+    // The real interstitial also clears a stale auth cookie, which must be skipped.
+    const challengeHeaders = withSetCookie(
+      'techaro.lol-anubis-auth-6b097436=; Path=/; Max-Age=0',
+      `${verifyCookie}; Path=/`
+    );
+
+    expect(await client.pass(interstitial(), challengeHeaders, PAGE_URL)).toBe(true);
+    expect(client.getCookie()).toBe(authCookie);
+    expect(new Headers(server.passCalls()[0].init?.headers).get('Cookie')).toBe(verifyCookie);
   });
 
   test('submits the parameters Anubis expects', async () => {
