@@ -1,4 +1,5 @@
 import { describe, expect, test, vi } from 'vitest';
+import { CSFDFilmTypes } from '../src/dto/global';
 import { CSFDUserRatings } from '../src/dto/user-ratings';
 import * as fetchers from '../src/fetchers';
 import { UserRatingsScraper } from '../src/services/user-ratings.service';
@@ -86,10 +87,11 @@ describe('Filter out episodes, TV Series and Seasons', () => {
 });
 
 describe('Includes only TV series or Episodes or something...', () => {
-  // Fetch data with excludes
+  // All three, since a single type can drop off the user's first page as they rate more.
+  const included: CSFDFilmTypes[] = ['series', 'season', 'episode'];
   const userRatingsScraper = new UserRatingsScraper();
   const resIncluded: Promise<CSFDUserRatings[]> = userRatingsScraper.userRatings(USER, {
-    includesOnly: ['episode']
+    includesOnly: included
   });
 
   test('Should not have any film', async () => {
@@ -98,18 +100,13 @@ describe('Includes only TV series or Episodes or something...', () => {
     const films = results.filter((item) => item.type === 'film');
     expect(films.length).toBe<number>(0);
   });
-  test('Should have some season', async () => {
+  test('Should have some series, seasons or episodes', async () => {
     const results = await resIncluded;
-    console.log(results);
-
-    const tvSeries = results.filter((item) => item.type === 'episode');
-    expect(tvSeries.length).toBeGreaterThan(0);
+    expect(results.length).toBeGreaterThan(0);
   });
   test('Should have only TV series', async () => {
     const results = await resIncluded;
-
-    const tvSeries = results.filter((item) => item.type === 'episode');
-    expect(tvSeries.length).toBe(results.length);
+    expect(results.every((item) => included.includes(item.type))).toBe(true);
   });
 });
 
