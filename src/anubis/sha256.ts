@@ -19,99 +19,119 @@ const rotr = (x: number, n: number): number => (x >>> n) | (x << (32 - n));
 
 const HEX = '0123456789abcdef';
 
-/** SHA-256 digest of `text` (UTF-8) as 32 raw bytes. */
-export const sha256 = (text: string): Uint8Array => {
-  const bytes = new TextEncoder().encode(text);
-  const length = bytes.length;
+const INITIAL_STATE = [
+  0x6a09e667, 0xbb67ae85, 0x3c6ef372, 0xa54ff53a, 0x510e527f, 0x9b05688c, 0x1f83d9ab, 0x5be0cd19
+];
 
-  // Pad: append 0x80, then zeros, then the 64-bit big-endian bit length.
-  const withOne = length + 1;
-  const padZeros = (56 - (withOne % 64) + 64) % 64;
-  const total = withOne + padZeros + 8;
-  const message = new Uint8Array(total);
-  message.set(bytes);
-  message[length] = 0x80;
+const encoder = new TextEncoder();
 
-  const bitLengthHi = Math.floor(length / 0x20000000); // length * 8 / 2^32
-  const bitLengthLo = (length * 8) >>> 0;
-  message[total - 8] = (bitLengthHi >>> 24) & 0xff;
-  message[total - 7] = (bitLengthHi >>> 16) & 0xff;
-  message[total - 6] = (bitLengthHi >>> 8) & 0xff;
-  message[total - 5] = bitLengthHi & 0xff;
-  message[total - 4] = (bitLengthLo >>> 24) & 0xff;
-  message[total - 3] = (bitLengthLo >>> 16) & 0xff;
-  message[total - 2] = (bitLengthLo >>> 8) & 0xff;
-  message[total - 1] = bitLengthLo & 0xff;
+/** Runs the 64-byte block at `offset` through the compression function, updating `state`. */
+const compress = (state: Int32Array, message: Uint8Array, offset: number, w: Uint32Array): void => {
+  for (let i = 0; i < 16; i++) {
+    const j = offset + i * 4;
+    w[i] = (message[j] << 24) | (message[j + 1] << 16) | (message[j + 2] << 8) | message[j + 3];
+  }
+  for (let i = 16; i < 64; i++) {
+    const s0 = rotr(w[i - 15], 7) ^ rotr(w[i - 15], 18) ^ (w[i - 15] >>> 3);
+    const s1 = rotr(w[i - 2], 17) ^ rotr(w[i - 2], 19) ^ (w[i - 2] >>> 10);
+    w[i] = (w[i - 16] + s0 + w[i - 7] + s1) | 0;
+  }
 
-  let h0 = 0x6a09e667;
-  let h1 = 0xbb67ae85;
-  let h2 = 0x3c6ef372;
-  let h3 = 0xa54ff53a;
-  let h4 = 0x510e527f;
-  let h5 = 0x9b05688c;
-  let h6 = 0x1f83d9ab;
-  let h7 = 0x5be0cd19;
+  let a = state[0];
+  let b = state[1];
+  let c = state[2];
+  let d = state[3];
+  let e = state[4];
+  let f = state[5];
+  let g = state[6];
+  let h = state[7];
 
+  for (let i = 0; i < 64; i++) {
+    const S1 = rotr(e, 6) ^ rotr(e, 11) ^ rotr(e, 25);
+    const ch = (e & f) ^ (~e & g);
+    const t1 = (h + S1 + ch + K[i] + w[i]) | 0;
+    const S0 = rotr(a, 2) ^ rotr(a, 13) ^ rotr(a, 22);
+    const maj = (a & b) ^ (a & c) ^ (b & c);
+    const t2 = (S0 + maj) | 0;
+    h = g;
+    g = f;
+    f = e;
+    e = (d + t1) | 0;
+    d = c;
+    c = b;
+    b = a;
+    a = (t1 + t2) | 0;
+  }
+
+  state[0] = (state[0] + a) | 0;
+  state[1] = (state[1] + b) | 0;
+  state[2] = (state[2] + c) | 0;
+  state[3] = (state[3] + d) | 0;
+  state[4] = (state[4] + e) | 0;
+  state[5] = (state[5] + f) | 0;
+  state[6] = (state[6] + g) | 0;
+  state[7] = (state[7] + h) | 0;
+};
+
+/**
+ * SHA-256 of `prefix + suffix` (UTF-8) for many suffixes. The prefix's whole
+ * 64-byte blocks are compressed once up front, so each call only pays for the
+ * tail. Anubis' 128-byte challenge is exactly two such blocks, which cuts the
+ * proof-of-work's hashing to a third.
+ */
+export const sha256Prefixed = (prefix: string): ((suffix: string) => Uint8Array) => {
+  const prefixBytes = encoder.encode(prefix);
+  const blockAligned = prefixBytes.length - (prefixBytes.length % 64);
+  const tail = prefixBytes.subarray(blockAligned);
   const w = new Uint32Array(64);
 
-  for (let offset = 0; offset < total; offset += 64) {
-    for (let i = 0; i < 16; i++) {
-      const j = offset + i * 4;
-      w[i] = (message[j] << 24) | (message[j + 1] << 16) | (message[j + 2] << 8) | message[j + 3];
-    }
-    for (let i = 16; i < 64; i++) {
-      const s0 = rotr(w[i - 15], 7) ^ rotr(w[i - 15], 18) ^ (w[i - 15] >>> 3);
-      const s1 = rotr(w[i - 2], 17) ^ rotr(w[i - 2], 19) ^ (w[i - 2] >>> 10);
-      w[i] = (w[i - 16] + s0 + w[i - 7] + s1) | 0;
-    }
-
-    let a = h0;
-    let b = h1;
-    let c = h2;
-    let d = h3;
-    let e = h4;
-    let f = h5;
-    let g = h6;
-    let h = h7;
-
-    for (let i = 0; i < 64; i++) {
-      const S1 = rotr(e, 6) ^ rotr(e, 11) ^ rotr(e, 25);
-      const ch = (e & f) ^ (~e & g);
-      const t1 = (h + S1 + ch + K[i] + w[i]) | 0;
-      const S0 = rotr(a, 2) ^ rotr(a, 13) ^ rotr(a, 22);
-      const maj = (a & b) ^ (a & c) ^ (b & c);
-      const t2 = (S0 + maj) | 0;
-      h = g;
-      g = f;
-      f = e;
-      e = (d + t1) | 0;
-      d = c;
-      c = b;
-      b = a;
-      a = (t1 + t2) | 0;
-    }
-
-    h0 = (h0 + a) | 0;
-    h1 = (h1 + b) | 0;
-    h2 = (h2 + c) | 0;
-    h3 = (h3 + d) | 0;
-    h4 = (h4 + e) | 0;
-    h5 = (h5 + f) | 0;
-    h6 = (h6 + g) | 0;
-    h7 = (h7 + h) | 0;
+  const midstate = new Int32Array(INITIAL_STATE);
+  for (let offset = 0; offset < blockAligned; offset += 64) {
+    compress(midstate, prefixBytes, offset, w);
   }
 
-  const digest = new Uint8Array(32);
-  const words = [h0, h1, h2, h3, h4, h5, h6, h7];
-  for (let i = 0; i < 8; i++) {
-    const v = words[i];
-    digest[i * 4] = (v >>> 24) & 0xff;
-    digest[i * 4 + 1] = (v >>> 16) & 0xff;
-    digest[i * 4 + 2] = (v >>> 8) & 0xff;
-    digest[i * 4 + 3] = v & 0xff;
-  }
-  return digest;
+  return (suffix) => {
+    const suffixBytes = encoder.encode(suffix);
+    const remaining = tail.length + suffixBytes.length;
+    const length = prefixBytes.length + suffixBytes.length;
+
+    // Pad: append 0x80, then zeros, then the 64-bit big-endian bit length.
+    const total = Math.ceil((remaining + 9) / 64) * 64;
+    const message = new Uint8Array(total);
+    message.set(tail);
+    message.set(suffixBytes, tail.length);
+    message[remaining] = 0x80;
+
+    const bitLengthHi = Math.floor(length / 0x20000000); // length * 8 / 2^32
+    const bitLengthLo = (length * 8) >>> 0;
+    message[total - 8] = (bitLengthHi >>> 24) & 0xff;
+    message[total - 7] = (bitLengthHi >>> 16) & 0xff;
+    message[total - 6] = (bitLengthHi >>> 8) & 0xff;
+    message[total - 5] = bitLengthHi & 0xff;
+    message[total - 4] = (bitLengthLo >>> 24) & 0xff;
+    message[total - 3] = (bitLengthLo >>> 16) & 0xff;
+    message[total - 2] = (bitLengthLo >>> 8) & 0xff;
+    message[total - 1] = bitLengthLo & 0xff;
+
+    const state = midstate.slice();
+    for (let offset = 0; offset < total; offset += 64) {
+      compress(state, message, offset, w);
+    }
+
+    const digest = new Uint8Array(32);
+    for (let i = 0; i < 8; i++) {
+      const v = state[i];
+      digest[i * 4] = (v >>> 24) & 0xff;
+      digest[i * 4 + 1] = (v >>> 16) & 0xff;
+      digest[i * 4 + 2] = (v >>> 8) & 0xff;
+      digest[i * 4 + 3] = v & 0xff;
+    }
+    return digest;
+  };
 };
+
+/** SHA-256 digest of `text` (UTF-8) as 32 raw bytes. */
+export const sha256 = (text: string): Uint8Array => sha256Prefixed('')(text);
 
 export const toHex = (bytes: Uint8Array): string => {
   let hex = '';

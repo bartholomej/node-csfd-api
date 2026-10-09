@@ -1,7 +1,7 @@
-import { sha256, toHex } from './sha256';
+import { sha256Prefixed, toHex } from './sha256';
 
 // Hard bound on the search so an unexpected difficulty bump can never hang the
-// caller. Difficulty 4 takes ~0.1s and difficulty 5 ~2s; past that, failing
+// caller. Difficulty 4 takes ~0.03s and difficulty 5 ~0.5s; past that, failing
 // fast beats blocking a server for minutes.
 export const DEFAULT_TIME_BUDGET_MS = 10_000;
 
@@ -38,6 +38,7 @@ export const solveProofOfWork = async (
   const requiredZeroBytes = Math.floor(difficulty / 2);
   const isDifficultyOdd = difficulty % 2 !== 0;
   const deadline = Date.now() + timeBudgetMs;
+  const hashNonce = sha256Prefixed(data);
 
   for (let nonce = 0; ; nonce++) {
     // The search runs on the caller's thread, so hand the event loop back at
@@ -49,7 +50,7 @@ export const solveProofOfWork = async (
       await yieldToEventLoop();
     }
 
-    const digest = sha256(data + nonce);
+    const digest = hashNonce(String(nonce));
 
     let valid = true;
     for (let i = 0; i < requiredZeroBytes; i++) {

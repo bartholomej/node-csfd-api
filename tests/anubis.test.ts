@@ -8,6 +8,7 @@ import {
   solveProofOfWork,
   toHex
 } from '../src/anubis';
+import { sha256Prefixed } from '../src/anubis/sha256';
 
 /** Node exposes Set-Cookie; browsers and React Native hide it behind their jar. */
 const withSetCookie = (...cookies: string[]): Headers => {
@@ -46,6 +47,20 @@ describe('sha256 (portable pure-JS)', () => {
   test('matches node:crypto on multi-byte UTF-8', () => {
     const input = 'Ujišťujeme se, že nejste robot! 🤖';
     expect(toHex(sha256(input))).toBe(createHash('sha256').update(input).digest('hex'));
+  });
+
+  test('a precomputed prefix hashes like the whole string', () => {
+    // Prefixes on both sides of the 64-byte boundary, and Anubis' real 128-byte one.
+    for (const prefix of ['', 'a'.repeat(55), 'a'.repeat(64), 'a'.repeat(70), 'f0'.repeat(64)]) {
+      const hashWithPrefix = sha256Prefixed(prefix);
+      for (const suffix of ['', '7', '1234567', 'x'.repeat(60), '🤖']) {
+        expect(toHex(hashWithPrefix(suffix))).toBe(
+          createHash('sha256')
+            .update(prefix + suffix)
+            .digest('hex')
+        );
+      }
+    }
   });
 });
 
