@@ -1,2 +1,10 @@
 .git
 .vscode
+.claude
+node_modules
+dist
+coverage
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
