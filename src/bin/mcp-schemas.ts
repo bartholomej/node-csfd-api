@@ -2,6 +2,7 @@ import { z } from 'zod';
 
 // Lenient on purpose: the MCP SDK validates every result against these schemas,
 // so a field ČSFD happens to leave empty must not turn a good answer into an error.
+// Objects are loose because clients reject any field their JSON Schema doesn't list.
 const nullish = <T extends z.ZodType>(schema: T) => schema.nullish();
 
 const screening = {
@@ -15,13 +16,13 @@ const screening = {
   )
 };
 
-const person = z.object({
+const person = z.looseObject({
   id: z.number(),
   name: nullish(z.string()),
   url: nullish(z.string())
 });
 
-const titleRef = z.object({
+const titleRef = z.looseObject({
   id: z.number(),
   title: nullish(z.string()),
   url: nullish(z.string())
@@ -29,21 +30,21 @@ const titleRef = z.object({
 
 const userRating = nullish(z.number()).describe('Stars given by the user (0–5)');
 
-export const searchOutput = {
-  movies: z.array(z.object(screening)),
-  tvSeries: z.array(z.object(screening)),
+export const searchOutput = z.looseObject({
+  movies: z.array(z.looseObject(screening)),
+  tvSeries: z.array(z.looseObject(screening)),
   creators: z.array(person),
   users: z.array(
-    z.object({
+    z.looseObject({
       id: z.number(),
       user: nullish(z.string()).describe('Username'),
       userRealName: nullish(z.string()),
       url: nullish(z.string())
     })
   )
-};
+});
 
-export const movieOutput = {
+export const movieOutput = z.looseObject({
   ...screening,
   rating: nullish(z.number()).describe('Average rating in percent (0–100)'),
   ratingCount: nullish(z.number()),
@@ -58,14 +59,14 @@ export const movieOutput = {
   episodes: nullish(z.array(titleRef)),
   episodeCode: nullish(z.string()).describe('e.g. S01E08'),
   parent: nullish(
-    z.object({
-      season: nullish(z.object({ id: z.number(), title: nullish(z.string()) })),
-      series: nullish(z.object({ id: z.number(), title: nullish(z.string()) }))
+    z.looseObject({
+      season: nullish(z.looseObject({ id: z.number(), title: nullish(z.string()) })),
+      series: nullish(z.looseObject({ id: z.number(), title: nullish(z.string()) }))
     })
   ).describe('Season and series an episode or season belongs to')
-};
+});
 
-export const creatorOutput = {
+export const creatorOutput = z.looseObject({
   id: z.number(),
   name: nullish(z.string()),
   birthday: nullish(z.string()),
@@ -74,7 +75,7 @@ export const creatorOutput = {
   bio: nullish(z.string()),
   films: nullish(
     z.array(
-      z.object({
+      z.looseObject({
         id: z.number(),
         title: nullish(z.string()),
         year: nullish(z.number()),
@@ -82,43 +83,43 @@ export const creatorOutput = {
       })
     )
   ).describe('Filmography')
-};
+});
 
-export const userRatingsOutput = {
+export const userRatingsOutput = z.looseObject({
   results: z.array(
-    z.object({
+    z.looseObject({
       ...screening,
       userRating,
       userDate: nullish(z.string()).describe('Date of the rating (YYYY-MM-DD)')
     })
   )
-};
+});
 
-export const userReviewsOutput = {
+export const userReviewsOutput = z.looseObject({
   results: z.array(
-    z.object({
+    z.looseObject({
       ...screening,
       userRating,
       userDate: nullish(z.string()).describe('Date of the review (YYYY-MM-DD)'),
       text: nullish(z.string()).describe('Review text')
     })
   )
-};
+});
 
-export const cinemasOutput = {
+export const cinemasOutput = z.looseObject({
   results: z.array(
-    z.object({
+    z.looseObject({
       id: z.number(),
       name: nullish(z.string()),
       city: nullish(z.string()),
       url: nullish(z.string()),
       screenings: nullish(
         z.array(
-          z.object({
+          z.looseObject({
             date: nullish(z.string()),
             films: nullish(
               z.array(
-                z.object({
+                z.looseObject({
                   id: nullish(z.number()),
                   title: nullish(z.string()),
                   url: nullish(z.string())
@@ -130,4 +131,4 @@ export const cinemasOutput = {
       )
     })
   )
-};
+});

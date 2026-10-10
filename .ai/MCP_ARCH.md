@@ -4,7 +4,8 @@ This explains how the Model Context Protocol (MCP) is implemented in `node-csfd-
 
 ## 📂 Location
 
-- Entry point: `src/bin/mcp-server.ts`
+- Tools and prompts: `createMcpServer()` in `src/bin/mcp-app.ts`
+- Entry point (stdio): `src/bin/mcp-server.ts`
 - Build output: `dist/bin/mcp-server.js`
 - Started by: `csfd mcp` / `npx node-csfd-api mcp`, or `yarn mcp` from source
 
@@ -14,6 +15,7 @@ The MCP server wrappers exist to make `node-csfd-api` usable by LLMs (Claude, Cu
 
 - Tools should be **atomic**.
 - Tools return the data as `structuredContent` and a short human-readable summary in the `content` block.
+- Output schemas live in `src/bin/mcp-schemas.ts`. Always use `z.looseObject`: clients reject any field the schema doesn't list, and ČSFD data has more fields than the schemas describe.
 - Error handling must be explicit, not throwing crashes.
 
 ## ➕ How to Add a New Tool
