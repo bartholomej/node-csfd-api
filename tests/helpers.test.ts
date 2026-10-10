@@ -1,5 +1,11 @@
 import { describe, expect, test } from 'vitest';
-import { addProtocol, extractId, parseColor, parseIdFromUrl } from '../src/helpers/global.helper';
+import {
+  addProtocol,
+  extractId,
+  normalizeUserId,
+  parseColor,
+  parseIdFromUrl
+} from '../src/helpers/global.helper';
 
 describe('Add protocol', () => {
   test('Handle without protocol', () => {
@@ -46,6 +52,23 @@ describe('Parse Id', () => {
   test('bad string', () => {
     const url = parseIdFromUrl('bad string');
     expect(url).toBe(null);
+  });
+  test.each([
+    ['https://www.csfd.cz/film/10135/prehled/', 10135],
+    ['https://www.csfd.cz/en/film/10135/', 10135],
+    ['https://www.csfd.cz/uzivatel/228645/hodnoceni/', 228645]
+  ])('Handle whole url without a slug: %s', (input, id) => {
+    expect(parseIdFromUrl(input)).toBe(id);
+  });
+});
+
+describe('normalizeUserId', () => {
+  test('Reduces a profile url to its id', () => {
+    expect(normalizeUserId('https://www.csfd.cz/uzivatel/912-bart/hodnoceni/')).toBe(912);
+  });
+  test('Keeps ids and slugs as they are', () => {
+    expect(normalizeUserId(912)).toBe(912);
+    expect(normalizeUserId('912-bart')).toBe('912-bart');
   });
 });
 

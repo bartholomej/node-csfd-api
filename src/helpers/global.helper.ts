@@ -8,7 +8,7 @@ const ISO8601_DURATION_REGEX =
 export const parseIdFromUrl = (url: string): number => {
   if (!url) return null;
 
-  const parts = url.split('/');
+  const parts = url.replace(/^https?:\/\/[^/]+/, '').split('/');
 
   // Reverse loop to find the ID slug efficiently without allocating intermediate arrays
   for (let i = parts.length - 1; i >= 0; i--) {
@@ -49,6 +49,10 @@ export const extractId = (idOrUrl: number | string): number | null => {
 
   return null;
 };
+
+/** A profile URL becomes its ID; numeric IDs and slugs are kept, ČSFD accepts both. */
+export const normalizeUserId = (user: string | number): string | number =>
+  typeof user === 'string' && /^https?:\/\//.test(user) ? (extractId(user) ?? user) : user;
 
 export const parseLastIdFromUrl = (url: string): number => {
   if (url) {
