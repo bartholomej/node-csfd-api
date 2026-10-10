@@ -124,5 +124,5 @@
     "node-csfd-api": "./dist/cli.js"
   },
   "sideEffects": false,
-  "packageManager": "yarn@4.18.0"
+  "packageManager": "yarn@4.18.1"
 }
