@@ -1,6 +1,7 @@
-import { HTMLElement, parse } from 'node-html-parser';
+import type { HTMLElement } from 'node-html-parser';
+import { parse } from 'node-html-parser';
 import { describe, expect, test } from 'vitest';
-import { MovieJsonLd } from '../src/dto/movie';
+import type { MovieJsonLd } from '../src/dto/movie';
 import {
   getEpisodeCode,
   getMovieCreators,

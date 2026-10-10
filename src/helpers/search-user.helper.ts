@@ -1,4 +1,5 @@
-import { HTMLElement, NodeType } from 'node-html-parser';
+import type { HTMLElement } from 'node-html-parser';
+import { NodeType } from 'node-html-parser';
 import { addProtocol } from './global.helper';
 
 export const getUser = (el: HTMLElement): string => {

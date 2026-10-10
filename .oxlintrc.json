@@ -13,7 +13,8 @@
         "argsIgnorePattern": "^_",
         "varsIgnorePattern": "^_"
       }
-    ]
+    ],
+    "typescript/consistent-type-imports": "error"
   },
   "ignorePatterns": ["dist", "coverage", "docs", "examples"]
 }

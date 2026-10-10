@@ -1,5 +1,6 @@
-import { HTMLElement, parse } from 'node-html-parser';
-import { CSFDCreator } from '../dto/creator';
+import type { HTMLElement } from 'node-html-parser';
+import { parse } from 'node-html-parser';
+import type { CSFDCreator } from '../dto/creator';
 import { fetchPage } from '../fetchers';
 import { extractId } from '../helpers/global.helper';
 import {
@@ -9,7 +10,7 @@ import {
   getCreatorName,
   getCreatorPhoto
 } from '../helpers/creator.helper';
-import { CSFDOptions } from '../types';
+import type { CSFDOptions } from '../types';
 import { creatorUrl } from '../vars';
 
 export class CreatorScraper {
