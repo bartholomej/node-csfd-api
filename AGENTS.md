@@ -47,6 +47,13 @@ The project is divided into layers. Do not mix concerns.
 - Use `vitest`.
 - Prefer integration tests against live CSFD for critical paths (or use recorded mocks if available).
 - Run `yarn demo` to verify basic functionality quickly.
+- To check live ČSFD data while working on parsers, use the `csfd-dev` MCP server from `.mcp.json` (runs `yarn mcp` from source).
+
+### 4. Code Style
+
+- Use `async/await`.
+- Prefer `const` over `let`.
+- Use specific types, avoid `any`.
 
 ## 🛠️ Common Tasks (Workflows)
 
