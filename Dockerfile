@@ -1,12 +1,12 @@
 # --- STAGE 1: Build & Prune ---
 # Runs natively on the runner: its output is plain JS, and native build tools
 # (esbuild, rolldown) crash with "Illegal instruction" under QEMU-emulated arm64.
-FROM --platform=$BUILDPLATFORM node:24-alpine AS build
+FROM --platform=$BUILDPLATFORM node:26-alpine AS build
 
 WORKDIR /usr/src/app
 
-# Enable Corepack for Yarn 4
-RUN corepack enable
+# Enable Corepack for Yarn 4 (no longer bundled with Node since v25)
+RUN npm install -g corepack@0.36.0 && corepack enable
 
 # Copy dependency files first for layer caching
 COPY package.json yarn.lock .yarnrc.yml ./
@@ -25,7 +25,7 @@ RUN yarn build
 RUN yarn workspaces focus --all --production
 
 # --- STAGE 2: Production (Ultra-lean) ---
-FROM node:24-alpine AS production
+FROM node:26-alpine AS production
 
 WORKDIR /usr/src/app
 ENV NODE_ENV=production
