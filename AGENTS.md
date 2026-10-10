@@ -74,3 +74,4 @@ The project is divided into layers. Do not mix concerns.
 - **Run from source:** `yarn server` (REST), `yarn mcp` (MCP)
 - **Docs:** `yarn docs` (typedoc runs with TypeScript 6, as it doesn't support TypeScript 7 yet)
 - **Bundler:** `tsdown` (powered by rolldown).
+- **Dependencies:** the library is unbundled and only `node-html-parser` belongs in `dependencies`. CLI and servers are bundled, so their packages (Hono, MCP SDK, zod, dotenv) go to `devDependencies`. The build fails if a bundled entry would import anything else at runtime.

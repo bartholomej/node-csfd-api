@@ -41,17 +41,16 @@
     "registry": "https://registry.npmjs.org"
   },
   "dependencies": {
-    "@hono/node-server": "^2.1.4",
-    "@modelcontextprotocol/sdk": "^1.32.1",
-    "dotenv": "^18.0.7",
-    "hono": "^4.13.13",
-    "node-html-parser": "^9.0.4",
-    "zod": "^4.6.5"
+    "node-html-parser": "^9.0.4"
   },
   "devDependencies": {
+    "@hono/node-server": "^2.1.4",
+    "@modelcontextprotocol/sdk": "^1.32.1",
     "@types/node": "^26.6.5",
     "@vitest/coverage-istanbul": "^5.0.3",
     "@vitest/ui": "^5.0.3",
+    "dotenv": "^18.0.7",
+    "hono": "^4.13.13",
     "husky": "^9.1.7",
     "lint-staged": "^17.6.0",
     "oxlint": "^1.87.0",
@@ -62,7 +61,8 @@
     "tsx": "^4.23.15",
     "typescript": "^7.0.2",
     "vite": "^8.3.4",
-    "vitest": "^5.0.3"
+    "vitest": "^5.0.3",
+    "zod": "^4.6.5"
   },
   "repository": {
     "url": "git+https://github.com/bartholomej/node-csfd-api.git",
