@@ -1,0 +1,64 @@
+name: 🐛 Bug report
+description: Something doesn't work as expected
+labels: [bug]
+body:
+  - type: dropdown
+    id: area
+    attributes:
+      label: Where does it happen?
+      options:
+        - Library (npm package)
+        - CLI
+        - REST API server
+        - MCP server
+        - Docker image
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+      description: A clear description of the problem.
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: Code snippet, CLI command or request URL. Include the ČSFD ID or URL if it's about a specific page.
+      placeholder: |
+        const movie = await csfd.movie(535121);
+        console.log(movie.premieres);
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: node-csfd-api version
+      placeholder: 5.12.0
+    validations:
+      required: true
+
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: Node.js version and OS, or browser / React Native / Docker.
+      placeholder: Node.js 24, macOS
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Error output
+      description: The error message or stack trace, if any.
+      render: shell

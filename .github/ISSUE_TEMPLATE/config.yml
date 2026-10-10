@@ -1,0 +1,11 @@
+blank_issues_enabled: true
+contact_links:
+  - name: 🔒 Security vulnerability
+    url: https://github.com/bartholomej/node-csfd-api/security/advisories/new
+    about: Please report security issues privately, not as a public issue.
+  - name: 📖 Documentation
+    url: https://github.com/bartholomej/node-csfd-api#readme
+    about: Usage examples for the library, CLI, REST API and MCP server.
+  - name: 📚 API reference
+    url: https://bartholomej.github.io/node-csfd-api/
+    about: Generated documentation of all methods and types.

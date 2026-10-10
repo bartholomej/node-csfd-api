@@ -1,0 +1,24 @@
+name: 💡 Feature request
+description: Suggest an idea or a missing ČSFD field
+labels: [feature-request]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: What would you like?
+      description: The feature, field or improvement you have in mind.
+    validations:
+      required: true
+
+  - type: textarea
+    id: use-case
+    attributes:
+      label: Why?
+      description: Your use case. It helps to decide how the feature should work.
+
+  - type: input
+    id: example
+    attributes:
+      label: Example ČSFD page
+      description: For a missing field, a URL of a page where it appears.
+      placeholder: https://www.csfd.cz/film/535121-na-spatne-strane/prehled/
