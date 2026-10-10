@@ -1,5 +1,6 @@
-import { describe, expect, test, vi } from 'vitest';
+import { afterAll, beforeAll, describe, expect, test, vi, type MockInstance } from 'vitest';
 import { CSFDUserReviews } from '../src/dto/user-reviews';
+import * as fetchers from '../src/fetchers';
 import { UserReviewsScraper } from '../src/services/user-reviews.service';
 
 // Live API tests
@@ -9,15 +10,18 @@ const USER_WITH_ZERO_REVIEWS = 228645; // user with zero reviews
 
 describe('User Reviews - Simple call', () => {
   const userReviewsScraper = new UserReviewsScraper();
-  const res: Promise<CSFDUserReviews[]> = userReviewsScraper.userReviews(USER_WITH_REVIEWS);
+  let res: CSFDUserReviews[];
+  beforeAll(async () => {
+    res = await userReviewsScraper.userReviews(USER_WITH_REVIEWS);
+  });
 
   test('Should have some reviews', async () => {
-    const results = await res;
+    const results = res;
     expect(results.length).toBeGreaterThan(0);
   });
 
   test('Each review should have required properties', async () => {
-    const results = await res;
+    const results = res;
     const firstReview = results[0];
 
     expect(firstReview).toHaveProperty('id');
@@ -33,37 +37,44 @@ describe('User Reviews - Simple call', () => {
   });
 
   test('Review text should not be empty', async () => {
-    const results = await res;
+    const results = res;
     const firstReview = results[0];
 
     expect(firstReview.text.length).toBeGreaterThan(0);
   });
 
   test('Poster should be a valid URL', async () => {
-    const results = await res;
+    const results = res;
     const firstReview = results[0];
 
     expect(firstReview.poster).toMatch(/^https:\/\//);
+  });
+
+  test('Should accept a full profile url', async () => {
+    const spy = vi.spyOn(fetchers, 'fetchPage').mockResolvedValue('<html><body></body></html>');
+    await userReviewsScraper.userReviews('https://www.csfd.cz/uzivatel/228645/hodnoceni/');
+    expect(spy.mock.calls[0][0]).toMatch(/\/uzivatel\/228645\//);
+    spy.mockRestore();
   });
 });
 
 describe('User Reviews - Filter by type', () => {
   const userReviewsScraper = new UserReviewsScraper();
-  const resFilmsOnly: Promise<CSFDUserReviews[]> = userReviewsScraper.userReviews(
-    USER_WITH_REVIEWS,
-    {
+  let resFilmsOnly: CSFDUserReviews[];
+  beforeAll(async () => {
+    resFilmsOnly = await userReviewsScraper.userReviews(USER_WITH_REVIEWS, {
       includesOnly: ['film']
-    }
-  );
+    });
+  });
 
   test('Should have only films', async () => {
-    const results = await resFilmsOnly;
+    const results = resFilmsOnly;
     const films = results.filter((item) => item.type === 'film');
     expect(films.length).toBe(results.length);
   });
 
   test('Should not have any TV series', async () => {
-    const results = await resFilmsOnly;
+    const results = resFilmsOnly;
     const tvSeries = results.filter((item) => item.type === 'series');
     expect(tvSeries.length).toBe<number>(0);
   });
@@ -71,15 +82,15 @@ describe('User Reviews - Filter by type', () => {
 
 describe('User Reviews - Exclude types', () => {
   const userReviewsScraper = new UserReviewsScraper();
-  const resExcluded: Promise<CSFDUserReviews[]> = userReviewsScraper.userReviews(
-    USER_WITH_REVIEWS,
-    {
+  let resExcluded: CSFDUserReviews[];
+  beforeAll(async () => {
+    resExcluded = await userReviewsScraper.userReviews(USER_WITH_REVIEWS, {
       excludes: ['film']
-    }
-  );
+    });
+  });
 
   test('Should not have any film', async () => {
-    const results = await resExcluded;
+    const results = resExcluded;
     const tvSeries = results.filter((item) => item.type === 'film');
     expect(tvSeries.length).toBe<number>(0);
   });
@@ -87,22 +98,22 @@ describe('User Reviews - Exclude types', () => {
 
 describe('User Reviews - AllPages with delay', () => {
   const userReviewsScraper = new UserReviewsScraper();
-  const resAllPages: Promise<CSFDUserReviews[]> = userReviewsScraper.userReviews(
-    USER_WITH_LESS_REVIEWS,
-    {
+  let resAllPages: CSFDUserReviews[];
+  beforeAll(async () => {
+    resAllPages = await userReviewsScraper.userReviews(USER_WITH_LESS_REVIEWS, {
       allPages: true,
       allPagesDelay: 100
-    }
-  );
+    });
+  });
 
   test('Should fetch all pages', async () => {
-    const results = await resAllPages;
+    const results = resAllPages;
     // User 912 (bart) has less reviews across multiple pages
     expect(results.length).toBeGreaterThan(11);
   });
 
   test('Each review should have all properties', async () => {
-    const results = await resAllPages;
+    const results = resAllPages;
     results.forEach((review) => {
       expect(review).toHaveProperty('id');
       expect(review).toHaveProperty('title');
@@ -115,31 +126,33 @@ describe('User Reviews - AllPages with delay', () => {
 describe('User Reviews - AllPages multiple pages without delay', () => {
   const userReviewsScraper = new UserReviewsScraper();
   // Using user with less reviews (but >1 page)
-  const resAllPages: Promise<CSFDUserReviews[]> = userReviewsScraper.userReviews(
-    USER_WITH_LESS_REVIEWS,
-    {
+  let resAllPages: CSFDUserReviews[];
+  beforeAll(async () => {
+    resAllPages = await userReviewsScraper.userReviews(USER_WITH_LESS_REVIEWS, {
       allPages: true
-    }
-  );
+    });
+  });
 
   test('Should handle user natively multiple without delay', async () => {
-    const results = await resAllPages;
+    const results = resAllPages;
     expect(results.length).toBeGreaterThan(11);
   });
 });
 
 describe('User Reviews - Exclude + includes together (warning)', () => {
-  // The spy has to exist before the call below, which is what emits the warning.
-  const warn = vi.spyOn(console, 'warn').mockImplementation(() => undefined);
+  let warn: MockInstance<typeof console.warn>;
   const userReviewsScraper = new UserReviewsScraper();
-  const resBoth: Promise<CSFDUserReviews[]> = userReviewsScraper.userReviews(USER_WITH_REVIEWS, {
-    includesOnly: ['film'],
-    excludes: ['series']
+  let resBoth: CSFDUserReviews[];
+  beforeAll(async () => {
+    warn = vi.spyOn(console, 'warn').mockImplementation(() => undefined);
+    resBoth = await userReviewsScraper.userReviews(USER_WITH_REVIEWS, {
+      includesOnly: ['film'],
+      excludes: ['series']
+    });
   });
+  afterAll(() => warn.mockRestore());
 
   test('Should have warning', async () => {
-    // The warning is emitted while parsing, so let the call finish first.
-    await resBoth;
     expect(warn).toHaveBeenCalledWith(
       expect.stringContaining("Both 'includesOnly' and 'excludes'"),
       ['film']
@@ -147,7 +160,7 @@ describe('User Reviews - Exclude + includes together (warning)', () => {
   });
 
   test('Should use includesOnly (not excludes)', async () => {
-    const results = await resBoth;
+    const results = resBoth;
     const films = results.filter((item) => item.type === 'film');
     expect(films.length).toBe(results.length);
   });
@@ -155,16 +168,18 @@ describe('User Reviews - Exclude + includes together (warning)', () => {
 
 describe('User Reviews - User with zero reviews', () => {
   const userReviewsScraper = new UserReviewsScraper();
-  const resZeroReviews: Promise<CSFDUserReviews[]> =
-    userReviewsScraper.userReviews(USER_WITH_ZERO_REVIEWS);
+  let resZeroReviews: CSFDUserReviews[];
+  beforeAll(async () => {
+    resZeroReviews = await userReviewsScraper.userReviews(USER_WITH_ZERO_REVIEWS);
+  });
 
   test('Should return empty array', async () => {
-    const results = await resZeroReviews;
+    const results = resZeroReviews;
     expect(results.length).toBe(0);
   });
 
   test('Should be an array', async () => {
-    const results = await resZeroReviews;
+    const results = resZeroReviews;
     expect(Array.isArray(results)).toBe(true);
   });
 
@@ -178,17 +193,20 @@ describe('User Reviews - User with zero reviews', () => {
 
 describe('User Reviews - Specific page', () => {
   const userReviewsScraper = new UserReviewsScraper();
-  const resPage2: Promise<CSFDUserReviews[]> = userReviewsScraper.userReviews(USER_WITH_REVIEWS, {
-    page: 2
+  let resPage2: CSFDUserReviews[];
+  beforeAll(async () => {
+    resPage2 = await userReviewsScraper.userReviews(USER_WITH_REVIEWS, {
+      page: 2
+    });
   });
 
   test('Should fetch second page', async () => {
-    const results = await resPage2;
+    const results = resPage2;
     expect(results.length).toBeGreaterThan(0);
   });
 
   test('Each review should have all properties', async () => {
-    const results = await resPage2;
+    const results = resPage2;
     results.forEach((review) => {
       expect(review).toHaveProperty('id');
       expect(review).toHaveProperty('title');
