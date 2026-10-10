@@ -65,7 +65,8 @@ jobs:
         run: |
           echo "MAC_ARM_HASH=$(grep 'csfd-macos-arm64' sha256sums.txt | awk '{print $1}')" >> $GITHUB_ENV
           echo "MAC_INTEL_HASH=$(grep 'csfd-macos-x64' sha256sums.txt | awk '{print $1}')" >> $GITHUB_ENV
-          echo "LINUX_HASH=$(grep 'csfd-linux-x64' sha256sums.txt | awk '{print $1}')" >> $GITHUB_ENV
+          echo "LINUX_ARM_HASH=$(grep 'csfd-linux-arm64' sha256sums.txt | awk '{print $1}')" >> $GITHUB_ENV
+          echo "LINUX_INTEL_HASH=$(grep 'csfd-linux-x64' sha256sums.txt | awk '{print $1}')" >> $GITHUB_ENV
 
       - name: 🚀 Update Homebrew Tap
         env:
@@ -98,8 +99,14 @@ jobs:
             end
 
             on_linux do
-              url "${{ github.server_url }}/${{ github.repository }}/releases/download/${{ github.ref_name }}/csfd-linux-x64.tar.gz"
-              sha256 "${LINUX_HASH}"
+              on_arm do
+                url "${{ github.server_url }}/${{ github.repository }}/releases/download/${{ github.ref_name }}/csfd-linux-arm64.tar.gz"
+                sha256 "${LINUX_ARM_HASH}"
+              end
+              on_intel do
+                url "${{ github.server_url }}/${{ github.repository }}/releases/download/${{ github.ref_name }}/csfd-linux-x64.tar.gz"
+                sha256 "${LINUX_INTEL_HASH}"
+              end
             end
 
             def install
