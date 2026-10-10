@@ -26,6 +26,7 @@ export class CsfdError extends Error {
   /** HTTP status, when the request got far enough to have one. */
   readonly status?: number;
 
+  /** @hidden */
   constructor(reason: CsfdErrorReason, url: string, message: string, options?: CsfdErrorOptions) {
     super(`${LIB_PREFIX} ${message}`, { cause: options?.cause });
     this.name = 'CsfdError';

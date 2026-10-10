@@ -15,6 +15,7 @@ import { CSFDOptions } from './types';
 export class Csfd {
   private defaultOptions?: CSFDOptions;
 
+  /** @hidden */
   constructor(
     private userRatingsService: UserRatingsScraper,
     private userReviewsService: UserReviewsScraper,

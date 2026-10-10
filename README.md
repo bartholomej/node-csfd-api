@@ -10,7 +10,7 @@
 
 #### Modern TypeScript NPM library for scraping **CSFD.CZ**. Scraper, API Rest Server, Exporter and MCP Server in one package. _(unofficial)_
 
-[Features](#-features) • [Installation](#-installation) • [Quick Start](#-quick-start) • [API Reference](#-api-reference) • [Examples](#-usage-examples) • [MCP Server](#-mcp-server-model-context-protocol) • [Docker](#-docker-support)
+[Features](#-features) • [Installation](#-installation) • [Quick Start](#-quick-start) • [API Reference](#-api-reference) • [CLI](#-cli-tools) • [MCP Server](#-mcp-server-model-context-protocol) • [Docker](#-docker-support)
 
 </div>
 
@@ -79,8 +79,13 @@ console.log(reviews);
 - [Creators](#creators)
 - [User Ratings](#user-ratings)
 - [User Reviews](#user-reviews)
+- [Language & Request Options](#language--request-options)
+- [Error Handling](#error-handling)
+- [Browser Verification Cookie](#browser-verification-cookie)
+- [CLI Tools](#-cli-tools)
 - [MCP Server](#-mcp-server-model-context-protocol)
 - [Docker Support](#-docker-support)
+- [REST API](#rest-api)
 - [Development](#-development)
 
 ## 📚 API Reference
@@ -89,7 +94,9 @@ console.log(reviews);
 
 > Retrieve comprehensive information about a movie or TV series by its ČSFD ID.
 
-**Method:** `csfd.movie(id: number): Promise<Movie>`
+**Method:** `csfd.movie(id: number | string, options?: CSFDOptions): Promise<CSFDMovie>`
+
+The ID can be a number, a slug (`'535121-na-spatne-strane'`) or a full ČSFD URL. The same works for creators and users.
 
 ```typescript
 import { csfd } from 'node-csfd-api';
@@ -200,9 +207,9 @@ csfd.movie(535121).then((movie) => console.log(movie));
 
 ### Search
 
-> Search for movies, TV series, and users across the ČSFD database.
+> Search for movies, TV series, creators and users across the ČSFD database.
 
-**Method:** `csfd.search(query: string): Promise<SearchResults>`
+**Method:** `csfd.search(query: string, options?: CSFDOptions): Promise<CSFDSearch>`
 
 ```typescript
 import { csfd } from 'node-csfd-api';
@@ -273,7 +280,7 @@ users: [
 
 > Get detailed information about a creator including their biography and filmography.
 
-**Method:** `csfd.creator(id: number): Promise<Creator>`
+**Method:** `csfd.creator(id: number | string, options?: CSFDOptions): Promise<CSFDCreator>`
 
 ```typescript
 import { csfd } from 'node-csfd-api';
@@ -371,14 +378,14 @@ console.log(creator.birthday); // Birth date
 
 > Retrieve user ratings from their ČSFD profile.
 
-**Method:** `csfd.userRatings(username: string, options?: UserRatingsOptions): Promise<Rating[]>`
+**Method:** `csfd.userRatings(user: number | string, config?: CSFDUserRatingConfig, options?: CSFDOptions): Promise<CSFDUserRatings[]>`
 
 #### Basic Usage
 
 ```typescript
 import { csfd } from 'node-csfd-api';
 
-// Get last page of ratings (~50 items)
+// Latest ratings (first page, ~50 items)
 const ratings = await csfd.userRatings('912-bart');
 ```
 
@@ -400,11 +407,11 @@ const onlyMovies = await csfd.userRatings('912-bart', {
 });
 
 const excludeEpisodes = await csfd.userRatings('912-bart', {
-  exclude: ['episode', 'season']
+  excludes: ['episode', 'season']
 });
 ```
 
-> ⚠️ **Rate Limiting Warning**: When fetching all pages, use appropriate delays to avoid detection. Consider implementing exponential backoff for large datasets.
+> ⚠️ **Be considerate**: `allPages` sends one request per page. Keep a delay between them (`allPagesDelay`) so you don't put unnecessary load on ČSFD.
 
 <details>
   <summary>🔎 Click here to see full result example</summary>
@@ -412,21 +419,23 @@ const excludeEpisodes = await csfd.userRatings('912-bart', {
 ```javascript
 [
   {
+    id: 812944,
     title: 'David Attenborough: Život na naší planetě',
     year: 2020,
     type: 'film',
     url: 'https://www.csfd.cz/film/812944-david-attenborough-zivot-na-nasi-planete/',
     colorRating: 'good',
-    userDate: '01.11.2020',
+    userDate: '2020-11-01',
     userRating: 5
   },
   {
+    id: 912552,
     title: 'Coronation',
     year: 2020,
     type: 'film',
     url: 'https://www.csfd.cz/film/912552-coronation/',
     colorRating: 'good',
-    userDate: '28.10.2020',
+    userDate: '2020-10-28',
     userRating: 4
   }
 ];
@@ -434,18 +443,18 @@ const excludeEpisodes = await csfd.userRatings('912-bart', {
 
 </details>
 
-#### UserRatingsOptions
+#### CSFDUserRatingConfig
 
 | Option          | Type                                    | Default     | Description                                                      |
 | --------------- | --------------------------------------- | ----------- | ---------------------------------------------------------------- |
 | `includesOnly`  | `CSFDFilmTypes[]`                       | `null`      | Include only specific content types (e.g., `['film', 'series']`) |
-| `exclude`       | `CSFDFilmTypes[]`                       | `null`      | Exclude specific content types (e.g., `['episode']`)             |
+| `excludes`      | `CSFDFilmTypes[]`                       | `null`      | Exclude specific content types (e.g., `['episode']`)             |
 | `allPages`      | `boolean`                               | `false`     | Fetch all pages of ratings                                       |
 | `allPagesDelay` | `number`                                | `0`         | Delay between page requests in milliseconds                      |
 | `page`          | `number`                                | `1`         | Fetch specific page number                                       |
 | `onProgress`    | `(page: number, total: number) => void` | `undefined` | Called on each page fetch — use for progress bars or logging     |
 
-> 📝 **Note**: `includesOnly` and `exclude` are mutually exclusive. If both are provided, `includesOnly` takes precedence.
+> 📝 **Note**: `includesOnly` and `excludes` are mutually exclusive. If both are provided, `includesOnly` takes precedence.
 >
 > 🔗 See [CSFDFilmTypes definition](https://github.com/bartholomej/node-csfd-api/blob/master/src/dto/global.ts)
 
@@ -453,7 +462,7 @@ const excludeEpisodes = await csfd.userRatings('912-bart', {
 
 > Retrieve detailed user reviews from their ČSFD profile.
 
-**Method:** `csfd.userReviews(userId: number | string, options?: UserReviewsOptions): Promise<Review[]>`
+**Method:** `csfd.userReviews(user: number | string, config?: CSFDUserReviewsConfig, options?: CSFDOptions): Promise<CSFDUserReviews[]>`
 
 #### Basic Usage
 
@@ -478,8 +487,7 @@ const allReviews = await csfd.userReviews(195357, {
 
 // Filter by content type
 const filtered = await csfd.userReviews(195357, {
-  includesOnly: ['film'],
-  exclude: ['episode']
+  excludes: ['episode', 'season']
 });
 ```
 
@@ -495,9 +503,9 @@ const filtered = await csfd.userReviews(195357, {
     type: 'film',
     url: 'https://www.csfd.cz/film/1391448-co-s-petou/prehled/',
     colorRating: 'good',
-    userDate: '27.11.2025',
+    userDate: '2025-11-27',
     userRating: 4,
-    text: 'Co s Péťou? Inu, co by? Každý normální Sparťan by to okamžitě mrdnul z útesu...',
+    text: 'Co s Péťou? Inu, co by? Každý normální Sparťan by to okamžitě...',
     poster:
       'https://image.pmgstatic.com/cache/resized/w240h339/files/images/film/posters/170/492/170492173_1l3djd.jpg'
   },
@@ -508,7 +516,7 @@ const filtered = await csfd.userReviews(195357, {
     type: 'film',
     url: 'https://www.csfd.cz/film/1530416-kouzlo-derby/prehled/',
     colorRating: 'average',
-    userDate: '26.11.2025',
+    userDate: '2025-11-26',
     userRating: 1,
     text: 'Typické kolečkoidní sebevykradačské pásmo klišovitých...',
     poster:
@@ -519,9 +527,64 @@ const filtered = await csfd.userReviews(195357, {
 
 </details>
 
-#### UserReviewsOptions
+#### CSFDUserReviewsConfig
 
-Same options as [UserRatingsOptions](#userrationsoptions).
+Same options as [CSFDUserRatingConfig](#csfduserratingconfig).
+
+### Language & Request Options
+
+Every method accepts `CSFDOptions` as its last argument:
+
+| Option     | Type                   | Description                                                   |
+| ---------- | ---------------------- | ------------------------------------------------------------- |
+| `language` | `'cs' \| 'en' \| 'sk'` | Language of titles, genres etc. (default `cs`)                |
+| `request`  | `RequestInit`          | Extra `fetch` options, e.g. custom headers or an abort signal |
+
+```typescript
+import { csfd } from 'node-csfd-api';
+
+// For a single call
+const movie = await csfd.movie(535121, { language: 'en' });
+const ratings = await csfd.userRatings(912, { page: 2 }, { language: 'sk' });
+
+// For all subsequent calls
+csfd.setOptions({ language: 'en' });
+```
+
+### Error Handling
+
+When a page can't be fetched, methods reject with a `CsfdError`. Its `reason` tells you why:
+
+| `reason`    | Meaning                                                |
+| ----------- | ------------------------------------------------------ |
+| `not-found` | The movie, creator or user doesn't exist (HTTP 404)    |
+| `blocked`   | ČSFD declined the request, e.g. too many requests      |
+| `http`      | ČSFD answered with another error status                |
+| `network`   | The request didn't complete (offline, DNS, timeout, …) |
+
+```typescript
+import { csfd, CsfdError } from 'node-csfd-api';
+
+try {
+  await csfd.movie(999999999);
+} catch (error) {
+  if (error instanceof CsfdError && error.reason === 'not-found') {
+    console.log(`Not found: ${error.url} (HTTP ${error.status})`);
+  }
+}
+```
+
+### Browser Verification Cookie
+
+ČSFD sometimes asks visitors to complete a short browser verification. The library completes it automatically and reuses the resulting cookie for the following requests. The cookie is tied to your IP address and stays valid for about a week, so you can keep it between runs:
+
+```typescript
+import { getAnubisCookie, resetAnubisCookie, setAnubisCookie } from 'node-csfd-api';
+
+const cookie = getAnubisCookie(); // Save it, e.g. to a file or a database
+setAnubisCookie(cookie); // Restore it on the next start
+resetAnubisCookie(); // Forget it and verify again on the next request
+```
 
 ## 💻 CLI Tools
 
@@ -537,7 +600,7 @@ This library ships with a CLI exposing several tools. Choose the installation me
 npx node-csfd-api <command>
 ```
 
-**Option B: Homebrew** _(macOS)_
+**Option B: Homebrew** _(macOS & Linux)_
 
 ```bash
 brew install bartholomej/tap/csfd
@@ -627,9 +690,9 @@ This library includes a built-in [Model Context Protocol (MCP)](https://modelcon
 
 ### Features
 
-- **Search**: Search for movies, TV series, and users.
-- **Details**: Get comprehensive details about movies, creators, and users.
-- **Reviews**: Read user reviews and ratings.
+- **Search**: Search for movies, TV series, creators and users.
+- **Details**: Get comprehensive details about movies and creators.
+- **Users**: Read user ratings and reviews.
 
 ### Usage with Claude Desktop
 
@@ -648,11 +711,14 @@ Add the following configuration to your `claude_desktop_config.json`:
 
 ### Supported Tools
 
-- `search`: Search query (returns movies, series, users)
-- `movie_details`: Get movie details by ID
-- `creator_details`: Get creator details by ID
-- `user_ratings`: Get user ratings
-- `user_reviews`: Get user reviews
+- `search`: Search movies, TV series, creators and users (returns IDs for the other tools)
+- `get_movie`: Movie or TV series details by ID
+- `get_creator`: Creator details and filmography by ID
+- `get_user_ratings`: User ratings (by page)
+- `get_user_reviews`: User reviews (by page)
+- `get_cinemas`: Cinema showtimes
+
+There is also an `actor-top-rated` prompt that finds and ranks the best movies of an actor or creator.
 
 ## 🐳 Docker Support
 
@@ -678,17 +744,44 @@ docker build -t node-csfd-api .
 docker run -p 3000:3000 node-csfd-api
 ```
 
-### REST API Endpoints
+### REST API
 
-Once running, access the API at `http://localhost:3000`:
+Start the server with Docker (above), `csfd server` or `npx node-csfd-api server`, then access it at `http://localhost:3000`:
 
-| Endpoint                  | Description       | Example                  |
-| ------------------------- | ----------------- | ------------------------ |
-| `/movie/:id`              | Get movie details | `/movie/535121`          |
-| `/search/:query`          | Search content    | `/search/tarantino`      |
-| `/creator/:id`            | Get creator info  | `/creator/2120`          |
-| `/user-ratings/:username` | Get user ratings  | `/user-ratings/912-bart` |
-| `/user-reviews/:userId`   | Get user reviews  | `/user-reviews/195357`   |
+| Endpoint            | Description                | Example                              |
+| ------------------- | -------------------------- | ------------------------------------ |
+| `/movie/:id`        | Movie or TV series details | `/movie/535121`                      |
+| `/search/:query`    | Search                     | `/search/tarantino`                  |
+| `/creator/:id`      | Creator details            | `/creator/2120`                      |
+| `/user-ratings/:id` | User ratings               | `/user-ratings/912-bart?page=2`      |
+| `/user-reviews/:id` | User reviews               | `/user-reviews/195357?allPages=true` |
+| `/cinemas`          | Today's showtimes in Praha | `/cinemas`                           |
+
+All endpoints accept `?language=cs|en|sk`. User ratings and reviews also accept `page`, `allPages`, `allPagesDelay`, `includesOnly` and `excludes` (comma-separated, e.g. `?excludes=episode,season`).
+
+**Configuration** (environment variables):
+
+| Variable       | Description                                                                     |
+| -------------- | ------------------------------------------------------------------------------- |
+| `PORT`         | Port to listen on (default `3000`)                                              |
+| `API_KEY`      | One or more comma-separated keys. When set, every request must send one of them |
+| `API_KEY_NAME` | Request header carrying the key (default `x-api-key`)                           |
+| `LANGUAGE`     | Default language: `cs`, `en` or `sk`                                            |
+| `VERBOSE`      | Set to `true` to log successful requests as well                                |
+
+```bash
+docker run -p 3000:3000 -e API_KEY=my-secret bartholomej/node-csfd-api
+```
+
+**Errors** are returned as JSON (`{ "error": "MOVIE_FETCH_FAILED", "message": "…" }`) with a matching status:
+
+| Status | When                                                          |
+| ------ | ------------------------------------------------------------- |
+| `401`  | API key is missing or invalid                                 |
+| `404`  | The movie, creator or user doesn't exist, or unknown endpoint |
+| `502`  | ČSFD is unreachable or answered with an error                 |
+| `503`  | ČSFD declined the request                                     |
+| `500`  | Unexpected error                                              |
 
 **Docker Hub:** [bartholomej/node-csfd-api](https://hub.docker.com/r/bartholomej/node-csfd-api)
 
@@ -740,8 +833,8 @@ This library powers several production applications:
 
 ### Prerequisites
 
-- Node.js 18+
-- yarn/npm/pnpm/...
+- Node.js 22.18+ (the repository uses 26, see `.nvmrc`)
+- Yarn 4 via [Corepack](https://github.com/nodejs/corepack): `npm install -g corepack && corepack enable`
 
 ### Setup
 
@@ -770,10 +863,14 @@ yarn demo
 
 ```text
 src/
+├── anubis/           # Browser verification (proof-of-work) client
+├── bin/              # REST server, MCP server, exports & CLI commands
 ├── dto/              # Data transfer objects & types
 ├── fetchers/         # HTTP request handlers
 ├── helpers/          # Parsing & data transformation
 ├── services/         # Main API service classes
+├── cli.ts            # CLI entry point
+├── errors.ts         # CsfdError
 └── index.ts          # Public API exports
 ```
 
@@ -786,7 +883,7 @@ The project maintains ~100% code coverage. Tests are located in the `tests/` dir
 yarn test
 
 # Run tests in watch mode
-yarn test:watch
+yarn vitest
 
 # Generate coverage report
 yarn test:coverage

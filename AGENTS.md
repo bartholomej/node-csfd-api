@@ -17,13 +17,17 @@ The project is divided into layers. Do not mix concerns.
     - **Helpers** (`src/helpers`): **CRITICAL.** Pure functions that take HTML Elements and return raw data strings/objects.
     - **Services** (`src/services`): Orchestrators. They call Fetchers, then use Helpers to parse data, and return typed DTOs.
     - **DTOs** (`src/dto`): TypeScript interfaces defining the shape of the data.
+    - **Anubis** (`src/anubis`): Self-contained client for ČSFD's proof-of-work browser check. It must stay portable (Node, browsers, React Native), so no Node built-ins.
 
-2.  **MCP Server (`mcp-server/`)**:
+2.  **MCP Server (`src/bin/mcp-server.ts`)**:
     - The AI interfacing layer. It wraps `src/services` into tools executable by LLMs.
     - See `.ai/MCP_ARCH.md` for specific rules.
 
-3.  **App Server (`server/`)**:
+3.  **REST Server (`src/bin/server.ts`)**:
     - A classic Express/Node server exposing the scraper as a REST API.
+
+4.  **CLI (`src/cli.ts`)**:
+    - The `csfd` command. Subcommands (exports, search, movie lookup) live in `src/bin/`.
 
 ## ⚡ Golden Rules for Code Generation
 
@@ -42,7 +46,7 @@ The project is divided into layers. Do not mix concerns.
 
 - Use `vitest`.
 - Prefer integration tests against live CSFD for critical paths (or use recorded mocks if available).
-- Run `npm run demo` to verify basic functionality quickly.
+- Run `yarn demo` to verify basic functionality quickly.
 
 ## 🛠️ Common Tasks (Workflows)
 
@@ -51,7 +55,7 @@ The project is divided into layers. Do not mix concerns.
 1.  Update Interface in `src/dto/movie.ts`.
 2.  Create a helper in `src/helpers/movie.helper.ts`.
 3.  Update logic in `src/services/movie.service.ts`.
-4.  Verify `mcp-server` exposes it (it usually does automatically via the service).
+4.  Verify `src/bin/mcp-server.ts` exposes it (it usually does automatically via the service).
 
 **Task: Add a new MCP Tool**
 
@@ -59,7 +63,7 @@ The project is divided into layers. Do not mix concerns.
 
 ## 📦 Build System
 
-- **Build everything:** `yarn build`
-- **Build Server:** `yarn build:server`
-- **Build MCP:** `yarn build:mcp`
-- **Bundler:** The project uses `tsdown` and `esbuild`.
+- **Build everything:** `yarn build` (library, CLI, REST and MCP server into `dist/`)
+- **Run from source:** `yarn server` (REST), `yarn mcp` (MCP)
+- **Docs:** `yarn docs` (typedoc runs with TypeScript 6, as it doesn't support TypeScript 7 yet)
+- **Bundler:** `tsdown` (powered by rolldown).
