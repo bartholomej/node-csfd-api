@@ -21,6 +21,7 @@ The project is divided into layers. Do not mix concerns.
 
 2.  **MCP Server (`src/bin/mcp-app.ts`, stdio entry in `src/bin/mcp-server.ts`)**:
     - The AI interfacing layer. It wraps `src/services` into tools executable by LLMs.
+    - Also served over HTTP at `/mcp` by the REST server (stateless, one MCP server per request).
     - See `.ai/MCP_ARCH.md` for specific rules.
 
 3.  **REST Server (`src/bin/server.ts`)**:
