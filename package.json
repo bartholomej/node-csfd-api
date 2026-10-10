@@ -19,7 +19,7 @@
     "letterboxd": "tsx examples/letterboxd/letterboxd-export.ts",
     "examples": "yarn example:cjs:ts && yarn example:cjs:js && yarn example:esm:ts && yarn example:esm:js",
     "lint": "oxlint --fix",
-    "docs": "typedoc",
+    "docs": "yarn dlx -p typedoc@0.28.20 -p typescript@6.0.3 typedoc",
     "test": "vitest --watch=false",
     "mock": "tsx tests/update-mocks.ts",
     "test:coverage": "yarn test --coverage",
@@ -60,7 +60,6 @@
     "rolldown-plugin-dist-package": "^1.1.0",
     "tsdown": "^0.23.0",
     "tsx": "^4.23.15",
-    "typedoc": "^0.28.20",
     "typescript": "^7.0.2",
     "vite": "^8.3.4",
     "vitest": "^5.0.3"
