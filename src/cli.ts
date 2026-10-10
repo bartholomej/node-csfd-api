@@ -3,6 +3,7 @@
  */
 
 import { c, err } from './bin/utils';
+import type { CSFDFilmTypes } from './dto/global';
 
 declare const __VERSION__: string;
 
@@ -12,6 +13,35 @@ const GITHUB_REPO = 'bartholomej/node-csfd-api';
 const GITHUB_API_LATEST = `https://api.github.com/repos/${GITHUB_REPO}/releases/latest`;
 const GITHUB_RELEASES_URL = `https://github.com/${GITHUB_REPO}/releases/latest`;
 const INSTALL_SH_URL = `https://raw.githubusercontent.com/${GITHUB_REPO}/master/install.sh`;
+
+// ČSFD often ranks a same-titled amateur short above the film people mean.
+const NICHE_TYPES: CSFDFilmTypes[] = [
+  'amateur-film',
+  'student-film',
+  'music-video',
+  'video-compilation'
+];
+
+const foldTitle = (title: string): string =>
+  title
+    .normalize('NFD')
+    .replace(/\p{Diacritic}/gu, '')
+    .trim()
+    .toLowerCase();
+
+function pickTitleMatch<T extends { title: string; type: CSFDFilmTypes }>(
+  candidates: T[],
+  query: string
+): T | undefined {
+  const sameTitle = (m: T) => foldTitle(m.title) === foldTitle(query);
+  const mainstream = (m: T) => !NICHE_TYPES.includes(m.type);
+  return (
+    candidates.find((m) => sameTitle(m) && mainstream(m)) ??
+    candidates.find(sameTitle) ??
+    candidates.find(mainstream) ??
+    candidates[0]
+  );
+}
 
 // ─────────────────────────────────────────────────────────────────────────────
 
@@ -158,13 +188,13 @@ async function main() {
         } else {
           const { csfd } = await import('.');
           const results = await csfd.search(input);
-          const first = results.movies[0] ?? results.tvSeries[0];
-          if (!first) {
+          const match = pickTitleMatch([...results.movies, ...results.tvSeries], input);
+          if (!match) {
             console.error(err(`No movies found for "${input}".`));
             process.exit(1);
           }
-          console.log(c.dim(`  → ${first.title}${first.year ? ` (${first.year})` : ''}`));
-          await runMovieLookup(first.id, json);
+          console.log(c.dim(`  → ${match.title}${match.year ? ` (${match.year})` : ''}`));
+          await runMovieLookup(match.id, json);
         }
       } catch (error) {
         console.error(err('Failed to fetch movie:'), error);
