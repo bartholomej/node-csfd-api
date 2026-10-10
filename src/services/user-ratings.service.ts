@@ -1,6 +1,7 @@
-import { HTMLElement, parse } from 'node-html-parser';
-import { CSFDColorRating, CSFDFilmTypes, CSFDStars } from '../dto/global';
-import { CSFDUserRatingConfig, CSFDUserRatings } from '../dto/user-ratings';
+import type { HTMLElement } from 'node-html-parser';
+import { parse } from 'node-html-parser';
+import type { CSFDColorRating, CSFDFilmTypes, CSFDStars } from '../dto/global';
+import type { CSFDUserRatingConfig, CSFDUserRatings } from '../dto/user-ratings';
 import { fetchPage } from '../fetchers';
 import { normalizeUserId, sleep } from '../helpers/global.helper';
 import {
@@ -13,7 +14,7 @@ import {
   getUserRatingUrl,
   getUserRatingYear
 } from '../helpers/user-ratings.helper';
-import { CSFDOptions } from '../types';
+import type { CSFDOptions } from '../types';
 import { LIB_PREFIX, userRatingsUrl } from '../vars';
 
 export class UserRatingsScraper {

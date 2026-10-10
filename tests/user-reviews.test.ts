@@ -1,6 +1,7 @@
-import { HTMLElement, parse } from 'node-html-parser';
+import type { HTMLElement } from 'node-html-parser';
+import { parse } from 'node-html-parser';
 import { describe, expect, test } from 'vitest';
-import { CSFDFilmTypes, CSFDStars } from '../src/dto/global';
+import type { CSFDFilmTypes, CSFDStars } from '../src/dto/global';
 import {
   getUserReviewColorRating,
   getUserReviewDate,

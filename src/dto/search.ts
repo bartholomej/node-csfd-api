@@ -1,5 +1,5 @@
-import { CSFDScreening } from './global';
-import { CSFDMovieCreator } from './movie';
+import type { CSFDScreening } from './global';
+import type { CSFDMovieCreator } from './movie';
 
 export interface CSFDSearch {
   movies: CSFDSearchMovie[];

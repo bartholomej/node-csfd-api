@@ -1,7 +1,7 @@
 import { parse } from 'node-html-parser';
 import { describe, expect, test } from 'vitest';
-import { CSFDColorRating, CSFDFilmTypes } from '../src/dto/global';
-import { CSFDMovieCreator } from '../src/dto/movie';
+import type { CSFDColorRating, CSFDFilmTypes } from '../src/dto/global';
+import type { CSFDMovieCreator } from '../src/dto/movie';
 import {
   getCreatorImage,
   getCreatorName,
