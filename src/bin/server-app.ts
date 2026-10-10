@@ -1,4 +1,5 @@
 import type { HttpBindings } from '@hono/node-server';
+import { WebStandardStreamableHTTPServerTransport } from '@modelcontextprotocol/sdk/server/webStandardStreamableHttp.js';
 import { Hono, type Context } from 'hono';
 import type { ContentfulStatusCode } from 'hono/utils/http-status';
 import { csfd, CsfdError, type CsfdErrorReason } from '..';
@@ -6,6 +7,7 @@ import packageJson from '../../package.json' with { type: 'json' };
 import { CSFDFilmTypes } from '../dto/global';
 import { extractId } from '../helpers/global.helper';
 import { CSFDLanguage } from '../types';
+import { createMcpServer } from './mcp-app';
 
 const LOG_COLORS = {
   info: '\x1b[36m', // cyan
@@ -60,7 +62,8 @@ export enum Endpoint {
   SEARCH = '/search/:query',
   USER_RATINGS = '/user-ratings/:id',
   USER_REVIEWS = '/user-reviews/:id',
-  CINEMAS = '/cinemas'
+  CINEMAS = '/cinemas',
+  MCP = '/mcp'
 }
 
 export type ServerOptions = {
@@ -296,6 +299,30 @@ export function createApp({ apiKey, apiKeyName }: ServerOptions) {
     } catch (error) {
       return respondWithError(c, Errors.CINEMAS_FETCH_FAILED, 'cinemas', error);
     }
+  });
+
+  app.post(Endpoint.MCP, async (c) => {
+    // Stateless: a fresh MCP server per request, so there are no sessions to keep or expire
+    const server = createMcpServer();
+    const transport = new WebStandardStreamableHTTPServerTransport({
+      sessionIdGenerator: undefined,
+      enableJsonResponse: true
+    });
+    await server.connect(transport);
+    try {
+      return await transport.handleRequest(c.req.raw);
+    } finally {
+      await server.close();
+    }
+  });
+
+  // GET would open a notification stream that a per-request server never writes to
+  app.on(['GET', 'DELETE'], Endpoint.MCP, (c) => {
+    c.header('Allow', 'POST');
+    return c.json(
+      { jsonrpc: '2.0', error: { code: -32000, message: 'Method not allowed.' }, id: null },
+      405
+    );
   });
 
   app.notFound((c) => {
