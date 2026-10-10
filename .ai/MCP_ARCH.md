@@ -6,6 +6,7 @@ This explains how the Model Context Protocol (MCP) is implemented in `node-csfd-
 
 - Tools and prompts: `createMcpServer()` in `src/bin/mcp-app.ts`
 - Entry point (stdio): `src/bin/mcp-server.ts`
+- HTTP: the stateless `/mcp` route in `src/bin/server-app.ts`, protected by the REST server's `API_KEY`
 - Build output: `dist/bin/mcp-server.js`
 - Started by: `csfd mcp` / `npx node-csfd-api mcp`, or `yarn mcp` from source
 
