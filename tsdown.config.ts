@@ -39,7 +39,14 @@ export default defineConfig([
     format: ['esm'],
     outDir: outDir,
     clean: false, // Don't clean, otherwise it would delete the library build
-    unbundle: true,
+    deps: {
+      // Server, MCP and CLI deps are devDependencies and get bundled; installing the library pulls only these
+      onlyImport: ['node-html-parser'],
+      onlyBundle: false
+    },
+    outputOptions: {
+      chunkFileNames: 'bin/chunks/[name]-[hash].js'
+    },
     platform: 'node',
     target: 'node22',
     fixedExtension: false,
