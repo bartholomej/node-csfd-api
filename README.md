@@ -831,95 +831,13 @@ This library powers several production applications:
 
 ## 🛠️ Development
 
-### Prerequisites
-
-- Node.js 22.18+ (the repository uses 26, see `.nvmrc`)
-- Yarn 4 via [Corepack](https://github.com/nodejs/corepack): `npm install -g corepack && corepack enable`
-
-### Setup
-
-```bash
-# Clone the repository
-git clone https://github.com/bartholomej/node-csfd-api.git
-cd node-csfd-api
-
-# Install dependencies
-yarn install
-
-# Run tests
-yarn test
-
-# Run tests with coverage
-yarn test:coverage
-
-# Start development mode
-yarn start
-
-# Run the demo
-yarn demo
-```
-
-### Project Structure
-
-```text
-src/
-├── anubis/           # Browser verification (proof-of-work) client
-├── bin/              # REST server, MCP server, exports & CLI commands
-├── dto/              # Data transfer objects & types
-├── fetchers/         # HTTP request handlers
-├── helpers/          # Parsing & data transformation
-├── services/         # Main API service classes
-├── cli.ts            # CLI entry point
-├── errors.ts         # CsfdError
-└── index.ts          # Public API exports
-```
-
-### Testing
-
-The project maintains ~100% code coverage. Tests are located in the `tests/` directory.
-
-```bash
-# Run all tests
-yarn test
-
-# Run tests in watch mode
-yarn vitest
-
-# Generate coverage report
-yarn test:coverage
-```
+Want to run the project locally, start the REST or MCP server from source, or run the tests? Everything is in [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## 🤝 Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+Contributions are welcome! Read [CONTRIBUTING.md](CONTRIBUTING.md) before opening a pull request.
 
-### How to Contribute
-
-1. **Fork the repository**
-2. **Create a feature branch** (`git checkout -b feature/amazing-feature`)
-3. **Make your changes**
-4. **Add tests** for new functionality
-5. **Ensure tests pass** (`yarn test`)
-6. **Commit your changes** (`git commit -m 'Add amazing feature'`)
-7. **Push to the branch** (`git push origin feature/amazing-feature`)
-8. **Open a Pull Request**
-
-### Guidelines
-
-- Write clear, concise commit messages
-- Add tests for new features
-- Update documentation as needed
-- Follow the existing code style
-- Ensure all tests pass before submitting PR
-
-### Reporting Issues
-
-Found a bug? Have a feature request? Please [open an issue](https://github.com/bartholomej/node-csfd-api/issues) with:
-
-- Clear description of the problem
-- Steps to reproduce (for bugs)
-- Expected vs actual behavior
-- Environment details (Node version, OS, etc.)
+Found a bug or have an idea? [Open an issue](https://github.com/bartholomej/node-csfd-api/issues/new/choose).
 
 ## ⭐️ Support
 
