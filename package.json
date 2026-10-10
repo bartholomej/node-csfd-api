@@ -24,6 +24,7 @@
     "mock": "tsx tests/update-mocks.ts",
     "test:coverage": "yarn test --coverage",
     "publish:next": "yarn && yarn build && yarn test:coverage && cd dist && npm publish --tag next",
+    "version": "node scripts/sync-server-json.mjs && git add server.json",
     "postversion": "git push && git push --follow-tags",
     "release:beta": "npm version preminor --preid=beta -m \"chore(update): prelease %s β\"",
     "prerelease:beta": "npm version prerelease --preid=beta -m \"chore(update): prelease %s β\"",
