@@ -3,6 +3,7 @@ import express, { NextFunction, Request, Response } from 'express';
 import { csfd, CsfdError, type CsfdErrorReason } from '..';
 import packageJson from '../../package.json' with { type: 'json' };
 import { CSFDFilmTypes } from '../dto/global';
+import { extractId } from '../helpers/global.helper';
 import { CSFDLanguage } from '../types';
 
 const LOG_COLORS = {
@@ -33,6 +34,7 @@ enum Errors {
   API_KEY_MISSING = 'API_KEY_MISSING',
   API_KEY_INVALID = 'API_KEY_INVALID',
   ID_MISSING = 'ID_MISSING',
+  ID_INVALID = 'ID_INVALID',
   MOVIE_FETCH_FAILED = 'MOVIE_FETCH_FAILED',
   CREATOR_FETCH_FAILED = 'CREATOR_FETCH_FAILED',
   SEARCH_FETCH_FAILED = 'SEARCH_FETCH_FAILED',
@@ -82,6 +84,20 @@ const STATUS_BY_REASON: Record<CsfdErrorReason, number> = {
   http: 502,
   network: 502
 };
+
+function parseIdParam(id: string, req: Request, res: Response): number | null {
+  const parsed = extractId(id);
+  if (parsed !== null) {
+    return parsed;
+  }
+  const log: ErrorLog = {
+    error: Errors.ID_INVALID,
+    message: `Invalid ID: ${id}. Use a numeric ID, a slug like 10135-forrest-gump or a ČSFD URL.`
+  };
+  logMessage('warn', log, req);
+  res.status(400).json(log);
+  return null;
+}
 
 function respondWithError(
   req: Request,
@@ -204,11 +220,15 @@ app.get(['/movie/', '/creator/', '/search/', '/user-ratings/', '/user-reviews/']
 });
 
 app.get(Endpoint.MOVIE, async (req, res) => {
+  const id = parseIdParam(req.params.id, req, res);
+  if (id === null) {
+    return;
+  }
   const rawLanguage = req.query.language;
   const language = isSupportedLanguage(rawLanguage) ? rawLanguage : undefined;
 
   try {
-    const movie = await csfd.movie(+req.params.id, { language });
+    const movie = await csfd.movie(id, { language });
     res.json(movie);
     logMessage(
       'success',
@@ -224,11 +244,15 @@ app.get(Endpoint.MOVIE, async (req, res) => {
 });
 
 app.get(Endpoint.CREATOR, async (req, res) => {
+  const id = parseIdParam(req.params.id, req, res);
+  if (id === null) {
+    return;
+  }
   const rawLanguage = req.query.language;
   const language = isSupportedLanguage(rawLanguage) ? rawLanguage : undefined;
 
   try {
-    const result = await csfd.creator(+req.params.id, { language });
+    const result = await csfd.creator(id, { language });
     res.json(result);
     logMessage(
       'success',
@@ -264,13 +288,17 @@ app.get(Endpoint.SEARCH, async (req, res) => {
 });
 
 app.get(Endpoint.USER_RATINGS, async (req, res) => {
+  const id = parseIdParam(req.params.id, req, res);
+  if (id === null) {
+    return;
+  }
   const { allPages, allPagesDelay, excludes, includesOnly, page } = req.query;
   const rawLanguage = req.query.language;
   const language = isSupportedLanguage(rawLanguage) ? rawLanguage : undefined;
 
   try {
     const result = await csfd.userRatings(
-      req.params.id,
+      id,
       {
         allPages: allPages === 'true',
         allPagesDelay: allPagesDelay ? +allPagesDelay : undefined,
@@ -299,13 +327,17 @@ app.get(Endpoint.USER_RATINGS, async (req, res) => {
 });
 
 app.get(Endpoint.USER_REVIEWS, async (req, res) => {
+  const id = parseIdParam(req.params.id, req, res);
+  if (id === null) {
+    return;
+  }
   const { allPages, allPagesDelay, excludes, includesOnly, page } = req.query;
   const rawLanguage = req.query.language;
   const language = isSupportedLanguage(rawLanguage) ? rawLanguage : undefined;
 
   try {
     const result = await csfd.userReviews(
-      req.params.id,
+      id,
       {
         allPages: allPages === 'true',
         allPagesDelay: allPagesDelay ? +allPagesDelay : undefined,

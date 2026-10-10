@@ -777,6 +777,7 @@ docker run -p 3000:3000 -e API_KEY=my-secret bartholomej/node-csfd-api
 
 | Status | When                                                          |
 | ------ | ------------------------------------------------------------- |
+| `400`  | The ID isn't a valid ČSFD ID, slug or URL                     |
 | `401`  | API key is missing or invalid                                 |
 | `404`  | The movie, creator or user doesn't exist, or unknown endpoint |
 | `502`  | ČSFD is unreachable or answered with an error                 |
