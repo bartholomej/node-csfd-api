@@ -19,7 +19,7 @@ The project is divided into layers. Do not mix concerns.
     - **DTOs** (`src/dto`): TypeScript interfaces defining the shape of the data.
     - **Anubis** (`src/anubis`): Self-contained client for ČSFD's proof-of-work browser check. It must stay portable (Node, browsers, React Native), so no Node built-ins.
 
-2.  **MCP Server (`src/bin/mcp-server.ts`)**:
+2.  **MCP Server (`src/bin/mcp-app.ts`, stdio entry in `src/bin/mcp-server.ts`)**:
     - The AI interfacing layer. It wraps `src/services` into tools executable by LLMs.
     - See `.ai/MCP_ARCH.md` for specific rules.
 
@@ -62,7 +62,7 @@ The project is divided into layers. Do not mix concerns.
 1.  Update Interface in `src/dto/movie.ts`.
 2.  Create a helper in `src/helpers/movie.helper.ts`.
 3.  Update logic in `src/services/movie.service.ts`.
-4.  Verify `src/bin/mcp-server.ts` exposes it (it usually does automatically via the service).
+4.  Verify `src/bin/mcp-app.ts` exposes it (it usually does automatically via the service).
 
 **Task: Add a new MCP Tool**
 
