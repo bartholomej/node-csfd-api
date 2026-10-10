@@ -23,8 +23,6 @@ const INITIAL_STATE = [
   0x6a09e667, 0xbb67ae85, 0x3c6ef372, 0xa54ff53a, 0x510e527f, 0x9b05688c, 0x1f83d9ab, 0x5be0cd19
 ];
 
-const encoder = new TextEncoder();
-
 /** Runs the 64-byte block at `offset` through the compression function, updating `state`. */
 const compress = (state: Int32Array, message: Uint8Array, offset: number, w: Uint32Array): void => {
   for (let i = 0; i < 16; i++) {
@@ -80,6 +78,8 @@ const compress = (state: Int32Array, message: Uint8Array, offset: number, w: Uin
  * proof-of-work's hashing to a third.
  */
 export const sha256Prefixed = (prefix: string): ((suffix: string) => Uint8Array) => {
+  // Created per call so that merely loading the library needs no TextEncoder.
+  const encoder = new TextEncoder();
   const prefixBytes = encoder.encode(prefix);
   const blockAligned = prefixBytes.length - (prefixBytes.length % 64);
   const tail = prefixBytes.subarray(blockAligned);
