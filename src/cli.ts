@@ -4,6 +4,7 @@
 
 import { c, err } from './bin/utils';
 import type { CSFDFilmTypes } from './dto/global';
+import { extractId } from './helpers/global.helper';
 
 declare const __VERSION__: string;
 
@@ -53,14 +54,14 @@ function getCommandName(): string {
   return 'csfd';
 }
 
-function parseNumericArg(raw: string | undefined, usage: string): number {
-  const n = Number(raw);
-  if (!raw || isNaN(n)) {
-    console.error(err('Please provide a valid numeric ID.'));
+function parseIdArg(raw: string | undefined, usage: string): number {
+  const id = raw ? extractId(raw) : null;
+  if (id === null) {
+    console.error(err('Please provide a valid ID (e.g. 912, 912-bart or a ČSFD profile URL).'));
     console.log(c.dim(`  Usage: ${usage}`));
     process.exit(1);
   }
-  return n;
+  return id;
 }
 
 function parseFormat(args: string[]): 'csv' | 'json' {
@@ -98,10 +99,7 @@ async function main() {
 
     case 'export':
       if (args[1] === 'ratings') {
-        const userId = parseNumericArg(
-          args[2],
-          `${getCommandName()} export ratings <userId> [options]`
-        );
+        const userId = parseIdArg(args[2], `${getCommandName()} export ratings <userId> [options]`);
         const isLetterboxd = args.includes('--letterboxd');
         const format: 'csv' | 'json' | 'letterboxd' = isLetterboxd
           ? 'letterboxd'
@@ -121,10 +119,7 @@ async function main() {
           process.exit(1);
         }
       } else if (args[1] === 'reviews') {
-        const userId = parseNumericArg(
-          args[2],
-          `${getCommandName()} export reviews <userId> [options]`
-        );
+        const userId = parseIdArg(args[2], `${getCommandName()} export reviews <userId> [options]`);
         try {
           const { runReviewsExport } = await import('./bin/export-reviews');
           await runReviewsExport(userId, {
