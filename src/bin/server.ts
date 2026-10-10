@@ -1,6 +1,6 @@
 import 'dotenv/config';
 import express, { NextFunction, Request, Response } from 'express';
-import { csfd } from '..';
+import { csfd, CsfdError, type CsfdErrorReason } from '..';
 import packageJson from '../../package.json' with { type: 'json' };
 import { CSFDFilmTypes } from '../dto/global';
 import { CSFDLanguage } from '../types';
@@ -74,6 +74,29 @@ function logMessage(severity: Severity, log: ErrorLog, req?: Request) {
   } else {
     console.log(msg);
   }
+}
+
+const STATUS_BY_REASON: Record<CsfdErrorReason, number> = {
+  'not-found': 404,
+  blocked: 503,
+  http: 502,
+  network: 502
+};
+
+function respondWithError(
+  req: Request,
+  res: Response,
+  code: Errors,
+  subject: string,
+  error: unknown
+) {
+  const status = error instanceof CsfdError ? STATUS_BY_REASON[error.reason] : 500;
+  const log: ErrorLog = {
+    error: code,
+    message: `Failed to fetch ${subject} data: ${error}`
+  };
+  logMessage(status < 500 ? 'warn' : 'error', log, req);
+  res.status(status).json(log);
 }
 
 enum Endpoint {
@@ -196,12 +219,7 @@ app.get(Endpoint.MOVIE, async (req, res) => {
       req
     );
   } catch (error) {
-    const log: ErrorLog = {
-      error: Errors.MOVIE_FETCH_FAILED,
-      message: 'Failed to fetch movie data: ' + error
-    };
-    logMessage('error', log, req);
-    res.status(500).json(log);
+    respondWithError(req, res, Errors.MOVIE_FETCH_FAILED, 'movie', error);
   }
 });
 
@@ -221,12 +239,7 @@ app.get(Endpoint.CREATOR, async (req, res) => {
       req
     );
   } catch (error) {
-    const log: ErrorLog = {
-      error: Errors.CREATOR_FETCH_FAILED,
-      message: 'Failed to fetch creator data: ' + error
-    };
-    logMessage('error', log, req);
-    res.status(500).json(log);
+    respondWithError(req, res, Errors.CREATOR_FETCH_FAILED, 'creator', error);
   }
 });
 
@@ -246,12 +259,7 @@ app.get(Endpoint.SEARCH, async (req, res) => {
       req
     );
   } catch (error) {
-    const log: ErrorLog = {
-      error: Errors.SEARCH_FETCH_FAILED,
-      message: 'Failed to fetch search data: ' + error
-    };
-    logMessage('error', log, req);
-    res.status(500).json(log);
+    respondWithError(req, res, Errors.SEARCH_FETCH_FAILED, 'search', error);
   }
 });
 
@@ -286,12 +294,7 @@ app.get(Endpoint.USER_RATINGS, async (req, res) => {
       req
     );
   } catch (error) {
-    const log: ErrorLog = {
-      error: Errors.USER_RATINGS_FETCH_FAILED,
-      message: 'Failed to fetch user-ratings data: ' + error
-    };
-    logMessage('error', log, req);
-    res.status(500).json(log);
+    respondWithError(req, res, Errors.USER_RATINGS_FETCH_FAILED, 'user-ratings', error);
   }
 });
 
@@ -326,12 +329,7 @@ app.get(Endpoint.USER_REVIEWS, async (req, res) => {
       req
     );
   } catch (error) {
-    const log: ErrorLog = {
-      error: Errors.USER_REVIEWS_FETCH_FAILED,
-      message: 'Failed to fetch user-reviews data: ' + error
-    };
-    logMessage('error', log, req);
-    res.status(500).json(log);
+    respondWithError(req, res, Errors.USER_REVIEWS_FETCH_FAILED, 'user-reviews', error);
   }
 });
 
@@ -348,12 +346,7 @@ app.get(Endpoint.CINEMAS, async (req, res) => {
     );
     res.json(result);
   } catch (error) {
-    const log: ErrorLog = {
-      error: Errors.CINEMAS_FETCH_FAILED,
-      message: 'Failed to fetch cinemas data: ' + error
-    };
-    logMessage('error', log, req);
-    res.status(500).json(log);
+    respondWithError(req, res, Errors.CINEMAS_FETCH_FAILED, 'cinemas', error);
   }
 });
 
