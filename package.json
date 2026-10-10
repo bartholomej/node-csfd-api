@@ -47,7 +47,6 @@
     "zod": "^4.6.5"
   },
   "devDependencies": {
-    "@babel/preset-typescript": "^8.0.7",
     "@types/express": "^5.0.6",
     "@types/node": "^26.6.5",
     "@vitest/coverage-istanbul": "^5.0.3",
