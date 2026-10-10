@@ -16,7 +16,7 @@ jobs:
     name: 🚀 Publish to NPM
 
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
       - name: 📦 Enable Corepack
         run: corepack enable
@@ -59,7 +59,7 @@ jobs:
     timeout-minutes: 20
     steps:
       - name: 📥 Checkout code
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       - name: 🏷️ Docker Metadata extraction
         id: meta
