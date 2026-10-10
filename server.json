@@ -1,0 +1,27 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.bartholomej/node-csfd-api",
+  "title": "ČSFD",
+  "description": "Movies, TV series, creators and user ratings from ČSFD.cz, the Czech-Slovak film database",
+  "repository": {
+    "url": "https://github.com/bartholomej/node-csfd-api",
+    "source": "github"
+  },
+  "version": "5.12.0",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "node-csfd-api",
+      "version": "5.12.0",
+      "transport": {
+        "type": "stdio"
+      },
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "mcp"
+        }
+      ]
+    }
+  ]
+}
