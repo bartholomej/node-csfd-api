@@ -6,8 +6,8 @@
   "scripts": {
     "dev": "tsc -w",
     "start": "yarn dev",
-    "server": "tsx server/index.ts",
-    "mcp": "tsx mcp-server/index.ts",
+    "server": "tsx src/bin/server.ts",
+    "mcp": "tsx src/bin/mcp-server.ts",
     "prebuild": "rimraf dist",
     "build": "tsdown",
     "tsc": "tsc",
@@ -16,7 +16,6 @@
     "example:esm:ts": "cd examples/server/esm && yarn build:ts",
     "example:cjs:js": "cd examples/server/cjs && yarn build",
     "example:esm:js": "cd examples/server/esm && yarn build",
-    "letterboxd": "tsx examples/letterboxd/letterboxd-export.ts",
     "examples": "yarn example:cjs:ts && yarn example:cjs:js && yarn example:esm:ts && yarn example:esm:js",
     "lint": "oxlint --fix",
     "docs": "yarn dlx -p typedoc@0.28.20 -p typescript@6.0.3 typedoc",
