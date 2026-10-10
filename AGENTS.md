@@ -6,7 +6,7 @@ This file serves as the primary context source for AI agents (Claude, Gemini, GP
 
 **Project:** `node-csfd-api`
 **Description:** A TypeScript wrapper and scraper for CSFD.cz (Czecho-Slovak Film Database). It exposes data via a Node.js API and a Model Context Protocol (MCP) server for AI consumption.
-**Core Stack:** TypeScript, Node.js, `node-html-parser`, Zod, Express.
+**Core Stack:** TypeScript, Node.js, `node-html-parser`, Zod, Hono.
 
 ## 🗺️ High-Level Architecture
 
@@ -24,7 +24,7 @@ The project is divided into layers. Do not mix concerns.
     - See `.ai/MCP_ARCH.md` for specific rules.
 
 3.  **REST Server (`src/bin/server.ts`)**:
-    - A classic Express/Node server exposing the scraper as a REST API.
+    - A Hono server on Node exposing the scraper as a REST API. Routes live in `src/bin/server-app.ts` (`createApp`), `server.ts` only reads env and listens.
 
 4.  **CLI (`src/cli.ts`)**:
     - The `csfd` command. Subcommands (exports, search, movie lookup) live in `src/bin/`.
