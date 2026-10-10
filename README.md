@@ -709,6 +709,30 @@ Add the following configuration to your `claude_desktop_config.json`:
 }
 ```
 
+### Other Clients
+
+**Claude Code**
+
+```bash
+claude mcp add csfd -- npx -y node-csfd-api mcp
+```
+
+**Cursor:** add the same `mcpServers` configuration as for Claude Desktop to `~/.cursor/mcp.json` (or `.cursor/mcp.json` in your project).
+
+**VS Code:** add this to `.vscode/mcp.json` in your project:
+
+```json
+{
+  "servers": {
+    "csfd": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "node-csfd-api", "mcp"]
+    }
+  }
+}
+```
+
 ### Supported Tools
 
 - `search`: Search movies, TV series, creators and users (returns IDs for the other tools)
@@ -718,7 +742,7 @@ Add the following configuration to your `claude_desktop_config.json`:
 - `get_user_reviews`: User reviews (by page)
 - `get_cinemas`: Cinema showtimes
 
-There is also an `actor-top-rated` prompt that finds and ranks the best movies of an actor or creator.
+Every tool returns structured data with a declared output schema, so clients know which fields to expect. There is also an `actor-top-rated` prompt that finds and ranks the best movies of an actor or creator.
 
 ## 🐳 Docker Support
 
