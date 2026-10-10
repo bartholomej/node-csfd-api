@@ -733,6 +733,47 @@ claude mcp add csfd -- npx -y node-csfd-api mcp
 }
 ```
 
+### Over HTTP
+
+The REST server also serves MCP at `/mcp`, so one running instance, e.g. the Docker image, can be shared by several clients. It is protected by the same `API_KEY` as the REST API.
+
+```bash
+docker run -p 3000:3000 -e API_KEY=my-secret bartholomej/node-csfd-api
+```
+
+**Claude Code**
+
+```bash
+claude mcp add --transport http csfd http://localhost:3000/mcp --header "x-api-key: my-secret"
+```
+
+**VS Code** (`.vscode/mcp.json`):
+
+```json
+{
+  "servers": {
+    "csfd": {
+      "type": "http",
+      "url": "http://localhost:3000/mcp",
+      "headers": { "x-api-key": "my-secret" }
+    }
+  }
+}
+```
+
+**Cursor** (`~/.cursor/mcp.json`):
+
+```json
+{
+  "mcpServers": {
+    "csfd": {
+      "url": "http://localhost:3000/mcp",
+      "headers": { "x-api-key": "my-secret" }
+    }
+  }
+}
+```
+
 ### Supported Tools
 
 - `search`: Search movies, TV series, creators and users (returns IDs for the other tools)
@@ -770,7 +811,7 @@ docker run -p 3000:3000 node-csfd-api
 
 ### REST API
 
-Start the server with Docker (above), `csfd server` or `npx node-csfd-api server`, then access it at `http://localhost:3000`:
+Start the server with Docker (above), `csfd server` or `npx node-csfd-api server`, then access it at `http://localhost:3000`. The same server also serves [MCP over HTTP](#over-http) at `/mcp`.
 
 | Endpoint            | Description                | Example                              |
 | ------------------- | -------------------------- | ------------------------------------ |

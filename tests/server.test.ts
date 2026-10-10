@@ -1,3 +1,5 @@
+import { Client } from '@modelcontextprotocol/sdk/client/index.js';
+import { StreamableHTTPClientTransport } from '@modelcontextprotocol/sdk/client/streamableHttp.js';
 import { afterEach, beforeEach, describe, expect, test, vi } from 'vitest';
 import { csfd } from '../src';
 import { createApp } from '../src/bin/server-app';
@@ -129,6 +131,99 @@ describe('REST server', () => {
   });
 });
 
+const rpc = (id: number, method: string, params: object = {}) => ({
+  jsonrpc: '2.0',
+  id,
+  method,
+  params
+});
+
+const mcpPost = (target: typeof app, body: object, headers: Record<string, string> = {}) =>
+  target.request('/mcp', {
+    method: 'POST',
+    headers: {
+      'content-type': 'application/json',
+      accept: 'application/json, text/event-stream',
+      ...headers
+    },
+    body: JSON.stringify(body)
+  });
+
+describe('MCP over HTTP', () => {
+  test('initialize returns the server info', async () => {
+    const res = await mcpPost(
+      app,
+      rpc(1, 'initialize', {
+        protocolVersion: '2025-06-18',
+        capabilities: {},
+        clientInfo: { name: 'test', version: '0' }
+      })
+    );
+    expect(res.status).toBe(200);
+    expect((await res.json()).result.serverInfo.name).toBe('node-csfd-api');
+  });
+
+  test('lists the tools without a session', async () => {
+    const res = await mcpPost(app, rpc(2, 'tools/list'));
+    const { result } = await res.json();
+    expect(result.tools.map((tool: { name: string }) => tool.name)).toEqual([
+      'search',
+      'get_movie',
+      'get_creator',
+      'get_user_ratings',
+      'get_user_reviews',
+      'get_cinemas'
+    ]);
+  });
+
+  test('calls a tool', async () => {
+    const spy = vi
+      .spyOn(csfd, 'movie')
+      .mockResolvedValue({ id: 10135, title: 'Forrest Gump' } as never);
+    const res = await mcpPost(
+      app,
+      rpc(3, 'tools/call', { name: 'get_movie', arguments: { id: 10135 } })
+    );
+    const { result } = await res.json();
+    expect(spy).toHaveBeenCalledWith(10135);
+    expect(result.structuredContent).toMatchObject({ id: 10135, title: 'Forrest Gump' });
+  });
+
+  test('GET is not allowed', async () => {
+    const res = await app.request('/mcp');
+    expect(res.status).toBe(405);
+    expect(res.headers.get('allow')).toBe('POST');
+  });
+
+  test('rejects a client that does not accept JSON and event streams', async () => {
+    const res = await mcpPost(app, rpc(4, 'tools/list'), { accept: 'application/json' });
+    expect(res.status).toBe(406);
+  });
+
+  test('works with a real MCP client', async () => {
+    vi.spyOn(csfd, 'search').mockResolvedValue({
+      movies: [{ id: 9499, title: 'Matrix', year: 1999, poster: 'https://example.com/matrix.jpg' }],
+      tvSeries: [],
+      creators: [],
+      users: []
+    } as never);
+    const client = new Client({ name: 'test', version: '0' });
+    const transport = new StreamableHTTPClientTransport(new URL('http://localhost/mcp'), {
+      fetch: (url, init) => app.request(String(url), init)
+    });
+    await client.connect(transport);
+    await client.listTools();
+    const result = await client.callTool({ name: 'search', arguments: { query: 'matrix' } });
+    expect(result.structuredContent).toMatchObject({ movies: [{ title: 'Matrix' }] });
+    await client.close();
+  });
+
+  test('root lists the endpoint', async () => {
+    const body = await (await app.request('/')).json();
+    expect(body.links).toContain('/mcp');
+  });
+});
+
 describe('REST server with API keys', () => {
   const secured = createApp({ apiKey: 'one, two', apiKeyName: 'x-api-key' });
 
@@ -138,6 +233,12 @@ describe('REST server with API keys', () => {
       expect(res.status).toBe(401);
       expect(await res.json()).toMatchObject({ error: 'API_KEY_MISSING' });
     }
+  });
+
+  test('protects the MCP endpoint too', async () => {
+    expect((await mcpPost(secured, rpc(1, 'tools/list'))).status).toBe(401);
+    const res = await mcpPost(secured, rpc(1, 'tools/list'), { 'x-api-key': 'one' });
+    expect(res.status).toBe(200);
   });
 
   test('rejects an invalid key', async () => {
