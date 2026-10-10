@@ -21,7 +21,7 @@ COPY . .
 # Build the application (compiles to /dist)
 RUN yarn build
 
-# Install Yarn workspace-tools plugin and prune to strictly production dependencies
+# Prune to strictly production dependencies
 RUN yarn workspaces focus --all --production
 
 # --- STAGE 2: Production (Ultra-lean) ---
@@ -40,6 +40,8 @@ COPY --from=build /usr/src/app/node_modules ./node_modules
 COPY package.json ./
 
 EXPOSE 3000
+
+USER node
 
 # Start the application
 CMD ["node", "dist/bin/server.js"]
