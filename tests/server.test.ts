@@ -1,3 +1,5 @@
+import { Client } from '@modelcontextprotocol/sdk/client/index.js';
+import { StreamableHTTPClientTransport } from '@modelcontextprotocol/sdk/client/streamableHttp.js';
 import { afterEach, beforeEach, describe, expect, test, vi } from 'vitest';
 import { csfd } from '../src';
 import { createApp } from '../src/bin/server-app';
@@ -196,6 +198,24 @@ describe('MCP over HTTP', () => {
   test('rejects a client that does not accept JSON and event streams', async () => {
     const res = await mcpPost(app, rpc(4, 'tools/list'), { accept: 'application/json' });
     expect(res.status).toBe(406);
+  });
+
+  test('works with a real MCP client', async () => {
+    vi.spyOn(csfd, 'search').mockResolvedValue({
+      movies: [{ id: 9499, title: 'Matrix', year: 1999, poster: 'https://example.com/matrix.jpg' }],
+      tvSeries: [],
+      creators: [],
+      users: []
+    } as never);
+    const client = new Client({ name: 'test', version: '0' });
+    const transport = new StreamableHTTPClientTransport(new URL('http://localhost/mcp'), {
+      fetch: (url, init) => app.request(String(url), init)
+    });
+    await client.connect(transport);
+    await client.listTools();
+    const result = await client.callTool({ name: 'search', arguments: { query: 'matrix' } });
+    expect(result.structuredContent).toMatchObject({ movies: [{ title: 'Matrix' }] });
+    await client.close();
   });
 
   test('root lists the endpoint', async () => {
