@@ -1,6 +1,14 @@
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
 import { z } from 'zod';
+import {
+  cinemasOutput,
+  creatorOutput,
+  movieOutput,
+  searchOutput,
+  userRatingsOutput,
+  userReviewsOutput
+} from './mcp-schemas';
 import packageJson from '../../package.json' with { type: 'json' };
 import { csfd } from '../index.js';
 
@@ -25,6 +33,7 @@ server.registerTool(
         .string()
         .describe('Search query (movie title, series, or actor, director, etc. name)')
     },
+    outputSchema: searchOutput,
     annotations: {
       readOnlyHint: true,
       idempotentHint: true,
@@ -66,6 +75,7 @@ server.registerTool(
     inputSchema: {
       id: z.number().describe("CSFD Movie ID (found using the 'search' tool)")
     },
+    outputSchema: movieOutput,
     annotations: {
       readOnlyHint: true,
       idempotentHint: true,
@@ -106,6 +116,7 @@ server.registerTool(
     inputSchema: {
       id: z.number().describe('CSFD Creator ID')
     },
+    outputSchema: creatorOutput,
     annotations: {
       readOnlyHint: true,
       idempotentHint: true,
@@ -163,6 +174,7 @@ server.registerTool(
         .optional()
         .describe('Only include these film types (e.g. "film")')
     },
+    outputSchema: userRatingsOutput,
     annotations: {
       readOnlyHint: true,
       idempotentHint: true,
@@ -226,6 +238,7 @@ server.registerTool(
         .optional()
         .describe('Only include these film types (e.g. "film")')
     },
+    outputSchema: userReviewsOutput,
     annotations: {
       readOnlyHint: true,
       idempotentHint: true,
@@ -275,6 +288,7 @@ server.registerTool(
         .enum(['today', 'tomorrow', 'weekend', 'week', 'month'])
         .describe('Time period for screenings')
     },
+    outputSchema: cinemasOutput,
     annotations: {
       readOnlyHint: true,
       idempotentHint: true,

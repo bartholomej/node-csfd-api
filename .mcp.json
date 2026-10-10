@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "csfd-dev": {
+      "command": "yarn",
+      "args": ["mcp"]
+    }
+  }
+}
