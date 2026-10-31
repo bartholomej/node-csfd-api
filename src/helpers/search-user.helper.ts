@@ -10,9 +10,9 @@ export const getUserRealName = (el: HTMLElement): string => {
   if (!p) return null;
 
   const textNodes = p.childNodes.filter(
-    (n) => n.nodeType === NodeType.TEXT_NODE && n.rawText.trim() !== ''
+    (n) => n.nodeType === NodeType.TEXT_NODE && n.text.trim() !== ''
   );
-  const name = textNodes.length ? textNodes[0].rawText.trim() : null;
+  const name = textNodes.length ? textNodes[0].text.trim() : null;
 
   return name;
 };

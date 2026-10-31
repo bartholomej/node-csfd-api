@@ -45,7 +45,7 @@ export const getCinemaUrl = (el: HTMLElement | null): string => {
 };
 
 export const parseCinema = (el: HTMLElement | null): { city: string; name: string } => {
-  const title = el.querySelector('header h2').innerText.trim();
+  const title = el.querySelector('header h2').text.trim();
   const [city, name] = title.split(' - ');
   return { city, name };
 };

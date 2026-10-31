@@ -151,7 +151,7 @@ export const getSeriesAndSeasonTitle = (
     return { seriesName: null, seasonName: null };
   }
 
-  const fullText = titleElement.innerText.trim();
+  const fullText = titleElement.text.trim();
 
   // Check if there's a series part indicated by ' - '
   if (fullText.includes(' - ')) {
@@ -164,7 +164,7 @@ export const getSeriesAndSeasonTitle = (
 };
 
 export const getMovieTitle = (el: HTMLElement): string => {
-  return el.querySelector('h1').innerText.split(`(`)[0].trim();
+  return el.querySelector('h1').text.split(`(`)[0].trim();
 };
 
 export const getMovieGenres = (el: HTMLElement): CSFDGenres[] => {
@@ -320,7 +320,7 @@ const parseMoviePeople = (el: HTMLElement): CSFDMovieCreator[] => {
       .map((person) => {
         return {
           id: parseIdFromUrl(person.attributes.href),
-          name: person.innerText.trim(),
+          name: person.text.trim(),
           url: `https://www.csfd.cz${person.attributes.href}`
         };
       })
@@ -452,7 +452,7 @@ export const getMovieGroup = (
 export const getMovieType = (el: HTMLElement): CSFDFilmTypes => {
   const type = el.querySelector('.film-header-name .type');
   const text =
-    type?.innerText
+    type?.text
       ?.replace(/[{()}]/g, '')
       .split('\n')[0]
       .trim() || 'film';

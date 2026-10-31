@@ -16,7 +16,7 @@ export const getCreatorId = (url: string | null | undefined): number | null => {
 
 export const getCreatorName = (el: HTMLElement | null): string | null => {
   const h1 = el?.querySelector('h1');
-  return h1?.innerText?.trim() ?? null;
+  return h1?.text.trim() ?? null;
 };
 
 export const getCreatorBirthdayInfo = (
@@ -24,8 +24,8 @@ export const getCreatorBirthdayInfo = (
 ): { birthday: string | null; age: number; birthPlace: string } => {
   const infoBlock = el?.querySelector('.creator-profile-details p');
   const text = infoBlock?.innerHTML.trim();
-  const birthPlaceRow = infoBlock?.querySelector('.info-place')?.innerText.trim();
-  const ageRow = infoBlock?.querySelector('.info')?.innerText.trim();
+  const birthPlaceRow = infoBlock?.querySelector('.info-place')?.text.trim();
+  const ageRow = infoBlock?.querySelector('.info')?.text.trim();
 
   let birthday: string | null = null;
 

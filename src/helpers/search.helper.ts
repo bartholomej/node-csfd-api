@@ -8,7 +8,7 @@ type Creator = 'Režie:' | 'Hrají:';
 
 export const getSearchType = (el: HTMLElement): CSFDFilmTypes => {
   const type = el.querySelectorAll('.film-title-info .info')[1];
-  return parseFilmType(type?.innerText?.replace(/[{()}]/g, '')?.trim() || 'film');
+  return parseFilmType(type?.text.replace(/[{()}]/g, '')?.trim() || 'film');
 };
 
 export const getSearchTitle = (el: HTMLElement): string => {
@@ -17,7 +17,7 @@ export const getSearchTitle = (el: HTMLElement): string => {
 
 export const getSearchYear = (el: HTMLElement): number => {
   // Optimization: Use querySelector instead of querySelectorAll(...)[0]
-  return +el.querySelector('.film-title-info .info')?.innerText.replace(/[{()}]/g, '');
+  return +el.querySelector('.film-title-info .info')?.text.replace(/[{()}]/g, '');
 };
 
 export const getSearchUrl = (el: HTMLElement): string => {
@@ -69,7 +69,7 @@ export const parseSearchPeople = (
     return people.map((person) => {
       return {
         id: parseIdFromUrl(person.attributes.href),
-        name: person.innerText.trim(),
+        name: person.text.trim(),
         url: `https://www.csfd.cz${person.attributes.href}`
       };
     });
