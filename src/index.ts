@@ -2,12 +2,14 @@ import { CSFDCinema, CSFDCinemaPeriod } from './dto/cinema';
 import { CSFDCreator } from './dto/creator';
 import { CSFDMovie } from './dto/movie';
 import { CSFDSearch } from './dto/search';
+import { CSFDUser } from './dto/user';
 import { CSFDUserRatingConfig, CSFDUserRatings } from './dto/user-ratings';
 import { CSFDUserReviews, CSFDUserReviewsConfig } from './dto/user-reviews';
 import { CinemaScraper } from './services/cinema.service';
 import { CreatorScraper } from './services/creator.service';
 import { MovieScraper } from './services/movie.service';
 import { SearchScraper } from './services/search.service';
+import { UserScraper } from './services/user.service';
 import { UserRatingsScraper } from './services/user-ratings.service';
 import { UserReviewsScraper } from './services/user-reviews.service';
 import { CSFDOptions } from './types';
@@ -23,7 +25,9 @@ export class Csfd {
     private creatorService: CreatorScraper,
     private searchService: SearchScraper,
     private cinemaService: CinemaScraper,
-    defaultOptions?: CSFDOptions
+    defaultOptions?: CSFDOptions,
+    // Last and defaulted, so existing positional calls keep working
+    private userService: UserScraper = new UserScraper()
   ) {
     this.defaultOptions = defaultOptions;
   }
@@ -35,6 +39,11 @@ export class Csfd {
     if (language !== undefined) {
       this.defaultOptions = { ...this.defaultOptions, language };
     }
+  }
+
+  public async user(user: string | number, options?: CSFDOptions): Promise<CSFDUser> {
+    const opts = options ?? this.defaultOptions;
+    return this.userService.user(user, opts);
   }
 
   public async userRatings(

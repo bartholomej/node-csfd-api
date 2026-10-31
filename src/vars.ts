@@ -32,6 +32,10 @@ export const getUrlByLanguage = (language?: CSFDLanguage): string => {
 export const userUrl = (user: string | number, options: Options): string =>
   `${getUrlByLanguage(options?.language)}/uzivatel/${encodeURIComponent(user)}`;
 
+// The profile root 404s for a bare ID, its overview page doesn't
+export const userProfileUrl = (user: string | number, options: Options = {}): string =>
+  `${userUrl(user, options)}/prehled/`;
+
 export const userRatingsUrl = (
   user: string | number,
   page?: number,

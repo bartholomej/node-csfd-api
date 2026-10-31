@@ -77,6 +77,7 @@ console.log(reviews);
 - [Movie Details](#movie)
 - [Search](#search)
 - [Creators](#creators)
+- [User](#user)
 - [User Ratings](#user-ratings)
 - [User Reviews](#user-reviews)
 - [Language & Request Options](#language--request-options)
@@ -373,6 +374,46 @@ console.log(creator.birthday); // Birth date
 ```
 
 </details>
+
+### User
+
+> Get a user's public ČSFD profile: nickname, real name, avatar, member since and totals.
+
+**Method:** `csfd.user(user: number | string, options?: CSFDOptions): Promise<CSFDUser>`
+
+```typescript
+import { csfd } from 'node-csfd-api';
+
+const user = await csfd.user(912); // also '912-bart' or a profile URL
+
+console.log(user.user); // Nickname
+console.log(user.userRealName); // Real name
+console.log(user.ratingsCount); // All ratings, not just the first page
+```
+
+<details>
+  <summary>🔎 Click here to see full result example</summary>
+
+```javascript
+{
+  id: 912,
+  user: 'BART!',
+  userRealName: 'Lukáš Barták',
+  avatar: 'https://image.pmgstatic.com/cache/resized/w100h132/files/images/user/avatars/000/281/281554_1c0fef.jpg',
+  url: 'https://www.csfd.cz/uzivatel/912-bart/',
+  location: 'Byen København, Hovedstaden, Dánsko',
+  about: 'Danskjävlar',
+  memberSince: '2003-03-15',
+  ratingsCount: 3132,
+  reviewsCount: 12,
+  fans: 54,
+  points: 31
+}
+```
+
+</details>
+
+Fields a profile doesn't show (no real name, no reviews yet) are `null`.
 
 ### User Ratings
 
