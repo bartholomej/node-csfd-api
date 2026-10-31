@@ -198,6 +198,18 @@ async function main() {
       break;
     }
 
+    case 'user': {
+      const userId = parseIdArg(args[1], `${getCommandName()} user <userId> [--json]`);
+      try {
+        const { runUserLookup } = await import('./bin/lookup-user');
+        await runUserLookup(userId, args.includes('--json'));
+      } catch (error) {
+        console.error(err('Failed to fetch user:'), error);
+        process.exit(1);
+      }
+      break;
+    }
+
     case '--version':
     case '-v':
       console.log(c.bold(__VERSION__));
@@ -407,6 +419,8 @@ ${sub_('--csv')}                     ${desc('CSV format (default)')}
 ${sub_('--json')}                    ${desc('JSON format')}
 ${cmd_('search <query>')}            ${desc('Search movies, series, creators and users')}
 ${cmd_('movie <id|title>')}          ${desc('Show movie details (ID or film name)')}
+${sub_('--json')}                    ${desc('Output raw JSON')}
+${cmd_('user <userId>')}             ${desc('Show a user profile')}
 ${sub_('--json')}                    ${desc('Output raw JSON')}
 ${cmd_('update')}                    ${desc('Check for updates')}
 ${cmd_('help')}                      ${desc('Show this help')}

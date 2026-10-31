@@ -689,7 +689,16 @@ csfd movie 535121 --json      # raw JSON output, pipe-friendly
 # npx node-csfd-api movie 535121 --json
 ```
 
-#### 3. Export Ratings (CSV, JSON & Letterboxd)
+#### 3. User Profile
+
+```bash
+csfd user 912                 # by ID, slug (912-bart) or profile URL
+# npx node-csfd-api user 912
+csfd user 912 --json          # raw JSON output
+# npx node-csfd-api user 912 --json
+```
+
+#### 4. Export Ratings (CSV, JSON & Letterboxd)
 
 > Backup your personal user ratings. _Use this tool just to keep a local copy of your data._
 
@@ -702,7 +711,7 @@ csfd export ratings 912 --letterboxd  # Letterboxd CSV -> <userId>-for-letterbox
 # npx node-csfd-api export ratings 912 --letterboxd
 ```
 
-#### 3. Export Reviews (CSV & JSON)
+#### 5. Export Reviews (CSV & JSON)
 
 ```bash
 csfd export reviews 912            # CSV (default) -> <userId>-reviews.csv
@@ -711,14 +720,14 @@ csfd export reviews 912 --json     # JSON -> <userId>-reviews.json
 # npx node-csfd-api export reviews 912 --json
 ```
 
-#### 4. REST API Server
+#### 6. REST API Server
 
 ```bash
 csfd server
 # npx node-csfd-api server
 ```
 
-#### 5. MCP Server for AI Agents
+#### 7. MCP Server for AI Agents
 
 ```bash
 csfd mcp
@@ -733,7 +742,7 @@ This library includes a built-in [Model Context Protocol (MCP)](https://modelcon
 
 - **Search**: Search for movies, TV series, creators and users.
 - **Details**: Get comprehensive details about movies and creators.
-- **Users**: Read user ratings and reviews.
+- **Users**: Read user profiles, ratings and reviews.
 
 ### Usage with Claude Desktop
 
@@ -779,6 +788,7 @@ claude mcp add csfd -- npx -y node-csfd-api mcp
 - `search`: Search movies, TV series, creators and users (returns IDs for the other tools)
 - `get_movie`: Movie or TV series details by ID
 - `get_creator`: Creator details and filmography by ID
+- `get_user`: User profile (nickname, real name, member since, totals)
 - `get_user_ratings`: User ratings (by page)
 - `get_user_reviews`: User reviews (by page)
 - `get_cinemas`: Cinema showtimes
@@ -818,6 +828,7 @@ Start the server with Docker (above), `csfd server` or `npx node-csfd-api server
 | `/movie/:id`        | Movie or TV series details | `/movie/535121`                      |
 | `/search/:query`    | Search                     | `/search/tarantino`                  |
 | `/creator/:id`      | Creator details            | `/creator/2120`                      |
+| `/user/:id`         | User profile               | `/user/912-bart`                     |
 | `/user-ratings/:id` | User ratings               | `/user-ratings/912-bart?page=2`      |
 | `/user-reviews/:id` | User reviews               | `/user-reviews/195357?allPages=true` |
 | `/cinemas`          | Today's showtimes in Praha | `/cinemas`                           |
@@ -884,6 +895,7 @@ This library powers several production applications:
 - **Creators**
   - Biography and filmography
 - **User Data**
+  - Profile (nickname, real name, member since, totals)
   - Ratings with pagination and filtering
   - Reviews with pagination and filtering
 

@@ -9,8 +9,12 @@ const digits = (text: string | undefined): number | null => {
   return value ? Number(value) : null;
 };
 
+// The canonical points at the overview tab: prehled/ (cs), overview/ (en), prehlad/ (sk)
 export const getUserProfileUrl = (el: HTMLElement | null): string | null =>
-  el?.querySelector('link[rel="canonical"]')?.getAttribute('href') ?? null;
+  el
+    ?.querySelector('link[rel="canonical"]')
+    ?.getAttribute('href')
+    ?.replace(/(prehled|overview|prehlad)\/$/, '') ?? null;
 
 export const getUserId = (el: HTMLElement | null): number | null => {
   const url = getUserProfileUrl(el);

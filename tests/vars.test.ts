@@ -1,5 +1,20 @@
 import { describe, expect, test } from 'vitest';
-import { creatorUrl, movieUrl, searchUrl, userRatingsUrl } from '../src/vars';
+import { creatorUrl, movieUrl, searchUrl, userProfileUrl, userRatingsUrl } from '../src/vars';
+
+describe('Vars User Profile', () => {
+  test('Assemble userProfileUrl', () => {
+    expect(userProfileUrl('912-bart')).toBe('https://www.csfd.cz/uzivatel/912-bart/prehled/');
+    expect(userProfileUrl(912)).toBe('https://www.csfd.cz/uzivatel/912/prehled/');
+  });
+  test('Assemble userProfileUrl in other languages', () => {
+    expect(userProfileUrl(912, { language: 'en' })).toBe(
+      'https://www.csfd.cz/en/uzivatel/912/prehled/'
+    );
+    expect(userProfileUrl(912, { language: 'sk' })).toBe(
+      'https://www.csfd.cz/sk/uzivatel/912/prehled/'
+    );
+  });
+});
 
 describe('Vars User Ratings', () => {
   test('Assemble User rating url', () => {

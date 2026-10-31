@@ -15,7 +15,7 @@ import {
   getUserSectionCount
 } from '../helpers/user.helper';
 import { CSFDOptions } from '../types';
-import { userProfileUrl } from '../vars';
+import { userProfileUrl, userUrl } from '../vars';
 
 export class UserScraper {
   public async user(user: string | number, options?: CSFDOptions): Promise<CSFDUser> {
@@ -29,7 +29,7 @@ export class UserScraper {
       user: getUserNick(html),
       userRealName: getUserRealName(html),
       avatar: getUserAvatar(html),
-      url: (getUserProfileUrl(html) ?? url).replace(/(prehled|prehlad|overview)\/$/, ''),
+      url: getUserProfileUrl(html) ?? `${userUrl(userId, { language: options?.language })}/`,
       location: getUserLocation(html),
       about: getUserAbout(html),
       memberSince: getUserMemberSince(html),

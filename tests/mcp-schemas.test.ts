@@ -19,6 +19,7 @@ import { serie1SeasonsMock } from './mocks/series1-seasons.mock';
 import { seriesMock } from './mocks/series1.html';
 import { serie2EpisodeMock } from './mocks/series2-episode.mock';
 import { serie2EpisodesMock } from './mocks/series2-episodes.mock';
+import { userMock } from './mocks/user.html';
 import { userRatingsMock } from './mocks/userRatings.html';
 import { userReviwsMock } from './mocks/userReviews.html';
 
@@ -76,6 +77,14 @@ describe('MCP tools return data their output schema accepts', () => {
 
   test('search', async () => {
     await callWith(searchMock, 'search', { query: 'matrix' });
+  });
+
+  test('get_user', async () => {
+    await callWith(userMock, 'get_user', { user: '912-bart' });
+  });
+
+  test('get_user without the optional parts', async () => {
+    await callWith('<html><body></body></html>', 'get_user', { user: 912 });
   });
 
   test('get_user_ratings', async () => {

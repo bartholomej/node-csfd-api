@@ -38,6 +38,7 @@ enum Errors {
   MOVIE_FETCH_FAILED = 'MOVIE_FETCH_FAILED',
   CREATOR_FETCH_FAILED = 'CREATOR_FETCH_FAILED',
   SEARCH_FETCH_FAILED = 'SEARCH_FETCH_FAILED',
+  USER_FETCH_FAILED = 'USER_FETCH_FAILED',
   USER_RATINGS_FETCH_FAILED = 'USER_RATINGS_FETCH_FAILED',
   USER_REVIEWS_FETCH_FAILED = 'USER_REVIEWS_FETCH_FAILED',
   CINEMAS_FETCH_FAILED = 'CINEMAS_FETCH_FAILED',
@@ -119,6 +120,7 @@ enum Endpoint {
   MOVIE = '/movie/:id',
   CREATOR = '/creator/:id',
   SEARCH = '/search/:query',
+  USER = '/user/:id',
   USER_RATINGS = '/user-ratings/:id',
   USER_REVIEWS = '/user-reviews/:id',
   CINEMAS = '/cinemas'
@@ -210,14 +212,17 @@ app.get('/', (_, res) => {
   });
 });
 
-app.get(['/movie/', '/creator/', '/search/', '/user-ratings/', '/user-reviews/'], (req, res) => {
-  const log: ErrorLog = {
-    error: Errors.ID_MISSING,
-    message: `ID is missing. Provide ID like this: ${req.url}${req.url.endsWith('/') ? '' : '/'}1234`
-  };
-  logMessage('warn', log, req);
-  res.status(404).json(log);
-});
+app.get(
+  ['/movie/', '/creator/', '/search/', '/user/', '/user-ratings/', '/user-reviews/'],
+  (req, res) => {
+    const log: ErrorLog = {
+      error: Errors.ID_MISSING,
+      message: `ID is missing. Provide ID like this: ${req.url}${req.url.endsWith('/') ? '' : '/'}1234`
+    };
+    logMessage('warn', log, req);
+    res.status(404).json(log);
+  }
+);
 
 app.get(Endpoint.MOVIE, async (req, res) => {
   const id = parseIdParam(req.params.id, req, res);
@@ -284,6 +289,30 @@ app.get(Endpoint.SEARCH, async (req, res) => {
     );
   } catch (error) {
     respondWithError(req, res, Errors.SEARCH_FETCH_FAILED, 'search', error);
+  }
+});
+
+app.get(Endpoint.USER, async (req, res) => {
+  const id = parseIdParam(req.params.id, req, res);
+  if (id === null) {
+    return;
+  }
+  const rawLanguage = req.query.language;
+  const language = isSupportedLanguage(rawLanguage) ? rawLanguage : undefined;
+
+  try {
+    const result = await csfd.user(id, { language });
+    res.json(result);
+    logMessage(
+      'success',
+      {
+        error: null,
+        message: `${Endpoint.USER}: ${req.params.id}${language ? ` [${language}]` : ''}`
+      },
+      req
+    );
+  } catch (error) {
+    respondWithError(req, res, Errors.USER_FETCH_FAILED, 'user', error);
   }
 });
 

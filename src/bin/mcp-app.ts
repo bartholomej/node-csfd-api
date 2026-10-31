@@ -5,6 +5,7 @@ import {
   creatorOutput,
   movieOutput,
   searchOutput,
+  userOutput,
   userRatingsOutput,
   userReviewsOutput
 } from './mcp-schemas';
@@ -144,7 +145,50 @@ export function createMcpServer(): McpServer {
   );
 
   /**
-   * TOOL 4: User Ratings
+   * TOOL 4: User Profile
+   * Description: Returns a CSFD user's public profile and totals.
+   */
+  server.registerTool(
+    'get_user',
+    {
+      title: 'Get User',
+      description:
+        "Retrieves a CSFD user's public profile: nickname, real name, location, member since, and the total number of ratings, reviews and fans. Use get_user_ratings or get_user_reviews for the ratings and reviews themselves.",
+      inputSchema: {
+        user: z
+          .union([z.string(), z.number()])
+          .describe('CSFD User ID (numeric), a slug like 912-bart, or a profile URL')
+      },
+      outputSchema: userOutput,
+      annotations: {
+        readOnlyHint: true,
+        idempotentHint: true,
+        openWorldHint: false
+      }
+    },
+    async ({ user }) => {
+      try {
+        const profile = await csfd.user(user);
+        return {
+          structuredContent: profile as unknown as Record<string, unknown>,
+          content: [
+            {
+              type: 'text',
+              text: `User ${profile.user} (ID ${profile.id}) retrieved successfully.`
+            }
+          ]
+        };
+      } catch (error) {
+        return {
+          content: [{ type: 'text', text: `Error retrieving user profile: ${error}` }],
+          isError: true
+        };
+      }
+    }
+  );
+
+  /**
+   * TOOL 5: User Ratings
    * Description: Returns ratings from a specific CSFD user.
    */
   server.registerTool(
@@ -208,7 +252,7 @@ export function createMcpServer(): McpServer {
   );
 
   /**
-   * TOOL 5: User Reviews
+   * TOOL 6: User Reviews
    * Description: Returns reviews written by a specific CSFD user.
    */
   server.registerTool(
@@ -272,7 +316,7 @@ export function createMcpServer(): McpServer {
   );
 
   /**
-   * TOOL 6: Cinemas
+   * TOOL 7: Cinemas
    * Description: Returns cinema screenings for a given district and time period.
    */
   server.registerTool(

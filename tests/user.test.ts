@@ -1,5 +1,6 @@
 import { parse } from 'node-html-parser';
 import { afterEach, describe, expect, test, vi } from 'vitest';
+import { csfd, Csfd } from '../src';
 import * as fetchers from '../src/fetchers';
 import {
   getUserAbout,
@@ -9,21 +10,43 @@ import {
   getUserLocation,
   getUserMemberSince,
   getUserNick,
+  getUserProfileUrl,
   getUserRealName,
   getUserSectionCount
 } from '../src/helpers/user.helper';
 import { UserScraper } from '../src/services/user.service';
-import { userProfileUrl } from '../src/vars';
 import { userMock } from './mocks/user.html';
 
 const html = parse(userMock);
 const empty = parse(
   '<html><body><div class="user-profile-header"><h1> nobody </h1></div></body></html>'
 );
+const canonical = (href: string) => parse(`<head><link rel="canonical" href="${href}"></head>`);
 
 describe('User profile helpers', () => {
   test('ID from the canonical url', () => {
     expect(getUserId(html)).toBe(912);
+  });
+
+  test.each([
+    [
+      'cs',
+      'https://www.csfd.cz/uzivatel/912-bart/prehled/',
+      'https://www.csfd.cz/uzivatel/912-bart/'
+    ],
+    [
+      'en',
+      'https://www.csfd.cz/en/user/912-bart/overview/',
+      'https://www.csfd.cz/en/user/912-bart/'
+    ],
+    [
+      'sk',
+      'https://www.csfd.cz/sk/uzivatel/912-bart/prehlad/',
+      'https://www.csfd.cz/sk/uzivatel/912-bart/'
+    ]
+  ])('Profile url without the overview tab (%s)', (_, href, expected) => {
+    expect(getUserProfileUrl(canonical(href))).toBe(expected);
+    expect(getUserId(canonical(href))).toBe(912);
   });
 
   test('Nick, real name and avatar', () => {
@@ -66,6 +89,8 @@ describe('User profile helpers', () => {
 
   test('Missing parts are null', () => {
     expect(getUserNick(empty)).toBe('nobody');
+    expect(getUserProfileUrl(empty)).toBeNull();
+    expect(getUserId(empty)).toBeNull();
     expect(getUserRealName(empty)).toBeNull();
     expect(getUserAvatar(empty)).toBeNull();
     expect(getUserLocation(empty)).toBeNull();
@@ -83,7 +108,7 @@ describe('UserScraper', () => {
     const spy = vi.spyOn(fetchers, 'fetchPage').mockResolvedValue(userMock);
     const user = await new UserScraper().user('912-bart');
 
-    expect(spy).toHaveBeenCalledWith(userProfileUrl('912-bart'), {});
+    expect(spy).toHaveBeenCalledWith('https://www.csfd.cz/uzivatel/912-bart/prehled/', {});
     expect(user).toEqual({
       id: 912,
       user: 'BART!',
@@ -105,5 +130,65 @@ describe('UserScraper', () => {
     const spy = vi.spyOn(fetchers, 'fetchPage').mockResolvedValue(userMock);
     await new UserScraper().user('https://www.csfd.cz/uzivatel/912-bart/hodnoceni/');
     expect(spy).toHaveBeenCalledWith('https://www.csfd.cz/uzivatel/912/prehled/', {});
+  });
+
+  test.each([
+    ['en', 'https://www.csfd.cz/en/uzivatel/912/prehled/'],
+    ['sk', 'https://www.csfd.cz/sk/uzivatel/912/prehled/']
+  ] as const)('Fetches the %s profile', async (language, expected) => {
+    const spy = vi.spyOn(fetchers, 'fetchPage').mockResolvedValue(userMock);
+    await new UserScraper().user(912, { language });
+    expect(spy).toHaveBeenCalledWith(expected, {});
+  });
+
+  test('Passes request options to the fetcher', async () => {
+    const spy = vi.spyOn(fetchers, 'fetchPage').mockResolvedValue(userMock);
+    await new UserScraper().user(912, { request: { credentials: 'omit' } });
+    expect(spy).toHaveBeenCalledWith('https://www.csfd.cz/uzivatel/912/prehled/', {
+      credentials: 'omit'
+    });
+  });
+
+  test('Without a canonical link, ID and url come from the input', async () => {
+    vi.spyOn(fetchers, 'fetchPage').mockResolvedValue(empty.toString());
+    const user = await new UserScraper().user('912-bart', { language: 'en' });
+    expect(user.id).toBe(912);
+    expect(user.url).toBe('https://www.csfd.cz/en/uzivatel/912-bart/');
+  });
+});
+
+describe('Csfd.user', () => {
+  afterEach(() => vi.restoreAllMocks());
+
+  const instance = () =>
+    new Csfd(null as any, null as any, null as any, null as any, null as any, null as any, {
+      language: 'sk'
+    });
+
+  test('Uses the default options', async () => {
+    const spy = vi.spyOn(fetchers, 'fetchPage').mockResolvedValue(userMock);
+    const user = await instance().user(912);
+    expect(spy).toHaveBeenCalledWith('https://www.csfd.cz/sk/uzivatel/912/prehled/', {});
+    expect(user.id).toBe(912);
+  });
+
+  test('Options passed to the call win over the defaults', async () => {
+    const spy = vi.spyOn(fetchers, 'fetchPage').mockResolvedValue(userMock);
+    await instance().user(912, { language: 'en' });
+    expect(spy).toHaveBeenCalledWith('https://www.csfd.cz/en/uzivatel/912/prehled/', {});
+  });
+});
+
+describe('Live: user profile', () => {
+  test.each([
+    ['cs', 'https://www.csfd.cz/uzivatel/912-bart/'],
+    ['en', 'https://www.csfd.cz/en/user/912-bart/'],
+    ['sk', 'https://www.csfd.cz/sk/uzivatel/912-bart/']
+  ] as const)('%s', async (language, url) => {
+    const user = await csfd.user(912, { language });
+    expect(user).toMatchObject({ id: 912, user: 'BART!', url, memberSince: '2003-03-15' });
+    expect(user.ratingsCount).toBeGreaterThan(3000);
+    expect(user.reviewsCount).toBeGreaterThan(0);
+    expect(user.avatar).toMatch(/^https:\/\//);
   });
 });

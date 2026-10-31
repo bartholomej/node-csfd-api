@@ -85,6 +85,21 @@ export const creatorOutput = z.looseObject({
   ).describe('Filmography')
 });
 
+export const userOutput = z.looseObject({
+  id: z.number(),
+  user: nullish(z.string()).describe('Username'),
+  userRealName: nullish(z.string()),
+  avatar: nullish(z.string()),
+  url: nullish(z.string()),
+  location: nullish(z.string()),
+  about: nullish(z.string()).describe('Short line under the name'),
+  memberSince: nullish(z.string()).describe('Sign-up date (YYYY-MM-DD)'),
+  ratingsCount: nullish(z.number()).describe('Total number of ratings'),
+  reviewsCount: nullish(z.number()).describe('Total number of reviews'),
+  fans: nullish(z.number()).describe('Users who added this user to their favourites'),
+  points: nullish(z.number()).describe('Fan club points')
+});
+
 export const userRatingsOutput = z.looseObject({
   results: z.array(
     z.looseObject({
