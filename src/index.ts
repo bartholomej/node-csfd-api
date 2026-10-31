@@ -41,8 +41,16 @@ export class Csfd {
     }
   }
 
+  // Per field, so { language: undefined } or { request } alone keeps the other defaults
+  private resolveOptions(options?: CSFDOptions): CSFDOptions {
+    return {
+      language: options?.language ?? this.defaultOptions?.language,
+      request: options?.request ?? this.defaultOptions?.request
+    };
+  }
+
   public async user(user: string | number, options?: CSFDOptions): Promise<CSFDUser> {
-    const opts = options ?? this.defaultOptions;
+    const opts = this.resolveOptions(options);
     return this.userService.user(user, opts);
   }
 
@@ -51,7 +59,7 @@ export class Csfd {
     config?: CSFDUserRatingConfig,
     options?: CSFDOptions
   ): Promise<CSFDUserRatings[]> {
-    const opts = options ?? this.defaultOptions;
+    const opts = this.resolveOptions(options);
     return this.userRatingsService.userRatings(user, config, opts);
   }
 
@@ -60,22 +68,22 @@ export class Csfd {
     config?: CSFDUserReviewsConfig,
     options?: CSFDOptions
   ): Promise<CSFDUserReviews[]> {
-    const opts = options ?? this.defaultOptions;
+    const opts = this.resolveOptions(options);
     return this.userReviewsService.userReviews(user, config, opts);
   }
 
   public async movie(movie: number | string, options?: CSFDOptions): Promise<CSFDMovie> {
-    const opts = options ?? this.defaultOptions;
+    const opts = this.resolveOptions(options);
     return this.movieService.movie(movie, opts);
   }
 
   public async creator(creator: number | string, options?: CSFDOptions): Promise<CSFDCreator> {
-    const opts = options ?? this.defaultOptions;
+    const opts = this.resolveOptions(options);
     return this.creatorService.creator(creator, opts);
   }
 
   public async search(text: string, options?: CSFDOptions): Promise<CSFDSearch> {
-    const opts = options ?? this.defaultOptions;
+    const opts = this.resolveOptions(options);
     return this.searchService.search(text, opts);
   }
 
@@ -84,7 +92,7 @@ export class Csfd {
     period: CSFDCinemaPeriod,
     options?: CSFDOptions
   ): Promise<CSFDCinema[]> {
-    const opts = options ?? this.defaultOptions;
+    const opts = this.resolveOptions(options);
     return this.cinemaService.cinemas(+district, period, opts);
   }
 }

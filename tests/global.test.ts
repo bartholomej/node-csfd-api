@@ -1,11 +1,13 @@
-import { describe, expect, test } from 'vitest';
+import { afterEach, describe, expect, test, vi } from 'vitest';
 import { csfd, Csfd } from '../src';
+import * as fetchers from '../src/fetchers';
 import {
   getDuration,
   parseDate,
   parseISO8601Duration,
   parseLastIdFromUrl
 } from '../src/helpers/global.helper';
+import { userMock } from './mocks/user.html';
 
 export const durationInput = [
   'PT142M',
@@ -106,8 +108,10 @@ describe('parseLastIdFromUrl invalid test', () => {
 });
 
 describe('CSFD setOptions', () => {
-  test('Should set custom options', async () => {
-    const csfdCustom = new Csfd(
+  afterEach(() => vi.restoreAllMocks());
+
+  const withDefaults = () => {
+    const instance = new Csfd(
       null as any,
       null as any,
       null as any,
@@ -115,9 +119,37 @@ describe('CSFD setOptions', () => {
       null as any,
       null as any
     );
-    csfdCustom.setOptions({ request: { credentials: 'include' } });
-    csfdCustom.setOptions({ language: 'en' });
-    expect(true).toBe(true);
+    instance.setOptions({ request: { credentials: 'include' } });
+    instance.setOptions({ language: 'en' });
+    return instance;
+  };
+  const spyFetch = () => vi.spyOn(fetchers, 'fetchPage').mockResolvedValue(userMock);
+  const EN_URL = 'https://www.csfd.cz/en/uzivatel/912/prehled/';
+
+  test('Both defaults apply to a call without options', async () => {
+    const spy = spyFetch();
+    await withDefaults().user(912);
+    expect(spy).toHaveBeenCalledWith(EN_URL, { credentials: 'include' });
+  });
+
+  test('An undefined language keeps the default (REST without ?language=)', async () => {
+    const spy = spyFetch();
+    await withDefaults().user(912, { language: undefined });
+    expect(spy).toHaveBeenCalledWith(EN_URL, { credentials: 'include' });
+  });
+
+  test('Request options alone keep the default language', async () => {
+    const spy = spyFetch();
+    await withDefaults().user(912, { request: { credentials: 'omit' } });
+    expect(spy).toHaveBeenCalledWith(EN_URL, { credentials: 'omit' });
+  });
+
+  test('Language passed to the call wins over the default', async () => {
+    const spy = spyFetch();
+    await withDefaults().user(912, { language: 'sk' });
+    expect(spy).toHaveBeenCalledWith('https://www.csfd.cz/sk/uzivatel/912/prehled/', {
+      credentials: 'include'
+    });
   });
 });
 
