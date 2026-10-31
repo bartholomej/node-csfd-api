@@ -28,6 +28,9 @@ jobs:
       - name: ⬆️ Update dependencies
         run: yarn up "*"
 
+      - name: 🧹 Dedupe dependencies
+        run: yarn dedupe
+
       - name: 🏗️ Build application
         run: yarn build
 
