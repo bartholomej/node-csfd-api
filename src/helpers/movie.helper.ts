@@ -311,21 +311,19 @@ export const getMovieDescriptions = (el: HTMLElement): string[] => {
     .map((movie) => movie.textContent?.trim().replace(CLEAN_TEXT_REGEX, ''));
 };
 
-const parseMoviePeople = (el: HTMLElement): CSFDMovieCreator[] => {
-  const people = el.querySelectorAll('a');
-  return (
-    people
-      // Filter out "more" links
-      .filter((x) => x.classNames.length === 0)
-      .map((person) => {
-        return {
-          id: parseIdFromUrl(person.attributes.href),
-          name: person.text.trim(),
-          url: `https://www.csfd.cz${person.attributes.href}`
-        };
-      })
-  );
-};
+const parseMoviePeople = (el: HTMLElement): CSFDMovieCreator[] =>
+  el.querySelectorAll('a[href*="/tvurce/"]').flatMap((person): CSFDMovieCreator[] => {
+    const href = person.getAttribute('href');
+    const id = parseIdFromUrl(href);
+    if (!id) return [];
+    return [
+      {
+        id,
+        name: person.text.trim(),
+        url: href.startsWith('/') ? `https://www.csfd.cz${href}` : href
+      }
+    ];
+  });
 
 // export const getMovieGroup = (el: HTMLElement, group: CSFDCreatorGroups | CSFDCreatorGroupsEnglish | CSFDCreatorGroupsSlovak): CSFDMovieCreator[] => {
 //   const creators = el.querySelectorAll('.creators h4');

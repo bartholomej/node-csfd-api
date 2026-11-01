@@ -548,6 +548,21 @@ describe('Get people', () => {
     ]);
   });
 
+  test('Links that are not creator profiles are skipped', () => {
+    const html = parse(`
+      <div class="creators"><div>
+        <h4>Hrají:</h4>
+        <a href="/tvurce/1-mel-gibson/prehled/">Mel Gibson</a>,
+        <span class="more-member-1"><a href="/en/tvurce/2-vince-vaughn/">Vince Vaughn</a></span>
+        <a href="javascript:void(0);">více</a>
+        <a href="/tvurce/">Tvůrci</a>
+      </div></div>`);
+    expect(getMovieCreators(html).actors).toEqual<CSFDMovieCreator[]>([
+      { id: 1, name: 'Mel Gibson', url: 'https://www.csfd.cz/tvurce/1-mel-gibson/prehled/' },
+      { id: 2, name: 'Vince Vaughn', url: 'https://www.csfd.cz/en/tvurce/2-vince-vaughn/' }
+    ]);
+  });
+
   test('Group not found should return empty array', () => {
     const creators = getMovieGroup(movieNode, 'NeexistujiciSkupina:' as any);
     expect(creators).toEqual([]);
