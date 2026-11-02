@@ -1,4 +1,4 @@
-import { HTMLElement } from 'node-html-parser';
+import type { HTMLElement } from 'node-html-parser';
 import type { CSFDColorRating, CSFDFilmTypes } from '../dto/global';
 import type {
   CSFDBoxContent,

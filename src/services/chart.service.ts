@@ -1,5 +1,11 @@
-import { HTMLElement, parse } from 'node-html-parser';
-import { CSFDChartCategory, CSFDChartConfig, CSFDChartItem, CSFDChartType } from '../dto/chart';
+import type { HTMLElement } from 'node-html-parser';
+import { parse } from 'node-html-parser';
+import type {
+  CSFDChartCategory,
+  CSFDChartConfig,
+  CSFDChartItem,
+  CSFDChartType
+} from '../dto/chart';
 import { fetchPage } from '../fetchers';
 import {
   getChartColorRating,
@@ -16,7 +22,7 @@ import {
   getChartYear
 } from '../helpers/chart.helper';
 import { parseIdFromUrl } from '../helpers/global.helper';
-import { CSFDLanguage, CSFDOptions } from '../types';
+import type { CSFDLanguage, CSFDOptions } from '../types';
 import { chartUrl, movieUrl } from '../vars';
 
 const FIRST_PAGE = 99;

@@ -1,5 +1,5 @@
 import { parse } from 'node-html-parser';
-import { CSFDUser } from '../dto/user';
+import type { CSFDUser } from '../dto/user';
 import { fetchPage } from '../fetchers';
 import { extractId, normalizeUserId } from '../helpers/global.helper';
 import {
@@ -14,7 +14,7 @@ import {
   getUserRealName,
   getUserSectionCount
 } from '../helpers/user.helper';
-import { CSFDOptions } from '../types';
+import type { CSFDOptions } from '../types';
 import { userProfileUrl, userUrl } from '../vars';
 
 export class UserScraper {

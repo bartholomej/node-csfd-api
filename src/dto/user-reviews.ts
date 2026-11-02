@@ -1,4 +1,4 @@
-import { CSFDFilmTypes, CSFDScreening, CSFDStars } from './global';
+import type { CSFDFilmTypes, CSFDScreening, CSFDStars } from './global';
 
 export interface CSFDUserReviews extends CSFDScreening {
   userRating: CSFDStars;

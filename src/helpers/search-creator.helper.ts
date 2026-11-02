@@ -1,4 +1,4 @@
-import { HTMLElement } from 'node-html-parser';
+import type { HTMLElement } from 'node-html-parser';
 import { addProtocol } from './global.helper';
 
 export const getCreatorName = (el: HTMLElement): string => {

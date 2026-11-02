@@ -1,11 +1,11 @@
-import { CSFDChartCategory, CSFDChartConfig, CSFDChartItem, CSFDChartType } from './dto/chart';
-import { CSFDCinema, CSFDCinemaPeriod } from './dto/cinema';
-import { CSFDCreator } from './dto/creator';
-import { CSFDMovie } from './dto/movie';
-import { CSFDSearch } from './dto/search';
-import { CSFDUser } from './dto/user';
-import { CSFDUserRatingConfig, CSFDUserRatings } from './dto/user-ratings';
-import { CSFDUserReviews, CSFDUserReviewsConfig } from './dto/user-reviews';
+import type { CSFDChartCategory, CSFDChartConfig, CSFDChartItem, CSFDChartType } from './dto/chart';
+import type { CSFDCinema, CSFDCinemaPeriod } from './dto/cinema';
+import type { CSFDCreator } from './dto/creator';
+import type { CSFDMovie } from './dto/movie';
+import type { CSFDSearch } from './dto/search';
+import type { CSFDUser } from './dto/user';
+import type { CSFDUserRatingConfig, CSFDUserRatings } from './dto/user-ratings';
+import type { CSFDUserReviews, CSFDUserReviewsConfig } from './dto/user-reviews';
 import { ChartScraper } from './services/chart.service';
 import { CinemaScraper } from './services/cinema.service';
 import { CreatorScraper } from './services/creator.service';
@@ -14,7 +14,7 @@ import { SearchScraper } from './services/search.service';
 import { UserScraper } from './services/user.service';
 import { UserRatingsScraper } from './services/user-ratings.service';
 import { UserReviewsScraper } from './services/user-reviews.service';
-import { CSFDOptions } from './types';
+import type { CSFDOptions } from './types';
 
 export class Csfd {
   private defaultOptions?: CSFDOptions;

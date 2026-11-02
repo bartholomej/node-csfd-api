@@ -1,7 +1,8 @@
-import { HTMLElement, parse } from 'node-html-parser';
+import type { HTMLElement } from 'node-html-parser';
+import { parse } from 'node-html-parser';
 import { describe, expect, test } from 'vitest';
-import { CSFDColorRating, CSFDFilmTypes } from '../src/dto/global';
-import {
+import type { CSFDColorRating, CSFDFilmTypes } from '../src/dto/global';
+import type {
   CSFDMovieCreator,
   CSFDMovieListItem,
   CSFDParent,

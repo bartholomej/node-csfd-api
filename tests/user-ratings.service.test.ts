@@ -1,6 +1,6 @@
 import { afterAll, beforeAll, describe, expect, test, vi, type MockInstance } from 'vitest';
-import { CSFDFilmTypes } from '../src/dto/global';
-import { CSFDUserRatings } from '../src/dto/user-ratings';
+import type { CSFDFilmTypes } from '../src/dto/global';
+import type { CSFDUserRatings } from '../src/dto/user-ratings';
 import * as fetchers from '../src/fetchers';
 import { UserRatingsScraper } from '../src/services/user-ratings.service';
 

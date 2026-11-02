@@ -3,10 +3,10 @@ import { Hono, type Context } from 'hono';
 import type { ContentfulStatusCode } from 'hono/utils/http-status';
 import { csfd, CsfdError, type CsfdErrorReason } from '..';
 import packageJson from '../../package.json' with { type: 'json' };
-import { CSFDChartCategory, CSFDChartType } from '../dto/chart';
-import { CSFDFilmTypes } from '../dto/global';
+import type { CSFDChartCategory, CSFDChartType } from '../dto/chart';
+import type { CSFDFilmTypes } from '../dto/global';
 import { extractId } from '../helpers/global.helper';
-import { CSFDLanguage } from '../types';
+import type { CSFDLanguage } from '../types';
 
 const LOG_COLORS = {
   info: '\x1b[36m', // cyan

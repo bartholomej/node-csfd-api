@@ -1,7 +1,8 @@
-import { HTMLElement, NodeType } from 'node-html-parser';
-import { CSFDColorRating } from '../dto/global';
-import { CSFDMovieCreator } from '../dto/movie';
-import { CSFDColors } from '../dto/user-ratings';
+import type { HTMLElement } from 'node-html-parser';
+import { NodeType } from 'node-html-parser';
+import type { CSFDColorRating } from '../dto/global';
+import type { CSFDMovieCreator } from '../dto/movie';
+import type { CSFDColors } from '../dto/user-ratings';
 import { addProtocol, parseColor, parseIdFromUrl } from './global.helper';
 
 const PEOPLE_LABELS: Record<'directors' | 'actors', RegExp> = {

@@ -1,4 +1,4 @@
-import { HTMLElement } from 'node-html-parser';
+import type { HTMLElement } from 'node-html-parser';
 import { addProtocol, parseDate, parseIdFromUrl } from './global.helper';
 
 const collapse = (text: string | undefined): string | null =>

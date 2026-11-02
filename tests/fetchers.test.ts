@@ -1,9 +1,10 @@
 import { beforeAll, describe, expect, test } from 'vitest';
-import { csfd, CsfdError, CSFDUserRatings } from '../src';
-import { CSFDCinema } from '../src/dto/cinema';
-import { CSFDCreator, CSFDCreatorScreening } from '../src/dto/creator';
-import { CSFDColorRating, CSFDFilmTypes } from '../src/dto/global';
-import { CSFDMovie } from '../src/dto/movie';
+import type { CSFDUserRatings } from '../src';
+import { csfd, CsfdError } from '../src';
+import type { CSFDCinema } from '../src/dto/cinema';
+import type { CSFDCreator, CSFDCreatorScreening } from '../src/dto/creator';
+import type { CSFDColorRating, CSFDFilmTypes } from '../src/dto/global';
+import type { CSFDMovie } from '../src/dto/movie';
 import { fetchPage } from '../src/fetchers';
 import { movieUrl, userRatingsUrl } from '../src/vars';
 const badId = 999999999999999;

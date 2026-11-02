@@ -1,5 +1,5 @@
 import { afterAll, beforeAll, describe, expect, test, vi, type MockInstance } from 'vitest';
-import { CSFDUserReviews } from '../src/dto/user-reviews';
+import type { CSFDUserReviews } from '../src/dto/user-reviews';
 import * as fetchers from '../src/fetchers';
 import { UserReviewsScraper } from '../src/services/user-reviews.service';
 

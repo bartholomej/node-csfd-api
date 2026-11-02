@@ -1,5 +1,5 @@
-import { CSFDScreening } from './global';
-import { CSFDSearchCreators } from './search';
+import type { CSFDScreening } from './global';
+import type { CSFDSearchCreators } from './search';
 
 export type CSFDChartType = 'movies' | 'series';
 

@@ -1,6 +1,6 @@
 import { parse } from 'node-html-parser';
 import { describe, expect, test } from 'vitest';
-import { CSFDCreatorScreening } from '../src/dto/creator';
+import type { CSFDCreatorScreening } from '../src/dto/creator';
 import {
   getCreatorBio,
   getCreatorBirthdayInfo,
