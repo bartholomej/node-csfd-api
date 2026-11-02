@@ -41,10 +41,10 @@
     "registry": "https://registry.npmjs.org"
   },
   "dependencies": {
-    "@hono/node-server": "^2.1.4",
+    "@hono/node-server": "^2.1.5",
     "@modelcontextprotocol/sdk": "^1.32.2",
     "dotenv": "^18.0.9",
-    "hono": "^4.13.13",
+    "hono": "^4.13.14",
     "node-html-parser": "^9.0.6",
     "zod": "^4.6.7"
   },
