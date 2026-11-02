@@ -54,7 +54,8 @@ jobs:
 
   mcp_registry_publish:
     name: 🤖 Publish to MCP Registry
-    needs: npm_publish
+    # The registry checks the version on npm, which takes a while to show it; the Docker build is that while
+    needs: [npm_publish, docker_publish]
     # Stable releases only
     if: ${{ !contains(github.ref_name, '-') }}
     runs-on: ubuntu-latest
