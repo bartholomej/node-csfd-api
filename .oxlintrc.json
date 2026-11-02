@@ -1,5 +1,6 @@
 {
   "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["typescript", "unicorn", "oxc", "import"],
   "categories": {
     "correctness": "error"
   },
@@ -14,7 +15,8 @@
         "varsIgnorePattern": "^_"
       }
     ],
-    "typescript/consistent-type-imports": "error"
+    "typescript/consistent-type-imports": "error",
+    "import/consistent-type-specifier-style": ["error", "prefer-top-level"]
   },
   "ignorePatterns": ["dist", "coverage", "docs", "examples"]
 }

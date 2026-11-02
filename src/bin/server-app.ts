@@ -1,7 +1,9 @@
 import type { HttpBindings } from '@hono/node-server';
-import { Hono, type Context } from 'hono';
+import { Hono } from 'hono';
+import type { Context } from 'hono';
 import type { ContentfulStatusCode } from 'hono/utils/http-status';
-import { csfd, CsfdError, type CsfdErrorReason } from '..';
+import { csfd, CsfdError } from '..';
+import type { CsfdErrorReason } from '..';
 import packageJson from '../../package.json' with { type: 'json' };
 import type { CSFDChartCategory, CSFDChartType } from '../dto/chart';
 import type { CSFDFilmTypes } from '../dto/global';

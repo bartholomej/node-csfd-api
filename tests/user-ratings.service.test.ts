@@ -1,4 +1,5 @@
-import { afterAll, beforeAll, describe, expect, test, vi, type MockInstance } from 'vitest';
+import { afterAll, beforeAll, describe, expect, test, vi } from 'vitest';
+import type { MockInstance } from 'vitest';
 import type { CSFDFilmTypes } from '../src/dto/global';
 import type { CSFDUserRatings } from '../src/dto/user-ratings';
 import * as fetchers from '../src/fetchers';

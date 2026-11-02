@@ -1,7 +1,8 @@
 import { afterEach, beforeEach, describe, expect, test, vi } from 'vitest';
 import { csfd } from '../src';
 import { createApp } from '../src/bin/server-app';
-import { CsfdError, type CsfdErrorReason } from '../src/errors';
+import { CsfdError } from '../src/errors';
+import type { CsfdErrorReason } from '../src/errors';
 
 const app = createApp({ apiKeyName: 'x-api-key' });
 

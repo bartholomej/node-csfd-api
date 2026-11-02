@@ -6,6 +6,7 @@
     "module": "Preserve",
     "moduleResolution": "Bundler",
     "resolveJsonModule": true,
+    "verbatimModuleSyntax": true,
     "isolatedModules": true,
     "strict": true,
     "strictNullChecks": false, // will be more strict in future releases

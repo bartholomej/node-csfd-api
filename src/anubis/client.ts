@@ -1,9 +1,5 @@
-import {
-  type ChallengeResult,
-  type FetchLike,
-  isAnubisChallenge,
-  passChallenge
-} from './challenge';
+import { isAnubisChallenge, passChallenge } from './challenge';
+import type { ChallengeResult, FetchLike } from './challenge';
 
 export interface AnubisClientOptions {
   /** Defaults to the global `fetch`. */
