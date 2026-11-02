@@ -3,6 +3,7 @@ import { Hono, type Context } from 'hono';
 import type { ContentfulStatusCode } from 'hono/utils/http-status';
 import { csfd, CsfdError, type CsfdErrorReason } from '..';
 import packageJson from '../../package.json' with { type: 'json' };
+import { CSFDChartCategory, CSFDChartType } from '../dto/chart';
 import { CSFDFilmTypes } from '../dto/global';
 import { extractId } from '../helpers/global.helper';
 import { CSFDLanguage } from '../types';
@@ -43,6 +44,8 @@ enum Errors {
   USER_RATINGS_FETCH_FAILED = 'USER_RATINGS_FETCH_FAILED',
   USER_REVIEWS_FETCH_FAILED = 'USER_REVIEWS_FETCH_FAILED',
   CINEMAS_FETCH_FAILED = 'CINEMAS_FETCH_FAILED',
+  CHART_INVALID = 'CHART_INVALID',
+  CHART_FETCH_FAILED = 'CHART_FETCH_FAILED',
   PAGE_NOT_FOUND = 'PAGE_NOT_FOUND',
   TOO_MANY_REQUESTS = 'TOO_MANY_REQUESTS'
 }
@@ -62,8 +65,17 @@ export enum Endpoint {
   USER = '/user/:id',
   USER_RATINGS = '/user-ratings/:id',
   USER_REVIEWS = '/user-reviews/:id',
-  CINEMAS = '/cinemas'
+  CINEMAS = '/cinemas',
+  CHART = '/chart/:type/:category'
 }
+
+const CHART_TYPES: readonly CSFDChartType[] = ['movies', 'series'];
+const CHART_CATEGORIES: readonly CSFDChartCategory[] = [
+  'best',
+  'worst',
+  'favorite',
+  'controversial'
+];
 
 export type ServerOptions = {
   apiKey?: string;
@@ -317,6 +329,34 @@ export function createApp({ apiKey, apiKeyName }: ServerOptions) {
       return c.json(result);
     } catch (error) {
       return respondWithError(c, Errors.CINEMAS_FETCH_FAILED, 'cinemas', error);
+    }
+  });
+
+  app.get(Endpoint.CHART, async (c) => {
+    const type = c.req.param('type') as CSFDChartType;
+    const category = c.req.param('category') as CSFDChartCategory;
+    if (!CHART_TYPES.includes(type) || !CHART_CATEGORIES.includes(category)) {
+      const log: ErrorLog = {
+        error: Errors.CHART_INVALID,
+        message: `Unknown chart: ${type}/${category}. Use /chart/${CHART_TYPES.join('|')}/${CHART_CATEGORIES.join('|')}.`
+      };
+      logMessage('warn', log, c);
+      return c.json(log, 400);
+    }
+    const limit = Number(c.req.query('limit'));
+    const language = languageParam(c);
+
+    try {
+      const result = await csfd.chart(
+        type,
+        category,
+        { limit: Number.isInteger(limit) && limit > 0 ? limit : undefined },
+        { language }
+      );
+      logSuccess(c, `/chart/${type}/${category}`, language);
+      return c.json(result);
+    } catch (error) {
+      return respondWithError(c, Errors.CHART_FETCH_FAILED, 'chart', error);
     }
   });
 

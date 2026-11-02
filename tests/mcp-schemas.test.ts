@@ -4,6 +4,8 @@ import { afterAll, afterEach, beforeAll, describe, expect, test, vi } from 'vite
 import { createMcpServer } from '../src/bin/mcp-app';
 import { movieOutput } from '../src/bin/mcp-schemas';
 import * as fetchers from '../src/fetchers';
+import { chartMock } from './mocks/chart.html';
+import { chartFavoriteMock } from './mocks/chart-favorite.html';
 import { cinemaMock } from './mocks/cinema.html';
 import { actorMock } from './mocks/creator-actor.html';
 import { composerMock } from './mocks/creator-composer-empty.html';
@@ -97,6 +99,22 @@ describe('MCP tools return data their output schema accepts', () => {
 
   test('get_cinemas', async () => {
     await callWith(cinemaMock, 'get_cinemas', { district: 1, period: 'today' });
+  });
+
+  test('get_chart', async () => {
+    await callWith(chartMock, 'get_chart', { type: 'movies', category: 'best', limit: 3 });
+  });
+
+  test('get_chart: favorite, without ratings', async () => {
+    await callWith(chartFavoriteMock, 'get_chart', { type: 'series', category: 'favorite' });
+  });
+
+  test('get_chart refuses an unknown category', async () => {
+    const result = await client.callTool({
+      name: 'get_chart',
+      arguments: { type: 'movies', category: 'top' }
+    });
+    expect(result.isError).toBe(true);
   });
 
   test('a mismatched type is still reported', () => {

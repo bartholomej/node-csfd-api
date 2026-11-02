@@ -121,6 +121,31 @@ export const userReviewsOutput = z.looseObject({
   )
 });
 
+export const chartOutput = z.looseObject({
+  results: z.array(
+    z.looseObject({
+      ...screening,
+      position: nullish(z.number()).describe('Place in the chart, from 1'),
+      rating: nullish(z.number()).describe(
+        'Average rating in percent, to one decimal; null in the favorite chart'
+      ),
+      ratingCount: nullish(z.number()),
+      fans: nullish(z.number()).describe(
+        'Only in the favorite chart: people who count it among their favourites'
+      ),
+      poster: nullish(z.string()),
+      genres: nullish(z.array(z.string())),
+      origins: nullish(z.array(z.string())).describe('Countries of origin'),
+      creators: nullish(
+        z.looseObject({
+          directors: nullish(z.array(person)),
+          actors: nullish(z.array(person))
+        })
+      )
+    })
+  )
+});
+
 export const cinemasOutput = z.looseObject({
   results: z.array(
     z.looseObject({

@@ -1,6 +1,7 @@
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { z } from 'zod';
 import {
+  chartOutput,
   cinemasOutput,
   creatorOutput,
   movieOutput,
@@ -353,6 +354,59 @@ export function createMcpServer(): McpServer {
       } catch (error) {
         return {
           content: [{ type: 'text', text: `Error retrieving cinema data: ${error}` }],
+          isError: true
+        };
+      }
+    }
+  );
+
+  /**
+   * TOOL 8: Charts
+   * Description: Returns one of CSFD's charts of movies or series.
+   */
+  server.registerTool(
+    'get_chart',
+    {
+      title: 'Get Chart',
+      description:
+        "Retrieves one of CSFD's charts of movies or TV series: the best or worst rated, the most favourite or the most controversial. Returns the places in order with ID, title, year, rating, genres, countries, directors and actors. Without a limit it returns the first page, places 1–99, in one request to CSFD; each further hundred costs another request.",
+      inputSchema: {
+        type: z.enum(['movies', 'series']).describe('Movies or TV series'),
+        category: z
+          .enum(['best', 'worst', 'favorite', 'controversial'])
+          .describe(
+            'best or worst rated; favorite ranks by fans and has no rating; controversial ranks the most divided ratings'
+          ),
+        limit: z
+          .number()
+          .int()
+          .min(1)
+          .max(1000)
+          .optional()
+          .describe('How many places from the top (default 99, max 1000)')
+      },
+      outputSchema: chartOutput,
+      annotations: {
+        readOnlyHint: true,
+        idempotentHint: true,
+        openWorldHint: false
+      }
+    },
+    async ({ type, category, limit }) => {
+      try {
+        const results = await csfd.chart(type, category, { limit });
+        return {
+          structuredContent: { results },
+          content: [
+            {
+              type: 'text',
+              text: `Retrieved ${results.length} places of the ${category} ${type} chart.`
+            }
+          ]
+        };
+      } catch (error) {
+        return {
+          content: [{ type: 'text', text: `Error retrieving the chart: ${error}` }],
           isError: true
         };
       }

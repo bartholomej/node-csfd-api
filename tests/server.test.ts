@@ -22,6 +22,7 @@ describe('REST server', () => {
     const body = await res.json();
     expect(body.name).toBe('node-csfd-api');
     expect(body.links).toContain('/movie/:id');
+    expect(body.links).toContain('/chart/:type/:category');
   });
 
   test('movie accepts a slug, a trailing slash and a language', async () => {
@@ -85,6 +86,47 @@ describe('REST server', () => {
     const res = await app.request('/cinemas');
     expect(res.status).toBe(200);
     expect(spy).toHaveBeenCalledWith(1, 'today', { language: undefined });
+  });
+
+  test('chart takes its type, category, limit and language', async () => {
+    const spy = vi.spyOn(csfd, 'chart').mockResolvedValue([]);
+    const res = await app.request('/chart/series/favorite?limit=150&language=en');
+    expect(res.status).toBe(200);
+    expect(spy).toHaveBeenCalledWith('series', 'favorite', { limit: 150 }, { language: 'en' });
+  });
+
+  test.each(['', '?limit=abc', '?limit=0', '?limit=-5'])(
+    'chart with %s leaves the limit to the default',
+    async (query) => {
+      const spy = vi.spyOn(csfd, 'chart').mockResolvedValue([]);
+      await app.request(`/chart/movies/best/${query}`);
+      expect(spy).toHaveBeenCalledWith(
+        'movies',
+        'best',
+        { limit: undefined },
+        { language: undefined }
+      );
+    }
+  );
+
+  test.each(['/chart/films/best', '/chart/movies/top'])(
+    'unknown chart %s returns 400',
+    async (url) => {
+      const spy = vi.spyOn(csfd, 'chart');
+      const res = await app.request(url);
+      expect(res.status).toBe(400);
+      expect(await res.json()).toMatchObject({ error: 'CHART_INVALID' });
+      expect(spy).not.toHaveBeenCalled();
+    }
+  );
+
+  test('a failed chart maps the error', async () => {
+    vi.spyOn(csfd, 'chart').mockRejectedValue(
+      new CsfdError('blocked', 'https://www.csfd.cz', 'blocked')
+    );
+    const res = await app.request('/chart/movies/best');
+    expect(res.status).toBe(503);
+    expect(await res.json()).toMatchObject({ error: 'CHART_FETCH_FAILED' });
   });
 
   test('invalid ID returns 400', async () => {

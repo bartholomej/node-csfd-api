@@ -864,6 +864,7 @@ claude mcp add csfd -- npx -y node-csfd-api mcp
 - `get_user_ratings`: User ratings (by page)
 - `get_user_reviews`: User reviews (by page)
 - `get_cinemas`: Cinema showtimes
+- `get_chart`: Movie or series chart (best, worst, favorite, controversial)
 
 Every tool returns structured data with a declared output schema, so clients know which fields to expect. There is also an `actor-top-rated` prompt that finds and ranks the best movies of an actor or creator.
 
@@ -895,17 +896,18 @@ docker run -p 3000:3000 node-csfd-api
 
 Start the server with Docker (above), `csfd server` or `npx node-csfd-api server`, then access it at `http://localhost:3000`:
 
-| Endpoint            | Description                | Example                              |
-| ------------------- | -------------------------- | ------------------------------------ |
-| `/movie/:id`        | Movie or TV series details | `/movie/535121`                      |
-| `/search/:query`    | Search                     | `/search/tarantino`                  |
-| `/creator/:id`      | Creator details            | `/creator/2120`                      |
-| `/user/:id`         | User profile               | `/user/912-bart`                     |
-| `/user-ratings/:id` | User ratings               | `/user-ratings/912-bart?page=2`      |
-| `/user-reviews/:id` | User reviews               | `/user-reviews/195357?allPages=true` |
-| `/cinemas`          | Today's showtimes in Praha | `/cinemas`                           |
+| Endpoint                 | Description                | Example                              |
+| ------------------------ | -------------------------- | ------------------------------------ |
+| `/movie/:id`             | Movie or TV series details | `/movie/535121`                      |
+| `/search/:query`         | Search                     | `/search/tarantino`                  |
+| `/creator/:id`           | Creator details            | `/creator/2120`                      |
+| `/user/:id`              | User profile               | `/user/912-bart`                     |
+| `/user-ratings/:id`      | User ratings               | `/user-ratings/912-bart?page=2`      |
+| `/user-reviews/:id`      | User reviews               | `/user-reviews/195357?allPages=true` |
+| `/cinemas`               | Today's showtimes in Praha | `/cinemas`                           |
+| `/chart/:type/:category` | Movie or series chart      | `/chart/movies/best?limit=100`       |
 
-All endpoints accept `?language=cs|en|sk`. User ratings and reviews also accept `page`, `allPages`, `allPagesDelay`, `includesOnly` and `excludes` (comma-separated, e.g. `?excludes=episode,season`).
+All endpoints accept `?language=cs|en|sk`. User ratings and reviews also accept `page`, `allPages`, `allPagesDelay`, `includesOnly` and `excludes` (comma-separated, e.g. `?excludes=episode,season`). Charts take `movies` or `series` and `best`, `worst`, `favorite` or `controversial`, plus an optional `limit` (places 1–99 without it).
 
 **Configuration** (environment variables):
 
@@ -925,7 +927,7 @@ docker run -p 3000:3000 -e API_KEY=my-secret bartholomej/node-csfd-api
 
 | Status | When                                                          |
 | ------ | ------------------------------------------------------------- |
-| `400`  | The ID isn't a valid ČSFD ID, slug or URL                     |
+| `400`  | The ID isn't a valid ČSFD ID, slug or URL, or no such chart   |
 | `401`  | API key is missing or invalid                                 |
 | `404`  | The movie, creator or user doesn't exist, or unknown endpoint |
 | `502`  | ČSFD is unreachable or answered with an error                 |
