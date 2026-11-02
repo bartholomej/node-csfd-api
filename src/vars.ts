@@ -1,3 +1,4 @@
+import { CSFDChartCategory, CSFDChartType } from './dto/chart';
 import { CSFDCinemaPeriod } from './dto/cinema';
 import { CSFDLanguage } from './types';
 
@@ -60,6 +61,23 @@ export const cinemasUrl = (
   period: CSFDCinemaPeriod,
   options: Options
 ): string => `${getUrlByLanguage(options?.language)}/kino/?period=${period}&district=${district}`;
+
+// Chart URLs, Czech paths in every language: /en/ and /sk/ redirect them to their own
+const CHART_TYPES: Record<CSFDChartType, string> = { movies: 'filmy', series: 'serialy' };
+const CHART_CATEGORIES: Record<CSFDChartCategory, string> = {
+  best: 'nejlepsi',
+  worst: 'nejhorsi',
+  favorite: 'nejoblibenejsi',
+  controversial: 'nejrozporuplnejsi'
+};
+
+export const chartUrl = (
+  type: CSFDChartType,
+  category: CSFDChartCategory,
+  from = 0,
+  options: Options = {}
+): string =>
+  `${getUrlByLanguage(options?.language)}/zebricky/${CHART_TYPES[type]}/${CHART_CATEGORIES[category]}/${from ? `?from=${from}` : ''}`;
 
 // Search URLs
 export const searchUrl = (text: string, options: Options): string =>

@@ -77,6 +77,7 @@ console.log(reviews);
 - [Movie Details](#movie)
 - [Search](#search)
 - [Creators](#creators)
+- [Charts](#charts)
 - [User](#user)
 - [User Ratings](#user-ratings)
 - [User Reviews](#user-reviews)
@@ -371,6 +372,77 @@ console.log(creator.birthday); // Birth date
     }
   ]
 }
+```
+
+</details>
+
+### Charts
+
+> ČSFD's charts of movies and series: the best and worst rated, the most favourited and the most controversial.
+
+**Method:** `csfd.chart(type: CSFDChartType, category: CSFDChartCategory, config?: CSFDChartConfig, options?: CSFDOptions): Promise<CSFDChartItem[]>`
+
+```typescript
+import { csfd } from 'node-csfd-api';
+
+const best = await csfd.chart('movies', 'best'); // places 1–99
+const worstSeries = await csfd.chart('series', 'worst', { limit: 10 });
+const top300 = await csfd.chart('movies', 'best', { limit: 300 });
+
+console.log(best[0].title); // Vykoupení z věznice Shawshank
+console.log(best[0].rating); // 95.4
+```
+
+- `type`: `'movies'` or `'series'`
+- `category`: `'best'`, `'worst'`, `'favorite'` or `'controversial'`
+- `config.limit`: how many places from the top. By default it's ČSFD's first page, places 1–99, in one request. Each further hundred takes another request, and the whole chart of 1000 places takes ten.
+
+The favourite chart ranks by fans: its items have `fans` and no `rating` or `ratingCount`.
+
+<details>
+  <summary>🔎 Click here to see full result example</summary>
+
+```javascript
+[
+  {
+    position: 1,
+    id: 2294,
+    title: 'Vykoupení z věznice Shawshank',
+    year: 1994,
+    url: 'https://www.csfd.cz/film/2294/prehled/',
+    type: 'film',
+    colorRating: 'good',
+    poster:
+      'https://image.pmgstatic.com/cache/resized/w1080/files/images/film/posters/162/505/162505167_735db9.jpg',
+    origins: ['USA'],
+    genres: ['Drama', 'Krimi'],
+    creators: {
+      directors: [
+        {
+          id: 2869,
+          name: 'Frank Darabont',
+          url: 'https://www.csfd.cz/tvurce/2869-frank-darabont/prehled/'
+        }
+      ],
+      actors: [
+        {
+          id: 103,
+          name: 'Tim Robbins',
+          url: 'https://www.csfd.cz/tvurce/103-tim-robbins/prehled/'
+        },
+        {
+          id: 92,
+          name: 'Morgan Freeman',
+          url: 'https://www.csfd.cz/tvurce/92-morgan-freeman/prehled/'
+        }
+      ]
+    },
+    rating: 95.4,
+    ratingCount: 116917,
+    fans: null
+  }
+  // …
+];
 ```
 
 </details>

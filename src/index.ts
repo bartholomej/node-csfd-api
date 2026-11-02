@@ -1,3 +1,4 @@
+import { CSFDChartCategory, CSFDChartConfig, CSFDChartItem, CSFDChartType } from './dto/chart';
 import { CSFDCinema, CSFDCinemaPeriod } from './dto/cinema';
 import { CSFDCreator } from './dto/creator';
 import { CSFDMovie } from './dto/movie';
@@ -5,6 +6,7 @@ import { CSFDSearch } from './dto/search';
 import { CSFDUser } from './dto/user';
 import { CSFDUserRatingConfig, CSFDUserRatings } from './dto/user-ratings';
 import { CSFDUserReviews, CSFDUserReviewsConfig } from './dto/user-reviews';
+import { ChartScraper } from './services/chart.service';
 import { CinemaScraper } from './services/cinema.service';
 import { CreatorScraper } from './services/creator.service';
 import { MovieScraper } from './services/movie.service';
@@ -27,7 +29,8 @@ export class Csfd {
     private cinemaService: CinemaScraper,
     defaultOptions?: CSFDOptions,
     // Last and defaulted, so existing positional calls keep working
-    private userService: UserScraper = new UserScraper()
+    private userService: UserScraper = new UserScraper(),
+    private chartService: ChartScraper = new ChartScraper()
   ) {
     this.defaultOptions = defaultOptions;
   }
@@ -94,6 +97,16 @@ export class Csfd {
   ): Promise<CSFDCinema[]> {
     const opts = this.resolveOptions(options);
     return this.cinemaService.cinemas(+district, period, opts);
+  }
+
+  public async chart(
+    type: CSFDChartType,
+    category: CSFDChartCategory,
+    config?: CSFDChartConfig,
+    options?: CSFDOptions
+  ): Promise<CSFDChartItem[]> {
+    const opts = this.resolveOptions(options);
+    return this.chartService.chart(type, category, config, opts);
   }
 }
 

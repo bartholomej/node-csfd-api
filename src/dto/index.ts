@@ -1,3 +1,4 @@
+export * from './chart';
 export * from './cinema';
 export * from './creator';
 export * from './global';

@@ -1,5 +1,26 @@
 import { describe, expect, test } from 'vitest';
-import { creatorUrl, movieUrl, searchUrl, userProfileUrl, userRatingsUrl } from '../src/vars';
+import {
+  chartUrl,
+  creatorUrl,
+  movieUrl,
+  searchUrl,
+  userProfileUrl,
+  userRatingsUrl
+} from '../src/vars';
+
+describe('Vars Charts', () => {
+  test('Assemble chartUrl', () => {
+    expect(chartUrl('movies', 'best')).toBe('https://www.csfd.cz/zebricky/filmy/nejlepsi/');
+    expect(chartUrl('series', 'controversial', 200)).toBe(
+      'https://www.csfd.cz/zebricky/serialy/nejrozporuplnejsi/?from=200'
+    );
+  });
+  test('Assemble chartUrl in other languages', () => {
+    expect(chartUrl('movies', 'worst', 0, { language: 'en' })).toBe(
+      'https://www.csfd.cz/en/zebricky/filmy/nejhorsi/'
+    );
+  });
+});
 
 describe('Vars User Profile', () => {
   test('Assemble userProfileUrl', () => {
