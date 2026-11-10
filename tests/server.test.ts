@@ -16,6 +16,7 @@ beforeEach(() => {
 
 afterEach(() => {
   vi.restoreAllMocks();
+  vi.unstubAllEnvs();
 });
 
 describe('REST server', () => {
@@ -240,6 +241,38 @@ describe('MCP over HTTP', () => {
     const { result } = await res.json();
     expect(spy).toHaveBeenCalledWith(10135);
     expect(result.structuredContent).toMatchObject({ id: 10135, title: 'Forrest Gump' });
+  });
+
+  test('logs a failed tool call', async () => {
+    vi.spyOn(csfd, 'movie').mockRejectedValue(
+      new CsfdError('blocked', 'https://www.csfd.cz', 'blocked')
+    );
+    await mcpPost(app, rpc(5, 'tools/call', { name: 'get_movie', arguments: { id: 1 } }));
+    expect(console.error).toHaveBeenCalledWith(
+      expect.stringMatching(
+        /MCP_TOOL_FAILED: MCP get_movie \{"id":1\} \d+ ms: Error retrieving movie details: .*blocked/
+      )
+    );
+  });
+
+  test('logs a successful tool call only when verbose', async () => {
+    vi.spyOn(csfd, 'movie').mockResolvedValue({ id: 10135, title: 'Forrest Gump' } as never);
+    const call = rpc(6, 'tools/call', { name: 'get_movie', arguments: { id: 10135 } });
+
+    await mcpPost(app, call);
+    expect(console.log).not.toHaveBeenCalledWith(expect.stringContaining('MCP get_movie'));
+
+    vi.stubEnv('VERBOSE', 'true');
+    await mcpPost(app, call);
+    expect(console.log).toHaveBeenCalledWith(
+      expect.stringMatching(/MCP get_movie \{"id":10135\} \d+ ms .*POST: \/mcp/)
+    );
+  });
+
+  test('does not log other MCP requests', async () => {
+    vi.stubEnv('VERBOSE', 'true');
+    await mcpPost(app, rpc(7, 'tools/list'));
+    expect(console.log).not.toHaveBeenCalledWith(expect.stringContaining('MCP '));
   });
 
   test('GET is not allowed', async () => {

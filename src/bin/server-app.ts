@@ -1,5 +1,11 @@
 import type { HttpBindings } from '@hono/node-server';
 import { WebStandardStreamableHTTPServerTransport } from '@modelcontextprotocol/sdk/server/webStandardStreamableHttp.js';
+import {
+  isJSONRPCErrorResponse,
+  isJSONRPCRequest,
+  isJSONRPCResultResponse
+} from '@modelcontextprotocol/sdk/types.js';
+import type { CallToolResult, RequestId } from '@modelcontextprotocol/sdk/types.js';
 import { Hono } from 'hono';
 import type { Context } from 'hono';
 import { timingSafeEqual } from 'hono/utils/buffer';
@@ -51,6 +57,7 @@ enum Errors {
   CINEMAS_FETCH_FAILED = 'CINEMAS_FETCH_FAILED',
   CHART_INVALID = 'CHART_INVALID',
   CHART_FETCH_FAILED = 'CHART_FETCH_FAILED',
+  MCP_TOOL_FAILED = 'MCP_TOOL_FAILED',
   PAGE_NOT_FOUND = 'PAGE_NOT_FOUND',
   TOO_MANY_REQUESTS = 'TOO_MANY_REQUESTS'
 }
@@ -158,6 +165,46 @@ function unauthorized(c: AppContext, log: ErrorLog, challenge: string) {
   logMessage('error', log, c);
   c.header('WWW-Authenticate', challenge);
   return c.json(log, 401);
+}
+
+function logToolCalls(transport: WebStandardStreamableHTTPServerTransport, c: AppContext) {
+  const calls = new Map<RequestId, { subject: string; start: number }>();
+
+  const receive = transport.onmessage;
+  transport.onmessage = (message, extra) => {
+    if (isJSONRPCRequest(message) && message.method === 'tools/call') {
+      const { name, arguments: args } = message.params ?? {};
+      calls.set(message.id, {
+        subject: `MCP ${String(name)} ${JSON.stringify(args ?? {})}`,
+        start: performance.now()
+      });
+    }
+    receive?.(message, extra);
+  };
+
+  const send = transport.send.bind(transport);
+  transport.send = (message, options) => {
+    const isResponse = isJSONRPCResultResponse(message) || isJSONRPCErrorResponse(message);
+    const call = isResponse && message.id !== undefined ? calls.get(message.id) : undefined;
+    if (call) {
+      const subject = `${call.subject} ${Math.round(performance.now() - call.start)} ms`;
+      if (isJSONRPCErrorResponse(message)) {
+        const log = {
+          error: Errors.MCP_TOOL_FAILED,
+          message: `${subject}: ${message.error.message}`
+        };
+        logMessage('warn', log, c);
+      } else if (isJSONRPCResultResponse(message) && message.result.isError) {
+        const text = (message.result as CallToolResult).content
+          .flatMap((item) => (item.type === 'text' ? [item.text] : []))
+          .join(' ');
+        logMessage('error', { error: Errors.MCP_TOOL_FAILED, message: `${subject}: ${text}` }, c);
+      } else {
+        logSuccess(c, subject);
+      }
+    }
+    return send(message, options);
+  };
 }
 
 function invalidId(c: AppContext) {
@@ -396,6 +443,7 @@ export function createApp({ apiKey, apiKeyName }: ServerOptions) {
       enableJsonResponse: true
     });
     await server.connect(transport);
+    logToolCalls(transport, c);
     try {
       return await transport.handleRequest(c.req.raw);
     } finally {
