@@ -37,6 +37,18 @@ describe('REST server', () => {
     expect(spy).toHaveBeenCalledWith(10135, { language: 'en' });
   });
 
+  test('logs how long a request took', async () => {
+    vi.stubEnv('VERBOSE', 'true');
+    vi.spyOn(csfd, 'movie').mockResolvedValue({ id: 10135 } as never);
+    await app.request('/movie/10135');
+    expect(console.log).toHaveBeenCalledWith(
+      expect.stringMatching(/\| \d+ ms ✅ .*\/movie\/:id: 10135 🔗 GET: \/movie\/10135/)
+    );
+
+    await app.request('/movie/not-an-id');
+    expect(console.warn).toHaveBeenCalledWith(expect.stringMatching(/\| \d+ ms ⚠️ ID_INVALID/));
+  });
+
   test('unsupported language is dropped', async () => {
     const spy = vi.spyOn(csfd, 'creator').mockResolvedValue({ id: 2120 } as never);
     await app.request('/creator/2120?language=de');
@@ -250,7 +262,7 @@ describe('MCP over HTTP', () => {
     await mcpPost(app, rpc(5, 'tools/call', { name: 'get_movie', arguments: { id: 1 } }));
     expect(console.error).toHaveBeenCalledWith(
       expect.stringMatching(
-        /MCP_TOOL_FAILED: MCP get_movie \{"id":1\} \d+ ms: Error retrieving movie details: .*blocked/
+        /\| \d+ ms ❌ MCP_TOOL_FAILED: MCP get_movie \{"id":1\}: Error retrieving movie details: .*blocked/
       )
     );
   });
@@ -265,7 +277,7 @@ describe('MCP over HTTP', () => {
     vi.stubEnv('VERBOSE', 'true');
     await mcpPost(app, call);
     expect(console.log).toHaveBeenCalledWith(
-      expect.stringMatching(/MCP get_movie \{"id":10135\} \d+ ms .*POST: \/mcp/)
+      expect.stringMatching(/\| \d+ ms ✅ +MCP get_movie \{"id":10135\} 🔗 POST: \/mcp/)
     );
   });
 

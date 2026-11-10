@@ -67,7 +67,7 @@ type ErrorLog = {
   message: string;
 };
 
-type AppEnv = { Bindings: HttpBindings };
+type AppEnv = { Bindings: HttpBindings; Variables: { start: number } };
 type AppContext = Context<AppEnv>;
 
 export enum Endpoint {
@@ -114,13 +114,16 @@ function logMessage(severity: Severity, log: ErrorLog, c?: AppContext) {
   const time = new Date().toISOString();
   let reqInfo = '';
   let reqIp = '';
+  let duration = '';
   if (c) {
     const { pathname, search } = new URL(c.req.url);
     reqInfo = `${c.req.method}: ${pathname}${search}`;
     reqIp = c.req.header('x-forwarded-for') || c.env?.incoming?.socket.remoteAddress || '';
+    const start = c.get('start');
+    duration = start === undefined ? '' : ` | ${Math.round(performance.now() - start)} ms`;
   }
 
-  const msg = `${LOG_COLORS[severity]}[${LOG_PADDED_SEVERITY[severity]}]${LOG_COLORS.reset} ${time} | IP: ${reqIp} ${LOG_SYMBOLS[severity]} ${log.error ? log.error + ':' : ''} ${log.message} 🔗 ${reqInfo}`;
+  const msg = `${LOG_COLORS[severity]}[${LOG_PADDED_SEVERITY[severity]}]${LOG_COLORS.reset} ${time} | IP: ${reqIp}${duration} ${LOG_SYMBOLS[severity]} ${log.error ? log.error + ':' : ''} ${log.message} 🔗 ${reqInfo}`;
 
   const logSuccessEnabled = process.env.VERBOSE === 'true';
 
@@ -168,16 +171,13 @@ function unauthorized(c: AppContext, log: ErrorLog, challenge: string) {
 }
 
 function logToolCalls(transport: WebStandardStreamableHTTPServerTransport, c: AppContext) {
-  const calls = new Map<RequestId, { subject: string; start: number }>();
+  const calls = new Map<RequestId, string>();
 
   const receive = transport.onmessage;
   transport.onmessage = (message, extra) => {
     if (isJSONRPCRequest(message) && message.method === 'tools/call') {
       const { name, arguments: args } = message.params ?? {};
-      calls.set(message.id, {
-        subject: `MCP ${String(name)} ${JSON.stringify(args ?? {})}`,
-        start: performance.now()
-      });
+      calls.set(message.id, `MCP ${String(name)} ${JSON.stringify(args ?? {})}`);
     }
     receive?.(message, extra);
   };
@@ -185,9 +185,8 @@ function logToolCalls(transport: WebStandardStreamableHTTPServerTransport, c: Ap
   const send = transport.send.bind(transport);
   transport.send = (message, options) => {
     const isResponse = isJSONRPCResultResponse(message) || isJSONRPCErrorResponse(message);
-    const call = isResponse && message.id !== undefined ? calls.get(message.id) : undefined;
-    if (call) {
-      const subject = `${call.subject} ${Math.round(performance.now() - call.start)} ms`;
+    const subject = isResponse && message.id !== undefined ? calls.get(message.id) : undefined;
+    if (subject) {
       if (isJSONRPCErrorResponse(message)) {
         const log = {
           error: Errors.MCP_TOOL_FAILED,
@@ -248,6 +247,11 @@ export function createApp({ apiKey, apiKeyName }: ServerOptions) {
   const app = new Hono<AppEnv>({ strict: false });
 
   const realm = `Bearer realm="${packageJson.name}"`;
+
+  app.use(async (c, next) => {
+    c.set('start', performance.now());
+    await next();
+  });
 
   app.use(async (c, next) => {
     if (!apiKey) {
