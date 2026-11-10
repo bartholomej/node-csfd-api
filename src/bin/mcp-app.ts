@@ -1,4 +1,5 @@
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
+import type { CallToolResult } from '@modelcontextprotocol/sdk/types.js';
 import { z } from 'zod';
 import {
   chartOutput,
@@ -11,7 +12,17 @@ import {
   userReviewsOutput
 } from './mcp-schemas';
 import packageJson from '../../package.json' with { type: 'json' };
-import { csfd } from '../index.js';
+import { csfd, CsfdError } from '../index.js';
+
+export const TOOL_ERROR_REASON = 'node-csfd-api/reason';
+
+function toolError(message: string, error: unknown): CallToolResult {
+  return {
+    content: [{ type: 'text', text: `${message}: ${error}` }],
+    isError: true,
+    _meta: { [TOOL_ERROR_REASON]: error instanceof CsfdError ? error.reason : 'internal' }
+  };
+}
 
 export function createMcpServer(): McpServer {
   const server = new McpServer({
@@ -55,10 +66,7 @@ export function createMcpServer(): McpServer {
           ]
         };
       } catch (error) {
-        return {
-          content: [{ type: 'text', text: `Error during search: ${error}` }],
-          isError: true
-        };
+        return toolError('Error during search', error);
       }
     }
   );
@@ -96,10 +104,7 @@ export function createMcpServer(): McpServer {
           ]
         };
       } catch (error) {
-        return {
-          content: [{ type: 'text', text: `Error retrieving movie details: ${error}` }],
-          isError: true
-        };
+        return toolError('Error retrieving movie details', error);
       }
     }
   );
@@ -137,10 +142,7 @@ export function createMcpServer(): McpServer {
           ]
         };
       } catch (error) {
-        return {
-          content: [{ type: 'text', text: `Error retrieving creator details: ${error}` }],
-          isError: true
-        };
+        return toolError('Error retrieving creator details', error);
       }
     }
   );
@@ -180,10 +182,7 @@ export function createMcpServer(): McpServer {
           ]
         };
       } catch (error) {
-        return {
-          content: [{ type: 'text', text: `Error retrieving user profile: ${error}` }],
-          isError: true
-        };
+        return toolError('Error retrieving user profile', error);
       }
     }
   );
@@ -244,10 +243,7 @@ export function createMcpServer(): McpServer {
           ]
         };
       } catch (error) {
-        return {
-          content: [{ type: 'text', text: `Error retrieving user ratings: ${error}` }],
-          isError: true
-        };
+        return toolError('Error retrieving user ratings', error);
       }
     }
   );
@@ -308,10 +304,7 @@ export function createMcpServer(): McpServer {
           ]
         };
       } catch (error) {
-        return {
-          content: [{ type: 'text', text: `Error retrieving user reviews: ${error}` }],
-          isError: true
-        };
+        return toolError('Error retrieving user reviews', error);
       }
     }
   );
@@ -352,10 +345,7 @@ export function createMcpServer(): McpServer {
           ]
         };
       } catch (error) {
-        return {
-          content: [{ type: 'text', text: `Error retrieving cinema data: ${error}` }],
-          isError: true
-        };
+        return toolError('Error retrieving cinema data', error);
       }
     }
   );
@@ -405,10 +395,7 @@ export function createMcpServer(): McpServer {
           ]
         };
       } catch (error) {
-        return {
-          content: [{ type: 'text', text: `Error retrieving the chart: ${error}` }],
-          isError: true
-        };
+        return toolError('Error retrieving the chart', error);
       }
     }
   );

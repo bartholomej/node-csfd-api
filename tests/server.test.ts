@@ -255,16 +255,37 @@ describe('MCP over HTTP', () => {
     expect(result.structuredContent).toMatchObject({ id: 10135, title: 'Forrest Gump' });
   });
 
-  test('logs a failed tool call', async () => {
+  test('logs a failed tool call as an error and tags it with the reason', async () => {
     vi.spyOn(csfd, 'movie').mockRejectedValue(
       new CsfdError('blocked', 'https://www.csfd.cz', 'blocked')
     );
-    await mcpPost(app, rpc(5, 'tools/call', { name: 'get_movie', arguments: { id: 1 } }));
+    const res = await mcpPost(
+      app,
+      rpc(5, 'tools/call', { name: 'get_movie', arguments: { id: 1 } })
+    );
+    expect((await res.json()).result._meta).toEqual({ 'node-csfd-api/reason': 'blocked' });
     expect(console.error).toHaveBeenCalledWith(
       expect.stringMatching(
         /\| \d+ ms ❌ MCP_TOOL_FAILED: MCP get_movie \{"id":1\}: Error retrieving movie details: .*blocked/
       )
     );
+  });
+
+  test('logs client mistakes as warnings, like REST does', async () => {
+    vi.spyOn(csfd, 'movie').mockRejectedValue(
+      new CsfdError('not-found', 'https://www.csfd.cz', 'not found')
+    );
+    await mcpPost(app, rpc(8, 'tools/call', { name: 'get_movie', arguments: { id: 1 } }));
+    await mcpPost(app, rpc(9, 'tools/call', { name: 'get_nothing', arguments: {} }));
+    await mcpPost(app, rpc(10, 'tools/call', { name: 'get_movie', arguments: { id: 'x' } }));
+    expect(console.warn).toHaveBeenCalledTimes(3);
+    expect(console.error).not.toHaveBeenCalled();
+  });
+
+  test('logs an unexpected tool failure as an error', async () => {
+    vi.spyOn(csfd, 'movie').mockRejectedValue(new TypeError('boom'));
+    await mcpPost(app, rpc(11, 'tools/call', { name: 'get_movie', arguments: { id: 1 } }));
+    expect(console.error).toHaveBeenCalledWith(expect.stringContaining('TypeError: boom'));
   });
 
   test('logs a successful tool call only when verbose', async () => {

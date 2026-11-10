@@ -17,7 +17,7 @@ import type { CSFDChartCategory, CSFDChartType } from '../dto/chart';
 import type { CSFDFilmTypes } from '../dto/global';
 import { extractId } from '../helpers/global.helper';
 import type { CSFDLanguage } from '../types';
-import { createMcpServer } from './mcp-app';
+import { createMcpServer, TOOL_ERROR_REASON } from './mcp-app';
 
 const LOG_COLORS = {
   info: '\x1b[36m', // cyan
@@ -170,6 +170,17 @@ function unauthorized(c: AppContext, log: ErrorLog, challenge: string) {
   return c.json(log, 401);
 }
 
+const isCsfdErrorReason = (value: unknown): value is CsfdErrorReason =>
+  typeof value === 'string' && Object.hasOwn(STATUS_BY_REASON, value);
+
+function toolErrorStatus(reason: unknown): number {
+  // Our tools always tag their errors, so an untagged one is the SDK rejecting an unknown tool or bad arguments
+  if (reason === undefined) {
+    return 400;
+  }
+  return isCsfdErrorReason(reason) ? STATUS_BY_REASON[reason] : 500;
+}
+
 function logToolCalls(transport: WebStandardStreamableHTTPServerTransport, c: AppContext) {
   const calls = new Map<RequestId, string>();
 
@@ -194,10 +205,16 @@ function logToolCalls(transport: WebStandardStreamableHTTPServerTransport, c: Ap
         };
         logMessage('warn', log, c);
       } else if (isJSONRPCResultResponse(message) && message.result.isError) {
-        const text = (message.result as CallToolResult).content
+        const result = message.result as CallToolResult;
+        const text = result.content
           .flatMap((item) => (item.type === 'text' ? [item.text] : []))
           .join(' ');
-        logMessage('error', { error: Errors.MCP_TOOL_FAILED, message: `${subject}: ${text}` }, c);
+        const status = toolErrorStatus(result._meta?.[TOOL_ERROR_REASON]);
+        logMessage(
+          status < 500 ? 'warn' : 'error',
+          { error: Errors.MCP_TOOL_FAILED, message: `${subject}: ${text}` },
+          c
+        );
       } else {
         logSuccess(c, subject);
       }
