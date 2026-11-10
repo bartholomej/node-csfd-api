@@ -221,9 +221,11 @@ describe('MCP over HTTP', () => {
       'search',
       'get_movie',
       'get_creator',
+      'get_user',
       'get_user_ratings',
       'get_user_reviews',
-      'get_cinemas'
+      'get_cinemas',
+      'get_chart'
     ]);
   });
 
