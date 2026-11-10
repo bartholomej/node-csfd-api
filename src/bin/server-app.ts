@@ -2,6 +2,7 @@ import type { HttpBindings } from '@hono/node-server';
 import { WebStandardStreamableHTTPServerTransport } from '@modelcontextprotocol/sdk/server/webStandardStreamableHttp.js';
 import { Hono } from 'hono';
 import type { Context } from 'hono';
+import { timingSafeEqual } from 'hono/utils/buffer';
 import type { ContentfulStatusCode } from 'hono/utils/http-status';
 import { csfd, CsfdError } from '..';
 import type { CsfdErrorReason } from '..';
@@ -144,6 +145,21 @@ const STATUS_BY_REASON: Record<CsfdErrorReason, ContentfulStatusCode> = {
   network: 502
 };
 
+const BEARER_TOKEN = /^Bearer\s+(\S+)\s*$/i;
+
+async function isValidKey(candidates: string[], keys: string[]): Promise<boolean> {
+  const checks = candidates.flatMap((candidate) =>
+    keys.map((key) => timingSafeEqual(candidate, key))
+  );
+  return (await Promise.all(checks)).some(Boolean);
+}
+
+function unauthorized(c: AppContext, log: ErrorLog, challenge: string) {
+  logMessage('error', log, c);
+  c.header('WWW-Authenticate', challenge);
+  return c.json(log, 401);
+}
+
 function invalidId(c: AppContext) {
   const log: ErrorLog = {
     error: Errors.ID_INVALID,
@@ -184,27 +200,34 @@ export function createApp({ apiKey, apiKeyName }: ServerOptions) {
   // Hono is strict by default; existing clients call /movie/123/ with a trailing slash
   const app = new Hono<AppEnv>({ strict: false });
 
+  const realm = `Bearer realm="${packageJson.name}"`;
+
   app.use(async (c, next) => {
-    if (apiKey) {
-      const key = c.req.header(apiKeyName)?.trim();
+    if (!apiKey) {
+      return next();
+    }
+    const candidates = [
+      c.req.header(apiKeyName)?.trim(),
+      BEARER_TOKEN.exec(c.req.header('authorization') ?? '')?.[1]
+    ].filter((value): value is string => Boolean(value));
 
-      if (!key) {
-        const log: ErrorLog = {
+    if (candidates.length === 0) {
+      return unauthorized(
+        c,
+        {
           error: Errors.API_KEY_MISSING,
-          message: `Missing API key in request header: ${apiKeyName}`
-        };
-        logMessage('error', log, c);
-        return c.json(log, 401);
-      }
+          message: `Missing API key. Send it as "Authorization: Bearer <key>" or in the "${apiKeyName}" header.`
+        },
+        realm
+      );
+    }
 
-      if (!apiKeys.includes(key)) {
-        const log: ErrorLog = {
-          error: Errors.API_KEY_INVALID,
-          message: `Invalid API key in request header: ${apiKeyName}`
-        };
-        logMessage('error', log, c);
-        return c.json(log, 401);
-      }
+    if (!(await isValidKey(candidates, apiKeys))) {
+      return unauthorized(
+        c,
+        { error: Errors.API_KEY_INVALID, message: 'Invalid API key.' },
+        `${realm}, error="invalid_token"`
+      );
     }
     return next();
   });

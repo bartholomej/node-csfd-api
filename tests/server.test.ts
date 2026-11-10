@@ -284,25 +284,67 @@ describe('REST server with API keys', () => {
     for (const url of ['/', '/nope']) {
       const res = await secured.request(url);
       expect(res.status).toBe(401);
+      expect(res.headers.get('www-authenticate')).toBe('Bearer realm="node-csfd-api"');
       expect(await res.json()).toMatchObject({ error: 'API_KEY_MISSING' });
     }
   });
 
   test('protects the MCP endpoint too', async () => {
     expect((await mcpPost(secured, rpc(1, 'tools/list'))).status).toBe(401);
-    const res = await mcpPost(secured, rpc(1, 'tools/list'), { 'x-api-key': 'one' });
+    const res = await mcpPost(secured, rpc(1, 'tools/list'), { authorization: 'Bearer one' });
     expect(res.status).toBe(200);
+  });
+
+  test('a real MCP client authenticates with a bearer token', async () => {
+    const client = new Client({ name: 'test', version: '0' });
+    const transport = new StreamableHTTPClientTransport(new URL('http://localhost/mcp'), {
+      fetch: (url, init) => secured.request(String(url), init),
+      requestInit: { headers: { Authorization: 'Bearer two' } }
+    });
+    await client.connect(transport);
+    expect((await client.listTools()).tools.length).toBeGreaterThan(0);
+    await client.close();
   });
 
   test('rejects an invalid key', async () => {
     const res = await secured.request('/', { headers: { 'x-api-key': 'three' } });
     expect(res.status).toBe(401);
+    expect(res.headers.get('www-authenticate')).toBe(
+      'Bearer realm="node-csfd-api", error="invalid_token"'
+    );
     expect(await res.json()).toMatchObject({ error: 'API_KEY_INVALID' });
   });
 
   test('accepts any configured key, header name is case-insensitive', async () => {
     const res = await secured.request('/', { headers: { 'X-API-Key': ' two ' } });
     expect(res.status).toBe(200);
+  });
+
+  test('accepts a bearer token, scheme is case-insensitive', async () => {
+    for (const authorization of ['Bearer one', 'bearer two']) {
+      const res = await secured.request('/', { headers: { authorization } });
+      expect(res.status).toBe(200);
+    }
+  });
+
+  test('rejects an invalid bearer token', async () => {
+    const res = await secured.request('/', { headers: { authorization: 'Bearer three' } });
+    expect(res.status).toBe(401);
+    expect(await res.json()).toMatchObject({ error: 'API_KEY_INVALID' });
+  });
+
+  test('other authorization schemes do not count as a key', async () => {
+    const res = await secured.request('/', { headers: { authorization: 'Basic one' } });
+    expect(res.status).toBe(401);
+    expect(await res.json()).toMatchObject({ error: 'API_KEY_MISSING' });
+  });
+
+  test('a raw key still works when API_KEY_NAME is authorization', async () => {
+    const custom = createApp({ apiKey: 'one', apiKeyName: 'authorization' });
+    for (const authorization of ['one', 'Bearer one']) {
+      const res = await custom.request('/', { headers: { authorization } });
+      expect(res.status).toBe(200);
+    }
   });
 
   test('a key list of only separators still locks the server', async () => {

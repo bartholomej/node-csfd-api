@@ -45,13 +45,12 @@ serve({ fetch: app.fetch, port }, () => {
   if (API_KEYS_LIST.length === 0) {
     console.log(
       '\x1b[31m%s\x1b[0m',
-      '⚠️ Server is OPEN!\n- Your server will be open to the world and potentially everyone can use it without any restriction.\n- To enable some basic protection, set API_KEY environment variable (single value or comma-separated list) and provide the same value in request header: ' +
-        API_KEY_NAME
+      `⚠️ Server is OPEN!\n- Your server will be open to the world and potentially everyone can use it without any restriction.\n- To enable some basic protection, set API_KEY environment variable (single value or comma-separated list) and send the same value as "Authorization: Bearer <key>" or in the "${API_KEY_NAME}" header.`
     );
   } else {
     console.log(
       '\x1b[32m%s\x1b[0m',
-      `✔️ Server is protected (somehow).\n- ${API_KEYS_LIST.length} API key(s) are configured and will be checked for each request header: ${API_KEY_NAME}`
+      `✔️ Server is protected (somehow).\n- ${API_KEYS_LIST.length} API key(s) are configured and checked on every request ("Authorization: Bearer <key>" or the "${API_KEY_NAME}" header).`
     );
   }
 });

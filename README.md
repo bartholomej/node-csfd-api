@@ -857,7 +857,7 @@ claude mcp add csfd -- npx -y node-csfd-api mcp
 
 ### Over HTTP
 
-The REST server also serves MCP at `/mcp`, so one running instance, e.g. the Docker image, can be shared by several clients. It is protected by the same `API_KEY` as the REST API.
+The REST server also serves MCP at `/mcp`, so one running instance, e.g. the Docker image, can be shared by several clients. It is protected by the same `API_KEY` as the REST API, sent as a bearer token.
 
 ```bash
 docker run -p 3000:3000 -e API_KEY=my-secret bartholomej/node-csfd-api
@@ -866,7 +866,7 @@ docker run -p 3000:3000 -e API_KEY=my-secret bartholomej/node-csfd-api
 **Claude Code**
 
 ```bash
-claude mcp add --transport http csfd http://localhost:3000/mcp --header "x-api-key: my-secret"
+claude mcp add --transport http csfd http://localhost:3000/mcp --header "Authorization: Bearer my-secret"
 ```
 
 **VS Code** (`.vscode/mcp.json`):
@@ -877,7 +877,7 @@ claude mcp add --transport http csfd http://localhost:3000/mcp --header "x-api-k
     "csfd": {
       "type": "http",
       "url": "http://localhost:3000/mcp",
-      "headers": { "x-api-key": "my-secret" }
+      "headers": { "Authorization": "Bearer my-secret" }
     }
   }
 }
@@ -890,7 +890,7 @@ claude mcp add --transport http csfd http://localhost:3000/mcp --header "x-api-k
   "mcpServers": {
     "csfd": {
       "url": "http://localhost:3000/mcp",
-      "headers": { "x-api-key": "my-secret" }
+      "headers": { "Authorization": "Bearer my-secret" }
     }
   }
 }
@@ -956,12 +956,15 @@ All endpoints accept `?language=cs|en|sk`. User ratings and reviews also accept 
 | -------------- | ------------------------------------------------------------------------------- |
 | `PORT`         | Port to listen on (default `3000`)                                              |
 | `API_KEY`      | One or more comma-separated keys. When set, every request must send one of them |
-| `API_KEY_NAME` | Request header carrying the key (default `x-api-key`)                           |
+| `API_KEY_NAME` | Alternative header carrying the key (default `x-api-key`)                       |
 | `LANGUAGE`     | Default language: `cs`, `en` or `sk`                                            |
 | `VERBOSE`      | Set to `true` to log successful requests as well                                |
 
+Send the key as a bearer token, or in the `API_KEY_NAME` header:
+
 ```bash
 docker run -p 3000:3000 -e API_KEY=my-secret bartholomej/node-csfd-api
+curl -H "Authorization: Bearer my-secret" http://localhost:3000/movie/535121
 ```
 
 **Errors** are returned as JSON (`{ "error": "MOVIE_FETCH_FAILED", "message": "…" }`) with a matching status:
