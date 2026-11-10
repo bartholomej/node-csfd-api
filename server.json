@@ -7,12 +7,12 @@
     "url": "https://github.com/bartholomej/node-csfd-api",
     "source": "github"
   },
-  "version": "5.15.0",
+  "version": "5.16.0",
   "packages": [
     {
       "registryType": "npm",
       "identifier": "node-csfd-api",
-      "version": "5.15.0",
+      "version": "5.16.0",
       "transport": {
         "type": "stdio"
       },
