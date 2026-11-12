@@ -376,11 +376,11 @@ __metadata:
   linkType: hard
 
 "@hono/node-server@npm:^1.19.9 || ^2.0.5, @hono/node-server@npm:^2.1.4":
-  version: 2.1.5
-  resolution: "@hono/node-server@npm:2.1.5"
+  version: 2.1.8
+  resolution: "@hono/node-server@npm:2.1.8"
   peerDependencies:
     hono: ^4 || ^5.0.0-0
-  checksum: 10c0/3c3d5ffcc4a229e532530729b64db623493171bcda7b40ffbac3a46489884f700c881439d8c0d0413cd18793458ca252acedf6a9c13c8c3a024037e47974cacb
+  checksum: 10c0/16900425ef58e908d2d3e12c44206663165ae07d267e68dbc987ac6c1b3f977bbac6b9566be60171efb60d230aeb7c559f4865cd6ff68c50ca99514320d711eb
   languageName: node
   linkType: hard
 
@@ -1987,9 +1987,9 @@ __metadata:
   linkType: hard
 
 "hono@npm:^4.11.4, hono@npm:^4.13.13":
-  version: 4.13.14
-  resolution: "hono@npm:4.13.14"
-  checksum: 10c0/fdedcb49186e3a5eb0fff39c4fd66112718dc1a98c6df9a385f2fc4799c0e59140e3c45fbac12929d658b659d9eb9ddb9ac09161104336023c23f335668c93fd
+  version: 4.13.18
+  resolution: "hono@npm:4.13.18"
+  checksum: 10c0/c04462570fe9dcdf820b633e6c22d33d414d7608abbed7daadd3ad7c594b2670b4790a16b613658e952367a12082a21f0b556d021c17ccbbc70758eefd80badc
   languageName: node
   linkType: hard
 
@@ -2053,9 +2053,9 @@ __metadata:
   linkType: hard
 
 "ip-address@npm:^10.2.0":
-  version: 10.7.5
-  resolution: "ip-address@npm:10.7.5"
-  checksum: 10c0/0213462eada955051a4d5927a62f6613b7bf0f4b426347641491ef9c8498ee6e1ef0bcbe1455382de6d61771b0ab4a344919102d4b614d284161ed8df620125f
+  version: 10.7.6
+  resolution: "ip-address@npm:10.7.6"
+  checksum: 10c0/b1877874793345a00ef46877e18b8ff38d91ce4d07195f8e26d1381a0248b296cfad73e2ec1ba7c5c39e347d365971e036fbb6ffbc672b7d3f0d9648ed2fafa5
   languageName: node
   linkType: hard
 
