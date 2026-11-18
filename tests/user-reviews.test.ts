@@ -22,7 +22,7 @@ const reviews: HTMLElement[] = items.querySelectorAll('.user-tab-reviews .articl
 describe('Get Review Ratings', () => {
   test('Last rating', () => {
     const rating = getUserReviewRating(reviews[reviews.length - 1]);
-    expect(rating).toEqual<CSFDStars>(2);
+    expect(rating).toEqual<CSFDStars>(3);
   });
   test('Half star rating', () => {
     const mockElement = parse(`
@@ -37,11 +37,11 @@ describe('Get Review Ratings', () => {
 describe('Get ID', () => {
   test('First ID', () => {
     const id = getUserReviewId(reviews[0]);
-    expect(id).toEqual<number>(1563295);
+    expect(id).toEqual<number>(1822825);
   });
   test('Last ID', () => {
     const id = getUserReviewId(reviews[reviews.length - 1]);
-    expect(id).toEqual<number>(1558529);
+    expect(id).toEqual<number>(1610745);
   });
 });
 
@@ -63,11 +63,11 @@ describe('Get type', () => {
 describe('Get title', () => {
   test('First title', () => {
     const title = getUserReviewTitle(reviews[0]);
-    expect(title).toEqual<string>('Gangy z Birminghamu: Nesmrtelný muž');
+    expect(title).toEqual<string>('Pět švestek');
   });
   test('Last title', () => {
     const title = getUserReviewTitle(reviews[reviews.length - 1]);
-    expect(title).toEqual<string>('Neporazitelní');
+    expect(title).toEqual<string>('Vzhlížet ke hvězdám');
   });
 });
 
@@ -104,24 +104,22 @@ describe('Get Review Color Rating', () => {
 describe('Get date', () => {
   test('First date', () => {
     const date = getUserReviewDate(reviews[0]);
-    expect(date).toEqual<string>('2026-03-23');
+    expect(date).toEqual<string>('2026-11-13');
   });
   test('Last date', () => {
     const date = getUserReviewDate(reviews[reviews.length - 1]);
-    expect(date).toEqual<string>('2026-02-23');
+    expect(date).toEqual<string>('2026-10-29');
   });
 });
 
 describe('Get Url', () => {
   test('First url', () => {
     const url = getUserReviewUrl(reviews[0]);
-    expect(url).toEqual<string>(
-      'https://www.csfd.cz/film/1563295-gangy-z-birminghamu-nesmrtelny-muz/prehled/'
-    );
+    expect(url).toEqual<string>('https://www.csfd.cz/film/1822825-pet-svestek/prehled/');
   });
   test('Last url', () => {
     const url = getUserReviewUrl(reviews[reviews.length - 1]);
-    expect(url).toEqual<string>('https://www.csfd.cz/film/1558529-neporazitelni/prehled/');
+    expect(url).toEqual<string>('https://www.csfd.cz/film/1610745-vzhlizet-ke-hvezdam/prehled/');
   });
 });
 

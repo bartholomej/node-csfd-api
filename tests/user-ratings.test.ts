@@ -20,9 +20,9 @@ const movies: HTMLElement[] = items.querySelectorAll('#snippet--ratings table tr
 const VALID_STARS: CSFDStars[] = [0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5];
 
 describe('Get Ratings', () => {
-  test('First rating', () => {
+  test('First rating (half star)', () => {
     const movie = getUserRating(movies[0]);
-    expect(VALID_STARS).toContain(movie);
+    expect(movie).toEqual<CSFDStars>(4.5);
   });
   test('Last rating', () => {
     const movie = getUserRating(movies[movies.length - 1]);

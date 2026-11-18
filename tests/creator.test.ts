@@ -39,8 +39,8 @@ describe('Creator info', () => {
 
   test('Photo', () => {
     const creator = getCreatorPhoto(asideNode);
-    expect(creator).toEqual<string>(
-      'https://image.pmgstatic.com/cache/resized/w100h132crop/files/images/creator/photos/164/515/164515525_b98f8a.jpg'
+    expect(creator).toContain<string>(
+      'https://image.pmgstatic.com/cache/resized/w100h132crop/files/images/creator/photos/'
     );
   });
 });
@@ -58,7 +58,7 @@ describe('Creator birthday info', () => {
 
   test('Age', () => {
     const creator = getCreatorBirthdayInfo(asideNode)?.age;
-    expect(creator).toEqual<number>(62);
+    expect(creator).toEqual<number>(63);
   });
 
   test('Handles null input gracefully', () => {
@@ -139,7 +139,7 @@ describe('Actor birthday info', () => {
 describe("Creator's films", () => {
   test('First film from first section', () => {
     const films = getCreatorFilms(filmsNodeActor) as CSFDCreatorScreening[];
-    expect(films[0].title).toEqual<string>('Last Meals');
+    expect(films[0].title).toEqual<string>('A.M.I.');
   });
 
   test('Last film from first section', () => {

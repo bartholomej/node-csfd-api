@@ -253,20 +253,12 @@ describe('Get VOD', () => {
         url: 'https://srv.clickfuse.com/ads/adclkr.php?id=100006636&url=https%3A//tv.apple.com/cz/movie/dragged-across-concrete/umc.cmc.34ihj6x6alpeso7j7lpvamjfb'
       },
       {
-        title: 'Lepší.TV',
-        url: 'https://www.lepsi.tv/top_tv/film/na-zlej-strane-online?utm_source=csfd&utm_content=csfd'
-      },
-      {
         title: 'KVIFF.TV',
-        url: 'https://kviff.tv/katalog/na-spatne-strane'
+        url: 'https://kviff.tv/screens/home?video=na-spatne-strane'
       },
       {
         title: 'YouTube Movies',
         url: 'https://www.youtube.com/watch?v=8UGglrPklC4'
-      },
-      {
-        title: 'SledovaniTV',
-        url: 'https://sledovanitv.cz/epg/event/up_network:20260320bb594dd103b5b6fafe1d493cdbc8f3d3'
       }
     ]);
   });
@@ -279,13 +271,13 @@ describe('Get VOD', () => {
       },
       {
         title: 'KVIFF.TV',
-        url: 'https://kviff.tv/katalog/kralovstvi-cast-prvni-nenebeske-zastupy'
+        url: 'https://kviff.tv/screens/home?video=kralovstvi-cast-trinacta-exodus'
       }
     ]);
   });
   test('Get vods rich', () => {
     const movie = getMovieVods(movieNodeRich);
-    expect(movie.length).toEqual<number>(9);
+    expect(movie.length).toEqual<number>(10);
   });
   test('Get vods blank', () => {
     const movie = getMovieVods(asideNodeBlank);

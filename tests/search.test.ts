@@ -33,11 +33,11 @@ describe('Get Movie titles', () => {
   });
   test('Last movie', () => {
     const movie = getSearchTitle(moviesNode[moviesNode.length - 1]);
-    expect(movie).toEqual<string>('Matrix: Nová návštěva');
+    expect(movie).toEqual<string>('Matrix hunter');
   });
   test('Some movie', () => {
-    const movie = getSearchTitle(moviesNode[5]);
-    expect(movie).toEqual<string>('Generace Matrix');
+    const movie = getSearchTitle(moviesNode[3]);
+    expect(movie).toEqual<string>('Matrix Resurrections');
   });
 });
 
@@ -48,10 +48,10 @@ describe('Get Movie years', () => {
   });
   test('Last movie', () => {
     const movie = getSearchYear(moviesNode[moviesNode.length - 1]);
-    expect(movie).toEqual<number>(2001);
+    expect(movie).toEqual<number>(2004);
   });
   test('Some movie', () => {
-    const movie = getSearchYear(moviesNode[3]);
+    const movie = getSearchYear(moviesNode[4]);
     expect(movie).toEqual<number>(2019);
   });
 });
@@ -63,10 +63,10 @@ describe('Get Movie url', () => {
   });
   test('Last movie', () => {
     const movie = getSearchUrl(moviesNode[moviesNode.length - 1]);
-    expect(movie).toEqual<string>('/film/17748-matrix-nova-navsteva/prehled/');
+    expect(movie).toEqual<string>('/film/40940-matrix-hunter/prehled/');
   });
   test('Some movie', () => {
-    const movie = getSearchUrl(moviesNode[3]);
+    const movie = getSearchUrl(moviesNode[4]);
     expect(movie).toEqual<string>('/film/799868-matrix/prehled/');
   });
 });
@@ -93,10 +93,10 @@ describe('Get Movie colors', () => {
   });
   test('Last movie', () => {
     const movie = getSearchColorRating(moviesNode[moviesNode.length - 1]);
-    expect(movie).toEqual<CSFDColorRating>('good');
+    expect(movie).toEqual<CSFDColorRating>('average');
   });
   test('Some movie', () => {
-    const movie = getSearchColorRating(moviesNode[3]);
+    const movie = getSearchColorRating(moviesNode[4]);
     expect(movie).toEqual<CSFDColorRating>('average');
   });
 });
@@ -109,7 +109,7 @@ describe('Get Movie posters', () => {
     );
   });
   test('Empty poster', () => {
-    const movie = getSearchPoster(moviesNode[3]);
+    const movie = getSearchPoster(moviesNode[4]);
     expect(movie).toEqual<string>(
       'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'
     );
@@ -136,7 +136,7 @@ describe('Get Movie origins', () => {
     expect(movie).toEqual<string[]>(['USA', 'Austrálie']);
   });
   test('Some movie', () => {
-    const movie = getSearchOrigins(moviesNode[3]);
+    const movie = getSearchOrigins(moviesNode[4]);
     expect(movie).toEqual<string[]>(['Slovensko']);
   });
   test('Empty origin', () => {
@@ -165,14 +165,14 @@ describe('Get Movie creators', () => {
     const movie = parseSearchPeople(moviesNode[moviesNode.length - 1], 'actors');
     expect(movie).toEqual<CSFDMovieCreator[]>([
       {
-        id: 101,
-        name: 'Carrie-Anne Moss',
-        url: 'https://www.csfd.cz/tvurce/101-carrie-anne-moss/prehled/'
+        id: 67747,
+        name: "Genevieve O'Reilly",
+        url: 'https://www.csfd.cz/tvurce/67747-genevieve-o-reilly/prehled/'
       },
       {
-        id: 3134,
-        name: 'Woo-ping Yuen',
-        url: 'https://www.csfd.cz/tvurce/3134-woo-ping-yuen/prehled/'
+        id: 294809,
+        name: 'Luoyong Wang',
+        url: 'https://www.csfd.cz/tvurce/294809-luoyong-wang/prehled/'
       }
     ]);
   });
@@ -191,11 +191,11 @@ describe('Get TV series titles', () => {
   });
   test('Last TV series', () => {
     const movie = getSearchTitle(tvSeriesNode[tvSeriesNode.length - 1]);
-    expect(movie).toEqual<string>('Situace: Ohrožení - Pilot');
+    expect(movie).toEqual<string>('Situace: Ohrožení - Flipping');
   });
   test('Some TV series', () => {
     const movie = getSearchTitle(tvSeriesNode[5]);
-    expect(movie).toEqual<string>('Situace: Ohrožení - PPX');
+    expect(movie).toEqual<string>('Situace: Ohrožení - Pilot');
   });
 });
 
@@ -209,7 +209,7 @@ describe('Get TV series years', () => {
     expect(movie).toEqual<number>(2003);
   });
   test('Some TV series', () => {
-    const movie = getSearchYear(tvSeriesNode[4]);
+    const movie = getSearchYear(tvSeriesNode[2]);
     expect(movie).toEqual<number>(2025);
   });
 });
@@ -221,10 +221,10 @@ describe('Get TV series url', () => {
   });
   test('Last TV series', () => {
     const movie = getSearchUrl(tvSeriesNode[tvSeriesNode.length - 1]);
-    expect(movie).toEqual<string>('/film/135819-situace-ohrozeni/1120103-pilot/prehled/');
+    expect(movie).toEqual<string>('/film/135819-situace-ohrozeni/1120112-flipping/prehled/');
   });
   test('Some TV series', () => {
-    const movie = getSearchUrl(tvSeriesNode[4]);
+    const movie = getSearchUrl(tvSeriesNode[2]);
     expect(movie).toEqual<string>('/film/1692043-sklenene-srdce/1713389-matrix/prehled/');
   });
 });
@@ -239,7 +239,7 @@ describe('Get TV series types', () => {
     expect(movie).toEqual<CSFDFilmTypes>('episode');
   });
   test('Some TV series', () => {
-    const movie = getSearchType(tvSeriesNode[1]);
+    const movie = getSearchType(tvSeriesNode[3]);
     expect(movie).toEqual<CSFDFilmTypes>('series');
   });
 });
@@ -250,12 +250,12 @@ describe('Get TV series colors', () => {
     expect('good').toBe(movie);
   });
   test('Last TV series', () => {
-    const movie = getSearchColorRating(tvSeriesNode[1]);
-    expect('average').toBe(movie);
+    const movie = getSearchColorRating(tvSeriesNode[tvSeriesNode.length - 1]);
+    expect('unknown').toBe(movie);
   });
   test('Some TV series', () => {
     const movie = getSearchColorRating(tvSeriesNode[3]);
-    expect('good').toBe(movie);
+    expect('average').toBe(movie);
   });
 });
 
@@ -281,11 +281,11 @@ describe('Get TV series origins', () => {
   });
   test('Second TV series', () => {
     const movie = getSearchOrigins(tvSeriesNode[1]);
-    expect(movie).toEqual<string[]>(['USA']);
+    expect(movie).toEqual<string[]>(['USA', 'Kanada']);
   });
   test('Third TV series', () => {
     const movie = getSearchOrigins(tvSeriesNode[2]);
-    expect(movie).toEqual<string[]>(['USA', 'Kanada']);
+    expect(movie).toEqual<string[]>(['Japonsko']);
   });
   test('Some TV series', () => {
     const movie = getSearchOrigins(tvSeriesNode[5]);
@@ -331,7 +331,7 @@ describe('Get Users name', () => {
   });
   test('Last user', () => {
     const movie = getUser(usersNode[usersNode.length - 1]);
-    expect(movie).toEqual<string>('Matrix007');
+    expect(movie).toEqual<string>('matrixre');
   });
 });
 
@@ -358,7 +358,7 @@ describe('Get Users avatar', () => {
     );
   });
   test('Empty avatar', () => {
-    const movie = getAvatar(usersNode[0]);
+    const movie = getAvatar(usersNode[2]);
     expect(movie).toEqual<string>(
       'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'
     );
@@ -384,7 +384,9 @@ describe('Get Creators name', () => {
 describe('Get Creators image', () => {
   test('First creator image', () => {
     const creator = getCreatorImage(creatorsNode[0]);
-    expect(creator).toContain('data:image'); // This changed in the mock to a lazy image
+    expect(creator).toEqual<string>(
+      'https://image.pmgstatic.com/cache/resized/w45h60crop/files/images/creator/photos/158/381/158381769_57dfe6.jpg'
+    );
   });
   test('Empty creator image', () => {
     const creator = getCreatorImage(creatorsNode[1]);
