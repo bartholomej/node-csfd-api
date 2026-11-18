@@ -41,27 +41,27 @@
     "registry": "https://registry.npmjs.org"
   },
   "dependencies": {
-    "node-html-parser": "^9.0.6"
+    "node-html-parser": "^9.0.7"
   },
   "devDependencies": {
-    "@hono/node-server": "^2.1.4",
+    "@hono/node-server": "^2.1.8",
     "@modelcontextprotocol/sdk": "^1.32.2",
     "@types/node": "^26.6.6",
-    "@vitest/coverage-istanbul": "^5.0.5",
-    "@vitest/ui": "^5.0.5",
-    "dotenv": "^18.0.9",
-    "hono": "^4.13.13",
+    "@vitest/coverage-istanbul": "^5.1.0",
+    "@vitest/ui": "^5.1.0",
+    "dotenv": "^18.0.10",
+    "hono": "^4.13.18",
     "husky": "^9.1.7",
-    "lint-staged": "^17.6.0",
-    "oxlint": "^1.90.0",
-    "prettier": "^3.9.10",
-    "rimraf": "^6.1.3",
+    "lint-staged": "^17.6.1",
+    "oxlint": "^1.93.0",
+    "prettier": "^3.10.1",
+    "rimraf": "^6.1.4",
     "rolldown-plugin-dist-package": "^1.1.0",
-    "tsdown": "^0.23.4",
+    "tsdown": "^0.23.7",
     "tsx": "^4.23.15",
     "typescript": "^7.0.2",
-    "vite": "^8.3.5",
-    "vitest": "^5.0.5",
+    "vite": "^8.3.8",
+    "vitest": "^5.1.0",
     "zod": "^4.6.7"
   },
   "repository": {
