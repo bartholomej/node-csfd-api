@@ -24,6 +24,14 @@ describe('Get Review Ratings', () => {
     const rating = getUserReviewRating(reviews[reviews.length - 1]);
     expect(rating).toEqual<CSFDStars>(2);
   });
+  test('Half star rating', () => {
+    const mockElement = parse(`
+      <article class="article">
+        <span class="star-rating"><span class="stars stars-4 stars-half"><span class="star-half"></span></span></span>
+      </article>
+    `);
+    expect(getUserReviewRating(mockElement)).toEqual<CSFDStars>(4.5);
+  });
 });
 
 describe('Get ID', () => {

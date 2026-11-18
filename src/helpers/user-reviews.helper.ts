@@ -1,19 +1,15 @@
 import type { HTMLElement } from 'node-html-parser';
 import type { CSFDColorRating, CSFDFilmTypes, CSFDStars } from '../dto/global';
 import type { CSFDColors } from '../dto/user-ratings';
-import { parseColor, parseDate, parseFilmType, parseIdFromUrl } from './global.helper';
+import { parseColor, parseDate, parseFilmType, parseIdFromUrl, parseStars } from './global.helper';
 
 export const getUserReviewId = (el: HTMLElement): number => {
   const url = el.querySelector('.film-title-name').attributes.href;
   return parseIdFromUrl(url);
 };
 
-export const getUserReviewRating = (el: HTMLElement): CSFDStars => {
-  const ratingText = el.querySelector('.star-rating .stars').classNames.split(' ').pop();
-
-  const rating = ratingText.includes('stars-') ? +ratingText.split('-').pop() : 0;
-  return rating as CSFDStars;
-};
+export const getUserReviewRating = (el: HTMLElement): CSFDStars =>
+  parseStars(el.querySelector('.star-rating .stars'));
 
 export const getUserReviewType = (el: HTMLElement): CSFDFilmTypes => {
   // Type can be in the second .info span (e.g., "(seriál)") // TODO need more tests

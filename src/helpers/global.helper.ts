@@ -1,4 +1,5 @@
-import type { CSFDColorRating, CSFDFilmTypes } from '../dto/global';
+import type { HTMLElement } from 'node-html-parser';
+import type { CSFDColorRating, CSFDFilmTypes, CSFDStars } from '../dto/global';
 import type { CSFDColors } from '../dto/user-ratings';
 
 const LANG_PREFIX_REGEX = /^[a-z]{2,3}$/;
@@ -84,6 +85,13 @@ const RATING_COLORS: Record<CSFDColors, CSFDColorRating> = {
 
 export const parseColor = (quality: CSFDColors): CSFDColorRating => {
   return RATING_COLORS[quality] || 'unknown';
+};
+
+export const parseStars = (el: HTMLElement | null): CSFDStars => {
+  const classes = el?.classList.value ?? [];
+  const whole = classes.find((c) => /^stars-[0-5]$/.test(c));
+  if (!whole) return 0;
+  return (+whole.slice(-1) + (classes.includes('stars-half') ? 0.5 : 0)) as CSFDStars;
 };
 
 const FILM_TYPES: Record<string, CSFDFilmTypes> = {

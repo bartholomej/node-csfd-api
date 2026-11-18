@@ -28,7 +28,9 @@ const titleRef = z.looseObject({
   url: nullish(z.string())
 });
 
-const userRating = nullish(z.number()).describe('Stars given by the user (0–5)');
+const userRating = nullish(z.number()).describe(
+  'Stars given by the user, 0–5 in half steps (e.g. 3.5); 0 means "odpad!" (trash)'
+);
 
 export const searchOutput = z.looseObject({
   movies: z.array(z.looseObject(screening)),

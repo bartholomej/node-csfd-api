@@ -1,6 +1,6 @@
 import type { HTMLElement } from 'node-html-parser';
 import { parse } from 'node-html-parser';
-import type { CSFDColorRating, CSFDFilmTypes, CSFDStars } from '../dto/global';
+import type { CSFDColorRating, CSFDFilmTypes } from '../dto/global';
 import type { CSFDUserReviews, CSFDUserReviewsConfig } from '../dto/user-reviews';
 import { fetchPage } from '../fetchers';
 import { normalizeUserId, sleep } from '../helpers/global.helper';
@@ -106,7 +106,7 @@ export class UserReviewsScraper {
       url: getUserReviewUrl(el),
       colorRating: getUserReviewColorRating(el) as CSFDColorRating,
       userDate: getUserReviewDate(el),
-      userRating: getUserReviewRating(el) as CSFDStars,
+      userRating: getUserReviewRating(el),
       text: getUserReviewText(el),
       poster: getUserReviewPoster(el)
     };

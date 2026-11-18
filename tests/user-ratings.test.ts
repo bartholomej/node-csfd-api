@@ -17,14 +17,39 @@ import { userRatingsMock } from './mocks/userRatings.html';
 const items = parse(userRatingsMock);
 const movies: HTMLElement[] = items.querySelectorAll('#snippet--ratings table tr');
 
+const VALID_STARS: CSFDStars[] = [0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5];
+
 describe('Get Ratings', () => {
   test('First rating', () => {
     const movie = getUserRating(movies[0]);
-    expect([0, 1, 2, 3, 4, 5, null]).toContain(movie);
+    expect(VALID_STARS).toContain(movie);
   });
   test('Last rating', () => {
     const movie = getUserRating(movies[movies.length - 1]);
-    expect([0, 1, 2, 3, 4, 5, null]).toContain(movie);
+    expect(VALID_STARS).toContain(movie);
+  });
+  test('All ratings are valid stars', () => {
+    for (const movie of movies) {
+      expect(VALID_STARS).toContain(getUserRating(movie));
+    }
+  });
+
+  test('Half star rating', () => {
+    const mockElement = parse(`
+      <tr>
+        <td class="star-rating-only">
+          <span class="star-rating"><span class="stars stars-3 stars-half"><span class="star-half"></span></span></span>
+        </td>
+      </tr>
+    `);
+    const movie = getUserRating(mockElement);
+    expect(movie).toEqual<CSFDStars>(3.5);
+  });
+
+  test('Missing rating element', () => {
+    const mockElement = parse(`<tr><td class="star-rating-only"></td></tr>`);
+    const movie = getUserRating(mockElement);
+    expect(movie).toEqual<CSFDStars>(0);
   });
 
   test('Trash (Odpad!) rating', () => {

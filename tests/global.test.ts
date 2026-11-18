@@ -1,11 +1,14 @@
+import { parse } from 'node-html-parser';
 import { afterEach, describe, expect, test, vi } from 'vitest';
 import { csfd, Csfd } from '../src';
+import type { CSFDStars } from '../src/dto/global';
 import * as fetchers from '../src/fetchers';
 import {
   getDuration,
   parseDate,
   parseISO8601Duration,
-  parseLastIdFromUrl
+  parseLastIdFromUrl,
+  parseStars
 } from '../src/helpers/global.helper';
 import { userMock } from './mocks/user.html';
 
@@ -104,6 +107,28 @@ describe('Date Parsing', () => {
 describe('parseLastIdFromUrl invalid test', () => {
   test('Should return null for invalid URL', () => {
     expect(parseLastIdFromUrl('/tvurce/xyz-invalid/')).toEqual(null);
+  });
+});
+
+describe('Stars parsing', () => {
+  const stars = (html: string) => parseStars(parse(html).querySelector('.stars'));
+
+  test.each<[string, CSFDStars]>([
+    ['<span class="stars stars-5"></span>', 5],
+    ['<span class="stars stars-4"></span>', 4],
+    ['<span class="stars stars-1"></span>', 1],
+    ['<span class="stars stars-3 stars-half"><span class="star-half"></span></span>', 3.5],
+    ['<span class="stars stars-0 stars-half"><span class="star-half"></span></span>', 0.5],
+    ['<span class="stars stars-half stars-2"></span>', 2.5],
+    ['<span class="stars trash">odpad!</span>', 0],
+    ['<span class="stars stars-0-withtrash"></span>', 0],
+    ['<span class="stars something-else"></span>', 0]
+  ])('%s → %s', (html, expected) => {
+    expect(stars(html)).toEqual(expected);
+  });
+
+  test('Missing element', () => {
+    expect(parseStars(null)).toEqual<CSFDStars>(0);
   });
 });
 
