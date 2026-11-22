@@ -97,12 +97,38 @@ describe('REST server', () => {
     );
   });
 
-  test('cinemas return today', async () => {
-    const spy = vi.spyOn(csfd, 'cinema').mockResolvedValue([]);
+  test('cinemas return today in Praha with the trending films', async () => {
+    const spy = vi
+      .spyOn(csfd, 'cinema')
+      .mockResolvedValue({ cinemas: [{ id: 110 }], trending: [{ id: 1 }] } as never);
     const res = await app.request('/cinemas');
     expect(res.status).toBe(200);
-    expect(spy).toHaveBeenCalledWith(1, 'today', { language: undefined });
+    expect(await res.json()).toEqual({ cinemas: [{ id: 110 }], trending: [{ id: 1 }] });
+    expect(spy).toHaveBeenCalledWith(1, 'today', undefined, { language: undefined });
   });
+
+  test('cinemas take a district, period and films', async () => {
+    const spy = vi.spyOn(csfd, 'cinema').mockResolvedValue({ cinemas: [], trending: [] });
+    const res = await app.request('/cinemas?district=55&period=week&films=1529647,x,1708383');
+    expect(res.status).toBe(200);
+    expect(spy).toHaveBeenCalledWith(
+      55,
+      'week',
+      { films: [1529647, 1708383] },
+      { language: undefined }
+    );
+  });
+
+  test.each(['?period=year', '?district=praha', '?district=0'])(
+    'cinemas with %s are a bad request',
+    async (query) => {
+      const spy = vi.spyOn(csfd, 'cinema');
+      const res = await app.request(`/cinemas${query}`);
+      expect(res.status).toBe(400);
+      expect((await res.json()).error).toBe('CINEMAS_INVALID');
+      expect(spy).not.toHaveBeenCalled();
+    }
+  );
 
   test('chart takes its type, category, limit and language', async () => {
     const spy = vi.spyOn(csfd, 'chart').mockResolvedValue([]);

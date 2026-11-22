@@ -172,5 +172,16 @@ export const cinemasOutput = z.looseObject({
         )
       )
     })
+  ),
+  trending: nullish(
+    z.array(
+      z.looseObject({
+        position: z.number(),
+        id: z.number(),
+        title: nullish(z.string()),
+        url: nullish(z.string()),
+        poster: nullish(z.string())
+      })
+    )
   )
 });

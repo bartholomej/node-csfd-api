@@ -14,6 +14,7 @@ import { csfd, CsfdError } from '..';
 import type { CsfdErrorReason } from '..';
 import packageJson from '../../package.json' with { type: 'json' };
 import type { CSFDChartCategory, CSFDChartType } from '../dto/chart';
+import type { CSFDCinemaPeriod } from '../dto/cinema';
 import type { CSFDFilmTypes } from '../dto/global';
 import { extractId } from '../helpers/global.helper';
 import type { CSFDLanguage } from '../types';
@@ -54,6 +55,7 @@ enum Errors {
   USER_FETCH_FAILED = 'USER_FETCH_FAILED',
   USER_RATINGS_FETCH_FAILED = 'USER_RATINGS_FETCH_FAILED',
   USER_REVIEWS_FETCH_FAILED = 'USER_REVIEWS_FETCH_FAILED',
+  CINEMAS_INVALID = 'CINEMAS_INVALID',
   CINEMAS_FETCH_FAILED = 'CINEMAS_FETCH_FAILED',
   CHART_INVALID = 'CHART_INVALID',
   CHART_FETCH_FAILED = 'CHART_FETCH_FAILED',
@@ -82,6 +84,14 @@ export enum Endpoint {
   MCP = '/mcp'
 }
 
+const CINEMA_PERIODS: readonly CSFDCinemaPeriod[] = [
+  'today',
+  'tomorrow',
+  'weekend',
+  'week',
+  'month',
+  'all'
+];
 const CHART_TYPES: readonly CSFDChartType[] = ['movies', 'series'];
 const CHART_CATEGORIES: readonly CSFDChartCategory[] = [
   'best',
@@ -417,10 +427,26 @@ export function createApp({ apiKey, apiKeyName }: ServerOptions) {
   });
 
   app.get(Endpoint.CINEMAS, async (c) => {
+    const period = (c.req.query('period') || 'today') as CSFDCinemaPeriod;
+    const district = Number(c.req.query('district') || 1);
+    if (!CINEMA_PERIODS.includes(period) || !Number.isInteger(district) || district < 1) {
+      const log: ErrorLog = {
+        error: Errors.CINEMAS_INVALID,
+        message: `Unknown district or period. Use a numeric district and period=${CINEMA_PERIODS.join('|')}.`
+      };
+      logMessage('warn', log, c);
+      return c.json(log, 400);
+    }
+    const films = (c.req.query('films') ?? '')
+      .split(',')
+      .map(Number)
+      .filter((film) => Number.isInteger(film) && film > 0);
     const language = languageParam(c);
 
     try {
-      const result = await csfd.cinema(1, 'today', { language });
+      const result = await csfd.cinema(district, period, films.length ? { films } : undefined, {
+        language
+      });
       logSuccess(c, Endpoint.CINEMAS, language);
       return c.json(result);
     } catch (error) {

@@ -303,7 +303,7 @@ describe('Live: Search', () => {
 describe('Live: Cinemas', () => {
   let cinemas: CSFDCinema[];
   beforeAll(async () => {
-    cinemas = await csfd.cinema(1, 'today');
+    ({ cinemas } = await csfd.cinema(1, 'today'));
   });
   test('Check city', async () => {
     const pragueCinemas = cinemas.filter((x) => x.city.includes('Praha'));

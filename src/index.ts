@@ -1,5 +1,5 @@
 import type { CSFDChartCategory, CSFDChartConfig, CSFDChartItem, CSFDChartType } from './dto/chart';
-import type { CSFDCinema, CSFDCinemaPeriod } from './dto/cinema';
+import type { CSFDCinemaConfig, CSFDCinemaPeriod, CSFDCinemaProgram } from './dto/cinema';
 import type { CSFDCreator } from './dto/creator';
 import type { CSFDMovie } from './dto/movie';
 import type { CSFDSearch } from './dto/search';
@@ -90,13 +90,15 @@ export class Csfd {
     return this.searchService.search(text, opts);
   }
 
+  /** The cinemas and ČSFD's "hottest in cinemas today", optionally only some films */
   public async cinema(
     district: number | string,
     period: CSFDCinemaPeriod,
+    config?: CSFDCinemaConfig,
     options?: CSFDOptions
-  ): Promise<CSFDCinema[]> {
+  ): Promise<CSFDCinemaProgram> {
     const opts = this.resolveOptions(options);
-    return this.cinemaService.cinemas(+district, period, opts);
+    return this.cinemaService.cinemas(+district, period, config, opts);
   }
 
   public async chart(

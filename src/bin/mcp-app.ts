@@ -322,7 +322,7 @@ export function createMcpServer(): McpServer {
       inputSchema: {
         district: z.union([z.number(), z.string()]).describe('District ID (numeric) or name'),
         period: z
-          .enum(['today', 'tomorrow', 'weekend', 'week', 'month'])
+          .enum(['today', 'tomorrow', 'weekend', 'week', 'month', 'all'])
           .describe('Time period for screenings')
       },
       outputSchema: cinemasOutput,
@@ -334,13 +334,13 @@ export function createMcpServer(): McpServer {
     },
     async ({ district, period }) => {
       try {
-        const results = await csfd.cinema(district, period);
+        const { cinemas, trending } = await csfd.cinema(district, period);
         return {
-          structuredContent: { results },
+          structuredContent: { results: cinemas, trending },
           content: [
             {
               type: 'text',
-              text: `Retrieved ${results.length} cinema screenings successfully.`
+              text: `Retrieved ${cinemas.length} cinema screenings successfully.`
             }
           ]
         };

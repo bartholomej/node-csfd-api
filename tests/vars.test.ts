@@ -1,6 +1,7 @@
 import { describe, expect, test } from 'vitest';
 import {
   chartUrl,
+  cinemasUrl,
   creatorUrl,
   movieUrl,
   searchUrl,
@@ -66,5 +67,21 @@ describe('Vars Creator', () => {
   test('Assemble creatorUrl', () => {
     const url = creatorUrl('1', {});
     expect(url).toBe('https://www.csfd.cz/tvurce/1');
+  });
+});
+
+describe('Vars Cinemas', () => {
+  test('Assemble cinemasUrl', () => {
+    expect(cinemasUrl(1, 'today', {})).toBe('https://www.csfd.cz/kino/?period=today&district=1');
+  });
+  test('Assemble cinemasUrl with a film filter on the district path', () => {
+    expect(cinemasUrl(1, 'all', {}, [1529647, 1708383])).toBe(
+      'https://www.csfd.cz/kino/1/?period=all&films%5B0%5D=1529647&films%5B1%5D=1708383'
+    );
+  });
+  test('Assemble cinemasUrl without films like before', () => {
+    expect(cinemasUrl(55, 'week', { language: 'en' }, [])).toBe(
+      'https://www.csfd.cz/en/kino/?period=week&district=55'
+    );
   });
 });

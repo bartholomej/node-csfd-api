@@ -59,8 +59,17 @@ export const creatorUrl = (creator: number | string, options: Options): string =
 export const cinemasUrl = (
   district: number | string,
   period: CSFDCinemaPeriod,
-  options: Options
-): string => `${getUrlByLanguage(options?.language)}/kino/?period=${period}&district=${district}`;
+  options: Options,
+  films: number[] = []
+): string => {
+  const base = getUrlByLanguage(options?.language);
+  if (!films.length) {
+    return `${base}/kino/?period=${period}&district=${district}`;
+  }
+  // ČSFD reads the film filter only on the district's own path
+  const filter = films.map((film, index) => `&films%5B${index}%5D=${encodeURIComponent(film)}`);
+  return `${base}/kino/${encodeURIComponent(district)}/?period=${period}${filter.join('')}`;
+};
 
 // Chart URLs, Czech paths in every language: /en/ and /sk/ redirect them to their own
 const CHART_TYPES: Record<CSFDChartType, string> = { movies: 'filmy', series: 'serialy' };
