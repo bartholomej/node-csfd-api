@@ -250,12 +250,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@hono/node-server@npm:^1.19.9 || ^2.0.5, @hono/node-server@npm:^2.1.9":
-  version: 2.1.9
-  resolution: "@hono/node-server@npm:2.1.9"
+"@hono/node-server@npm:^1.19.9 || ^2.0.5, @hono/node-server@npm:^2.1.11":
+  version: 2.1.11
+  resolution: "@hono/node-server@npm:2.1.11"
   peerDependencies:
     hono: ^4 || ^5.0.0-0
-  checksum: 10c0/ca21fa779701847202c93b9f3de8991e926793ff5b0ea002a786bfd4a73300a5aaa1e5a0562254197bba53aede244d1a9e904bcfaac120a1e928dabce646efc6
+  checksum: 10c0/a9c1f543eb2fefe071192114f1c5ba7deb40235a80524b4c4622c00cb862eefc3453af8e6609bdd18fd715ba594b2afb21b4c357edf238db014298b89922baf1
   languageName: node
   linkType: hard
 
@@ -2278,7 +2278,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "node-csfd-api@workspace:."
   dependencies:
-    "@hono/node-server": "npm:^2.1.9"
+    "@hono/node-server": "npm:^2.1.11"
     "@modelcontextprotocol/sdk": "npm:^1.32.2"
     "@types/node": "npm:^26.6.6"
     "@vitest/coverage-istanbul": "npm:^5.1.1"
